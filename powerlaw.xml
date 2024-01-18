@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+
+
+<chapter xml:id="powerlaw" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Power Laws</title>
+	<introduction>
+		<p>
+
+			</p><p>
+
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+
+
+		<exercise>
+			<title>Degree Distribution</title>
+			<idx><h>Degree Distribution</h></idx>
+			<statement>
+				<p>
+The <em>degree distribution</em> of a graph is given by
+<me>
+p_k =
+\mbox{ the fraction of vertices with degree } k.
+</me>
+What is the degree distribution <m>(p_1, p_2, \ldots)</m> of this graph?
+
+
+
+
+
+
+			<image width="25%" xml:id="fig-img-powerlaw0" source="images/small_network.png" />
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>The Normalizing Constant</title>
+			<idx><h>The Normalizing Constant</h></idx>
+			<statement>
+				<p>
+We are given a data set whose degree distribution looks like a straight line with negative slope when plotted using  a log-log scale. In other words,
+<me>
+\ln (p(k)) = c - \alpha \ln (k),
+</me>
+where  <m>c &gt;0</m>  and <m>\alpha &gt; 0</m> are  constants. Exponentiate both sides to show that
+<me>
+p(k) = C k^{-\alpha}.
+</me>
+What is the value of the constant <m>C</m> in terms of <m>c</m>?
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>The Normalizing Constant for Exponent <m>\alpha</m></title>
+			<idx><h>The Normalizing Constant for Exponent <m>\alpha</m></h></idx>
+			<statement>
+				<p>
+
+			<ol>
+
+\item
+Let <m>p: \Z^+ \rightarrow [0,1]</m> given by
+<me>
+p(k) = C k^{- \alpha}
+</me>
+be the PMF for a power law. (Here, we assume that <m>p(0)=0</m> for convenience.) Suppose that we know the value for <m>\alpha</m>. Prove that
+<me>
+C = \frac{1}{\zeta(\alpha)}
+</me>
+where <m>\zeta(x)</m> is the <em>Riemann zeta function</em>
+<me>
+\displaystyle{\zeta(x) = \sum_{k=1}^{\infty} k^{-x}}.
+</me>
+What is the restriction on allowable values of <m>\alpha</m>?
+
+
+
+
+				<li>
+					<p>
+ For many real-world networks, the power law behavior doesn't hold for small <m>k</m>. In this case, we restrict our attention to vertices of degree at least <m>k_{\min}</m>. We then deal with  the probability mass function for a truncated power law. Given <m>\alpha</m> and <m>k \geq k_{\min}</m> this PMF is given by
+<me>
+p(k) =  \frac{ k^{-\alpha}}{\zeta(\alpha, k_{\min})}
+</me>
+where
+<me>
+\zeta(x, k_{\min}) =  \sum_{k=k_{\min}}^{\infty} k^{-x}
+</me>
+is the <em>generalized Riemann zeta function</em>.
+
+			</p><p>
+
+Dealing with the Riemann zeta function is unwieldy. In practice, we approximate this leading constant by the corresponding integral.  Evaluate the following integral in order to find the approximate value for <m>\zeta(\alpha, k_{\min})</m>:
+
+<me>
+\sum_{k= k_{\min}}^{\infty} k^{-\alpha} \approx \int_{x= k_{\min}}^{\infty} x^{-\alpha}  \, dx.
+</me>
+
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Find the corresponding approximate expression for the power law PMF <m>p(x)</m> using your  constant from (b). Simplify so that <m>\alpha</m> only appears once in an exponent.
+
+
+
+					</p>
+				</li>
+			</ol>
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Approximating with a Continuous Power Law</title>
+			<idx><h>Approximating with a Continuous Power Law</h></idx>
+			<statement>
+				<p>
+In general, it is easier to pretend that we are dealing with a continuous distribution (rather than a discrete distribution). So we will talk about a <em>probability density function (PDF)</em>
+<m>p: [k_{\min}, n] \rightarrow [0,1]</m> given by
+<me>
+p(x) = C x^{-\alpha}
+</me>
+rather than a PMF. You can find the constant <m>C = (\alpha-1)k_{\min}^{\alpha-1} </m> as you did in the previous problem. But let's just keep calling it <m>C</m> for now.
+
+			<ol>
+				<li>
+					<p>
+ Let <m>X</m> be a random variable governed by the continuous PDF <m>p(x)</m>. Find
+<me>
+\E[X] = \int_{x=k_{\min}}^{n} x p(x) dx.
+</me>
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ The <m>m</m>th moment of <m>X</m> is
+<me>
+\E[X^m] = \int_{x=k_{\min}}^{n} x^m p(x) dx.
+</me>
+Calculate it.
+
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Look at your answers for parts (a) and (b) and think about what happens as <m>n \rightarrow \infty</m>. For what values of <m>\alpha</m> does <m>\E[X]</m> converge? When does the <m>m</m>th moment <m>\E[X^m]</m> converge?
+
+					</p>
+				</li>
+				<li>
+					<p>
+  Recall that most observed power laws have <m>2 \leq \alpha \leq 3</m>. In this range, does the expected value converge? Which moments converge, and which moments diverge?
+
+					</p>
+				</li>
+			</ol>
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+	</exercises>
+
+</chapter>

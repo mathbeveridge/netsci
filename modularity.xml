@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+
+
+<chapter xml:id="modularity" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Modularity</title>
+	<introduction>
+		<p>
+
+
+Suppose that we have a network that is partitioned into (potential) communities. The <em>type</em> of a vertex is the community <m>C</m> that it belongs to. The <em>modularity</em> of a network <m>G</m> is given by
+
+<me>
+Q  =  \frac{1}{2m} \sum_{i} \sum_{j} \left( A_{ij} - \frac{k_i k_j}{2m} \right) \delta (C^{(i)}, C^{(j)})
+=  \frac{1}{2m} \sum_{C} \sum_{i \in C} \sum_{j \in C} \left( A_{ij} - \frac{k_i k_j}{2m} \right)
+</me>
+where
+		<ul>
+
+			<li>
+			<p>
+  <m>A</m> is the adjacency matrix
+
+			</p>
+			</li>
+			<li>
+			<p>
+ <m>m</m> is the number of edges in the network
+
+			</p>
+			</li>
+			<li>
+			<p>
+   <m>k_i</m> is the degree of vertex <m>i</m>
+
+			</p>
+			</li>
+			<li>
+			<p>
+ <m>C^{(i)}</m> is the <em>type</em> of vertex <m>i</m>
+
+			</p>
+			</li>
+			<li>
+			<p>
+ <m>\delta(x,y) = \left\{ \begin{array}{cc} 1 &amp; \mbox{if } x=y \\ 0 &amp;  \mbox{otherwise} \end{array} \right.</m>
+
+			</p>
+			</li>
+		</ul>
+
+The modularity satisfies <m>-1 &lt; Q &lt; 1</m>. A modularity score of <m>Q &gt; 0.3</m> indicates significant community structure.
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+		<exercise>
+			<title>Modularity Calculation</title>
+			<idx><h>Modularity Calculation</h></idx>
+			<statement>
+				<p>
+Consider the following network with <m>V = \{ 1, 2, 3, 4 \}</m> and <m>E = \{ (1,2), (3,4) \}</m>.
+Confirm that the modularity scores of the following four partitions by filling in the summands for <m>1 \leq i,j \leq 4</m>.
+
+Use this <url href="https://docs.google.com/spreadsheets/d/1kEP0CkUeG9s0RrJDtZcSmkDRKR7JWryNItu4b60pYYs/edit?usp=sharing" >link to a Google Sheet</url> to speed up calculations. Pay attention to the modularity contributions for various pairs of nodes. In particular, when <m>i</m> and <m>j</m> are in different communities, the corresponding summand is zero.
+
+
+
+			<ol>
+				<li>
+					<p>
+ A single community.
+
+			<image width="40%" xml:id="fig-img-modularity0">
+				<latex-image>
+\begin{tikzpicture} %mathbook width=40%
+
+\draw [rounded corners,fill=gray!20] (-.33, -.75) -- (1.33, -.75) -- (1.33,1.75) -- (-.33, 1.75) -- cycle;
+
+\node at (3,.5) {<m>Q \, = \, 0</m>};
+
+\draw[very thick] (0,0) -- (0,1);
+\draw[very thick] (1,0) -- (1,1);
+
+\draw[fill] (0,0) circle (3pt);
+\draw[fill] (1,0) circle (3pt);
+\draw[fill] (0,1) circle (3pt);
+\draw[fill] (1,1) circle (3pt);
+
+\node[above=3pt] at (0,1) {1};
+\node[below=3pt] at (0,0) {2};
+\node[above=3pt] at (1,1) {3};
+\node[below=3pt] at (1,0) {4};
+
+
+
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+
+
+
+
+
+<solution>
+<p>
+The terms are
+<me>
+\begin{array}{c|c|c|c|c}
+i \backslash j&amp;  1  &amp; 2 &amp; 3 &amp; 4 \\[.5em]
+\hline
+1 &amp; -\frac{1}{4} &amp; 1-\frac{1}{4} &amp;-\frac{1}{4}&amp;-\frac{1}{4}\\[.5em]
+2 &amp;1-\frac{1}{4} &amp;-\frac{1}{4} &amp;-\frac{1}{4} &amp;-\frac{1}{4} \\[.5em]
+3 &amp;-\frac{1}{4} &amp;-\frac{1}{4} &amp;-\frac{1}{4} &amp;1-\frac{1}{4} \\[.5em]
+4 &amp;-\frac{1}{4} &amp;-\frac{1}{4} &amp;1-\frac{1}{4} &amp;-\frac{1}{4}
+\end{array}
+</me>
+and the modularity is
+<me>
+Q =  \frac{1}{4} \left( 4 - 16 \cdot \frac{1}{4} \right) =0
+</me>
+
+</p>
+</solution>
+
+
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Two communities with no external edges.
+
+			<image width="40%" xml:id="fig-img-modularity1">
+				<latex-image>
+\begin{tikzpicture} %mathbook width=40%
+
+
+\draw [rounded corners,fill=gray!20] (-.33, -.75) -- (.33, -.75) -- (.33,1.75) -- (-.33, 1.75) -- cycle;
+\draw [rounded corners,fill=gray!20] (.67, -.75) -- (1.33, -.75) -- (1.33,1.75) -- (.67, 1.75) -- cycle;
+
+\node at (3,.5) {<m>Q \, = \, 1/2</m>};
+
+\draw[very thick] (0,0) -- (0,1);
+\draw[very thick] (1,0) -- (1,1);
+
+\draw[fill] (0,0) circle (3pt);
+\draw[fill] (1,0) circle (3pt);
+\draw[fill] (0,1) circle (3pt);
+\draw[fill] (1,1) circle (3pt);
+
+\node[above=3pt] at (0,1) {1};
+\node[below=3pt] at (0,0) {2};
+\node[above=3pt] at (1,1) {3};
+\node[below=3pt] at (1,0) {4};
+
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+<solution>
+<p>
+The terms are
+<me>
+\begin{array}{c|c|c|c|c}
+i \backslash j&amp;  1  &amp; 2 &amp; 3 &amp; 4 \\[0.5em]
+\hline
+1 &amp; -\frac{1}{4} &amp; 1-\frac{1}{4} &amp;0&amp;0\\[0.5em]
+2 &amp;1-\frac{1}{4} &amp;-\frac{1}{4} &amp;0 &amp;0 \\[0.5em]
+3 &amp;0&amp;0 &amp;-\frac{1}{4} &amp;1-\frac{1}{4} \\[0.5em]
+4 &amp;0 &amp;0&amp;1-\frac{1}{4} &amp;-\frac{1}{4}
+\end{array}
+</me>
+and the modularity is
+<me>
+Q =  \frac{1}{4} \left( 4 - 8 \cdot \frac{1}{4} \right) = \frac{1}{2}
+</me>
+
+</p>
+</solution>
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Two communities with no internal edges.
+
+			<image width="40%" xml:id="fig-img-modularity2">
+				<latex-image>
+\begin{tikzpicture}  %mathbook width=40%
+
+
+\draw [rounded corners,fill=gray!20] (-.33, .75) -- (1.33, .75) -- (1.33, 1.75) -- (-.33, 1.75) -- cycle;
+
+\draw [rounded corners,fill=gray!20] (-.33, -.75) -- (1.33, -.75) -- (1.33,.25) -- (-.33, .25) -- cycle;
+
+\node at (3,.5) {<m>Q \, = \, -1/2</m>};
+
+\draw[very thick] (0,0) -- (0,1);
+\draw[very thick] (1,0) -- (1,1);
+
+\draw[fill] (0,0) circle (3pt);
+\draw[fill] (1,0) circle (3pt);
+\draw[fill] (0,1) circle (3pt);
+\draw[fill] (1,1) circle (3pt);
+
+\node[above=3pt] at (0,1) {1};
+\node[below=3pt] at (0,0) {2};
+\node[above=3pt] at (1,1) {3};
+\node[below=3pt] at (1,0) {4};
+
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+<solution>
+<p>
+The terms are
+<me>
+\begin{array}{c|c|c|c|c}
+i \backslash j&amp;  1  &amp; 2 &amp; 3 &amp; 4 \\[0.5em]
+\hline
+1 &amp; -\frac{1}{4} &amp; 0 &amp;-\frac{1}{4} &amp;0\\[0.5em]
+2 &amp;0&amp;-\frac{1}{4} &amp;0 &amp;-\frac{1}{4}  \\[0.5em]
+3 &amp;-\frac{1}{4} &amp;0 &amp;-\frac{1}{4} &amp;0 \\[0.5em]
+4 &amp;0 &amp;-\frac{1}{4} &amp;0 &amp;-\frac{1}{4}
+\end{array}
+</me>
+and the modularity is
+<me>
+Q =  \frac{1}{4} \left( 0 - 8 \cdot \frac{1}{4} \right) = -\frac{1}{2}
+</me>
+
+</p>
+</solution>
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Two communities of sizes 3 and 1.
+
+			<image width="40%" xml:id="fig-img-modularity3">
+				<latex-image>
+\begin{tikzpicture}  %mathbook width=40%
+
+
+\draw [rounded corners,fill=gray!20] (-.33, -.75) -- (.33, -.75) -- (.33,.75) -- (1.33, .75) -- (1.33, 1.75) -- (-.33, 1.75) -- cycle;
+
+\draw [rounded corners,fill=gray!20] (.67, -.75) -- (1.33, -.75) -- (1.33,.25) -- (.67, .25) -- cycle;
+
+
+\node at (3,.5) {<m>Q \, = \, -1/8</m>};
+
+\draw[very thick] (0,0) -- (0,1);
+\draw[very thick] (1,0) -- (1,1);
+
+\draw[fill] (0,0) circle (3pt);
+\draw[fill] (1,0) circle (3pt);
+\draw[fill] (0,1) circle (3pt);
+\draw[fill] (1,1) circle (3pt);
+
+\node[above=3pt] at (0,1) {1};
+\node[below=3pt] at (0,0) {2};
+\node[above=3pt] at (1,1) {3};
+\node[below=3pt] at (1,0) {4};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+<solution>
+<p>
+The terms are
+<me>
+\begin{array}{c|c|c|c|c}
+i \backslash j&amp;  1  &amp; 2 &amp; 3 &amp; 4 \\[0.5em]
+\hline
+1 &amp; -\frac{1}{4} &amp; 1-\frac{1}{4} &amp;-\frac{1}{4}&amp;0\\[0.5em]
+2 &amp;1-\frac{1}{4} &amp;-\frac{1}{4} &amp;-\frac{1}{4} &amp;0\\[0.5em]
+3 &amp;-\frac{1}{4} &amp;-\frac{1}{4} &amp;-\frac{1}{4} &amp;0 \\[0.5em]
+4 &amp;0&amp;0&amp;0 &amp;-\frac{1}{4}
+\end{array}
+</me>
+and the modularity is
+<me>
+Q =  \frac{1}{4} \left( 2 - 10 \cdot \frac{1}{4} \right) = -\frac{1}{8}
+</me>
+
+</p>
+</solution>
+
+					</p>
+				</li>
+			</ol>
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Modularity Calculation for a Path</title>
+			<idx><h>Modularity Calculation for a Path</h></idx>
+			<statement>
+				<p>
+Confirm the modularity scored  obtained by splitting the path <m>P_4</m> into the given communities.
+
+
+			<ol>
+
+				<li>
+					<p>
+ A single community.
+
+
+			<image width="50%" xml:id="fig-img-modularity4">
+				<latex-image>
+\begin{tikzpicture} %mathbook width=50%
+
+
+\draw [rounded corners,fill=gray!20] (-.33, -.75) -- (3.33, -.75) -- (3.33,.75) --  (-.33, .75) -- cycle;
+
+
+\node at (4,-1.5) {<m>Q \, = \, 0</m>};
+
+
+\draw[very thick] (0,0) -- (3,0);
+
+
+\draw[fill] (0,0) circle (3pt);
+\draw[fill] (1,0) circle (3pt);
+\draw[fill] (2,0) circle (3pt);
+\draw[fill] (3,0) circle (3pt);
+
+\node[above=3pt] at (0,0) {1};
+\node[above=3pt] at (1,0) {2};
+\node[above=3pt] at (2,0) {3};
+\node[above=3pt] at (3,0) {4};
+
+
+
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+<solution>
+<p>
+The terms are
+<me>
+\begin{array}{c|c|c|c|c}
+i \backslash j&amp;  1  &amp; 2 &amp; 3 &amp; 4 \\
+\hline
+1 &amp;1 - \frac{1}{6}&amp;- \frac{1}{3}&amp;- \frac{1}{3}&amp;- \frac{1}{6}\\[0.5em]
+2 &amp;- \frac{1}{3}&amp;2- \frac{2}{3}&amp;- \frac{2}{3}&amp;- \frac{1}{3}\\[0.5em]
+3 &amp;- \frac{1}{3}&amp;- \frac{2}{3}&amp;2 - \frac{2}{3}&amp;- \frac{1}{3}\\[0.5em]
+4 &amp;- \frac{1}{6}&amp;- \frac{1}{3}&amp;- \frac{1}{3}&amp;1- \frac{1}{6}
+\end{array}
+</me>
+and the modularity is
+<me>
+Q =  \frac{1}{6} \left( 6 - 4 \cdot \frac{1}{6} - 8 \cdot \frac{1}{3} - 4 \cdot \frac{2}{3} \right) =
+\frac{1}{6} \left( 6 - \frac{18}{3} \right) = 0
+</me>
+
+</p>
+</solution>
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Two communities separated by the most central edge.
+
+
+			<image width="50%" xml:id="fig-img-modularity5">
+				<latex-image>
+\begin{tikzpicture} %mathbook width=50%
+
+
+\draw [rounded corners,fill=gray!20] (-.33, -.75) -- (1.33, -.75) -- (1.33,.75) --  (-.33, .75) -- cycle;
+
+
+\draw [rounded corners,fill=gray!20] (2-.33, -.75) -- (3.33, -.75) -- (3.33,.75) --  (2-.33, .75) -- cycle;
+
+
+\node at (4,-1.5) {<m>Q \, = \, 1/2</m>};
+
+\draw[very thick] (0,0) -- (3,0);
+
+
+\draw[fill] (0,0) circle (3pt);
+\draw[fill] (1,0) circle (3pt);
+\draw[fill] (2,0) circle (3pt);
+\draw[fill] (3,0) circle (3pt);
+
+\node[above=3pt] at (0,0) {1};
+\node[above=3pt] at (1,0) {2};
+\node[above=3pt] at (2,0) {3};
+\node[above=3pt] at (3,0) {4};
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+<solution>
+<p>
+The terms are
+<me>
+\begin{array}{c|c|c|c|c}
+i \backslash j&amp;  1  &amp; 2 &amp; 3 &amp; 4 \\[0.5em]
+\hline
+1 &amp;1 - \frac{1}{6}&amp;- \frac{1}{3}&amp;0&amp;0\\[0.5em]
+2 &amp;- \frac{1}{3}&amp;2- \frac{2}{3}&amp;0&amp;0\\[0.5em]
+3 &amp;0&amp;0&amp;2 - \frac{2}{3}&amp;- \frac{1}{3}\\[0.5em]
+4 &amp;0&amp;0&amp;- \frac{1}{3}&amp;1- \frac{1}{6}
+\end{array}
+</me>
+and the modularity is
+<me>
+Q =  \frac{1}{6} \left( 6 - 2 \cdot \frac{1}{6} - 4 \cdot \frac{1}{3} - 2 \cdot \frac{2}{3} \right) = \frac{1}{2}
+</me>
+
+</p>
+</solution>
+
+					</p>
+				</li>
+			</ol>
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Use this <url href="https://docs.google.com/spreadsheets/d/1kEP0CkUeG9s0RrJDtZcSmkDRKR7JWryNItu4b60pYYs/edit?usp=sharing" >link to a Google Sheet</url>
+to explore the ways to partition graphs on four vertices. <em>You may add self-loops</em>, but such a loop corresponds to <m>A_{ii}=2</m> (so that the degrees are correct).
+
+			<ol>
+
+				<li>
+					<p>
+ Can you find a graph and a partition with modularity greater than <m>1/2</m>? If not, why not?
+
+
+<solution>
+<p>
+Yes, you can. Using loops and communities of size 1 is the key. In fact, a graph with a loop at each vertex that is split into four singleton communities leads to the calculation
+<me>
+\begin{array}{c|c|c|c|c}
+i \backslash j&amp;  1  &amp; 2 &amp; 3 &amp; 4 \\[0.5em]
+\hline
+1 &amp;2 - \frac{1}{2}&amp;0&amp;0&amp;0\\[0.5em]
+2 &amp;0&amp;2 - \frac{1}{2} &amp;0&amp;0\\[0.5em]
+3 &amp;0&amp;0&amp;2 - \frac{1}{2}&amp;0 \\[0.5em]
+4 &amp;0&amp;0&amp;0&amp;2 - \frac{1}{2}
+\end{array}
+</me>
+so the modularity is
+<me>
+Q =  \frac{1}{8} \cdot 4 \left(2 -  \frac{1}{2} \right) = \frac{3}{4}
+</me>
+
+</p>
+</solution>
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Can you find a graph and a partition with modularity less than <m>-1/2</m>? If not, why not?
+
+<solution>
+<p>
+No, you cannot. In order to maximize modularity, you want all the edges to be external to your communities. So the only question is: how many communities should we have?
+
+Here are the results from the possibilities for community sizes. All edges between communities are present.
+		<ul>
+			<li>
+			<p>
+ One community with 4 vertices has <m>Q=0</m> (or maybe <m>Q</m> is undefined for the empty graph?)
+			</p>
+			</li>
+			<li>
+			<p>
+ Two communities: <m>(3, 1)</m> has <m>Q = -1/2</m>
+			</p>
+			</li>
+			<li>
+			<p>
+ Two communities: <m>(2,2)</m> has  <m>Q=-1/2</m>
+			</p>
+			</li>
+			<li>
+			<p>
+ Three communities: <m>(2,1,1)</m> has <m>Q= -17/50</m>
+			</p>
+			</li>
+			<li>
+			<p>
+ Four communities: <m>(1,1,1,1)</m> has <m>Q=0</m>
+			</p>
+			</li>
+		</ul>
+
+</p>
+</solution>
+
+
+					</p>
+				</li>
+			</ol>
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Understanding Modularity, Part I</title>
+			<idx><h>Understanding Modularity, Part I</h></idx>
+			<statement>
+				<p>
+Modularity measures the extent to which edges are internal to communities, compared with spanning different communities. We will explain why this is the case. Basically, we are comparing the actual structure of the network with the expected structure of a network where we randomize the edges (but preserve the vertex degrees).
+
+			<ol>
+
+				<li>
+					<p>
+ Explain why the following expression counts the total number of edges
+<me>
+\frac{1}{2} \sum_{i}  \sum_{j}  A_{ij}
+</me>
+
+<solution>
+<p>
+When we sum all of the entries of the adjacency matrix, we  count every edge twice.
+</p>
+</solution>
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Now explain why the following expression counts the total number of edges that are <em>internal</em> to one of the designated communities.
+<me>
+\frac{1}{2}  \sum_{i}  \sum_{j} A_{ij}  \, \delta (C^{(i)}, C^{(j)})
+</me>
+
+<solution>
+<p>
+The Kronecker delta function is 1 when <m>i,j</m> are in the same community and it is 0 otherwise. So we only count internal edges of communities. The sum counts each of these edges twice.
+</p>
+</solution>
+
+					</p>
+				</li>
+			</ol>
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Understanding Modularity, Part II</title>
+			<idx><h>Understanding Modularity, Part II</h></idx>
+			<statement>
+				<p>
+Now we will randomly rewire the network. We keep the ends of the edges, so that the vertex degrees do not change (see the figure to the right). We erase the edges themselves, which gives us a configuration like the one pictured to the right. Next, we randomly add edges between pairs of vertices, until all edges have been redrawn. Loops are allowed, as are multiple edges between pairs of vertices.
+
+			</p><p>
+
+Note that the degree of vertex <m>i</m> will still be <m>k_i</m> when this process is done.
+
+
+			<image width="40%" xml:id="fig-img-modularity6" source="images/rewire-vertex.png" />
+
+			<ol>
+
+				<li>
+					<p>
+ Pick the start of one edge at vertex <m>i</m>. What is the probability that this rewired edge connects to vertex <m>j</m>?
+
+<solution>
+<p>
+The probability is really
+<me>
+\frac{k_j}{2m-1}
+</me>
+but this is basically the same as
+<me>
+\frac{k_j}{2m}
+</me>
+for a very large network.
+
+</p>
+</solution>
+
+					</p>
+				</li>
+				<li>
+					<p>
+ So how many rewired edges from vertex <m>i</m> do we expect to connect to vertex <m>j</m>? (Assume that the network is so big that the chance that two ends at <m>i</m> try to connect  to the same end at <m>j</m> is irrelevant.)
+
+<solution>
+<p>
+The expected number of such edges is really
+<me>
+k_i \frac{k_j}{2m-1}
+</me>
+but this is basically the same as
+<me>
+\frac{k_i k_j}{2m}
+</me>
+for a very large network. Essentially, what we are doing is ignoring the probability that we pick the same endpoint twice.
+
+</p>
+</solution>
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Now argue that the expected number of rewired edges that are internal to the specified communities is
+<me>
+\frac{1}{2} \sum_{i}  \sum_{j}  \frac{k_i k_j}{2m} \, \delta (C^{(i)}, C^{(j)})
+</me>
+Here, the <m>\frac{1}{2}</m> takes care of the double counting since our sum looks at the pair <m>i,j</m> twice.
+
+
+<solution>
+<p>
+In this case, the Kronecker delta function makes it so that we only count edges within communities.
+
+</p>
+</solution>
+
+					</p>
+				</li>
+			</ol>
+
+We subtract the expression in question 4(c) from the expression in question 3(b). We then divide by the total number of edges <m>m</m> (a normalizing factor) to get the modularity
+<me>
+Q = \frac{1}{2m} \sum_{i}  \sum_{j}  \left( A_{ij} - \frac{k_i k_j}{2m} \right)\, \delta (C^{(i)}, C^{(j)}).
+</me>
+
+
+				</p>
+			</statement>
+		</exercise>
+	</exercises>
+
+</chapter>

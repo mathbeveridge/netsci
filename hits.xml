@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+
+
+<chapter xml:id="hits" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Hubs and Authorities</title>
+	<introduction>
+		<p>
+
+
+
+At this point, we have seen three different "feedback centralities" to identify important vertices.  eigenvector centrality, Katz centrality and PageRank centrality. Each of them can be phrased as <em>dominant eigenvalue</em> problem.
+
+			</p><p>
+
+Today, we will talk about the HITS (Hyperlink-Induced Topic Search) algorithm, which takes a slightly different approach. Eigenvectors will still be the key to understanding this feedback centrality algorithm.
+
+
+The core idea of HITS is that vertices can play two different roles in the network:
+		<ul>
+			<li>
+			<p>
+ <em>Authorities</em>: contain useful information (eg restaurant, college, newspaper)
+			</p>
+			</li>
+			<li>
+			<p>
+ <em>Hubs</em>: pages that link to authorities (eg Yelp, college admission consultant, news aggregator)
+			</p>
+			</li>
+		</ul>
+The point here is that
+<em>authorities are in competition with one another</em>, so they have no incentive to link to one another. Instead, <em>hubs act as the aggregators</em>, being expert consumers of the information that the authorities provide. Finally, these are <em>roles</em>, so it is possible for a vertex to be both an authority and a hub at the same time.
+
+			</p><p>
+
+Therefore, each vertex will get <em>two scores</em> instead of one: an authority score and a hub score.
+Therefore, we will replace the one-step recursive mantra "important vertices have important neighbors" with the following two-step recursive mantra:
+
+		<ul>
+			<li>
+			<p>
+ If <m>v</m> has a high authority score, then <m>v</m> has in-neighbors with  high hub scores.
+			</p>
+			</li>
+			<li>
+			<p>
+  If <m>v</m> has a high hub score, then <m>v</m> has out-neighbor with high authority scores.
+			</p>
+			</li>
+		</ul>
+
+
+
+
+The HITS algorithm works as follows
+		<ul>
+			<li>
+			<p>
+ Initialize hub score <m>\leftarrow</m> 1.
+			</p>
+			</li>
+			<li>
+			<p>
+ Repeat:
+		<ul>
+			<li>
+			<p>
+ Update the authority score <m>\leftarrow</m> sum on in-neighbors' (new) hub scores.
+			</p>
+			</li>
+			<li>
+			<p>
+ Update the hub score <m>\leftarrow </m> sum of out-neighbors' authority scores.
+			</p>
+			</li>
+			<li>
+			<p>
+ Normalize the scores so that each maximum is 1.
+			</p>
+			</li>
+		</ul>
+			</p>
+			</li>
+		</ul>
+
+Here is what it looks like on a bipartite directed graph where all the edges point from set <m>X</m> to set <m>Y</m>. In this case, the authority scores in <m>X</m> will always be 0, and the hub scores in <m>Y</m> will always be 0. So we only show the hub scores for <m>X</m> and the authority scores for <m>Y</m>. We also skip the normalization.
+
+			<image width="100%" xml:id="fig-img-hits0">
+				<latex-image>
+\begin{tikzpicture}[scale=.8] %mathbook width=100%
+\tikzset{edge/.style = {-&gt;,&gt; = latex'}}
+
+
+\begin{scope}
+
+\node at (1,0) {t=0};
+
+
+
+
+
+\node[circle,fill=black,inner sep=0pt,minimum size=8pt] (x1) at (0,4) {};
+\node[circle,fill=black,inner sep=0pt,minimum size=8pt] (x2) at (0,3) {};
+\node[circle,fill=black,inner sep=0pt,minimum size=8pt] (x3) at (0,2) {};
+\node[circle,fill=black,inner sep=0pt,minimum size=8pt] (x4) at (0,1) {};
+
+\node[circle,fill=black,inner sep=0pt,minimum size=8pt] (y1) at (2,4) {};
+\node[circle,fill=black,inner sep=0pt,minimum size=8pt] (y2) at (2,3) {};
+\node[circle,fill=black,inner sep=0pt,minimum size=8pt] (y3) at (2,2) {};
+\node[circle,fill=black,inner sep=0pt,minimum size=8pt] (y4) at (2,1) {};
+
+
+
+\draw[-latex] (x1) to (y1);
+\draw[-latex] (x1) to (y2);
+\draw[-latex] (x2) to (y1);
+\draw[-latex] (x2) to (y3);
+\draw[-latex] (x2) to (y4);
+\draw[-latex] (x3) to (y2);
+\draw[-latex] (x4) to (y3);
+
+
+\node at (-1,4.75) {\small hub};
+\node at (-1,4) {\small <m>1</m>};
+\node at (-1,3) {\small <m>1</m>};
+\node at (-1,2) {\small <m>1</m>};
+\node at (-1,1) {\small <m>1</m>};
+
+
+\node at (3,4.75) {\small authority};
+\node at (3,4) {\small <m>-</m>};
+\node at (3,3) {\small <m>-</m>};
+\node at (3,2) {\small <m>-</m>};
+\node at (3,1) {\small <m>-</m>};
+
+\end{scope}
+
+
+
+\begin{scope}[shift={(6.5,0)}]
+
+\node at (1,0) {t=1};
+
+\node[circle,fill=black,inner sep=0pt,minimum size=8pt] (x1) at (0,4) {};
+\node[circle,fill=black,inner sep=0pt,minimum size=8pt] (x2) at (0,3) {};
+\node[circle,fill=black,inner sep=0pt,minimum size=8pt] (x3) at (0,2) {};
+\node[circle,fill=black,inner sep=0pt,minimum size=8pt] (x4) at (0,1) {};
+
+\node[circle,fill=black,inner sep=0pt,minimum size=8pt] (y1) at (2,4) {};
+\node[circle,fill=black,inner sep=0pt,minimum size=8pt] (y2) at (2,3) {};
+\node[circle,fill=black,inner sep=0pt,minimum size=8pt] (y3) at (2,2) {};
+\node[circle,fill=black,inner sep=0pt,minimum size=8pt] (y4) at (2,1) {};
+
+\draw[-latex] (x1) to (y1);
+\draw[-latex] (x1) to (y2);
+\draw[-latex] (x2) to (y1);
+\draw[-latex] (x2) to (y3);
+\draw[-latex] (x2) to (y4);
+\draw[-latex] (x3) to (y2);
+\draw[-latex] (x4) to (y3);
+
+
+\node at (-1,4.75) {\small hub};
+\node at (-1,4) {\small <m>4</m>};
+\node at (-1,3) {\small <m>5</m>};
+\node at (-1,2) {\small <m>2</m>};
+\node at (-1,1) {\small <m>2</m>};
+
+
+\node at (3,4.75) {\small authority};
+\node at (3,4) {\small <m>2</m>};
+\node at (3,3) {\small <m>2</m>};
+\node at (3,2) {\small <m>2</m>};
+\node at (3,1) {\small <m>1</m>};
+
+\end{scope}
+
+
+\begin{scope}[shift={(13,0)}]
+
+\node at (1,0) {t=2};
+
+\node[circle,fill=black,inner sep=0pt,minimum size=8pt] (x1) at (0,4) {};
+\node[circle,fill=black,inner sep=0pt,minimum size=8pt] (x2) at (0,3) {};
+\node[circle,fill=black,inner sep=0pt,minimum size=8pt] (x3) at (0,2) {};
+\node[circle,fill=black,inner sep=0pt,minimum size=8pt] (x4) at (0,1) {};
+
+\node[circle,fill=black,inner sep=0pt,minimum size=8pt] (y1) at (2,4) {};
+\node[circle,fill=black,inner sep=0pt,minimum size=8pt] (y2) at (2,3) {};
+\node[circle,fill=black,inner sep=0pt,minimum size=8pt] (y3) at (2,2) {};
+\node[circle,fill=black,inner sep=0pt,minimum size=8pt] (y4) at (2,1) {};
+
+
+\draw[-latex] (x1) to (y1);
+\draw[-latex] (x1) to (y2);
+\draw[-latex] (x2) to (y1);
+\draw[-latex] (x2) to (y3);
+\draw[-latex] (x2) to (y4);
+\draw[-latex] (x3) to (y2);
+\draw[-latex] (x4) to (y3);
+
+
+\node at (-1,4.75) {\small hub};
+\node at (-1,4) {\small <m>15</m>};
+\node at (-1,3) {\small <m>21</m>};
+\node at (-1,2) {\small <m>6</m>};
+\node at (-1,1) {\small <m>7</m>};
+
+
+\node at (3,4.75) {\small authority};
+\node at (3,4) {\small <m>9</m>};
+\node at (3,3) {\small <m>6</m>};
+\node at (3,2) {\small <m>7</m>};
+\node at (3,1) {\small <m>5</m>};
+
+\end{scope}
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+
+Let's give a mathematical description of this rule.
+
+The HITS algorithm's double recursion updates the hub score <m>h_i</m> and the authority score <m>a_i</m> for each vertex. The recursion is:
+		<ul>
+			<li>
+			<p>
+ Initially, <m>h_i(0) = 1</m> for every vertex <m>i</m>
+			</p>
+			</li>
+			<li>
+			<p>
+ Repeat until convergence for <m>t \geq 1</m>:
+		<ul>
+			<li>
+			<p>
+ For every vertex <m>{i}</m>, update   <m>\displaystyle{a_i(t) = \sum_{j \rightarrow i} h_j(t-1)}</m>
+			</p>
+			</li>
+			<li>
+			<p>
+ For every vertex <m>j</m>, update   <m>\displaystyle{h_j(t) = \sum_{j \rightarrow i} a_i(t)}</m>
+			</p>
+			</li>
+			<li>
+			<p>
+ Normalize both values.
+			</p>
+			</li>
+		</ul>
+			</p>
+			</li>
+		</ul>
+
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+
+
+		<exercise>
+			<title>Example of HITS Iterations</title>
+			<idx><h>Example of HITS Iterations</h></idx>
+			<statement>
+				<p>
+Consider the following digraph
+
+			<image width="40%" xml:id="fig-img-hits1" source="images/hub-auth-digraph.png" />
+
+with adjacency matrix
+<me>
+A = \begin{bmatrix}
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 0  \\
+0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0  &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0
+\end{bmatrix}.
+</me>
+
+
+
+Perform some iterations of the HITS algorithm, <em>but don't worry about scaling</em>. (It's the relative size of scores that matters.)
+
+
+
+
+We start with the the hub vector <m>\bh_0 = \begin{bmatrix}  1 &amp;1 &amp; 1 &amp; 1 &amp; 1 \end{bmatrix}^{\top}</m>.
+Fill in the table below, as follows, starting at <m>t=1</m>
+		<ul>
+			<li>
+			<p>
+ Update the <m>i</m>th entry of <m>\ba_t</m> to be the sum of all of the <m>\bh_{t-1}</m> values of the <em>in-neighbors</em> of vertex <m>i</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ Update the <m>i</m>th entry of <m>\bh_t</m> to be the sum of all of the <m>\ba_t</m> values of the <em>out-neighbors</em> of vertex <m>i</m>
+
+
+			</p>
+			</li>
+		</ul>
+
+
+<me>
+\begin{array}{ccc}
+
+\begin{array}{c||c|c|c|c|c}
+&amp; \,\,A\,\, &amp; \,\, B\,\,&amp; \,\,C\,\, &amp; \,\,D\,\, &amp; \,\,E\,\, \\
+\hline
+\ba_0  &amp; - &amp; - &amp; -&amp; - &amp; - \\
+\hline
+\ba_1  &amp;&amp;&amp;&amp;&amp; \\
+\hline
+\ba_2  &amp;&amp;&amp;&amp;&amp; \\
+\hline
+\ba_3  &amp;&amp;&amp;&amp;&amp; \\
+
+\end{array}
+
+&amp; \phantom{asdasd}
+
+&amp;
+\begin{array}{c||c|c|c|c|c}
+&amp; \,\,A\,\, &amp; \,\, B\,\,&amp; \,\,C\,\, &amp; \,\,D\,\, &amp; \,\,E\,\, \\
+\hline
+\bh_0  &amp; 1&amp;1&amp;1&amp;1&amp;1 \\
+\hline
+\bh_1  &amp;&amp;&amp;&amp;&amp; \\
+\hline
+\bh_2  &amp;&amp;&amp;&amp;&amp; \\
+\hline
+\bh_3  &amp;&amp;&amp;&amp;&amp; \\
+
+\end{array}
+
+\end{array}
+</me>
+
+
+
+<solution>
+<p>
+
+<me>
+\begin{array}{ccc}
+
+\begin{array}{c||c|c|c|c|c}
+&amp; \,\,A\,\, &amp; \,\, B\,\,&amp; \,\,C\,\, &amp; \,\,D\,\, &amp; \,\,E\,\, \\
+\hline
+\ba_0  &amp; - &amp; - &amp; -&amp; - &amp; - \\
+\hline
+\ba_1  &amp; 0 &amp; 1 &amp; 2 &amp; 2 &amp; 1 \\
+\hline
+\ba_2  &amp;0 &amp; 1 &amp;8&amp;6&amp; 5 \\
+\hline
+\ba_3  &amp; 0 &amp; 1 &amp; 27&amp; 25 &amp; 19  \\
+
+\end{array}
+
+&amp; \phantom{asdasd}
+
+&amp;
+\begin{array}{c||c|c|c|c|c}
+&amp; \,\,A\,\, &amp; \,\, B\,\,&amp; \,\,C\,\, &amp; \,\,D\,\, &amp; \,\,E\,\, \\
+\hline
+\bh_0  &amp; 1&amp;1&amp;1&amp;1&amp;1 \\
+\hline
+\bh_1  &amp;1 &amp; 5 &amp; 0 &amp; 3 &amp; 1 \\
+\hline
+\bh_2  &amp; 1 &amp; 19 &amp; 0&amp; 8 &amp;  6 \\
+\hline
+\bh_3  &amp; 1 &amp;71&amp; 0 &amp;27 &amp;25 \\
+
+\end{array}
+
+\end{array}
+</me>
+
+</p>
+</solution>
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>HITS Update Rules</title>
+			<idx><h>HITS Update Rules</h></idx>
+			<statement>
+				<p>
+With the previous problem in mind, write each of the update rules as a matrix equation using the adjacency matrix <m>A</m> and the column vectors
+<me>
+\ba(t) =\begin{bmatrix}   a_1(t) \\ \vdots \\ a_n(t) \end{bmatrix}  \mbox{ and }
+\bh(t) = \begin{bmatrix} h_1(t) \\  \vdots \\  h_n(t) \end{bmatrix}.
+</me>
+(Hint: you will need to use <m>A^{\top}</m> for one of your equations.)
+Check that your matrix equations are correct for the example from Problem 1.
+
+
+<solution>
+<p>
+
+
+Our recursive update rule is
+</p>
+<md>
+<mrow>
+\bh(t) &amp;= A \, \ba(t-1),
+</mrow>
+<mrow>
+\ba(t) &amp;= A^{\top} \, \bh(t).
+</mrow>
+</md>
+<p>
+
+Row <m>i</m> of <m>A</m> contains the out-neighbors of vertex <m>i</m>.  Row <m>i</m> of <m>A^{\top}</m> contains the in-neighbors of <m>i</m>.
+
+
+
+</p>
+</solution>
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>HITS Matrix Equations</title>
+			<idx><h>HITS Matrix Equations</h></idx>
+			<statement>
+				<p>
+Using your answer in question 2, you can now write down two matrix recurrences for <m>t \geq 2</m>:
+		<ul>
+			<li>
+			<p>
+ A matrix equation for finding <m>\ba(t)</m> directly from <m>\ba(t-1)</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ A matrix equation for finding <m>\bh(t)</m> directly from <m>\bh(t-1)</m>.
+			</p>
+			</li>
+		</ul>
+
+<solution>
+<p>
+We have
+<me>
+\begin{array}{lllll}
+\bh(t) &amp;=&amp; A  \ba(t-1)  &amp;=&amp; \,  A \, A^{\top} \, \bh(t), \\
+\ba(t) &amp;=&amp; A^{\top} \bh(t)  &amp;=&amp; A^{\top} \, A \, \ba(t-1)
+\end{array}
+</me>
+which we can write more compactly as
+<me>
+\begin{array}{lllll}
+\bh(t) &amp;=&amp;   A \, A^{\top} \, \bh(t), \\
+\ba(t)  &amp;=&amp; A^{\top} \, A \, \ba(t-1).
+\end{array}
+</me>
+
+</p>
+</solution>
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>HITS Eigensystems</title>
+			<idx><h>HITS Eigensystems</h></idx>
+			<statement>
+				<p>
+After convergence, our update rule becomes <m>\ba \rightarrow c_1 \ba</m> and <m>\bh \rightarrow c_2 \bh</m>. (Recall that HITS performs a renormalization at each step to deal with <m>c_1, c_2</m>.) So after convergence, your matrix equations   become statements about eigenvectors and eigenvalues. With that in mind:
+			<ol>
+				<li>
+					<p>
+   How are <m>c_1</m> and <m>c_2</m> related to the eigenvalues of your matrices in question 2?
+					</p>
+				</li>
+				<li>
+					<p>
+ How do <m>c_1</m> and <m>c_2</m> relate to each other?
+					</p>
+				</li>
+				<li>
+					<p>
+ What is the  (linear algebraic) relationship between the authority vector <m>\ba</m> and the hub vector <m>\bh</m>?
+					</p>
+				</li>
+			</ol>
+For inspiration you  should look back at our discussion of other algebraic centralities.
+
+
+<solution>
+<p>
+
+
+For each of the matrix equations above, as <m>t \rightarrow \infty</m>, we converge to a vector in the direction of the largest eigenvector. In other words, the hub score <m>\bh</m> satisfies
+<me>
+A \, A^{\top} \, \bh= \lambda \bh
+</me>
+where <m>\lambda</m> is the largest eigenvalue of <m>A \, A^{\top}</m>.
+Meanwhile, the authority score <m>\ba</m> satisfies
+<me>
+A^{\top} \, A \,   \ba= \mu \ba
+</me>
+where <m>\mu</m> is the largest eigenvalue of <m>A^{\top} \,A</m>.
+
+
+			</p><p>
+
+Here's a cool connection: a couple of standard linear algebra results will show us that <m>\lambda=\mu</m>. Recall from your linear algebra class
+		<ul>
+			<li>
+			<p>
+ For any matrix <m>M</m>, we have <m>\det(M) = \det(M^{\top})</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ The eigenvalues of a matrix <m>B</m> are the solutions to
+<me>
+\det(B - \mu I) = 0
+</me>
+			</p>
+			</li>
+		</ul>
+Therefore, <m>B</m> and <m>B^{\top}</m> have the same eigenvalues (though they usually have different eigenvectors). By observing that
+<m></m>(A A^{\top})^{\top} = A^{\top} A,<m></m>
+we  conclude that <m>\lambda = \mu</m>.
+
+			</p><p>
+
+Let's go a step further. Taking the transpose of the equation <m>A^{\top} \, A \,   \ba= \mu \ba</m>, we get
+<me>
+\ba^{\top} A \, A^{\top}   = \lambda \ba^{\top}.
+</me>
+In other words, the <em>row vector</em> <m>\ba^{\top}</m> is a <em>left eigenvector</em> of the matrix <m>A \, A^{\top}</m> for the largest eigenvalue <m>\lambda</m>. Meanwhile,
+<me>
+A \, A^{\top} \, \bh= \lambda \bh
+</me>
+says that the column vector <m>\bh</m> is a <em>right eigenvector</em> for the same eigenvalue <m>\lambda</m>.
+
+
+			</p><p>
+
+Every <m>n \times n</m> matrix has both left eigenvectors and right eigenvectors. You might be more comfortable with left eigenvectors because we tend to focus on <em>column vectors</em>. But matrix transposition is a simple operation that swaps the roles of rows and vectors. So any result about column vectors can be turned into an equivalent statement about row vectors.
+
+
+</p>
+</solution>
+
+
+				</p>
+			</statement>
+		</exercise>
+	</exercises>
+</chapter>

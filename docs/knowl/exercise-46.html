@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Binomial Random Variable.</span>
+</h6>
+<p>Flip a weighted coin \(n\) times, where \(p\) is the probability of obtaining heads, and \(1-p\) is the probability of obtaining tails. Define \(X\) to be the number of heads in the \(n\) tosses. This is the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">binomial random variable with parameters \(n\) and \(p\)</em>.</p>
+<ol class="lower-alpha">
+<li>
+<p>Give a combinatorial argument for why the PMF of the binomial random variable is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+p(k) = {n \choose k} p^k (1 - p)^{n-k}.
+\end{equation*}
+</div>
+<p class="continuation"><a class="solution-knowl original" data-knowl="./knowl/solution-78-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
+</li>
+<li>
+<p>Use the binomial theorem</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+(x+y)^n = \sum_{k=0}^n {n \choose k} x^ky^{n-k}
+\end{equation*}
+</div>
+<p class="continuation">to prove that \(p(k)\) is a PMF. <a class="solution-knowl original" data-knowl="./knowl/solution-79-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
+</li>
+<li>
+<p>Linearity of expectation applies to the sum of multiple random variables. In particular, an easy proof by induction shows that for any random variables \(X_1, X_2, \ldots, X_n\text{,}\) we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[X_1 + X_2 + \cdots + X_n] = \E[X_1] + \E[X_2] + \cdots + \E[X_n]
+\end{equation*}
+</div>
+<p class="continuation">Use this formula to show that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[X] = np.
+\end{equation*}
+</div>
+<p class="continuation">You will have to split your random variable \(X\) into the sum of \(n\) random variables. (Note: you can also prove this directly from part (a), but it is a bit tedious.) <a class="solution-knowl original" data-knowl="./knowl/solution-80-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
+</li>
+<li>
+<p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">[Do not solve this one. It is a long calculation.]</em> It can be shown that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\var(X) = np(1-p).
+\end{equation*}
+</div>
+<p class="continuation">But you do not need to do this here. You need to use the fact that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[X^2] = \E[X(X-1) + X] = \E[X(X-1)] + \E[X],
+\end{equation*}
+</div>
+<p class="continuation">which follows from <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">linearity of expectation</em>. <a class="solution-knowl original" data-knowl="./knowl/solution-81-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
+</li>
+</ol></article><span class="incontext"><a href="exercises-9.html#exercise-46">in-context</a></span>
+</body>
+</html>

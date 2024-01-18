@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+
+
+
+
+<chapter xml:id="cascades" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Network Cascades</title>
+	<introduction>
+		<p>
+
+
+
+
+The linear threshold model  is a dynamic process for diffusion of innovation on a network. We are given a network and a threshold <m>0 &lt; q &lt; 1</m>. The network starts with all vertices using behavior <m>B</m>. We pick a seed set of innovators who adopt behavior <m>A</m>.
+
+We then watch the innovation spread according to the following rule.
+The vertex <m>v</m> will:
+		<ul>
+			<li>
+			<p>
+ adopt behavior <m>A</m> if <m>{p \geq q}</m>
+			</p>
+			</li>
+			<li>
+			<p>
+ adopt behavior <m>B</m> if <m>{p &lt; q}</m>
+			</p>
+			</li>
+		</ul>
+
+We cycle through all the vertices until the update process stabilizes. The resulting adoption process is called a <em>cascade</em>. We have a <em>complete cascade</em> when every vertex adopts the new behavior <m>A</m>.
+
+
+
+
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+
+		<exercise>
+			<title>Network Cascades from Singleton Seed Sets</title>
+			<idx><h>Network Cascades from Singleton Seed Sets</h></idx>
+			<statement>
+				<p>
+Consider this  network  with linear threshold <m>q=1/3</m>.
+Start a cascade by picking any single vertex to be the initial adopter. Does it spread to the entire network? What about the other vertices? Which ones lead to complete cascades?
+
+
+
+			<image width="50%" xml:id="fig-img-cascades0" source="images/graph7.png" />
+
+<solution>
+<p>
+For <m>q=1/3</m>, every singleton induces a complete cascade.
+</p>
+</solution>
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Network Cascades from Doubleton Seed Sets</title>
+			<idx><h>Network Cascades from Doubleton Seed Sets</h></idx>
+			<statement>
+				<p>
+Now set the threshold <m>q=1/2</m>. Using the same graph as in problem 1,
+determine the cascades for each of the following sets <m>S_0</m> of early adopters. Which initial sets induce complete cascades?
+
+			<ol>
+				<li>
+					<p>
+ <m>S_0 = \{1,2\}</m>
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>S_0 = \{2,3\}</m>
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>S_0 = \{1, 5\}</m>
+					</p>
+				</li>
+			</ol>
+
+<solution>
+<p>
+			<ol>
+				<li>
+					<p>
+ <m>S_0 = \{1,2\}</m>:  complete cascade
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>S_0 = \{2,3\}</m>:  complete cascade
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>S_0 = \{1, 5\}</m>:  only vertex 7 adopts the innovation
+					</p>
+				</li>
+			</ol>
+</p>
+</solution>
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Network Cascades that are Not Complete</title>
+			<idx><h>Network Cascades that are Not Complete</h></idx>
+			<statement>
+				<p>
+Continue using  threshold <m>q=1/2</m> for the network above. Find all of the initial adopter sets of size 2 that <em>do not</em> lead to complete cascades. Can you describe the network obstruction that prevented the cascade from expanding across the entire network?
+
+
+<solution>
+<p>
+The 2-sets that do not spark complete cascades are: <m>\{1,5\}</m> and <m>\{1,7\}</m> and <m>\{5,7\}</m> and <m>\{1,3\}</m>.
+For the first three sets, the cascade cannot jump out of the triangle <m>T=\{1,5,7\}</m>. The vertices that border set <m>T</m> have more neighbors in <m>\overline{A}</m> than in <m>A</m>, so they never adopt. Starting with set <m>\{1,3\}</m>, there is no cascade.
+</p>
+</solution>
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Complete Cascades and Cohesive Sets</title>
+			<idx><h>Complete Cascades and Cohesive Sets</h></idx>
+			<statement>
+				<p>
+Let <m>{G=(V,E)}</m> be a network with threshold <m>q \in [0,1]</m>.
+Let <m>{S_0}</m> be the initial set of innovators. Recall that a set <m>S</m> is <em>cohesive</em> when
+<me>
+p(S) = \min_{i \in S} \frac{ | N(i) \cap S| }{|N(i)|}   &gt; 1-q
+</me>
+where <m>N(i)</m> is the set of neighbors of <m>i</m>.
+
+			<ol>
+				<li>
+					<p>
+ Suppose that the  initial adopter set <m>{S_0}</m> does not cause a complete cascade. Prove that there is
+a cohesive set  <m>{S \subset V \backslash S_0}</m>.
+
+<solution>
+<p>
+Let <m>T</m> be the set of vertices that adopt behavior <m>A</m> during the cascade. Let <m>S= \overline{T}</m> be the vertices that never adopt the behavior. For every <m>i \in S</m>, we have
+<me>
+\frac{ | N(i) \cap S| }{|N(i)|}   &gt; 1-q.
+</me>
+(Otherwise, <m>i</m> would have adopted behavior <m>A</m>.) But this means that
+<me>
+p(S) = \min_{i \in S} \frac{ | N(i) \cap S| }{|N(i)|}   &gt; 1-q.
+</me>
+Therefore the set is cohesive.
+</p>
+</solution>
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Suppose that there is
+a cohesive set  <m>{S \subset V \backslash S_0}</m>. Prove that  initial adopter set <m>{S_0}</m> does not cause a complete cascade.
+
+<solution>
+<p>
+We claim that no vertex in <m>S</m> ever adopts behavior <m>A</m>. Assume for the sake of contradiction that <m>i \in S</m> is the first vertex in <m>S</m> to adopt the innovation <m>A</m>. But even if every vertex outside of <m>S</m> has adopted behavior <m>A</m>, we still have
+<me>
+\frac{ | N(i) \cap S| }{|N(i)|} &gt; 1-q,
+</me>
+and none of the vertices in <m>S</m> have adopted the innovation. So <m>i</m> does not adopt <m>A</m>, a contradiction. Therefore no vertex in <m>S</m> adopts the innovation.
+</p>
+</solution>
+
+					</p>
+				</li>
+			</ol>
+
+
+				</p>
+			</statement>
+		</exercise>
+	</exercises>
+
+
+
+</chapter>

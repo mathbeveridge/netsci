@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NetSci Hubs and Authorities</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\notdivide}{{\not{\mid}}}
+\newcommand{\notsubset}{\not\subset}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\gf}{\operatorname{GF}}
+\newcommand{\inn}{\operatorname{Inn}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}}
+\newcommand{\chr}{\operatorname{char}}
+\newcommand{\Null}{\operatorname{Null}}
+
+
+\def\Z{\mathbb Z}
+\def\R{\mathbb R}
+\def\Q{\mathbb Q}
+\def\N{{\mathbb N}}
+\def\C{\mathbb C}
+
+\def\ba{{\mathbf{a}}}
+\def\bb{\mathbf{b}}
+\def\bh{{\mathbf{h}}}
+\def\bu{{\mathbf{u}}}
+\def\bv{{\mathbf{v}}}
+\def\bw{{\mathbf{w}}}   
+\def\bx{{\mathbf{x}}}
+\def\by{\mathbf{y}}    
+\def\bone{{\mathbf{1}}}
+\def\bzero{\mathbf{0}}
+
+\def\var{{\mbox{var}}}
+\def\P{{\mathbb{P}}}
+\def\E{{\mathbb{E}}}
+
+
+\def\cA{{\overline{A}}}
+
+\def\kin{k^{\mathrm{in}}}
+\def\kout{k^{\mathrm{out}}}
+
+\newcommand{\indeg}[1]{k^{\mathrm{in}}_{#1}}
+\newcommand{\outdeg}[1]{k^{\mathrm{out}}_{#1}}
+
+\tikzset{-&gt;-/.style={decoration={
+ markings,
+ mark=at position .5 with {\arrow{latex}}},postaction={decorate}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="netsci.html"><span class="title">Network Science:</span> <span class="subtitle">Activities and Exercises</span></a></h1>
+<p class="byline">Andrew Beveridge</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="randomwalk.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="part-structure.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="us-airline.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="randomwalk.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="part-structure.html" title="Up">Up</a><a class="next-button button toolbar-item" href="us-airline.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link part"><a href="part-structure.html" data-scroll="part-structure"><span class="codenumber">I</span> <span class="title">Network Structure</span></a></li>
+<li class="link">
+<a href="graphs.html" data-scroll="graphs"><span class="codenumber">1</span> <span class="title">Graphs and Digraphs</span></a><ul><li><a href="exercises-1.html" data-scroll="exercises-1">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="centrality.html" data-scroll="centrality"><span class="codenumber">2</span> <span class="title">Centrality Measures</span></a><ul><li><a href="exercises-2.html" data-scroll="exercises-2">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="algcentrality.html" data-scroll="algcentrality"><span class="codenumber">3</span> <span class="title">Algebraic Centrality</span></a><ul><li><a href="exercises-3.html" data-scroll="exercises-3">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="randomwalk.html" data-scroll="randomwalk"><span class="codenumber">4</span> <span class="title">Random Walks</span></a><ul><li><a href="exercises-4.html" data-scroll="exercises-4">Practice Problems</a></li></ul>
+</li>
+<li class="link active">
+<a href="hits.html" data-scroll="hits"><span class="codenumber">5</span> <span class="title">Hubs and Authorities</span></a><ul><li><a href="exercises-5.html" data-scroll="exercises-5">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="us-airline.html" data-scroll="us-airline"><span class="codenumber">6</span> <span class="title">Analyzing the US Airline Network</span></a><ul><li><a href="exercises-6.html" data-scroll="exercises-6">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="modularity.html" data-scroll="modularity"><span class="codenumber">7</span> <span class="title">Modularity</span></a><ul><li><a href="exercises-7.html" data-scroll="exercises-7">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="communities.html" data-scroll="communities"><span class="codenumber">8</span> <span class="title">Community Detection in Gephi</span></a><ul><li><a href="exercises-8.html" data-scroll="exercises-8">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="randvar.html" data-scroll="randvar"><span class="codenumber">9</span> <span class="title">Discrete Random Variables</span></a><ul>
+<li><a href="randvar0.html" data-scroll="randvar0">Discrete Random Variables</a></li>
+<li><a href="randvar3.html" data-scroll="randvar3">Events</a></li>
+<li><a href="randvar6.html" data-scroll="randvar6">CDF and CCDF</a></li>
+<li><a href="randvar10.html" data-scroll="randvar10">Expectation, Variance and Moments</a></li>
+<li><a href="randvar16.html" data-scroll="randvar16">Famous Discrete Distributions</a></li>
+<li><a href="exercises-9.html" data-scroll="exercises-9">Practice Problems</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="powerlaw.html" data-scroll="powerlaw"><span class="codenumber">10</span> <span class="title">Power Laws</span></a><ul><li><a href="exercises-10.html" data-scroll="exercises-10">Practice Problems</a></li></ul>
+</li>
+<li class="link part"><a href="part-models.html" data-scroll="part-models"><span class="codenumber">II</span> <span class="title">Network Models</span></a></li>
+<li class="link">
+<a href="giantcomp.html" data-scroll="giantcomp"><span class="codenumber">11</span> <span class="title">The Emergence of the Giant Component</span></a><ul><li><a href="exercises-11.html" data-scroll="exercises-11">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="pricemodel.html" data-scroll="pricemodel"><span class="codenumber">12</span> <span class="title">Price's Model for a Citation Network</span></a><ul><li><a href="exercises-12.html" data-scroll="exercises-12">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="smallworld.html" data-scroll="smallworld"><span class="codenumber">13</span> <span class="title">The Small World Model</span></a><ul><li><a href="exercises-13.html" data-scroll="exercises-13">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="navsmallworld.html" data-scroll="navsmallworld"><span class="codenumber">14</span> <span class="title">Navigable Small World Model</span></a><ul><li><a href="exercises-14.html" data-scroll="exercises-14">Practice Problems</a></li></ul>
+</li>
+<li class="link part"><a href="part-processes.html" data-scroll="part-processes"><span class="codenumber">III</span> <span class="title">Processes on Networks</span></a></li>
+<li class="link">
+<a href="cascades.html" data-scroll="cascades"><span class="codenumber">15</span> <span class="title">Network Cascades</span></a><ul><li><a href="exercises-15.html" data-scroll="exercises-15">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="epidemics.html" data-scroll="epidemics"><span class="codenumber">16</span> <span class="title">Epidemics on Networks</span></a><ul><li><a href="exercises-16.html" data-scroll="exercises-16">Practice Problems</a></li></ul>
+</li>
+<li class="link part"><a href="part-homework.html" data-scroll="part-homework"><span class="codenumber">IV</span> <span class="title">Homework Exercises</span></a></li>
+<li class="link">
+<a href="hw-graphs.html" data-scroll="hw-graphs"><span class="codenumber">17</span> <span class="title">Exercises: Graphs and Digraphs</span></a><ul><li><a href="exercises-17.html" data-scroll="exercises-17">Homework Exercises</a></li></ul>
+</li>
+<li class="link">
+<a href="hw-centrality.html" data-scroll="hw-centrality"><span class="codenumber">18</span> <span class="title">Exercises: Centrality Measures</span></a><ul><li><a href="exercises-18.html" data-scroll="exercises-18">Homework Exercises</a></li></ul>
+</li>
+<li class="link">
+<a href="hw-degreedist.html" data-scroll="hw-degreedist"><span class="codenumber">19</span> <span class="title">Exercises: Degree Distributions and Power Laws</span></a><ul><li><a href="exercises-19.html" data-scroll="exercises-19">Homework Exercises</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="hits"><h2 class="heading">
+<span class="type">Chapter</span> <span class="codenumber">5</span> <span class="title">Hubs and Authorities</span>
+</h2>
+<section class="introduction" id="introduction-5"><p id="p-187">At this point, we have seen three different "feedback centralities" to identify important vertices.  eigenvector centrality, Katz centrality and PageRank centrality. Each of them can be phrased as <em class="emphasis">dominant eigenvalue</em> problem.</p>
+<p id="p-188">Today, we will talk about the HITS (Hyperlink-Induced Topic Search) algorithm, which takes a slightly different approach. Eigenvectors will still be the key to understanding this feedback centrality algorithm. The core idea of HITS is that vertices can play two different roles in the network:</p>
+<ul class="disc">
+<li id="li-95"><p id="p-189"><em class="emphasis">Authorities</em>: contain useful information (eg restaurant, college, newspaper)</p></li>
+<li id="li-96"><p id="p-190"><em class="emphasis">Hubs</em>: pages that link to authorities (eg Yelp, college admission consultant, news aggregator)</p></li>
+</ul>
+<p class="continuation">The point here is that <em class="emphasis">authorities are in competition with one another</em>, so they have no incentive to link to one another. Instead, <em class="emphasis">hubs act as the aggregators</em>, being expert consumers of the information that the authorities provide. Finally, these are <em class="emphasis">roles</em>, so it is possible for a vertex to be both an authority and a hub at the same time.</p>
+<p id="p-191">Therefore, each vertex will get <em class="emphasis">two scores</em> instead of one: an authority score and a hub score. Therefore, we will replace the one-step recursive mantra "important vertices have important neighbors" with the following two-step recursive mantra:</p>
+<ul class="disc">
+<li id="li-97"><p id="p-192">If \(v\) has a high authority score, then \(v\) has in-neighbors with  high hub scores.</p></li>
+<li id="li-98"><p id="p-193">If \(v\) has a high hub score, then \(v\) has out-neighbor with high authority scores.</p></li>
+</ul>
+<p class="continuation">The HITS algorithm works as follows</p>
+<ul class="disc">
+<li id="li-99"><p id="p-194">Initialize hub score \(\leftarrow\) 1.</p></li>
+<li id="li-100">
+<p id="p-195">Repeat:</p>
+<ul class="circle">
+<li id="li-101"><p id="p-196">Update the authority score \(\leftarrow\) sum on in-neighbors' (new) hub scores.</p></li>
+<li id="li-102"><p id="p-197">Update the hub score \(\leftarrow \) sum of out-neighbors' authority scores.</p></li>
+<li id="li-103"><p id="p-198">Normalize the scores so that each maximum is 1.</p></li>
+</ul>
+</li>
+</ul>
+<p class="continuation">Here is what it looks like on a bipartite directed graph where all the edges point from set \(X\) to set \(Y\text{.}\) In this case, the authority scores in \(X\) will always be 0, and the hub scores in \(Y\) will always be 0. So we only show the hub scores for \(X\) and the authority scores for \(Y\text{.}\) We also skip the normalization. <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/fig-img-hits0.svg" role="img" class="contained"></div> Let's give a mathematical description of this rule. The HITS algorithm's double recursion updates the hub score \(h_i\) and the authority score \(a_i\) for each vertex. The recursion is:</p>
+<ul class="disc">
+<li id="li-104"><p id="p-199">Initially, \(h_i(0) = 1\) for every vertex \(i\)</p></li>
+<li id="li-105">
+<p id="p-200">Repeat until convergence for \(t \geq 1\text{:}\)</p>
+<ul class="circle">
+<li id="li-106"><p id="p-201">For every vertex \({i}\text{,}\) update   \(\displaystyle{a_i(t) = \sum_{j \rightarrow i} h_j(t-1)}\)</p></li>
+<li id="li-107"><p id="p-202">For every vertex \(j\text{,}\) update   \(\displaystyle{h_j(t) = \sum_{j \rightarrow i} a_i(t)}\)</p></li>
+<li id="li-108"><p id="p-203">Normalize both values.</p></li>
+</ul>
+</li>
+</ul></section><section class="exercises" id="exercises-5"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Practice Problems</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-28"><h6 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Example of HITS Iterations.</span>
+</h6>
+<p id="p-204">Consider the following digraph <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/hub-auth-digraph.png" class="contained"></div> with adjacency matrix</p>
+<div class="displaymath">
+\begin{equation*}
+A = \begin{bmatrix}
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 0  \\
+0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0  &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0
+\end{bmatrix}.
+\end{equation*}
+</div>
+<p class="continuation">Perform some iterations of the HITS algorithm, <em class="emphasis">but don't worry about scaling</em>. (It's the relative size of scores that matters.) We start with the the hub vector \(\bh_0 = \begin{bmatrix}  1 &amp;1 &amp; 1 &amp; 1 &amp; 1 \end{bmatrix}^{\top}\text{.}\) Fill in the table below, as follows, starting at \(t=1\)</p>
+<ul class="disc">
+<li id="li-109"><p id="p-205">Update the \(i\)th entry of \(\ba_t\) to be the sum of all of the \(\bh_{t-1}\) values of the <em class="emphasis">in-neighbors</em> of vertex \(i\text{.}\)</p></li>
+<li id="li-110"><p id="p-206">Update the \(i\)th entry of \(\bh_t\) to be the sum of all of the \(\ba_t\) values of the <em class="emphasis">out-neighbors</em> of vertex \(i\)</p></li>
+</ul>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{ccc}
+\begin{array}{c||c|c|c|c|c}
+&amp; \,\,A\,\, &amp; \,\, B\,\,&amp; \,\,C\,\, &amp; \,\,D\,\, &amp; \,\,E\,\, \\
+\hline
+\ba_0  &amp; - &amp; - &amp; -&amp; - &amp; - \\
+\hline
+\ba_1  &amp;&amp;&amp;&amp;&amp; \\
+\hline
+\ba_2  &amp;&amp;&amp;&amp;&amp; \\
+\hline
+\ba_3  &amp;&amp;&amp;&amp;&amp; \\
+\end{array}
+&amp; \phantom{asdasd}
+&amp;
+\begin{array}{c||c|c|c|c|c}
+&amp; \,\,A\,\, &amp; \,\, B\,\,&amp; \,\,C\,\, &amp; \,\,D\,\, &amp; \,\,E\,\, \\
+\hline
+\bh_0  &amp; 1&amp;1&amp;1&amp;1&amp;1 \\
+\hline
+\bh_1  &amp;&amp;&amp;&amp;&amp; \\
+\hline
+\bh_2  &amp;&amp;&amp;&amp;&amp; \\
+\hline
+\bh_3  &amp;&amp;&amp;&amp;&amp; \\
+\end{array}
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-42" id="solution-42"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-42"><div class="solution solution-like"><div class="displaymath" id="p-207">
+\begin{equation*}
+\begin{array}{ccc}
+\begin{array}{c||c|c|c|c|c}
+&amp; \,\,A\,\, &amp; \,\, B\,\,&amp; \,\,C\,\, &amp; \,\,D\,\, &amp; \,\,E\,\, \\
+\hline
+\ba_0  &amp; - &amp; - &amp; -&amp; - &amp; - \\
+\hline
+\ba_1  &amp; 0 &amp; 1 &amp; 2 &amp; 2 &amp; 1 \\
+\hline
+\ba_2  &amp;0 &amp; 1 &amp;8&amp;6&amp; 5 \\
+\hline
+\ba_3  &amp; 0 &amp; 1 &amp; 27&amp; 25 &amp; 19  \\
+\end{array}
+&amp; \phantom{asdasd}
+&amp;
+\begin{array}{c||c|c|c|c|c}
+&amp; \,\,A\,\, &amp; \,\, B\,\,&amp; \,\,C\,\, &amp; \,\,D\,\, &amp; \,\,E\,\, \\
+\hline
+\bh_0  &amp; 1&amp;1&amp;1&amp;1&amp;1 \\
+\hline
+\bh_1  &amp;1 &amp; 5 &amp; 0 &amp; 3 &amp; 1 \\
+\hline
+\bh_2  &amp; 1 &amp; 19 &amp; 0&amp; 8 &amp;  6 \\
+\hline
+\bh_3  &amp; 1 &amp;71&amp; 0 &amp;27 &amp;25 \\
+\end{array}
+\end{array}
+\end{equation*}
+</div></div></div></p></article><article class="exercise exercise-like" id="exercise-29"><h6 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">HITS Update Rules.</span>
+</h6>
+<p id="p-208">With the previous problem in mind, write each of the update rules as a matrix equation using the adjacency matrix \(A\) and the column vectors</p>
+<div class="displaymath">
+\begin{equation*}
+\ba(t) =\begin{bmatrix}   a_1(t) \\ \vdots \\ a_n(t) \end{bmatrix}  \mbox{ and }
+\bh(t) = \begin{bmatrix} h_1(t) \\  \vdots \\  h_n(t) \end{bmatrix}.
+\end{equation*}
+</div>
+<p class="continuation">(Hint: you will need to use \(A^{\top}\) for one of your equations.) Check that your matrix equations are correct for the example from Problem 1. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-43" id="solution-43"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-43"><div class="solution solution-like">
+<p id="p-209">Our recursive update rule is</p>
+<div class="displaymath">
+\begin{align*}
+\bh(t) &amp;= A \, \ba(t-1),\\
+\ba(t) &amp;= A^{\top} \, \bh(t).
+\end{align*}
+</div>
+<p id="p-210">Row \(i\) of \(A\) contains the out-neighbors of vertex \(i\text{.}\)  Row \(i\) of \(A^{\top}\) contains the in-neighbors of \(i\text{.}\)</p>
+</div></div></p></article><article class="exercise exercise-like" id="exercise-30"><h6 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">HITS Matrix Equations.</span>
+</h6>
+<p id="p-211">Using your answer in question 2, you can now write down two matrix recurrences for \(t \geq 2\text{:}\)</p>
+<ul class="disc">
+<li id="li-111"><p id="p-212">A matrix equation for finding \(\ba(t)\) directly from \(\ba(t-1)\text{.}\)</p></li>
+<li id="li-112"><p id="p-213">A matrix equation for finding \(\bh(t)\) directly from \(\bh(t-1)\text{.}\)</p></li>
+</ul>
+<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-44" id="solution-44"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-44"><div class="solution solution-like">
+<p id="p-214">We have</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{lllll}
+\bh(t) &amp;=&amp; A  \ba(t-1)  &amp;=&amp; \,  A \, A^{\top} \, \bh(t), \\
+\ba(t) &amp;=&amp; A^{\top} \bh(t)  &amp;=&amp; A^{\top} \, A \, \ba(t-1)
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">which we can write more compactly as</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{lllll}
+\bh(t) &amp;=&amp;   A \, A^{\top} \, \bh(t), \\
+\ba(t)  &amp;=&amp; A^{\top} \, A \, \ba(t-1).
+\end{array}
+\end{equation*}
+</div>
+</div></div></p></article><article class="exercise exercise-like" id="exercise-31"><h6 class="heading">
+<span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">HITS Eigensystems.</span>
+</h6>
+<p id="p-215">After convergence, our update rule becomes \(\ba \rightarrow c_1 \ba\) and \(\bh \rightarrow c_2 \bh\text{.}\) (Recall that HITS performs a renormalization at each step to deal with \(c_1, c_2\text{.}\)) So after convergence, your matrix equations   become statements about eigenvectors and eigenvalues. With that in mind:</p>
+<ol class="lower-alpha">
+<li id="li-113"><p id="p-216">How are \(c_1\) and \(c_2\) related to the eigenvalues of your matrices in question 2?</p></li>
+<li id="li-114"><p id="p-217">How do \(c_1\) and \(c_2\) relate to each other?</p></li>
+<li id="li-115"><p id="p-218">What is the  (linear algebraic) relationship between the authority vector \(\ba\) and the hub vector \(\bh\text{?}\)</p></li>
+</ol>
+<p class="continuation">For inspiration you  should look back at our discussion of other algebraic centralities. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-45" id="solution-45"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-45"><div class="solution solution-like">
+<p id="p-219">For each of the matrix equations above, as \(t \rightarrow \infty\text{,}\) we converge to a vector in the direction of the largest eigenvector. In other words, the hub score \(\bh\) satisfies</p>
+<div class="displaymath">
+\begin{equation*}
+A \, A^{\top} \, \bh= \lambda \bh
+\end{equation*}
+</div>
+<p class="continuation">where \(\lambda\) is the largest eigenvalue of \(A \, A^{\top}\text{.}\) Meanwhile, the authority score \(\ba\) satisfies</p>
+<div class="displaymath">
+\begin{equation*}
+A^{\top} \, A \,   \ba= \mu \ba
+\end{equation*}
+</div>
+<p class="continuation">where \(\mu\) is the largest eigenvalue of \(A^{\top} \,A\text{.}\)</p>
+<p id="p-220">Here's a cool connection: a couple of standard linear algebra results will show us that \(\lambda=\mu\text{.}\) Recall from your linear algebra class</p>
+<ul class="disc">
+<li id="li-116"><p id="p-221">For any matrix \(M\text{,}\) we have \(\det(M) = \det(M^{\top})\text{.}\)</p></li>
+<li id="li-117">
+<p id="p-222">The eigenvalues of a matrix \(B\) are the solutions to</p>
+<div class="displaymath">
+\begin{equation*}
+\det(B - \mu I) = 0
+\end{equation*}
+</div>
+</li>
+</ul>
+<p class="continuation">Therefore, \(B\) and \(B^{\top}\) have the same eigenvalues (though they usually have different eigenvectors). By observing that \(\)(A A^{\top})^{\top} = A^{\top} A,\(\) we  conclude that \(\lambda = \mu\text{.}\)</p>
+<p id="p-223">Let's go a step further. Taking the transpose of the equation \(A^{\top} \, A \,   \ba= \mu \ba\text{,}\) we get</p>
+<div class="displaymath">
+\begin{equation*}
+\ba^{\top} A \, A^{\top}   = \lambda \ba^{\top}.
+\end{equation*}
+</div>
+<p class="continuation">In other words, the <em class="emphasis">row vector</em> \(\ba^{\top}\) is a <em class="emphasis">left eigenvector</em> of the matrix \(A \, A^{\top}\) for the largest eigenvalue \(\lambda\text{.}\) Meanwhile,</p>
+<div class="displaymath">
+\begin{equation*}
+A \, A^{\top} \, \bh= \lambda \bh
+\end{equation*}
+</div>
+<p class="continuation">says that the column vector \(\bh\) is a <em class="emphasis">right eigenvector</em> for the same eigenvalue \(\lambda\text{.}\)</p>
+<p id="p-224">Every \(n \times n\) matrix has both left eigenvectors and right eigenvectors. You might be more comfortable with left eigenvectors because we tend to focus on <em class="emphasis">column vectors</em>. But matrix transposition is a simple operation that swaps the roles of rows and vectors. So any result about column vectors can be turned into an equivalent statement about row vectors.</p>
+</div></div></p></article></section></section></div></main>
+</div>
+</body>
+</html>

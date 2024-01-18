@@ -1,0 +1,1389 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+
+
+<chapter xml:id="centrality" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Centrality Measures</title>
+	<introduction>
+		<p>
+
+
+Here are the network and  centrality definitions that  we will need.
+
+		<ul>
+			<li>
+			<p>
+ Let <m>G=(V,E)</m> be a network (graph) on <m>N</m> vertices.
+			</p>
+			</li>
+			<li>
+			<p>
+ Let <m>k_i = \deg(i)</m> be the degree of vertex <m>i</m>
+			</p>
+			</li>
+			<li>
+			<p>
+ Let <m>d_{i,j} = d(i,j)</m> be the distance between vertices <m>i</m> and <m>j</m>
+			</p>
+			</li>
+			<li>
+			<p>
+ Let <m>n_{s,t}</m> be the number of geodesics (shortest paths) from <m>s</m> to <m>t</m>
+			</p>
+			</li>
+			<li>
+			<p>
+ Let <m>n_{s,t}(i)</m> be the number of <m>(s,t)</m>-geodesics that go through vertex <m>i</m>
+			</p>
+			</li>
+		</ul>
+
+
+<me>
+\begin{array}{|c|c|c|}
+\hline
+
+\mbox{name} &amp; \mbox{formula} &amp; \mbox{normalized formula} \\
+\hline
+\hline
+&amp;&amp;\\
+\mbox{Degree Centrality}  &amp;  c_i^D  = \deg(i) = k_i &amp; \displaystyle{\frac{c_i^D}{N-1}} \\
+&amp;&amp;\\
+\hline
+&amp;&amp;\\
+\mbox{Betweenness Centrality} &amp; c_i^B = \displaystyle{\sum_{s \neq i} \sum_{t \neq i, s} \frac{n_{s,t}(i)}{n_{s,t}}} &amp;  \displaystyle{\frac{c_i^B}{{(N-1)(N-2)}}}  \\
+&amp;&amp;\\
+\hline
+&amp;&amp;\\
+\mbox{Closeness Centrality} &amp; c_i^C =  \displaystyle{\frac{1}{\sum_{j} d_{i,j}}} &amp;
+\displaystyle{ C_i^C = (N-1) \, c_i^C }\\
+&amp;&amp; \\
+\hline
+\end{array}
+</me>
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+
+		<exercise>
+			<title>Understanding Centrality Measures</title>
+			<idx><h>Understanding Centrality Measures</h></idx>
+			<statement>
+				<p>
+For each centrality measure, give an intuitive explanation of what is "central" about vertices with large values.
+
+
+			<ol>
+
+				<li>
+					<p>
+ Degree Centrality
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Betweenness Centrality
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Closeness Centrality
+
+					</p>
+				</li>
+			</ol>
+
+
+
+<solution>
+<p>
+Note that there are many possible answers: these are just example responses.
+
+			<ol>
+
+
+
+				<li>
+					<p>
+ Degree Centrality:   Such a person has lots of direct connections. Therefore she have direct access to the resources/information  of their neighbors. Such a person might be influential since many others will listen to her point of view.
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Betweenness Centrality:  Such a person lies on the shortest path between many pairs of people. Therefore, information traveling between those people will often pass through her. Therefore, she can control the flow of information. Or perhaps she is leveraging her location by acting as a broker: it is to her advantage that these pairs of people don't have direct access to one another. She can act as a "middle man," and benefit from this role.
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Closeness Centrality:  Such a person lies close to many people in the network. Therefore she will receive information quickly. This could allow her to react in a timely manner, regardless of the source/location of the new information. Being well-informed is another type of power.
+
+
+					</p>
+				</li>
+			</ol>
+
+
+</p>
+</solution>
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Centrality Calculation Examples</title>
+			<idx><h>Centrality Calculation Examples</h></idx>
+			<statement>
+				<p>
+
+For each of the following graphs, calculate the (unnormalized) degree centrality, betweenness centrality and closeness centrality
+
+
+			<ol>
+				<li>
+					<p>
+ Degree Centrality  <m> c_i^D  = \deg(i) = k_i</m>
+
+
+			<image width="90%" xml:id="fig-img-centrality0">
+				<latex-image>
+\begin{tikzpicture} %mathbook width=90%
+
+
+\draw[thick] (0,0) -- (4,0);
+
+\foreach \i in {0,1,2,3,4}
+{
+\draw[thick, fill=gray!50] (\i, 0) circle (3pt);
+}
+
+
+\begin{scope}[shift={(7,0)}]
+
+\foreach \i in {0, 72, 144, 216, 288} {
+\draw[thick] (0,0) -- (\i:1);
+\draw[thick, fill=gray!50] (\i: 1) circle (3pt);
+}
+\draw[thick, fill=gray!50] (0,0) circle (3pt);
+
+\end{scope}
+
+
+\begin{scope}[shift={(12,0)}]
+
+\draw[thick] (1,0) -- (1.5, -.87) -- (1.5, .87) -- (1,0) -- (-1,0) -- (-1.5, .87) -- (-1.5, -.87) -- (-1,0);
+
+\draw[thick, fill=gray!50] (0,0) circle (3pt);
+\draw[thick, fill=gray!50] (-1,0) circle (3pt);
+\draw[thick, fill=gray!50] (-1.5,.87) circle (3pt);
+\draw[thick, fill=gray!50] (-1.5,-.87) circle (3pt);
+
+
+\draw[thick, fill=gray!50] (1,0) circle (3pt);
+\draw[thick, fill=gray!50] (1.5,.87) circle (3pt);
+\draw[thick, fill=gray!50] (1.5,-.87) circle (3pt);
+
+\end{scope}
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Betweenness Centrality  <m>c_i^B = \displaystyle{\sum_{s \neq i} \sum_{t \neq i, s} \frac{n_{s,t}(i)}{n_{s,t}}}</m>
+
+			<image width="90%" xml:id="fig-img-centrality1">
+				<latex-image>
+\begin{tikzpicture}%mathbook width=90%
+
+
+\draw[thick] (0,0) -- (4,0);
+
+\foreach \i in {0,1,2,3,4}
+{
+\draw[thick, fill=gray!50] (\i, 0) circle (3pt);
+}
+
+
+\begin{scope}[shift={(7,0)}]
+
+\foreach \i in {0, 72, 144, 216, 288} {
+\draw[thick] (0,0) -- (\i:1);
+\draw[thick, fill=gray!50] (\i: 1) circle (3pt);
+}
+\draw[thick, fill=gray!50] (0,0) circle (3pt);
+
+\end{scope}
+
+
+\begin{scope}[shift={(12,0)}]
+
+\draw[thick] (1,0) -- (1.5, -.87) -- (1.5, .87) -- (1,0) -- (-1,0) -- (-1.5, .87) -- (-1.5, -.87) -- (-1,0);
+
+\draw[thick, fill=gray!50] (0,0) circle (3pt);
+\draw[thick, fill=gray!50] (-1,0) circle (3pt);
+\draw[thick, fill=gray!50] (-1.5,.87) circle (3pt);
+\draw[thick, fill=gray!50] (-1.5,-.87) circle (3pt);
+
+
+\draw[thick, fill=gray!50] (1,0) circle (3pt);
+\draw[thick, fill=gray!50] (1.5,.87) circle (3pt);
+\draw[thick, fill=gray!50] (1.5,-.87) circle (3pt);
+
+\end{scope}
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Closeness Centrality  <m>c_i^C =  \displaystyle{\frac{1}{\sum_{j} d_{i,j}}}</m>
+
+			<image width="90%" xml:id="fig-img-centrality2">
+				<latex-image>
+\begin{tikzpicture}%mathbook width=90%
+
+
+\draw[thick] (0,0) -- (4,0);
+
+\foreach \i in {0,1,2,3,4}
+{
+\draw[thick, fill=gray!50] (\i, 0) circle (3pt);
+}
+
+
+\begin{scope}[shift={(7,0)}]
+
+\foreach \i in {0, 72, 144, 216, 288} {
+\draw[thick] (0,0) -- (\i:1);
+\draw[thick, fill=gray!50] (\i: 1) circle (3pt);
+}
+\draw[thick, fill=gray!50] (0,0) circle (3pt);
+
+\end{scope}
+
+
+\begin{scope}[shift={(12,0)}]
+
+\draw[thick] (1,0) -- (1.5, -.87) -- (1.5, .87) -- (1,0) -- (-1,0) -- (-1.5, .87) -- (-1.5, -.87) -- (-1,0);
+
+\draw[thick, fill=gray!50] (0,0) circle (3pt);
+\draw[thick, fill=gray!50] (-1,0) circle (3pt);
+\draw[thick, fill=gray!50] (-1.5,.87) circle (3pt);
+\draw[thick, fill=gray!50] (-1.5,-.87) circle (3pt);
+
+
+\draw[thick, fill=gray!50] (1,0) circle (3pt);
+\draw[thick, fill=gray!50] (1.5,.87) circle (3pt);
+\draw[thick, fill=gray!50] (1.5,-.87) circle (3pt);
+
+\end{scope}
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+
+					</p>
+				</li>
+			</ol>
+
+
+
+
+
+<solution>
+<p>
+
+
+			<ol>
+				<li>
+					<p>
+ Degree Centrality  <m> c_i^D  = \deg(i) = k_i</m>
+
+
+			<image width="90%" xml:id="fig-img-centrality3">
+				<latex-image>
+\begin{tikzpicture} %mathbook width=90%
+
+
+\draw[thick] (0,0) -- (4,0);
+
+\foreach \i in {0,1,2,3,4}
+{
+\draw[thick, fill=gray!50] (\i, 0) circle (3pt);
+}
+
+\node at (0,.4) {1};
+\node at (1,.4) {2};
+\node at (2,.4) {2};
+\node at (3,.4) {2};
+\node at (4,.4) {1};
+
+
+
+\begin{scope}[shift={(7,0)}]
+
+\foreach \i in {0, 72, 144, 216, 288} {
+\draw[thick] (0,0) -- (\i:1);
+\draw[thick, fill=gray!50] (\i: 1) circle (3pt);
+}
+\draw[thick, fill=gray!50] (0,0) circle (3pt);
+
+
+\node at (0:1.4) {1};
+\node at (72:1.4) {1};
+\node at (144:1.4) {1};
+\node at (216:1.4) {1};
+\node at (288:1.4) {1};
+\node at (36:.4) {5};
+
+
+\end{scope}
+
+
+\begin{scope}[shift={(12,0)}]
+
+\draw[thick] (1,0) -- (1.5, -.87) -- (1.5, .87) -- (1,0) -- (-1,0) -- (-1.5, .87) -- (-1.5, -.87) -- (-1,0);
+
+\draw[thick, fill=gray!50] (0,0) circle (3pt);
+\draw[thick, fill=gray!50] (-1,0) circle (3pt);
+\draw[thick, fill=gray!50] (-1.5,.87) circle (3pt);
+\draw[thick, fill=gray!50] (-1.5,-.87) circle (3pt);
+
+
+\draw[thick, fill=gray!50] (1,0) circle (3pt);
+\draw[thick, fill=gray!50] (1.5,.87) circle (3pt);
+\draw[thick, fill=gray!50] (1.5,-.87) circle (3pt);
+
+
+
+\node at (0,.4) {2};
+\node at (.8,.4) {3};
+\node at (-.8,.4) {3};
+\node at (-1.5,1.3) {2};
+\node at (-1.5,-1.3) {2};
+\node at (1.5,1.3) {2};
+\node at (1.5,-1.3) {2};
+
+\end{scope}
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Betweenness Centrality  <m>c_i^B = \displaystyle{\sum_{s \neq i} \sum_{t \neq i, s} \frac{n_{s,t}(i)}{n_{s,t}}}</m>
+
+			<image width="90%" xml:id="fig-img-centrality4">
+				<latex-image>
+\begin{tikzpicture} %mathbook width=90%
+
+
+\draw[thick] (0,0) -- (4,0);
+
+\foreach \i in {0,1,2,3,4}
+{
+\draw[thick, fill=gray!50] (\i, 0) circle (3pt);
+}
+
+\node at (0,.4) {0};
+\node at (1,.4) {6};
+\node at (2,.4) {8};
+\node at (3,.4) {6};
+\node at (4,.4) {0};
+
+
+\begin{scope}[shift={(7,0)}]
+
+\foreach \i in {0, 72, 144, 216, 288} {
+\draw[thick] (0,0) -- (\i:1);
+\draw[thick, fill=gray!50] (\i: 1) circle (3pt);
+}
+\draw[thick, fill=gray!50] (0,0) circle (3pt);
+
+
+\node at (0:1.4) {0};
+\node at (72:1.4) {0};
+\node at (144:1.4) {0};
+\node at (216:1.4) {0};
+\node at (288:1.4) {0};
+\node at (36:.5) {20};
+
+\end{scope}
+
+
+\begin{scope}[shift={(12,0)}]
+
+\draw[thick] (1,0) -- (1.5, -.87) -- (1.5, .87) -- (1,0) -- (-1,0) -- (-1.5, .87) -- (-1.5, -.87) -- (-1,0);
+
+\draw[thick, fill=gray!50] (0,0) circle (3pt);
+\draw[thick, fill=gray!50] (-1,0) circle (3pt);
+\draw[thick, fill=gray!50] (-1.5,.87) circle (3pt);
+\draw[thick, fill=gray!50] (-1.5,-.87) circle (3pt);
+
+
+\draw[thick, fill=gray!50] (1,0) circle (3pt);
+\draw[thick, fill=gray!50] (1.5,.87) circle (3pt);
+\draw[thick, fill=gray!50] (1.5,-.87) circle (3pt);
+
+
+\node at (0,.4) {18};
+\node at (.8,.4) {16};
+\node at (-.8,.4) {16};
+\node at (-1.5,1.3) {0};
+\node at (-1.5,-1.3) {0};
+\node at (1.5,1.3) {0};
+\node at (1.5,-1.3) {0};
+
+
+\end{scope}
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Closeness Centrality  <m>c_i^C =  \displaystyle{\frac{1}{\sum_{j} d_{i,j}}}</m>
+
+			<image width="90%" xml:id="fig-img-centrality5">
+				<latex-image>
+\begin{tikzpicture} %mathbook width=90%
+
+
+\draw[thick] (0,0) -- (4,0);
+
+\foreach \i in {0,1,2,3,4}
+{
+\draw[thick, fill=gray!50] (\i, 0) circle (3pt);
+}
+
+\node at (0,.5) {<m>1/10</m>};
+\node at (1,.5) {<m>1/7</m>};
+\node at (2,.5) {<m>{1/6}</m>};
+\node at (3,.5) {<m>1/7</m>};
+\node at (4,.5) {<m>1/10</m>};
+
+\begin{scope}[shift={(7,0)}]
+
+\foreach \i in {0, 72, 144, 216, 288} {
+\draw[thick] (0,0) -- (\i:1);
+\draw[thick, fill=gray!50] (\i: 1) circle (3pt);
+}
+\draw[thick, fill=gray!50] (0,0) circle (3pt);
+
+
+\node at (0:1.4) {<m>1/9</m>};
+\node at (72:1.4) {<m>1/9</m>};
+\node at (144:1.4) {<m>1/9</m>};
+\node at (216:1.4) {<m>1/9</m>};
+\node at (288:1.4) {<m>1/9</m>};
+\node at (40:.5) {<m>{1/5}</m>};
+
+\end{scope}
+
+
+\begin{scope}[shift={(12,0)}]
+
+\draw[thick] (1,0) -- (1.5, -.87) -- (1.5, .87) -- (1,0) -- (-1,0) -- (-1.5, .87) -- (-1.5, -.87) -- (-1,0);
+
+\draw[thick, fill=gray!50] (0,0) circle (3pt);
+\draw[thick, fill=gray!50] (-1,0) circle (3pt);
+\draw[thick, fill=gray!50] (-1.5,.87) circle (3pt);
+\draw[thick, fill=gray!50] (-1.5,-.87) circle (3pt);
+
+
+\draw[thick, fill=gray!50] (1,0) circle (3pt);
+\draw[thick, fill=gray!50] (1.5,.87) circle (3pt);
+\draw[thick, fill=gray!50] (1.5,-.87) circle (3pt);
+
+
+
+\node at (0,-.5) {<m>1/10</m>};
+\node at (.8,.5) {<m>{1/11}</m>};
+\node at (-.8,.5) {<m>{1/11}</m>};
+\node at (-1.5,1.4) {<m>{1/15}</m>};
+\node at (-1.5,-1.4) {<m>{1/15}</m>};
+\node at (1.5,1.4) {<m>{1/15}</m>};
+\node at (1.5,-1.4) {<m>{1/15}</m>};
+
+\end{scope}
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+
+					</p>
+				</li>
+			</ol>
+
+
+
+
+</p>
+</solution>
+
+
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Contrasting Centralities</title>
+			<idx><h>Contrasting Centralities</h></idx>
+			<statement>
+				<p>
+In the following table, we consider interesting vertices that score highly in one centrality, but not in another. Describe or draw a network topology and vertex positions that could satisfy each combination below.
+
+
+
+</p>
+<table>
+<tabular top="minor" left="minor" bottom="minor" right="minor">
+<row>
+<cell>
+
+</cell>
+<cell>
+Low Degree
+</cell>
+<cell>
+Low Closeness
+</cell>
+<cell>
+Low Betweenness
+</cell>
+</row>
+<row>
+<cell>
+High Degree
+</cell>
+<cell>
+N/A
+</cell>
+<cell>
+
+</cell>
+<cell>
+
+</cell>
+</row>
+<row>
+<cell>
+High Closeness
+</cell>
+<cell>
+
+</cell>
+<cell>
+N/A
+</cell>
+<cell>
+
+</cell>
+</row>
+<row>
+<cell>
+High Betweenness
+</cell>
+<cell>
+
+</cell>
+<cell>
+
+</cell>
+<cell>
+N/A
+</cell>
+</row>
+</tabular>
+</table>
+<p>
+
+
+
+<solution>
+<p>
+
+There are many ways to make graphs that distinguish these centrality measures from one another. But it is true that in real world networks, these quantities tend to be correlated. The example networks below are variants of a simple idea. A <em>barbell graph</em> is a graph that consist of two complete graphs <m>K_s</m> and <m>K_t</m> connected by a path of length <m>r</m>.
+
+
+			<image width="90%" xml:id="fig-img-centrality6">
+				<latex-image>
+\begin{tikzpicture} %mathbook width=90%
+
+\draw[thick] (0,0) circle (.75);
+
+\draw[thick] (8,0) circle (1.5);
+
+\draw[thick]   (.75,0) -- (6.5,0);
+
+\draw [decoration={brace,raise=3mm,amplitude=16pt, mirror},decorate]   (.75,0) -- (6.5,0);
+
+
+\node at (0,0) {<m>K</m>};
+\node at (.2,-.15) {\scriptsize <m>s</m>};
+\node at (8,0) {<m>K</m>};
+\node at (8.2,-.15) {\scriptsize <m>t</m>};
+
+\node at (3.75,-1.25) {<m>P</m>};
+\node at (3.95,-1.4) {\scriptsize <m>r</m>};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+Sometimes we take <m>s=t</m> and sometimes we take <m>s \ll t</m>. Likewise, sometimes <m>r \approx s</m> and sometimes <m>r \gg s</m>. We will make some rough calculations below (rather than getting them exactly right) to compare the sizes of our measures.
+
+
+
+
+		<ul>
+
+			<li>
+			<p>
+ <em>High Degree and Low Closeness.</em>   Consider a graph consisting of two large cliques (complete graphs) of the same size connected by a long path. We call this a <em>barbell graph</em>. Vertices in the two cliques have high degree, but have low closeness because almost half of the vertices are far away. Here is an example
+
+			<image width="90%" xml:id="fig-img-centrality7">
+				<latex-image>
+\begin{tikzpicture} %mathbook width=90%
+
+\draw[thick] (0,0) circle (.75);
+
+\draw[thick] (8,0) circle (.75);
+
+\draw[thick]   (.75,0) -- (7.25,0);
+
+\draw [decoration={brace,raise=3mm,amplitude=16pt, mirror},decorate]   (.75,0) -- (7.25,0);
+
+
+\node at (0,0) {<m>K</m>};
+\node at (.25,-.15) {\scriptsize <m>10</m>};
+
+\node at (8,0) {<m>K</m>};
+\node at (8.25,-.15)  {\scriptsize <m>10</m>};
+
+\node at (4,-1.25) {<m>P</m>};
+\node at (4.3,-1.4)  {\scriptsize <m>101</m>};
+
+\draw[fill] (.75,0) circle (3pt);
+\draw[fill] (4,0) circle (3pt);
+\draw[fill] (8.75,0) circle (3pt);
+
+\node[above right] at (.75,0) {<m>a</m>};
+\node[above right] at (4,0) {<m>b</m>};
+\node[above right] at (8.75,0) {<m>c</m>};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+High degree: <m>c_a^C = 10</m>, which is the maximum degree. There are many vertices with degree 2.
+
+Low closeness:
+<me>
+{1/c_a^C} = 9 + \sum_{i=1}^{100} i +   9 \times 101 = 5968.
+</me>
+Meanwhile,
+<me>
+{1/c_b^C}  = 2 \left( \sum_{i=1}^{50} i + 9 \times 51 \right)
+= 50 \times 51 + 18 \times 51 = 3468.
+</me>
+So <m>c_a^C \approx 0.58 C_b^C</m>.
+
+In the graph above, we have <m>c_c^D = k_c = 9</m> which is just one below the maximum degree. However <m>c_c^B=0</m>.
+
+
+
+			</p>
+			</li>
+			<li>
+			<p>
+ <em>High Degree and Low Betweenness.</em>
+
+
+Consider the same barbell graph from the previous example. The degree of the vertices in the cliques are very high, yet all but one of them have 0 betweenness. The vertices on the path connecting the two cliques have higher betweenness.
+
+
+			</p>
+			</li>
+			<li>
+			<p>
+ <em>High Closeness and Low Degree.</em>
+
+Once again, the barbell graph above provides an example. The center of the graph has the largest closeness, but has degree 2.
+
+			</p>
+			</li>
+			<li>
+			<p>
+ <em>High Closeness and Low Betweenness.</em>   This one is a little trickier. How can you be close to everything, but not located on shortest paths? The answer: add a leaf to a vertex with high closeness. For example we add a leaf <m>d</m> to the central vertex <m>b</m> of the barbell graph.
+
+This vertex <m>d</m> has relatively large closeness. We have
+<me>
+\frac{1}{c_d^C} = 121 + \frac{1}{c_b^C},
+</me>
+because this vertex is just one step further than <m>c</m> to the rest of the graph. So <m>c_d^C \approx 0.98 c_b^C.</m> Meanwhile <m>c_d^B=0</m>.
+
+			<image width="90%" xml:id="fig-img-centrality8">
+				<latex-image>
+\begin{tikzpicture} %mathbook width=90%
+
+\draw[thick] (0,0) circle (.75);
+
+\draw[thick] (8,0) circle (.75);
+
+\draw[thick]   (.75,0) -- (7.25,0);
+
+\draw[thick]   (4,0) -- (4,.5);
+
+\draw [decoration={brace,raise=3mm,amplitude=16pt, mirror},decorate]   (.75,0) -- (7.25,0);
+
+
+\node at (0,0) {<m>K</m>};
+\node at (.25,-.15) {\scriptsize <m>10</m>};
+
+\node at (8,0) {<m>K</m>};
+\node at (8.25,-.15)  {\scriptsize <m>10</m>};
+
+\node at (4,-1.25) {<m>P</m>};
+\node at (4.3,-1.4)  {\scriptsize <m>101</m>};
+
+\draw[fill] (.75,0) circle (3pt);
+\draw[fill] (4,0) circle (3pt);
+\draw[fill] (8.75,0) circle (3pt);
+\draw[fill] (4,.5) circle (3pt);
+
+\node[above right] at (.75,0) {<m>a</m>};
+\node[above right] at (4,0) {<m>b</m>};
+\node[above right] at (8.75,0) {<m>c</m>};
+\node[above left] at (4, .5) {<m>d</m>};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+			</p>
+			</li>
+			<li>
+			<p>
+ <em>High Betweenness and Low Degree.</em>
+Once again, the barbell graph does the trick. The central vertex <m>b</m> has the largest betweenness, but it only has degree 2.
+
+			</p>
+			</li>
+			<li>
+			<p>
+ <em>High Betweenness and Low Closeness.</em>
+Another tricky one. How can you be between lots of vertices, yet not have a high closeness value?
+Let's look at a barbell graph where the cliques are of very different sizes.
+
+			<image width="90%" xml:id="fig-img-centrality9">
+				<latex-image>
+\begin{tikzpicture} %mathbook width=90%
+
+\draw[thick] (0,0) circle (.75);
+
+\draw[thick] (8.75,0) circle (1.5);
+
+\draw[thick]   (.75,0) -- (7.25,0);
+
+\draw [decoration={brace,raise=3mm,amplitude=16pt, mirror},decorate]   (.75,0) -- (7.25,0);
+
+
+\node at (0,0) {<m>K</m>};
+\node at (.25,-.15) {\scriptsize <m>11</m>};
+
+\node at (8.75,0) {<m>K</m>};
+\node at (9.15,-.15)  {\scriptsize <m>1001</m>};
+
+\node at (4,-1.25) {<m>P</m>};
+\node at (4.3,-1.4)  {\scriptsize <m>101</m>};
+
+\draw[fill] (.75,0) circle (3pt);
+\draw[fill] (7.25,0) circle (3pt);
+
+\node[above right] at (.75,0) {<m>a</m>};
+\node[above left] at (7.25,0) {<m>b</m>};
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+In this graph, most vertices have zero betweenness. We have
+<me>
+c_a^B = 10 \times 1100 = 11000.
+</me>
+and
+<me>
+{1/c_a^C} = 10 + \sum_{i=1}^{100} i + 101 \times 1000 = 106060.
+</me>
+Meanwhile
+the closeness of node <m>b</m> is
+<me>
+{1/c_b^B} = 1000 + \sum_{i=1}^{100} i + 101 \times 10 = 7060.
+</me>
+			</p>
+			</li>
+		</ul>
+
+
+
+
+
+
+</p>
+</solution>
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Digraph Centrality Measures</title>
+			<idx><h>Digraph Centrality Measures</h></idx>
+			<statement>
+				<p>
+
+			<ol>
+
+				<li>
+					<p>
+ During class, we adapted degree centrality for digraphs, which leads to in-degree centrality and out-degree centrality. Given an intuitive explanation for what it means to have (i) high in-degree centrality and (ii)  high out-degree centrality.
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Adapt betweenness centrality and closeness centrality for digraphs. Do you need two different measures for each (one for in and one for out)? Give an intuitive explanation for what it means to when these centrality measures are large in a dirgraph.
+
+
+
+					</p>
+				</li>
+			</ol>
+
+
+<solution>
+<p>
+
+			<ol>
+
+				<li>
+					<p>
+ High in-degree centrality means that lots of information gets to you. High out-degree means that a lot of people are listening to you.
+
+					</p>
+				</li>
+				<li>
+					<p>
+ You would need two different closeness centralities. Large <m>c_i^{C^{\mathrm{in}}}</m> would mean that spreading information gets to you quickly. Large <m>c_i^{C^{\mathrm{out}}}</m> would mean that information that you share would spread quickly to the whole network.
+
+			</p><p>
+You would still only have one betweenness centrality measure on a directed graph. The definition already includes paths from <m>s</m> to <m>t</m> and from <m>t</m> to <m>s</m>. This "double counting" on an undirected graph becomes "single counting" when the paths are directed.
+
+
+					</p>
+				</li>
+			</ol>
+
+</p>
+</solution>
+
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Shortcuts in a Cycle</title>
+			<idx><h>Shortcuts in a Cycle</h></idx>
+			<statement>
+				<p>
+What is the effect of adding one shortcut to  a cycle on six vertices? Calculate the centralities as specified below.
+
+
+
+
+			<ol>
+
+				<li>
+					<p>
+ Degree Centrality   <m> c_i^D  = \deg(i) = k_i</m>
+
+
+			<image width="90%" xml:id="fig-img-centrality10">
+				<latex-image>
+\begin{tikzpicture}%mathbook width=90%
+
+\foreach \i in {0, 60, 120, 180, 240, 300}
+{
+\draw (\i:1) -- (\i+60:1);
+\draw[thick, fill=gray!50] (\i:1) circle (3pt);
+}
+
+\draw[thick, fill=gray!50] (0:1) circle (3pt);
+
+\begin{scope}[shift={(5,0)}]
+
+
+\draw (0:1) -- (120:1);
+
+\foreach \i in {0, 60, 120, 180, 240, 300}
+{
+\draw (\i:1) -- (\i+60:1);
+\draw[thick, fill=gray!50] (\i:1) circle (3pt);
+}
+
+\draw[thick, fill=gray!50] (0:1) circle (3pt);
+
+\end{scope}
+
+
+\begin{scope}[shift={(10,0)}]
+
+
+\draw (0:1) -- (180:1);
+
+\foreach \i in {0, 60, 120, 180, 240, 300}
+{
+\draw (\i:1) -- (\i+60:1);
+\draw[thick, fill=gray!50] (\i:1) circle (3pt);
+}
+
+\draw[thick, fill=gray!50] (0:1) circle (3pt);
+
+\end{scope}
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Betweenness Centrality   <m>c_i^B = \displaystyle{\sum_{s \neq i} \sum_{t \neq i, s} \frac{n_{s,t}(i)}{n_{s,t}}}</m>
+
+
+			<image width="90%" xml:id="fig-img-centrality11">
+				<latex-image>
+\begin{tikzpicture}%mathbook width=90%
+
+\foreach \i in {0, 60, 120, 180, 240, 300}
+{
+\draw (\i:1) -- (\i+60:1);
+\draw[thick, fill=gray!50] (\i:1) circle (3pt);
+}
+
+\draw[thick, fill=gray!50] (0:1) circle (3pt);
+
+\begin{scope}[shift={(5,0)}]
+
+
+\draw (0:1) -- (120:1);
+
+\foreach \i in {0, 60, 120, 180, 240, 300}
+{
+\draw (\i:1) -- (\i+60:1);
+\draw[thick, fill=gray!50] (\i:1) circle (3pt);
+}
+
+\draw[thick, fill=gray!50] (0:1) circle (3pt);
+
+\end{scope}
+
+
+\begin{scope}[shift={(10,0)}]
+
+
+\draw (0:1) -- (180:1);
+
+\foreach \i in {0, 60, 120, 180, 240, 300}
+{
+\draw (\i:1) -- (\i+60:1);
+\draw[thick, fill=gray!50] (\i:1) circle (3pt);
+}
+
+\draw[thick, fill=gray!50] (0:1) circle (3pt);
+
+\end{scope}
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Closeness Centrality  <m>c_i^C =  \displaystyle{\frac{1}{\sum_{j} d_{i,j}}}</m>
+
+
+			<image width="90%" xml:id="fig-img-centrality12">
+				<latex-image>
+\begin{tikzpicture}%mathbook width=90%
+
+\foreach \i in {0, 60, 120, 180, 240, 300}
+{
+\draw (\i:1) -- (\i+60:1);
+\draw[thick, fill=gray!50] (\i:1) circle (3pt);
+}
+
+\draw[thick, fill=gray!50] (0:1) circle (3pt);
+
+\begin{scope}[shift={(5,0)}]
+
+
+\draw (0:1) -- (120:1);
+
+\foreach \i in {0, 60, 120, 180, 240, 300}
+{
+\draw (\i:1) -- (\i+60:1);
+\draw[thick, fill=gray!50] (\i:1) circle (3pt);
+}
+
+\draw[thick, fill=gray!50] (0:1) circle (3pt);
+
+\end{scope}
+
+
+\begin{scope}[shift={(10,0)}]
+
+
+\draw (0:1) -- (180:1);
+
+\foreach \i in {0, 60, 120, 180, 240, 300}
+{
+\draw (\i:1) -- (\i+60:1);
+\draw[thick, fill=gray!50] (\i:1) circle (3pt);
+}
+
+\draw[thick, fill=gray!50] (0:1) circle (3pt);
+
+\end{scope}
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+
+
+
+					</p>
+				</li>
+			</ol>
+
+
+
+<solution>
+<p>
+
+
+			<ol>
+
+				<li>
+					<p>
+ Degree Centrality   <m> c_i^D  = \deg(i) = k_i</m>
+
+
+			<image width="90%" xml:id="fig-img-centrality13">
+				<latex-image>
+\begin{tikzpicture}%mathbook width=90%
+
+\foreach \i in {0, 60, 120, 180, 240, 300}
+{
+\draw (\i:1) -- (\i+60:1);
+\draw[thick, fill=gray!50] (\i:1) circle (3pt);
+}
+
+\draw[thick, fill=gray!50] (0:1) circle (3pt);
+
+
+\node at (0:1.4) {<m>2</m>};
+\node at (60:1.4) {<m>2</m>};
+\node at (120:1.4) {<m>2</m>};
+\node at (180:1.4) {<m>2</m>};
+\node at (240:1.4) {<m>2</m>};
+\node at (300:1.4) {<m>2</m>};
+
+\begin{scope}[shift={(5,0)}]
+
+
+\draw (0:1) -- (120:1);
+
+\foreach \i in {0, 60, 120, 180, 240, 300}
+{
+\draw (\i:1) -- (\i+60:1);
+\draw[thick, fill=gray!50] (\i:1) circle (3pt);
+}
+
+\draw[thick, fill=gray!50] (0:1) circle (3pt);
+
+\node at (0:1.4) {<m>3</m>};
+\node at (60:1.4) {<m>2</m>};
+\node at (120:1.4) {<m>3</m>};
+\node at (180:1.4) {<m>2</m>};
+\node at (240:1.4) {<m>2</m>};
+\node at (300:1.4) {<m>2</m>};
+
+\end{scope}
+
+
+\begin{scope}[shift={(10,0)}]
+
+
+\draw (0:1) -- (180:1);
+
+\foreach \i in {0, 60, 120, 180, 240, 300}
+{
+\draw (\i:1) -- (\i+60:1);
+\draw[thick, fill=gray!50] (\i:1) circle (3pt);
+}
+
+\draw[thick, fill=gray!50] (0:1) circle (3pt);
+
+\node at (0:1.4) {<m>3</m>};
+\node at (60:1.4) {<m>2</m>};
+\node at (120:1.4) {<m>2</m>};
+\node at (180:1.4) {<m>3</m>};
+\node at (240:1.4) {<m>2</m>};
+\node at (300:1.4) {<m>2</m>};
+
+\end{scope}
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Betweenness Centrality   <m>c_i^B = \displaystyle{\sum_{s \neq i} \sum_{t \neq i, s} \frac{n_{s,t}(i)}{n_{s,t}}}</m>
+
+
+			<image width="90%" xml:id="fig-img-centrality14">
+				<latex-image>
+\begin{tikzpicture}%mathbook width=90%
+
+\foreach \i in {0, 60, 120, 180, 240, 300}
+{
+\draw (\i:1) -- (\i+60:1);
+\draw[thick, fill=gray!50] (\i:1) circle (3pt);
+}
+
+\draw[thick, fill=gray!50] (0:1) circle (3pt);
+
+
+\node at (0:1.4) {<m>4</m>};
+\node at (60:1.4) {<m>4</m>};
+\node at (120:1.4) {<m>4</m>};
+\node at (180:1.4) {<m>4</m>};
+\node at (240:1.4) {<m>4</m>};
+\node at (300:1.4) {<m>4</m>};
+
+
+\begin{scope}[shift={(5,0)}]
+
+
+\draw (0:1) -- (120:1);
+
+\foreach \i in {0, 60, 120, 180, 240, 300}
+{
+\draw (\i:1) -- (\i+60:1);
+\draw[thick, fill=gray!50] (\i:1) circle (3pt);
+}
+
+\draw[thick, fill=gray!50] (0:1) circle (3pt);
+
+
+\node at (0:1.4) {<m>5</m>};
+\node at (60:1.4) {<m>0</m>};
+\node at (120:1.4) {<m>5</m>};
+\node at (180:1.4) {<m>2</m>};
+\node at (240:1.4) {<m>2</m>};
+\node at (300:1.4) {<m>2</m>};
+
+\end{scope}
+
+
+\begin{scope}[shift={(10,0)}]
+
+
+\draw (0:1) -- (180:1);
+
+\foreach \i in {0, 60, 120, 180, 240, 300}
+{
+\draw (\i:1) -- (\i+60:1);
+\draw[thick, fill=gray!50] (\i:1) circle (3pt);
+}
+
+\draw[thick, fill=gray!50] (0:1) circle (3pt);
+
+\node at (0:1.6) {<m> 20/3</m>};
+\node at (60:1.4) {<m>5/3</m>};
+\node at (120:1.4) {<m>5/3</m>};
+\node at (180:1.6) {<m>20/3</m>};
+\node at (240:1.4) {<m>5/3</m>};
+\node at (300:1.4) {<m>5/3</m>};
+
+\end{scope}
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Closeness Centrality  <m>c_i^C =  \displaystyle{\frac{1}{\sum_{j} d_{i,j}}}</m>
+
+
+			<image width="90%" xml:id="fig-img-centrality15">
+				<latex-image>
+\begin{tikzpicture}%mathbook width=90%
+
+\foreach \i in {0, 60, 120, 180, 240, 300}
+{
+\draw (\i:1) -- (\i+60:1);
+\draw[thick, fill=gray!50] (\i:1) circle (3pt);
+}
+
+\draw[thick, fill=gray!50] (0:1) circle (3pt);
+
+\node at (0:1.4) {<m>1/9</m>};
+\node at (60:1.4) {<m>1/9</m>};
+\node at (120:1.4) {<m>1/9</m>};
+\node at (180:1.4) {<m>1/9</m>};
+\node at (240:1.4) {<m>1/9</m>};
+\node at (300:1.4) {<m>1/9</m>};
+
+
+\begin{scope}[shift={(5,0)}]
+
+
+\draw (0:1) -- (120:1);
+
+\foreach \i in {0, 60, 120, 180, 240, 300}
+{
+\draw (\i:1) -- (\i+60:1);
+\draw[thick, fill=gray!50] (\i:1) circle (3pt);
+}
+
+\draw[thick, fill=gray!50] (0:1) circle (3pt);
+
+
+\node at (0:1.6) {<m>1/7</m>};
+\node at (60:1.4) {<m>1/9</m>};
+\node at (120:1.4) {<m>1/7</m>};
+\node at (180:1.6) {<m>1/8</m>};
+\node at (240:1.4) {<m>1/9</m>};
+\node at (300:1.4) {<m>1/8</m>};
+
+\end{scope}
+
+
+\begin{scope}[shift={(10,0)}]
+
+
+\draw (0:1) -- (180:1);
+
+\foreach \i in {0, 60, 120, 180, 240, 300}
+{
+\draw (\i:1) -- (\i+60:1);
+\draw[thick, fill=gray!50] (\i:1) circle (3pt);
+}
+
+\draw[thick, fill=gray!50] (0:1) circle (3pt);
+
+
+\node at (0:1.6) {<m>1/7</m>};
+\node at (60:1.4) {<m>1/9</m>};
+\node at (120:1.4) {<m>1/9</m>};
+\node at (180:1.6) {<m>1/7</m>};
+\node at (240:1.4) {<m>1/9</m>};
+\node at (300:1.4) {<m>1/9</m>};
+
+\end{scope}
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+					</p>
+				</li>
+			</ol>
+
+</p>
+</solution>
+
+				</p>
+			</statement>
+		</exercise>
+	</exercises>
+
+
+
+</chapter>

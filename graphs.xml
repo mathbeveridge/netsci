@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+
+
+<chapter xml:id="graphs" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Graphs and Digraphs</title>
+	<introduction>
+		<p>
+
+
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+
+		<exercise>
+			<title>Handshaking Lemma</title>
+			<idx><h>Handshaking Lemma</h></idx>
+			<statement>
+				<p>
+Let <m>G=(V,E)</m> be an undirected graph. Prove the "handshaking lemma," which states that
+<me>
+\displaystyle{2|E| = \sum_{v \in V} \deg(v)}.
+</me>
+
+
+			</p>
+			</statement>
+			<solution>
+				<p>
+The right hand side (RHS) sums the degrees of all the vertices.  Every edge is incident with two vertices, so each edge is counted twice in the RHS. So when we add up all of the degrees, we get twice the number of edges.
+			</p>
+			</solution>
+
+		</exercise>
+		<exercise>
+			<title>Digraph Handshaking Lemma</title>
+			<idx><h>Digraph Handshaking Lemma</h></idx>
+			<statement>
+				<p>
+
+Let <m>D=(V,E)</m> be a digraph. Prove that
+<me>
+|E| = \sum_{v \in V} \deg^-(v) = \sum_{v \in V} \deg^+(v).
+</me>
+
+			</p>
+			</statement>
+			<solution>
+				<p>
+This is the directed graph variant of the previous problem. Every arc has a "tail" and a "head." Adding up the out degrees counts the arc tails. Adding up the in degrees counts the arc heads. In each case, every arc is counted once.
+			</p>
+			</solution>
+
+		</exercise>
+		<exercise>
+			<title>Counting Graphs</title>
+			<idx><h>Counting Graphs</h></idx>
+			<statement>
+				<p>
+Consider the vertex set <m>V=[n] = \{ 1, 2, 3, \ldots, n \}</m>. We want to construct a simple, <em>undirected</em> graph on <m>V</m>.
+			<ol>
+				<li>
+					<p>
+ How many possible edges are there between these vertices?
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+  How many different simple graphs can we construct using these vertices? (The graphs do not have to be connected.)
+
+
+					</p>
+				</li>
+			</ol>
+
+			</p>
+			</statement>
+			<solution>
+				<p>
+
+			<ol>
+
+				<li>
+					<p>
+ An edge corresponds to an unordered pair of vertices, chosen from the set <m>[n]</m>. In other words, we must choose a subset of size 2 from the set <m>[n]</m>. There are
+<me>
+{n \choose 2} = \frac{n(n-1)}{2}
+</me>
+ways to do this.
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Let's give a recipe for creating a graph on the vertices <m>[n]</m>. For each pair of vertices, we must decide whether or not the corresponding edge is in our graph. So we must make <m>{n \choose 2}</m> yes/no decisions, and these decisions are made independently of one another. Therefore, the total number of graphs is
+<me>
+2^{n \choose 2}.
+</me>
+					</p>
+				</li>
+			</ol>
+
+			</p>
+			</solution>
+
+		</exercise>
+		<exercise>
+			<title>Counting Digraphs</title>
+			<idx><h>Counting Digraphs</h></idx>
+			<statement>
+				<p>
+Answer the same questions as in Problem 3, but this time for a simple <em>directed</em> graph.
+
+			</p>
+			</statement>
+			<solution>
+				<p>
+
+			<ol>
+
+				<li>
+					<p>
+ A "simple digraph" is a digraph without  loops and without multiple arcs. You are allowed to have both <m>uv</m> and <m>vu</m> in a digraph.
+There are
+<me>
+n (n-1) = (n)_2
+</me>
+ways to create an arc. We have <m>n</m> choices for the starting vertex and <m>n-1</m> choices for the target vertex.
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Here are two solutions.
+
+		<ul>
+			<li>
+			<p>
+ We must decide whether each arc is in the digraph. We must make <m>n(n-1)</m> yes/no independent decisions, so the number of simple digraphs is
+<me>
+2^{n(n-1)}.
+</me>
+
+			</p>
+			</li>
+			<li>
+			<p>
+ There are now four choices for every vertex pair: no arc, just <m>(u,v)</m>, just <m>(v,u)</m> or both <m>(u,v), (v,u)</m>. We must make this decision for every pair of vertices. So the total number of digraphs is
+<me>
+4^{n \choose 2}.
+</me>
+
+
+			</p>
+			</li>
+		</ul>
+Of course, these two numbers are equal.
+
+					</p>
+				</li>
+			</ol>
+
+			</p>
+			</solution>
+
+
+
+		</exercise>
+		<exercise>
+			<title>Strongly Connected Components</title>
+			<idx><h>Strongly Connected Components</h></idx>
+			<statement>
+				<p>
+Find the strongly connected components of the following digraphs.
+
+			<image width="80%" xml:id="fig-img-graphs0">
+				<latex-image>
+\begin{tikzpicture}[scale=.8] %mathbook width=80%
+
+\node (X1) at (0:1.5) {};
+\node (X2) at (60:1.5) {};
+\node (X3) at (120:1.5) {};
+\node (X4) at (180:1.5) {};
+\node (X5) at (240:1.5) {};
+\node (X6) at (300:1.5) {};
+
+
+\node  at (0:1.85) {1};
+\node  at (60:1.85) {2};
+\node  at (120:1.85) {3};
+\node  at (180:1.85) {4};
+\node  at (240:1.85) {5};
+\node  at (300:1.85) {6};
+
+\draw[fill] (X1) circle (3pt);
+\draw[fill] (X2) circle (3pt);
+\draw[fill] (X3) circle (3pt);
+\draw[fill] (X4) circle (3pt);
+\draw[fill] (X5) circle (3pt);
+\draw[fill] (X6) circle (3pt);
+
+\draw[-latex] (X1) -- (X2);
+\draw[-latex] (X2) -- (X3);
+\draw[-latex] (X3) -- (X4);
+\draw[-latex] (X4) -- (X5);
+\draw[-latex] (X3) -- (X1);
+\draw[-latex] (X3) -- (X5);
+\draw[-latex] (X1) -- (X4);
+\draw[-latex] (X6) -- (X3);
+
+\node at (-3,0) {(a)};
+
+
+\begin{scope}[shift={(8,0)}]
+
+
+\node (Y1) at (0:1.5) {};
+\node (Y2) at (45:1.5) {};
+\node (Y3) at (90:1.5) {};
+\node (Y4) at (135:1.5) {};
+\node (Y5) at (180:1.5) {};
+\node (Y6) at (225:1.5) {};
+\node (Y7) at (270:1.5) {};
+\node (Y8) at (315:1.5) {};
+
+\node at (0:1.85) {1};
+\node  at (45:1.85) {2};
+\node at (90:1.85) {3};
+\node  at (135:1.85) {4};
+\node  at (180:1.85) {5};
+\node  at (225:1.85) {6};
+\node  at (270:1.85) {7};
+\node  at (315:1.85) {8};
+
+\draw[fill] (Y1) circle (3pt);
+\draw[fill] (Y2) circle (3pt);
+\draw[fill] (Y3) circle (3pt);
+\draw[fill] (Y4) circle (3pt);
+\draw[fill] (Y5) circle (3pt);
+\draw[fill] (Y6) circle (3pt);
+\draw[fill] (Y7) circle (3pt);
+\draw[fill] (Y8) circle (3pt);
+
+\draw[-latex] (Y5) -- (Y6);
+\draw[-latex] (Y3) -- (Y6);
+\draw[-latex] (Y7) -- (Y6);
+
+\draw[-latex] (Y1) -- (Y6);
+\draw[-latex] (Y6) -- (Y4);
+
+\draw[-latex] (Y4) -- (Y8);
+\draw[-latex] (Y8) -- (Y2);
+\draw[-latex] (Y2) -- (Y3);
+\draw[-latex] (Y8) -- (Y3);
+
+\draw[-latex] (Y1) -- (Y5);
+\draw[-latex] (Y5) -- (Y7);
+\draw[-latex] (Y7) -- (Y1);
+
+
+\node at (-3,0) {(b)};
+
+
+\end{scope}
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+			</p>
+			</statement>
+			<solution>
+				<p>
+
+			<ol>
+
+				<li>
+					<p>
+ There are four strongly connected components:
+<me>
+\{ 1 , 2 , 3 \},  \{ 4\},  \{ 5 \},  \{ 6 \}.
+</me>
+					</p>
+				</li>
+				<li>
+					<p>
+ There are two strongly connected components:
+<me>
+\{1,5,7\},  \{ 2,3,4,6,8\}
+</me>
+
+					</p>
+				</li>
+			</ol>
+
+			</p>
+			</solution>
+
+		</exercise>
+		<exercise>
+			<title>Strongly Connected Digraph</title>
+			<idx><h>Strongly Connected Digraph</h></idx>
+			<statement>
+				<p>
+Prove that a digraph <m>D=(V,E)</m> is strongly connected if and only if for every partition <m>V = A \cup B</m> into disjoint, nonempty sets, there is an arc in <m>D</m> directed from <m>A</m> to <m>B</m> and an arc in <m>D</m> directed from <m>B</m> to <m>A</m>.
+
+
+			</p>
+			</statement>
+			<solution>
+				<p>
+
+<m>(\Rightarrow)</m> Suppose that <m>D</m> is strongly connected. Pick any partition <m>V=A \cup B</m> into disjoint, nonempty sets. Choose any <m>a \in A</m> and <m>b \in B</m>. Since <m>D</m> is strongly connected, there is a directed path <m>P</m> from <m>a</m> to <m>b</m>. Follow this path until you reach the first arc <m>(x,y)</m> whose tail <m>x \in A</m> and whose head <m>y \in B</m>. This is the desired arc. By an identical argument, there is an arc from <m>B</m> to <m>A</m> because there is a directed path from <m>b</m> to <m>a</m>.
+
+			</p><p>
+
+<m>(\Leftarrow)</m> Suppose that for every partition <m>V = A \cup B</m> into disjoint, nonempty sets, there is an arc in <m>D</m> directed from <m>A</m> to <m>B</m> and an arc in <m>D</m> directed from <m>B</m> to <m>A</m>. We  show that for any vertices <m>x,y</m> there is a path from <m>x</m> to <m>y</m> and from <m>y</m> to <m>x</m>.
+
+			</p><p>
+
+Pick a vertex <m>x</m>. We will construct a directed tree <m>T</m> on <m>V</m> starting from <m>x</m> where every arc points away from <m>x</m>. This tree contains a directed path from <m>x</m> to any other vertex in the digraph, including our desired vertex <m>y</m>. We construct this directed tree as follows.
+		<ul>
+			<li>
+			<p>
+ To start off, our tree <m>T</m> just contains the root vertex <m>x</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ Take <m>A = \{ x \}</m> and <m>B = V \backslash \{ x \}</m>. There is an arc from <m>A</m> to <m>B</m>, which must be of the form <m>(x, v_1)</m> for some <m>v_1 \in B</m>.  Add this arc and vertex to the tree <m>T</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ Next, take <m>A = \{ x, v_1 \}</m> and <m> B = V \backslash A</m>. There is an arc from <m>A</m> to <m>B</m>, so add this arc and its new head vertex <m>v_2</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ Next, take <m>A = \{ x, v_1, v_2 \}</m> and <m>B= V \backslash A</m>. This adds a new vertex <m>v_3</m> to our directed tree.
+			</p>
+			</li>
+			<li>
+			<p>
+ Repeat this process until you have a directed tree containing all of the vertices of <m>V</m>, including the desired vertex <m>y</m>.
+			</p>
+			</li>
+		</ul>
+You can make the same argument to create a directed tree rooted at <m>y</m>, which identifies a directed path from <m>y</m> to <m>x</m>.
+
+			</p><p>
+<em>Challenge:</em> The <m>(\Leftarrow)</m> proof can be made more rigorous by using induction on the size of <m>V</m>. I encourage you to write such a proof!
+
+
+
+			</p>
+			</solution>
+
+
+
+		</exercise>
+		<exercise>
+			<title>Transitive Tournaments</title>
+			<idx><h>Transitive Tournaments</h></idx>
+			<statement>
+				<p>
+A tournament <m>T</m> is <em>transitive</em> if whenever <m>(u,v)</m> and <m>(v,w)</m> are arcs in <m>T</m>, then <m>(u,w)</m> is also an arc of <m>T</m>.
+
+			<ol>
+
+				<li>
+					<p>
+ Draw all possible unlabeled transitive tournaments on 3 vertices and 4 vertices.
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Prove that a tournament <m>T</m> is transitive if and only if <m>T</m> has no (directed) cycles. (Hint:  prove <m>\Longrightarrow</m> by contradiction by picking a cycle of shortest length, then showing there is an even shorter cycle!)
+
+
+
+					</p>
+				</li>
+			</ol>
+
+
+			</p>
+			</statement>
+			<solution>
+				<p>
+
+			<ol>
+
+				<li>
+					<p>
+ In fact, there is only one way to make a transitive tournament on <m>n</m> unlabelled vertices. In particular, there will always be a <em>source</em> vertex with all arcs pointing outwards, and a <em>sink</em> vertex with all arcs pointing inwards.
+
+
+			<image width="50%" xml:id="fig-img-graphs1">
+				<latex-image>
+\begin{tikzpicture}
+
+
+\node (X1) at (.5, 0) {};
+\node (X2) at (0, .87) {};
+\node (X3) at (-.5, 0) {};
+
+\draw[fill] (X1) circle (3pt);
+\draw[fill] (X2) circle (3pt);
+\draw[fill] (X3) circle (3pt);
+
+\draw[-latex] (X1) -- (X2);
+\draw[-latex] (X2) -- (X3);
+\draw[-latex] (X1) -- (X3);
+
+
+\begin{scope}[shift={(3,0)}]
+
+
+\node (Y1) at (0, 0) {};
+\node (Y2) at (1, 0) {};
+\node (Y3) at (1, 1) {};
+\node (Y4) at (0, 1) {};
+
+\draw[fill] (Y1) circle (3pt);
+\draw[fill] (Y2) circle (3pt);
+\draw[fill] (Y3) circle (3pt);
+\draw[fill] (Y4) circle (3pt);
+
+\draw[-latex] (Y1) -- (Y2);
+\draw[-latex] (Y2) -- (Y3);
+\draw[-latex] (Y1) -- (Y3);
+\draw[-latex] (Y1) -- (Y4);
+\draw[-latex] (Y2) -- (Y4);
+\draw[-latex] (Y3) -- (Y4);
+
+
+\end{scope}
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>(\Rightarrow)</m> Suppose that <m>T</m> is a transitive tournament that contains a cycle. Pick a cycle <m>C</m> of shortest length on vertices <m>v_1, v_2, \ldots, v_k</m>. Note that <m>k &gt;3</m> since the definition of a transitive tournament forbids a directed 3-cycle. Look at the arc between <m>v_1</m> and <m>v_3</m>. Since <m>v_1 v_2</m> and <m>v_2 v_3</m> are arcs, this forces <m>v_1 v_3</m> to be an arc. But then <m>v_1, v_3, \ldots v_k</m> is a directed cycle whose length is shorter than <m>C</m>, a contradiction. Therefore <m>T</m> cannot contain any directed cycles.
+
+			</p><p>
+
+<m>(\Leftarrow)</m> Suppose that <m>T</m> has no directed cycles. Suppose that <m>(u,v)</m> and <m>(v,w)</m> are arcs. We cannot have a directed 3-cycle, so <m>u</m> and <m>w</m> must be connected by the arc <m>(u,w)</m>. Therefore, <m>T</m> is transitive.
+
+					</p>
+				</li>
+			</ol>
+
+			</p>
+			</solution>
+
+
+
+
+		</exercise>
+	</exercises>
+
+
+</chapter>

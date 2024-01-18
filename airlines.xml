@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+
+
+<chapter xml:id="us-airline" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Analyzing the US Airline Network</title>
+	<introduction>
+		<p>
+
+\bigskip
+
+
+In this hands-on activity, you will play with a reasonably sized network: an airline route network for the United States from the early 2000s. First, you will explore this data set in Gephi. Then you will do similar calculations using NetworkX in Python.
+
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+
+		<exercise>
+			<title>Getting Started in Gephi</title>
+			<idx><h>Getting Started in Gephi</h></idx>
+			<statement>
+				<p>
+
+			<ol>
+
+
+				<li>
+					<p>
+ Load the <c>us-airlines.graphml</c> file into Gephi.
+
+					</p>
+				</li>
+				<li>
+					<p>
+ How many nodes are there? How many edges?
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Show Node Labels. The nodes are labeled by numbers. You can change this by clicking on the clipboard/wrench icon at the bottom right of the Graph window. De-select "Label" and select "AirCode." Click OK. Adjust the label size so that you can read them.
+					</p>
+				</li>
+				<li>
+					<p>
+ Update the Layout to use ForceAtlas 2. Be sure to click "Run" and then "Stop" once the network has stabilized.
+					</p>
+				</li>
+				<li>
+					<p>
+ Run the following statistics  in the Statistics window (on the right hand side).
+
+		<ul>
+			<li>
+			<p>
+ Average Degree
+			</p>
+			</li>
+			<li>
+			<p>
+ Network Diameter
+			</p>
+			</li>
+			<li>
+			<p>
+ HITS
+			</p>
+			</li>
+			<li>
+			<p>
+ PageRank
+			</p>
+			</li>
+			<li>
+			<p>
+ Eigenvector Centrality,
+			</p>
+			</li>
+		</ul>
+
+Look at the plots that come up, and then dismiss them.
+
+					</p>
+				</li>
+			</ol>
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Network Visualization in Gephi</title>
+			<idx><h>Network Visualization in Gephi</h></idx>
+			<statement>
+				<p>
+
+			<ol>
+
+				<li>
+					<p>
+ For now, keep the default layout. It actually has a meaning. As you start to change vertex colors/sizes and, vertex label sizes, you will realize what you are looking at.
+
+					</p>
+				</li>
+				<li>
+					<p>
+ In the Ranking tab (upper left window), update the node size, node color, and label size to reflect various properties. <em>Do not change label color: sometimes they become hard to see.</em>
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Can you find any interesting combinations?  What do you observe? Which centrality measures seem to be correlated. (Degree, Closeness, Betweenness, Authority, Hub. PageRank, Eigenvector.) Write down some of your observations.
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Have you figured out what the layout means? If so, then feel free to try some of the other Network Layout options for fun.
+
+					</p>
+				</li>
+			</ol>
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>The Data Laboratory in Gephi</title>
+			<idx><h>The Data Laboratory in Gephi</h></idx>
+			<statement>
+				<p>
+
+			<ol>
+
+				<li>
+					<p>
+ Now click on the "Data Laboratory" button at the top of the window. You can sort the table by a column by  clicking on the header. Clicking again reverses the ordering. Once again, look at which centrality measures are correlated, and which are not. Again, record your observations. Go back and pick a visualization that captures something interesting.
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Sort the nodes by degree. Are there any natural gap(s) that separate large degree nodes from the others?
+Now sort them by the other centrality measures. Do you see any large gaps in these ranking values that separate the "important" nodes from the rest?
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Find one (or more) lower degree node that ranks highly in one (or more)  of the other betweenness measures. If so, change your visualization to highlight these nodes. Can you explain why that node ranks highly?
+
+					</p>
+				</li>
+			</ol>
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Filtering in Gephi</title>
+			<idx><h>Filtering in Gephi</h></idx>
+			<statement>
+				<p>
+
+			<ol>
+
+				<li>
+					<p>
+ Click on the "Overview" button at the top of the window. We will now add our first filter: we only want to show nodes of high degree.
+
+					</p>
+				</li>
+				<li>
+					<p>
+ In the right-hand window, click on the "Filter" tab (which is next to the "Statistics" tab. Explore down to  "Attributes/Range/Degree." Then drag "Degree" to the lower half of this tab (named "Queries"). Click on "Filter."
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Adjust the Query slider. Among the highest degree nodes, what is the maximum number that form a complete graph (also known as a "clique")? What is the smallest degree (in the overall graph) of vertices in this clique?
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Make a new Query using other centrality measures where you saw a big gap in the ranking value. How connected are the high ranking nodes for this measure? What other interesting observations can you make about these nodes? Is there a clear internal structure? Or perhaps a lack of one?
+
+
+					</p>
+				</li>
+			</ol>
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Getting Started with NetworkX</title>
+			<idx><h>Getting Started with NetworkX</h></idx>
+			<statement>
+				<p>
+
+			<ol>
+
+				<li>
+					<p>
+ Now let's try to do some of this same work using NetworkX. You will need to start by installing NetworkX using the command
+<cd>
+pip3 install networkx
+</cd>
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Start off by familiarizing yourself with NetworkX by working though the
+<url href="https://networkx.github.io/documentation/stable/tutorial.html" >NetworkX tutorial</url>.
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Try to import the airline graph and find its centrality measures. Googling the following terms will bring up useful parts of the NetworkX documentation:
+<cd>
+networkx tutorial
+networkx centrality
+networkx pagerank
+networkx graphml import
+</cd>
+Or visit our moodle site for direct links.
+
+If you want to plot the network via python, here is a simple code snippet that gives you an idea of how to start.
+<cd>
+import networkx as nx
+import matplotlib.pyplot as plt
+
+G = nx.cubical_graph()
+nx.draw(G)
+plt.show()
+</cd>
+
+					</p>
+				</li>
+			</ol>
+				</p>
+			</statement>
+		</exercise>
+	</exercises>
+
+
+</chapter>

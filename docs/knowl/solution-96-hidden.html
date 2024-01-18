@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>We have partitioned the journey into phases. Each step occurs in exactly one phase: when we are at a vertex that is distance \(d\) from the target, we are in phase \(\lfloor \log(d) \rfloor\text{.}\) So to get the total number of steps, we just add the number of steps taken in each phase. Here are a couple of notes:</p>
+<ul class="disc">
+<li><p>The indexing of the phases "counts down": the first phase is \(j= \lfloor \log(n/2) \rfloor \) and the last phase is \(j=0\text{.}\)</p></li>
+<li><p>It is possible to have \(X_k=0\text{.}\)  this occurs when  we take a long range edge that jumps over the interval \(2^k \leq d &lt; 2^{k+1}\text{.}\)</p></li>
+</ul>
+</div></body>
+</html>

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-10-13T22:54:50-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NetSci Epidemics on Networks</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\notdivide}{{\not{\mid}}}
+\newcommand{\notsubset}{\not\subset}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\gf}{\operatorname{GF}}
+\newcommand{\inn}{\operatorname{Inn}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}}
+\newcommand{\chr}{\operatorname{char}}
+\newcommand{\Null}{\operatorname{Null}}
+
+
+\def\Z{\mathbb Z}
+\def\R{\mathbb R}
+\def\Q{\mathbb Q}
+\def\N{{\mathbb N}}
+\def\C{\mathbb C}
+
+\def\ba{{\mathbf{a}}}
+\def\bb{\mathbf{b}}
+\def\bh{{\mathbf{h}}}
+\def\bu{{\mathbf{u}}}
+\def\bv{{\mathbf{v}}}
+\def\bw{{\mathbf{w}}}   
+\def\bx{{\mathbf{x}}}
+\def\by{\mathbf{y}}    
+\def\bone{{\mathbf{1}}}
+\def\bzero{\mathbf{0}}
+
+\def\var{{\mbox{var}}}
+\def\P{{\mathbb{P}}}
+\def\E{{\mathbb{E}}}
+
+
+\def\cA{{\overline{A}}}
+
+\def\kin{k^{\mathrm{in}}}
+\def\kout{k^{\mathrm{out}}}
+
+\newcommand{\indeg}[1]{k^{\mathrm{in}}_{#1}}
+\newcommand{\outdeg}[1]{k^{\mathrm{out}}_{#1}}
+
+\tikzset{-&gt;-/.style={decoration={
+ markings,
+ mark=at position .5 with {\arrow{latex}}},postaction={decorate}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="netsci.html"><span class="title">Network Science:</span> <span class="subtitle">Activities and Exercises</span></a></h1>
+<p class="byline">Andrew Beveridge</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="cascades.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="part-processes.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="part-homework.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="cascades.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="part-processes.html" title="Up">Up</a><a class="next-button button toolbar-item" href="part-homework.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link part"><a href="part-structure.html" data-scroll="part-structure"><span class="codenumber">I</span> <span class="title">Network Structure</span></a></li>
+<li class="link">
+<a href="graphs.html" data-scroll="graphs"><span class="codenumber">1</span> <span class="title">Graphs and Digraphs</span></a><ul><li><a href="exercises-1.html" data-scroll="exercises-1">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="centrality.html" data-scroll="centrality"><span class="codenumber">2</span> <span class="title">Centrality Measures</span></a><ul><li><a href="exercises-2.html" data-scroll="exercises-2">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="algcentrality.html" data-scroll="algcentrality"><span class="codenumber">3</span> <span class="title">Algebraic Centrality</span></a><ul><li><a href="exercises-3.html" data-scroll="exercises-3">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="randomwalk.html" data-scroll="randomwalk"><span class="codenumber">4</span> <span class="title">Random Walks</span></a><ul><li><a href="exercises-4.html" data-scroll="exercises-4">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="hits.html" data-scroll="hits"><span class="codenumber">5</span> <span class="title">Hubs and Authorities</span></a><ul><li><a href="exercises-5.html" data-scroll="exercises-5">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="us-airline.html" data-scroll="us-airline"><span class="codenumber">6</span> <span class="title">Analyzing the US Airline Network</span></a><ul><li><a href="exercises-6.html" data-scroll="exercises-6">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="modularity.html" data-scroll="modularity"><span class="codenumber">7</span> <span class="title">Modularity</span></a><ul><li><a href="exercises-7.html" data-scroll="exercises-7">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="communities.html" data-scroll="communities"><span class="codenumber">8</span> <span class="title">Community Detection in Gephi</span></a><ul><li><a href="exercises-8.html" data-scroll="exercises-8">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="randvar.html" data-scroll="randvar"><span class="codenumber">9</span> <span class="title">Discrete Random Variables</span></a><ul>
+<li><a href="randvar0.html" data-scroll="randvar0">Discrete Random Variables</a></li>
+<li><a href="randvar3.html" data-scroll="randvar3">Events</a></li>
+<li><a href="randvar6.html" data-scroll="randvar6">CDF and CCDF</a></li>
+<li><a href="randvar10.html" data-scroll="randvar10">Expectation, Variance and Moments</a></li>
+<li><a href="randvar16.html" data-scroll="randvar16">Famous Discrete Distributions</a></li>
+<li><a href="exercises-9.html" data-scroll="exercises-9">Practice Problems</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="powerlaw.html" data-scroll="powerlaw"><span class="codenumber">10</span> <span class="title">Power Laws</span></a><ul><li><a href="exercises-10.html" data-scroll="exercises-10">Practice Problems</a></li></ul>
+</li>
+<li class="link part"><a href="part-models.html" data-scroll="part-models"><span class="codenumber">II</span> <span class="title">Network Models</span></a></li>
+<li class="link">
+<a href="giantcomp.html" data-scroll="giantcomp"><span class="codenumber">11</span> <span class="title">The Emergence of the Giant Component</span></a><ul><li><a href="exercises-11.html" data-scroll="exercises-11">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="pricemodel.html" data-scroll="pricemodel"><span class="codenumber">12</span> <span class="title">Price's Model for a Citation Network</span></a><ul><li><a href="exercises-12.html" data-scroll="exercises-12">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="smallworld.html" data-scroll="smallworld"><span class="codenumber">13</span> <span class="title">The Small World Model</span></a><ul><li><a href="exercises-13.html" data-scroll="exercises-13">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="navsmallworld.html" data-scroll="navsmallworld"><span class="codenumber">14</span> <span class="title">Navigable Small World Model</span></a><ul><li><a href="exercises-14.html" data-scroll="exercises-14">Practice Problems</a></li></ul>
+</li>
+<li class="link part"><a href="part-processes.html" data-scroll="part-processes"><span class="codenumber">III</span> <span class="title">Processes on Networks</span></a></li>
+<li class="link">
+<a href="cascades.html" data-scroll="cascades"><span class="codenumber">15</span> <span class="title">Network Cascades</span></a><ul><li><a href="exercises-15.html" data-scroll="exercises-15">Practice Problems</a></li></ul>
+</li>
+<li class="link active">
+<a href="epidemics.html" data-scroll="epidemics"><span class="codenumber">16</span> <span class="title">Epidemics on Networks</span></a><ul><li><a href="exercises-16.html" data-scroll="exercises-16">Practice Problems</a></li></ul>
+</li>
+<li class="link part"><a href="part-homework.html" data-scroll="part-homework"><span class="codenumber">IV</span> <span class="title">Homework Exercises</span></a></li>
+<li class="link">
+<a href="hw-graphs.html" data-scroll="hw-graphs"><span class="codenumber">17</span> <span class="title">Exercises: Graphs and Digraphs</span></a><ul><li><a href="exercises-17.html" data-scroll="exercises-17">Homework Exercises</a></li></ul>
+</li>
+<li class="link">
+<a href="hw-centrality.html" data-scroll="hw-centrality"><span class="codenumber">18</span> <span class="title">Exercises: Centrality Measures</span></a><ul><li><a href="exercises-18.html" data-scroll="exercises-18">Homework Exercises</a></li></ul>
+</li>
+<li class="link">
+<a href="hw-degreedist.html" data-scroll="hw-degreedist"><span class="codenumber">19</span> <span class="title">Exercises: Degree Distributions and Power Laws</span></a><ul><li><a href="exercises-19.html" data-scroll="exercises-19">Homework Exercises</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="epidemics"><h2 class="heading">
+<span class="type">Chapter</span> <span class="codenumber">16</span> <span class="title">Epidemics on Networks</span>
+</h2>
+<section class="introduction" id="introduction-16"><p id="p-602"></p></section><section class="exercises" id="exercises-16"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">16.1</span> <span class="title">Practice Problems</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-71"><h6 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Excess Degree Distribution.</span>
+</h6>
+<p id="p-603">Suppose that we have  a large network for which there is no correlation between vertex degrees. That is, an edge from vertex \(v\) leads to a vertex chosen  uniformly at random. Let \(p_k\) denote the fraction of vertices of degree \(k\text{.}\) When you pick a vertex \(v\) at random, we have \(\Pr[\deg(v)=k] = p_k\text{.}\) This means that the expected degree of the network is</p>
+<div class="displaymath">
+\begin{equation*}
+\langle k \rangle = \sum_{k=0}^{k_{\max}} k  \cdot p_k.
+\end{equation*}
+</div>
+<p data-braille="continuation">Consider the following process: Pick a random vertex \(v\) and then move to a random neighbor \(w\) of vertex \(v\text{.}\) Let</p>
+<div class="displaymath">
+\begin{equation*}
+q_k = \Pr [\deg(w)=k+1].
+\end{equation*}
+</div>
+<p data-braille="continuation">In other words, \(w\) has \(k\) additional edges, besides the one you just traveled. In this case, we say that \(w\) has <em class="emphasis">excess degree</em> \(k\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-296">
+<p id="p-604">Explain why the excess degree distribution  satisfies</p>
+<div class="displaymath">
+\begin{equation*}
+q_k = \frac{(k+1) p_{k+1}}{\langle k \rangle}.
+\end{equation*}
+</div>
+<p data-braille="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-108" id="solution-108"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-108"><div class="solution solution-like">
+<p id="p-605">Suppose that we have \(n\) vertices and \(m\) edges. Let's think of our graph as "unwired" meaning that a vertex of degree \(k\) is a vertices with \(k\) edge stubs (which connect randomly to one another). We start at a vertex \(v\) and then pick a random stub connected to vertex \(v\text{.}\) This stub is equally likely to connect to any of the other stub. So the probability that we connect to a particular vertex of degree \(k+1\) is</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{k+1}{2m-1} \approx \frac{k+1}{2m}.
+\end{equation*}
+</div>
+<p data-braille="continuation">The number of vertices of degree \(k+1\) is \(p_{k+1} n\text{.}\) So the chance that we randomly connect to a vertex of degree \(k\) is</p>
+<div class="displaymath">
+\begin{equation*}
+q_k = \frac{k+1}{2m} \cdot p_{k+1}  n =  \frac{n}{2m} \cdot  (k+1) p_{k+1}  = \frac{(k+1) p_{k+1} }{\langle k \rangle}.
+\end{equation*}
+</div>
+</div></div></p>
+</li>
+<li id="li-297">
+<p id="p-606">Confirm that the expected degree of vertex \(w\) is</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\langle k^2 \rangle}{\langle k \rangle}.
+\end{equation*}
+</div>
+<p data-braille="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-109" id="solution-109"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-109"><div class="solution solution-like"><div class="displaymath" id="p-607">
+\begin{equation*}
+\sum_{k} (k+1) q_k = \sum_{k=0}^{k_{\max}-1} \frac{(k+1)^2 p_{k+1}}{\langle k \rangle}
+\end{equation*}
+</div></div></div></p>
+</li>
+<li id="li-298">
+<p id="p-608">Recall that</p>
+<div class="displaymath">
+\begin{equation*}
+\mbox{Var}[X] = E[X^2] - E[X]^2 &gt; 0
+\end{equation*}
+</div>
+<p data-braille="continuation">when \(X\) is not constant. Use this to explain why that the expected degree of \(w\) is larger than the expected degree of \(v\text{.}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-110" id="solution-110"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-110"><div class="solution solution-like"><div class="displaymath" id="p-609">
+\begin{equation*}
+\frac{\langle k^2 \rangle}{\langle k \rangle}    -  \langle k \rangle  =  \frac{\langle k^2 \rangle-  \langle k \rangle^2 }{\langle k \rangle}    &gt; 0
+\end{equation*}
+</div></div></div></p>
+</li>
+<li id="li-299"><p id="p-610">Colloquially, people refer to this result as: "your friends are more popular than you." Why? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-111" id="solution-111"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-111"><div class="solution solution-like"><p id="p-611">The expected degree of a randomly picked friend is larger than your expected degree. So it is more likely than not that your friend has larger degree than you do.</p></div></div></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-72"><h6 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Susceptible-Infected Model: The Homogeneous Case.</span>
+</h6>
+<p id="p-612">We start by considering a spread of disease model that replaces the network with a simplifying assumption: everyone is equally likely to interact with everyone else. Consider a large population where a disease is active. People are either <em class="emphasis">susceptible</em> to the disease or are <em class="emphasis">infected</em>. Once you are infected, you remain infected. Let</p>
+<div class="displaymath">
+\begin{align*}
+I &amp;= \mbox{ fraction of population that is infected}\\
+S &amp;= (1-I)  \mbox{ fraction of population that is susceptible}\\
+\langle k \rangle &amp;= \sum_k k \, p_k  \mbox{ the average number of contacts}\\
+\beta &amp;= \mbox{ likelihood of transmission from infected person to susceptible person}
+\end{align*}
+</div>
+<ol id="p-613" class="lower-alpha">
+<li id="li-300">
+<p id="p-614">Interpret the following differential equation for the Susceptible/Infected Model (SI Model) with <em class="emphasis">transmission rate</em> \(\beta \langle k \rangle\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{dI}{dt} = \beta \langle k \rangle I S = \beta \langle k \rangle  I (1-I).
+\end{equation*}
+</div>
+<p data-braille="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-112" id="solution-112"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-112"><div class="solution solution-like"><p id="p-615">This formula says that change in infected = (transmission rate) \(\times\) (\# interactions)</p></div></div></p>
+</li>
+<li id="li-301">
+<p id="p-616">This differential equation is called the <em class="emphasis">logistic equation</em>. Its solution is the logistic function</p>
+<div class="displaymath">
+\begin{equation*}
+I(t) = \frac{I_0}{I_0 + (1-I_0)e^{-\beta \langle k \rangle t}}
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(I_0 = I(0)\) is the fraction of infected people at time \(t=0\text{.}\) We can write this as</p>
+<div class="displaymath">
+\begin{equation*}
+I(t) = \frac{1}{1+a e^{-c t}}
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(a = 1/I_0 - 1\) and \(c= \beta \langle k \rangle\text{.}\) Calculate \(\frac{dI}{dt}\) to confirm that \(I(t)\) satisfies the logistic equation</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{dI}{dt} = c I (1-I).
+\end{equation*}
+</div>
+<p data-braille="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-113" id="solution-113"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-113"><div class="solution solution-like"><div class="displaymath" id="p-617">
+\begin{equation*}
+\frac{dI}{dt} = - \frac{1}{(1+a e^{-ct})^2} (-ac e^{-ct}) =
+\frac{1}{(1+a e^{-ct})} \cdot  \frac{ac e^{-ct}}{(1+a e^{-ct})}  = cI (1-I)
+\end{equation*}
+</div></div></div></p>
+</li>
+<li id="li-302">
+<p id="p-618">Here is a plot of the logistic function  \(I(t)\text{.}\) <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/simodel.png" style="width: 100%; height: auto;" alt=""></div> Look at the formula from question  2(b) and explain why</p>
+<ol class="lower-roman">
+<li id="li-303"><p id="p-619">\(I(t) \sim e^{\beta \langle k \rangle t}\) when \(t &gt;0\) is very small.</p></li>
+<li id="li-304"><p id="p-620">\(I(t) \approx 1\) when \(t\) is very large.</p></li>
+</ol>
+<p data-braille="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-114" id="solution-114"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-114"><div class="solution solution-like"><ol id="p-621" class="lower-roman">
+<li id="li-305">
+<p id="p-622">If \(I_0\) is very small and \(t &gt;0\) is also small, then</p>
+<div class="displaymath">
+\begin{equation*}
+I(t) \approx I_0 e^{\beta \langle k \rangle t}.
+\end{equation*}
+</div>
+</li>
+<li id="li-306">
+<p id="p-623">If \(I_0\) is small and \(t&gt;0\) is big then \(e^{\beta \langle k \rangle t} \approx 0\text{,}\) so</p>
+<div class="displaymath">
+\begin{equation*}
+I(t) \approx \frac{I_0}{I_0} =1.
+\end{equation*}
+</div>
+</li>
+</ol></div></div></p>
+</li>
+</ol></article><article class="exercise exercise-like" id="exercise-73"><h6 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Susceptible-Infected Model on a Network.</span>
+</h6>
+<p id="p-624">Now we consider a networked version of the SI model.  Our "no correlation" assumption means that the fraction  of infected neighbors  of susceptible vertex \(v\) does not depend on \(\deg(v)\text{.}\) We let</p>
+<div class="displaymath">
+\begin{align*}
+I_k &amp;= \mbox{ fraction of vertices of degree   that are infected}\\
+I &amp;= \sum_{k} p_k \,  I_k  \mbox{ total fraction of infected vertices}\\
+\Theta &amp;= \mbox{ fraction of neighbors of a susceptible vertex that are infected}\\
+\beta &amp;= \mbox{ likelihood of transmission from infected vertex to susceptible vertex}
+\end{align*}
+</div>
+<ol id="p-625" class="lower-alpha">
+<li id="li-307">
+<p id="p-626">Explain why</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{dI_k}{dt} = \beta \,  k \,  \Theta \, (1- I_k).
+\end{equation*}
+</div>
+<p data-braille="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-115" id="solution-115"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-115"><div class="solution solution-like"><p id="p-627">\(\Delta\) infected of degree \(k\) = (transmission rate) \(\times\) (\# interactions with infected) \(\times\) (\# susceptible of degree \(k\))</p></div></div></p>
+</li>
+<li id="li-308">
+<p id="p-628">We are interested in the <em class="emphasis">early time behavior</em> of \(I_k\text{,}\) since we would like to intervene  (via quarantine or travel restrictions, etc) before the disease gets out of hand. If there aren't many infected vertices, then we may approximate \(1 - I_k \approx 1\) so that</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{dI_k}{dt} \approx \beta \,  k \,  \Theta.
+\end{equation*}
+</div>
+<p data-braille="continuation">Early on, the set of infected nodes is tree-like. In particular, you can assume that an infected vertex \(v\) has a link that points back to the (infected) vertex that transmitted the disease.</p>
+<p id="p-629">Use the excess degree equation from problem 1(a)  to explain why the fraction of links available for future transmission to a susceptible vertex is</p>
+<div class="displaymath">
+\begin{equation*}
+\Theta \approx  \frac{\sum_{k} (k-1) p_k I_k}{\langle k \rangle}.
+\end{equation*}
+</div>
+<p data-braille="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-116" id="solution-116"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-116"><div class="solution solution-like"><p id="p-630">This parallels the excess degree argument. Every infected vertex has \(k-1\) susceptible neighbors. The fraction of nodes that are degree \(k\) and infected is \(p_k I_k\text{.}\)</p></div></div></p>
+</li>
+<li id="li-309">
+<p id="p-631">Taking the derivative of the previous quantity, and using the approximation</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{dI_k}{dt} \approx \beta \,  k \,  \Theta,
+\end{equation*}
+</div>
+<p data-braille="continuation">we get a differential equation of the form</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d \Theta}{d t} = A \Theta
+\end{equation*}
+</div>
+<p data-braille="continuation">which has solution</p>
+<div class="displaymath">
+\begin{equation*}
+\Theta(t) = C e^{At}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Show that</p>
+<div class="displaymath">
+\begin{equation*}
+A= \beta \frac{\langle k^2 \rangle - \langle k \rangle}{\langle k \rangle}.
+\end{equation*}
+</div>
+<p data-braille="continuation">(The constant \(C\) is determined by the initial conditions.) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-117" id="solution-117"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-117"><div class="solution solution-like"><div class="displaymath" id="p-632">
+\begin{equation*}
+\frac{d \Theta}{d t} \approx   \frac{\sum_{k} (k-1) p_k }{\langle k \rangle} \frac{d I_k}{dt}
+\approx
+\frac{\sum_{k} (k-1) p_k }{\langle k \rangle} \beta k \Theta
+=
+\frac{\sum_{k} (k^2-k) p_k }{\langle k \rangle} \beta \Theta
+=
+\beta \frac{\langle k^2 \rangle - \langle k \rangle}{\langle k \rangle}    \Theta
+\end{equation*}
+</div></div></div></p>
+<p id="p-633"></p>
+</li>
+<li id="li-310">
+<p id="p-634">In the previous part, you showed that the fraction of links from available for future transmission from infected vertices to susceptible vertices is</p>
+<div class="displaymath">
+\begin{equation*}
+\Theta(t) = C e^{t/{\tau}}   \mbox{ where }   \tau = \frac{1}{A} = \frac{\langle k \rangle}{\beta ( \langle k^2 \rangle - \langle k \rangle)}.
+\end{equation*}
+</div>
+<p id="p-635">Early on in the epidemic, we have</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{dI_k}{dt} \approx \beta \,  k \,  \Theta = \beta \, k \, C e^{t/{\tau}}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Explain why higher degree vertices are more likely to be infected. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-118" id="solution-118"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-118"><div class="solution solution-like"><p id="p-636">The rate of infection has a linear relationship with the degree \(k\text{.}\)</p></div></div></p>
+</li>
+<li id="li-311">
+<p id="p-637">Finally, we explore the effect of the network structure on the spread of disease in the network. We focus on</p>
+<div class="displaymath">
+\begin{equation*}
+\tau = \frac{\langle k \rangle}{\beta ( \langle k^2 \rangle - \langle k \rangle)}.
+\end{equation*}
+</div>
+<p data-braille="continuation">We call \(\tau\) the <em class="emphasis">characteristic time scale</em> for the spread of the disease since it controls the rate of infection. A bigger \(\tau\) means that the infection takes longer to spread. Intuitively, we have</p>
+<div class="displaymath">
+\begin{equation*}
+\tau = \mbox{characteristic time scale} = \frac{1}{\mbox{infection rate}}.
+\end{equation*}
+</div>
+<ol class="lower-roman">
+<li id="li-312">
+<p id="p-638">For the Erdos-Renyi graph, we have</p>
+<div class="displaymath">
+\begin{equation*}
+\langle k^2 \rangle \approx \langle k \rangle^2 + \langle k \rangle.
+\end{equation*}
+</div>
+<p data-braille="continuation">What is \(\tau\) in this case? How does \(1/ \tau\) compare to the infection rate in the differential equation in problem  2(a) for the homogeneous case (where we decided to ignore the network)? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-119" id="solution-119"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-119"><div class="solution solution-like">
+<p id="p-639">In this case, we have</p>
+<div class="displaymath">
+\begin{equation*}
+\tau =
+\frac{\langle k \rangle}{\beta ( \langle k^2 \rangle - \langle k \rangle)}
+\approx
+\frac{\langle k \rangle}{\beta  \langle k \rangle^2}
+=
+\frac{1}{\beta  \langle k \rangle}
+\end{equation*}
+</div>
+</div></div></p>
+</li>
+<li id="li-313">
+<p id="p-640">Consider a graph whose degree distribution obeys a power law</p>
+<div class="displaymath">
+\begin{equation*}
+\Pr[\deg(v)=q] \sim q^{-\alpha}.
+\end{equation*}
+</div>
+<p data-braille="continuation">For a natural power law, we have  \(2 &lt; \alpha &lt; 3\text{.}\) Recall that for a natural power law,  \(\langle k \rangle\) is finite but \(\langle k^2 \rangle\) is infinite. (This is what led to the appearance of hubs.) What does this imply about the infection rate on such a network? What role must the hubs play, especially in light of part (d) above, and the fact that "your friends are more popular than you are"? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-120" id="solution-120"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-120"><div class="solution solution-like"><p id="p-641">We know that \(\langle k \rangle\) is finite but \(\langle k^2 \rangle\) is infinite. This means that the characteristic time scale tends to 0 as the network gets larger. In other words, the infection spreads instantaneously. So the existence of hubs expedites the spread of disease!</p></div></div></p>
+</li>
+</ol>
+</li>
+</ol></article></section></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+
+
+<chapter xml:id="algcentrality" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Algebraic Centrality</title>
+	<introduction>
+		<p>
+
+
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+
+		<exercise>
+			<title>Adjacency Matrix of a Graph</title>
+			<idx><h>Adjacency Matrix of a Graph</h></idx>
+			<statement>
+				<p>
+Find the adjacency matrix <m>A</m>  of the following undirected graph, where <m>A_{ij}=1</m> if <m>(i,j) \in E</m> (an undirected edge), and is 0 otherwise.
+
+
+
+			<image width="30%" xml:id="fig-img-algcentrality0" source="images/graph-adjacency.png" />
+
+
+<solution>
+<p>
+
+<me>
+\begin{bmatrix}
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 1 \\
+0 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 \\
+1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 \\
+0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 1 \\
+1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0
+\end{bmatrix}
+</me>
+
+</p>
+</solution>
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Adjacency Matrix of a Digraph</title>
+			<idx><h>Adjacency Matrix of a Digraph</h></idx>
+			<statement>
+				<p>
+Find the adjacency matrix <m>A</m> of the following directed graph, where <m>A_{ij}=1</m> if <m>(i,j)\in E</m> (a directed arc), and is 0 otherwise. Note: the <m>i</m>th row contains all the arcs leading out of <m>i</m>. So construct the matrix row-by-row.
+
+			<image width="30%" xml:id="fig-img-algcentrality1" source="images/directed-graph.png" />
+
+
+<solution>
+<p>
+
+<me>
+\begin{bmatrix}
+0 &amp; 1 &amp; 0&amp; 0 &amp; 1&amp; 0 \\
+0&amp; 0&amp; 0&amp; 0&amp; 0&amp; 0\\
+1 &amp; 1&amp; 0&amp; 0&amp;0 &amp;0 \\
+0 &amp;0 &amp;1 &amp;0 &amp;0 &amp;0 \\
+0&amp; 0&amp; 0&amp;0 &amp; 0&amp;1 \\
+0 &amp; 0&amp; 0&amp; 0&amp; 1&amp; 0
+\end{bmatrix}
+</me>
+
+</p>
+</solution>
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Reducible Matrices</title>
+			<idx><h>Reducible Matrices</h></idx>
+			<statement>
+				<p>
+A <m>n \times n</m> matrix is <em>reducible</em> if there is an <m>n \times n</m> permutation matrix <m>P</m> such that
+<me>
+P^{\top} A P = \left[
+\begin{array}{cc}
+A_{11} &amp; A_{12} \\
+0 &amp; A_{22}
+\end{array}
+\right]
+</me>
+where <m>A_{11}</m> and <m>A_{22}</m> are square matrices. Conjugation by <m>P</m> rearranges the rows and columns. So this is equivalent to saying that we can order the vertices of <m>G</m> so that the adjacency matrix has the specified form.
+
+			<ol>
+				<li>
+					<p>
+ Recall that if <m>G</m> is an undirected graph, then <m>A</m> is symmetric. Explain why the adjacency matrix of an undirected graph is reducible if and only if <m>G</m> is not connected.
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Prove that the adjacency matrix of a directed graph <m>G</m>  is reducible if and only if <m>G</m> is not strongly connected.
+
+
+					</p>
+				</li>
+			</ol>
+
+
+<solution>
+<p>
+			<ol>
+				<li>
+					<p>
+ Suppose that <m>G</m> is an undirected graph, so that its adjacency matrix is symmetric.
+The undirected graph <m>G</m> is reducible if and only if there is a permutation matrix <m>P</m> such that
+<me>
+P^{\top} A P = \left[
+\begin{array}{cc}
+A_{11} &amp; 0 \\
+0 &amp; A_{22}
+\end{array}
+\right].
+</me>
+Finally, we note that the matrix <m>P^{\top} A P</m> simply corresponds to reordering the vertices of <m>G</m>.
+
+			</p><p>
+
+(<m>\Rightarrow</m>) Suppose that <m>G</m> is reducible.  There are no paths from the vertices of submatrix <m>A_{11}</m> to the vertices of submatrix <m>A_{22}</m>. So the graph is not connected.
+
+			</p><p>
+
+(<m>\Leftarrow</m>) Suppose that <m>G</m> is not connected: let's suppose that <m>G</m> splits into two graphs <m>G_1</m> and <m>G_2</m> that have no edges between them. Create the adjacency matrix by listing the vertices in <m>G_1</m> and then listing the vertices in <m>G_2</m>.  Then this adjacency matrix is of the desired form.
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Let <m>G</m> be a  digraph.
+
+(<m>\Rightarrow</m>)
+Suppose that its adjacency matrix is reducible, so that
+<me>
+P^{\top} A P = \left[
+\begin{array}{cc}
+A_{11} &amp; A_{12} \\
+0 &amp; A_{22}
+\end{array}
+\right].
+</me>
+Then there is is no path from any vertex in the second set to any vertex in the first set. So <m>G</m> is not strongly connected.
+
+			</p><p>
+
+(<m>\Leftarrow</m>)
+Next, suppose that <m>G</m> is not strongly connected, Let <m>S_1, S_2, \ldots, S_k</m> be its strongly connected components. We claim that  that there must be at least one SCC <m>S_{i}</m> that has no arcs
+leading to any other <m>S_j</m>. Otherwise, there would be a directed cycle that goes through multiple SCC's, so they would be part of a single SCC.
+
+Without loss of generality, there is no directed path from any vertex in <m>S_k</m> to any vertex in <m>S_1, S_2, \ldots, S_k</m>.  List the vertices in <m>S_1 \cup  \ldots \cup S_{k-1}</m> in <m>A_{11}</m> and list the vertices <m>S_k \cup </m> in <m>A_{22}</m>. The adjacency matrix has is irreducible.
+
+					</p>
+				</li>
+			</ol>
+</p>
+</solution>
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Spectral Decomposition of a <m>2 \times 2</m> Matrix</title>
+			<idx><h>Spectral Decomposition of a <m>2 \times 2</m> Matrix</h></idx>
+			<statement>
+				<p>
+Let
+<me>
+A =
+\begin{bmatrix}
+3 &amp;  1\\
+1 &amp; 3
+\end{bmatrix}.
+</me>
+
+			<ol>
+
+				<li>
+					<p>
+ Check that the vector <m> \bv_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}</m> is an eigenvector of <m>A</m> for eigenvalue <m>\lambda_1=4</m>.
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Check that the vector
+<m>\bv_2 = \begin{bmatrix} 1 \\ -1 \end{bmatrix} </m> is an eigenvector of <m>A</m> for eigenvalue <m>\lambda_2 = 2</m>.
+
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Check that <m>\bv_1</m> and <m>\bv_2</m> are orthogonal vectors.
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Confirm that <m>A =  \lambda_1 \bu_1 \bu_1^{\top} + \lambda_2 \bu_2 \bu^{\top}</m> where <m>\bu_1, \bu_2</m> are eigenvectors of unit length in the direction of <m>\bv_1, \bv_2</m> respectively.
+
+
+
+
+					</p>
+				</li>
+			</ol>
+
+<solution>
+<p>
+			<ol>
+
+				<li>
+					<p>
+ We have
+
+<me>
+A \bv_1 =
+\begin{bmatrix} 3 &amp;  1\\ 1 &amp; 3 \end{bmatrix}
+\begin{bmatrix} 1 \\ 1 \end{bmatrix}
+=
+\begin{bmatrix} 4 \\ 4 \end{bmatrix}
+=
+4 \begin{bmatrix}1 \\ 1 \end{bmatrix}.
+</me>
+
+					</p>
+				</li>
+				<li>
+					<p>
+ We have
+
+
+<me>
+A \bv_1 =
+\begin{bmatrix}3 &amp;  1\\ 1 &amp; 3 \end{bmatrix}
+\begin{bmatrix} 1 \\ -1 \end{bmatrix}
+=
+\begin{bmatrix}2 \\ -2 \end{bmatrix}
+=
+2 \begin{bmatrix} 1 \\ -1 \end{bmatrix}.
+</me>
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Vectors <m>\bv_1</m> and <m>\bv_2</m> are orthogonal because
+
+<me>
+\bv_1 \cdot \bv_2 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+\begin{bmatrix} 1 &amp; -1 \end{bmatrix} = 1-1 = 0
+</me>
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Our unit eigenvectors are <m>\bu_1 = \frac{1}{\sqrt{2}} {1 \choose 1}</m> and <m>\bu_2 = \frac{1}{\sqrt{2}} {1 \choose -1}</m>. We find that
+</p>
+<md>
+<mrow>
+\lambda_1 \bu_1 \bu_1^{\top} + \lambda_2 \bu_2 \bu^{\top}
+&amp;= \frac{4}{2} \begin{bmatrix} 1  1 \end{bmatrix} \begin{bmatrix} 1 &amp; 1 \end{bmatrix}
+</mrow>
+<mrow>
++ \frac{2}{2}  \begin{bmatrix} 1  -1 \end{bmatrix}   \begin{bmatrix} 1 &amp; -1 \end{bmatrix}
+</mrow>
+<mrow>
+&amp;= 2  \begin{bmatrix} 1 &amp; 1  1 &amp; 1\end{bmatrix}  +  \begin{bmatrix} 1 &amp; -1  -1 &amp; 1\end{bmatrix}
+</mrow>
+<mrow>
+&amp;=   \begin{bmatrix} 3 &amp; 1  1 &amp; 3\end{bmatrix}
+</mrow>
+</md>
+<p>
+
+
+					</p>
+				</li>
+			</ol>
+</p>
+</solution>
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Recursive Importance in a Graph</title>
+			<idx><h>Recursive Importance in a Graph</h></idx>
+			<statement>
+				<p>
+
+Consider the following recursive rule for updating the importance of a vertex.
+
+		<ul>
+			<li>
+			<p>
+ At first, all vertices have importance = 1
+			</p>
+			</li>
+			<li>
+			<p>
+ In each round, update the importance of a vertex to be the sum of the importances of its neighbors.
+			</p>
+			</li>
+		</ul>
+
+Use this recursive rule to calculate the importance for the following undirected graph
+
+			<image width="50%" xml:id="fig-img-algcentrality2">
+				<latex-image>
+\begin{tikzpicture}
+
+\node at (0,0) {<m></m>
+\displaystyle{
+\begin{array}{c||c|c|c|c}
+&amp;  \,\,0  \,\,&amp; \,\,1 \,\, &amp;  \,\,2 \,\, &amp;  \,\,3 \,\, \\
+\hline
+\hline
+1 &amp; 1 &amp; &amp;&amp; \\
+2 &amp; 1 &amp; &amp;&amp; \\
+3 &amp; 1 &amp; &amp;&amp; \\
+4 &amp; 1 &amp; &amp;&amp;  \\
+5 &amp; 1 &amp; &amp;&amp; \\
+6 &amp; 1 &amp; &amp;&amp; \\
+\end{array}
+}
+<m></m>
+};
+
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+			<image width="30%" xml:id="fig-img-algcentrality3" source="images/graph-adjacency.png" />
+
+
+
+<solution>
+<p>
+
+<me>
+\begin{array}{c||c|c|c|c}
+&amp;  \,\,0  \,\,&amp; \,\,1 \,\, &amp;  \,\,2 \,\, &amp;  \,\,3 \,\, \\
+\hline
+\hline
+1 &amp; 1 &amp; 2&amp;7&amp;20 \\
+2 &amp; 1 &amp; 3&amp;10&amp;30 \\
+3 &amp; 1 &amp; 3&amp;9&amp;29\\
+4 &amp; 1 &amp; 3&amp;9&amp;28  \\
+5 &amp; 1 &amp; 3&amp;10&amp;30 \\
+6 &amp; 1 &amp; 4&amp;11&amp;35 \\
+\end{array}
+</me>
+
+</p>
+</solution>
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Recursive Importance in a Digraph</title>
+			<idx><h>Recursive Importance in a Digraph</h></idx>
+			<statement>
+				<p>
+
+Consider the following recursive rule for updating the importance of a vertex.
+		<ul>
+			<li>
+			<p>
+ At first, all vertices have importance = 1
+			</p>
+			</li>
+			<li>
+			<p>
+ In each round, update the importance of a vertex to be the sum of the importances of its in-neighbors.
+			</p>
+			</li>
+		</ul>
+
+			<ol>
+				<li>
+					<p>
+  Use this recursive rule to calculate the importance for the following directed graph.
+What do you observe?
+
+			<image width="50%" xml:id="fig-img-algcentrality4">
+				<latex-image>
+\begin{tikzpicture}
+
+\node at (0,0) {
+<m></m>
+\displaystyle{
+\begin{array}{c||c|c|c|c|c|c|c}
+&amp;  \,\,0  \,\,&amp; \,\,1 \,\, &amp;  \,\,2 \,\, &amp;  \,\,3 \,\, &amp; \,\, 4 \,\, &amp; \,\, 5 \,\, &amp; \,\, 6 \,\,\\
+\hline
+\hline
+1 &amp; 1 &amp; &amp;&amp;&amp; &amp;\\
+2 &amp; 1 &amp; &amp;&amp;&amp; &amp;\\
+3 &amp; 1 &amp; &amp;&amp;&amp; &amp;\\
+4 &amp; 1 &amp; &amp;&amp;&amp; &amp; \\
+5 &amp; 1 &amp; &amp;&amp;&amp; &amp;\\
+6 &amp; 1 &amp; &amp;&amp;&amp; &amp;\\
+\end{array}
+}
+<m></m>
+};
+
+
+
+
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+			<image width="30%" xml:id="fig-img-algcentrality5" source="images/acyclic-digraph.png" />
+
+
+
+<solution>
+<p>
+
+<me>
+\begin{array}{c||c|c|c|c|c|c|c}
+&amp;  \,\,0  \,\,&amp; \,\,1 \,\, &amp;  \,\,2 \,\, &amp;  \,\,3 \,\, &amp; \,\, 4 \,\, &amp; \,\, 5 \,\, &amp; \,\, 6 \,\, \\
+\hline
+\hline
+1 &amp; 1 &amp; 0&amp;0&amp;0&amp;0 &amp;0&amp;0\\
+2 &amp; 1 &amp; 1&amp;0&amp;0&amp; 0&amp;0&amp;0\\
+3 &amp; 1 &amp; 2&amp;3&amp;2&amp; 2&amp;1&amp;0\\
+4 &amp; 1 &amp; 1&amp;1&amp;0&amp; 0&amp; 0&amp;0\\
+5 &amp; 1 &amp; 1&amp;1&amp;1&amp; 0&amp;0&amp;0\\
+6 &amp; 1 &amp; 2&amp;2&amp;2&amp; 1&amp;0&amp;0\\
+\end{array}
+</me>
+All of the importance eventually leaks out of the network.
+
+</p>
+</solution>
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Use this  recursive rule calculate the importance of each vertex in this directed graph. What do you observe?
+
+			<image width="50%" xml:id="fig-img-algcentrality6">
+				<latex-image>
+\begin{tikzpicture}
+
+\node at (0,0) {
+<m></m>
+\displaystyle{
+\begin{array}{c||c|c|c|c|c}
+&amp;  \,\,0  \,\,&amp; \,\,1 \,\, &amp;  \,\,2 \,\, &amp;  \,\,3 \,\, &amp; \,\, 4 \,\, \\
+\hline
+\hline
+1 &amp; 1 &amp; &amp;&amp;&amp; \\
+2 &amp; 1 &amp; &amp;&amp;&amp; \\
+3 &amp; 1 &amp; &amp;&amp;&amp; \\
+4 &amp; 1 &amp; &amp;&amp;&amp;  \\
+\end{array}
+}
+<m></m>
+};
+
+
+
+
+
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+			<image width="30%" xml:id="fig-img-algcentrality7" source="images/digraph-feedback.png" />
+
+
+
+<solution>
+<p>
+<me>
+\begin{array}{c||c|c|c|c|c}
+&amp;  \,\,0  \,\,&amp; \,\,1 \,\, &amp;  \,\,2 \,\, &amp;  \,\,3 \,\, &amp; \,\, 4 \,\,  \\
+\hline
+\hline
+1 &amp; 1 &amp; 2&amp;5&amp;9&amp;19 \\
+2 &amp; 1 &amp;2 &amp;5&amp;9&amp;19 \\
+3 &amp; 1 &amp; 3&amp;4&amp;10&amp; 18\\
+4 &amp; 1 &amp; 0&amp;0&amp;0&amp; 0 \\
+\end{array}
+</me>
+In the limit, vertices 1,2,3 are equally important. Meanwhile, vertex 4 has no importance.
+
+
+</p>
+</solution>
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Devise a recursive importance rule for directed networks that "fixes the problems" that you observed in parts (a) and (b).
+
+<solution>
+<p>
+
+We need to fix the fact that importance leaks out of vertices in a weakly connected digraph.
+Here are two possible solutions.
+		<ul>
+			<li>
+			<p>
+ Every vertex has inherent importance of 1. Update the importance to be 1 plus the sum of the importances of its in-neighbors
+			</p>
+			</li>
+			<li>
+			<p>
+ Pretend that there is a self-loop at each vertex. So the current importance of a vertex is included in the updated importance. Update the importance to be the vertex's current importance plus the sum of the importances of its neighbors.
+			</p>
+			</li>
+		</ul>
+You can also try different weighting schemes of how much to count your own importance versus the importance of your neighbors.
+</p>
+</solution>
+
+					</p>
+				</li>
+			</ol>
+
+				</p>
+			</statement>
+		</exercise>
+	</exercises>
+</chapter>

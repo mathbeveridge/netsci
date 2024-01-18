@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-09-23T01:13:16-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NetSci Practice Problems</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\notdivide}{{\not{\mid}}}
+\newcommand{\notsubset}{\not\subset}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\gf}{\operatorname{GF}}
+\newcommand{\inn}{\operatorname{Inn}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}}
+\newcommand{\chr}{\operatorname{char}}
+\newcommand{\Null}{\operatorname{Null}}
+
+
+\def\Z{\mathbb Z}
+\def\R{\mathbb R}
+\def\Q{\mathbb Q}
+\def\N{{\mathbb N}}
+\def\C{\mathbb C}
+
+\def\ba{{\mathbf{a}}}
+\def\bb{\mathbf{b}}
+\def\bh{{\mathbf{h}}}
+\def\bu{{\mathbf{u}}}
+\def\bv{{\mathbf{v}}}
+\def\bw{{\mathbf{w}}}   
+\def\bx{{\mathbf{x}}}
+\def\by{\mathbf{y}}    
+\def\bone{{\mathbf{1}}}
+\def\bzero{\mathbf{0}}
+
+\def\var{{\mbox{var}}}
+\def\P{{\mathbb{P}}}
+\def\E{{\mathbb{E}}}
+
+
+\def\cA{{\overline{A}}}
+
+\def\kin{k^{\mathrm{in}}}
+\def\kout{k^{\mathrm{out}}}
+
+\newcommand{\indeg}[1]{k^{\mathrm{in}}_{#1}}
+\newcommand{\outdeg}[1]{k^{\mathrm{out}}_{#1}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="netsci.html"><span class="title">Network Science:</span> <span class="subtitle">Activities and Exercises</span></a></h1>
+<p class="byline">Andrew Beveridge</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="randvar16.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="randvar.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="powerlaw.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="randvar16.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="randvar.html" title="Up">Up</a><a class="next-button button toolbar-item" href="powerlaw.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link part"><a href="part-structure.html" data-scroll="part-structure"><span class="codenumber">I</span> <span class="title">Network Structure</span></a></li>
+<li class="link">
+<a href="randvar.html" data-scroll="randvar"><span class="codenumber">1</span> <span class="title">Discrete Random Variables</span></a><ul>
+<li><a href="randvar0.html" data-scroll="randvar0">Discrete Random Variable</a></li>
+<li><a href="randvar3.html" data-scroll="randvar3">Events</a></li>
+<li><a href="randvar6.html" data-scroll="randvar6">CDF and CCDF</a></li>
+<li><a href="randvar10.html" data-scroll="randvar10">Expectation, Variance and Moments</a></li>
+<li><a href="randvar16.html" data-scroll="randvar16">Famous Discrete Distributions</a></li>
+<li><a href="exercises-1.html" data-scroll="exercises-1" class="active">Practice Problems</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="powerlaw.html" data-scroll="powerlaw"><span class="codenumber">2</span> <span class="title">Power Laws</span></a><ul><li><a href="exercises-2.html" data-scroll="exercises-2">Practice Problems</a></li></ul>
+</li>
+<li class="link part"><a href="part-homework.html" data-scroll="part-homework"><span class="codenumber">II</span> <span class="title">Homework Exercises</span></a></li>
+<li class="link">
+<a href="hw-graphs.html" data-scroll="hw-graphs"><span class="codenumber">3</span> <span class="title">Exercises: Graphs and Digraphs</span></a><ul><li><a href="exercises-3.html" data-scroll="exercises-3">Homework Exercises</a></li></ul>
+</li>
+<li class="link">
+<a href="hw-centrality.html" data-scroll="hw-centrality"><span class="codenumber">4</span> <span class="title">Exercises: Centrality Measures</span></a><ul><li><a href="exercises-4.html" data-scroll="exercises-4">Homework Exercises</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="exercises" id="exercises-1"><h2 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">1.6</span> <span class="title">Practice Problems</span>
+</h2>
+<article class="exercise exercise-like" id="exercise-1"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-65"><em class="emphasis">Binomial Random Variable</em>. Flip a weighted coin \(n\) times, where \(p\) is the probability of obtaining heads, and \(1-p\) is the probability of obtaining tails. Define \(X\) to be the number of heads in the \(n\) tosses. This is the <em class="emphasis">binomial random variable with parameters \(n\) and \(p\)</em>.</p>
+<ol class="lower-alpha">
+<li id="li-16">
+<p id="p-66">Give a combinatorial argument for why the PMF of the binomial random variable is</p>
+<div class="displaymath">
+\begin{equation*}
+p(k) = {n \choose k} p^k (1 - p)^{n-k}.
+\end{equation*}
+</div>
+</li>
+<li id="li-17">
+<p id="p-67">Use the binomial theorem</p>
+<div class="displaymath">
+\begin{equation*}
+(x+y)^n = \sum_{k=0}^n {n \choose k} x^ky^{n-k}
+\end{equation*}
+</div>
+<p data-braille="continuation">to prove that \(p(k)\) is a PMF.</p>
+</li>
+<li id="li-18">
+<p id="p-68">Show that</p>
+<div class="displaymath">
+\begin{equation*}
+\E[X] = np.
+\end{equation*}
+</div>
+<p data-braille="continuation">(Hint: factor out an \(n\) and then reindex your sum.)</p>
+</li>
+<li id="li-19">
+<p id="p-69">It can be shown that</p>
+<div class="displaymath">
+\begin{equation*}
+\var(X) = np(1-p).
+\end{equation*}
+</div>
+<p data-braille="continuation">But you do not need to do this here. You need to use the fact that</p>
+<div class="displaymath">
+\begin{equation*}
+\E[X^2] = \E[X(X-1) + X] = \E[X(X-1)] + \E[X],
+\end{equation*}
+</div>
+<p data-braille="continuation">which follows from <em class="emphasis">linearity of expectation</em>.</p>
+</li>
+</ol></article><article class="exercise exercise-like" id="exercise-2"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-70"><em class="emphasis">Geometric Random Variable.</em> Instead of flipping our coin for a fixed number of times, we will flip it until we first encounter a heads. This experiment gives the geometric random variable \(Y\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-20">
+<p id="p-71">Give a combinatorial argument for  why the PMF of the geometric random variable is</p>
+<div class="displaymath">
+\begin{equation*}
+p(k) =  (1 - p)^{k-1}  p.
+\end{equation*}
+</div>
+</li>
+<li id="li-21">
+<p id="p-72">Use the fact that</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{k=0}^{\infty} x^k = \frac{1}{1-x}
+\end{equation*}
+</div>
+<p data-braille="continuation">to prove that  \(p(k)\) is a PMF.</p>
+</li>
+<li id="li-22">
+<p id="p-73">Show that</p>
+<div class="displaymath">
+\begin{equation*}
+\E[Y] = \frac{1}{p}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Hint: take the derivative of both sides of the equality in part(b) to get a new identity.</p>
+</li>
+<li id="li-23"><p id="p-74">It can be shown that \(\)\displaystyle{\var(Y) = \frac{1-p}{p^2}}.\(\) But you do not need to prove this here. (You use the same trick as in problem 1(d) of writing \(\E[Y^2] = \E[Y(Y-1)] + E[Y]\text{.}\))</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-3"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-75"><em class="emphasis">Poisson Random Variable.</em> The Poisson random variable \(Z\) for parameter \(\lambda &gt; 0\) has PMF given by</p>
+<div class="displaymath">
+\begin{equation*}
+p(k) = e^{-\lambda} \frac{\lambda^k}{k!}.
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-24">
+<p id="p-76">Use the fact that</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{k=0}^{\infty} \frac{x^k}{k!} = e^{x}
+\end{equation*}
+</div>
+<p data-braille="continuation">to prove that  \(p(k)\) is a PMF.</p>
+</li>
+<li id="li-25">
+<p id="p-77">Show that</p>
+<div class="displaymath">
+\begin{equation*}
+\E[Z] = \lambda.
+\end{equation*}
+</div>
+</li>
+<li id="li-26">
+<p id="p-78">Show that</p>
+<div class="displaymath">
+\begin{equation*}
+\var[Z] = \lambda
+\end{equation*}
+</div>
+<p data-braille="continuation">as well! Again, we use the trick</p>
+<div class="displaymath">
+\begin{equation*}
+\E[Z^2] = \E[Z(Z-1)] + \E[Z].
+\end{equation*}
+</div>
+</li>
+<li id="li-27">
+<p id="p-79">In this part, you will show that when \(n\) is very large and \(p\) is very small, the Poisson PMF for</p>
+<div class="displaymath">
+\begin{equation*}
+\lambda :=np
+\end{equation*}
+</div>
+<p data-braille="continuation">is a good approximation (for small \(k\)) of  the binomial PMF with parameters \(n\) and \(p\text{.}\) We will fix \(k \in \Z_{\geq 0}\) to be  constant and let \(n \rightarrow \infty\text{.}\) You will show that</p>
+<div class="displaymath">
+\begin{equation*}
+{n \choose k} p^k (1-p)^{n-k} \approx e^{-\lambda} \frac{\lambda^k}{k!}   \mbox{if } k \ll n.
+\end{equation*}
+</div>
+<p data-braille="continuation">Use the following facts which hold for \(n \rightarrow \infty\) and any constants \(c,d \in \Z_{\geq 0}\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{ccc}
+\displaystyle{\frac{n -c}{n} \rightarrow 1},
+&amp;
+\displaystyle{\left( 1 - \frac{c}{n} \right)^{-d} \rightarrow 1,}
+&amp;
+\displaystyle{\left( 1 - \frac{c}{n} \right)^n \rightarrow e^{-c}.}
+\end{array}
+\end{equation*}
+</div>
+</li>
+</ol></article></section></div></main>
+</div>
+</body>
+</html>

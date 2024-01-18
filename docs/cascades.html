@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NetSci Network Cascades</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\notdivide}{{\not{\mid}}}
+\newcommand{\notsubset}{\not\subset}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\gf}{\operatorname{GF}}
+\newcommand{\inn}{\operatorname{Inn}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}}
+\newcommand{\chr}{\operatorname{char}}
+\newcommand{\Null}{\operatorname{Null}}
+
+
+\def\Z{\mathbb Z}
+\def\R{\mathbb R}
+\def\Q{\mathbb Q}
+\def\N{{\mathbb N}}
+\def\C{\mathbb C}
+
+\def\ba{{\mathbf{a}}}
+\def\bb{\mathbf{b}}
+\def\bh{{\mathbf{h}}}
+\def\bu{{\mathbf{u}}}
+\def\bv{{\mathbf{v}}}
+\def\bw{{\mathbf{w}}}   
+\def\bx{{\mathbf{x}}}
+\def\by{\mathbf{y}}    
+\def\bone{{\mathbf{1}}}
+\def\bzero{\mathbf{0}}
+
+\def\var{{\mbox{var}}}
+\def\P{{\mathbb{P}}}
+\def\E{{\mathbb{E}}}
+
+
+\def\cA{{\overline{A}}}
+
+\def\kin{k^{\mathrm{in}}}
+\def\kout{k^{\mathrm{out}}}
+
+\newcommand{\indeg}[1]{k^{\mathrm{in}}_{#1}}
+\newcommand{\outdeg}[1]{k^{\mathrm{out}}_{#1}}
+
+\tikzset{-&gt;-/.style={decoration={
+ markings,
+ mark=at position .5 with {\arrow{latex}}},postaction={decorate}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="netsci.html"><span class="title">Network Science:</span> <span class="subtitle">Activities and Exercises</span></a></h1>
+<p class="byline">Andrew Beveridge</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="part-processes.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="part-processes.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="epidemics.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="part-processes.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="part-processes.html" title="Up">Up</a><a class="next-button button toolbar-item" href="epidemics.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link part"><a href="part-structure.html" data-scroll="part-structure"><span class="codenumber">I</span> <span class="title">Network Structure</span></a></li>
+<li class="link">
+<a href="graphs.html" data-scroll="graphs"><span class="codenumber">1</span> <span class="title">Graphs and Digraphs</span></a><ul><li><a href="exercises-1.html" data-scroll="exercises-1">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="centrality.html" data-scroll="centrality"><span class="codenumber">2</span> <span class="title">Centrality Measures</span></a><ul><li><a href="exercises-2.html" data-scroll="exercises-2">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="algcentrality.html" data-scroll="algcentrality"><span class="codenumber">3</span> <span class="title">Algebraic Centrality</span></a><ul><li><a href="exercises-3.html" data-scroll="exercises-3">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="randomwalk.html" data-scroll="randomwalk"><span class="codenumber">4</span> <span class="title">Random Walks</span></a><ul><li><a href="exercises-4.html" data-scroll="exercises-4">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="hits.html" data-scroll="hits"><span class="codenumber">5</span> <span class="title">Hubs and Authorities</span></a><ul><li><a href="exercises-5.html" data-scroll="exercises-5">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="us-airline.html" data-scroll="us-airline"><span class="codenumber">6</span> <span class="title">Analyzing the US Airline Network</span></a><ul><li><a href="exercises-6.html" data-scroll="exercises-6">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="modularity.html" data-scroll="modularity"><span class="codenumber">7</span> <span class="title">Modularity</span></a><ul><li><a href="exercises-7.html" data-scroll="exercises-7">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="communities.html" data-scroll="communities"><span class="codenumber">8</span> <span class="title">Community Detection in Gephi</span></a><ul><li><a href="exercises-8.html" data-scroll="exercises-8">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="randvar.html" data-scroll="randvar"><span class="codenumber">9</span> <span class="title">Discrete Random Variables</span></a><ul>
+<li><a href="randvar0.html" data-scroll="randvar0">Discrete Random Variables</a></li>
+<li><a href="randvar3.html" data-scroll="randvar3">Events</a></li>
+<li><a href="randvar6.html" data-scroll="randvar6">CDF and CCDF</a></li>
+<li><a href="randvar10.html" data-scroll="randvar10">Expectation, Variance and Moments</a></li>
+<li><a href="randvar16.html" data-scroll="randvar16">Famous Discrete Distributions</a></li>
+<li><a href="exercises-9.html" data-scroll="exercises-9">Practice Problems</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="powerlaw.html" data-scroll="powerlaw"><span class="codenumber">10</span> <span class="title">Power Laws</span></a><ul><li><a href="exercises-10.html" data-scroll="exercises-10">Practice Problems</a></li></ul>
+</li>
+<li class="link part"><a href="part-models.html" data-scroll="part-models"><span class="codenumber">II</span> <span class="title">Network Models</span></a></li>
+<li class="link">
+<a href="giantcomp.html" data-scroll="giantcomp"><span class="codenumber">11</span> <span class="title">The Emergence of the Giant Component</span></a><ul><li><a href="exercises-11.html" data-scroll="exercises-11">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="pricemodel.html" data-scroll="pricemodel"><span class="codenumber">12</span> <span class="title">Price's Model for a Citation Network</span></a><ul><li><a href="exercises-12.html" data-scroll="exercises-12">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="smallworld.html" data-scroll="smallworld"><span class="codenumber">13</span> <span class="title">The Small World Model</span></a><ul><li><a href="exercises-13.html" data-scroll="exercises-13">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="navsmallworld.html" data-scroll="navsmallworld"><span class="codenumber">14</span> <span class="title">Navigable Small World Model</span></a><ul><li><a href="exercises-14.html" data-scroll="exercises-14">Practice Problems</a></li></ul>
+</li>
+<li class="link part"><a href="part-processes.html" data-scroll="part-processes"><span class="codenumber">III</span> <span class="title">Processes on Networks</span></a></li>
+<li class="link active">
+<a href="cascades.html" data-scroll="cascades"><span class="codenumber">15</span> <span class="title">Network Cascades</span></a><ul><li><a href="exercises-15.html" data-scroll="exercises-15">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="epidemics.html" data-scroll="epidemics"><span class="codenumber">16</span> <span class="title">Epidemics on Networks</span></a><ul><li><a href="exercises-16.html" data-scroll="exercises-16">Practice Problems</a></li></ul>
+</li>
+<li class="link part"><a href="part-homework.html" data-scroll="part-homework"><span class="codenumber">IV</span> <span class="title">Homework Exercises</span></a></li>
+<li class="link">
+<a href="hw-graphs.html" data-scroll="hw-graphs"><span class="codenumber">17</span> <span class="title">Exercises: Graphs and Digraphs</span></a><ul><li><a href="exercises-17.html" data-scroll="exercises-17">Homework Exercises</a></li></ul>
+</li>
+<li class="link">
+<a href="hw-centrality.html" data-scroll="hw-centrality"><span class="codenumber">18</span> <span class="title">Exercises: Centrality Measures</span></a><ul><li><a href="exercises-18.html" data-scroll="exercises-18">Homework Exercises</a></li></ul>
+</li>
+<li class="link">
+<a href="hw-degreedist.html" data-scroll="hw-degreedist"><span class="codenumber">19</span> <span class="title">Exercises: Degree Distributions and Power Laws</span></a><ul><li><a href="exercises-19.html" data-scroll="exercises-19">Homework Exercises</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="cascades"><h2 class="heading">
+<span class="type">Chapter</span> <span class="codenumber">15</span> <span class="title">Network Cascades</span>
+</h2>
+<section class="introduction" id="introduction-15"><p id="p-582">The linear threshold model  is a dynamic process for diffusion of innovation on a network. We are given a network and a threshold \(0 &lt; q &lt; 1\text{.}\) The network starts with all vertices using behavior \(B\text{.}\) We pick a seed set of innovators who adopt behavior \(A\text{.}\) We then watch the innovation spread according to the following rule. The vertex \(v\) will:</p>
+<ul class="disc">
+<li id="li-286"><p id="p-583">adopt behavior \(A\) if \({p \geq q}\)</p></li>
+<li id="li-287"><p id="p-584">adopt behavior \(B\) if \({p &lt; q}\)</p></li>
+</ul>
+<p class="continuation">We cycle through all the vertices until the update process stabilizes. The resulting adoption process is called a <em class="emphasis">cascade</em>. We have a <em class="emphasis">complete cascade</em> when every vertex adopts the new behavior \(A\text{.}\)</p></section><section class="exercises" id="exercises-15"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Practice Problems</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-67"><h6 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Network Cascades from Singleton Seed Sets.</span>
+</h6>
+<p id="p-585">Consider this  network  with linear threshold \(q=1/3\text{.}\) Start a cascade by picking any single vertex to be the initial adopter. Does it spread to the entire network? What about the other vertices? Which ones lead to complete cascades? <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/graph7.png" class="contained"></div> <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-103" id="solution-103"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-103"><div class="solution solution-like"><p id="p-586">For \(q=1/3\text{,}\) every singleton induces a complete cascade.</p></div></div></p></article><article class="exercise exercise-like" id="exercise-68"><h6 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Network Cascades from Doubleton Seed Sets.</span>
+</h6>
+<p id="p-587">Now set the threshold \(q=1/2\text{.}\) Using the same graph as in problem 1, determine the cascades for each of the following sets \(S_0\) of early adopters. Which initial sets induce complete cascades?</p>
+<ol class="lower-alpha">
+<li id="li-288"><p id="p-588">\(\displaystyle S_0 = \{1,2\}\)</p></li>
+<li id="li-289"><p id="p-589">\(\displaystyle S_0 = \{2,3\}\)</p></li>
+<li id="li-290"><p id="p-590">\(\displaystyle S_0 = \{1, 5\}\)</p></li>
+</ol>
+<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-104" id="solution-104"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-104"><div class="solution solution-like"><ol id="p-591" class="lower-alpha">
+<li id="li-291"><p id="p-592">\(S_0 = \{1,2\}\text{:}\)  complete cascade</p></li>
+<li id="li-292"><p id="p-593">\(S_0 = \{2,3\}\text{:}\)  complete cascade</p></li>
+<li id="li-293"><p id="p-594">\(S_0 = \{1, 5\}\text{:}\)  only vertex 7 adopts the innovation</p></li>
+</ol></div></div></p></article><article class="exercise exercise-like" id="exercise-69"><h6 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Network Cascades that are Not Complete.</span>
+</h6>
+<p id="p-595">Continue using  threshold \(q=1/2\) for the network above. Find all of the initial adopter sets of size 2 that <em class="emphasis">do not</em> lead to complete cascades. Can you describe the network obstruction that prevented the cascade from expanding across the entire network? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-105" id="solution-105"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-105"><div class="solution solution-like"><p id="p-596">The 2-sets that do not spark complete cascades are: \(\{1,5\}\) and \(\{1,7\}\) and \(\{5,7\}\) and \(\{1,3\}\text{.}\) For the first three sets, the cascade cannot jump out of the triangle \(T=\{1,5,7\}\text{.}\) The vertices that border set \(T\) have more neighbors in \(\overline{A}\) than in \(A\text{,}\) so they never adopt. Starting with set \(\{1,3\}\text{,}\) there is no cascade.</p></div></div></p></article><article class="exercise exercise-like" id="exercise-70"><h6 class="heading">
+<span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Complete Cascades and Cohesive Sets.</span>
+</h6>
+<p id="p-597">Let \({G=(V,E)}\) be a network with threshold \(q \in [0,1]\text{.}\) Let \({S_0}\) be the initial set of innovators. Recall that a set \(S\) is <em class="emphasis">cohesive</em> when</p>
+<div class="displaymath">
+\begin{equation*}
+p(S) = \min_{i \in S} \frac{ | N(i) \cap S| }{|N(i)|}   &gt; 1-q
+\end{equation*}
+</div>
+<p class="continuation">where \(N(i)\) is the set of neighbors of \(i\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-294"><p id="p-598">Suppose that the  initial adopter set \({S_0}\) does not cause a complete cascade. Prove that there is a cohesive set  \({S \subset V \backslash S_0}\text{.}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-106" id="solution-106"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-106"><div class="solution solution-like">
+<p id="p-599">Let \(T\) be the set of vertices that adopt behavior \(A\) during the cascade. Let \(S= \overline{T}\) be the vertices that never adopt the behavior. For every \(i \in S\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{ | N(i) \cap S| }{|N(i)|}   &gt; 1-q.
+\end{equation*}
+</div>
+<p class="continuation">(Otherwise, \(i\) would have adopted behavior \(A\text{.}\)) But this means that</p>
+<div class="displaymath">
+\begin{equation*}
+p(S) = \min_{i \in S} \frac{ | N(i) \cap S| }{|N(i)|}   &gt; 1-q.
+\end{equation*}
+</div>
+<p class="continuation">Therefore the set is cohesive.</p>
+</div></div></p></li>
+<li id="li-295"><p id="p-600">Suppose that there is a cohesive set  \({S \subset V \backslash S_0}\text{.}\) Prove that  initial adopter set \({S_0}\) does not cause a complete cascade. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-107" id="solution-107"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-107"><div class="solution solution-like">
+<p id="p-601">We claim that no vertex in \(S\) ever adopts behavior \(A\text{.}\) Assume for the sake of contradiction that \(i \in S\) is the first vertex in \(S\) to adopt the innovation \(A\text{.}\) But even if every vertex outside of \(S\) has adopted behavior \(A\text{,}\) we still have</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{ | N(i) \cap S| }{|N(i)|} &gt; 1-q,
+\end{equation*}
+</div>
+<p class="continuation">and none of the vertices in \(S\) have adopted the innovation. So \(i\) does not adopt \(A\text{,}\) a contradiction. Therefore no vertex in \(S\) adopts the innovation.</p>
+</div></div></p></li>
+</ol></article></section></section></div></main>
+</div>
+</body>
+</html>

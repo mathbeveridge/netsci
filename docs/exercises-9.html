@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NetSci Practice Problems</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\notdivide}{{\not{\mid}}}
+\newcommand{\notsubset}{\not\subset}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\gf}{\operatorname{GF}}
+\newcommand{\inn}{\operatorname{Inn}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}}
+\newcommand{\chr}{\operatorname{char}}
+\newcommand{\Null}{\operatorname{Null}}
+
+
+\def\Z{\mathbb Z}
+\def\R{\mathbb R}
+\def\Q{\mathbb Q}
+\def\N{{\mathbb N}}
+\def\C{\mathbb C}
+
+\def\ba{{\mathbf{a}}}
+\def\bb{\mathbf{b}}
+\def\bh{{\mathbf{h}}}
+\def\bu{{\mathbf{u}}}
+\def\bv{{\mathbf{v}}}
+\def\bw{{\mathbf{w}}}   
+\def\bx{{\mathbf{x}}}
+\def\by{\mathbf{y}}    
+\def\bone{{\mathbf{1}}}
+\def\bzero{\mathbf{0}}
+
+\def\var{{\mbox{var}}}
+\def\P{{\mathbb{P}}}
+\def\E{{\mathbb{E}}}
+
+
+\def\cA{{\overline{A}}}
+
+\def\kin{k^{\mathrm{in}}}
+\def\kout{k^{\mathrm{out}}}
+
+\newcommand{\indeg}[1]{k^{\mathrm{in}}_{#1}}
+\newcommand{\outdeg}[1]{k^{\mathrm{out}}_{#1}}
+
+\tikzset{-&gt;-/.style={decoration={
+ markings,
+ mark=at position .5 with {\arrow{latex}}},postaction={decorate}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="netsci.html"><span class="title">Network Science:</span> <span class="subtitle">Activities and Exercises</span></a></h1>
+<p class="byline">Andrew Beveridge</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="randvar16.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="randvar.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="powerlaw.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="randvar16.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="randvar.html" title="Up">Up</a><a class="next-button button toolbar-item" href="powerlaw.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link part"><a href="part-structure.html" data-scroll="part-structure"><span class="codenumber">I</span> <span class="title">Network Structure</span></a></li>
+<li class="link">
+<a href="graphs.html" data-scroll="graphs"><span class="codenumber">1</span> <span class="title">Graphs and Digraphs</span></a><ul><li><a href="exercises-1.html" data-scroll="exercises-1">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="centrality.html" data-scroll="centrality"><span class="codenumber">2</span> <span class="title">Centrality Measures</span></a><ul><li><a href="exercises-2.html" data-scroll="exercises-2">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="algcentrality.html" data-scroll="algcentrality"><span class="codenumber">3</span> <span class="title">Algebraic Centrality</span></a><ul><li><a href="exercises-3.html" data-scroll="exercises-3">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="randomwalk.html" data-scroll="randomwalk"><span class="codenumber">4</span> <span class="title">Random Walks</span></a><ul><li><a href="exercises-4.html" data-scroll="exercises-4">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="hits.html" data-scroll="hits"><span class="codenumber">5</span> <span class="title">Hubs and Authorities</span></a><ul><li><a href="exercises-5.html" data-scroll="exercises-5">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="us-airline.html" data-scroll="us-airline"><span class="codenumber">6</span> <span class="title">Analyzing the US Airline Network</span></a><ul><li><a href="exercises-6.html" data-scroll="exercises-6">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="modularity.html" data-scroll="modularity"><span class="codenumber">7</span> <span class="title">Modularity</span></a><ul><li><a href="exercises-7.html" data-scroll="exercises-7">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="communities.html" data-scroll="communities"><span class="codenumber">8</span> <span class="title">Community Detection in Gephi</span></a><ul><li><a href="exercises-8.html" data-scroll="exercises-8">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="randvar.html" data-scroll="randvar"><span class="codenumber">9</span> <span class="title">Discrete Random Variables</span></a><ul>
+<li><a href="randvar0.html" data-scroll="randvar0">Discrete Random Variables</a></li>
+<li><a href="randvar3.html" data-scroll="randvar3">Events</a></li>
+<li><a href="randvar6.html" data-scroll="randvar6">CDF and CCDF</a></li>
+<li><a href="randvar10.html" data-scroll="randvar10">Expectation, Variance and Moments</a></li>
+<li><a href="randvar16.html" data-scroll="randvar16">Famous Discrete Distributions</a></li>
+<li><a href="exercises-9.html" data-scroll="exercises-9" class="active">Practice Problems</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="powerlaw.html" data-scroll="powerlaw"><span class="codenumber">10</span> <span class="title">Power Laws</span></a><ul><li><a href="exercises-10.html" data-scroll="exercises-10">Practice Problems</a></li></ul>
+</li>
+<li class="link part"><a href="part-models.html" data-scroll="part-models"><span class="codenumber">II</span> <span class="title">Network Models</span></a></li>
+<li class="link">
+<a href="giantcomp.html" data-scroll="giantcomp"><span class="codenumber">11</span> <span class="title">The Emergence of the Giant Component</span></a><ul><li><a href="exercises-11.html" data-scroll="exercises-11">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="pricemodel.html" data-scroll="pricemodel"><span class="codenumber">12</span> <span class="title">Price's Model for a Citation Network</span></a><ul><li><a href="exercises-12.html" data-scroll="exercises-12">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="smallworld.html" data-scroll="smallworld"><span class="codenumber">13</span> <span class="title">The Small World Model</span></a><ul><li><a href="exercises-13.html" data-scroll="exercises-13">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="navsmallworld.html" data-scroll="navsmallworld"><span class="codenumber">14</span> <span class="title">Navigable Small World Model</span></a><ul><li><a href="exercises-14.html" data-scroll="exercises-14">Practice Problems</a></li></ul>
+</li>
+<li class="link part"><a href="part-processes.html" data-scroll="part-processes"><span class="codenumber">III</span> <span class="title">Processes on Networks</span></a></li>
+<li class="link">
+<a href="cascades.html" data-scroll="cascades"><span class="codenumber">15</span> <span class="title">Network Cascades</span></a><ul><li><a href="exercises-15.html" data-scroll="exercises-15">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="epidemics.html" data-scroll="epidemics"><span class="codenumber">16</span> <span class="title">Epidemics on Networks</span></a><ul><li><a href="exercises-16.html" data-scroll="exercises-16">Practice Problems</a></li></ul>
+</li>
+<li class="link part"><a href="part-homework.html" data-scroll="part-homework"><span class="codenumber">IV</span> <span class="title">Homework Exercises</span></a></li>
+<li class="link">
+<a href="hw-graphs.html" data-scroll="hw-graphs"><span class="codenumber">17</span> <span class="title">Exercises: Graphs and Digraphs</span></a><ul><li><a href="exercises-17.html" data-scroll="exercises-17">Homework Exercises</a></li></ul>
+</li>
+<li class="link">
+<a href="hw-centrality.html" data-scroll="hw-centrality"><span class="codenumber">18</span> <span class="title">Exercises: Centrality Measures</span></a><ul><li><a href="exercises-18.html" data-scroll="exercises-18">Homework Exercises</a></li></ul>
+</li>
+<li class="link">
+<a href="hw-degreedist.html" data-scroll="hw-degreedist"><span class="codenumber">19</span> <span class="title">Exercises: Degree Distributions and Power Laws</span></a><ul><li><a href="exercises-19.html" data-scroll="exercises-19">Homework Exercises</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="exercises" id="exercises-9"><h2 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">9.6</span> <span class="title">Practice Problems</span>
+</h2>
+<article class="exercise exercise-like" id="exercise-45"><h6 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Probability Concept Review.</span>
+</h6>
+<p id="p-406">Provide the definition and/or formula for each of the following terms. Then give an "intuitive description" of what this concept tells us, and why we might care. An illustrating concrete example (say, about vertex degrees in a network) can be a better way  convey your understanding than simply speaking in generalities.</p>
+<ol class="lower-alpha">
+<li id="li-198"><p id="p-407">A random variable \(X : \Omega \rightarrow \Z_{\geq 0}\text{.}\)</p></li>
+<li id="li-199"><p id="p-408">The probability mass function (PMF) \(p_X(t)\text{.}\)</p></li>
+<li id="li-200"><p id="p-409">The expected value \(\E[X]\text{.}\)</p></li>
+<li id="li-201"><p id="p-410">The variance \(\var[X]\text{.}\)</p></li>
+</ol>
+<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-77" id="solution-77"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-77"><div class="solution solution-like"><ol id="p-411" class="lower-alpha">
+<li id="li-202">
+<p id="p-412">A random variable \(X : \Omega \rightarrow \Z_{\geq 0}\) is a function on the set \(\Omega\) of outcomes of an experiment.  We pick a sample outcome and measure one of its property. For example, we could pick a vertex of a network and write down its degree.</p>
+<p id="p-413">This is useful when I want to get a sense of the structure (or typical structure) of a network, or another system.</p>
+</li>
+<li id="li-203">
+<p id="p-414">For \(t \in \Z_{\geq 0}\text{,}\) the value \(p_X(t)\) is the probability that \(X=t\) when we perform our experiment. For example, the PMF of "measure the degree of a randomly chosen vertex" is</p>
+<div class="displaymath">
+\begin{equation*}
+p(t) = \frac{\mbox{number of vertices of degree }}{\mbox{total number of vertices}}
+\end{equation*}
+</div>
+<p id="p-415">The PMF gives me a sense of what outcomes are possible, and how likely they are compared to one another.</p>
+</li>
+<li id="li-204">
+<p id="p-416">The expected value is</p>
+<div class="displaymath">
+\begin{equation*}
+\E[X] = \sum_{t=0}^{\infty} t \cdot p_X(t)
+\end{equation*}
+</div>
+<p class="continuation">is weighted average of all possible outcomes, using the PMF \(p_X(t)\) as the weight for outcome \(X=t\text{.}\)</p>
+<p id="p-417">If I repeat my experiment many, many times, then the average outcome value of my experiment will be a number close to the expected value. However, any one particular outcome might be very far away from the average value.</p>
+<p id="p-418">For example, knowing the average degree could be helpful when thinking about degree centrality. I can assess whether a given vertex has large degree or small degree in the spectrum of observed values.</p>
+</li>
+<li id="li-205">
+<p id="p-419">The variance is</p>
+<div class="displaymath">
+\begin{equation*}
+\var[X] = E[X^2] - E[X]^2.
+\end{equation*}
+</div>
+<p class="continuation">This number tells me about the "spread" of the distribution around its average value. A small variance means that the PMF is concentrated around the average value, so most of my experiments will return a value that is close to the average one. A large variance means that the values are more spread out.</p>
+<p id="p-420">Taking the square root gives you the standard deviation \(\sigma = \sqrt{\var[X]}\text{.}\) We can compare this value directly to the expected value, since they have the same units. This helps to get a sense of whether the variance is "big" or "small." Comparing standard deviation to the expected value helps to give us some sense of scale.</p>
+<p id="p-421">For example, in a graph with small variance, most of the vertices have similar degrees. In a graph with high variance, we will have a much more diverse collection of vertex degrees. In particular, there will be some vertices with much smaller degrees than typical, or some vertices with much larger degree than typical, or both.</p>
+</li>
+</ol></div></div></p>
+<p id="p-422">Now that  these concepts are at your fingertips, let's explore three distributions that will  appear frequently in our discussion of network models and dynamic network processes. In the questions that follow, take some time to reflect on the formulas (as well as the techniques that got you there). For each question:</p>
+<ul class="disc">
+<li id="li-206"><p id="p-423">Perform the calculation</p></li>
+<li id="li-207"><p id="p-424">Pause to think about what the formula means.</p></li>
+<li id="li-208"><p id="p-425">Interpret what the answer would mean for large \(n\text{;}\) for different values of \(p \in [0,1]\text{;}\) for big or small \(k\text{.}\)</p></li>
+</ul></article><article class="exercise exercise-like" id="exercise-46"><h6 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Binomial Random Variable.</span>
+</h6>
+<p id="p-426">Flip a weighted coin \(n\) times, where \(p\) is the probability of obtaining heads, and \(1-p\) is the probability of obtaining tails. Define \(X\) to be the number of heads in the \(n\) tosses. This is the <em class="emphasis">binomial random variable with parameters \(n\) and \(p\)</em>.</p>
+<ol class="lower-alpha">
+<li id="li-209">
+<p id="p-427">Give a combinatorial argument for why the PMF of the binomial random variable is</p>
+<div class="displaymath">
+\begin{equation*}
+p(k) = {n \choose k} p^k (1 - p)^{n-k}.
+\end{equation*}
+</div>
+<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-78" id="solution-78"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-78"><div class="solution solution-like">
+<p id="p-428">We give a combinatorial recipe.</p>
+<ul class="disc">
+<li id="li-210"><p id="p-429">Pick the \(k\) flips that will be \(H\text{.}\) There are \({n \choose k}\) ways to do so.</p></li>
+<li id="li-211"><p id="p-430">The probability that the chosen \(k\) flips all turn up \(H\) is \(p^k\text{.}\)</p></li>
+<li id="li-212"><p id="p-431">The probability that the remaining \(n-k\) flips all turn up \(T\) is \((1-p)^{n-k}\text{.}\)</p></li>
+</ul>
+<p class="continuation">Multiplying all these terms together gives the expression above.</p>
+</div></div></p>
+</li>
+<li id="li-213">
+<p id="p-432">Use the binomial theorem</p>
+<div class="displaymath">
+\begin{equation*}
+(x+y)^n = \sum_{k=0}^n {n \choose k} x^ky^{n-k}
+\end{equation*}
+</div>
+<p class="continuation">to prove that \(p(k)\) is a PMF. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-79" id="solution-79"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-79"><div class="solution solution-like">
+<p id="p-433">First, we note that \(0 \leq p(k) \leq 1\) for \(0 \leq k \leq n\text{.}\) Next, we must prove that the probabilities all sum to one. This follows quickly from the binomial theorem with \(x=p\) and \(y=1-p\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{k=0}^n {n \choose k} p^k (1-p)^{n-k} = (p + (1-p))^n = 1^n = 1.
+\end{equation*}
+</div>
+</div></div></p>
+</li>
+<li id="li-214">
+<p id="p-434">Linearity of expectation applies to the sum of multiple random variables. In particular, an easy proof by induction shows that for any random variables \(X_1, X_2, \ldots, X_n\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\E[X_1 + X_2 + \cdots + X_n] = \E[X_1] + \E[X_2] + \cdots + \E[X_n]
+\end{equation*}
+</div>
+<p class="continuation">Use this formula to show that</p>
+<div class="displaymath">
+\begin{equation*}
+\E[X] = np.
+\end{equation*}
+</div>
+<p class="continuation">You will have to split your random variable \(X\) into the sum of \(n\) random variables. (Note: you can also prove this directly from part (a), but it is a bit tedious.) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-80" id="solution-80"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-80"><div class="solution solution-like">
+<p id="p-435">Let \(X_i\) be an "indicator function" for whether coin \(i\) is \(H\text{.}\) That is,</p>
+<div class="displaymath">
+\begin{equation*}
+X_i = \left\{
+\begin{array}{cc}
+1 &amp; \mbox{if the } i\mbox{th coin is } H, \\
+0 &amp;  \mbox{if the } i\mbox{th coin is } T. \\
+\end{array}
+\right.
+\end{equation*}
+</div>
+<p class="continuation">Then</p>
+<div class="displaymath">
+\begin{equation*}
+\E[X] = \E\left[ \sum_{i=1}^n X_i \right] = \sum_{i=1}^n \E[X_i] =  \sum_{i=1}^n p = np.
+\end{equation*}
+</div>
+<p class="continuation">For comparison, here is a proof that does not use linearity of expectation. It isn't "hard" but it does take a bit of work. Our strategy will be to factor out an \(n\) and then reindex the sum.</p>
+<div class="displaymath">
+\begin{align*}
+\E[X] &amp;= \sum_{k=0}^n k p(k)
+\, = \,  \sum_{k=0}^n k {n \choose k} p^k (1-p)^{n-k}\\
+&amp; =  \sum_{k=1}^n  \frac{n!}{(k-1)! (n-k)!} p^k (1-p)^{n-k}\\
+&amp; =  np \sum_{k=1}^n  \frac{(n-1)!}{(k-1)! (n-k)!} p^{k-1} (1-p)^{n-k}\\
+&amp; =  np \sum_{j=0}^{n-1}  \frac{(n-1)!}{j! (n-1-j)!} p^{j} (1-p)^{n-1-j}\\
+&amp;= np \sum_{j=0}^{n-1}  {n-1 \choose j}  p^{j} (1-p)^{n-1-j}\\
+&amp; =  np  (p + (1-p))^{n-1} \, = \,  np.
+\end{align*}
+</div>
+<p id="p-436">We use a couple of tricks here</p>
+<ul class="disc">
+<li id="li-215"><p id="p-437">At the third equality, we replace the lower limit of \(k=0\) with \(k=1\text{.}\) This is because the \(k=0\) term equals 0, so we do not need to list it. <em class="emphasis">This is an important step!</em> Do not underestimate the need to properly account for the lowest/highest index.</p></li>
+<li id="li-216"><p id="p-438">At the fifth equality, we reindex, using \(j\) instead of \(k\text{.}\) <em class="emphasis">Do this carefully!</em> In my margin, I always write down the substitution in two ways. Here we are using \(j=k-1\text{,}\) which is the same as \(k=j+1\text{.}\) Having both of these expression staring at me will ensure that I don't make mistakes during the reindexing. Wherever I see a "\(k\text{,}\)" I replace it with a "\(j+1\text{.}\)" Or if I want to be fancy, I can immediately replace a "\(k-1\)" with a "\(j\text{.}\)"</p></li>
+</ul>
+<p class="continuation">Don't cut corners on these substitutions. You will save yourself a lot of headaches!</p>
+</div></div></p>
+</li>
+<li id="li-217">
+<p id="p-439"><em class="emphasis">[Do not solve this one. It is a long calculation.]</em> It can be shown that</p>
+<div class="displaymath">
+\begin{equation*}
+\var(X) = np(1-p).
+\end{equation*}
+</div>
+<p class="continuation">But you do not need to do this here. You need to use the fact that</p>
+<div class="displaymath">
+\begin{equation*}
+\E[X^2] = \E[X(X-1) + X] = \E[X(X-1)] + \E[X],
+\end{equation*}
+</div>
+<p class="continuation">which follows from <em class="emphasis">linearity of expectation</em>. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-81" id="solution-81"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-81"><div class="solution solution-like">
+<p id="p-440">This plays out much like "tedious calculation" in the answer to part (c), but it is more involved. We want to calculate</p>
+<div class="displaymath">
+\begin{align*}
+\E[X^2] - (\E[X])^2 &amp;= \E[X(X-1) + X] - (\E[X])^2\\
+&amp;= \E[X(X-1)] + \E[X] - (\E[X])^2
+\end{align*}
+</div>
+<p id="p-441">Of these three terms, we already know that \(\E[X]=np\) and that \((E[X])^2 =  (np)^2\text{.}\) So we only need to calculate \(\E[X(X-1)] \text{.}\) Here we go. This time, we will reindex using \(j=k-2\text{,}\) or equivalently, \(k=j+2\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\E[X(X-1)] &amp;= \sum_{k=0}^n k(k-1) p(k) \, = \, \sum_{k=0}^n  k(k-1) {n \choose k} p^k (1-p)^{n-k}\\
+&amp; =  \sum_{k=2}^n  \frac{n!}{(k-2)! (n-k)!} p^k (1-p)^{n-k}\\
+&amp;=  n(n-1)p^2 \sum_{k=2}^n  \frac{(n-2)!}{(k-1)! (n-k)!} p^{k-2} (1-p)^{n-k}\\
+&amp; =  n(n-1)p^2  \sum_{j=0}^{n-2}  \frac{(n-2)!}{j! (n-2-j)!} p^{j} (1-p)^{n-2-j}\\
+&amp;= n(n-1)p^2 \sum_{j=0}^{n-2}  {n-2 \choose j}  p^{j} (1-p)^{n-2-j}\\
+&amp; =  n(n-1)p^2  (p + (1-p))^{n-2} \, = \,  n(n-1)p^2.
+\end{align*}
+</div>
+<p id="p-442">We are now ready to put it together:</p>
+<div class="displaymath">
+\begin{align*}
+\E[X^2] - (\E[X])^2 &amp;= n(n-1)p^2 + np -(np)^2\\
+&amp;= (np)^2 - np^2 + np - (np)^2\\
+&amp;= np(1-p).
+\end{align*}
+</div>
+<p id="p-443"></p>
+</div></div></p>
+</li>
+</ol></article><article class="exercise exercise-like" id="exercise-47"><h6 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Geometric Random Variable.</span>
+</h6>
+<p id="p-444">Instead of flipping our coin for a fixed number of times, we will flip it until we first encounter a heads. This experiment gives the geometric random variable \(Y\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-218">
+<p id="p-445">Give a combinatorial argument for  why the PMF of the geometric random variable is</p>
+<div class="displaymath">
+\begin{equation*}
+p(k) =  (1 - p)^{k-1}  p.
+\end{equation*}
+</div>
+<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-82" id="solution-82"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-82"><div class="solution solution-like"><p id="p-446">In order for the \(k\)th flip to be the first \(H\) that we encounter, we must obtain \(k-1\) \(T\)'s in a row, followed by a \(H\text{.}\) The probability of this event is \((1-p)^{k-1}p\text{.}\) Note that \(p(0) = 0\) since we cannot stop until we have seen a \(H\text{.}\)</p></div></div></p>
+</li>
+<li id="li-219">
+<p id="p-447">Use the fact that</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{k=0}^{\infty} x^k = \frac{1}{1-x}
+\end{equation*}
+</div>
+<p class="continuation">to prove that  \(p(k)\) is a PMF. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-83" id="solution-83"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-83"><div class="solution solution-like">
+<p id="p-448">It is easy to see that \(0 \leq p(k) \leq 1\) for all \(k \in \Z^+\text{.}\) Now we must show that the probabilities sum to 1. We have</p>
+<div class="displaymath">
+\begin{align*}
+\sum_{k=1}^{\infty} p(k) &amp;= \sum_{k=1}^{\infty} (1-p)^{k-1} p \, = \, p \sum_{k=1}^{\infty} (1-p)^{k-1}\\
+&amp;= p \sum_{j=0}^{\infty} (1-p)^{j} \, = \, \frac{p}{1 - (1-p)} \,=\, \frac{p}{p} \,=\, 1.
+\end{align*}
+</div>
+<p id="p-449"></p>
+</div></div></p>
+</li>
+<li id="li-220">
+<p id="p-450">Show that</p>
+<div class="displaymath">
+\begin{equation*}
+\E[Y] = \frac{1}{p}.
+\end{equation*}
+</div>
+<p class="continuation">Hint: take the derivative of both sides of the equality in part (b) to get a new identity. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-84" id="solution-84"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-84"><div class="solution solution-like">
+<p id="p-451">We have</p>
+<div class="displaymath">
+\begin{equation*}
+\E[Y] = \sum_{k=1}^{\infty}  k p(k) = \sum_{k=1}^{\infty}  k(1-p)^{k-1} p = p \sum_{k=1}^{\infty}  k(1-p)^{k-1}.
+\end{equation*}
+</div>
+<p class="continuation">Taking the derivative of both sides of</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{k=0}^{\infty} x^k = \frac{1}{1-x},
+\end{equation*}
+</div>
+<p class="continuation">we find that</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{k=1}^{\infty} k x^{k-1} = \frac{1}{(1-x)^2}.
+\end{equation*}
+</div>
+<p class="continuation">Therefore</p>
+<div class="displaymath">
+\begin{equation*}
+\E[Y] = p \sum_{k=1}^{\infty}  k(1-p)^{k-1} = \frac{p}{(1-(1-p))^2} = \frac{p}{p^2} = \frac{1}{p}.
+\end{equation*}
+</div>
+</div></div></p>
+</li>
+<li id="li-221">
+<p id="p-452"><em class="emphasis">[Do not solve this one. It is a long calculation.]</em>  It can be shown that</p>
+<div class="displaymath">
+\begin{equation*}
+\var(Y) = \frac{1-p}{p^2}.
+\end{equation*}
+</div>
+<p class="continuation">But you do not need to prove this here. (You use the same trick as in problem 1(d) of writing \(\E[Y^2] = \E[Y(Y-1)] + E[Y]\text{.}\)) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-85" id="solution-85"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-85"><div class="solution solution-like">
+<p id="p-453">We will calculate \(\E[Y^2] - (\E[Y])^2 = \E[Y(Y-1)] + \E[Y] - (\E[Y])^2\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\E[Y(Y-1)]  &amp;=&amp; \sum_{k=1}^{\infty}  k(k-1) (1-p)^{k-1} p\\
+&amp;= p (1-p) \sum_{k=2}^{\infty}  k(k-1) (1-p)^{k-2}.
+\end{align*}
+</div>
+<p id="p-454">Taking the derivative of both sides of</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{k=1}^{\infty} kx^{k-1} = \frac{1}{(1-x)^2},
+\end{equation*}
+</div>
+<p class="continuation">we find that</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{k=2}^{\infty} k(k-1) x^{k-2} = \frac{2}{(1-x)^3}.
+\end{equation*}
+</div>
+<p class="continuation">Therefore</p>
+<div class="displaymath">
+\begin{align*}
+\E[Y(Y-1)]  &amp;=  p (1-p) \sum_{k=2}^{\infty}  k(k-1) (1-p)^{k-2}\\
+&amp;= p (1-p) \frac{2}{(1- (1-p))^3} = \frac{p(1-p)}{p^3}\\
+&amp; = \frac{p(1-p)}{p^2}.
+\end{align*}
+</div>
+<p id="p-455"></p>
+</div></div></p>
+</li>
+</ol></article><article class="exercise exercise-like" id="exercise-48"><h6 class="heading">
+<span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Poisson Random Variable.</span>
+</h6>
+<p id="p-456">The Poisson random variable \(Z\) for parameter \(\lambda &gt; 0\) has PMF given by</p>
+<div class="displaymath">
+\begin{equation*}
+p(k) = e^{-\lambda} \frac{\lambda^k}{k!}.
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-222">
+<p id="p-457">Use the fact that</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{k=0}^{\infty} \frac{x^k}{k!} = e^{x}
+\end{equation*}
+</div>
+<p class="continuation">to prove that  \(p(k)\) is a PMF. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-86" id="solution-86"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-86"><div class="solution solution-like">
+<p id="p-458">Once again, it is clear that \(0 \leq p(k) \) for all \(k\text{.}\) These numbers sum to</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{k=0}^{\infty} e^{-\lambda} \frac{\lambda^k}{k!} = e^{-\lambda} \sum_{k=0}^{\infty}  \frac{\lambda^k}{k!}
+= e^{-\lambda} e^{\lambda} =1.
+\end{equation*}
+</div>
+<p class="continuation">Since all terms are nonnegative and they sum to 1, each term must be less than 1.</p>
+</div></div></p>
+</li>
+<li id="li-223">
+<p id="p-459">Show that</p>
+<div class="displaymath">
+\begin{equation*}
+\E[Z] = \lambda.
+\end{equation*}
+</div>
+<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-87" id="solution-87"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-87"><div class="solution solution-like">
+<p id="p-460"></p>
+<div class="displaymath">
+\begin{align*}
+\E[Z] &amp;= \sum_{k=0}^{\infty} k e^{-\lambda} \frac{\lambda^k}{k!}
+\, = \,  \sum_{k=1}^{\infty} e^{-\lambda} \frac{\lambda^k}{(k-1)!}\\
+&amp; =  \lambda \sum_{k=1}^{\infty} e^{-\lambda} \frac{\lambda^{k-1}}{(k-1)!}
+\,= \,  \lambda \sum_{j=0}^{\infty} e^{-\lambda} \frac{\lambda^{j}}{j!}\\
+&amp; = \lambda.
+\end{align*}
+</div>
+<p id="p-461"></p>
+</div></div></p>
+</li>
+<li id="li-224">
+<p id="p-462"><em class="emphasis">[Don't solve this one. The calculation isn't as bad as the other variance calculations above. But it is still a bit long.]</em> It can be shown that</p>
+<div class="displaymath">
+\begin{equation*}
+\var[Z] = \lambda
+\end{equation*}
+</div>
+<p class="continuation">as well! Again, we need to use the trick</p>
+<div class="displaymath">
+\begin{equation*}
+\E[Z^2] = \E[Z(Z-1)] + \E[Z].
+\end{equation*}
+</div>
+<p class="continuation">This time, we also need to be comfortable with reindexing infinite series. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-88" id="solution-88"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-88"><div class="solution solution-like">
+<p id="p-463">Here is the hard work:</p>
+<div class="displaymath">
+\begin{align*}
+\E[Z(Z-1)] &amp;= \sum_{k=0}^{\infty} k(k-1) e^{-\lambda} \frac{\lambda^k}{k!}\\
+&amp;= \lambda^2 e^{-\lambda} \sum_{k=2}^{\infty}   \frac{\lambda^{k-2}}{(k-2)!}\\
+&amp;= \lambda^2 e^{-\lambda} \sum_{j=0}^{\infty}   \frac{\lambda^{j}}{j!}\\
+&amp;= \lambda^2 e^{-\lambda}e^{\lambda} = \lambda^2.
+\end{align*}
+</div>
+<p id="p-464">That wasn't so bad! Our variance calculation is</p>
+<div class="displaymath">
+\begin{align*}
+\var(Z) &amp;= \E[Z^2] - (\E[Z])^2 = \E[Z(Z-1)] + \E[Z]- (\E[Z])^2\\
+&amp;= \lambda^2 + \lambda - \lambda^2 \, =\,  \lambda.
+\end{align*}
+</div>
+<p id="p-465">Fun fact: the expected value is also called the "first moment." The variance is also called the "second moment." Can you guess what the third moment of the Poisson distribution is? That's right: it's also equal to \(\lambda\text{.}\) How about the fourth moment? Yep, \(\lambda\) again.</p>
+<p id="p-466">In fact, every moment of the Poisson distribution is equal to \(\lambda\text{.}\) (This is analogous to how all of the derivatives of \(e^x\) are also \(e^x\text{.}\)) Each of the moments tell you something about the shape of the distribution. So in a poetic sense, the Poisson distribution must be the nicest-shaped bell curve centered at \(x=\lambda\text{.}\)</p>
+</div></div></p>
+</li>
+<li id="li-225">
+<p id="p-467">In this part, you will show that when \(n\) is very large and \(p\) is very small, the Poisson PMF for</p>
+<div class="displaymath">
+\begin{equation*}
+\lambda :=np
+\end{equation*}
+</div>
+<p class="continuation">is a good approximation (for small \(k\)) of  the binomial PMF with parameters \(n\) and \(p\text{.}\) We will fix \(k \in \Z_{\geq 0}\) to be  constant and let \(n \rightarrow \infty\text{.}\) You will show that</p>
+<div class="displaymath">
+\begin{equation*}
+{n \choose k} p^k (1-p)^{n-k} \approx e^{-\lambda} \frac{\lambda^k}{k!}   \mbox{if } k \ll n.
+\end{equation*}
+</div>
+<p class="continuation">Use the following facts which hold for \(n \rightarrow \infty\) and any constants \(c,d \in \Z_{\geq 0}\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{n \rightarrow \infty} \frac{n -c}{n} &amp;= 1,
+&amp;
+\lim_{n \rightarrow \infty} \left( 1 - \frac{c}{n} \right)^{-d} &amp;= 1,
+&amp;
+\lim_{n \rightarrow \infty} \left( 1 - \frac{c}{n} \right)^n &amp;= e^{-c}.
+\end{align*}
+</div>
+<p id="p-468"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-89" id="solution-89"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-89"><div class="solution solution-like">
+<p id="p-469">Keep in mind that <em class="emphasis">\(k\) is a fixed number</em> while the size \(n\) of the network increases to infinity. This lets us use the three limits listed above.</p>
+<div class="displaymath">
+\begin{align*}
+{n \choose k} p^k (1-p)^{n-k}
+&amp;= \frac{n!}{k! (n-k)!} \left( \frac{\lambda} {n}\right)^k  \left( 1 -  \frac{\lambda}{n} \right)^{n-k}\\
+&amp;= \frac{\lambda^k} {k!} \left( \frac{n}{n} \frac{n-1}{n} \cdots \frac{n-k+1}{n} \right) \left( 1 -  \frac{\lambda}{n} \right)^{n} \left( 1 -  \frac{\lambda}{n} \right)^{-k}\\
+&amp; \rightarrow
+\frac{\lambda^k} {k!}  \cdot \big( 1 \cdot 1 \cdots 1  \big) \cdot  e^{-\lambda} \cdot 1 = e^{-\lambda} \frac{\lambda^k}{k!}
+\end{align*}
+</div>
+<p id="p-470">What this is saying is that as \(n \rightarrow \infty\text{,}\) the binomial distribution for \(n\) and \(p\) looks more and more like the Poisson distribution for \(\lambda=np\text{.}\)</p>
+</div></div></p>
+</li>
+</ol></article></section></div></main>
+</div>
+</body>
+</html>

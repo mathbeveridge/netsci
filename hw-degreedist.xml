@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter xml:id="hw-degreedist" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Exercises: Degree Distributions and Power Laws</title>
+	<introduction>
+		<p>
+
+
+
+
+
+
+
+
+
+
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Homework Exercises</title>
+
+
+		<exercise>
+			<statement>
+				<p>
+  Let <m>X</m> be be a binomial random variable with parameters <m>p</m> and <m>n</m>.
+
+			<ol>
+				<li>
+					<p>
+ Show that the PMF of <m>X</m> can be calculated recursively by starting with
+<me>
+p(0) = (1-p)^n
+</me>
+and then using the recursive formula
+<me>
+p(k+1) = \frac{p}{1-p} \cdot \frac{n-k}{k+1} p(k).
+</me>
+					</p>
+				</li>
+				<li>
+					<p>
+ We can now make an observation about the shape of the PMF of <m>X</m>. Let <m>k^*= \lfloor (n+1) \cdot p  \rfloor</m> be the largest integer that is less than or equal to <m>(n+1) \cdot p</m>. Show that the PMF <m>p(k)</m> is weakly increasing (also known as monotonically nondecreasing) for <m>0 \leq k \leq k^*</m> and is monotonically decreasing for <m>k^* \leq k \leq n</m>.
+
+
+					</p>
+				</li>
+			</ol>
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+  A fair coin is one such that the outcome of a coin toss has <m>\P(H) = \P(T) = \frac{1}{2}</m>, where <m>H</m> means "heads" and <m>T</m> means "tails."
+			<ol>
+				<li>
+					<p>
+ A fair coin is tossed repeatedly until two consecutive heads or two consecutive tails appear. Let <m>X</m> denote the number of coin tosses you make.  Find the PMF, the expected value, and the variance of <m>X</m>.
+					</p>
+				</li>
+				<li>
+					<p>
+ Assume now that the coin is tossed until we obtain a tail that is immediately preceded by a head. Find the PMF and the expected value of the number of tosses.
+					</p>
+				</li>
+			</ol>
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ In this problem, you will fit a power law to the earthquake data found at
+
+			</p><p>
+
+<url href="http://tuvalu.santafe.edu/~aaronc/powerlaws/data/quakes.txt" >http://tuvalu.santafe.edu/~aaronc/powerlaws/data/quakes.txt</url>.
+
+			</p><p>
+
+This data set contains the
+intensities of earthquakes occurring in California between 1910 and 1992, measured as the maximum amplitude of motion during the quake.
+
+<em>Note: </em> these data points are given on the Richter scale, which is the base-10 logarithm of the actual intensity. You must correct for this to find the correct value of <m>\alpha</m> for the power law.
+
+
+
+			<ol>
+				<li>
+					<p>
+ Create a plot of the data using "intensity <m>k</m>" versus "frequency of intensity at least <m>k</m>" using a log-log scale. What seems to be a good estimate for <m>k_{\min}</m> based on your log-log plot?
+					</p>
+				</li>
+				<li>
+					<p>
+ Find the best fitting <m>k_{\min}</m> and <m>\alpha</m>. How does the optimal <m>k_{\min}</m> compare to your guess in part (a)?
+					</p>
+				</li>
+				<li>
+					<p>
+ Make a plot of the PDF and the best fitting power law.
+					</p>
+				</li>
+				<li>
+					<p>
+ Make a plot of the Kolmogorov-Smirnov statistics <m>D</m> for the first 50 candidates for <m>k_{\min}</m>..
+					</p>
+				</li>
+			</ol>
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Download the 2010 US census data on last names that occur at least 100 times from this site:
+
+			</p><p>
+
+<url href="https://www.census.gov/topics/population/genealogy/data/2010\_surnames.html" >https://www.census.gov/topics/population/genealogy/data/2010\_surnames.html</url>.
+
+			</p><p>
+
+			<ol>
+				<li>
+					<p>
+ Set the minimum degree to 100 and find the best fitting exponent <m>\alpha</m>.
+					</p>
+				</li>
+				<li>
+					<p>
+ Create a plot that fits a power law and a truncated power law to this data. Which distribution is a better fit to the data?
+					</p>
+				</li>
+			</ol>
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ Naturally occurring power law distributions have heavy tails, meaning that a substantial portion of the data lies in the long tail, rather than being concentrated around its mean. This means that an outsized fraction of the "wealth" of the data is in the hands of the "richest" entities. We will explore this effect for general power laws.
+
+
+Consider the continuous power law with PDF
+<m>p: [x_{\min}, \infty] \rightarrow [0,1]</m> given by
+<me>
+p(x) = \frac{\alpha -1}{x_{\min}} \left( \frac{x}{x_{\min}} \right)^{-\alpha} \qquad \mbox{where } \alpha &gt; 2.
+</me>
+
+			<ol>
+				<li>
+					<p>
+ Find the CCDF <m>P(x) = \int_{x}^{\infty} p(t) dt.</m>
+					</p>
+				</li>
+				<li>
+					<p>
+ For any <m>r \in [0,1]</m>, let <m>x_r</m> denote the point achieving
+<me>
+P(x_r) = r.
+</me>
+So half of the data satisfies <m>x \geq x_{1/2}</m>, a tenth of the data satisfies <m>x \geq x_{1/10}</m>, and so on. Prove that
+<me>
+x_r = r^{-1/(\alpha-1)} x_{\min}.
+</me>
+Intuitively, <m>x_r</m> is the cutoff for finding the "richest" <m>r</m> fraction of the data.
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Next, find an expression for
+<me>
+w(r) = \frac{\E[ X \mid x \geq x_r]}{\E[ X]} = \frac{\int_{x_r}^{\infty} x \, p(x) dx}{\int_{x_{\min}}^{\infty} x \, p(x) dx}.
+</me>
+This is the fraction of the "wealth" owned by the top <m>r</m> fraction of the data. Using your answer from (b), you will get an expression that only depends on <m>r</m> and <m>\alpha</m>.
+					</p>
+				</li>
+			</ol>
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<p>
+ We apply your results from problem 2 to a real data set.
+It has been argued (but not proved definitively) that the distribution of wealth in the United States (and other countries) follows a power law tail. (For example, see <url href="http://phys.org/news95074548.html" >this article</url>.) Even if this wealth distribution tail is not a pure power law, then  it is still very similar to a power law. For simplicity, in this problem, we will assume that all of the US wealth adheres to a power law.
+
+Download the data set at
+
+			</p><p>
+
+<url href="https://www.dropbox.com/s/b1xzul14eyg4d2a/wealth2002.csv?dl=0" >https://www.dropbox.com/s/b1xzul14eyg4d2a/wealth2002.csv?dl=0</url>
+
+			</p><p>
+
+which lists the net worth of the
+400 wealthiest Americans in 2002 in millions of dollars.
+
+			<ol>
+				<li>
+					<p>
+ Create a log-log plot of the CCDF of this data set to confirm that it looks like a power law.
+					</p>
+				</li>
+				<li>
+					<p>
+ Estimate the value of <m>\alpha</m> for this data set. This is a continuous PDF, so use the same formula as in 1(c).
+					</p>
+				</li>
+				<li>
+					<p>
+ What is the value <m>x_{1/2}</m> for American wealth in 2002? In other words, if your net worth was at least <m>x_{1/2}</m>, then you were in the top half of the population in terms of wealth.
+					</p>
+				</li>
+				<li>
+					<p>
+ Now find <m>w(1/2)</m>. This is the fraction of the wealth in the hands of the wealthiest half of the population.
+					</p>
+				</li>
+				<li>
+					<p>
+ Finally, find the value <m>r^*</m> so that <m>w(r^*)=1/2</m> and its corresponding <m>x_{r^*}</m>. The interpretation: the wealthiest <m>r^*</m> fraction of the population owns half of the total wealth. In order to be among these super-elite people, your net worth must be at least <m>x_{r^*}</m>.
+					</p>
+				</li>
+			</ol>
+
+
+
+				</p>
+			</statement>
+		</exercise>
+	</exercises>
+
+
+
+</chapter>

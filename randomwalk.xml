@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+
+
+<chapter xml:id="randomwalk" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Random Walks</title>
+	<introduction>
+		<p>
+
+
+A <em>random walk</em> starting at vertex <m>v_0</m> proceeds as follows:
+at each time <m>t \geq 1</m>, pick a random out-neighbor of <m>v_{t-1}</m> and walk to it.
+If vertex <m>v_{t-1}</m> has no out-neighbors, then we stay where we are.
+
+			</p><p>
+
+A nice way to "stay where we are" is to add a loop to each vertex with no out-neighbors. So when
+<m>k_i^{\mathrm{out}} = 0</m>, we update the adjacency matrix so that <m>a_{ii}=1</m>. So we will assume that this is the case.
+
+			</p><p>
+
+At each step, <m>v_t</m> is
+chosen uniformly from the out-neighbors of <m>v_{t-1}</m>. Using conditional probability notation, we have
+<me>
+P_{ij} = \Pr (v_t=j \mid v_{t-1} = i ) =
+\left\{
+\begin{array}{cc}
+\displaystyle{\frac{1}{k_i^{\mathrm{out}}}} &amp; \mbox{if } ij \in E, \\
+0 &amp; \mbox{otherwise}.
+\end{array}
+\right.
+</me>
+
+The <em>transition matrix</em> <m>P = ( P_{ij})</m> collects the transition probabilities. The <m>i</m>th row contains all the transition probabilities starting at vertex <m>i</m>. Finally, we can write our transition matrix as
+<me>
+P = D^{-1} A
+</me>
+where <m>D</m>  is the diagonal matrix with  <m> D_{ii} = \max \left\{ k_i^{\mathrm{out}}, 1 \right\}</m> and  <m>A</m> is the adjacency matrix.
+
+
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+
+
+
+
+		<exercise>
+			<title>Random Walk on an Undirected Graph</title>
+			<idx><h>Random Walk on an Undirected Graph</h></idx>
+			<statement>
+				<p>
+			<ol>
+				<li>
+					<p>
+ Find the transition matrix <m>P</m>  of the following undirected graph. Hint: construct <m>P</m>   row by row.
+And remember that when <m>k_i^{\mathrm{out}}=0</m>, we set <m>a_{ii}=1</m>, corresponding to the move "stay where we are."
+
+
+
+
+			<image width="30%" xml:id="fig-img-randomwalk0" source="./images/undirected-graph.png" />
+
+
+			</p><p>
+
+<solution>
+<p>
+
+
+<me>
+P =
+\begin{bmatrix}
+0 &amp; 1/2 &amp; 0 &amp; 0 &amp; 1/2 &amp; 0  \\
+1/3 &amp; 0 &amp; 1/3 &amp; 0 &amp; 1/3 &amp; 0  \\
+0 &amp; 1/2 &amp; 0 &amp; 1/2 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1/3 &amp; 0 &amp; 1/3 &amp; 1/3  \\
+1/3 &amp; 1/3 &amp; 0 &amp; 1/3 &amp; 0 &amp; 0  \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0  \\
+\end{bmatrix}
+</me>
+
+</p>
+</solution>
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Show that the all-ones vector <m>\bone</m> is a right eigenvector for  eigenvalue <m>\lambda=1</m>. In other words, confirm that
+<me>
+P \bone = \bone.
+</me>
+What is the meaning of this equation?
+
+<solution>
+<p>
+Right multiplication by <m>\bone</m> sums all the exit probabilities from each vertex. So of course, these numbers sum to 1.
+</p>
+</solution>
+
+					</p>
+				</li>
+			</ol>
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Long Term Behavior of a Random Walk of an Undirected Graph</title>
+			<idx><h>Long Term Behavior of a Random Walk of an Undirected Graph</h></idx>
+			<statement>
+				<p>
+Consider the undirected graph from Problem 1. In your mind, repeatedly simulate a random walk starting from vertex 1. Follow this walk for about 15 steps or so. Where are you most likely to end up? Least likely? How do your observations relate to:  the distance of the vertex from vertex 1? the degree of the  vertex?
+
+
+
+			</p><p>
+
+<solution>
+<p>
+
+It is possible to end at any vertex. Vertex 6 is definitely visited the least at the end of the walk. Vertices with degree 3 seem to be the candidates for lots of visits at the end. But it is not clear how to compare these vertices with each other.
+
+</p>
+</solution>
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Powers of the Transition Matrix</title>
+			<idx><h>Powers of the Transition Matrix</h></idx>
+			<statement>
+				<p>
+			<ol>
+
+				<li>
+					<p>
+ Here is the matrix <m>P^2</m> for the undirected graph in Problem 1.
+<me>
+P^2 =
+\begin{bmatrix}
+\frac{1}{3} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; 0 \\[6pt]
+\frac{1}{9} &amp; \frac{4}{9} &amp; 0 &amp; \frac{5}{18} &amp; \frac{1}{6} &amp; 0 \\[6pt]
+\frac{1}{6} &amp; 0 &amp; \frac{1}{3} &amp; 0 &amp; \frac{1}{3} &amp; \frac{1}{6} \\[6pt]
+\frac{1}{9} &amp; \frac{5}{18} &amp; 0 &amp; \frac{11}{18} &amp; 0 &amp; 0 \\[6pt]
+\frac{1}{9} &amp; \frac{1}{6} &amp; \frac{2}{9} &amp; 0 &amp; \frac{7}{18} &amp; \frac{1}{9} \\[6pt]
+0 &amp; 0 &amp; \frac{1}{3} &amp; 0 &amp; \frac{1}{3} &amp; \frac{1}{3}
+\end{bmatrix}
+</me>
+What does row <m>i</m> tell you about the instruction "take two random steps from vertex <m>i</m>?"
+
+
+<solution>
+<p>
+
+The <m>(i,j)</m> entry of <m>P^2</m> tells you the probability of a random walk starting at <m>i</m> ending at <m>j</m> after 2 steps.
+
+</p>
+</solution>
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Using part (a) as a guide, give an interpretation for row <m>i</m> of the matrix <m>P^3</m>.
+
+<solution>
+<p>
+
+The <m>(i,j)</m> entry of <m>P^3</m> tells you the probability of a random walk starting at <m>i</m> ending at <m>j</m> after 3 steps.
+
+</p>
+</solution>
+
+					</p>
+				</li>
+				<li>
+					<p>
+ What do the rows of matrix <m>P^t</m> describe?
+
+<solution>
+<p>
+
+The <m>(i,j)</m> entry of <m>P^t</m> tells you the probability of a random walk starting at <m>i</m> ending at <m>j</m> after <m>t</m> steps.
+
+
+
+</p>
+</solution>
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ For <m>1 \leq i \leq 5</m>, let <m>\mathbf{e}_i</m> denote the " elementary vector" whose <m>j</m>-th entry is
+<me>
+\mathbf{e}_i(j) = \left\{
+\begin{array}{cl}
+1 &amp; i=j \\
+0 &amp; \mbox{otherwise.}
+\end{array}
+\right.
+</me>
+In other words,
+</p>
+<md>
+<mrow>
+\mathbf{e}_1&amp;= \begin{bmatrix} 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{bmatrix}
+</mrow>
+<mrow>
+\mathbf{e}_2&amp;= \begin{bmatrix} 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \end{bmatrix}
+</mrow>
+<mrow>
+\mathbf{e}_3&amp;= \begin{bmatrix} 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \end{bmatrix}
+</mrow>
+<mrow>
+\mathbf{e}_4&amp;= \begin{bmatrix} 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \end{bmatrix}
+</mrow>
+<mrow>
+\mathbf{e}_5&amp;= \begin{bmatrix} 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix}
+</mrow>
+</md>
+<p>
+What does the vector
+<me>
+\mathbf{e}_i \, P^t
+</me>
+describe?
+
+<solution>
+<p>
+
+The  row vector <m>\mathbf{e}_i \, P^t</m> is row <m>i</m> of matrix <m>P^t</m>. As described in the previous part, the <m>j</m>th entry of this vector is the probability that you are at vertex <m>j</m> after taking <m>t</m> random steps from <m>i</m>.
+
+
+
+
+</p>
+</solution>
+
+
+					</p>
+				</li>
+			</ol>
+
+
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>A Left Eigenvector for an Undirected Graph</title>
+			<idx><h>A Left Eigenvector for an Undirected Graph</h></idx>
+			<statement>
+				<p>
+Let <m>P</m> be the transition matrix for the graph in Problem 1.
+Consider the row vector
+<me>
+\bv =
+\begin{bmatrix}
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{2}{14} &amp; \frac{3}{14} &amp; \frac{2}{14} &amp; \frac{3}{14} &amp; \frac{3}{14} &amp; \frac{1}{14}
+\end{bmatrix}
+</me>
+
+
+			<ol>
+				<li>
+					<p>
+ Check that the row vector <m>\bv</m>
+satisfies
+<me>
+\bv  \,P = \bv.
+</me>
+We have a name for this equation: say that "<m>\bv</m> is
+a <em>left</em> eigenvector of the transition matrix <m>P</m> for eigenvalue <m>\lambda=1</m>." (In other words, the eigenvectors that you are used to are actually <em>right</em> eigenvectors.)
+
+
+<solution>
+<p>
+We have
+</p>
+<md>
+<mrow>
+&amp; \begin{bmatrix}
+\frac{2}{14} &amp; \frac{3}{14} &amp; \frac{2}{14} &amp; \frac{3}{14} &amp; \frac{3}{14} &amp; \frac{1}{14}
+\end{bmatrix}
+\begin{bmatrix}
+0 &amp; 1/2 &amp; 0 &amp; 0 &amp; 1/2 &amp; 0
+</mrow>
+<mrow>
+1/3 &amp; 0 &amp; 1/3 &amp; 0 &amp; 1/3 &amp; 0
+</mrow>
+<mrow>
+0 &amp; 1/2 &amp; 0 &amp; 1/2 &amp; 0 &amp; 0
+</mrow>
+<mrow>
+0 &amp; 0 &amp; 1/3 &amp; 0 &amp; 1/3 &amp; 1/3
+</mrow>
+<mrow>
+1/3 &amp; 1/3 &amp; 0 &amp; 1/3 &amp; 0 &amp; 0
+</mrow>
+<mrow>
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0
+</mrow>
+<mrow>
+\end{bmatrix}
+</mrow>
+<mrow>
+&amp;=
+\begin{bmatrix}
+\frac{2}{14} &amp; \frac{3}{14} &amp; \frac{2}{14} &amp; \frac{3}{14} &amp; \frac{3}{14} &amp; \frac{1}{14}
+\end{bmatrix}
+</mrow>
+</md>
+<p>
+
+
+</p>
+</solution>
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Relate the entries of <m>\bv</m> to the degrees of the graph.
+
+<solution>
+<p>
+
+The weight of a vertex is proportional its degree. The sum of the weights is 1. It turns out that this is the limiting distribution for the location of a random walker on the graph: the probability that we are at a given vertex is proportional to its degree (provided that we have walked long enough!).
+
+</p>
+</solution>
+
+
+
+
+					</p>
+				</li>
+			</ol>
+
+
+
+
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Stationary Distribution for an Undirected Graph</title>
+			<idx><h>Stationary Distribution for an Undirected Graph</h></idx>
+			<statement>
+				<p>
+A vector whose entries are nonnegative and sum to one correspond to a <em>probability distribution</em> on the vertices of <m>G</m>. A distribution <m>\pi</m> is  <em>stationary</em> for <m>P</m> when
+<me>
+\pi P = \pi.
+</me>
+The amazing Perron-Frobenius Theorem (a very general theorem) can be applied to the transition matrix <m>P</m> for a connected, non-bipartite undirected graph.
+
+			</p><p>
+In particular, it applies to the matrix <m>P</m> from the previous problems. And it tells us more information about the left eigenvector  <m>\bv</m>.
+Two of the properties that it tells us are:
+		<ul>
+\item
+There is a unique vector <m>\bv</m> such that  <m>\bv P =\bv</m> and all its entries are positive. In other words, this all-positive vector is a left eigenvector for eigenvalue <m>\lambda=1</m>.
+			<li>
+			<p>
+ All of the other eigenvalues satisify <m>| \lambda_i| &lt; 1</m>. In other words, <m>\bv</m> is the <em>dominant eigenvector</em> of <m>P</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ Assuming that we have scaled the row vector <m>\bv</m> so that its entries sum to 1, we have
+</p>
+<md>
+<mrow>
+\lim_{t \rightarrow \infty} P^t  \, = \, \bone \,  \bv
+&amp;=
+\begin{bmatrix}
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6
+</mrow>
+<mrow>
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6
+</mrow>
+<mrow>
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6
+</mrow>
+<mrow>
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6
+</mrow>
+<mrow>
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6
+</mrow>
+<mrow>
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6
+</mrow>
+<mrow>
+\end{bmatrix}
+</mrow>
+</md>
+<p>
+where
+<me>
+\bv =
+\begin{bmatrix}
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{2}{14} &amp; \frac{3}{14} &amp; \frac{2}{14} &amp; \frac{3}{14} &amp; \frac{3}{14} &amp; \frac{1}{14}
+\end{bmatrix}.
+</me>
+			</p>
+			</li>
+		</ul>
+
+Given this information:
+			<ol>
+				<li>
+					<p>
+ What new properties do we now know about the vector (and probability distributrion) <m>\bv</m>?
+
+
+<solution>
+<p>
+The row vector <m>\bv</m> is the dominant eigenvector and  every row of <m>\lim_{t \rightarrow \infty} P^t</m> converges to <m>\pi</m>.
+</p>
+</solution>
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ After taking many random steps, what is the probability that we are at vertex <m>i</m>?
+
+<solution>
+<p>
+Row <m>i</m> of <m>P^t</m> is the probability distribution for a random walk started at vertex <m>i</m>. So this distribution converges to <m>\pi</m>. In particular, as <m>t \rightarrow \infty</m>, the probability that we are at vertex <m>j</m> is <m>k_j/14</m>.
+</p>
+</solution>
+
+					</p>
+				</li>
+			</ol>
+
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Undirected Graphs: the General Case</title>
+			<idx><h>Undirected Graphs: the General Case</h></idx>
+			<statement>
+				<p>
+In the previous questions, you have focused on a particular undirected graph. Take a step back: these observations also hold in general!
+
+			</p><p>
+
+Let <m>G</m> be a connected, aperiodic, undirected graph with adjacency martix <m>A</m> and transition matrix <m>P = D^{-1}A</m>.
+
+			<ol>
+				<li>
+					<p>
+ Explain why <m>P \bone = \bone</m>.
+
+
+<solution>
+<p>
+
+Row <m>i</m> contains the probabilities of stepping from <m>i</m>  to a neighbor of vertex <m>i</m>. These probabiiities sum to 1.
+
+
+
+</p>
+</solution>
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Let <m>\pi</m> be the row vector
+<me>
+\pi =
+\begin{bmatrix}
+\frac{k_1}{2m} &amp; \frac{k_2}{2m} &amp;  \cdots &amp; \frac{k_n}{2m}
+\end{bmatrix}
+</me>
+where <m>n=|V|</m> and <m>m = |E|</m> and <m>k_i</m> is the degree of vertex <m>i</m>. Explain why
+<me>
+\pi P = \pi.
+</me>
+
+
+<solution>
+<p>
+
+The <m>i</m>th entry of <m>\pi P</m> is
+<me>
+\sum_{j=1}^n \frac{k_j}{2m} \frac{a_{ij}}{k_j} = \frac{1}{2m}  \sum_{j=1}^n a_{ij} = \frac{k_i}{2m}.
+</me>
+
+
+
+</p>
+</solution>
+
+					</p>
+				</li>
+				<li>
+					<p>
+ What is the meaning of the row vector <m>\mathbf{e}_i \, P^t</m>, where <m>\mathbf{e}_i</m> is the elementary vector from Problem 3(d)?
+
+
+<solution>
+<p>
+The row vector <m> \mathbf{e}_i \, P^t </m> is row <m>i</m> of <m>P^t</m>.
+</p>
+</solution>
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Explain why we have
+<me>
+\lim_{t \rightarrow \infty} \mathbf{e}_i \, P^t = \pi.
+</me>
+What does this equation mean for a random walk starting at vertex <m>i</m>?
+
+
+
+<solution>
+<p>
+Row <m>i</m> of <m>P^t</m> is the probability distribution for a random walk started at vertex <m>i</m>.
+This distribution converges to <m>\pi</m>. In particular, as <m>t \rightarrow \infty</m>, the probability that we are at vertex <m>j</m> is <m>k_j/2m</m>.
+</p>
+</solution>
+
+					</p>
+				</li>
+			</ol>
+
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Random Walk on a Directed Graph</title>
+			<idx><h>Random Walk on a Directed Graph</h></idx>
+			<statement>
+				<p>
+Things don't work out as nicely on directed graphs. We will work through an example to see some of the strange behaviors that can arise.
+
+			<ol>
+				<li>
+					<p>
+ Find the transition matrix <m>P</m> of the following directed graph. Hint: construct <m>P</m> row by row.
+
+
+			<image width="30%" xml:id="fig-img-randomwalk1" source="./images/directed-graph.png" />
+
+
+<solution>
+<p>
+
+Since vertex 2 has no out-neighbors, we add a self-loop.
+<me>
+P =
+\begin{bmatrix}
+0 &amp; 1/2 &amp; 0 &amp; 0 &amp; 1/2 &amp; 0  \\
+0 &amp; 1 &amp; 0&amp; 0 &amp; 0 &amp; 0  \\
+1/2 &amp; 1/2 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0  \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1  \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0  \\
+\end{bmatrix}
+</me>
+
+</p>
+</solution>
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Confirm that
+<me>
+P \bone = \bone.
+</me>
+What is the meaning of this equation?
+
+<solution>
+<p>
+Right multiplication by <m>\bone</m> sums all the exit probabilities from each vertex. These numbers sum to 1, just as in the directed case. Note that adding the self-loop at vertex 2 is essential.
+</p>
+</solution>
+
+					</p>
+				</li>
+			</ol>
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Long Term Behavior of a Random Walk on Directed Graph</title>
+			<idx><h>Long Term Behavior of a Random Walk on Directed Graph</h></idx>
+			<statement>
+				<p>
+Now simulate some random walks on the directed graph from Problem 7. This time, start your walk at vertex 1. You should see a couple of different kinds of behavior for this directed graph. Describe what you observe.
+
+			<image width="25%" xml:id="fig-img-randomwalk2" source="./images/directed-graph.png" />
+
+
+<solution>
+<p>
+
+At the end of the walk, we must be at vertex 2, 5 or 6. If we step to vertex 2 then we remain there forever. On the other hand, if we step from vertex 1 to vertex 5 then we we can never get out of this two vertex "spider trap."
+
+</p>
+</solution>
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>An Eigenvector for a Directed Graph</title>
+			<idx><h>An Eigenvector for a Directed Graph</h></idx>
+			<statement>
+				<p>
+Let's continue to explore the digraph in Problem 7.
+
+			<ol>
+
+				<li>
+					<p>
+ Check that the row vector
+<me>
+\begin{bmatrix}
+0 &amp; 0 &amp; 0 &amp; 0 &amp; \frac{1}{2} &amp; \frac{1}{2}
+\end{bmatrix}
+</me>
+satisfies
+<me>
+\bv \, P = \bv.
+</me>
+
+How does this relate to the behavior you saw in problem 4? What behavior doesn't this capture?
+
+<solution>
+<p>
+One of the two long-term outcomes we observed was ending up in the "spider trap" and then alternate between vertices 5 and 6. So in the long run, we spend half our time at vertex 5 and half our time at vertex 6. However, even in this case, the vector <em>doesn't capture the periodic behavior</em> of our long-term random walk. If we first step to vertex 5 at time <m>T</m>, then we will also be at vertex 5 at time <m>T+2, T+4, T+6, </m> etc, and we will be at vertex 6 at time <m>T+1, T+3, T+5, </m> etc.
+
+			</p><p>
+Another behavior that we don't see in this vector is that we could have ended up at vertex 2, and then remained there forever. That doesn't even show up at all in this vector.
+
+</p>
+</solution>
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Find a different vector <m>\bw \neq \bv</m> such that
+<me>
+\bw \, P = \bw.
+</me>
+
+<solution>
+<p>
+The vector
+<me>
+\bw =
+\begin{bmatrix}
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0
+\end{bmatrix}
+</me>
+is a solution to  <m>\bw \, P = \bw.</m>
+</p>
+</solution>
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Pick <m>a,b \in \R</m>  such that <m>a+b=1</m>. What can you say about the vector <m>a \bv + b \bw</m>?
+
+<solution>
+<p>
+We have
+<me>
+(a \bv + b\bw) P = a (\bv P) + b (\bw) P = a \bv  + b \bw.
+</me>
+Indeed, they are both left eigenvectors for eigenvalue <m>\lambda=1</m>. So any linear combination is also a left eigenvector for eigenvalue <m>\lambda=1</m>.
+
+</p>
+</solution>
+
+
+					</p>
+				</li>
+			</ol>
+As this problem shows, the eigenvectors for a weakly connected directed graph aren't enough to fully resolve the long-term behavior of random walks. This example has an infinite number of choices of <m>a,b</m> that produce distinct left eigenvectors.
+
+(In fact, the stationary distribution that we end up in depends upon the starting vertex.)
+
+
+				</p>
+			</statement>
+		</exercise>
+	</exercises>
+
+
+</chapter>

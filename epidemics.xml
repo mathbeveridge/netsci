@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+
+
+
+
+<chapter xml:id="epidemics" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Epidemics on Networks</title>
+	<introduction>
+		<p>
+
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+
+		<exercise>
+			<title>Excess Degree Distribution</title>
+			<idx><h>Excess Degree Distribution</h></idx>
+			<statement>
+				<p>
+Suppose that we have  a large network
+for which there is no correlation between vertex degrees. That is, an edge from vertex <m>v</m> leads to a vertex chosen  uniformly at random. Let
+<m>p_k</m> denote the fraction of vertices of degree <m>k</m>.
+When you pick a vertex <m>v</m> at random, we have <m>\Pr[\deg(v)=k] = p_k</m>. This means that
+the expected degree of the network is
+<me>
+\langle k \rangle = \sum_{k=0}^{k_{\max}} k  \cdot p_k.
+</me>
+Consider the following process: Pick a random vertex <m>v</m> and then move to a random neighbor <m>w</m> of vertex <m>v</m>. Let
+<me>
+q_k = \Pr [\deg(w)=k+1].
+</me>
+In other words, <m>w</m> has <m>k</m> additional edges, besides the one you just traveled. In this case, we say that <m>w</m> has <em>excess degree</em> <m>k</m>.
+
+
+			<ol>
+				<li>
+					<p>
+ Explain why the excess degree distribution  satisfies
+<me>
+q_k = \frac{(k+1) p_{k+1}}{\langle k \rangle}.
+</me>
+
+<solution>
+<p>
+Suppose that we have <m>n</m> vertices and <m>m</m> edges.
+Let's think of our graph as "unwired" meaning that a vertex of degree <m>k</m> is a vertices with <m>k</m> edge stubs (which connect randomly to one another). We start at a vertex <m>v</m> and then pick a random stub connected to vertex <m>v</m>. This stub is equally likely to connect to any of the other stub. So the probability that we connect to a particular vertex of degree <m>k+1</m> is
+<me>
+\frac{k+1}{2m-1} \approx \frac{k+1}{2m}.
+</me>
+The number of vertices of degree <m>k+1</m> is <m>p_{k+1} n</m>. So the chance that we randomly connect to a vertex of degree <m>k</m> is
+<me>
+q_k = \frac{k+1}{2m} \cdot p_{k+1}  n =  \frac{n}{2m} \cdot  (k+1) p_{k+1}  = \frac{(k+1) p_{k+1} }{\langle k \rangle}.
+</me>
+
+</p>
+</solution>
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Confirm that the expected degree of vertex <m>w</m> is
+<me>
+\frac{\langle k^2 \rangle}{\langle k \rangle}.
+</me>
+
+<solution>
+<p>
+<me>
+\sum_{k} (k+1) q_k = \sum_{k=0}^{k_{\max}-1} \frac{(k+1)^2 p_{k+1}}{\langle k \rangle}
+</me>
+</p>
+</solution>
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Recall that
+<me>
+\mbox{Var}[X] = E[X^2] - E[X]^2 &gt; 0
+</me>
+when <m>X</m> is not constant. Use this to explain why that the expected degree of <m>w</m> is larger than the expected degree of <m>v</m>.
+
+<solution>
+<p>
+<me>
+\frac{\langle k^2 \rangle}{\langle k \rangle}    -  \langle k \rangle  =  \frac{\langle k^2 \rangle-  \langle k \rangle^2 }{\langle k \rangle}    &gt; 0
+</me>
+</p>
+</solution>
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Colloquially, people refer to this result as: "your friends are more popular than you." Why?
+
+<solution>
+<p>
+The expected degree of a randomly picked friend is larger than your expected degree. So it is more likely than not that your friend has larger degree than you do.
+</p>
+</solution>
+
+					</p>
+				</li>
+			</ol>
+
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Susceptible-Infected Model: The Homogeneous Case</title>
+			<idx><h>Susceptible-Infected Model: The Homogeneous Case</h></idx>
+			<statement>
+				<p>
+
+
+We start by considering a spread of disease model that replaces the network with a simplifying assumption: everyone is equally likely to interact with everyone else.
+Consider a large population where a disease is active. People are either <em>susceptible</em> to the disease or are <em>infected</em>. Once you are infected, you remain infected. Let
+</p>
+<md>
+<mrow>
+I &amp;= \mbox{ fraction of population that is infected}
+</mrow>
+<mrow>
+S &amp;= (1-I)  \mbox{ fraction of population that is susceptible}
+</mrow>
+<mrow>
+\langle k \rangle &amp;= \sum_k k \, p_k  \mbox{ the average number of contacts}
+</mrow>
+<mrow>
+\beta &amp;= \mbox{ likelihood of transmission from infected person to susceptible person}
+</mrow>
+</md>
+<p>
+
+
+			<ol>
+
+				<li>
+					<p>
+ Interpret the following differential equation for the Susceptible/Infected Model (SI Model) with
+<em>transmission rate</em> <m>\beta \langle k \rangle</m>:
+<me>
+\frac{dI}{dt} = \beta \langle k \rangle I S = \beta \langle k \rangle  I (1-I).
+</me>
+
+<solution>
+<p>
+This formula says that
+change in infected = (transmission rate) <m>\times</m> (\# interactions)
+</p>
+</solution>
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ This differential equation is called the <em>logistic equation</em>. Its solution is the logistic function
+<me>
+I(t) = \frac{I_0}{I_0 + (1-I_0)e^{-\beta \langle k \rangle t}}
+</me>
+where <m>I_0 = I(0)</m> is the fraction of infected people at time <m>t=0</m>. We can write this as
+<me>
+I(t) = \frac{1}{1+a e^{-c t}}
+</me>
+where <m>a = 1/I_0 - 1</m> and <m> c= \beta \langle k \rangle</m>.
+Calculate <m>\frac{dI}{dt}</m> to confirm that <m>I(t)</m> satisfies the logistic equation
+<me>
+\frac{dI}{dt} = c I (1-I).
+</me>
+
+<solution>
+<p>
+<me>
+\frac{dI}{dt} = - \frac{1}{(1+a e^{-ct})^2} (-ac e^{-ct}) =
+\frac{1}{(1+a e^{-ct})} \cdot  \frac{ac e^{-ct}}{(1+a e^{-ct})}  = cI (1-I)
+</me>
+</p>
+</solution>
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Here is a plot of the logistic function  <m>I(t)</m>.
+
+			<image width="50%" xml:id="fig-img-epidemics0" source="images/simodel.png" />
+
+Look at the formula from question  2(b) and explain why
+			<ol>
+				<li>
+					<p>
+ <m>I(t) \sim e^{\beta \langle k \rangle t}</m> when <m>t &gt;0</m> is very small.
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>I(t) \approx 1</m> when <m>t</m> is very large.
+
+
+
+					</p>
+				</li>
+			</ol>
+
+
+<solution>
+<p>
+			<ol>
+				<li>
+					<p>
+  If <m>I_0</m> is very small and <m>t &gt;0</m> is also small, then
+<me>
+I(t) \approx I_0 e^{\beta \langle k \rangle t}.
+</me>
+
+					</p>
+				</li>
+				<li>
+					<p>
+  If <m>I_0</m> is small and <m>t&gt;0</m> is big then
+<m>e^{\beta \langle k \rangle t} \approx 0</m>, so
+<me>
+I(t) \approx \frac{I_0}{I_0} =1.
+</me>
+
+					</p>
+				</li>
+			</ol>
+</p>
+</solution>
+
+
+					</p>
+				</li>
+			</ol>
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Susceptible-Infected Model on a Network</title>
+			<idx><h>Susceptible-Infected Model on a Network</h></idx>
+			<statement>
+				<p>
+
+Now we consider a networked version of the SI model.  Our "no correlation" assumption means that the fraction  of infected neighbors  of susceptible vertex <m>v</m> does not depend on <m>\deg(v)</m>.
+We let
+</p>
+<md>
+<mrow>
+I_k &amp;= \mbox{ fraction of vertices of degree <m>k</m>  that are infected}
+</mrow>
+<mrow>
+I &amp;= \sum_{k} p_k \,  I_k  \mbox{ total fraction of infected vertices}
+</mrow>
+<mrow>
+\Theta &amp;= \mbox{ fraction of neighbors of a susceptible vertex that are infected}
+</mrow>
+<mrow>
+\beta &amp;= \mbox{ likelihood of transmission from infected vertex to susceptible vertex}
+</mrow>
+</md>
+<p>
+
+			<ol>
+				<li>
+					<p>
+ Explain why
+<me>
+\frac{dI_k}{dt} = \beta \,  k \,  \Theta \, (1- I_k).
+</me>
+
+<solution>
+<p>
+<m>\Delta</m> infected of degree <m>k</m> = (transmission rate) <m>\times</m> (\# interactions with infected) <m>\times</m>
+(\# susceptible of degree <m>k</m>)
+</p>
+</solution>
+
+					</p>
+				</li>
+				<li>
+					<p>
+ We are interested in the <em>early time behavior</em> of <m>I_k</m>, since we would like to intervene  (via quarantine or travel restrictions, etc) before the disease gets out of hand. If there aren't many infected vertices, then we may approximate <m>1 - I_k \approx 1</m> so that
+<me>
+\frac{dI_k}{dt} \approx \beta \,  k \,  \Theta.
+</me>
+Early on, the set of infected nodes is tree-like. In particular, you can assume that an infected vertex <m>v</m> has a link that points back to the (infected) vertex that transmitted the disease.
+
+			</p><p>
+
+Use the excess degree equation from problem 1(a)  to explain why the fraction of links available for future transmission to a susceptible vertex is
+<me>
+\Theta \approx  \frac{\sum_{k} (k-1) p_k I_k}{\langle k \rangle}.
+</me>
+
+<solution>
+<p>
+This parallels the excess degree argument. Every infected vertex has <m>k-1</m> susceptible neighbors. The fraction of nodes that are degree <m>k</m> and infected is <m>p_k I_k</m>.
+</p>
+</solution>
+
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Taking the derivative of the previous quantity, and using the approximation
+<me>
+\frac{dI_k}{dt} \approx \beta \,  k \,  \Theta,
+</me>
+we get a differential equation of the form
+<me>
+\frac{d \Theta}{d t} = A \Theta
+</me>
+which has solution
+<me>
+\Theta(t) = C e^{At}.
+</me>
+Show that
+<me>
+A= \beta \frac{\langle k^2 \rangle - \langle k \rangle}{\langle k \rangle}.
+</me>
+(The constant <m>C</m> is determined by the initial conditions.)
+
+
+<solution>
+<p>
+<me>
+\frac{d \Theta}{d t} \approx   \frac{\sum_{k} (k-1) p_k }{\langle k \rangle} \frac{d I_k}{dt}
+\approx
+\frac{\sum_{k} (k-1) p_k }{\langle k \rangle} \beta k \Theta
+=
+\frac{\sum_{k} (k^2-k) p_k }{\langle k \rangle} \beta \Theta
+=
+\beta \frac{\langle k^2 \rangle - \langle k \rangle}{\langle k \rangle}    \Theta
+</me>
+</p>
+</solution>
+
+			</p><p>
+
+
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ In the previous part, you showed that
+the fraction of links from available for future transmission from infected vertices to susceptible vertices is
+<me>
+\Theta(t) = C e^{t/{\tau}}   \mbox{ where }   \tau = \frac{1}{A} = \frac{\langle k \rangle}{\beta ( \langle k^2 \rangle - \langle k \rangle)}.
+</me>
+
+			</p><p>
+
+Early on in the epidemic, we have
+<me>
+\frac{dI_k}{dt} \approx \beta \,  k \,  \Theta = \beta \, k \, C e^{t/{\tau}}.
+</me>
+Explain why higher degree vertices are more likely to be infected.
+
+<solution>
+<p>
+The rate of infection has a linear relationship with the degree <m>k</m>.
+</p>
+</solution>
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Finally, we explore the effect of the network structure on the spread of disease in the network. We focus on
+<me>
+\tau = \frac{\langle k \rangle}{\beta ( \langle k^2 \rangle - \langle k \rangle)}.
+</me>
+
+We call <m>\tau</m> the <em>characteristic time scale</em> for the spread of the disease since it controls the rate of infection. A bigger <m>\tau</m> means that the infection takes longer to spread. Intuitively, we have
+<me>
+\tau = \mbox{characteristic time scale} = \frac{1}{\mbox{infection rate}}.
+</me>
+
+			<ol>
+
+				<li>
+					<p>
+ For the Erdos-Renyi graph, we have
+<me>
+\langle k^2 \rangle \approx \langle k \rangle^2 + \langle k \rangle.
+</me>
+What is <m>\tau</m> in this case? How does <m>1/ \tau</m> compare to the infection rate in the differential equation in problem  2(a) for the homogeneous case (where we decided to ignore the network)?
+
+<solution>
+<p>
+In this case, we have
+<me>
+\tau =
+\frac{\langle k \rangle}{\beta ( \langle k^2 \rangle - \langle k \rangle)}
+\approx
+\frac{\langle k \rangle}{\beta  \langle k \rangle^2}
+=
+\frac{1}{\beta  \langle k \rangle}
+</me>
+</p>
+</solution>
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Consider a graph whose degree distribution obeys a power law
+<me>
+\Pr[\deg(v)=q] \sim q^{-\alpha}.
+</me>
+For a natural power law, we have  <m>2 &lt; \alpha &lt; 3</m>. Recall that for a natural power law,  <m>\langle k \rangle</m> is finite but <m>\langle k^2 \rangle</m> is infinite. (This is what led to the appearance of hubs.) What does this imply about the infection rate on such a network? What role must the hubs play, especially in light of part (d) above, and the fact that "your friends are more popular than you are"?
+
+<solution>
+<p>
+We know that <m>\langle k \rangle</m> is finite but <m>\langle k^2 \rangle</m> is infinite. This means that the characteristic time scale tends to 0 as the network gets larger. In other words, the infection spreads instantaneously. So the existence of hubs expedites the spread of disease!
+</p>
+</solution>
+
+
+
+
+					</p>
+				</li>
+			</ol>
+
+					</p>
+				</li>
+			</ol>
+
+				</p>
+			</statement>
+		</exercise>
+	</exercises>
+
+</chapter>
