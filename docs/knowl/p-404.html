@@ -12,25 +12,31 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>The Poisson random variable \(Z\) for parameter \(\lambda &gt; 0\) has PMF given by</p>
+<p>Taking the derivative of the previous quantity, and using the approximation</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-p(k) = e^{-\lambda} \frac{\lambda^k}{k!}.
+\frac{dI_k}{dt} \approx \beta \,  k \,  \Theta,
 \end{equation*}
 </div>
-<p class="continuation">The  expectation is</p>
+<p class="continuation">we get a differential equation of the form</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-E[Z] =  \lambda
+\frac{d \Theta}{d t} = A \Theta
 \end{equation*}
 </div>
-<p class="continuation">The variance is</p>
+<p class="continuation">which has solution</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\var(Z) =  \lambda
+\Theta(t) = C e^{At}.
 \end{equation*}
 </div>
-<p class="continuation">Here are the PMF and CDF of a poisson random variable.</p>
-<span class="incontext"><a href="randvar16.html#p-404">in-context</a></span>
+<p class="continuation">Show that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+A= \beta \frac{\langle k^2 \rangle - \langle k \rangle}{\langle k \rangle}.
+\end{equation*}
+</div>
+<p class="continuation">(The constant \(C\) is determined by the initial conditions.) </p>
+<span class="incontext"><a href="exercises-16.html#p-404">in-context</a></span>
 </body>
 </html>

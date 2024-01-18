@@ -187,16 +187,16 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="hw-graphs"><h2 class="heading">
 <span class="type">Chapter</span> <span class="codenumber">17</span> <span class="title">Exercises: Graphs and Digraphs</span>
 </h2>
-<section class="introduction" id="introduction-17"><p id="p-642"></p></section><section class="exercises" id="exercises-17"><h3 class="heading hide-type">
+<section class="introduction" id="introduction-17"><p id="p-411"></p></section><section class="exercises" id="exercises-17"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Homework Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-74"><h6 class="heading">
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Sources and Sinks.</span>
 </h6>
-<p id="p-643">Given a directed graph  (digraph) \(D=(V,E)\) is <em class="emphasis">acyclic</em>, a <em class="emphasis">directed cycle of size \(k\)</em> is a set of arcs \(\)(v_1, v_2), (v_2, v_3), \ldots (v_{k-1}, v_k), (v_k, v_1)\(\) such that \(v_1\) is the only vertex that repeats. An <em class="emphasis">acyclic digraph</em> \(D\) has no directed cycles for any \(k \geq 1\text{.}\) Prove that if \(D\) is an acyclic digraph, then \(D\) contains at least one <em class="emphasis">source</em> vertex \(i\) with \(\kin_i=0\) and at least one <em class="emphasis">sink vertex</em> \(j\) with \(\kout_j=0\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-75"><h6 class="heading">
+<p id="p-412">Given a directed graph  (digraph) \(D=(V,E)\) is <em class="emphasis">acyclic</em>, a <em class="emphasis">directed cycle of size \(k\)</em> is a set of arcs \(\)(v_1, v_2), (v_2, v_3), \ldots (v_{k-1}, v_k), (v_k, v_1)\(\) such that \(v_1\) is the only vertex that repeats. An <em class="emphasis">acyclic digraph</em> \(D\) has no directed cycles for any \(k \geq 1\text{.}\) Prove that if \(D\) is an acyclic digraph, then \(D\) contains at least one <em class="emphasis">source</em> vertex \(i\) with \(\kin_i=0\) and at least one <em class="emphasis">sink vertex</em> \(j\) with \(\kout_j=0\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-75"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Digraph for a Function.</span>
 </h6>
-<p id="p-644">Let \(f: [n] \rightarrow [n]\) be any function from the set \([n] = \{ 1,2,3, \ldots, n \}\) to itself. We can use this function to create a digraph \(D=([n], E)\) where the set of arcs is</p>
+<p id="p-413">Let \(f: [n] \rightarrow [n]\) be any function from the set \([n] = \{ 1,2,3, \ldots, n \}\) to itself. We can use this function to create a digraph \(D=([n], E)\) where the set of arcs is</p>
 <div class="displaymath">
 \begin{equation*}
 E = \{ (i, f(i)) : i \in [n] \}.
@@ -204,8 +204,8 @@ E = \{ (i, f(i)) : i \in [n] \}.
 </div>
 <p class="continuation">Note that when \(f(i)=i\text{,}\) we get a loop (which is a directed cycle of length 1).</p>
 <ol class="lower-alpha">
-<li id="li-314">
-<p id="p-645">Draw the digraph for the function \(f: [8] \rightarrow [8]\) given by</p>
+<li id="li-246">
+<p id="p-414">Draw the digraph for the function \(f: [8] \rightarrow [8]\) given by</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{c|cccccccc}
@@ -216,43 +216,43 @@ f(k) &amp; 6 &amp; 4 &amp; 3 &amp; 8 &amp; 4 &amp; 1 &amp; 8 &amp; 2
 \end{equation*}
 </div>
 </li>
-<li id="li-315"><p id="p-646">Explain why \(\kout_i=1\) for every vertex \(i\text{.}\)</p></li>
-<li id="li-316"><p id="p-647">Prove that \(D\) consists of a collection of disjoint unicyclic digraphs, meaning that each weakly connected component contains exactly one directed cycle. (Hint: assume for the sake of contradiction that some weakly connected component has two directed cycles. There are two cases: (1) the cycles share one or more vertices and (2) the cycles are disjoint.)</p></li>
+<li id="li-247"><p id="p-415">Explain why \(\kout_i=1\) for every vertex \(i\text{.}\)</p></li>
+<li id="li-248"><p id="p-416">Prove that \(D\) consists of a collection of disjoint unicyclic digraphs, meaning that each weakly connected component contains exactly one directed cycle. (Hint: assume for the sake of contradiction that some weakly connected component has two directed cycles. There are two cases: (1) the cycles share one or more vertices and (2) the cycles are disjoint.)</p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-76"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Acyclic Tournaments.</span>
 </h6>
-<p id="p-648">An acyclic tournament is an orientation of a complete graph that contains no directed cycles.</p>
+<p id="p-417">An acyclic tournament is an orientation of a complete graph that contains no directed cycles.</p>
 <ol class="lower-alpha">
-<li id="li-317"><p id="p-649">Prove that every triangle is <em class="emphasis">transitive</em>, meaning that if \((u,v)\) and \((v,w)\) are both arcs, then \((u,w)\) is also an arc.</p></li>
-<li id="li-318"><p id="p-650">Prove that an <em class="emphasis">acyclic</em> tournament has a unique source vertex \(s\) (with \(\kin_s=0\)) and a unique sink vertex \(t\) (with \(\kout_t = 0\)).</p></li>
-<li id="li-319"><p id="p-651">Use part (b) and induction on \(N\) to prove that there is a unique acyclic tournament structure on \(N\) vertices (up to isomorphism). Or equivalently, show that we can label the vertices of a transitive tournament on \(N\) vertices using labels \([N] = \{ 1,2, \ldots, N \}\) such that if \(i &gt;j\) then \((i,j)\) is an arc in the tournament.</p></li>
-<li id="li-320"><p id="p-652">A transitive tournament is a tournament in which every triangle is transitive. Prove that a transitive tournament is acyclic. (Hint: there is a nice poof by induction on \(k\) for the statement "\(D\) has no \(k\) cycles for \(3 \leq k \leq N\text{.}\)" But there are other proofs, too.)</p></li>
+<li id="li-249"><p id="p-418">Prove that every triangle is <em class="emphasis">transitive</em>, meaning that if \((u,v)\) and \((v,w)\) are both arcs, then \((u,w)\) is also an arc.</p></li>
+<li id="li-250"><p id="p-419">Prove that an <em class="emphasis">acyclic</em> tournament has a unique source vertex \(s\) (with \(\kin_s=0\)) and a unique sink vertex \(t\) (with \(\kout_t = 0\)).</p></li>
+<li id="li-251"><p id="p-420">Use part (b) and induction on \(N\) to prove that there is a unique acyclic tournament structure on \(N\) vertices (up to isomorphism). Or equivalently, show that we can label the vertices of a transitive tournament on \(N\) vertices using labels \([N] = \{ 1,2, \ldots, N \}\) such that if \(i &gt;j\) then \((i,j)\) is an arc in the tournament.</p></li>
+<li id="li-252"><p id="p-421">A transitive tournament is a tournament in which every triangle is transitive. Prove that a transitive tournament is acyclic. (Hint: there is a nice poof by induction on \(k\) for the statement "\(D\) has no \(k\) cycles for \(3 \leq k \leq N\text{.}\)" But there are other proofs, too.)</p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-77"><h6 class="heading">
 <span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Orientation of a Graph.</span>
 </h6>
-<p id="p-653">Let \(G=(V,E)\) be an undirected graph. Let \(D\) be an orientation of this graph (so \(D\) is a directed graph).</p>
+<p id="p-422">Let \(G=(V,E)\) be an undirected graph. Let \(D\) be an orientation of this graph (so \(D\) is a directed graph).</p>
 <ol class="lower-alpha">
-<li id="li-321"><p id="p-654">Prove that if \(D\) is strongly connected, then every pair of vertices in \(G\) is connected by two edge-disjoint paths.</p></li>
-<li id="li-322">
-<p id="p-655">The converse is also true: if every pair of vertices in \(G\) is connected by two edge-disjoint paths, then there is a strongly connected orientation \(D\) of the graph. Here is the sketch of an algorithm  that orients the edges of \(G\) to obtain a strongly connected digraph.</p>
+<li id="li-253"><p id="p-423">Prove that if \(D\) is strongly connected, then every pair of vertices in \(G\) is connected by two edge-disjoint paths.</p></li>
+<li id="li-254">
+<p id="p-424">The converse is also true: if every pair of vertices in \(G\) is connected by two edge-disjoint paths, then there is a strongly connected orientation \(D\) of the graph. Here is the sketch of an algorithm  that orients the edges of \(G\) to obtain a strongly connected digraph.</p>
 <ol class="lower-roman">
-<li id="li-323"><p id="p-656">Start with any two vertices \(u,v\) and orient some edges so that they are strongly connected to one another.  Let \(S = \{ u , v\}\text{.}\)</p></li>
-<li id="li-324"><p id="p-657">Pick a vertex \(w \notin S\text{.}\) If \(w\) and \(v\) are not strongly connected, then orient some edges to make this happen. Add \(w\) to \(S\text{.}\)</p></li>
-<li id="li-325"><p id="p-658">Repeat the previous step until \(S = V\text{,}\) which means that every vertex is strongly connected to \(v\text{.}\)</p></li>
-<li id="li-326"><p id="p-659">If there any any non-oriented edges, give them an orientation.</p></li>
+<li id="li-255"><p id="p-425">Start with any two vertices \(u,v\) and orient some edges so that they are strongly connected to one another.  Let \(S = \{ u , v\}\text{.}\)</p></li>
+<li id="li-256"><p id="p-426">Pick a vertex \(w \notin S\text{.}\) If \(w\) and \(v\) are not strongly connected, then orient some edges to make this happen. Add \(w\) to \(S\text{.}\)</p></li>
+<li id="li-257"><p id="p-427">Repeat the previous step until \(S = V\text{,}\) which means that every vertex is strongly connected to \(v\text{.}\)</p></li>
+<li id="li-258"><p id="p-428">If there any any non-oriented edges, give them an orientation.</p></li>
 </ol>
 </li>
 </ol>
 <p class="continuation">Fill in the details of the algorithm by explaining how to "orient some edges" in steps i, ii and iv. Explain <em class="emphasis">how to choose</em> the edges to orient, and <em class="emphasis">how to pick</em> the orientation of each edge.   Finally, justify why your algorithm results in a strongly connected digraph. Drawing pictures while you are thinking  (and explaining) will really help!</p></article><article class="exercise exercise-like" id="exercise-78"><h6 class="heading">
 <span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Directed rooted trees.</span>
 </h6>
-<p id="p-660">Let \(G=(V,E)\) be a tree and let \(v \in V\text{.}\)  To obtain a <em class="emphasis">directed tree rooted at vertex</em> \(v\text{,}\) we orient the edges so that they point <em class="emphasis">away</em> from the vertex \(v\text{.}\) In other words, there is a directed path from \(v\) to every other vertex in the tree.</p>
-<p id="p-661">Prove that if \(D = (V,E)\) is a strongly connected digraph, then for every \(v \in V\text{,}\) the digraph contains a directed tree \(T = (V_T, E_T)\) rooted at \(v\) such that \(V_T = V\text{.}\)</p>
-<p id="p-662">(Note: A subgraph that includes every vertex of the original graph is called a <em class="emphasis">spanning subgraph</em>. Spanning trees (of graphs) and spanning directed trees (of digraphs) have many important applications.)</p></article><article class="exercise exercise-like" id="exercise-79"><h6 class="heading">
+<p id="p-429">Let \(G=(V,E)\) be a tree and let \(v \in V\text{.}\)  To obtain a <em class="emphasis">directed tree rooted at vertex</em> \(v\text{,}\) we orient the edges so that they point <em class="emphasis">away</em> from the vertex \(v\text{.}\) In other words, there is a directed path from \(v\) to every other vertex in the tree.</p>
+<p id="p-430">Prove that if \(D = (V,E)\) is a strongly connected digraph, then for every \(v \in V\text{,}\) the digraph contains a directed tree \(T = (V_T, E_T)\) rooted at \(v\) such that \(V_T = V\text{.}\)</p>
+<p id="p-431">(Note: A subgraph that includes every vertex of the original graph is called a <em class="emphasis">spanning subgraph</em>. Spanning trees (of graphs) and spanning directed trees (of digraphs) have many important applications.)</p></article><article class="exercise exercise-like" id="exercise-79"><h6 class="heading">
 <span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">The Digraph of SCCs is Acyclic.</span>
 </h6>
-<p id="p-663">Let \(D=(V,E)\) be a weakly connected digraph with strongly connected components \(S_1, S_2, \ldots, S_k\text{.}\) Create a new digraph \(G\) with vertices \(V(G) = \{s_1, s_2, \ldots, s_k \}\) where arc \((s_i,s_j) \in E(G)\) if and only if there is at least one arc from \(S_i\) to \(S_j\) in the original digraph \(D\text{.}\)</p>
-<p id="p-664">Prove that \(G\) is an acyclic digraph. (See the "Sources and Sinks" problem above for the definition of an acyclic digraph.)</p></article></section></section></div></main>
+<p id="p-432">Let \(D=(V,E)\) be a weakly connected digraph with strongly connected components \(S_1, S_2, \ldots, S_k\text{.}\) Create a new digraph \(G\) with vertices \(V(G) = \{s_1, s_2, \ldots, s_k \}\) where arc \((s_i,s_j) \in E(G)\) if and only if there is at least one arc from \(S_i\) to \(S_j\) in the original digraph \(D\text{.}\)</p>
+<p id="p-433">Prove that \(G\) is an acyclic digraph. (See the "Sources and Sinks" problem above for the definition of an acyclic digraph.)</p></article></section></section></div></main>
 </div>
 </body>
 </html>

@@ -12,25 +12,13 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Once again, we have a weighted coin where \(p\) is the probability of obtaining heads, and \(1-p\) is the probability of obtaining tails. Instead of flipping our coin for a fixed number of times, we will flip it until we first encounter a heads. This experiment gives the geometric random variable \(Y\text{.}\) . This is the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">geometric random variable for \(p\)</em>. The PMF is</p>
+<p>We are interested in the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">early time behavior</em> of \(I_k\text{,}\) since we would like to intervene  (via quarantine or travel restrictions, etc) before the disease gets out of hand. If there aren't many infected vertices, then we may approximate \(1 - I_k \approx 1\) so that</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-p(k) =  (1 - p)^{k-1}  p.
+\frac{dI_k}{dt} \approx \beta \,  k \,  \Theta.
 \end{equation*}
 </div>
-<p class="continuation">The  expectation is</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-E[Y] = \frac{1}{p}.
-\end{equation*}
-</div>
-<p class="continuation">The variance is</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\var(Y) = \frac{1-p}{p^2}
-\end{equation*}
-</div>
-<p class="continuation">Here are the PMF and CDF of a geometric random variable</p>
-<span class="incontext"><a href="randvar16.html#p-402">in-context</a></span>
+<p class="continuation">Early on, the set of infected nodes is tree-like. In particular, you can assume that an infected vertex \(v\) has a link that points back to the (infected) vertex that transmitted the disease.</p>
+<span class="incontext"><a href="exercises-16.html#p-402">in-context</a></span>
 </body>
 </html>

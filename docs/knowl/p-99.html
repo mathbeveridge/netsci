@@ -12,23 +12,35 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Let</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-A =
-\begin{bmatrix}
-3 &amp;  1\\
-1 &amp; 3
-\end{bmatrix}.
-\end{equation*}
-</div>
-<ol class="lower-alpha">
-<li><p>Check that the vector \(\bv_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}\) is an eigenvector of \(A\) for eigenvalue \(\lambda_1=4\text{.}\)</p></li>
-<li><p>Check that the vector \(\bv_2 = \begin{bmatrix} 1 \\ -1 \end{bmatrix} \) is an eigenvector of \(A\) for eigenvalue \(\lambda_2 = 2\text{.}\)</p></li>
-<li><p>Check that \(\bv_1\) and \(\bv_2\) are orthogonal vectors.</p></li>
-<li><p>Confirm that \(A =  \lambda_1 \bu_1 \bu_1^{\top} + \lambda_2 \bu_2 \bu^{\top}\) where \(\bu_1, \bu_2\) are eigenvectors of unit length in the direction of \(\bv_1, \bv_2\) respectively.</p></li>
-</ol>
-<p class="continuation"><a class="solution-knowl original" data-knowl="./knowl/solution-16-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
-<span class="incontext"><a href="exercises-3.html#p-99">in-context</a></span>
+<p>Therefore, each vertex will get <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">two scores</em> instead of one: an authority score and a hub score. Therefore, we will replace the one-step recursive mantra "important vertices have important neighbors" with the following two-step recursive mantra:</p>
+<ul class="disc">
+<li><p>If \(v\) has a high authority score, then \(v\) has in-neighbors with  high hub scores.</p></li>
+<li><p>If \(v\) has a high hub score, then \(v\) has out-neighbor with high authority scores.</p></li>
+</ul>
+<p class="continuation">The HITS algorithm works as follows</p>
+<ul class="disc">
+<li><p>Initialize hub score \(\leftarrow\) 1.</p></li>
+<li>
+<p>Repeat:</p>
+<ul class="circle">
+<li><p>Update the authority score \(\leftarrow\) sum on in-neighbors' (new) hub scores.</p></li>
+<li><p>Update the hub score \(\leftarrow \) sum of out-neighbors' authority scores.</p></li>
+<li><p>Normalize the scores so that each maximum is 1.</p></li>
+</ul>
+</li>
+</ul>
+<p class="continuation">Here is what it looks like on a bipartite directed graph where all the edges point from set \(X\) to set \(Y\text{.}\) In this case, the authority scores in \(X\) will always be 0, and the hub scores in \(Y\) will always be 0. So we only show the hub scores for \(X\) and the authority scores for \(Y\text{.}\) We also skip the normalization. <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/fig-img-hits0.svg" role="img" class="contained"></div> Let's give a mathematical description of this rule. The HITS algorithm's double recursion updates the hub score \(h_i\) and the authority score \(a_i\) for each vertex. The recursion is:</p>
+<ul class="disc">
+<li><p>Initially, \(h_i(0) = 1\) for every vertex \(i\)</p></li>
+<li>
+<p>Repeat until convergence for \(t \geq 1\text{:}\)</p>
+<ul class="circle">
+<li><p>For every vertex \({i}\text{,}\) update   \(\displaystyle{a_i(t) = \sum_{j \rightarrow i} h_j(t-1)}\)</p></li>
+<li><p>For every vertex \(j\text{,}\) update   \(\displaystyle{h_j(t) = \sum_{j \rightarrow i} a_i(t)}\)</p></li>
+<li><p>Normalize both values.</p></li>
+</ul>
+</li>
+</ul>
+<span class="incontext"><a href="hits.html#p-99">in-context</a></span>
 </body>
 </html>

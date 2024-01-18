@@ -23,7 +23,7 @@ Today, we will talk about (a variation of) the Small World Model of Strogatz and
 \foreach \i in {0,...,17} {
 \draw[fill] (\i * 20:2) circle (2pt);
 
-\draw (\i * 20: 2) -- (\i*20 +20:2);
+\draw (\i * 20: 2) z-z-z (\i*20 +20:2);
 
 \draw (\i * 20: 2) to [bend right=60, distance=1cm] (\i*20 +40:2);
 \draw (\i * 20: 2) to [bend right=45,distance=1cm] (\i*20 +60:2);
@@ -39,16 +39,16 @@ Today, we will talk about (a variation of) the Small World Model of Strogatz and
 \foreach \i in {0,...,17} {
 \draw[fill] (\i * 20:2) circle (2pt);
 
-\draw (\i * 20: 2) -- (\i*20 +20:2);
+\draw (\i * 20: 2) z-z-z (\i*20 +20:2);
 
 \draw (\i * 20: 2) to [bend right=60, distance=1cm] (\i*20 +40:2);
 \draw (\i * 20: 2) to [bend right=45,distance=1cm] (\i*20 +60:2);
 
 
-\draw (20:2) -- (100:2);
-\draw (60:2) -- (260:2);
-\draw (20:2) -- (200:2);
-\draw (160:2) -- (300:2);
+\draw (20:2) z-z-z (100:2);
+\draw (60:2) z-z-z (260:2);
+\draw (20:2) z-z-z (200:2);
+\draw (160:2) z-z-z (300:2);
 }
 
 \node at (0,-3) {Small World with high clustering and shortcuts};

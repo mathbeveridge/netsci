@@ -12,34 +12,13 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>In general, it is easier to pretend that we are dealing with a continuous distribution (rather than a discrete distribution). So we will talk about a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">probability density function (PDF)</em> \(p: [k_{\min}, n] \rightarrow [0,1]\) given by</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-p(x) = C x^{-\alpha}
-\end{equation*}
-</div>
-<p class="continuation">rather than a PMF. You can find the constant \(C = (\alpha-1)k_{\min}^{\alpha-1} \) as you did in the previous problem. But let's just keep calling it \(C\) for now.</p>
+<p>This data set contains the intensities of earthquakes occurring in California between 1910 and 1992, measured as the maximum amplitude of motion during the quake. <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Note:</em> these data points are given on the Richter scale, which is the base-10 logarithm of the actual intensity. You must correct for this to find the correct value of \(\alpha\) for the power law.</p>
 <ol class="lower-alpha">
-<li>
-<p>Let \(X\) be a random variable governed by the continuous PDF \(p(x)\text{.}\) Find</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\E[X] = \int_{x=k_{\min}}^{n} x p(x) dx.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>The \(m\)th moment of \(X\) is</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\E[X^m] = \int_{x=k_{\min}}^{n} x^m p(x) dx.
-\end{equation*}
-</div>
-<p class="continuation">Calculate it.</p>
-</li>
-<li><p>Look at your answers for parts (a) and (b) and think about what happens as \(n \rightarrow \infty\text{.}\) For what values of \(\alpha\) does \(\E[X]\) converge? When does the \(m\)th moment \(\E[X^m]\) converge?</p></li>
-<li><p>Recall that most observed power laws have \(2 \leq \alpha \leq 3\text{.}\) In this range, does the expected value converge? Which moments converge, and which moments diverge?</p></li>
+<li><p>Create a plot of the data using "intensity \(k\)" versus "frequency of intensity at least \(k\)" using a log-log scale. What seems to be a good estimate for \(k_{\min}\) based on your log-log plot?</p></li>
+<li><p>Find the best fitting \(k_{\min}\) and \(\alpha\text{.}\) How does the optimal \(k_{\min}\) compare to your guess in part (a)?</p></li>
+<li><p>Make a plot of the PDF and the best fitting power law.</p></li>
+<li><p>Make a plot of the Kolmogorov-Smirnov statistics \(D\) for the first 50 candidates for \(k_{\min}\text{..}\)</p></li>
 </ol>
-<span class="incontext"><a href="exercises-10.html#p-479">in-context</a></span>
+<span class="incontext"><a href="exercises-19.html#p-479">in-context</a></span>
 </body>
 </html>

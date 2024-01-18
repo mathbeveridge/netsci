@@ -346,7 +346,7 @@ Fill in the table below, as follows, starting at <m>t=1</m>
 
 
 
-<solution>
+<!--solution>
 <p>
 
 <me>
@@ -385,7 +385,7 @@ Fill in the table below, as follows, starting at <m>t=1</m>
 </me>
 
 </p>
-</solution>
+</solution-->
 
 
 
@@ -407,7 +407,7 @@ With the previous problem in mind, write each of the update rules as a matrix eq
 Check that your matrix equations are correct for the example from Problem 1.
 
 
-<solution>
+<!--solution>
 <p>
 
 
@@ -428,7 +428,7 @@ Row <m>i</m> of <m>A</m> contains the out-neighbors of vertex <m>i</m>.  Row <m>
 
 
 </p>
-</solution>
+</solution-->
 
 
 
@@ -454,7 +454,7 @@ Using your answer in question 2, you can now write down two matrix recurrences f
 			</li>
 		</ul>
 
-<solution>
+<!--solution>
 <p>
 We have
 <me>
@@ -472,7 +472,7 @@ which we can write more compactly as
 </me>
 
 </p>
-</solution>
+</solution-->
 
 
 				</p>
@@ -504,7 +504,7 @@ After convergence, our update rule becomes <m>\ba \rightarrow c_1 \ba</m> and <m
 For inspiration you  should look back at our discussion of other algebraic centralities.
 
 
-<solution>
+<!--solution>
 <p>
 
 
@@ -561,7 +561,7 @@ Every <m>n \times n</m> matrix has both left eigenvectors and right eigenvectors
 
 
 </p>
-</solution>
+</solution-->
 
 
 				</p>
