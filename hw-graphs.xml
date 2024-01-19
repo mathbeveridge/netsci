@@ -25,7 +25,7 @@
 			<idx><h>Sources and Sinks</h></idx>
 			<statement>
 				<p>
-Given a directed graph  (digraph) <m>D=(V,E)</m> is <em>acyclic</em>, a <em>directed cycle of size <m>k</m></em> is a set of arcs <m></m>(v_1, v_2), (v_2, v_3), \ldots (v_{k-1}, v_k), (v_k, v_1)<m></m>
+Given a directed graph  (digraph) <m>D=(V,E)</m> is <em>acyclic</em>, a <em>directed cycle of size <m>k</m></em> is a set of arcs <m>(v_1, v_2), (v_2, v_3), \ldots (v_{k-1}, v_k), (v_k, v_1)</m>
 such that <m>v_1</m> is the only vertex that repeats.
 An <em>acyclic digraph</em> <m>D</m> has no directed cycles for any <m>k \geq 1</m>. Prove that if <m>D</m> is an acyclic digraph, then <m>D</m> contains at least one <em>source</em> vertex <m>i</m> with <m>\kin_i=0</m> and at least one <em>sink vertex</em> <m>j</m> with <m>\kout_j=0</m>.
 
