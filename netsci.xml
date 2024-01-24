@@ -3,8 +3,9 @@
 <!--********************************************************************
 Copyright 2020 Andrew Beveridge
 
-xsltproc -xinclude ../../xsl/pretext-html.xsl netsci.xml 
-python3 ../../pretext/pretext -vv -c latex-image -f svg -d images netsci.xml
+
+xsltproc -xinclude /Users/abeverid/mathbook/xsl/pretext-html.xsl ../netsci.xml
+python3 /Users/abeverid/mathbook/pretext/pretext -vv -c latex-image -f svg -d images  ../discrete.xml
 
 write a  python script to handle:
 enumerate

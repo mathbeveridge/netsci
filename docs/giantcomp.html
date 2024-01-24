@@ -187,48 +187,48 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="giantcomp"><h2 class="heading">
 <span class="type">Chapter</span> <span class="codenumber">11</span> <span class="title">The Emergence of the Giant Component</span>
 </h2>
-<section class="introduction" id="introduction-11"><p id="p-299">This activity explores a simulation of  "The Emergence of the Giant Component" in the classic Random Graph Model. We will use the flexible NetLogo modeling environment.  The simulation is available online:</p>
+<section class="introduction" id="introduction-11"><p id="p-325">This activity explores a simulation of  "The Emergence of the Giant Component" in the classic Random Graph Model. We will use the flexible NetLogo modeling environment.  The simulation is available online:</p>
 <ul class="disc">
-<li id="li-173"><p id="p-300">Go to <a class="external" href="http://www.netlogoweb.org/" target="_blank">http://www.netlogoweb.org/</a></p></li>
-<li id="li-174"><p id="p-301">Click on "Net Logo Web"</p></li>
-<li id="li-175"><p id="p-302">Enter "Giant Component" in the <em class="emphasis">Search Models Library</em> input box and click on the "Sample Models/Networks/Giant Component" model.</p></li>
+<li id="li-188"><p id="p-326">Go to <a class="external" href="http://www.netlogoweb.org/" target="_blank">http://www.netlogoweb.org/</a></p></li>
+<li id="li-189"><p id="p-327">Click on "Net Logo Web"</p></li>
+<li id="li-190"><p id="p-328">Enter "Giant Component" in the <em class="emphasis">Search Models Library</em> input box and click on the "Sample Models/Networks/Giant Component" model.</p></li>
 </ul>
 <p class="continuation"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/giantcomp-netlogo.png" class="contained"></div> This model starts with \(n\) isolated vertices. It then adds random edges, one at a time. You can watch how the graph evolves as it moves from an empty  graph (no edges) to a complete graph (all edges). The plot on the left tracks the number of connections per node (the average degree) against the fraction of vertices in the giant component.</p>
-<p id="p-303">For today, we will define a <em class="emphasis">giant component</em> to be "a connected component with at least half of the vertices." Using this simulation, you will explore:</p>
+<p id="p-329">For today, we will define a <em class="emphasis">giant component</em> to be "a connected component with at least half of the vertices." Using this simulation, you will explore:</p>
 <ul class="disc">
-<li id="li-176"><p id="p-304">When does the giant component appear?</p></li>
-<li id="li-177"><p id="p-305">Why does the giant appear? Is the transition from "no giant" to "yes giant" slow or quick?</p></li>
-<li id="li-178"><p id="p-306">What is the network structure of the giant component when it appears?</p></li>
-<li id="li-179"><p id="p-307">What is the barrier to having a connected graph during the random graph evolution? How dense must the graph be to overcome this barrier?</p></li>
+<li id="li-191"><p id="p-330">When does the giant component appear?</p></li>
+<li id="li-192"><p id="p-331">Why does the giant appear? Is the transition from "no giant" to "yes giant" slow or quick?</p></li>
+<li id="li-193"><p id="p-332">What is the network structure of the giant component when it appears?</p></li>
+<li id="li-194"><p id="p-333">What is the barrier to having a connected graph during the random graph evolution? How dense must the graph be to overcome this barrier?</p></li>
 </ul></section><section class="exercises" id="exercises-11"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Practice Problems</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-53"><h6 class="heading">
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Getting Started.</span>
 </h6>
-<p id="p-308">Start by expanding the Model Info section at the bottom. Read the sections first sections: WHAT IS IT?,  HOW IT WORKS, HOW TO USE IT, THINGS TO TRY.</p>
+<p id="p-334">Start by expanding the Model Info section at the bottom. Read the sections first sections: WHAT IS IT?,  HOW IT WORKS, HOW TO USE IT, THINGS TO TRY.</p>
 <ol class="lower-alpha">
-<li id="li-180"><p id="p-309">Run the model for \(n=80\)  (the default size). Watch the evolution of the whole graph, as well as the evolution of the largest component itself. Watch the giant appear. Reset and repeat a few times. Describe what you see. Look at the graph that tracks the average degree versus giant component size. Increase or slow the speed of the simulation using the slider bar.</p></li>
-<li id="li-181"><p id="p-310">Do the same for smaller networks  such as \(n=20\) and \(n=40\) and for larger networks such as \(n=160\) and \(n=320\text{.}\)  Compare and contrast these evolutions. For larger networks, you should uncheck the green "layout?" checkbox. This will allow the process to run much faster. You can still keep track of the giant by using the color of the stick-figure vertices.</p></li>
-<li id="li-182"><p id="p-311">Now let's really focus in on the emergence of the giant component. This is window in which we transition from "no giant" to "yes giant." Use the "Go"  button and the "Go Once" button to Stop/Start the simulation as the giant emerges.</p></li>
+<li id="li-195"><p id="p-335">Run the model for \(n=80\)  (the default size). Watch the evolution of the whole graph, as well as the evolution of the largest component itself. Watch the giant appear. Reset and repeat a few times. Describe what you see. Look at the graph that tracks the average degree versus giant component size. Increase or slow the speed of the simulation using the slider bar.</p></li>
+<li id="li-196"><p id="p-336">Do the same for smaller networks  such as \(n=20\) and \(n=40\) and for larger networks such as \(n=160\) and \(n=320\text{.}\)  Compare and contrast these evolutions. For larger networks, you should uncheck the green "layout?" checkbox. This will allow the process to run much faster. You can still keep track of the giant by using the color of the stick-figure vertices.</p></li>
+<li id="li-197"><p id="p-337">Now let's really focus in on the emergence of the giant component. This is window in which we transition from "no giant" to "yes giant." Use the "Go"  button and the "Go Once" button to Stop/Start the simulation as the giant emerges.</p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-54"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">The Emergence of the Giant.</span>
 </h6>
-<ol id="p-312" class="lower-alpha">
-<li id="li-183"><p id="p-313">What does the graph look like just before the giant?</p></li>
-<li id="li-184"><p id="p-314">What is happening as the giant appears? Is there a sudden jump in the size of the largest component?  Why or why not?</p></li>
-<li id="li-185"><p id="p-315">What is the average degree when the giant appears? Is this degree fairly consistent between simulations?</p></li>
-<li id="li-186"><p id="p-316">Describe the structure of the giant component right after it emerges. Is it a "dense graph" or a "sparse graph"? What other terms would you use to describe what you see?</p></li>
-<li id="li-187"><p id="p-317">Describe the structure of the other (small) components at this point.</p></li>
+<ol id="p-338" class="lower-alpha">
+<li id="li-198"><p id="p-339">What does the graph look like just before the giant?</p></li>
+<li id="li-199"><p id="p-340">What is happening as the giant appears? Is there a sudden jump in the size of the largest component?  Why or why not?</p></li>
+<li id="li-200"><p id="p-341">What is the average degree when the giant appears? Is this degree fairly consistent between simulations?</p></li>
+<li id="li-201"><p id="p-342">Describe the structure of the giant component right after it emerges. Is it a "dense graph" or a "sparse graph"? What other terms would you use to describe what you see?</p></li>
+<li id="li-202"><p id="p-343">Describe the structure of the other (small) components at this point.</p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-55"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">The Connectivity Threshold.</span>
 </h6>
-<p id="p-318">Let the simulation run until the network becomes connected. Do this for \(n= 20, 40, 80, 160, 320\text{.}\) For \(n &gt; 160\text{,}\) you should uncheck the green "layout?" checkbox. This will speed up the process tremendously. You can also use the "model speed" slider to control to increase or decrease the evolution rate.</p>
+<p id="p-344">Let the simulation run until the network becomes connected. Do this for \(n= 20, 40, 80, 160, 320\text{.}\) For \(n &gt; 160\text{,}\) you should uncheck the green "layout?" checkbox. This will speed up the process tremendously. You can also use the "model speed" slider to control to increase or decrease the evolution rate.</p>
 <ol class="lower-alpha">
-<li id="li-188"><p id="p-319">What does the graph look like just before becoming totally connected? Consistently, what seems to be the "bottleneck" that prevents the graph from being connected?</p></li>
-<li id="li-189"><p id="p-320">Describe the giant component just before the whole graph becomes connected. It is a dense graph or a sparse graph? What other terms would you use?</p></li>
-<li id="li-190">
-<p id="p-321">What is the average degree of the graph at the moment it becomes connected for each of the graph sizes n listed below.  (Run the simulation multiple times for each graph size and report the average)</p>
+<li id="li-203"><p id="p-345">What does the graph look like just before becoming totally connected? Consistently, what seems to be the "bottleneck" that prevents the graph from being connected?</p></li>
+<li id="li-204"><p id="p-346">Describe the giant component just before the whole graph becomes connected. It is a dense graph or a sparse graph? What other terms would you use?</p></li>
+<li id="li-205">
+<p id="p-347">What is the average degree of the graph at the moment it becomes connected for each of the graph sizes n listed below.  (Run the simulation multiple times for each graph size and report the average)</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{r|c|c|c|c|c|c}
@@ -239,7 +239,7 @@
 \end{equation*}
 </div>
 </li>
-<li id="li-191"><p id="p-322">Using the data from the previous question, hypothesize what the relationship is between the size of the graph and the average degree at the moment that the graph becomes connected.</p></li>
+<li id="li-206"><p id="p-348">Using the data from the previous question, hypothesize what the relationship is between the size of the graph and the average degree at the moment that the graph becomes connected.</p></li>
 </ol></article></section></section></div></main>
 </div>
 </body>

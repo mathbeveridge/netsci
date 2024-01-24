@@ -187,19 +187,19 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="algcentrality"><h2 class="heading">
 <span class="type">Chapter</span> <span class="codenumber">3</span> <span class="title">Algebraic Centrality</span>
 </h2>
-<section class="introduction" id="introduction-3"><p id="p-36"></p></section><section class="exercises" id="exercises-3"><h3 class="heading hide-type">
+<section class="introduction" id="introduction-3"><p id="p-62"></p></section><section class="exercises" id="exercises-3"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Practice Problems</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-13"><h6 class="heading">
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Adjacency Matrix of a Graph.</span>
 </h6>
-<p id="p-37">Find the adjacency matrix \(A\)  of the following undirected graph, where \(A_{ij}=1\) if \((i,j) \in E\) (an undirected edge), and is 0 otherwise. <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/graph-adjacency.png" class="contained"></div> </p></article><article class="exercise exercise-like" id="exercise-14"><h6 class="heading">
+<p id="p-63">Find the adjacency matrix \(A\)  of the following undirected graph, where \(A_{ij}=1\) if \((i,j) \in E\) (an undirected edge), and is 0 otherwise. <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/graph-adjacency.png" class="contained"></div> </p></article><article class="exercise exercise-like" id="exercise-14"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Adjacency Matrix of a Digraph.</span>
 </h6>
-<p id="p-38">Find the adjacency matrix \(A\) of the following directed graph, where \(A_{ij}=1\) if \((i,j)\in E\) (a directed arc), and is 0 otherwise. Note: the \(i\)th row contains all the arcs leading out of \(i\text{.}\) So construct the matrix row-by-row. <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/directed-graph.png" class="contained"></div> </p></article><article class="exercise exercise-like" id="exercise-15"><h6 class="heading">
+<p id="p-64">Find the adjacency matrix \(A\) of the following directed graph, where \(A_{ij}=1\) if \((i,j)\in E\) (a directed arc), and is 0 otherwise. Note: the \(i\)th row contains all the arcs leading out of \(i\text{.}\) So construct the matrix row-by-row. <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/directed-graph.png" class="contained"></div> </p></article><article class="exercise exercise-like" id="exercise-15"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Reducible Matrices.</span>
 </h6>
-<p id="p-39">A \(n \times n\) matrix is <em class="emphasis">reducible</em> if there is an \(n \times n\) permutation matrix \(P\) such that</p>
+<p id="p-65">A \(n \times n\) matrix is <em class="emphasis">reducible</em> if there is an \(n \times n\) permutation matrix \(P\) such that</p>
 <div class="displaymath">
 \begin{equation*}
 P^{\top} A P = \left[
@@ -212,12 +212,12 @@ A_{11} &amp; A_{12} \\
 </div>
 <p class="continuation">where \(A_{11}\) and \(A_{22}\) are square matrices. Conjugation by \(P\) rearranges the rows and columns. So this is equivalent to saying that we can order the vertices of \(G\) so that the adjacency matrix has the specified form.</p>
 <ol class="lower-alpha">
-<li id="li-21"><p id="p-40">Recall that if \(G\) is an undirected graph, then \(A\) is symmetric. Explain why the adjacency matrix of an undirected graph is reducible if and only if \(G\) is not connected.</p></li>
-<li id="li-22"><p id="p-41">Prove that the adjacency matrix of a directed graph \(G\)  is reducible if and only if \(G\) is not strongly connected.</p></li>
+<li id="li-36"><p id="p-66">Recall that if \(G\) is an undirected graph, then \(A\) is symmetric. Explain why the adjacency matrix of an undirected graph is reducible if and only if \(G\) is not connected.</p></li>
+<li id="li-37"><p id="p-67">Prove that the adjacency matrix of a directed graph \(G\)  is reducible if and only if \(G\) is not strongly connected.</p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-16"><h6 class="heading">
 <span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Spectral Decomposition of a \(2 \times 2\) Matrix.</span>
 </h6>
-<p id="p-42">Let</p>
+<p id="p-68">Let</p>
 <div class="displaymath">
 \begin{equation*}
 A =
@@ -228,30 +228,30 @@ A =
 \end{equation*}
 </div>
 <ol class="lower-alpha">
-<li id="li-23"><p id="p-43">Check that the vector \(\bv_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}\) is an eigenvector of \(A\) for eigenvalue \(\lambda_1=4\text{.}\)</p></li>
-<li id="li-24"><p id="p-44">Check that the vector \(\bv_2 = \begin{bmatrix} 1 \\ -1 \end{bmatrix} \) is an eigenvector of \(A\) for eigenvalue \(\lambda_2 = 2\text{.}\)</p></li>
-<li id="li-25"><p id="p-45">Check that \(\bv_1\) and \(\bv_2\) are orthogonal vectors.</p></li>
-<li id="li-26"><p id="p-46">Confirm that \(A =  \lambda_1 \bu_1 \bu_1^{\top} + \lambda_2 \bu_2 \bu^{\top}\) where \(\bu_1, \bu_2\) are eigenvectors of unit length in the direction of \(\bv_1, \bv_2\) respectively.</p></li>
+<li id="li-38"><p id="p-69">Check that the vector \(\bv_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}\) is an eigenvector of \(A\) for eigenvalue \(\lambda_1=4\text{.}\)</p></li>
+<li id="li-39"><p id="p-70">Check that the vector \(\bv_2 = \begin{bmatrix} 1 \\ -1 \end{bmatrix} \) is an eigenvector of \(A\) for eigenvalue \(\lambda_2 = 2\text{.}\)</p></li>
+<li id="li-40"><p id="p-71">Check that \(\bv_1\) and \(\bv_2\) are orthogonal vectors.</p></li>
+<li id="li-41"><p id="p-72">Confirm that \(A =  \lambda_1 \bu_1 \bu_1^{\top} + \lambda_2 \bu_2 \bu^{\top}\) where \(\bu_1, \bu_2\) are eigenvectors of unit length in the direction of \(\bv_1, \bv_2\) respectively.</p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-17"><h6 class="heading">
 <span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Recursive Importance in a Graph.</span>
 </h6>
-<p id="p-47">Consider the following recursive rule for updating the importance of a vertex.</p>
+<p id="p-73">Consider the following recursive rule for updating the importance of a vertex.</p>
 <ul class="disc">
-<li id="li-27"><p id="p-48">At first, all vertices have importance = 1</p></li>
-<li id="li-28"><p id="p-49">In each round, update the importance of a vertex to be the sum of the importances of its neighbors.</p></li>
+<li id="li-42"><p id="p-74">At first, all vertices have importance = 1</p></li>
+<li id="li-43"><p id="p-75">In each round, update the importance of a vertex to be the sum of the importances of its neighbors.</p></li>
 </ul>
 <p class="continuation">Use this recursive rule to calculate the importance for the following undirected graph <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-algcentrality2.svg" role="img" class="contained"></div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/graph-adjacency.png" class="contained"></div> </p></article><article class="exercise exercise-like" id="exercise-18"><h6 class="heading">
 <span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">Recursive Importance in a Digraph.</span>
 </h6>
-<p id="p-50">Consider the following recursive rule for updating the importance of a vertex.</p>
+<p id="p-76">Consider the following recursive rule for updating the importance of a vertex.</p>
 <ul class="disc">
-<li id="li-29"><p id="p-51">At first, all vertices have importance = 1</p></li>
-<li id="li-30"><p id="p-52">In each round, update the importance of a vertex to be the sum of the importances of its in-neighbors.</p></li>
+<li id="li-44"><p id="p-77">At first, all vertices have importance = 1</p></li>
+<li id="li-45"><p id="p-78">In each round, update the importance of a vertex to be the sum of the importances of its in-neighbors.</p></li>
 </ul>
 <ol class="lower-alpha">
-<li id="li-31"><p id="p-53">Use this recursive rule to calculate the importance for the following directed graph. What do you observe? <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-algcentrality4.svg" role="img" class="contained"></div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/acyclic-digraph.png" class="contained"></div> </p></li>
-<li id="li-32"><p id="p-54">Use this  recursive rule calculate the importance of each vertex in this directed graph. What do you observe? <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-algcentrality6.svg" role="img" class="contained"></div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/digraph-feedback.png" class="contained"></div> </p></li>
-<li id="li-33"><p id="p-55">Devise a recursive importance rule for directed networks that "fixes the problems" that you observed in parts (a) and (b). </p></li>
+<li id="li-46"><p id="p-79">Use this recursive rule to calculate the importance for the following directed graph. What do you observe? <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-algcentrality4.svg" role="img" class="contained"></div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/acyclic-digraph.png" class="contained"></div> </p></li>
+<li id="li-47"><p id="p-80">Use this  recursive rule calculate the importance of each vertex in this directed graph. What do you observe? <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-algcentrality6.svg" role="img" class="contained"></div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/digraph-feedback.png" class="contained"></div> </p></li>
+<li id="li-48"><p id="p-81">Devise a recursive importance rule for directed networks that "fixes the problems" that you observed in parts (a) and (b). </p></li>
 </ol></article></section></section></div></main>
 </div>
 </body>

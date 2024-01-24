@@ -12,15 +12,12 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Run the following statistics  in the Statistics window (on the right hand side).</p>
-<ul class="disc">
-<li><p>Average Degree</p></li>
-<li><p>Network Diameter</p></li>
-<li><p>HITS</p></li>
-<li><p>PageRank</p></li>
-<li><p>Eigenvector Centrality,</p></li>
+<p>Repeat:</p>
+<ul class="circle">
+<li><p>Update the authority score \(\leftarrow\) sum on in-neighbors' (new) hub scores.</p></li>
+<li><p>Update the hub score \(\leftarrow \) sum of out-neighbors' authority scores.</p></li>
+<li><p>Normalize the scores so that each maximum is 1.</p></li>
 </ul>
-<p class="continuation">Look at the plots that come up, and then dismiss them.</p>
-<span class="incontext"><a href="exercises-6.html#p-129">in-context</a></span>
+<span class="incontext"><a href="hits.html#p-129">in-context</a></span>
 </body>
 </html>

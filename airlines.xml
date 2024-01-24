@@ -8,9 +8,6 @@
 	<introduction>
 		<p>
 
-\bigskip
-
-
 In this hands-on activity, you will play with a reasonably sized network: an airline route network for the United States from the early 2000s. First, you will explore this data set in Gephi. Then you will do similar calculations using NetworkX in Python.
 
 

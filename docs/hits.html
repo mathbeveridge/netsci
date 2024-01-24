@@ -187,39 +187,39 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="hits"><h2 class="heading">
 <span class="type">Chapter</span> <span class="codenumber">5</span> <span class="title">Hubs and Authorities</span>
 </h2>
-<section class="introduction" id="introduction-5"><p id="p-95">At this point, we have seen three different "feedback centralities" to identify important vertices.  eigenvector centrality, Katz centrality and PageRank centrality. Each of them can be phrased as <em class="emphasis">dominant eigenvalue</em> problem.</p>
-<p id="p-96">Today, we will talk about the HITS (Hyperlink-Induced Topic Search) algorithm, which takes a slightly different approach. Eigenvectors will still be the key to understanding this feedback centrality algorithm. The core idea of HITS is that vertices can play two different roles in the network:</p>
+<section class="introduction" id="introduction-5"><p id="p-121">At this point, we have seen three different "feedback centralities" to identify important vertices.  eigenvector centrality, Katz centrality and PageRank centrality. Each of them can be phrased as <em class="emphasis">dominant eigenvalue</em> problem.</p>
+<p id="p-122">Today, we will talk about the HITS (Hyperlink-Induced Topic Search) algorithm, which takes a slightly different approach. Eigenvectors will still be the key to understanding this feedback centrality algorithm. The core idea of HITS is that vertices can play two different roles in the network:</p>
 <ul class="disc">
-<li id="li-55"><p id="p-97"><em class="emphasis">Authorities</em>: contain useful information (eg restaurant, college, newspaper)</p></li>
-<li id="li-56"><p id="p-98"><em class="emphasis">Hubs</em>: pages that link to authorities (eg Yelp, college admission consultant, news aggregator)</p></li>
+<li id="li-70"><p id="p-123"><em class="emphasis">Authorities</em>: contain useful information (eg restaurant, college, newspaper)</p></li>
+<li id="li-71"><p id="p-124"><em class="emphasis">Hubs</em>: pages that link to authorities (eg Yelp, college admission consultant, news aggregator)</p></li>
 </ul>
 <p class="continuation">The point here is that <em class="emphasis">authorities are in competition with one another</em>, so they have no incentive to link to one another. Instead, <em class="emphasis">hubs act as the aggregators</em>, being expert consumers of the information that the authorities provide. Finally, these are <em class="emphasis">roles</em>, so it is possible for a vertex to be both an authority and a hub at the same time.</p>
-<p id="p-99">Therefore, each vertex will get <em class="emphasis">two scores</em> instead of one: an authority score and a hub score. Therefore, we will replace the one-step recursive mantra "important vertices have important neighbors" with the following two-step recursive mantra:</p>
+<p id="p-125">Therefore, each vertex will get <em class="emphasis">two scores</em> instead of one: an authority score and a hub score. Therefore, we will replace the one-step recursive mantra "important vertices have important neighbors" with the following two-step recursive mantra:</p>
 <ul class="disc">
-<li id="li-57"><p id="p-100">If \(v\) has a high authority score, then \(v\) has in-neighbors with  high hub scores.</p></li>
-<li id="li-58"><p id="p-101">If \(v\) has a high hub score, then \(v\) has out-neighbor with high authority scores.</p></li>
+<li id="li-72"><p id="p-126">If \(v\) has a high authority score, then \(v\) has in-neighbors with  high hub scores.</p></li>
+<li id="li-73"><p id="p-127">If \(v\) has a high hub score, then \(v\) has out-neighbor with high authority scores.</p></li>
 </ul>
 <p class="continuation">The HITS algorithm works as follows</p>
 <ul class="disc">
-<li id="li-59"><p id="p-102">Initialize hub score \(\leftarrow\) 1.</p></li>
-<li id="li-60">
-<p id="p-103">Repeat:</p>
+<li id="li-74"><p id="p-128">Initialize hub score \(\leftarrow\) 1.</p></li>
+<li id="li-75">
+<p id="p-129">Repeat:</p>
 <ul class="circle">
-<li id="li-61"><p id="p-104">Update the authority score \(\leftarrow\) sum on in-neighbors' (new) hub scores.</p></li>
-<li id="li-62"><p id="p-105">Update the hub score \(\leftarrow \) sum of out-neighbors' authority scores.</p></li>
-<li id="li-63"><p id="p-106">Normalize the scores so that each maximum is 1.</p></li>
+<li id="li-76"><p id="p-130">Update the authority score \(\leftarrow\) sum on in-neighbors' (new) hub scores.</p></li>
+<li id="li-77"><p id="p-131">Update the hub score \(\leftarrow \) sum of out-neighbors' authority scores.</p></li>
+<li id="li-78"><p id="p-132">Normalize the scores so that each maximum is 1.</p></li>
 </ul>
 </li>
 </ul>
 <p class="continuation">Here is what it looks like on a bipartite directed graph where all the edges point from set \(X\) to set \(Y\text{.}\) In this case, the authority scores in \(X\) will always be 0, and the hub scores in \(Y\) will always be 0. So we only show the hub scores for \(X\) and the authority scores for \(Y\text{.}\) We also skip the normalization. <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/fig-img-hits0.svg" role="img" class="contained"></div> Let's give a mathematical description of this rule. The HITS algorithm's double recursion updates the hub score \(h_i\) and the authority score \(a_i\) for each vertex. The recursion is:</p>
 <ul class="disc">
-<li id="li-64"><p id="p-107">Initially, \(h_i(0) = 1\) for every vertex \(i\)</p></li>
-<li id="li-65">
-<p id="p-108">Repeat until convergence for \(t \geq 1\text{:}\)</p>
+<li id="li-79"><p id="p-133">Initially, \(h_i(0) = 1\) for every vertex \(i\)</p></li>
+<li id="li-80">
+<p id="p-134">Repeat until convergence for \(t \geq 1\text{:}\)</p>
 <ul class="circle">
-<li id="li-66"><p id="p-109">For every vertex \({i}\text{,}\) update   \(\displaystyle{a_i(t) = \sum_{j \rightarrow i} h_j(t-1)}\)</p></li>
-<li id="li-67"><p id="p-110">For every vertex \(j\text{,}\) update   \(\displaystyle{h_j(t) = \sum_{j \rightarrow i} a_i(t)}\)</p></li>
-<li id="li-68"><p id="p-111">Normalize both values.</p></li>
+<li id="li-81"><p id="p-135">For every vertex \({i}\text{,}\) update   \(\displaystyle{a_i(t) = \sum_{j \rightarrow i} h_j(t-1)}\)</p></li>
+<li id="li-82"><p id="p-136">For every vertex \(j\text{,}\) update   \(\displaystyle{h_j(t) = \sum_{j \rightarrow i} a_i(t)}\)</p></li>
+<li id="li-83"><p id="p-137">Normalize both values.</p></li>
 </ul>
 </li>
 </ul></section><section class="exercises" id="exercises-5"><h3 class="heading hide-type">
@@ -228,7 +228,7 @@
 <article class="exercise exercise-like" id="exercise-28"><h6 class="heading">
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Example of HITS Iterations.</span>
 </h6>
-<p id="p-112">Consider the following digraph <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/hub-auth-digraph.png" class="contained"></div> with adjacency matrix</p>
+<p id="p-138">Consider the following digraph <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/hub-auth-digraph.png" class="contained"></div> with adjacency matrix</p>
 <div class="displaymath">
 \begin{equation*}
 A = \begin{bmatrix}
@@ -242,8 +242,8 @@ A = \begin{bmatrix}
 </div>
 <p class="continuation">Perform some iterations of the HITS algorithm, <em class="emphasis">but don't worry about scaling</em>. (It's the relative size of scores that matters.) We start with the the hub vector \(\bh_0 = \begin{bmatrix}  1 &amp;1 &amp; 1 &amp; 1 &amp; 1 \end{bmatrix}^{\top}\text{.}\) Fill in the table below, as follows, starting at \(t=1\)</p>
 <ul class="disc">
-<li id="li-69"><p id="p-113">Update the \(i\)th entry of \(\ba_t\) to be the sum of all of the \(\bh_{t-1}\) values of the <em class="emphasis">in-neighbors</em> of vertex \(i\text{.}\)</p></li>
-<li id="li-70"><p id="p-114">Update the \(i\)th entry of \(\bh_t\) to be the sum of all of the \(\ba_t\) values of the <em class="emphasis">out-neighbors</em> of vertex \(i\)</p></li>
+<li id="li-84"><p id="p-139">Update the \(i\)th entry of \(\ba_t\) to be the sum of all of the \(\bh_{t-1}\) values of the <em class="emphasis">in-neighbors</em> of vertex \(i\text{.}\)</p></li>
+<li id="li-85"><p id="p-140">Update the \(i\)th entry of \(\bh_t\) to be the sum of all of the \(\ba_t\) values of the <em class="emphasis">out-neighbors</em> of vertex \(i\)</p></li>
 </ul>
 <div class="displaymath">
 \begin{equation*}
@@ -277,7 +277,7 @@ A = \begin{bmatrix}
 </div></article><article class="exercise exercise-like" id="exercise-29"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">HITS Update Rules.</span>
 </h6>
-<p id="p-115">With the previous problem in mind, write each of the update rules as a matrix equation using the adjacency matrix \(A\) and the column vectors</p>
+<p id="p-141">With the previous problem in mind, write each of the update rules as a matrix equation using the adjacency matrix \(A\) and the column vectors</p>
 <div class="displaymath">
 \begin{equation*}
 \ba(t) =\begin{bmatrix}   a_1(t) \\ \vdots \\ a_n(t) \end{bmatrix}  \mbox{ and }
@@ -287,18 +287,18 @@ A = \begin{bmatrix}
 <p class="continuation">(Hint: you will need to use \(A^{\top}\) for one of your equations.) Check that your matrix equations are correct for the example from Problem 1. </p></article><article class="exercise exercise-like" id="exercise-30"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">HITS Matrix Equations.</span>
 </h6>
-<p id="p-116">Using your answer in question 2, you can now write down two matrix recurrences for \(t \geq 2\text{:}\)</p>
+<p id="p-142">Using your answer in question 2, you can now write down two matrix recurrences for \(t \geq 2\text{:}\)</p>
 <ul class="disc">
-<li id="li-71"><p id="p-117">A matrix equation for finding \(\ba(t)\) directly from \(\ba(t-1)\text{.}\)</p></li>
-<li id="li-72"><p id="p-118">A matrix equation for finding \(\bh(t)\) directly from \(\bh(t-1)\text{.}\)</p></li>
+<li id="li-86"><p id="p-143">A matrix equation for finding \(\ba(t)\) directly from \(\ba(t-1)\text{.}\)</p></li>
+<li id="li-87"><p id="p-144">A matrix equation for finding \(\bh(t)\) directly from \(\bh(t-1)\text{.}\)</p></li>
 </ul></article><article class="exercise exercise-like" id="exercise-31"><h6 class="heading">
 <span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">HITS Eigensystems.</span>
 </h6>
-<p id="p-119">After convergence, our update rule becomes \(\ba \rightarrow c_1 \ba\) and \(\bh \rightarrow c_2 \bh\text{.}\) (Recall that HITS performs a renormalization at each step to deal with \(c_1, c_2\text{.}\)) So after convergence, your matrix equations   become statements about eigenvectors and eigenvalues. With that in mind:</p>
+<p id="p-145">After convergence, our update rule becomes \(\ba \rightarrow c_1 \ba\) and \(\bh \rightarrow c_2 \bh\text{.}\) (Recall that HITS performs a renormalization at each step to deal with \(c_1, c_2\text{.}\)) So after convergence, your matrix equations   become statements about eigenvectors and eigenvalues. With that in mind:</p>
 <ol class="lower-alpha">
-<li id="li-73"><p id="p-120">How are \(c_1\) and \(c_2\) related to the eigenvalues of your matrices in question 2?</p></li>
-<li id="li-74"><p id="p-121">How do \(c_1\) and \(c_2\) relate to each other?</p></li>
-<li id="li-75"><p id="p-122">What is the  (linear algebraic) relationship between the authority vector \(\ba\) and the hub vector \(\bh\text{?}\)</p></li>
+<li id="li-88"><p id="p-146">How are \(c_1\) and \(c_2\) related to the eigenvalues of your matrices in question 2?</p></li>
+<li id="li-89"><p id="p-147">How do \(c_1\) and \(c_2\) relate to each other?</p></li>
+<li id="li-90"><p id="p-148">What is the  (linear algebraic) relationship between the authority vector \(\ba\) and the hub vector \(\bh\text{?}\)</p></li>
 </ol>
 <p class="continuation">For inspiration you  should look back at our discussion of other algebraic centralities. </p></article></section></section></div></main>
 </div>
