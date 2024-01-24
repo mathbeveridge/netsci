@@ -895,7 +895,7 @@ the closeness of node <m>b</m> is
 				</li>
 				<li>
 					<p>
- Adapt betweenness centrality and closeness centrality for digraphs. Do you need two different measures for each (one for in and one for out)? Give an intuitive explanation for what it means to when these centrality measures are large in a dirgraph.
+ Adapt betweenness centrality and closeness centrality for digraphs. Do you need two different measures for each (one for in and one for out)? Give an intuitive explanation for what it means to when these centrality measures are large in a digraph.
 
 
 
