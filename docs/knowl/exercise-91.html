@@ -12,12 +12,25 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">2<span class="period">.</span></span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1<span class="period">.</span></span>
 </h6>
-<p>A fair coin is one such that the outcome of a coin toss has \(\P(H) = \P(T) = \frac{1}{2}\text{,}\) where \(H\) means "heads" and \(T\) means "tails."</p>
+<p>Let \(X\) be be a binomial random variable with parameters \(p\) and \(n\text{.}\)</p>
 <ol class="lower-alpha">
-<li><p>A fair coin is tossed repeatedly until two consecutive heads or two consecutive tails appear. Let \(X\) denote the number of coin tosses you make.  Find the PMF, the expected value, and the variance of \(X\text{.}\)</p></li>
-<li><p>Assume now that the coin is tossed until we obtain a tail that is immediately preceded by a head. Find the PMF and the expected value of the number of tosses.</p></li>
+<li>
+<p>Show that the PMF of \(X\) can be calculated recursively by starting with</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+p(0) = (1-p)^n
+\end{equation*}
+</div>
+<p class="continuation">and then using the recursive formula</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+p(k+1) = \frac{p}{1-p} \cdot \frac{n-k}{k+1} p(k).
+\end{equation*}
+</div>
+</li>
+<li><p>We can now make an observation about the shape of the PMF of \(X\text{.}\) Let \(k^*= \lfloor (n+1) \cdot p  \rfloor\) be the largest integer that is less than or equal to \((n+1) \cdot p\text{.}\) Show that the PMF \(p(k)\) is weakly increasing (also known as monotonically nondecreasing) for \(0 \leq k \leq k^*\) and is monotonically decreasing for \(k^* \leq k \leq n\text{.}\)</p></li>
 </ol></article><span class="incontext"><a href="exercises-19.html#exercise-91">in-context</a></span>
 </body>
 </html>

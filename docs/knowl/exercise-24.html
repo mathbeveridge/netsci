@@ -12,39 +12,53 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">Undirected Graphs: the General Case.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Stationary Distribution for an Undirected Graph.</span>
 </h6>
-<p>In the previous questions, you have focused on a particular undirected graph. Take a step back: these observations also hold in general!</p>
-<p>Let \(G\) be a connected, aperiodic, undirected graph with adjacency martix \(A\) and transition matrix \(P = D^{-1}A\text{.}\)</p>
-<ol class="lower-alpha">
-<li><p>Explain why \(P \bone = \bone\text{.}\) </p></li>
-<li>
-<p>Let \(\pi\) be the row vector</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\pi =
-\begin{bmatrix}
-\frac{k_1}{2m} &amp; \frac{k_2}{2m} &amp;  \cdots &amp; \frac{k_n}{2m}
-\end{bmatrix}
-\end{equation*}
-</div>
-<p class="continuation">where \(n=|V|\) and \(m = |E|\) and \(k_i\) is the degree of vertex \(i\text{.}\) Explain why</p>
+<p>A vector whose entries are nonnegative and sum to one correspond to a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">probability distribution</em> on the vertices of \(G\text{.}\) A distribution \(\pi\) is  <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">stationary</em> for \(P\) when</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 \pi P = \pi.
 \end{equation*}
 </div>
-</li>
-<li><p>What is the meaning of the row vector \(\mathbf{e}_i \, P^t\text{,}\) where \(\mathbf{e}_i\) is the elementary vector from Problem 3(d)? </p></li>
+<p class="continuation">The amazing Perron-Frobenius Theorem (a very general theorem) can be applied to the transition matrix \(P\) for a connected, non-bipartite undirected graph.</p>
+<p>In particular, it applies to the matrix \(P\) from the previous problems. And it tells us more information about the left eigenvector  \(\bv\text{.}\) Two of the properties that it tells us are:</p>
+<ul class="disc">
+<li><p>All of the other eigenvalues satisify \(| \lambda_i| &lt; 1\text{.}\) In other words, \(\bv\) is the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">dominant eigenvector</em> of \(P\text{.}\)</p></li>
 <li>
-<p>Explain why we have</p>
+<p>Assuming that we have scaled the row vector \(\bv\) so that its entries sum to 1, we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\lim_{t \rightarrow \infty} P^t  \, = \, \bone \,  \bv
+&amp;=
+\begin{bmatrix}
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
+\end{bmatrix}
+\end{align*}
+</div>
+<p>where</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\lim_{t \rightarrow \infty} \mathbf{e}_i \, P^t = \pi.
+\bv =
+\begin{bmatrix}
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{2}{14} &amp; \frac{3}{14} &amp; \frac{2}{14} &amp; \frac{3}{14} &amp; \frac{3}{14} &amp; \frac{1}{14}
+\end{bmatrix}.
 \end{equation*}
 </div>
-<p class="continuation">What does this equation mean for a random walk starting at vertex \(i\text{?}\) </p>
 </li>
+</ul>
+<p class="continuation">Given this information:</p>
+<ol class="lower-alpha">
+<li><p>What new properties do we now know about the vector (and probability distributrion) \(\bv\text{?}\) </p></li>
+<li><p>After taking many random steps, what is the probability that we are at vertex \(i\text{?}\) </p></li>
 </ol></article><span class="incontext"><a href="exercises-4.html#exercise-24">in-context</a></span>
 </body>
 </html>

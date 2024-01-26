@@ -187,24 +187,24 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="powerlaw"><h2 class="heading">
 <span class="type">Chapter</span> <span class="codenumber">10</span> <span class="title">Power Laws</span>
 </h2>
-<section class="introduction" id="introduction-10"><p id="p-312"></p>
-<p id="p-313"></p></section><section class="exercises" id="exercises-10"><h3 class="heading hide-type">
+<section class="introduction" id="introduction-10"><p id="p-317"></p>
+<p id="p-318"></p></section><section class="exercises" id="exercises-10"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Practice Problems</span>
 </h3>
-<article class="exercise exercise-like" id="exercise-49"><h6 class="heading">
+<article class="exercise exercise-like" id="exercise-50"><h6 class="heading">
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Degree Distribution.</span>
 </h6>
-<p id="p-314">The <em class="emphasis">degree distribution</em> of a graph is given by</p>
+<p id="p-319">The <em class="emphasis">degree distribution</em> of a graph is given by</p>
 <div class="displaymath">
 \begin{equation*}
 p_k =
 \mbox{ the fraction of vertices with degree } k.
 \end{equation*}
 </div>
-<p class="continuation">What is the degree distribution \((p_1, p_2, \ldots)\) of this graph? <div class="image-box" style="width: 25%; margin-left: 37.5%; margin-right: 37.5%;"><img src="images/small_network.png" class="contained"></div></p></article><article class="exercise exercise-like" id="exercise-50"><h6 class="heading">
+<p class="continuation">What is the degree distribution \((p_1, p_2, \ldots)\) of this graph? <div class="image-box" style="width: 25%; margin-left: 37.5%; margin-right: 37.5%;"><img src="images/small_network.png" class="contained"></div></p></article><article class="exercise exercise-like" id="exercise-51"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">The Normalizing Constant.</span>
 </h6>
-<p id="p-315">We are given a data set whose degree distribution looks like a straight line with negative slope when plotted using  a log-log scale. In other words,</p>
+<p id="p-320">We are given a data set whose degree distribution looks like a straight line with negative slope when plotted using  a log-log scale. In other words,</p>
 <div class="displaymath">
 \begin{equation*}
 \ln (p(k)) = c - \alpha \ln (k),
@@ -216,12 +216,12 @@ p_k =
 p(k) = C k^{-\alpha}.
 \end{equation*}
 </div>
-<p class="continuation">What is the value of the constant \(C\) in terms of \(c\text{?}\)</p></article><article class="exercise exercise-like" id="exercise-51"><h6 class="heading">
+<p class="continuation">What is the value of the constant \(C\) in terms of \(c\text{?}\)</p></article><article class="exercise exercise-like" id="exercise-52"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">The Normalizing Constant for Exponent \(\alpha\).</span>
 </h6>
-<ol id="p-316" class="lower-alpha">
-<li id="li-182">
-<p id="p-317">For many real-world networks, the power law behavior doesn't hold for small \(k\text{.}\) In this case, we restrict our attention to vertices of degree at least \(k_{\min}\text{.}\) We then deal with  the probability mass function for a truncated power law. Given \(\alpha\) and \(k \geq k_{\min}\) this PMF is given by</p>
+<ol id="p-321" class="lower-alpha">
+<li id="li-186">
+<p id="p-322">For many real-world networks, the power law behavior doesn't hold for small \(k\text{.}\) In this case, we restrict our attention to vertices of degree at least \(k_{\min}\text{.}\) We then deal with  the probability mass function for a truncated power law. Given \(\alpha\) and \(k \geq k_{\min}\) this PMF is given by</p>
 <div class="displaymath">
 \begin{equation*}
 p(k) =  \frac{ k^{-\alpha}}{\zeta(\alpha, k_{\min})}
@@ -234,18 +234,18 @@ p(k) =  \frac{ k^{-\alpha}}{\zeta(\alpha, k_{\min})}
 \end{equation*}
 </div>
 <p class="continuation">is the <em class="emphasis">generalized Riemann zeta function</em>.</p>
-<p id="p-318">Dealing with the Riemann zeta function is unwieldy. In practice, we approximate this leading constant by the corresponding integral.  Evaluate the following integral in order to find the approximate value for \(\zeta(\alpha, k_{\min})\text{:}\)</p>
+<p id="p-323">Dealing with the Riemann zeta function is unwieldy. In practice, we approximate this leading constant by the corresponding integral.  Evaluate the following integral in order to find the approximate value for \(\zeta(\alpha, k_{\min})\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \sum_{k= k_{\min}}^{\infty} k^{-\alpha} \approx \int_{x= k_{\min}}^{\infty} x^{-\alpha}  \, dx.
 \end{equation*}
 </div>
 </li>
-<li id="li-183"><p id="p-319">Find the corresponding approximate expression for the power law PMF \(p(x)\) using your  constant from (b). Simplify so that \(\alpha\) only appears once in an exponent.</p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-52"><h6 class="heading">
+<li id="li-187"><p id="p-324">Find the corresponding approximate expression for the power law PMF \(p(x)\) using your  constant from (b). Simplify so that \(\alpha\) only appears once in an exponent.</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-53"><h6 class="heading">
 <span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Approximating with a Continuous Power Law.</span>
 </h6>
-<p id="p-320">In general, it is easier to pretend that we are dealing with a continuous distribution (rather than a discrete distribution). So we will talk about a <em class="emphasis">probability density function (PDF)</em> \(p: [k_{\min}, n] \rightarrow [0,1]\) given by</p>
+<p id="p-325">In general, it is easier to pretend that we are dealing with a continuous distribution (rather than a discrete distribution). So we will talk about a <em class="emphasis">probability density function (PDF)</em> \(p: [k_{\min}, n] \rightarrow [0,1]\) given by</p>
 <div class="displaymath">
 \begin{equation*}
 p(x) = C x^{-\alpha}
@@ -253,16 +253,16 @@ p(x) = C x^{-\alpha}
 </div>
 <p class="continuation">rather than a PMF. You can find the constant \(C = (\alpha-1)k_{\min}^{\alpha-1} \) as you did in the previous problem. But let's just keep calling it \(C\) for now.</p>
 <ol class="lower-alpha">
-<li id="li-184">
-<p id="p-321">Let \(X\) be a random variable governed by the continuous PDF \(p(x)\text{.}\) Find</p>
+<li id="li-188">
+<p id="p-326">Let \(X\) be a random variable governed by the continuous PDF \(p(x)\text{.}\) Find</p>
 <div class="displaymath">
 \begin{equation*}
 \E[X] = \int_{x=k_{\min}}^{n} x p(x) dx.
 \end{equation*}
 </div>
 </li>
-<li id="li-185">
-<p id="p-322">The \(m\)th moment of \(X\) is</p>
+<li id="li-189">
+<p id="p-327">The \(m\)th moment of \(X\) is</p>
 <div class="displaymath">
 \begin{equation*}
 \E[X^m] = \int_{x=k_{\min}}^{n} x^m p(x) dx.
@@ -270,8 +270,8 @@ p(x) = C x^{-\alpha}
 </div>
 <p class="continuation">Calculate it.</p>
 </li>
-<li id="li-186"><p id="p-323">Look at your answers for parts (a) and (b) and think about what happens as \(n \rightarrow \infty\text{.}\) For what values of \(\alpha\) does \(\E[X]\) converge? When does the \(m\)th moment \(\E[X^m]\) converge?</p></li>
-<li id="li-187"><p id="p-324">Recall that most observed power laws have \(2 \leq \alpha \leq 3\text{.}\) In this range, does the expected value converge? Which moments converge, and which moments diverge?</p></li>
+<li id="li-190"><p id="p-328">Look at your answers for parts (a) and (b) and think about what happens as \(n \rightarrow \infty\text{.}\) For what values of \(\alpha\) does \(\E[X]\) converge? When does the \(m\)th moment \(\E[X^m]\) converge?</p></li>
+<li id="li-191"><p id="p-329">Recall that most observed power laws have \(2 \leq \alpha \leq 3\text{.}\) In this range, does the expected value converge? Which moments converge, and which moments diverge?</p></li>
 </ol></article></section></section></div></main>
 </div>
 </body>

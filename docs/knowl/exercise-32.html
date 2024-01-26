@@ -12,24 +12,14 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Getting Started in Gephi.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">HITS Eigensystems.</span>
 </h6>
+<p>After convergence, our update rule becomes \(\ba \rightarrow c_1 \ba\) and \(\bh \rightarrow c_2 \bh\text{.}\) (Recall that HITS performs a renormalization at each step to deal with \(c_1, c_2\text{.}\)) So after convergence, your matrix equations   become statements about eigenvectors and eigenvalues. With that in mind:</p>
 <ol class="lower-alpha">
-<li><p>Load the <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">us-airlines.graphml</code> file into Gephi.</p></li>
-<li><p>How many nodes are there? How many edges?</p></li>
-<li><p>Show Node Labels. The nodes are labeled by numbers. You can change this by clicking on the clipboard/wrench icon at the bottom right of the Graph window. De-select "Label" and select "AirCode." Click OK. Adjust the label size so that you can read them.</p></li>
-<li><p>Update the Layout to use ForceAtlas 2. Be sure to click "Run" and then "Stop" once the network has stabilized.</p></li>
-<li>
-<p>Run the following statistics  in the Statistics window (on the right hand side).</p>
-<ul class="disc">
-<li><p>Average Degree</p></li>
-<li><p>Network Diameter</p></li>
-<li><p>HITS</p></li>
-<li><p>PageRank</p></li>
-<li><p>Eigenvector Centrality,</p></li>
-</ul>
-<p class="continuation">Look at the plots that come up, and then dismiss them.</p>
-</li>
-</ol></article><span class="incontext"><a href="exercises-6.html#exercise-32">in-context</a></span>
+<li><p>How are \(c_1\) and \(c_2\) related to the eigenvalues of your matrices in question 2?</p></li>
+<li><p>How do \(c_1\) and \(c_2\) relate to each other?</p></li>
+<li><p>What is the  (linear algebraic) relationship between the authority vector \(\ba\) and the hub vector \(\bh\text{?}\)</p></li>
+</ol>
+<p class="continuation">For inspiration you  should look back at our discussion of other algebraic centralities. </p></article><span class="incontext"><a href="exercises-5.html#exercise-32">in-context</a></span>
 </body>
 </html>

@@ -12,8 +12,13 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Counting Lazy Random Walks.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Betweenness Centrality on a Tree.</span>
 </h6>
-<p>In a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">lazy walk</em> on a directed graph, at each step, we can either stay at the current vertex or move to an adjacent vertex. So a lazy walk of length \(k\) is a sequence of vertices \(v_0, v_1, v_2, \ldots, v_k\) where for \(1 \leq i \leq k\text{,}\) we either have \(v_i = v_{i-1}\) or \((v_{i-1}, v_i)\) is an arc of \(G\text{.}\) Let \(A\) be the adjacency matrix of a directed graph \(G\text{,}\) so that \(a_{ij}\) is 1 if \((i,j)\) is an arc and  is 0 otherwise. Using induction on \(k \geq 0\text{,}\) prove that  the \(ij\)th entry of \((I+A)^k\) counts the number of lazy walks of length \(k\) from vertex \(i\) to vertex \(j\text{.}\)</p></article><span class="incontext"><a href="exercises-18.html#exercise-83">in-context</a></span>
+<p>Let \(G\) be an undirected tree on \(N\) vertices. Let \(v\) be a vertex with degree \(k_v = k\text{.}\) Removing the vertex \(v\) splits the tree into \(k \geq 2\) disjoint trees \(G_1,G_2, \ldots, G_k\text{.}\) Suppose that tree \(G_i\) contains \(N_i\) vertices for \(1 \leq i \leq k\text{.}\) Show that the (un-normalized) betweenness centrality of \(v\) satisfies</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+c_v^B = (N-1)^2 - \sum_{i=1}^k N_i^2
+\end{equation*}
+</div></article><span class="incontext"><a href="exercises-18.html#exercise-83">in-context</a></span>
 </body>
 </html>

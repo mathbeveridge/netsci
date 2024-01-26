@@ -12,13 +12,11 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Closeness Centrality on a Tree.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Weakly increasing centrality measures.</span>
 </h6>
-<p>Let \(G\) be an undirected tree. Removing the edge \((u,v)\)  splits the graph into two disjoint trees \(G_1\) and \(G_2\) where \(u \in V(G_1)\) and \(v \in V(G_2)\text{.}\) Suppose that   \(G_1\) has \(N_1\) vertices and \(G_2\) has \(N_2\) vertices. Prove that the (un-normalized) closeness centralities of \(u\) and \(v\) satisfy</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\frac{1}{c_u^C} + N_1 = \frac{1}{c_v^C} + N_2.
-\end{equation*}
-</div></article><span class="incontext"><a href="exercises-18.html#exercise-81">in-context</a></span>
+<ol class="lower-alpha">
+<li><p>For each of our basic centrality measures (degree centrality, closeness centrality, betweenness centrality), prove that if you add the edge \((u,v)\) to \(G\) then the centrality of vertex \(u\) does not <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">decrease</em>. (Mathematically, we say that the centrality of \(u\) is <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">weakly increasing</em> for edge additions at \(u\text{.}\))</p></li>
+<li><p>Which of these centrality measures are weakly increasing at <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">every</em> vertex \(w\) when you add a particular edge \((u,v)\text{?}\) For those that are weakly increasing, give a proof. For those that are not weakly increasing, give an example where adding the edge \((u,v)\) decreases the centrality at some other vertex \(w\text{.}\)</p></li>
+</ol></article><span class="incontext"><a href="exercises-18.html#exercise-81">in-context</a></span>
 </body>
 </html>

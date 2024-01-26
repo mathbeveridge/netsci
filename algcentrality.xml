@@ -184,8 +184,8 @@ Let
 <me>
 A =
 \begin{bmatrix}
-3 &amp;  1\\
-1 &amp; 3
+-2 &amp;  2\\
+2 &amp; 1
 \end{bmatrix}.
 </me>
 
@@ -193,7 +193,7 @@ A =
 
 				<li>
 					<p>
- Check that the vector <m> \bv_1 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}</m> is an eigenvector of <m>A</m> for eigenvalue <m>\lambda_1=4</m>.
+ Check that the vector <m> \bv_1 = \begin{bmatrix} 1 \\ 2 \end{bmatrix}</m> is an eigenvector of <m>A</m> for eigenvalue <m>\lambda_1=2</m>.
 
 
 
@@ -202,7 +202,7 @@ A =
 				<li>
 					<p>
  Check that the vector
-<m>\bv_2 = \begin{bmatrix} 1 \\ -1 \end{bmatrix} </m> is an eigenvector of <m>A</m> for eigenvalue <m>\lambda_2 = 2</m>.
+<m>\bv_2 = \begin{bmatrix} 2 \\ -1 \end{bmatrix} </m> is an eigenvector of <m>A</m> for eigenvalue <m>\lambda_2 = -3</m>.
 
 
 
@@ -219,7 +219,7 @@ A =
 				</li>
 				<li>
 					<p>
- Confirm that <m>A =  \lambda_1 \bu_1 \bu_1^{\top} + \lambda_2 \bu_2 \bu^{\top}</m> where <m>\bu_1, \bu_2</m> are eigenvectors of unit length in the direction of <m>\bv_1, \bv_2</m> respectively.
+ Confirm that <m>A =  \lambda_1 \bu_1 \bu_1^{\top} + \lambda_2 \bu_2 \bu_2^{\top}</m> where <m>\bu_1, \bu_2</m> are eigenvectors of unit length in the direction of <m>\bv_1, \bv_2</m> respectively.
 
 
 
@@ -238,12 +238,12 @@ A =
 
 <me>
 A \bv_1 =
-\begin{bmatrix} 3 &amp;  1\\ 1 &amp; 3 \end{bmatrix}
-\begin{bmatrix} 1 \\ 1 \end{bmatrix}
+\begin{bmatrix} -2 &amp;  2\\ 2 &amp; 1 \end{bmatrix}
+\begin{bmatrix} 1 \\ 2 \end{bmatrix}
 =
-\begin{bmatrix} 4 \\ 4 \end{bmatrix}
+\begin{bmatrix} 2 \\ 4 \end{bmatrix}
 =
-4 \begin{bmatrix}1 \\ 1 \end{bmatrix}.
+2 \begin{bmatrix}1 \\ 2 \end{bmatrix}.
 </me>
 
 					</p>
@@ -254,13 +254,13 @@ A \bv_1 =
 
 
 <me>
-A \bv_1 =
-\begin{bmatrix}3 &amp;  1\\ 1 &amp; 3 \end{bmatrix}
-\begin{bmatrix} 1 \\ -1 \end{bmatrix}
+A \bv_2 =
+\begin{bmatrix}-2 &amp;  2\\ 2 &amp; 1 \end{bmatrix}
+\begin{bmatrix} 2 \\ -1 \end{bmatrix}
 =
-\begin{bmatrix}2 \\ -2 \end{bmatrix}
+\begin{bmatrix}-6 \\ 3 \end{bmatrix}
 =
-2 \begin{bmatrix} 1 \\ -1 \end{bmatrix}.
+-3 \begin{bmatrix} 2 \\ -1 \end{bmatrix}.
 </me>
 
 					</p>
@@ -270,8 +270,8 @@ A \bv_1 =
  Vectors <m>\bv_1</m> and <m>\bv_2</m> are orthogonal because
 
 <me>
-\bv_1 \cdot \bv_2 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}
-\begin{bmatrix} 1 &amp; -1 \end{bmatrix} = 1-1 = 0
+\bv_1 \cdot \bv_2 = \begin{bmatrix} 1 \\ 2 \end{bmatrix}
+\begin{bmatrix} 2 &amp; -1 \end{bmatrix} = 2-2 = 0
 </me>
 
 
@@ -279,21 +279,24 @@ A \bv_1 =
 				</li>
 				<li>
 					<p>
- Our unit eigenvectors are <m>\bu_1 = \frac{1}{\sqrt{2}} {1 \choose 1}</m> and <m>\bu_2 = \frac{1}{\sqrt{2}} {1 \choose -1}</m>. We find that
+ Our unit eigenvectors are <m>\bu_1 = \frac{1}{\sqrt{5}} {1 \choose 2}</m> and <m>\bu_2 = \frac{1}{\sqrt{5}} {2 \choose -1}</m>. We find that
 </p>
 <md>
 <mrow>
 \lambda_1 \bu_1 \bu_1^{\top} + \lambda_2 \bu_2 \bu^{\top}
-&amp;= \frac{4}{2} \begin{bmatrix} 1  1 \end{bmatrix} \begin{bmatrix} 1 &amp; 1 \end{bmatrix}
+&amp;= \frac{2}{5} \begin{bmatrix} 1  2 \end{bmatrix} \begin{bmatrix} 2 &amp; 4 \end{bmatrix}
 </mrow>
 <mrow>
-+ \frac{2}{2}  \begin{bmatrix} 1  -1 \end{bmatrix}   \begin{bmatrix} 1 &amp; -1 \end{bmatrix}
+- \frac{3}{5}  \begin{bmatrix} 4  -2 \end{bmatrix}   \begin{bmatrix} -2 &amp; 1 \end{bmatrix}
 </mrow>
 <mrow>
-&amp;= 2  \begin{bmatrix} 1 &amp; 1  1 &amp; 1\end{bmatrix}  +  \begin{bmatrix} 1 &amp; -1  -1 &amp; 1\end{bmatrix}
+&amp;= \frac{1}{5} \left( \begin{bmatrix} 2 &amp; 4  4 &amp; 8\end{bmatrix}  +  \begin{bmatrix} -12 &amp; 6  6 &amp; -3\end{bmatrix} \right)
 </mrow>
 <mrow>
-&amp;=   \begin{bmatrix} 3 &amp; 1  1 &amp; 3\end{bmatrix}
+&amp;=   \frac{1}{5}  \begin{bmatrix} -	10 &amp; 10  10 &amp; 5\end{bmatrix}
+</mrow>
+<mrow>
+&amp;=   \begin{bmatrix} -	2 &amp; 2  2 &amp; 1\end{bmatrix}
 </mrow>
 </md>
 <p>
@@ -309,6 +312,137 @@ A \bv_1 =
 				</p>
 			</statement>
 		</exercise>
+		<exercise>
+			<title>Repeated Multiplications and Spectral Decomposition</title>
+			<idx><h>Repeated Multiplications and Spectral Decomposition</h></idx>
+			<statement>
+				<p>
+Suppose that we have a <m>2 \times 2</m> matrix with spectral decomposition
+<me>
+A =  \lambda_1 \bu_1 \bu_1^{\top} + \lambda_2 \bu_2 \bu_2^{\top}
+</me>
+where <m>\bu_1, \bu_2</m> are orthonormal eigenvectors for eigenvalues <m>\lambda_1</m> and <m>\lambda_2</m>.  Since these vectors are orthonormal, we have
+<me>
+\bu_1^{\top} \bu_1=1,  \bu_1^{\top} \bu_2=0,  \bu_2^{\top} \bu_1=0 , \bu_2^{\top} \bu_2=1.
+</me>
+
+The goal of this question is to estimate  <m>A^n \bx</m> for large <m>n</m>, where <m>\bx \in \R^2</m> is an arbitrary vector.
+			<ol>
+				<li>
+					<p>
+ Find the spectral decomposition for <m>A^2=AA</m> by using the spectral decomposition for each <m>A</m>, and then multiplying out.
+<!--solution>
+<p>
+We have <m>A^2 = AA</m> and so
+<me>
+AA  = ( \lambda_1 \bu_1 \bu_1^{\top} + \lambda_2 \bu_2 \bu_2^{\top})( \lambda_1 \bu_1 \bu_1^{\top} + \lambda_2 \bu_2 \bu_2^{\top}).
+</me>
+We end up with four terms. Let's look at them one at a time. Since <m>\bu_1^\top \bu_1=1</m>, we have
+<me>
+\lambda_1^2 \bu_1 \bu_1^{\top}  \bu_1 \bu_1^{\top} =
+\lambda_1^2 \bu_1 (\bu_1^{\top}  \bu_1) \bu_1^{\top} =
+\lambda_1^2 \bu_1 \bu_1^{\top}.
+</me>
+Next, since <m>\bu_1^\top \bu_2=0</m>, we have
+<me>
+\lambda_1 \lambda_2 \bu_1 \bu_1^{\top}  \bu_2 \bu_2^{\top} =
+\lambda_1 \lambda_2 \bu_1 (\bu_1^{\top}  \bu_2) \bu_2^{\top} =
+\mathbf{0}.
+</me>
+Similarly,
+<me>
+\lambda_1 \lambda_2 \bu_2 \bu_2^{\top}  \bu_1\bu_1^{\top} =
+\lambda_1 \lambda_2 \bu_2 (\bu_2^{\top}  \bu_1) \bu_1^{\top} =
+\mathbf{0}.
+</me>
+and
+<me>
+\lambda_2^2 \bu_2 \bu_2^{\top}  \bu_2 \bu_2^{\top} =
+\lambda_2^2 \bu_2 (\bu_2^{\top}  \bu_2) \bu_2^{\top} =
+\lambda_2^2 \bu_2 \bu_2^{\top}.
+</me>
+So our final answer is
+<me>
+A^2 = AA  = \lambda_1^2 \bu_1 \bu_1^{\top}  + \lambda_2^2 \bu_2 \bu_2^{\top}.
+</me>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ What is  the spectral decomposition of <m>A^3 =A^2A</m>? How about the spectral decomposition of <m>A^n</m>?
+
+<!--solution>
+<p>
+By a similar argument, we have
+<me>
+A^3  = \lambda_1^3 \bu_1 \bu_1^{\top}  + \lambda_2^3 \bu_2 \bu_2^{\top}
+</me>
+and by induction, we have
+<me>
+A^n  = \lambda_1^n \bu_1 \bu_1^{\top}  + \lambda_2^n \bu_2 \bu_2^{\top}
+</me>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ The orthonormal vectors <m>\bu_1, \bu_2</m> form a basis for <m>\R^2</m>. So we can write any vector <m>\bx \in \R^2</m> as <m>\bx = c_1 \bu_1 + c_2 \bu_2</m>. Use your answer from part (b) to find an expression for <m>A^n \bx</m>.
+
+<!--solution>
+<p>
+Using this spectral decomposition, and the orthonormal properties of <m>\bu_1, \bu_2</m>, we get
+</p>
+<md>
+<mrow>
+A^n \bx  &amp;=
+\left(\lambda_1^n \bu_1 \bu_1^{\top}  + \lambda_2^n \bu_2 \bu_2^{\top}\right) (c_1 \bu_1 + c_2 \bu_2)
+</mrow>
+<mrow>
+&amp;= c_1 \lambda_1^n \bu_1  + c_2 \lambda_2^n \bu_2.
+</mrow>
+</md>
+<p>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Now let's suppose that <m>|\lambda_1| &gt; |\lambda_2|</m> and that <m>\bx</m> is such that  <m>c_1 \neq 0</m>. Explain why <m>A^n \bx \approx k \bu_1</m> for some constant <m>k</m>.
+
+<!--solution>
+<p>
+Let's factor out <m>\lambda_1^n</m> from this expression to get
+</p>
+<md>
+<mrow>
+A^n \bx  &amp;=
+\lambda_1^n \left( c_1  \bu_1 + c_2  \left(\frac{ \lambda_2}{\lambda_1}^n \right) \bu_2. \right)
+</mrow>
+</md>
+<p>
+As <m>n</m> gets really large, the fraction <m>(\lambda_2/\lambda_1)^n</m> goes to zero. Therefore for large <m>n</m>, we have
+<me>
+A^n \bx  \approx \lambda_1^n  c_1  \bu_1.
+</me>
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+You have now shown that <m>A^n \bx</m> is converges to a vector in the span of the eigenvector <m>\bu_1</m> corresponding to the largest eigenvalue <m>\lambda_1</m>.
+
+
+				</p>
+			</statement>
+		</exercise>		
 		<exercise>
 			<title>Recursive Importance in a Graph</title>
 			<idx><h>Recursive Importance in a Graph</h></idx>

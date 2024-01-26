@@ -187,14 +187,14 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="randvar0"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">9.1</span> <span class="title">Discrete Random Variables</span>
 </h2>
-<p id="p-225">In an experiment \(X\text{,}\) we pick an element from our finite <em class="emphasis">sample space</em> \(\Omega\) and then make note of one of its numerical properties. For example, we could take \(\Omega\) to be the set of vertices in our graph, and let \(X\) be the degree of the chosen vertex.</p>
-<p id="p-226">A <em class="emphasis">discrete random variable</em> \(X: \Omega \rightarrow \R\) is a real-valued function on the outcome of an experiment that can take finite or a countably infinite number of values. In other words, the image \(T \subset \R\) is a finite or countably infinite set. Most typically, our discrete random variables will only take on nonnegative integer values, so  \(T = \Z_{\geq 0}\) or \(T = \{ 0, 1, 2, \ldots, M \}\text{.}\)</p>
-<p id="p-227">So at the end of it all, \(X\) is just a <em class="emphasis">function</em> from a set \(\Omega\) to \(\R\text{.}\) So what's with all the strange notation? Let's start with the sample space \(\Omega\text{.}\) This is just a set. Why not call it \(S\text{?}\) We use \(\Omega\) as  a mnemonic for "outcome." Since we are running an experiment (multiple times), each trial produces an <em class="emphasis">outcome</em>. We then take a measurement of that outcome (represented by the random variable \(X\)).</p>
-<p id="p-228">Now, the random variable \(X\) is actually a real-valued function \(X: \Omega \rightarrow \R\text{.}\)  So why use \(X\) instead of \(f\text{?}\) Well, we are taking a measurement of an outcome of an experiment. In this context, we are more interested in the value of the measurement. The symbol  \(X\) encourages us to pay attention to the measurement (not the function) because it reminds us of the variable \(x\) from algebra.</p>
+<p id="p-230">In an experiment \(X\text{,}\) we pick an element from our finite <em class="emphasis">sample space</em> \(\Omega\) and then make note of one of its numerical properties. For example, we could take \(\Omega\) to be the set of vertices in our graph, and let \(X\) be the degree of the chosen vertex.</p>
+<p id="p-231">A <em class="emphasis">discrete random variable</em> \(X: \Omega \rightarrow \R\) is a real-valued function on the outcome of an experiment that can take finite or a countably infinite number of values. In other words, the image \(T \subset \R\) is a finite or countably infinite set. Most typically, our discrete random variables will only take on nonnegative integer values, so  \(T = \Z_{\geq 0}\) or \(T = \{ 0, 1, 2, \ldots, M \}\text{.}\)</p>
+<p id="p-232">So at the end of it all, \(X\) is just a <em class="emphasis">function</em> from a set \(\Omega\) to \(\R\text{.}\) So what's with all the strange notation? Let's start with the sample space \(\Omega\text{.}\) This is just a set. Why not call it \(S\text{?}\) We use \(\Omega\) as  a mnemonic for "outcome." Since we are running an experiment (multiple times), each trial produces an <em class="emphasis">outcome</em>. We then take a measurement of that outcome (represented by the random variable \(X\)).</p>
+<p id="p-233">Now, the random variable \(X\) is actually a real-valued function \(X: \Omega \rightarrow \R\text{.}\)  So why use \(X\) instead of \(f\text{?}\) Well, we are taking a measurement of an outcome of an experiment. In this context, we are more interested in the value of the measurement. The symbol  \(X\) encourages us to pay attention to the measurement (not the function) because it reminds us of the variable \(x\) from algebra.</p>
 <section class="subsection" id="randvar1"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">9.1.1</span> <span class="title">Probability Mass Function</span>
 </h3>
-<p id="p-229">A discrete random variable \(X\) has an associated <em class="emphasis">probability mass function (PMF)</em></p>
+<p id="p-234">A discrete random variable \(X\) has an associated <em class="emphasis">probability mass function (PMF)</em></p>
 <div class="displaymath">
 \begin{equation*}
 p_X(t) = \P [ X = t]
@@ -202,32 +202,32 @@ p_X(t) = \P [ X = t]
 </div>
 <p class="continuation">which gives the probability of each numerical value that the random variable can take. When \(X\) is clear from the context, we simply write \(p(t) = \P [X=t]\text{.}\) <article class="example example-like" id="example-1"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-1"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">9.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">PMF for a Random Vertex Degree.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-1"><article class="example example-like"><p id="p-230">Consider the experiment where we take \(X\) to be the degree of a vertex from the network shown below, chosen uniformly at random (meaning that every vertex is equally likely). Find the PMF for this experiment. <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/graph7.png" class="contained"></div> </p></article></div></p></section><section class="subsection" id="randvar2"><h3 class="heading hide-type">
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-1"><article class="example example-like"><p id="p-235">Consider the experiment where we take \(X\) to be the degree of a vertex from the network shown below, chosen uniformly at random (meaning that every vertex is equally likely). Find the PMF for this experiment. <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/graph7.png" class="contained"></div> </p></article></div></p></section><section class="subsection" id="randvar2"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">9.1.2</span> <span class="title">Properties of a PMF</span>
 </h3>
-<p id="p-231">The PMF of a random variable has the following properties.</p>
+<p id="p-236">The PMF of a random variable has the following properties.</p>
 <ul class="disc">
-<li id="li-148">
-<p id="p-232">We always have</p>
+<li id="li-152">
+<p id="p-237">We always have</p>
 <div class="displaymath">
 \begin{equation*}
 \sum_{t \in T} \P[ X = t] = 1.
 \end{equation*}
 </div>
 </li>
-<li id="li-149">
-<p id="p-233">When \(\Omega\) is a finite set, we can find \(\P[X = t]\) by calculating</p>
+<li id="li-153">
+<p id="p-238">When \(\Omega\) is a finite set, we can find \(\P[X = t]\) by calculating</p>
 <div class="displaymath">
 \begin{equation*}
 p(t) = \P[X=t] = \frac{ | \{ \omega \in \Omega | X(\omega) = t \} |} { | \Omega |}.
 \end{equation*}
 </div>
 </li>
-<li id="li-150">
-<p id="p-234">A function \(f: T \rightarrow \R\) is a PMF if and only if</p>
+<li id="li-154">
+<p id="p-239">A function \(f: T \rightarrow \R\) is a PMF if and only if</p>
 <ul class="circle">
-<li id="li-151"><p id="p-235">\(f(t) \geq 0\) for all \(t \in T\text{,}\) and</p></li>
-<li id="li-152"><p id="p-236">\(\sum_{t \in T} f(t) = 1\text{.}\)</p></li>
+<li id="li-155"><p id="p-240">\(f(t) \geq 0\) for all \(t \in T\text{,}\) and</p></li>
+<li id="li-156"><p id="p-241">\(\sum_{t \in T} f(t) = 1\text{.}\)</p></li>
 </ul>
 </li>
 </ul></section></section></div></main>
