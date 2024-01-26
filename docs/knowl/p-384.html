@@ -12,21 +12,46 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Triangles using 2 or 3 shortcut edges are also unlikely. Explain why</p>
+<p>Here is a different citation generation model. Start with a network of \(n_0 &gt; c\) papers, each pointing randomly to \(c\) others. Pick a constant \(0 &lt; \gamma &lt; 1\text{.}\)  When paper \(n+1\) is added, it makes \(c\) citations as follows:</p>
+<ul class="disc">
+<li><p>Pick a random paper \(v\) from the existing \(n\) vertices.</p></li>
+<li>
+<p>For each of the \(c\) citations of \(v\) (that is, the arcs starting at \(v\)),</p>
+<ul class="circle">
+<li><p>with \(\displaystyle{\P = \gamma}\text{,}\)   copy that citation</p></li>
+<li><p>with \(\displaystyle{\P = 1 - \gamma}\text{,}\)  cite a uniform random paper instead.</p></li>
+</ul>
+</li>
+</ul>
+<p class="continuation">You will now show that this model is equivalent to Price's model, so it generates a power law degree distribution.</p>
+<ol class="lower-alpha">
+<li>
+<p>Show that for each arc starting at vertex \(n+1\text{,}\) we have</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\E[\mbox{\# triangles using two shortcut edges} ]=
-n \frac{c}{2} (n-2) q^2   \approx \frac{c^3p^2}{2}.
+\P(\mbox{the arc points to vertex } i) = (1- \gamma) \frac{1}{n}  + \gamma \frac{k_i}{cn}.
 \end{equation*}
 </div>
-<p class="continuation">and</p>
+</li>
+<li><p>Define \(a = c \left( \frac{1}{\gamma} -1 \right)\text{.}\) Confirm that this equation is equivalent to \(\gamma = \frac{c}{c+a}\text{.}\) </p></li>
+<li>
+<p>Plug \(\gamma = \frac{c}{c+a}\) into equation from part (a) and simplify to show that we once again get</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\E[\mbox{\# triangles using three shortcut edges} ] =
-{n \choose 3} q^3   \approx \frac{c^3p^3}{6}.
+\P(\mbox{the arc points to vertex } i) = \frac{a+k_i}{n(c+a)}.
 \end{equation*}
 </div>
-<p class="continuation">So we only add a constant number of triangles of any kind.</p>
-<span class="incontext"><a href="exercises-13.html#p-384">in-context</a></span>
+</li>
+<li>
+<p>Finally, rewrite the power law</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\P(\deg(v) = k) \sim k^{-2-a/c}
+\end{equation*}
+</div>
+<p class="continuation">in terms of \(\gamma\) instead of \(a\) and \(c\text{.}\) </p>
+</li>
+</ol>
+<span class="incontext"><a href="exercises-12.html#p-384">in-context</a></span>
 </body>
 </html>

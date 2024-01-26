@@ -12,13 +12,19 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>The \(m\)th moment of \(X\) is</p>
+<p>Linearity of expectation applies to the sum of multiple random variables. In particular, an easy proof by induction shows that for any random variables \(X_1, X_2, \ldots, X_n\text{,}\) we have</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\E[X^m] = \int_{x=k_{\min}}^{n} x^m p(x) dx.
+\E[X_1 + X_2 + \cdots + X_n] = \E[X_1] + \E[X_2] + \cdots + \E[X_n]
 \end{equation*}
 </div>
-<p class="continuation">Calculate it.</p>
-<span class="incontext"><a href="exercises-10.html#p-327">in-context</a></span>
+<p class="continuation">Use this formula to show that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[X] = np.
+\end{equation*}
+</div>
+<p class="continuation">You will have to split your random variable \(X\) into the sum of \(n\) random variables. (Note: you can also prove this directly from part (a), but it is a bit tedious.) </p>
+<span class="incontext"><a href="exercises-9.html#p-327">in-context</a></span>
 </body>
 </html>

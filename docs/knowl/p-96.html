@@ -12,57 +12,26 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<p>Suppose that we have a \(2 \times 2\) matrix with spectral decomposition</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+A =  \lambda_1 \bu_1 \bu_1^{\top} + \lambda_2 \bu_2 \bu_2^{\top}
+\end{equation*}
+</div>
+<p class="continuation">where \(\bu_1, \bu_2\) are orthonormal eigenvectors for eigenvalues \(\lambda_1\) and \(\lambda_2\text{.}\)  Since these vectors are orthonormal, we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\bu_1^{\top} \bu_1=1,  \bu_1^{\top} \bu_2=0,  \bu_2^{\top} \bu_1=0 , \bu_2^{\top} \bu_2=1.
+\end{equation*}
+</div>
+<p class="continuation">The goal of this question is to estimate  \(A^n \bx\) for large \(n\text{,}\) where \(\bx \in \R^2\) is an arbitrary vector.</p>
 <ol class="lower-alpha">
-<li>
-<p>Here is the matrix \(P^2\) for the undirected graph in Problem 1.</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-P^2 =
-\begin{bmatrix}
-\frac{1}{3} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; 0 \\[6pt]
-\frac{1}{9} &amp; \frac{4}{9} &amp; 0 &amp; \frac{5}{18} &amp; \frac{1}{6} &amp; 0 \\[6pt]
-\frac{1}{6} &amp; 0 &amp; \frac{1}{3} &amp; 0 &amp; \frac{1}{3} &amp; \frac{1}{6} \\[6pt]
-\frac{1}{9} &amp; \frac{5}{18} &amp; 0 &amp; \frac{11}{18} &amp; 0 &amp; 0 \\[6pt]
-\frac{1}{9} &amp; \frac{1}{6} &amp; \frac{2}{9} &amp; 0 &amp; \frac{7}{18} &amp; \frac{1}{9} \\[6pt]
-0 &amp; 0 &amp; \frac{1}{3} &amp; 0 &amp; \frac{1}{3} &amp; \frac{1}{3}
-\end{bmatrix}
-\end{equation*}
-</div>
-<p class="continuation">What does row \(i\) tell you about the instruction "take two random steps from vertex \(i\text{?}\)" </p>
-</li>
-<li><p>Using part (a) as a guide, give an interpretation for row \(i\) of the matrix \(P^3\text{.}\) </p></li>
-<li><p>What do the rows of matrix \(P^t\) describe? </p></li>
-<li>
-<p>For \(1 \leq i \leq 5\text{,}\) let \(\mathbf{e}_i\) denote the " elementary vector" whose \(j\)-th entry is</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\mathbf{e}_i(j) = \left\{
-\begin{array}{cl}
-1 &amp; i=j \\
-0 &amp; \mbox{otherwise.}
-\end{array}
-\right.
-\end{equation*}
-</div>
-<p class="continuation">In other words,</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\mathbf{e}_1&amp;= \begin{bmatrix} 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{bmatrix}\\
-\mathbf{e}_2&amp;= \begin{bmatrix} 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \end{bmatrix}\\
-\mathbf{e}_3&amp;= \begin{bmatrix} 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \end{bmatrix}\\
-\mathbf{e}_4&amp;= \begin{bmatrix} 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \end{bmatrix}\\
-\mathbf{e}_5&amp;= \begin{bmatrix} 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix}
-\end{align*}
-</div>
-<p>What does the vector</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\mathbf{e}_i \, P^t
-\end{equation*}
-</div>
-<p class="continuation">describe? </p>
-</li>
+<li><p>Find the spectral decomposition for \(A^2=AA\) by using the spectral decomposition for each \(A\text{,}\) and then multiplying out. </p></li>
+<li><p>What is  the spectral decomposition of \(A^3 =A^2A\text{?}\) How about the spectral decomposition of \(A^n\text{?}\) </p></li>
+<li><p>The orthonormal vectors \(\bu_1, \bu_2\) form a basis for \(\R^2\text{.}\) So we can write any vector \(\bx \in \R^2\) as \(\bx = c_1 \bu_1 + c_2 \bu_2\text{.}\) Use your answer from part (b) to find an expression for \(A^n \bx\text{.}\) </p></li>
+<li><p>Now let's suppose that \(|\lambda_1| &gt; |\lambda_2|\) and that \(\bx\) is such that  \(c_1 \neq 0\text{.}\) Explain why \(A^n \bx \approx k \bu_1\) for some constant \(k\text{.}\) </p></li>
 </ol>
-<span class="incontext"><a href="exercises-4.html#p-96">in-context</a></span>
+<p class="continuation">You have now shown that \(A^n \bx\) is converges to a vector in the span of the eigenvector \(\bu_1\) corresponding to the largest eigenvalue \(\lambda_1\text{.}\)</p>
+<span class="incontext"><a href="exercises-3.html#p-96">in-context</a></span>
 </body>
 </html>

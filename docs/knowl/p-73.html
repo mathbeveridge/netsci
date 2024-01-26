@@ -12,26 +12,13 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose that we have a \(2 \times 2\) matrix with spectral decomposition</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-A =  \lambda_1 \bu_1 \bu_1^{\top} + \lambda_2 \bu_2 \bu_2^{\top}
-\end{equation*}
-</div>
-<p class="continuation">where \(\bu_1, \bu_2\) are orthonormal eigenvectors for eigenvalues \(\lambda_1\) and \(\lambda_2\text{.}\)  Since these vectors are orthonormal, we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\bu_1^{\top} \bu_1=1,  \bu_1^{\top} \bu_2=0,  \bu_2^{\top} \bu_1=0 , \bu_2^{\top} \bu_2=1.
-\end{equation*}
-</div>
-<p class="continuation">The goal of this question is to estimate  \(A^n \bx\) for large \(n\text{,}\) where \(\bx \in \R^2\) is an arbitrary vector.</p>
 <ol class="lower-alpha">
-<li><p>Find the spectral decomposition for \(A^2=AA\) by using the spectral decomposition for each \(A\text{,}\) and then multiplying out. </p></li>
-<li><p>What is  the spectral decomposition of \(A^3 =A^2A\text{?}\) How about the spectral decomposition of \(A^n\text{?}\) </p></li>
-<li><p>The orthonormal vectors \(\bu_1, \bu_2\) form a basis for \(\R^2\text{.}\) So we can write any vector \(\bx \in \R^2\) as \(\bx = c_1 \bu_1 + c_2 \bu_2\text{.}\) Use your answer from part (c) to find an expression for \(A^n \bx\text{.}\) </p></li>
-<li><p>Now let's suppose that \(|\lambda_1| &gt; |\lambda_2|\) and that \(\bx\) is such that  \(c_1 \neq 0\text{.}\) Explain why \(A^n \bx \approx k \bu_1\) for some constant \(k\text{.}\) </p></li>
+<li><p>High in-degree centrality means that lots of information gets to you. High out-degree means that a lot of people are listening to you.</p></li>
+<li>
+<p>You would need two different closeness centralities. Large \(c_i^{C^{\mathrm{in}}}\) would mean that spreading information gets to you quickly. Large \(c_i^{C^{\mathrm{out}}}\) would mean that information that you share would spread quickly to the whole network.</p>
+<p>You would still only have one betweenness centrality measure on a directed graph. The definition already includes paths from \(s\) to \(t\) and from \(t\) to \(s\text{.}\) This "double counting" on an undirected graph becomes "single counting" when the paths are directed.</p>
+</li>
 </ol>
-<p class="continuation">You have now shown that \(A^n \bx\) is converges to a vector in the span of the eigenvector \(\bu_1\) corresponding to the largest eigenvalue \(\lambda_1\text{.}\)</p>
-<span class="incontext"><a href="exercises-3.html#p-73">in-context</a></span>
+<span class="incontext"><a href="exercises-2.html#p-73">in-context</a></span>
 </body>
 </html>

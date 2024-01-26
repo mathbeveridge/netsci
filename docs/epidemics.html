@@ -187,13 +187,13 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="epidemics"><h2 class="heading">
 <span class="type">Chapter</span> <span class="codenumber">16</span> <span class="title">Epidemics on Networks</span>
 </h2>
-<section class="introduction" id="introduction-16"><p id="p-417"></p></section><section class="exercises" id="exercises-16"><h3 class="heading hide-type">
+<section class="introduction" id="introduction-16"><p id="p-440"></p></section><section class="exercises" id="exercises-16"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Practice Problems</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-72"><h6 class="heading">
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Excess Degree Distribution.</span>
 </h6>
-<p id="p-418">Suppose that we have  a large network for which there is no correlation between vertex degrees. That is, an edge from vertex \(v\) leads to a vertex chosen  uniformly at random. Let \(p_k\) denote the fraction of vertices of degree \(k\text{.}\) When you pick a vertex \(v\) at random, we have \(\Pr[\deg(v)=k] = p_k\text{.}\) This means that the expected degree of the network is</p>
+<p id="p-441">Suppose that we have  a large network for which there is no correlation between vertex degrees. That is, an edge from vertex \(v\) leads to a vertex chosen  uniformly at random. Let \(p_k\) denote the fraction of vertices of degree \(k\text{.}\) When you pick a vertex \(v\) at random, we have \(\Pr[\deg(v)=k] = p_k\text{.}\) This means that the expected degree of the network is</p>
 <div class="displaymath">
 \begin{equation*}
 \langle k \rangle = \sum_{k=0}^{k_{\max}} k  \cdot p_k.
@@ -207,24 +207,24 @@ q_k = \Pr [\deg(w)=k+1].
 </div>
 <p class="continuation">In other words, \(w\) has \(k\) additional edges, besides the one you just traveled. In this case, we say that \(w\) has <em class="emphasis">excess degree</em> \(k\text{.}\)</p>
 <ol class="lower-alpha">
-<li id="li-249">
-<p id="p-419">Explain why the excess degree distribution  satisfies</p>
+<li id="li-266">
+<p id="p-442">Explain why the excess degree distribution  satisfies</p>
 <div class="displaymath">
 \begin{equation*}
 q_k = \frac{(k+1) p_{k+1}}{\langle k \rangle}.
 \end{equation*}
 </div>
 </li>
-<li id="li-250">
-<p id="p-420">Confirm that the expected degree of vertex \(w\) is</p>
+<li id="li-267">
+<p id="p-443">Confirm that the expected degree of vertex \(w\) is</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{\langle k^2 \rangle}{\langle k \rangle}.
 \end{equation*}
 </div>
 </li>
-<li id="li-251">
-<p id="p-421">Recall that</p>
+<li id="li-268">
+<p id="p-444">Recall that</p>
 <div class="displaymath">
 \begin{equation*}
 \mbox{Var}[X] = E[X^2] - E[X]^2 &gt; 0
@@ -232,11 +232,11 @@ q_k = \frac{(k+1) p_{k+1}}{\langle k \rangle}.
 </div>
 <p class="continuation">when \(X\) is not constant. Use this to explain why that the expected degree of \(w\) is larger than the expected degree of \(v\text{.}\) </p>
 </li>
-<li id="li-252"><p id="p-422">Colloquially, people refer to this result as: "your friends are more popular than you." Why? </p></li>
+<li id="li-269"><p id="p-445">Colloquially, people refer to this result as: "your friends are more popular than you." Why? </p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-73"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Susceptible-Infected Model: The Homogeneous Case.</span>
 </h6>
-<p id="p-423">We start by considering a spread of disease model that replaces the network with a simplifying assumption: everyone is equally likely to interact with everyone else. Consider a large population where a disease is active. People are either <em class="emphasis">susceptible</em> to the disease or are <em class="emphasis">infected</em>. Once you are infected, you remain infected. Let</p>
+<p id="p-446">We start by considering a spread of disease model that replaces the network with a simplifying assumption: everyone is equally likely to interact with everyone else. Consider a large population where a disease is active. People are either <em class="emphasis">susceptible</em> to the disease or are <em class="emphasis">infected</em>. Once you are infected, you remain infected. Let</p>
 <div class="displaymath">
 \begin{align*}
 I &amp;= \mbox{ fraction of population that is infected}\\
@@ -245,17 +245,17 @@ S &amp;= (1-I)  \mbox{ fraction of population that is susceptible}\\
 \beta &amp;= \mbox{ likelihood of transmission from infected person to susceptible person}
 \end{align*}
 </div>
-<ol id="p-424" class="lower-alpha">
-<li id="li-253">
-<p id="p-425">Interpret the following differential equation for the Susceptible/Infected Model (SI Model) with <em class="emphasis">transmission rate</em> \(\beta \langle k \rangle\text{:}\)</p>
+<ol id="p-447" class="lower-alpha">
+<li id="li-270">
+<p id="p-448">Interpret the following differential equation for the Susceptible/Infected Model (SI Model) with <em class="emphasis">transmission rate</em> \(\beta \langle k \rangle\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{dI}{dt} = \beta \langle k \rangle I S = \beta \langle k \rangle  I (1-I).
 \end{equation*}
 </div>
 </li>
-<li id="li-254">
-<p id="p-426">This differential equation is called the <em class="emphasis">logistic equation</em>. Its solution is the logistic function</p>
+<li id="li-271">
+<p id="p-449">This differential equation is called the <em class="emphasis">logistic equation</em>. Its solution is the logistic function</p>
 <div class="displaymath">
 \begin{equation*}
 I(t) = \frac{I_0}{I_0 + (1-I_0)e^{-\beta \langle k \rangle t}}
@@ -274,17 +274,17 @@ I(t) = \frac{1}{1+a e^{-c t}}
 \end{equation*}
 </div>
 </li>
-<li id="li-255">
-<p id="p-427">Here is a plot of the logistic function  \(I(t)\text{.}\) <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/simodel.png" class="contained"></div> Look at the formula from question  2(b) and explain why</p>
+<li id="li-272">
+<p id="p-450">Here is a plot of the logistic function  \(I(t)\text{.}\) <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/simodel.png" class="contained"></div> Look at the formula from question  2(b) and explain why</p>
 <ol class="lower-roman">
-<li id="li-256"><p id="p-428">\(I(t) \sim e^{\beta \langle k \rangle t}\) when \(t &gt;0\) is very small.</p></li>
-<li id="li-257"><p id="p-429">\(I(t) \approx 1\) when \(t\) is very large.</p></li>
+<li id="li-273"><p id="p-451">\(I(t) \sim e^{\beta \langle k \rangle t}\) when \(t &gt;0\) is very small.</p></li>
+<li id="li-274"><p id="p-452">\(I(t) \approx 1\) when \(t\) is very large.</p></li>
 </ol>
 </li>
 </ol></article><article class="exercise exercise-like" id="exercise-74"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Susceptible-Infected Model on a Network.</span>
 </h6>
-<p id="p-430">Now we consider a networked version of the SI model.  Our "no correlation" assumption means that the fraction  of infected neighbors  of susceptible vertex \(v\) does not depend on \(\deg(v)\text{.}\) We let</p>
+<p id="p-453">Now we consider a networked version of the SI model.  Our "no correlation" assumption means that the fraction  of infected neighbors  of susceptible vertex \(v\) does not depend on \(\deg(v)\text{.}\) We let</p>
 <div class="displaymath">
 \begin{align*}
 I_k &amp;= \mbox{ fraction of vertices of degree   that are infected}\\
@@ -293,32 +293,32 @@ I &amp;= \sum_{k} p_k \,  I_k  \mbox{ total fraction of infected vertices}\\
 \beta &amp;= \mbox{ likelihood of transmission from infected vertex to susceptible vertex}
 \end{align*}
 </div>
-<ol id="p-431" class="lower-alpha">
-<li id="li-258">
-<p id="p-432">Explain why</p>
+<ol id="p-454" class="lower-alpha">
+<li id="li-275">
+<p id="p-455">Explain why</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{dI_k}{dt} = \beta \,  k \,  \Theta \, (1- I_k).
 \end{equation*}
 </div>
 </li>
-<li id="li-259">
-<p id="p-433">We are interested in the <em class="emphasis">early time behavior</em> of \(I_k\text{,}\) since we would like to intervene  (via quarantine or travel restrictions, etc) before the disease gets out of hand. If there aren't many infected vertices, then we may approximate \(1 - I_k \approx 1\) so that</p>
+<li id="li-276">
+<p id="p-456">We are interested in the <em class="emphasis">early time behavior</em> of \(I_k\text{,}\) since we would like to intervene  (via quarantine or travel restrictions, etc) before the disease gets out of hand. If there aren't many infected vertices, then we may approximate \(1 - I_k \approx 1\) so that</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{dI_k}{dt} \approx \beta \,  k \,  \Theta.
 \end{equation*}
 </div>
 <p class="continuation">Early on, the set of infected nodes is tree-like. In particular, you can assume that an infected vertex \(v\) has a link that points back to the (infected) vertex that transmitted the disease.</p>
-<p id="p-434">Use the excess degree equation from problem 1(a)  to explain why the fraction of links available for future transmission to a susceptible vertex is</p>
+<p id="p-457">Use the excess degree equation from problem 1(a)  to explain why the fraction of links available for future transmission to a susceptible vertex is</p>
 <div class="displaymath">
 \begin{equation*}
 \Theta \approx  \frac{\sum_{k} (k-1) p_k I_k}{\langle k \rangle}.
 \end{equation*}
 </div>
 </li>
-<li id="li-260">
-<p id="p-435">Taking the derivative of the previous quantity, and using the approximation</p>
+<li id="li-277">
+<p id="p-458">Taking the derivative of the previous quantity, and using the approximation</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{dI_k}{dt} \approx \beta \,  k \,  \Theta,
@@ -343,16 +343,16 @@ A= \beta \frac{\langle k^2 \rangle - \langle k \rangle}{\langle k \rangle}.
 \end{equation*}
 </div>
 <p class="continuation">(The constant \(C\) is determined by the initial conditions.) </p>
-<p id="p-436"></p>
+<p id="p-459"></p>
 </li>
-<li id="li-261">
-<p id="p-437">In the previous part, you showed that the fraction of links from available for future transmission from infected vertices to susceptible vertices is</p>
+<li id="li-278">
+<p id="p-460">In the previous part, you showed that the fraction of links from available for future transmission from infected vertices to susceptible vertices is</p>
 <div class="displaymath">
 \begin{equation*}
 \Theta(t) = C e^{t/{\tau}}   \mbox{ where }   \tau = \frac{1}{A} = \frac{\langle k \rangle}{\beta ( \langle k^2 \rangle - \langle k \rangle)}.
 \end{equation*}
 </div>
-<p id="p-438">Early on in the epidemic, we have</p>
+<p id="p-461">Early on in the epidemic, we have</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{dI_k}{dt} \approx \beta \,  k \,  \Theta = \beta \, k \, C e^{t/{\tau}}.
@@ -360,8 +360,8 @@ A= \beta \frac{\langle k^2 \rangle - \langle k \rangle}{\langle k \rangle}.
 </div>
 <p class="continuation">Explain why higher degree vertices are more likely to be infected. </p>
 </li>
-<li id="li-262">
-<p id="p-439">Finally, we explore the effect of the network structure on the spread of disease in the network. We focus on</p>
+<li id="li-279">
+<p id="p-462">Finally, we explore the effect of the network structure on the spread of disease in the network. We focus on</p>
 <div class="displaymath">
 \begin{equation*}
 \tau = \frac{\langle k \rangle}{\beta ( \langle k^2 \rangle - \langle k \rangle)}.
@@ -374,8 +374,8 @@ A= \beta \frac{\langle k^2 \rangle - \langle k \rangle}{\langle k \rangle}.
 \end{equation*}
 </div>
 <ol class="lower-roman">
-<li id="li-263">
-<p id="p-440">For the Erdos-Renyi graph, we have</p>
+<li id="li-280">
+<p id="p-463">For the Erdos-Renyi graph, we have</p>
 <div class="displaymath">
 \begin{equation*}
 \langle k^2 \rangle \approx \langle k \rangle^2 + \langle k \rangle.
@@ -383,8 +383,8 @@ A= \beta \frac{\langle k^2 \rangle - \langle k \rangle}{\langle k \rangle}.
 </div>
 <p class="continuation">What is \(\tau\) in this case? How does \(1/ \tau\) compare to the infection rate in the differential equation in problem  2(a) for the homogeneous case (where we decided to ignore the network)? </p>
 </li>
-<li id="li-264">
-<p id="p-441">Consider a graph whose degree distribution obeys a power law</p>
+<li id="li-281">
+<p id="p-464">Consider a graph whose degree distribution obeys a power law</p>
 <div class="displaymath">
 \begin{equation*}
 \Pr[\deg(v)=q] \sim q^{-\alpha}.

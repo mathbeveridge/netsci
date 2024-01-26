@@ -12,16 +12,11 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Consider the following recursive rule for updating the importance of a vertex.</p>
-<ul class="disc">
-<li><p>At first, all vertices have importance = 1</p></li>
-<li><p>In each round, update the importance of a vertex to be the sum of the importances of its in-neighbors.</p></li>
-</ul>
 <ol class="lower-alpha">
-<li><p>Use this recursive rule to calculate the importance for the following directed graph. What do you observe? <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-algcentrality4.svg" role="img" class="contained"></div> <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/acyclic-digraph.png" class="contained"></div> </p></li>
-<li><p>Use this  recursive rule calculate the importance of each vertex in this directed graph. What do you observe? <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-algcentrality6.svg" role="img" class="contained"></div> <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/digraph-feedback.png" class="contained"></div> </p></li>
-<li><p>Devise a recursive importance rule for directed networks that "fixes the problems" that you observed in parts (a) and (b). </p></li>
+<li><p>Degree Centrality   \(c_i^D  = \deg(i) = k_i\) <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality13.svg" role="img" class="contained"></div></p></li>
+<li><p>Betweenness Centrality   \(c_i^B = \displaystyle{\sum_{s \neq i} \sum_{t \neq i, s} \frac{n_{s,t}(i)}{n_{s,t}}}\) <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality14.svg" role="img" class="contained"></div></p></li>
+<li><p>Closeness Centrality  \(c_i^C =  \displaystyle{\frac{1}{\sum_{j} d_{i,j}}}\) <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality15.svg" role="img" class="contained"></div></p></li>
 </ol>
-<span class="incontext"><a href="exercises-3.html#p-81">in-context</a></span>
+<span class="incontext"><a href="exercises-2.html#p-81">in-context</a></span>
 </body>
 </html>
