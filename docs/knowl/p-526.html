@@ -12,18 +12,19 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Show that the PMF of \(X\) can be calculated recursively by starting with</p>
+<p>We know that the eignvectors \(\bu_1, \ldots, \bu_n\) form a basis for \(\R^n\) (thanks, Frobenius-Perron!). In particular, we have</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-p(0) = (1-p)^n
+\bone = c_1 \bu_1 + c_2 \bu_2 + \cdots + c_n \bu_n
 \end{equation*}
 </div>
-<p class="continuation">and then using the recursive formula</p>
+<p class="continuation">for some choice of  \(c_1, \ldots, c_n \in \R\text{.}\) Let us assume that \(c_1 \neq 0\text{.}\) Use parts (a) and (b) to show that the limiting value</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-p(k+1) = \frac{p}{1-p} \cdot \frac{n-k}{k+1} p(k).
+\bx = \alpha A \bx + \bone
 \end{equation*}
 </div>
-<span class="incontext"><a href="exercises-19.html#p-526">in-context</a></span>
+<p class="continuation">of the Katz recursion is basically <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">proportional</em> to the eigenvector centrality \(\bu_1\text{.}\)</p>
+<span class="incontext"><a href="exercises-18.html#p-526">in-context</a></span>
 </body>
 </html>

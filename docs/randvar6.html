@@ -187,36 +187,36 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="randvar6"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">9.3</span> <span class="title">CDF and CCDF</span>
 </h2>
-<p id="p-277"></p>
+<p id="p-303"></p>
 <section class="subsection" id="randvar7"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">9.3.1</span> <span class="title">Cumulative Density Function</span>
 </h3>
-<p id="p-278">The <em class="emphasis">cumulative distribution function (CDF)</em> \(F_X: \R \rightarrow [0,1]\) of a discrete random variable \(X\) is given by</p>
+<p id="p-304">The <em class="emphasis">cumulative distribution function (CDF)</em> \(F_X: \R \rightarrow [0,1]\) of a discrete random variable \(X\) is given by</p>
 <div class="displaymath">
 \begin{equation*}
 F_X(t) = \P(X \leq t) = \sum_{k \leq t} p_X(k).
 \end{equation*}
 </div>
 <p class="continuation">So the CDF \(F_X(t)\) captures the probability that the value of \(X\) is <em class="emphasis">at most</em> \(t\text{,}\) while the PMF \(p_X(t)\) captures the probability that the value of \(X\) is <em class="emphasis">exactly</em> \(t\text{.}\)</p>
-<p id="p-279"><article class="example example-like" id="example-7"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-7"><h6 class="heading">
+<p id="p-305"><article class="example example-like" id="example-7"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-7"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">9.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">CDF for a Random Vertex Degree.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-7"><article class="example example-like"><p id="p-280">Find the CDF for the random variable \(X\text{,}\) the degree of a randomly chosen vertex of our example network. <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/graph7.png" class="contained"></div> </p></article></div></p>
-<p id="p-281">The CDF \(F_X\) of a discrete random variable satisfies the following properties:</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-7"><article class="example example-like"><p id="p-306">Find the CDF for the random variable \(X\text{,}\) the degree of a randomly chosen vertex of our example network. <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/graph7.png" class="contained"></div> </p></article></div></p>
+<p id="p-307">The CDF \(F_X\) of a discrete random variable satisfies the following properties:</p>
 <ul class="disc">
-<li id="li-178">
-<p id="p-282">\(F_X\) is weakly increasing (aka monotonically nondecreasing). That is,</p>
+<li id="li-186">
+<p id="p-308">\(F_X\) is weakly increasing (aka monotonically nondecreasing). That is,</p>
 <div class="displaymath">
 \begin{equation*}
 s \leq t \qquad \Longrightarrow  \qquad F_X(s) \leq F_X(t).
 \end{equation*}
 </div>
 </li>
-<li id="li-179"><p id="p-283">\(F_X(t)\) tends to 0 as \(t \rightarrow - \infty\) , and tends to 1 as \(t \rightarrow \infty\text{.}\)</p></li>
-<li id="li-180"><p id="p-284">Since \(X\) is a discrete random variable, the CDF \(F_X(t)\) is a piecewise constant function of \(t\text{.}\)</p></li>
+<li id="li-187"><p id="p-309">\(F_X(t)\) tends to 0 as \(t \rightarrow - \infty\) , and tends to 1 as \(t \rightarrow \infty\text{.}\)</p></li>
+<li id="li-188"><p id="p-310">Since \(X\) is a discrete random variable, the CDF \(F_X(t)\) is a piecewise constant function of \(t\text{.}\)</p></li>
 </ul>
 <p class="continuation"><article class="example example-like" id="example-8"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-8"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">9.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Connecting the PMF with the CDF.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-8"><article class="example example-like"><p id="p-285">Suppose that \(X\) takes on discrete integer values. Explain why for any \(k \in \Z\text{,}\)</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-8"><article class="example example-like"><p id="p-311">Suppose that \(X\) takes on discrete integer values. Explain why for any \(k \in \Z\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
 F_X(k) = \sum_{i=-\infty}^k p_X(i)
@@ -231,31 +231,31 @@ p_X(k) = F_X(k) - F_X(k-1).
 <p class="continuation">In other words, if you know the PMF, then you can find the CDF, and vice versa. </p></article></div></p></section><section class="subsection" id="randvar8"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">9.3.2</span> <span class="title">Complementary Cumulative Density Function</span>
 </h3>
-<p id="p-286">The <em class="emphasis">complementary cumulative distribution function (CCDF)</em> \(F_X: \R \rightarrow [0,1]\) of a discrete random variable \(X\) is given by</p>
+<p id="p-312">The <em class="emphasis">complementary cumulative distribution function (CCDF)</em> \(F_X: \R \rightarrow [0,1]\) of a discrete random variable \(X\) is given by</p>
 <div class="displaymath">
 \begin{equation*}
 \overline{F}_X(t) = \P(X &gt; t) = \sum_{k &gt; t} p_X(k) = 1 - F_X(t).
 \end{equation*}
 </div>
 <p class="continuation">So the CCDF \(\overline{F}_X(t)\) captures the probability that the value of \(X\) is <em class="emphasis">greater than</em> \(t\text{.}\)</p>
-<p id="p-287"><article class="example example-like" id="example-9"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-9"><h6 class="heading">
+<p id="p-313"><article class="example example-like" id="example-9"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-9"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">9.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">CCDF for Random Vertex Degree.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-9"><article class="example example-like"><p id="p-288">Find the CCDF for the random variable \(X\) where, as above, the value of \(X\) is the degree of a randomly chosen vertex of our example network. <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/graph7.png" class="contained"></div> </p></article></div> <article class="example example-like" id="example-10"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-10"><h6 class="heading">
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-9"><article class="example example-like"><p id="p-314">Find the CCDF for the random variable \(X\) where, as above, the value of \(X\) is the degree of a randomly chosen vertex of our example network. <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/graph7.png" class="contained"></div> </p></article></div> <article class="example example-like" id="example-10"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-10"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">9.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of a CCDF.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-10"><article class="example example-like"><p id="p-289">Using the fact that \(\overline{F}_X(t) = 1 - F_X(t)\text{,}\) write down the properties of a CCDF that are analogous to the CDF properties  listed above. </p></article></div> <article class="example example-like" id="example-11"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-11"><h6 class="heading">
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-10"><article class="example example-like"><p id="p-315">Using the fact that \(\overline{F}_X(t) = 1 - F_X(t)\text{,}\) write down the properties of a CCDF that are analogous to the CDF properties  listed above. </p></article></div> <article class="example example-like" id="example-11"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-11"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">9.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Connecting the PMF and the CCDF.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-11"><article class="example example-like"><p id="p-290">Suppose that \(X\) takes on discrete integer values. Develop formulas for going back and forth between the PMF and the CCDF (analogous to how you connected the PMF and CDF above). </p></article></div></p></section><section class="subsection" id="randvar9"><h3 class="heading hide-type">
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-11"><article class="example example-like"><p id="p-316">Suppose that \(X\) takes on discrete integer values. Develop formulas for going back and forth between the PMF and the CCDF (analogous to how you connected the PMF and CDF above). </p></article></div></p></section><section class="subsection" id="randvar9"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">9.3.3</span> <span class="title">Example: The Sum of Two Dice</span>
 </h3>
-<p id="p-291">Let's run an experiment where \(X\) is the outcome when we roll two fair 6-sided dice. <article class="example example-like" id="example-12"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-12"><h6 class="heading">
+<p id="p-317">Let's run an experiment where \(X\) is the outcome when we roll two fair 6-sided dice. <article class="example example-like" id="example-12"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-12"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">9.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Sum of Two Dice.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-12"><article class="example example-like"><p id="p-292">Find the values of PMF \(p(t) = p_X(t)\text{,}\) CDF \(F(t) = F_X(t)\) and CCDF \(\overline{F}(t) = \overline{F}_X(t)\text{.}\) Use the domain \(0 \leq t \leq 12\) for each. </p></article></div> <article class="example example-like" id="example-13"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-13"><h6 class="heading">
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-12"><article class="example example-like"><p id="p-318">Find the values of PMF \(p(t) = p_X(t)\text{,}\) CDF \(F(t) = F_X(t)\) and CCDF \(\overline{F}(t) = \overline{F}_X(t)\text{.}\) Use the domain \(0 \leq t \leq 12\) for each. </p></article></div> <article class="example example-like" id="example-13"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-13"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">9.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">Sketching PMF, CDF, CCDF for Two Dice.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-13"><article class="example example-like"><p id="p-293">Sketch the graphs of the PMF, CDF and CCDF. Make any observations that you can about how these graphs are related.</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-13"><article class="example example-like"><p id="p-319">Sketch the graphs of the PMF, CDF and CCDF. Make any observations that you can about how these graphs are related.</p>
 <ul class="disc">
-<li id="li-181"><p id="p-294">PMF  \(\qquad p(t)\) <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-randvar5.svg" role="img" class="contained"></div></p></li>
-<li id="li-182"><p id="p-295">CDF  \(\qquad F(t) = \P(X \leq t) = \sum_{k \leq t} p(k).\) <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-randvar6.svg" role="img" class="contained"></div></p></li>
-<li id="li-183"><p id="p-296">CCDF  \(\qquad  \overline{F}(t) = \P(X &gt; t) = \sum_{k &gt; t} p(k) = 1 - F(t)\) <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-randvar7.svg" role="img" class="contained"></div></p></li>
+<li id="li-189"><p id="p-320">PMF  \(\qquad p(t)\) <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-randvar5.svg" role="img" class="contained"></div></p></li>
+<li id="li-190"><p id="p-321">CDF  \(\qquad F(t) = \P(X \leq t) = \sum_{k \leq t} p(k).\) <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-randvar6.svg" role="img" class="contained"></div></p></li>
+<li id="li-191"><p id="p-322">CCDF  \(\qquad  \overline{F}(t) = \P(X &gt; t) = \sum_{k &gt; t} p(k) = 1 - F(t)\) <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-randvar7.svg" role="img" class="contained"></div></p></li>
 </ul></article></div></p></section></section></div></main>
 </div>
 </body>

@@ -12,31 +12,16 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Let \(P\) be the transition matrix for the graph in Problem 1. Consider the row vector</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\bv =
-\begin{bmatrix}
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6
-\end{bmatrix}
-=
-\begin{bmatrix}
-\frac{2}{14} &amp; \frac{3}{14} &amp; \frac{2}{14} &amp; \frac{3}{14} &amp; \frac{3}{14} &amp; \frac{1}{14}
-\end{bmatrix}
-\end{equation*}
-</div>
+<p>Consider the following recursive rule for updating the importance of a vertex.</p>
+<ul class="disc">
+<li><p>At first, all vertices have importance = 1</p></li>
+<li><p>In each round, update the importance of a vertex to be the sum of the importances of its in-neighbors.</p></li>
+</ul>
 <ol class="lower-alpha">
-<li>
-<p>Check that the row vector \(\bv\) satisfies</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\bv  \,P = \bv.
-\end{equation*}
-</div>
-<p class="continuation">We have a name for this equation: say that "\(\bv\) is a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">left</em> eigenvector of the transition matrix \(P\) for eigenvalue \(\lambda=1\text{.}\)" (In other words, the eigenvectors that you are used to are actually <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">right</em> eigenvectors.) </p>
-</li>
-<li><p>Relate the entries of \(\bv\) to the degrees of the graph. </p></li>
+<li><p>Use this recursive rule to calculate the importance for the following directed graph. What do you observe? <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-algcentrality4.svg" role="img" class="contained"></div> <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/acyclic-digraph.png" class="contained"></div> <a class="solution-knowl original" data-knowl="./knowl/solution-22-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></li>
+<li><p>Use this  recursive rule calculate the importance of each vertex in this directed graph. What do you observe? <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-algcentrality6.svg" role="img" class="contained"></div> <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/digraph-feedback.png" class="contained"></div> <a class="solution-knowl original" data-knowl="./knowl/solution-23-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></li>
+<li><p>Devise a recursive importance rule for directed networks that "fixes the problems" that you observed in parts (a) and (b). <a class="solution-knowl original" data-knowl="./knowl/solution-24-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></li>
 </ol>
-<span class="incontext"><a href="exercises-4.html#p-125">in-context</a></span>
+<span class="incontext"><a href="exercises-3.html#p-125">in-context</a></span>
 </body>
 </html>

@@ -12,24 +12,42 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Let \(X\) be be a binomial random variable with parameters \(p\) and \(n\text{.}\)</p>
-<ol class="lower-alpha">
-<li>
-<p>Show that the PMF of \(X\) can be calculated recursively by starting with</p>
+<p>Pick our constant \(\alpha &gt; 0 \) such that</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-p(0) = (1-p)^n
+\frac{1}{ \kappa_1} &lt; \alpha &lt;  \frac{1}{|\kappa_i|}
 \end{equation*}
 </div>
-<p class="continuation">and then using the recursive formula</p>
+<p class="continuation">for \(2 \leq i \leq n\text{.}\) What can you say about</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-p(k+1) = \frac{p}{1-p} \cdot \frac{n-k}{k+1} p(k).
+\lim_{t \rightarrow \infty} \by_{1,t}
 \end{equation*}
 </div>
-</li>
-<li><p>We can now make an observation about the shape of the PMF of \(X\text{.}\) Let \(k^*= \lfloor (n+1) \cdot p  \rfloor\) be the largest integer that is less than or equal to \((n+1) \cdot p\text{.}\) Show that the PMF \(p(k)\) is weakly increasing (also known as monotonically nondecreasing) for \(0 \leq k \leq k^*\) and is monotonically decreasing for \(k^* \leq k \leq n\text{.}\)</p></li>
-</ol>
-<span class="incontext"><a href="exercises-19.html#p-525">in-context</a></span>
+<p class="continuation">and</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\lim_{t \rightarrow \infty} \by_{i,t}
+\end{equation*}
+</div>
+<p class="continuation">for \(2 \leq i \leq n\text{?}\) You will need to use one (or both) of the following facts about geometric sums and geometric series:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+1 + r + r^2 + r^3 + \cdots + r^t = \sum_{k=0}^{t} r^k =  \frac{r^{t+1} -1}{r-1}
+\end{equation*}
+</div>
+<p class="continuation">and</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+1 + r + r^2 + r^3 + \cdots = \sum_{k=0}^{\infty} r^k =
+\left\{
+\begin{array}{cl}
+\frac{1}{1-r} &amp; \mbox{if } |r| &lt; 1, \\
+\infty &amp; \mbox{otherwise}.
+\end{array}
+\right.
+\end{equation*}
+</div>
+<span class="incontext"><a href="exercises-18.html#p-525">in-context</a></span>
 </body>
 </html>

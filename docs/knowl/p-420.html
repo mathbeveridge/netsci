@@ -12,24 +12,42 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>The random long-range contact is chosen according to the PMF</p>
+<p>You will calculate the clustering coefficient</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\Pr[ v \mbox{ is } u \mbox{'s long range contact}] = C \cdot \frac{1}{d(u,v)}.
+C = \frac{3 \times (\mbox{\# of triangles})}{\mbox{\# of connected triples}}
 \end{equation*}
 </div>
-<p class="continuation">Show that the normalizing constant \(C\) satisfies</p>
+<p class="continuation">where a "connected triple" are three vertices \(u,v,w\) such that \((u,v)\) and \((v,w)\) are edges. Intuitively, the clustering coefficient measures the  fraction of times that "pairs of my friends are also friends."</p>
+<ol class="lower-alpha">
+<li>
+<p>Show that there are</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-C &gt; \frac{1}{2\log n}
+n {c/2 \choose 2}
 \end{equation*}
 </div>
-<p class="continuation">where \(\log n= \log_2 n\text{.}\) You will need to use the following inequalities, which you saw in your calculus classes (and might have forgotten):</p>
+<p class="continuation">triangles in a Ring World. A nice way to argue this is to recognize that all triangles look like one "long edge" going distance \(\leq c/2\) and two "shorter edges." Orient the long edge  clockwise the two shorter edges  counter clockwise. Then associate this directed cycle with the vertex at the start of the long clockwise arc.</p>
+</li>
+<li>
+<p>Show that there are</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\sum_{i=1}^{k} \frac{1}{i} \leq 1 +  \mbox{ln}(k)  \leq  1 + \log_2(k).
+n {c \choose 2}
 \end{equation*}
 </div>
-<span class="incontext"><a href="exercises-14.html#p-420">in-context</a></span>
+<p class="continuation">connected triples. These are paths of length 2 (which can be associated with their central vertex).</p>
+</li>
+<li>
+<p>Show that the clustering coefficient  is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+C =  \frac{3(c-2)}{4(c-1)}.
+\end{equation*}
+</div>
+<p class="continuation">Furthermore, for \(c \geq 3\text{,}\) we have \(\frac{3}{8} \leq C  \leq  \frac{3}{4}\text{.}\) This is independent of the network size \(n\text{,}\) so we have high clustering.</p>
+</li>
+</ol>
+<span class="incontext"><a href="exercises-13.html#p-420">in-context</a></span>
 </body>
 </html>

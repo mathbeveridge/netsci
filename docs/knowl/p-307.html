@@ -12,13 +12,22 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>The <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">\(k\)th moment</em> of the random variable \(X\) is \(\)\E[X^k],\(\) the expected value of \(X^k\text{.}\) The <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">\(k\)th central moment</em> is</p>
+<p>The CDF \(F_X\) of a discrete random variable satisfies the following properties:</p>
+<ul class="disc">
+<li>
+<p>\(F_X\) is weakly increasing (aka monotonically nondecreasing). That is,</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\E \left[ ( X - \E[X])^k \right].
+s \leq t \qquad \Longrightarrow  \qquad F_X(s) \leq F_X(t).
 \end{equation*}
 </div>
-<p class="continuation">So the second central moment is the variance, \(\var(X)\text{.}\) The third central moment is the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">skewness</em>, which measures the asymmetry of the PMF. The fourth central moment its the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">kurtosis</em>, which measures the "peakness" of the PMF (tall and skinny versus short and squat). We will mostly be interested in variance and the second moment.</p>
-<span class="incontext"><a href="randvar10.html#p-307">in-context</a></span>
+</li>
+<li><p>\(F_X(t)\) tends to 0 as \(t \rightarrow - \infty\) , and tends to 1 as \(t \rightarrow \infty\text{.}\)</p></li>
+<li><p>Since \(X\) is a discrete random variable, the CDF \(F_X(t)\) is a piecewise constant function of \(t\text{.}\)</p></li>
+</ul>
+<p class="continuation"><article class="example example-like"><a class="example-knowl original" data-knowl="./knowl/example-8-hidden.html" title="Example 9.3.2: Connecting the PMF with the CDF"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Connecting the PMF with the CDF.</span>
+</h6></a></article></p>
+<span class="incontext"><a href="randvar6.html#p-307">in-context</a></span>
 </body>
 </html>
