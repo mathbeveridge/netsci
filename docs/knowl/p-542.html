@@ -12,12 +12,54 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>In this problem, you will prove part of the Perron-Frobenius Theorem. Let \(\bx, \by \in \R^n\text{.}\) Recall that the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">dot product</em> is defined as \(\bx \cdot \by = \bx^{\top} \by\text{,}\) and that \(\bx\) and \(\by\) are orthogonal when \(\bx \cdot \by = 0\text{.}\)</p>
-<ol class="lower-alpha">
-<li><p>Let \(A\) be an \(n \times n\) matrix. Prove that \((A\bx) \cdot \by = \bx \cdot A^{\top} \by\text{.}\)</p></li>
-<li><p>Let \(A\) be a symmetric matrix, so that \(A = A^{\top}\text{.}\) Let \(\lambda\) and \(\mu\) be distinct nonzero eigenvalues with corresponding (right) eigenvectors \(\bu\) and \(\bv\text{,}\) so that \(A \bu = \lambda \bu\) and \(A \bv = \lambda \bv\text{.}\) Prove that \((A \bu) \cdot \bv =0\text{.}\)</p></li>
-<li><p>Explain why part (b) ensures that the eigenvectors \(\bu\) and \(\bv\) are orthogonal.</p></li>
-</ol>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\bx =  \alpha P^{\top} \bx +  \frac{(1 - \alpha)}{n} \bone
+\end{equation*}
+</div>
+<p class="continuation">where \(P\) is the transition matrix for a random walk on the network. In this problem, you will consider a variant of this equation. Let \(S\) be any fixed set of \(m\) vertices and let \(\overline{S}\) be the \(n-m\) remaining vertices. Given a fixed (constant) vector \(\bb_S \in \R^m\) on the set \(S\text{,}\) we want to solve</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\left[
+\begin{array}{c}
+\bb_S \\
+\bx_{\overline{S}}
+\end{array}
+\right]
+=
+\left[
+\begin{array}{cc}
+I_{S,S} &amp; \bzero_{S,\overline{S}} \\
+\alpha P_{S,\overline{S}}^{\top} &amp;   \alpha P_{\overline{S}, \overline{S}}^{\top}
+\end{array}
+\right]
+\left[
+\begin{array}{c}
+\bb_S \\
+\bx_{\overline{S}}
+\end{array}
+\right]
++
+\frac{(1 - \alpha)}{| \overline{S}|}
+\left[
+\begin{array}{c}
+\bzero_S \\
+\bone_{\overline{S}}
+\end{array}
+\right]
+\end{equation*}
+</div>
+<p class="continuation">for the unknown vector \(\bx_{\overline{S}} \in \R^{n-m}\) where</p>
+<ul class="disc">
+<li><p>\(I_{S,S}\) is an \(m \times m\) identity matrix</p></li>
+<li><p>\(\bzero_{S, \overline{S}}\) is an \(m \times (n-m)\) zero matrix.</p></li>
+<li><p>\(P_{S,\overline{S}}\) is the \(m \times (n-m)\) matrix describing the transition probabilities from \(S\) to \(\overline{S}\)</p></li>
+<li><p>\(P_{\overline{S},\overline{S}}\) is the \((n-m) \times (n-m)\) matrix describing the transition probabilities from \(\overline{S}\) to \(\overline{S}\)</p></li>
+<li><p>\(\bzero_S\) is the \(m\)-dimensional all-zeros vector</p></li>
+<li><p>\(\bone_{\overline{S}}\) is the \((n-m)\)-dimensional all-ones vector</p></li>
+<li><p>\(\alpha \in [0,1]\text{.}\)</p></li>
+</ul>
+<p class="continuation">Given what you know about (standard) PageRank, interpret the "update rule" that this equation calculates. Then describe a web searching example where using this equation  produces a helpful ranking.</p>
 <span class="incontext"><a href="exercises-18.html#p-542">in-context</a></span>
 </body>
 </html>

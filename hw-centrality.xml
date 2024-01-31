@@ -79,8 +79,8 @@ c_v^B = (N-1)^2 - \sum_{i=1}^k N_i^2
 			</statement>
 		</exercise>
 		<exercise>
-			<title>Counting Lazy Random Walks</title>
-			<idx><h>Counting Lazy Random Walks</h></idx>
+			<title>Counting Lazy Walks</title>
+			<idx><h>Counting Lazy Walks</h></idx>
 			<statement>
 				<p>
 In a <em>lazy walk</em> on a directed graph, at each step, we can either stay at the current vertex or move to an adjacent vertex. So a lazy walk of length <m>k</m> is a sequence of vertices <m>v_0, v_1, v_2, \ldots, v_k</m> where for <m>1 \leq i \leq k</m>, we either have <m>v_i = v_{i-1}</m> or <m>(v_{i-1}, v_i)</m> is an arc of <m>G</m>.
@@ -93,6 +93,87 @@ Let <m>A</m> be the adjacency matrix of a directed graph <m>G</m>, so that <m>a_
 				</p>
 			</statement>
 		</exercise>
+		<exercise>
+			<title>Symmetric Matrices have Orthogonal Eigenvectors</title>
+			<idx><h>Symmetric Matrices have Orthogonal Eigenvectors</h></idx>
+			<statement>
+				<p>
+In this problem, you will prove part of the Perron-Frobenius Theorem. Let <m>\bx, \by \in \R^n</m>. Recall that the <em>dot product</em> is defined as <m>\bx \cdot \by = \bx^{\top} \by</m>, and that <m>\bx</m> and <m>\by</m> are orthogonal when <m>\bx \cdot \by = 0</m>.
+
+			<ol>
+				<li>
+					<p>
+   Let <m>A</m> be an <m>n \times n</m> matrix. Prove that
+<m> (A\bx) \cdot \by = \bx \cdot A^{\top} \by</m>.
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Let <m>A</m> be a symmetric matrix, so that <m>A = A^{\top}</m>. Let <m>\lambda</m> and <m>\mu</m> be distinct nonzero eigenvalues with corresponding (right) eigenvectors <m>\bu</m> and <m>\bv</m>, so that <m>A \bu = \lambda \bu</m> and <m>A \bv = \lambda \bv</m>.
+Prove that <m>(A \bu) \cdot \bv =0</m>.
+					</p>
+				</li>
+				<li>
+					<p>
+ Explain why part (b) ensures that the eigenvectors <m>\bu</m> and <m>\bv</m> are orthogonal.
+					</p>
+				</li>
+			</ol>
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Symmetric Matrices have <m>\kappa_1 \geq 1</m></title>
+			<idx><h>Symmetric Matrices have <m>\kappa_1 \geq 1</m></h></idx>
+			<statement>
+				<p>
+Let <m>A</m> be the adjacency matrix for a connected, undirected and aperiodic graph.
+Recall that the Frobenius-Perron Theorem guarantees that the symmetric matrix <m>A</m>    has real eigenvalues <m>\kappa_1 \geq \kappa_2 \geq \cdots \geq \kappa_n</m> with corresponding orthonormal eigenvectors <m>\bu_1, \bu_2, \ldots , \bu_n</m>. Furthermore
+		<ul>
+			<li>
+			<p>
+ The eigenvalue <m>\kappa_1</m> has multiplicity one, and <m>\kappa_1 &gt; | \kappa_i |</m> for <m>2 \leq i \leq n</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ The corresponding eigenvector <m>\bu_1</m> has non-negative entries.
+			</p>
+			</li>
+		</ul>
+In this problem, you will show that when <m>n \geq 3</m>, we have  <m>\kappa_1 \geq 1</m>.
+
+			<ol>
+				<li>
+					<p>
+ Let <m>\bx = A \bone</m>. Explain explain why  <m>\bx \geq \bone</m>, (meaning <m>x_i \geq 1</m> for all <m>i</m>), and explain why  there is at least one <m>j</m> such that <m>x_j &gt; 1</m>.
+					</p>
+				</li>
+				<li>
+					<p>
+ The orthonormal eigenvectors <m>\bu_1, \bu_2, \ldots , \bu_n</m> form a basis for <m>\R^n</m>. So there exist <m>c_1, c_2, \ldots, c_n</m> such that
+<me>
+\bone = c_1 \bu_1 + c_2 \bu_2 + \cdots + c_n \bu_n.
+</me>
+Consider
+<me>
+A \bone = A(c_1 \bu_1 + c_2 \bu_2 + \cdots + c_n \bu_n).
+</me>
+Explain why <m>\kappa_1 &lt; 1</m> leads to a contradiction to your observations in part (a).
+					</p>
+				</li>
+			</ol>
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+
 		<exercise>
 			<title>Katz centrality as <m>\alpha \rightarrow 1/\kappa_1</m></title>
 			<idx><h>Katz centrality as <m>\alpha \rightarrow 1/\kappa_1</m></h></idx>
@@ -125,13 +206,13 @@ You will show that as <m>\alpha \rightarrow 1/\kappa_1</m>, the Katz centrality 
 \by_{i,1} &amp;=  \bu_i
 </mrow>
 <mrow>
-\by_{i,t} &amp;= \alpha A \by_{i,t-1} + \bu_i  \mbox{for } t \geq 2.
+\by_{i,t} &amp;= \alpha A \by_{i,t-1} + \bu_i  \mbox{ for } t \geq 2.
 </mrow>
 </md>
 <p>
 Use induction on <m>t \geq 1</m> to prove that
 <me>
-\by_{i,t} = \left( 1 + \alpha \kappa_i + \alpha^2 {\kappa_i^2} + \cdots  + \alpha^{t-1} {\kappa_i^{t-1}} \right) \bu_i.
+\by_{i,t} = \left( 1 + \alpha \kappa_i + \alpha^2 {\kappa_i^2} + \cdots  + \alpha^{t-1} {\kappa_i^{t-1}} \right) \bu_i = \sum_{k=0}^{t-1} (\alpha \kappa_i)^k \bu_i.
 </me>
 
 
@@ -143,15 +224,15 @@ Use induction on <m>t \geq 1</m> to prove that
 <me>
 \frac{1}{ \kappa_1} &lt; \alpha &lt;  \frac{1}{|\kappa_i|}
 </me>
-for <m>2 \leq i \leq n</m>. What can you say about
+for <m>2 \leq i \leq n</m>. Show that
 <me>
-\lim_{t \rightarrow \infty} \by_{1,t}
+\lim_{t \rightarrow \infty} |\by_{1,t} | = \infty
 </me>
-and
+while for <m>2 \leq i \leq n</m>, 
 <me>
-\lim_{t \rightarrow \infty} \by_{i,t}
+\lim_{t \rightarrow \infty} |\by_{i,t}| \mbox{ is finite}.
 </me>
-for <m>2 \leq i \leq n</m>? You will need to use one (or both) of the following facts about geometric sums and geometric series:
+You will need to use one (or both) of the following facts about geometric sums and geometric series:
 <me>
 1 + r + r^2 + r^3 + \cdots + r^t = \sum_{k=0}^{t} r^k =  \frac{r^{t+1} -1}{r-1}
 </me>
@@ -176,7 +257,7 @@ and
 </me>
 for some choice of  <m>c_1, \ldots, c_n \in \R</m>. Let us assume that <m>c_1 \neq 0</m>. Use parts (a) and (b) to show that the limiting value
 <me>
-\bx = \alpha A \bx + \bone
+\bx_t = \alpha A \bx_{t-1} + \bone
 </me>
 of the Katz recursion is basically <em>proportional</em> to the eigenvector centrality <m>\bu_1</m>.
 					</p>
@@ -188,6 +269,7 @@ of the Katz recursion is basically <em>proportional</em> to the eigenvector cent
 				</p>
 			</statement>
 		</exercise>
+		
 		<exercise>
 			<title>Katz centrality as <m>\alpha \rightarrow 0</m></title>
 			<idx><h>Katz centrality as <m>\alpha \rightarrow 0</m></h></idx>
@@ -351,86 +433,7 @@ Let <m>\bv = (v_1, \ldots, v_{2n})^{\top}</m> be the right eigenvector for the l
 				</p>
 			</statement>
 		</exercise>
-		<exercise>
-			<title>Symmetric Matrices have Orthogonal Eigenvectors</title>
-			<idx><h>Symmetric Matrices have Orthogonal Eigenvectors</h></idx>
-			<statement>
-				<p>
-In this problem, you will prove part of the Perron-Frobenius Theorem. Let <m>\bx, \by \in \R^n</m>. Recall that the <em>dot product</em> is defined as <m>\bx \cdot \by = \bx^{\top} \by</m>, and that <m>\bx</m> and <m>\by</m> are orthogonal when <m>\bx \cdot \by = 0</m>.
 
-			<ol>
-				<li>
-					<p>
-   Let <m>A</m> be an <m>n \times n</m> matrix. Prove that
-<m> (A\bx) \cdot \by = \bx \cdot A^{\top} \by</m>.
-
-					</p>
-				</li>
-				<li>
-					<p>
- Let <m>A</m> be a symmetric matrix, so that <m>A = A^{\top}</m>. Let <m>\lambda</m> and <m>\mu</m> be distinct nonzero eigenvalues with corresponding (right) eigenvectors <m>\bu</m> and <m>\bv</m>, so that <m>A \bu = \lambda \bu</m> and <m>A \bv = \lambda \bv</m>.
-Prove that <m>(A \bu) \cdot \bv =0</m>.
-					</p>
-				</li>
-				<li>
-					<p>
- Explain why part (b) ensures that the eigenvectors <m>\bu</m> and <m>\bv</m> are orthogonal.
-					</p>
-				</li>
-			</ol>
-
-
-				</p>
-			</statement>
-		</exercise>
-		<exercise>
-			<title>Symmetric Matrices have <m>\kappa_1 \geq 1</m></title>
-			<idx><h>Symmetric Matrices have <m>\kappa_1 \geq 1</m></h></idx>
-			<statement>
-				<p>
-Let <m>A</m> be the adjacency matrix for a connected, undirected and aperiodic graph.
-Recall that the Frobenius-Perron Theorem guarantees that the symmetric matrix <m>A</m>    has real eigenvalues <m>\kappa_1 \geq \kappa_2 \geq \cdots \geq \kappa_n</m> with corresponding orthonormal eigenvectors <m>\bu_1, \bu_2, \ldots , \bu_n</m>. Furthermore
-		<ul>
-			<li>
-			<p>
- The eigenvalue <m>\kappa_1</m> has multiplicity one, and <m>\kappa_1 &gt; | \kappa_i |</m> for <m>2 \leq i \leq n</m>.
-			</p>
-			</li>
-			<li>
-			<p>
- The corresponding eigenvector <m>\bu_1</m> has non-negative entries.
-			</p>
-			</li>
-		</ul>
-In this problem, you will show that when <m>n \geq 3</m>, we have  <m>\kappa_1 \geq 1</m>.
-
-			<ol>
-				<li>
-					<p>
- Let <m>\bx = A \bone</m>. Explain explain why  <m>\bx \geq \bone</m>, (meaning <m>x_i \geq 1</m> for all <m>i</m>), and explain why  there is at least one <m>j</m> such that <m>x_j &gt; 1</m>.
-					</p>
-				</li>
-				<li>
-					<p>
- The orthonormal eigenvectors <m>\bu_1, \bu_2, \ldots , \bu_n</m> form a basis for <m>\R^n</m>. So there exist <m>c_1, c_2, \ldots, c_n</m> such that
-<me>
-\bone = c_1 \bu_1 + c_2 \bu_2 + \cdots + c_n \bu_n.
-</me>
-Consider
-<me>
-A \bone = A(c_1 \bu_1 + c_2 \bu_2 + \cdots + c_n \bu_n).
-</me>
-Explain why <m>\kappa_1 &lt; 1</m> leads to a contradiction to your observations in part (a).
-					</p>
-				</li>
-			</ol>
-
-
-
-
-				</p>
-			</statement>
-		</exercise>
 	</exercises>
 
 </chapter>
