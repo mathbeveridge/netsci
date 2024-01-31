@@ -12,7 +12,13 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>So how many rewired edges from vertex \(i\) do we expect to connect to vertex \(j\text{?}\) (Assume that the network is so big that the chance that two ends at \(i\) try to connect  to the same end at \(j\) is irrelevant.) </p>
+<p>Now argue that the expected number of rewired edges that are internal to the specified communities is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{1}{2} \sum_{i}  \sum_{j}  \frac{k_i k_j}{2m} \, \delta (C^{(i)}, C^{(j)})
+\end{equation*}
+</div>
+<p class="continuation">Here, the \(\frac{1}{2}\) takes care of the double counting since our sum looks at the pair \(i,j\) twice. </p>
 <span class="incontext"><a href="exercises-7.html#p-256">in-context</a></span>
 </body>
 </html>

@@ -12,10 +12,10 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Let \(G\) be an undirected tree. Removing the edge \((u,v)\)  splits the graph into two disjoint trees \(G_1\) and \(G_2\) where \(u \in V(G_1)\) and \(v \in V(G_2)\text{.}\) Suppose that   \(G_1\) has \(N_1\) vertices and \(G_2\) has \(N_2\) vertices. Prove that the (un-normalized) closeness centralities of \(u\) and \(v\) satisfy</p>
+<p>Let \(G\) be an undirected tree on \(N\) vertices. Let \(v\) be a vertex with degree \(k_v = k\text{.}\) Removing the vertex \(v\) splits the tree into \(k \geq 2\) disjoint trees \(G_1,G_2, \ldots, G_k\text{.}\) Suppose that tree \(G_i\) contains \(N_i\) vertices for \(1 \leq i \leq k\text{.}\) Show that the (un-normalized) betweenness centrality of \(v\) satisfies</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{1}{c_u^C} + N_1 = \frac{1}{c_v^C} + N_2.
+c_v^B = (N-1)^2 - \sum_{i=1}^k N_i^2
 \end{equation*}
 </div>
 <span class="incontext"><a href="exercises-18.html#p-518">in-context</a></span>

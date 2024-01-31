@@ -12,7 +12,54 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Finally, take \(m = n^2\) and look at \(\bx - \bone\text{.}\) Explain why  ordering of the vertices by the entries in \(\bx - \bone\) gives the same ranking as degree centrality (as long as \(n \geq 2\)).  A similar argument holds for any \(m &gt; n^2\text{,}\) so as \(\alpha \rightarrow 0\text{,}\) the ranking is the same as the degree centrality ranking.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\bx =  \alpha P^{\top} \bx +  \frac{(1 - \alpha)}{n} \bone
+\end{equation*}
+</div>
+<p class="continuation">where \(P\) is the transition matrix for a random walk on the network. In this problem, you will consider a variant of this equation. Let \(S\) be any fixed set of \(m\) vertices and let \(\overline{S}\) be the \(n-m\) remaining vertices. Given a fixed (constant) vector \(\bb_S \in \R^m\) on the set \(S\text{,}\) we want to solve</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\left[
+\begin{array}{c}
+\bb_S \\
+\bx_{\overline{S}}
+\end{array}
+\right]
+=
+\left[
+\begin{array}{cc}
+I_{S,S} &amp; \bzero_{S,\overline{S}} \\
+\alpha P_{S,\overline{S}}^{\top} &amp;   \alpha P_{\overline{S}, \overline{S}}^{\top}
+\end{array}
+\right]
+\left[
+\begin{array}{c}
+\bb_S \\
+\bx_{\overline{S}}
+\end{array}
+\right]
++
+\frac{(1 - \alpha)}{| \overline{S}|}
+\left[
+\begin{array}{c}
+\bzero_S \\
+\bone_{\overline{S}}
+\end{array}
+\right]
+\end{equation*}
+</div>
+<p class="continuation">for the unknown vector \(\bx_{\overline{S}} \in \R^{n-m}\) where</p>
+<ul class="disc">
+<li><p>\(I_{S,S}\) is an \(m \times m\) identity matrix</p></li>
+<li><p>\(\bzero_{S, \overline{S}}\) is an \(m \times (n-m)\) zero matrix.</p></li>
+<li><p>\(P_{S,\overline{S}}\) is the \(m \times (n-m)\) matrix describing the transition probabilities from \(S\) to \(\overline{S}\)</p></li>
+<li><p>\(P_{\overline{S},\overline{S}}\) is the \((n-m) \times (n-m)\) matrix describing the transition probabilities from \(\overline{S}\) to \(\overline{S}\)</p></li>
+<li><p>\(\bzero_S\) is the \(m\)-dimensional all-zeros vector</p></li>
+<li><p>\(\bone_{\overline{S}}\) is the \((n-m)\)-dimensional all-ones vector</p></li>
+<li><p>\(\alpha \in [0,1]\text{.}\)</p></li>
+</ul>
+<p class="continuation">Given what you know about (standard) PageRank, interpret the "update rule" that this equation calculates. Then describe a web searching example where using this equation  produces a helpful ranking.</p>
 <span class="incontext"><a href="exercises-18.html#p-531">in-context</a></span>
 </body>
 </html>

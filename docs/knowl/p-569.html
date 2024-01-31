@@ -12,39 +12,7 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Naturally occurring power law distributions have heavy tails, meaning that a substantial portion of the data lies in the long tail, rather than being concentrated around its mean. This means that an outsized fraction of the "wealth" of the data is in the hands of the "richest" entities. We will explore this effect for general power laws. Consider the continuous power law with PDF \(p: [x_{\min}, \infty] \rightarrow [0,1]\) given by</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-p(x) = \frac{\alpha -1}{x_{\min}} \left( \frac{x}{x_{\min}} \right)^{-\alpha} \qquad \mbox{where } \alpha &gt; 2.
-\end{equation*}
-</div>
-<ol class="lower-alpha">
-<li><p>Find the CCDF \(P(x) = \int_{x}^{\infty} p(t) dt.\)</p></li>
-<li>
-<p>For any \(r \in [0,1]\text{,}\) let \(x_r\) denote the point achieving</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-P(x_r) = r.
-\end{equation*}
-</div>
-<p class="continuation">So half of the data satisfies \(x \geq x_{1/2}\text{,}\) a tenth of the data satisfies \(x \geq x_{1/10}\text{,}\) and so on. Prove that</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-x_r = r^{-1/(\alpha-1)} x_{\min}.
-\end{equation*}
-</div>
-<p class="continuation">Intuitively, \(x_r\) is the cutoff for finding the "richest" \(r\) fraction of the data.</p>
-</li>
-<li>
-<p>Next, find an expression for</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-w(r) = \frac{\E[ X \mid x \geq x_r]}{\E[ X]} = \frac{\int_{x_r}^{\infty} x \, p(x) dx}{\int_{x_{\min}}^{\infty} x \, p(x) dx}.
-\end{equation*}
-</div>
-<p class="continuation">This is the fraction of the "wealth" owned by the top \(r\) fraction of the data. Using your answer from (b), you will get an expression that only depends on \(r\) and \(\alpha\text{.}\)</p>
-</li>
-</ol>
+<p>Find the CCDF \(P(x) = \int_{x}^{\infty} p(t) dt.\)</p>
 <span class="incontext"><a href="exercises-19.html#p-569">in-context</a></span>
 </body>
 </html>

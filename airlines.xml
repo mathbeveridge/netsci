@@ -27,7 +27,7 @@ In this hands-on activity, you will play with a reasonably sized network: an air
 
 				<li>
 					<p>
- Load the <c>us-airlines.graphml</c> file into Gephi.
+ Load the <c>us-airline.gephi</c> file into Gephi.
 
 					</p>
 				</li>
@@ -40,12 +40,8 @@ In this hands-on activity, you will play with a reasonably sized network: an air
 				</li>
 				<li>
 					<p>
- Show Node Labels. The nodes are labeled by numbers. You can change this by clicking on the clipboard/wrench icon at the bottom right of the Graph window. De-select "Label" and select "AirCode." Click OK. Adjust the label size so that you can read them.
-					</p>
-				</li>
-				<li>
-					<p>
- Update the Layout to use ForceAtlas 2. Be sure to click "Run" and then "Stop" once the network has stabilized.
+ Click on the "T" in the lower toolbar to show the node labels. 
+ The labels are the names of the airports. 	Change the displayed valye clicking on the clipboard/wrench icon at the bottom right of the Graph window. De-select "Label" and select "Code." Click OK. Adjust the label size so that you can read them.
 					</p>
 				</li>
 				<li>
@@ -100,8 +96,7 @@ Look at the plots that come up, and then dismiss them.
 
 				<li>
 					<p>
- For now, keep the default layout. It actually has a meaning. As you start to change vertex colors/sizes and, vertex label sizes, you will realize what you are looking at.
-
+ For now, keep the default layout.  
 					</p>
 				</li>
 				<li>
@@ -118,10 +113,10 @@ Look at the plots that come up, and then dismiss them.
 				</li>
 				<li>
 					<p>
- Have you figured out what the layout means? If so, then feel free to try some of the other Network Layout options for fun.
-
+ Update the Layout to use Fructerman-Reigold, ForceAtlas 2 and Yifan Hu. Be sure to click "Run" and then "Stop" once the network has stabilized.
 					</p>
-				</li>
+				</li>				
+
 			</ol>
 
 				</p>
