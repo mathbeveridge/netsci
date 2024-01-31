@@ -12,6 +12,15 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<p>Now let's talk about what happens to the Katz centrality as \(\alpha \rightarrow 0\text{.}\) You will show that for very small \(\alpha\text{,}\) the Katz centrality gives a vertex ranking that is equivalent to degree centrality, meaning that the order of the ranking is the same as the degree centrality ranking. This time, we will start with the following equation, which is satisfied by the limiting solution to the Katz recursion:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\bx =  \alpha A \bx + \bone.
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li><p>Explain why \(A \bone &lt; n  \bone\text{.}\)</p></li>
+<li>
 <p>If \(B\) is an \(n \times n\) matrix and suppose that \((I-B)\) is invertible, then we know that</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
@@ -24,6 +33,23 @@
 \bx  = \bone + \alpha A \bone + \alpha^2 A^2 \bone + \cdots +  \alpha^s A^s \bone + \cdots
 \end{equation*}
 </div>
+</li>
+<li>
+<p>Next, let \(\alpha = 1/m\) where \(m &gt; 0\) is a very large number (to be determined later). Use parts (a) and (b) to show that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\bx  = \bone + \frac{1}{m} A \bone + \bb
+\end{equation*}
+</div>
+<p class="continuation">where \(\bb\) is a vector satisfying</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+| \bb | &lt;  \frac{n}{m (m-1)} \bone.
+\end{equation*}
+</div>
+</li>
+<li><p>Finally, take \(m = n^2\) and look at \(\bx - \bone\text{.}\) Explain why  ordering of the vertices by the entries in \(\bx - \bone\) gives the same ranking as degree centrality (as long as \(n \geq 2\)).  A similar argument holds for any \(m &gt; n^2\text{,}\) so as \(\alpha \rightarrow 0\text{,}\) the ranking is the same as the degree centrality ranking.</p></li>
+</ol>
 <span class="incontext"><a href="exercises-18.html#p-528">in-context</a></span>
 </body>
 </html>

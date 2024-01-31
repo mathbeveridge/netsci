@@ -12,17 +12,16 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Here is Price's Model for a citation network. Start with a small set of initial papers (with no citations). When a new paper is added, it cites  \(c\) existing papers (on average). Each paper is chosen as follows:</p>
-<ul class="disc">
-<li><p>with \(\displaystyle{\P = \frac{a}{a+c}}\text{,}\)   cite a uniformly random paper</p></li>
-<li><p>with \(\displaystyle{\P = \frac{c}{a+c}}\text{,}\)  cite a  paper with probability proportional to its current citation count.</p></li>
-</ul>
-<p class="continuation">The tail of the degree distribution satisfies the power law</p>
+<p>What is the average degree of the graph at the moment it becomes connected for each of the graph sizes n listed below.  (Run the simulation multiple times for each graph size and report the average)</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\P(\deg(v) = k) \sim k^{-2-a/c}.
+\begin{array}{r|c|c|c|c|c|c}
+\mbox{network size} &amp; 10 &amp; 20 &amp; 40 &amp; 80 &amp; 160 &amp; 320 \\
+\hline
+\mbox{average degree} &amp;&amp;&amp;&amp;&amp;&amp;
+\end{array}
 \end{equation*}
 </div>
-<span class="incontext"><a href="pricemodel.html#p-402">in-context</a></span>
+<span class="incontext"><a href="exercises-11.html#p-402">in-context</a></span>
 </body>
 </html>

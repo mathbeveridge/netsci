@@ -187,13 +187,13 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="smallworld"><h2 class="heading">
 <span class="type">Chapter</span> <span class="codenumber">13</span> <span class="title">The Small World Model</span>
 </h2>
-<section class="introduction" id="introduction-13"><p id="p-418">Today, we will talk about (a variation of) the Small World Model of Strogatz and Watts. Their goal was to create a network model that has high clustering (lots of triangles) and small diameter (short connecting paths). <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-smallworld0.svg" role="img" class="contained"></div></p></section><section class="exercises" id="exercises-13"><h3 class="heading hide-type">
+<section class="introduction" id="introduction-13"><p id="p-420">Today, we will talk about (a variation of) the Small World Model of Strogatz and Watts. Their goal was to create a network model that has high clustering (lots of triangles) and small diameter (short connecting paths). <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-smallworld0.svg" role="img" class="contained"></div></p></section><section class="exercises" id="exercises-13"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Practice Problems</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-60"><h6 class="heading">
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Clustering Coefficient for a Ring World.</span>
 </h6>
-<p id="p-419">You will calculate the clustering coefficient</p>
+<p id="p-421">You will calculate the clustering coefficient</p>
 <div class="displaymath">
 \begin{equation*}
 C = \frac{3 \times (\mbox{\# of triangles})}{\mbox{\# of connected triples}}
@@ -201,8 +201,8 @@ C = \frac{3 \times (\mbox{\# of triangles})}{\mbox{\# of connected triples}}
 </div>
 <p class="continuation">where a "connected triple" are three vertices \(u,v,w\) such that \((u,v)\) and \((v,w)\) are edges. Intuitively, the clustering coefficient measures the  fraction of times that "pairs of my friends are also friends."</p>
 <ol class="lower-alpha">
-<li id="li-247">
-<p id="p-420">Show that there are</p>
+<li id="li-249">
+<p id="p-422">Show that there are</p>
 <div class="displaymath">
 \begin{equation*}
 n {c/2 \choose 2}
@@ -210,8 +210,8 @@ n {c/2 \choose 2}
 </div>
 <p class="continuation">triangles in a Ring World. A nice way to argue this is to recognize that all triangles look like one "long edge" going distance \(\leq c/2\) and two "shorter edges." Orient the long edge  clockwise the two shorter edges  counter clockwise. Then associate this directed cycle with the vertex at the start of the long clockwise arc.</p>
 </li>
-<li id="li-248">
-<p id="p-421">Show that there are</p>
+<li id="li-250">
+<p id="p-423">Show that there are</p>
 <div class="displaymath">
 \begin{equation*}
 n {c \choose 2}
@@ -219,8 +219,8 @@ n {c \choose 2}
 </div>
 <p class="continuation">connected triples. These are paths of length 2 (which can be associated with their central vertex).</p>
 </li>
-<li id="li-249">
-<p id="p-422">Show that the clustering coefficient  is</p>
+<li id="li-251">
+<p id="p-424">Show that the clustering coefficient  is</p>
 <div class="displaymath">
 \begin{equation*}
 C =  \frac{3(c-2)}{4(c-1)}.
@@ -231,11 +231,11 @@ C =  \frac{3(c-2)}{4(c-1)}.
 </ol></article><article class="exercise exercise-like" id="exercise-61"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Distances in a Ring World.</span>
 </h6>
-<ol id="p-423" class="lower-alpha">
-<li id="li-250"><p id="p-424">Consider vertices \(v_0\) and \(v_{m}\) where \(0 \leq m \leq n/2\text{.}\) What is the graph distance between these nodes?</p></li>
-<li id="li-251"><p id="p-425">What is the length of the "longest shortest path" starting at \(v_0\text{?}\)</p></li>
-<li id="li-252">
-<p id="p-426">Show that the average distance from \(v_0\) to other vertices is less than or equal to</p>
+<ol id="p-425" class="lower-alpha">
+<li id="li-252"><p id="p-426">Consider vertices \(v_0\) and \(v_{m}\) where \(0 \leq m \leq n/2\text{.}\) What is the graph distance between these nodes?</p></li>
+<li id="li-253"><p id="p-427">What is the length of the "longest shortest path" starting at \(v_0\text{?}\)</p></li>
+<li id="li-254">
+<p id="p-428">Show that the average distance from \(v_0\) to other vertices is less than or equal to</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{n}{2c} + 1.
@@ -246,8 +246,8 @@ C =  \frac{3(c-2)}{4(c-1)}.
 </ol></article><article class="exercise exercise-like" id="exercise-62"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Clustering Coefficient of a Small World.</span>
 </h6>
-<p id="p-427">We turn the Ring World into a Small World by adding  some random edges to the graph. We call these edges "shortcuts" because they traverse across the middle of the ring.</p>
-<p id="p-428">For each existing edge in the Ring World, we add a random edge with constant probability \(p\text{.}\) So we add a total of</p>
+<p id="p-429">We turn the Ring World into a Small World by adding  some random edges to the graph. We call these edges "shortcuts" because they traverse across the middle of the ring.</p>
+<p id="p-430">For each existing edge in the Ring World, we add a random edge with constant probability \(p\text{.}\) So we add a total of</p>
 <div class="displaymath">
 \begin{equation*}
 p\frac{cn}{2} = \frac{1}{2} cpn
@@ -255,8 +255,8 @@ p\frac{cn}{2} = \frac{1}{2} cpn
 </div>
 <p class="continuation">random edges to the graph.</p>
 <ol class="lower-alpha">
-<li id="li-253">
-<p id="p-429">Define</p>
+<li id="li-255">
+<p id="p-431">Define</p>
 <div class="displaymath">
 \begin{equation*}
 q = \frac{\frac{cpn}{2}}{{n \choose 2}} \approx \frac{cp}{n}.
@@ -269,16 +269,16 @@ q = \frac{\frac{cpn}{2}}{{n \choose 2}} \approx \frac{cp}{n}.
 \end{equation*}
 </div>
 </li>
-<li id="li-254">
-<p id="p-430">For a fixed vertex \(v_i\text{,}\) explain why</p>
+<li id="li-256">
+<p id="p-432">For a fixed vertex \(v_i\text{,}\) explain why</p>
 <div class="displaymath">
 \begin{equation*}
 \E[ \mbox{\# shortcut edges incident with } v_i] = cp.
 \end{equation*}
 </div>
 </li>
-<li id="li-255">
-<p id="p-431">Next, we show that we have only added a constant number of new triangles. Show that</p>
+<li id="li-257">
+<p id="p-433">Next, we show that we have only added a constant number of new triangles. Show that</p>
 <div class="displaymath">
 \begin{equation*}
 \E[\mbox{\# triangles using one shortcut edge} ] \leq
@@ -288,8 +288,8 @@ n{ c \choose 2} q
 </div>
 <p class="continuation">So we are adding a constant number of triangles. For large \(n\text{,}\) these new triangles are negligible compared to the \(n { c/2 \choose 2}\) triangles already present in the ring.</p>
 </li>
-<li id="li-256">
-<p id="p-432">Triangles using 2 or 3 shortcut edges are also unlikely. Explain why</p>
+<li id="li-258">
+<p id="p-434">Triangles using 2 or 3 shortcut edges are also unlikely. Explain why</p>
 <div class="displaymath">
 \begin{equation*}
 \E[\mbox{\# triangles using two shortcut edges} ]=
@@ -305,8 +305,8 @@ n \frac{c}{2} (n-2) q^2   \approx \frac{c^3p^2}{2}.
 </div>
 <p class="continuation">So we only add a constant number of triangles of any kind.</p>
 </li>
-<li id="li-257">
-<p id="p-433">Turning to connected triples, show that</p>
+<li id="li-259">
+<p id="p-435">Turning to connected triples, show that</p>
 <div class="displaymath">
 \begin{equation*}
 \E[ \mbox{\# connected triples using one shortcut edge} ]
@@ -323,8 +323,8 @@ n {n-1 \choose 2} q^2
 \end{equation*}
 </div>
 </li>
-<li id="li-258">
-<p id="p-434">We are now ready to approximate the clustering coefficient. By parts (c) and (d), we can ignore the new triangles (there are only a constant number of them). But we need the new connected triples from part (e). The clustering coefficient is</p>
+<li id="li-260">
+<p id="p-436">We are now ready to approximate the clustering coefficient. By parts (c) and (d), we can ignore the new triangles (there are only a constant number of them). But we need the new connected triples from part (e). The clustering coefficient is</p>
 <div class="displaymath">
 \begin{equation*}
 C \approx \frac
@@ -345,7 +345,7 @@ n {c \choose 2} + c^2pn + \frac{1}{2} c^2p^2 n
 \end{equation*}
 </div>
 <p class="continuation">This is a constant (independent of \(n\)), so we have a nonzero clustering coefficient for every small world network.</p>
-<p id="p-435">Use the approximation \({a \choose 2} = a^2/2\) and set \(p=1\) to obtain the rough lower bound</p>
+<p id="p-437">Use the approximation \({a \choose 2} = a^2/2\) and set \(p=1\) to obtain the rough lower bound</p>
 <div class="displaymath">
 \begin{equation*}
 C \gtrapprox \frac{3}{16}.

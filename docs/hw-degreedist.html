@@ -187,14 +187,14 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="hw-degreedist"><h2 class="heading">
 <span class="type">Chapter</span> <span class="codenumber">19</span> <span class="title">Exercises: Degree Distributions and Power Laws</span>
 </h2>
-<section class="introduction" id="introduction-19"><p id="p-549"></p></section><section class="exercises" id="exercises-19"><h3 class="heading hide-type">
+<section class="introduction" id="introduction-19"><p id="p-551"></p></section><section class="exercises" id="exercises-19"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Homework Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-91"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<p id="p-550">Let \(X\) be be a binomial random variable with parameters \(p\) and \(n\text{.}\)</p>
+<p id="p-552">Let \(X\) be be a binomial random variable with parameters \(p\) and \(n\text{.}\)</p>
 <ol class="lower-alpha">
-<li id="li-325">
-<p id="p-551">Show that the PMF of \(X\) can be calculated recursively by starting with</p>
+<li id="li-327">
+<p id="p-553">Show that the PMF of \(X\) can be calculated recursively by starting with</p>
 <div class="displaymath">
 \begin{equation*}
 p(0) = (1-p)^n
@@ -207,38 +207,38 @@ p(k+1) = \frac{p}{1-p} \cdot \frac{n-k}{k+1} p(k).
 \end{equation*}
 </div>
 </li>
-<li id="li-326"><p id="p-552">We can now make an observation about the shape of the PMF of \(X\text{.}\) Let \(k^*= \lfloor (n+1) \cdot p  \rfloor\) be the largest integer that is less than or equal to \((n+1) \cdot p\text{.}\) Show that the PMF \(p(k)\) is weakly increasing (also known as monotonically nondecreasing) for \(0 \leq k \leq k^*\) and is monotonically decreasing for \(k^* \leq k \leq n\text{.}\)</p></li>
+<li id="li-328"><p id="p-554">We can now make an observation about the shape of the PMF of \(X\text{.}\) Let \(k^*= \lfloor (n+1) \cdot p  \rfloor\) be the largest integer that is less than or equal to \((n+1) \cdot p\text{.}\) Show that the PMF \(p(k)\) is weakly increasing (also known as monotonically nondecreasing) for \(0 \leq k \leq k^*\) and is monotonically decreasing for \(k^* \leq k \leq n\text{.}\)</p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-92"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<p id="p-553">A fair coin is one such that the outcome of a coin toss has \(\P(H) = \P(T) = \frac{1}{2}\text{,}\) where \(H\) means "heads" and \(T\) means "tails."</p>
+<p id="p-555">A fair coin is one such that the outcome of a coin toss has \(\P(H) = \P(T) = \frac{1}{2}\text{,}\) where \(H\) means "heads" and \(T\) means "tails."</p>
 <ol class="lower-alpha">
-<li id="li-327"><p id="p-554">A fair coin is tossed repeatedly until two consecutive heads or two consecutive tails appear. Let \(X\) denote the number of coin tosses you make.  Find the PMF, the expected value, and the variance of \(X\text{.}\)</p></li>
-<li id="li-328"><p id="p-555">Assume now that the coin is tossed until we obtain a tail that is immediately preceded by a head. Find the PMF and the expected value of the number of tosses.</p></li>
+<li id="li-329"><p id="p-556">A fair coin is tossed repeatedly until two consecutive heads or two consecutive tails appear. Let \(X\) denote the number of coin tosses you make.  Find the PMF, the expected value, and the variance of \(X\text{.}\)</p></li>
+<li id="li-330"><p id="p-557">Assume now that the coin is tossed until we obtain a tail that is immediately preceded by a head. Find the PMF and the expected value of the number of tosses.</p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-93"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-556">In this problem, you will fit a power law to the earthquake data found at</p>
-<p id="p-557"><a class="external" href="http://tuvalu.santafe.edu/~aaronc/powerlaws/data/quakes.txt" target="_blank">http://tuvalu.santafe.edu/~aaronc/powerlaws/data/quakes.txt</a>.</p>
-<p id="p-558">This data set contains the intensities of earthquakes occurring in California between 1910 and 1992, measured as the maximum amplitude of motion during the quake. <em class="emphasis">Note:</em> these data points are given on the Richter scale, which is the base-10 logarithm of the actual intensity. You must correct for this to find the correct value of \(\alpha\) for the power law.</p>
+<p id="p-558">In this problem, you will fit a power law to the earthquake data found at</p>
+<p id="p-559"><a class="external" href="http://tuvalu.santafe.edu/~aaronc/powerlaws/data/quakes.txt" target="_blank">http://tuvalu.santafe.edu/~aaronc/powerlaws/data/quakes.txt</a>.</p>
+<p id="p-560">This data set contains the intensities of earthquakes occurring in California between 1910 and 1992, measured as the maximum amplitude of motion during the quake. <em class="emphasis">Note:</em> these data points are given on the Richter scale, which is the base-10 logarithm of the actual intensity. You must correct for this to find the correct value of \(\alpha\) for the power law.</p>
 <ol class="lower-alpha">
-<li id="li-329"><p id="p-559">Create a plot of the data using "intensity \(k\)" versus "frequency of intensity at least \(k\)" using a log-log scale. What seems to be a good estimate for \(k_{\min}\) based on your log-log plot?</p></li>
-<li id="li-330"><p id="p-560">Find the best fitting \(k_{\min}\) and \(\alpha\text{.}\) How does the optimal \(k_{\min}\) compare to your guess in part (a)?</p></li>
-<li id="li-331"><p id="p-561">Make a plot of the PDF and the best fitting power law.</p></li>
-<li id="li-332"><p id="p-562">Make a plot of the Kolmogorov-Smirnov statistics \(D\) for the first 50 candidates for \(k_{\min}\text{..}\)</p></li>
+<li id="li-331"><p id="p-561">Create a plot of the data using "intensity \(k\)" versus "frequency of intensity at least \(k\)" using a log-log scale. What seems to be a good estimate for \(k_{\min}\) based on your log-log plot?</p></li>
+<li id="li-332"><p id="p-562">Find the best fitting \(k_{\min}\) and \(\alpha\text{.}\) How does the optimal \(k_{\min}\) compare to your guess in part (a)?</p></li>
+<li id="li-333"><p id="p-563">Make a plot of the PDF and the best fitting power law.</p></li>
+<li id="li-334"><p id="p-564">Make a plot of the Kolmogorov-Smirnov statistics \(D\) for the first 50 candidates for \(k_{\min}\text{..}\)</p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-94"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
-<p id="p-563">Download the 2010 US census data on last names that occur at least 100 times from this site:</p>
-<p id="p-564"><a class="external" href="https://www.census.gov/topics/population/genealogy/data/2010%5C_surnames.html" target="_blank">https://www.census.gov/topics/population/genealogy/data/2010\_surnames.html</a>.</p>
-<ol id="p-565" class="lower-alpha">
-<li id="li-333"><p id="p-566">Set the minimum degree to 100 and find the best fitting exponent \(\alpha\text{.}\)</p></li>
-<li id="li-334"><p id="p-567">Create a plot that fits a power law and a truncated power law to this data. Which distribution is a better fit to the data?</p></li>
+<p id="p-565">Download the 2010 US census data on last names that occur at least 100 times from this site:</p>
+<p id="p-566"><a class="external" href="https://www.census.gov/topics/population/genealogy/data/2010%5C_surnames.html" target="_blank">https://www.census.gov/topics/population/genealogy/data/2010\_surnames.html</a>.</p>
+<ol id="p-567" class="lower-alpha">
+<li id="li-335"><p id="p-568">Set the minimum degree to 100 and find the best fitting exponent \(\alpha\text{.}\)</p></li>
+<li id="li-336"><p id="p-569">Create a plot that fits a power law and a truncated power law to this data. Which distribution is a better fit to the data?</p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-95"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
-<p id="p-568">Naturally occurring power law distributions have heavy tails, meaning that a substantial portion of the data lies in the long tail, rather than being concentrated around its mean. This means that an outsized fraction of the "wealth" of the data is in the hands of the "richest" entities. We will explore this effect for general power laws. Consider the continuous power law with PDF \(p: [x_{\min}, \infty] \rightarrow [0,1]\) given by</p>
+<p id="p-570">Naturally occurring power law distributions have heavy tails, meaning that a substantial portion of the data lies in the long tail, rather than being concentrated around its mean. This means that an outsized fraction of the "wealth" of the data is in the hands of the "richest" entities. We will explore this effect for general power laws. Consider the continuous power law with PDF \(p: [x_{\min}, \infty] \rightarrow [0,1]\) given by</p>
 <div class="displaymath">
 \begin{equation*}
 p(x) = \frac{\alpha -1}{x_{\min}} \left( \frac{x}{x_{\min}} \right)^{-\alpha} \qquad \mbox{where } \alpha &gt; 2.
 \end{equation*}
 </div>
 <ol class="lower-alpha">
-<li id="li-335"><p id="p-569">Find the CCDF \(P(x) = \int_{x}^{\infty} p(t) dt.\)</p></li>
-<li id="li-336">
-<p id="p-570">For any \(r \in [0,1]\text{,}\) let \(x_r\) denote the point achieving</p>
+<li id="li-337"><p id="p-571">Find the CCDF \(P(x) = \int_{x}^{\infty} p(t) dt.\)</p></li>
+<li id="li-338">
+<p id="p-572">For any \(r \in [0,1]\text{,}\) let \(x_r\) denote the point achieving</p>
 <div class="displaymath">
 \begin{equation*}
 P(x_r) = r.
@@ -252,8 +252,8 @@ x_r = r^{-1/(\alpha-1)} x_{\min}.
 </div>
 <p class="continuation">Intuitively, \(x_r\) is the cutoff for finding the "richest" \(r\) fraction of the data.</p>
 </li>
-<li id="li-337">
-<p id="p-571">Next, find an expression for</p>
+<li id="li-339">
+<p id="p-573">Next, find an expression for</p>
 <div class="displaymath">
 \begin{equation*}
 w(r) = \frac{\E[ X \mid x \geq x_r]}{\E[ X]} = \frac{\int_{x_r}^{\infty} x \, p(x) dx}{\int_{x_{\min}}^{\infty} x \, p(x) dx}.
@@ -262,15 +262,15 @@ w(r) = \frac{\E[ X \mid x \geq x_r]}{\E[ X]} = \frac{\int_{x_r}^{\infty} x \, p(
 <p class="continuation">This is the fraction of the "wealth" owned by the top \(r\) fraction of the data. Using your answer from (b), you will get an expression that only depends on \(r\) and \(\alpha\text{.}\)</p>
 </li>
 </ol></article><article class="exercise exercise-like" id="exercise-96"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
-<p id="p-572">We apply your results from problem 2 to a real data set. It has been argued (but not proved definitively) that the distribution of wealth in the United States (and other countries) follows a power law tail. (For example, see <a class="external" href="http://phys.org/news95074548.html" target="_blank">this article</a>.) Even if this wealth distribution tail is not a pure power law, then  it is still very similar to a power law. For simplicity, in this problem, we will assume that all of the US wealth adheres to a power law. Download the data set at</p>
-<p id="p-573"><a class="external" href="https://www.dropbox.com/s/b1xzul14eyg4d2a/wealth2002.csv?dl=0" target="_blank">https://www.dropbox.com/s/b1xzul14eyg4d2a/wealth2002.csv?dl=0</a></p>
-<p id="p-574">which lists the net worth of the 400 wealthiest Americans in 2002 in millions of dollars.</p>
+<p id="p-574">We apply your results from problem 2 to a real data set. It has been argued (but not proved definitively) that the distribution of wealth in the United States (and other countries) follows a power law tail. (For example, see <a class="external" href="http://phys.org/news95074548.html" target="_blank">this article</a>.) Even if this wealth distribution tail is not a pure power law, then  it is still very similar to a power law. For simplicity, in this problem, we will assume that all of the US wealth adheres to a power law. Download the data set at</p>
+<p id="p-575"><a class="external" href="https://www.dropbox.com/s/b1xzul14eyg4d2a/wealth2002.csv?dl=0" target="_blank">https://www.dropbox.com/s/b1xzul14eyg4d2a/wealth2002.csv?dl=0</a></p>
+<p id="p-576">which lists the net worth of the 400 wealthiest Americans in 2002 in millions of dollars.</p>
 <ol class="lower-alpha">
-<li id="li-338"><p id="p-575">Create a log-log plot of the CCDF of this data set to confirm that it looks like a power law.</p></li>
-<li id="li-339"><p id="p-576">Estimate the value of \(\alpha\) for this data set. This is a continuous PDF, so use the same formula as in 1(c).</p></li>
-<li id="li-340"><p id="p-577">What is the value \(x_{1/2}\) for American wealth in 2002? In other words, if your net worth was at least \(x_{1/2}\text{,}\) then you were in the top half of the population in terms of wealth.</p></li>
-<li id="li-341"><p id="p-578">Now find \(w(1/2)\text{.}\) This is the fraction of the wealth in the hands of the wealthiest half of the population.</p></li>
-<li id="li-342"><p id="p-579">Finally, find the value \(r^*\) so that \(w(r^*)=1/2\) and its corresponding \(x_{r^*}\text{.}\) The interpretation: the wealthiest \(r^*\) fraction of the population owns half of the total wealth. In order to be among these super-elite people, your net worth must be at least \(x_{r^*}\text{.}\)</p></li>
+<li id="li-340"><p id="p-577">Create a log-log plot of the CCDF of this data set to confirm that it looks like a power law.</p></li>
+<li id="li-341"><p id="p-578">Estimate the value of \(\alpha\) for this data set. This is a continuous PDF, so use the same formula as in 1(c).</p></li>
+<li id="li-342"><p id="p-579">What is the value \(x_{1/2}\) for American wealth in 2002? In other words, if your net worth was at least \(x_{1/2}\text{,}\) then you were in the top half of the population in terms of wealth.</p></li>
+<li id="li-343"><p id="p-580">Now find \(w(1/2)\text{.}\) This is the fraction of the wealth in the hands of the wealthiest half of the population.</p></li>
+<li id="li-344"><p id="p-581">Finally, find the value \(r^*\) so that \(w(r^*)=1/2\) and its corresponding \(x_{r^*}\text{.}\) The interpretation: the wealthiest \(r^*\) fraction of the population owns half of the total wealth. In order to be among these super-elite people, your net worth must be at least \(x_{r^*}\text{.}\)</p></li>
 </ol></article></section></section></div></main>
 </div>
 </body>

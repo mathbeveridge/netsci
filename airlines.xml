@@ -66,17 +66,22 @@ In this hands-on activity, you will play with a reasonably sized network: an air
 			</li>
 			<li>
 			<p>
- PageRank
+ PageRank, and select "Use Edge Weight"
 			</p>
 			</li>
 			<li>
 			<p>
- Eigenvector Centrality,
+ Eigenvector Centrality
 			</p>
 			</li>
+			<li>
+				<p>
+	 Modularity
+				</p>
+				</li>			
 		</ul>
 
-Look at the plots that come up, and then dismiss them.
+Look quickly at the plots that come up, and then dismiss them.
 
 					</p>
 				</li>
@@ -101,7 +106,12 @@ Look at the plots that come up, and then dismiss them.
 				</li>
 				<li>
 					<p>
- In the Ranking tab (upper left window), update the node size, node color, and label size to reflect various properties. <em>Do not change label color: sometimes they become hard to see.</em>
+ In the Ranking tab (upper left window), click on the pallette icon, select "Partition" and then choose "Modularity Class" from the drop down. 
+					</p>
+				</li>				
+				<li>
+					<p>
+ In the Ranking tab (upper left window), update the node size (nested circle icon), and label size ("tT" icon) to reflect various properties. <em>Do not change label color: sometimes they become hard to see.</em>
 
 					</p>
 				</li>
