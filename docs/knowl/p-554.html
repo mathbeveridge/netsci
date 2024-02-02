@@ -12,7 +12,24 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>We can now make an observation about the shape of the PMF of \(X\text{.}\) Let \(k^*= \lfloor (n+1) \cdot p  \rfloor\) be the largest integer that is less than or equal to \((n+1) \cdot p\text{.}\) Show that the PMF \(p(k)\) is weakly increasing (also known as monotonically nondecreasing) for \(0 \leq k \leq k^*\) and is monotonically decreasing for \(k^* \leq k \leq n\text{.}\)</p>
+<p>Let \(X\) be be a binomial random variable with parameters \(p\) and \(n\text{.}\)</p>
+<ol class="lower-alpha">
+<li>
+<p>Show that the PMF of \(X\) can be calculated recursively by starting with</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+p(0) = (1-p)^n
+\end{equation*}
+</div>
+<p class="continuation">and then using the recursive formula</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+p(k+1) = \frac{p}{1-p} \cdot \frac{n-k}{k+1} p(k).
+\end{equation*}
+</div>
+</li>
+<li><p>We can now make an observation about the shape of the PMF of \(X\text{.}\) Let \(k^*= \lfloor (n+1) \cdot p  \rfloor\) be the largest integer that is less than or equal to \((n+1) \cdot p\text{.}\) Show that the PMF \(p(k)\) is weakly increasing (also known as monotonically nondecreasing) for \(0 \leq k \leq k^*\) and is monotonically decreasing for \(k^* \leq k \leq n\text{.}\)</p></li>
+</ol>
 <span class="incontext"><a href="exercises-19.html#p-554">in-context</a></span>
 </body>
 </html>

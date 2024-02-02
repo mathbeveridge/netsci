@@ -433,6 +433,44 @@ Let <m>\bv = (v_1, \ldots, v_{2n})^{\top}</m> be the right eigenvector for the l
 				</p>
 			</statement>
 		</exercise>
+		<exercise>
+			<title>Theater Production Network</title>
+			<idx><h>Theater Production Network</h></idx>
+			<statement>
+				<p>
+					The Theater and Dance Department is staging a production. This is a complex and time intensive process, 
+					requiring the coordination of many simultaneous creative efforts. The cast and crew were given an organizational 
+					workflow of who they should approach when they have questions, depending upon their role in the production.  
+				</p>
+				<p>
+					The csv file <url href="https://docs.google.com/spreadsheets/d/1B3svDEoCnsaLiUTxiBnORu3cqVK70Be5N_OkS-9Rh7E/edit?usp=sharing">TheaterProductionEdges.csv</url>
+					represents this structure as a weighted directed graph. The weight of arc <m>(u,v)</m> is the number 
+					of people in role <m>u</m>.  Use Gephi to investigate this complex system. You must:
+
+					
+					
+					<ul>
+						<li>
+							Create a graph layout using the features of Gephi to make an informative data visualization 
+							that helps you to communicate your insights. You can include multiple visualizations, if you like.
+								
+						</li>
+						<li>
+							Use the centrality measures that we have discussed to determine the ways in which various roles 
+					are important. These are: degree centralities, betweenness centrality, eigenvector centrality, 
+					PageRank centrality.
+						</li>
+						<li>
+							Identify the first, second, and third most important roles in the network. 
+							Do some web searching so that you understand the responsibilities of those roles. 
+							With that background information, do your results make sense? 
+							Comment on the efficacy of the various centrality measures in understanding this network.
+						</li>											
+					</ul>
+
+				</p>
+			</statement>
+		</exercise>		
 
 	</exercises>
 
