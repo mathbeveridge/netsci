@@ -259,7 +259,10 @@ for some choice of  <m>c_1, \ldots, c_n \in \R</m>. Let us assume that <m>c_1 \n
 <me>
 \bx_t = \alpha A \bx_{t-1} + \bone
 </me>
-of the Katz recursion is basically <em>proportional</em> to the eigenvector centrality <m>\bu_1</m>.
+of the Katz recursion is basically <em>proportional</em> to the eigenvector centrality <m>\bu_1</m>. In other words, show that
+<me>
+	\lim_{t \rightarrow \infty} \frac{\bx_t}{\| \bx_t \|} = \frac{\bu_1}{\| \bu_1\|}.
+</me>
 					</p>
 				</li>
 			</ol>
