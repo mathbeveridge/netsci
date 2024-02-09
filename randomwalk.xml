@@ -202,7 +202,7 @@ The <m>(i,j)</m> entry of <m>P^t</m> tells you the probability of a random walk 
 				</li>
 				<li>
 					<p>
- For <m>1 \leq i \leq 5</m>, let <m>\mathbf{e}_i</m> denote the " elementary vector" whose <m>j</m>-th entry is
+ For <m>1 \leq i \leq 6</m>, let <m>\mathbf{e}_i</m> denote the " elementary vector" whose <m>j</m>-th entry is
 <me>
 \mathbf{e}_i(j) = \left\{
 \begin{array}{cl}
@@ -275,7 +275,7 @@ v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6
 \end{bmatrix}
 =
 \begin{bmatrix}
-\frac{2}{14} &amp; \frac{3}{14} &amp; \frac{2}{14} &amp; \frac{3}{14} &amp; \frac{3}{14} &amp; \frac{1}{14}
+2 &amp; 3 &amp; 2 &amp; 3 &amp; 3 &amp; 1
 \end{bmatrix}
 </me>
 
@@ -299,7 +299,7 @@ We have
 <md>
 <mrow>
 &amp; \begin{bmatrix}
-\frac{2}{14} &amp; \frac{3}{14} &amp; \frac{2}{14} &amp; \frac{3}{14} &amp; \frac{3}{14} &amp; \frac{1}{14}
+2 &amp; 3 &amp; 2 &amp; 3 &amp; 3 &amp; 1
 \end{bmatrix}
 \begin{bmatrix}
 0 &amp; 1/2 &amp; 0 &amp; 0 &amp; 1/2 &amp; 0
@@ -325,7 +325,7 @@ We have
 <mrow>
 &amp;=
 \begin{bmatrix}
-\frac{2}{14} &amp; \frac{3}{14} &amp; \frac{2}{14} &amp; \frac{3}{14} &amp; \frac{3}{14} &amp; \frac{1}{14}
+2 &amp; 3 &amp; 2 &amp; 3 &amp; 3 &amp; 1
 \end{bmatrix}
 </mrow>
 </md>
@@ -345,8 +345,7 @@ We have
 <!--solution>
 <p>
 
-The weight of a vertex is proportional its degree. The sum of the weights is 1. It turns out that this is the limiting distribution for the location of a random walker on the graph: the probability that we are at a given vertex is proportional to its degree (provided that we have walked long enough!).
-
+The entries are the degrees of the vertices.
 </p>
 </solution-->
 
@@ -482,7 +481,7 @@ In the previous questions, you have focused on a particular undirected graph. Ta
 
 			</p><p>
 
-Let <m>G</m> be a connected, aperiodic, undirected graph with adjacency martix <m>A</m> and transition matrix <m>P = D^{-1}A</m>.
+Let <m>G</m> be a connected, aperiodic, undirected graph with adjacency matrix <m>A</m> and transition matrix <m>P = D^{-1}A</m>.
 
 			<ol>
 				<li>

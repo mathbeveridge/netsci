@@ -10,7 +10,7 @@
 
 
 
-At this point, we have seen three different "feedback centralities" to identify important vertices.  eigenvector centrality, Katz centrality and PageRank centrality. Each of them can be phrased as <em>dominant eigenvalue</em> problem.
+At this point, we have seen three different "feedback centralities" that identify important vertices:  eigenvector centrality, Katz centrality and PageRank centrality. Each of them can be phrased as <em>dominant eigenvalue</em> problem.
 
 			</p><p>
 
@@ -466,7 +466,7 @@ We have
 which we can write more compactly as
 <me>
 \begin{array}{lllll}
-\bh(t) &amp;=&amp;   A \, A^{\top} \, \bh(t), \\
+\bh(t) &amp;=&amp;   A \, A^{\top} \, \bh(t-1), \\
 \ba(t)  &amp;=&amp; A^{\top} \, A \, \ba(t-1).
 \end{array}
 </me>

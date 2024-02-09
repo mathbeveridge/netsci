@@ -221,7 +221,7 @@ c_v^B = (N-1)^2 - \sum_{i=1}^k N_i^2
 <p id="p-522">In this problem, you will prove part of the Perron-Frobenius Theorem. Let \(\bx, \by \in \R^n\text{.}\) Recall that the <em class="emphasis">dot product</em> is defined as \(\bx \cdot \by = \bx^{\top} \by\text{,}\) and that \(\bx\) and \(\by\) are orthogonal when \(\bx \cdot \by = 0\text{.}\)</p>
 <ol class="lower-alpha">
 <li id="li-306"><p id="p-523">Let \(A\) be an \(n \times n\) matrix. Prove that \((A\bx) \cdot \by = \bx \cdot A^{\top} \by\text{.}\)</p></li>
-<li id="li-307"><p id="p-524">Let \(A\) be a symmetric matrix, so that \(A = A^{\top}\text{.}\) Let \(\lambda\) and \(\mu\) be distinct nonzero eigenvalues with corresponding (right) eigenvectors \(\bu\) and \(\bv\text{,}\) so that \(A \bu = \lambda \bu\) and \(A \bv = \lambda \bv\text{.}\) Prove that \((A \bu) \cdot \bv =0\text{.}\)</p></li>
+<li id="li-307"><p id="p-524">Let \(A\) be a symmetric matrix, so that \(A = A^{\top}\text{.}\) Let \(\lambda\) and \(\mu\) be distinct nonzero eigenvalues with corresponding (right) eigenvectors \(\bu\) and \(\bv\text{,}\) so that \(A \bu = \lambda \bu\) and \(A \bv = \mu \bv\text{.}\) Prove that \((A \bu) \cdot \bv =0\text{.}\)</p></li>
 <li id="li-308"><p id="p-525">Explain why part (b) ensures that the eigenvectors \(\bu\) and \(\bv\) are orthogonal.</p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-86"><h6 class="heading">
 <span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">Symmetric Matrices have \(\kappa_1 \geq 1\).</span>
@@ -330,7 +330,7 @@ A \bone = A(c_1 \bu_1 + c_2 \bu_2 + \cdots + c_n \bu_n).
 <p class="continuation">of the Katz recursion is basically <em class="emphasis">proportional</em> to the eigenvector centrality \(\bu_1\text{.}\) In other words, show that</p>
 <div class="displaymath">
 \begin{equation*}
-\lim_{t \rightarrow \infty} \frac{\bx_t}{\| \bx_t \|} = \frac{\bu_1}{\| \bu_1\|}.
+\lim_{t \rightarrow \infty} \frac{\bx_t}{| \bx_t |} = \frac{\bu_1}{| \bu_1|}.
 \end{equation*}
 </div>
 </li>
@@ -377,7 +377,8 @@ A \bone = A(c_1 \bu_1 + c_2 \bu_2 + \cdots + c_n \bu_n).
 </ol></article><article class="exercise exercise-like" id="exercise-89"><h6 class="heading">
 <span class="codenumber">9<span class="period">.</span></span><span class="space"> </span><span class="title">A PageRank Variant.</span>
 </h6>
-<div class="displaymath" id="p-542">
+<p id="p-542">In the random surfer model for PageRank, someone browses the internet by clicking on a link with probability $\alpha$ and moving to a random page with probability \(1-\alpha\text{.}\) The matrix form of the PageRank equation becomes</p>
+<div class="displaymath">
 \begin{equation*}
 \bx =  \alpha P^{\top} \bx +  \frac{(1 - \alpha)}{n} \bone
 \end{equation*}

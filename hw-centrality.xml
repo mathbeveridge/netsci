@@ -110,7 +110,7 @@ In this problem, you will prove part of the Perron-Frobenius Theorem. Let <m>\bx
 				</li>
 				<li>
 					<p>
- Let <m>A</m> be a symmetric matrix, so that <m>A = A^{\top}</m>. Let <m>\lambda</m> and <m>\mu</m> be distinct nonzero eigenvalues with corresponding (right) eigenvectors <m>\bu</m> and <m>\bv</m>, so that <m>A \bu = \lambda \bu</m> and <m>A \bv = \lambda \bv</m>.
+ Let <m>A</m> be a symmetric matrix, so that <m>A = A^{\top}</m>. Let <m>\lambda</m> and <m>\mu</m> be distinct nonzero eigenvalues with corresponding (right) eigenvectors <m>\bu</m> and <m>\bv</m>, so that <m>A \bu = \lambda \bu</m> and <m>A \bv = \mu \bv</m>.
 Prove that <m>(A \bu) \cdot \bv =0</m>.
 					</p>
 				</li>
@@ -261,7 +261,7 @@ for some choice of  <m>c_1, \ldots, c_n \in \R</m>. Let us assume that <m>c_1 \n
 </me>
 of the Katz recursion is basically <em>proportional</em> to the eigenvector centrality <m>\bu_1</m>. In other words, show that
 <me>
-	\lim_{t \rightarrow \infty} \frac{\bx_t}{\| \bx_t \|} = \frac{\bu_1}{\| \bu_1\|}.
+	\lim_{t \rightarrow \infty} \frac{\bx_t}{| \bx_t |} = \frac{\bu_1}{| \bu_1|}.
 </me>
 					</p>
 				</li>
@@ -330,6 +330,9 @@ where <m>\bb</m> is a vector satisfying
 			<idx><h>A PageRank Variant</h></idx>
 			<statement>
 				<p>
+					In the random surfer model for PageRank, someone browses the internet by clicking on a link with 
+					probability $\alpha$ and moving to a random page with probability <m>1-\alpha</m>. The matrix form of 
+					the PageRank equation becomes					
 <me>
 \bx =  \alpha P^{\top} \bx +  \frac{(1 - \alpha)}{n} \bone
 </me>
