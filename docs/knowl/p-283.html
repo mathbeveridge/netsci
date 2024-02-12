@@ -12,7 +12,18 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Now, the random variable \(X\) is actually a real-valued function \(X: \Omega \rightarrow \R\text{.}\)  So why use \(X\) instead of \(f\text{?}\) Well, we are taking a measurement of an outcome of an experiment. In this context, we are more interested in the value of the measurement. The symbol  \(X\) encourages us to pay attention to the measurement (not the function) because it reminds us of the variable \(x\) from algebra.</p>
-<span class="incontext"><a href="randvar0.html#p-283">in-context</a></span>
+<p>Social networks contain two kinds of information: which pairs of people are friends, and which pairs of people are not friends. Within a tight-knit group, a lack of friendship might indicate some latent conflict. This was the case in the Wayne Zachary's famous study  of a karate club (1997). <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/karate.png" class="contained"></div> While Zachary was looking at this club, a dispute erupted between the president (node 34) and the instructor (node 1). This led to the club splitting in two, with the membership shown as above. How well could we have predicted the fracturing of the group into two pieces, working just from this friendship network?</p>
+<ol class="lower-alpha">
+<li><p>Open the <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">karate.gml</code> file into Gephi using File/Open. Select the graph type as "Undirected."</p></li>
+<li><p>Change the layout (lower left panel) so that you have a more informative representation. Show the node labels by clicking on the bold "T" at the bottom of the Graph panel.</p></li>
+<li><p>Run the Modularity calculation on the Statistics tab (right panel).  Accept the default Resolution of 1.0. Run some other statistics that you find interesting.</p></li>
+<li><p>Update the Nodes/Partition tab. Select "Modularity Class" and then "Apply." How many communities did you find? Do they look reasonable? Update other characteristics using the values you have calculated.</p></li>
+<li><p>Run the Modularity with different Resolution values until you get exactly 2 communities. What is the first resolution value that works?</p></li>
+<li><p>Click on the filter tab (right panel). Add an Attribute/Partition/ Modularity Class filter. Filter so that only one community is shown.</p></li>
+<li><p>Manually separate the communities. Click on the Grabbing Hand in the left column of Graph panel. Then click on the word "<em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Dragging (Configure)</em>" at the upper left of the panel. Increase the diameter of the dragging hand. Then move all of the current community at once.</p></li>
+<li><p>Stop the filter so that both communities are shown again. Reduce your dragging diameter to 1 and then move nodes to get a pleasing picture.</p></li>
+<li><p>Now we are going to make a more professional network visualization. Go to the Preview view. Click "Refresh" to make the network appear. Then start playing with the Preset settings, including changing the dropdown from "Default" to some of the other choices. Make the prettiest picture that you can! You will have to click "Refresh" to apply your changes. There is an "Export" option at the lower left corner.</p></li>
+</ol>
+<span class="incontext"><a href="exercises-8.html#p-283">in-context</a></span>
 </body>
 </html>

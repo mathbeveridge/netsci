@@ -12,7 +12,38 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>(Note: A subgraph that includes every vertex of the original graph is called a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">spanning subgraph</em>. Spanning trees (of graphs) and spanning directed trees (of digraphs) have many important applications.)</p>
-<span class="incontext"><a href="exercises-17.html#p-512">in-context</a></span>
+<p>Finally, we explore the effect of the network structure on the spread of disease in the network. We focus on</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\tau = \frac{\langle k \rangle}{\beta ( \langle k^2 \rangle - \langle k \rangle)}.
+\end{equation*}
+</div>
+<p class="continuation">We call \(\tau\) the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">characteristic time scale</em> for the spread of the disease since it controls the rate of infection. A bigger \(\tau\) means that the infection takes longer to spread. Intuitively, we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\tau = \mbox{characteristic time scale} = \frac{1}{\mbox{infection rate}}.
+\end{equation*}
+</div>
+<ol class="lower-roman">
+<li>
+<p>For the Erdos-Renyi graph, we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\langle k^2 \rangle \approx \langle k \rangle^2 + \langle k \rangle.
+\end{equation*}
+</div>
+<p class="continuation">What is \(\tau\) in this case? How does \(1/ \tau\) compare to the infection rate in the differential equation in problem  2(a) for the homogeneous case (where we decided to ignore the network)? </p>
+</li>
+<li>
+<p>Consider a graph whose degree distribution obeys a power law</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\Pr[\deg(v)=q] \sim q^{-\alpha}.
+\end{equation*}
+</div>
+<p class="continuation">For a natural power law, we have  \(2 &lt; \alpha &lt; 3\text{.}\) Recall that for a natural power law,  \(\langle k \rangle\) is finite but \(\langle k^2 \rangle\) is infinite. (This is what led to the appearance of hubs.) What does this imply about the infection rate on such a network? What role must the hubs play, especially in light of part (d) above, and the fact that "your friends are more popular than you are"? </p>
+</li>
+</ol>
+<span class="incontext"><a href="exercises-16.html#p-512">in-context</a></span>
 </body>
 </html>

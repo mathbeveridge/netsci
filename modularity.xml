@@ -551,7 +551,7 @@ Modularity measures the extent to which edges are internal to communities, compa
 					<p>
  Explain why the following expression counts the total number of edges
 <me>
-\frac{1}{2} \sum_{i}  \sum_{j}  A_{ij}
+\frac{1}{2} \sum_{i}  \sum_{j}  A_{ij} 
 </me>
 
 <!--solution>
@@ -567,6 +567,10 @@ When we sum all of the entries of the adjacency matrix, we  count every edge twi
  Now explain why the following expression counts the total number of edges that are <em>internal</em> to one of the designated communities.
 <me>
 \frac{1}{2}  \sum_{i}  \sum_{j} A_{ij}  \, \delta (C^{(i)}, C^{(j)})
+</me>
+which can also be written as
+<me>
+	\frac{1}{2} \sum_{C} \sum_{i \in C} \sum_{j \in C} A_{ij}.
 </me>
 
 <!--solution>
@@ -648,6 +652,10 @@ for a very large network. Essentially, what we are doing is ignoring the probabi
 <me>
 \frac{1}{2} \sum_{i}  \sum_{j}  \frac{k_i k_j}{2m} \, \delta (C^{(i)}, C^{(j)})
 </me>
+which can also be written as
+<me>
+	\frac{1}{2} \sum_{C} \sum_{i \in C} \sum_{j \in C}  \frac{k_i k_j}{2m}.		
+</me>
 Here, the <m>\frac{1}{2}</m> takes care of the double counting since our sum looks at the pair <m>i,j</m> twice.
 
 
@@ -664,7 +672,11 @@ In this case, the Kronecker delta function makes it so that we only count edges 
 
 We subtract the expression in question 4(c) from the expression in question 3(b). We then divide by the total number of edges <m>m</m> (a normalizing factor) to get the modularity
 <me>
-Q = \frac{1}{2m} \sum_{i}  \sum_{j}  \left( A_{ij} - \frac{k_i k_j}{2m} \right)\, \delta (C^{(i)}, C^{(j)}).
+Q = \frac{1}{2m} \sum_{i}  \sum_{j}  \left( A_{ij} - \frac{k_i k_j}{2m} \right)\, \delta (C^{(i)}, C^{(j)}),
+</me>
+which can also be written as
+<me>
+Q = 	\frac{1}{2m} \sum_{C} \sum_{i \in C} \sum_{j \in C} \left( A_{ij} - \frac{k_i k_j}{2m} \right).	
 </me>
 
 

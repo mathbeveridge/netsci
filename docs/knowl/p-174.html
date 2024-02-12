@@ -12,7 +12,38 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Pick \(a,b \in \R\)  such that \(a+b=1\text{.}\) What can you say about the vector \(a \bv + b \bw\text{?}\) </p>
+<p>Let \(G\) be a connected, aperiodic, undirected graph with adjacency matrix \(A\) and transition matrix \(P = D^{-1}A\text{.}\)</p>
+<ol class="lower-alpha">
+<li><p>Explain why \(P \bone = \bone\text{.}\) <a class="solution-knowl original" data-knowl="./knowl/solution-36-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></li>
+<li>
+<p>Let \(\pi\) be the row vector</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\pi =
+\begin{bmatrix}
+\frac{k_1}{2m} &amp; \frac{k_2}{2m} &amp;  \cdots &amp; \frac{k_n}{2m}
+\end{bmatrix}
+\end{equation*}
+</div>
+<p class="continuation">where \(n=|V|\) and \(m = |E|\) and \(k_i\) is the degree of vertex \(i\text{.}\) Explain why</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\pi P = \pi.
+\end{equation*}
+</div>
+<p class="continuation"><a class="solution-knowl original" data-knowl="./knowl/solution-37-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
+</li>
+<li><p>What is the meaning of the row vector \(\mathbf{e}_i \, P^t\text{,}\) where \(\mathbf{e}_i\) is the elementary vector from Problem 3(d)? <a class="solution-knowl original" data-knowl="./knowl/solution-38-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></li>
+<li>
+<p>Explain why we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\lim_{t \rightarrow \infty} \mathbf{e}_i \, P^t = \pi.
+\end{equation*}
+</div>
+<p class="continuation">What does this equation mean for a random walk starting at vertex \(i\text{?}\) <a class="solution-knowl original" data-knowl="./knowl/solution-39-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
+</li>
+</ol>
 <span class="incontext"><a href="exercises-4.html#p-174">in-context</a></span>
 </body>
 </html>

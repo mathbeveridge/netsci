@@ -12,13 +12,12 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>After convergence, our update rule becomes \(\ba \rightarrow c_1 \ba\) and \(\bh \rightarrow c_2 \bh\text{.}\) (Recall that HITS performs a renormalization at each step to deal with \(c_1, c_2\text{.}\)) So after convergence, your matrix equations   become statements about eigenvectors and eigenvalues. With that in mind:</p>
-<ol class="lower-alpha">
-<li><p>How are \(c_1\) and \(c_2\) related to the eigenvalues of your matrices in question 2?</p></li>
-<li><p>How do \(c_1\) and \(c_2\) relate to each other?</p></li>
-<li><p>What is the  (linear algebraic) relationship between the authority vector \(\ba\) and the hub vector \(\bh\text{?}\)</p></li>
-</ol>
-<p class="continuation">For inspiration you  should look back at our discussion of other algebraic centralities. </p>
-<span class="incontext"><a href="exercises-5.html#p-199">in-context</a></span>
+<p>Today, we will talk about the HITS (Hyperlink-Induced Topic Search) algorithm, which takes a slightly different approach. Eigenvectors will still be the key to understanding this feedback centrality algorithm. The core idea of HITS is that vertices can play two different roles in the network:</p>
+<ul class="disc">
+<li><p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Authorities</em>: contain useful information (eg restaurant, college, newspaper)</p></li>
+<li><p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Hubs</em>: pages that link to authorities (eg Yelp, college admission consultant, news aggregator)</p></li>
+</ul>
+<p class="continuation">The point here is that <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">authorities are in competition with one another</em>, so they have no incentive to link to one another. Instead, <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">hubs act as the aggregators</em>, being expert consumers of the information that the authorities provide. Finally, these are <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">roles</em>, so it is possible for a vertex to be both an authority and a hub at the same time.</p>
+<span class="incontext"><a href="hits.html#p-199">in-context</a></span>
 </body>
 </html>
