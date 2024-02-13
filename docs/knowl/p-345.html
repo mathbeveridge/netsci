@@ -12,7 +12,19 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>CDF  \(\qquad F(t) = \P(X \leq t) = \sum_{k \leq t} p(k).\) <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-randvar6.svg" role="img" class="contained"></div></p>
+<p>Suppose that \(X\) takes on discrete integer values. Explain why for any \(k \in \Z\text{,}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+F_X(k) = \sum_{i=-\infty}^k p_X(i)
+\end{equation*}
+</div>
+<p class="continuation">and</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+p_X(k) = F_X(k) - F_X(k-1).
+\end{equation*}
+</div>
+<p class="continuation">In other words, if you know the PMF, then you can find the CDF, and vice versa. </p>
 <span class="incontext"><a href="randvar6.html#p-345">in-context</a></span>
 </body>
 </html>

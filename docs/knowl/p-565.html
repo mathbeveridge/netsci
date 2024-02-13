@@ -12,55 +12,82 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>In the random surfer model for PageRank, someone browses the internet by clicking on a link with probability $\alpha$ and moving to a random page with probability \(1-\alpha\text{.}\) The matrix form of the PageRank equation becomes</p>
+<p>for some choice of \(\alpha\text{.}\) Let \(\kappa_1, \ldots \kappa_n\) be the eigenvalues of \(A\) with corresponding eigenvectors \(\bu_1, \bu_2, \ldots, \bu_n\text{.}\) By the Frobenius-Perron Theorem, \(\kappa_1 &gt; | \kappa_i |\) for \(2 \leq i \leq n\text{,}\) and  the eigenvectors form a basis for \(\R^n\text{.}\) Note that \(\bu_1\) is the eigenvector centrality of \(G\text{.}\) You will show that as \(\alpha \rightarrow 1/\kappa_1\text{,}\) the Katz centrality becomes proportional to eigenvector centrality.</p>
+<ol class="lower-alpha">
+<li>
+<p>Pick any eigenvector \(\bu_i\) and consider the recursive process</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\by_{i,1} &amp;=  \bu_i\\
+\by_{i,t} &amp;= \alpha A \by_{i,t-1} + \bu_i  \mbox{ for } t \geq 2.
+\end{align*}
+</div>
+<p>Use induction on \(t \geq 1\) to prove that</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\bx =  \alpha P^{\top} \bx +  \frac{(1 - \alpha)}{n} \bone
+\by_{i,t} = \left( 1 + \alpha \kappa_i + \alpha^2 {\kappa_i^2} + \cdots  + \alpha^{t-1} {\kappa_i^{t-1}} \right) \bu_i = \sum_{k=0}^{t-1} (\alpha \kappa_i)^k \bu_i.
 \end{equation*}
 </div>
-<p class="continuation">where \(P\) is the transition matrix for a random walk on the network. In this problem, you will consider a variant of this equation. Let \(S\) be any fixed set of \(m\) vertices and let \(\overline{S}\) be the \(n-m\) remaining vertices. Given a fixed (constant) vector \(\bb_S \in \R^m\) on the set \(S\text{,}\) we want to solve</p>
+</li>
+<li>
+<p>Pick our constant \(\alpha &gt; 0 \) such that</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\left[
-\begin{array}{c}
-\bb_S \\
-\bx_{\overline{S}}
-\end{array}
-\right]
-=
-\left[
-\begin{array}{cc}
-I_{S,S} &amp; \bzero_{S,\overline{S}} \\
-\alpha P_{S,\overline{S}}^{\top} &amp;   \alpha P_{\overline{S}, \overline{S}}^{\top}
-\end{array}
-\right]
-\left[
-\begin{array}{c}
-\bb_S \\
-\bx_{\overline{S}}
-\end{array}
-\right]
-+
-\frac{(1 - \alpha)}{| \overline{S}|}
-\left[
-\begin{array}{c}
-\bzero_S \\
-\bone_{\overline{S}}
-\end{array}
-\right]
+\frac{1}{ \kappa_1} &lt; \alpha &lt;  \frac{1}{|\kappa_i|}
 \end{equation*}
 </div>
-<p class="continuation">for the unknown vector \(\bx_{\overline{S}} \in \R^{n-m}\) where</p>
-<ul class="disc">
-<li><p>\(I_{S,S}\) is an \(m \times m\) identity matrix</p></li>
-<li><p>\(\bzero_{S, \overline{S}}\) is an \(m \times (n-m)\) zero matrix.</p></li>
-<li><p>\(P_{S,\overline{S}}\) is the \(m \times (n-m)\) matrix describing the transition probabilities from \(S\) to \(\overline{S}\)</p></li>
-<li><p>\(P_{\overline{S},\overline{S}}\) is the \((n-m) \times (n-m)\) matrix describing the transition probabilities from \(\overline{S}\) to \(\overline{S}\)</p></li>
-<li><p>\(\bzero_S\) is the \(m\)-dimensional all-zeros vector</p></li>
-<li><p>\(\bone_{\overline{S}}\) is the \((n-m)\)-dimensional all-ones vector</p></li>
-<li><p>\(\alpha \in [0,1]\text{.}\)</p></li>
-</ul>
-<p class="continuation">Given what you know about (standard) PageRank, interpret the "update rule" that this equation calculates. Then describe a web searching example where using this equation  produces a helpful ranking.</p>
+<p class="continuation">for \(2 \leq i \leq n\text{.}\) Show that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\lim_{t \rightarrow \infty} |\by_{1,t} | = \infty
+\end{equation*}
+</div>
+<p class="continuation">while for \(2 \leq i \leq n\text{,}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\lim_{t \rightarrow \infty} |\by_{i,t}| \mbox{ is finite}.
+\end{equation*}
+</div>
+<p class="continuation">You will need to use one (or both) of the following facts about geometric sums and geometric series:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+1 + r + r^2 + r^3 + \cdots + r^t = \sum_{k=0}^{t} r^k =  \frac{r^{t+1} -1}{r-1}
+\end{equation*}
+</div>
+<p class="continuation">and</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+1 + r + r^2 + r^3 + \cdots = \sum_{k=0}^{\infty} r^k =
+\left\{
+\begin{array}{cl}
+\frac{1}{1-r} &amp; \mbox{if } |r| &lt; 1, \\
+\infty &amp; \mbox{otherwise}.
+\end{array}
+\right.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>We know that the eignvectors \(\bu_1, \ldots, \bu_n\) form a basis for \(\R^n\) (thanks, Frobenius-Perron!). In particular, we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\bone = c_1 \bu_1 + c_2 \bu_2 + \cdots + c_n \bu_n
+\end{equation*}
+</div>
+<p class="continuation">for some choice of  \(c_1, \ldots, c_n \in \R\text{.}\) Let us assume that \(c_1 \neq 0\text{.}\) Use parts (a) and (b) to show that the limiting value</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\bx_t = \alpha A \bx_{t-1} + \bone
+\end{equation*}
+</div>
+<p class="continuation">of the Katz recursion is basically <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">proportional</em> to the eigenvector centrality \(\bu_1\text{.}\) In other words, show that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\lim_{t \rightarrow \infty} \frac{\bx_t}{| \bx_t |} = \frac{\bu_1}{| \bu_1|}.
+\end{equation*}
+</div>
+</li>
+</ol>
 <span class="incontext"><a href="exercises-18.html#p-565">in-context</a></span>
 </body>
 </html>

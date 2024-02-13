@@ -12,24 +12,30 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>We know that the eignvectors \(\bu_1, \ldots, \bu_n\) form a basis for \(\R^n\) (thanks, Frobenius-Perron!). In particular, we have</p>
+<p>Let \(A\) be the adjacency matrix for a connected, undirected and aperiodic graph. Recall that the Frobenius-Perron Theorem guarantees that the symmetric matrix \(A\)    has real eigenvalues \(\kappa_1 \geq \kappa_2 \geq \cdots \geq \kappa_n\) with corresponding orthonormal eigenvectors \(\bu_1, \bu_2, \ldots , \bu_n\text{.}\) Furthermore</p>
+<ul class="disc">
+<li><p>The eigenvalue \(\kappa_1\) has multiplicity one, and \(\kappa_1 &gt; | \kappa_i |\) for \(2 \leq i \leq n\text{.}\)</p></li>
+<li><p>The corresponding eigenvector \(\bu_1\) has non-negative entries.</p></li>
+</ul>
+<p class="continuation">In this problem, you will show that when \(n \geq 3\text{,}\) we have  \(\kappa_1 \geq 1\text{.}\)</p>
+<ol class="lower-alpha">
+<li><p>Let \(\bx = A \bone\text{.}\) Explain explain why  \(\bx \geq \bone\text{,}\) (meaning \(x_i \geq 1\) for all \(i\)), and explain why  there is at least one \(j\) such that \(x_j &gt; 1\text{.}\)</p></li>
+<li>
+<p>The orthonormal eigenvectors \(\bu_1, \bu_2, \ldots , \bu_n\) form a basis for \(\R^n\text{.}\) So there exist \(c_1, c_2, \ldots, c_n\) such that</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\bone = c_1 \bu_1 + c_2 \bu_2 + \cdots + c_n \bu_n
+\bone = c_1 \bu_1 + c_2 \bu_2 + \cdots + c_n \bu_n.
 \end{equation*}
 </div>
-<p class="continuation">for some choice of  \(c_1, \ldots, c_n \in \R\text{.}\) Let us assume that \(c_1 \neq 0\text{.}\) Use parts (a) and (b) to show that the limiting value</p>
+<p class="continuation">Consider</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\bx_t = \alpha A \bx_{t-1} + \bone
+A \bone = A(c_1 \bu_1 + c_2 \bu_2 + \cdots + c_n \bu_n).
 \end{equation*}
 </div>
-<p class="continuation">of the Katz recursion is basically <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">proportional</em> to the eigenvector centrality \(\bu_1\text{.}\) In other words, show that</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\lim_{t \rightarrow \infty} \frac{\bx_t}{| \bx_t |} = \frac{\bu_1}{| \bu_1|}.
-\end{equation*}
-</div>
+<p class="continuation">Explain why \(\kappa_1 &lt; 1\) leads to a contradiction to your observations in part (a).</p>
+</li>
+</ol>
 <span class="incontext"><a href="exercises-18.html#p-559">in-context</a></span>
 </body>
 </html>

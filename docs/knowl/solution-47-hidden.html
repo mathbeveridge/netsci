@@ -11,24 +11,13 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p>The terms are</p>
+<p>Our recursive update rule is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\begin{array}{c|c|c|c|c}
-i \backslash j&amp;  1  &amp; 2 &amp; 3 &amp; 4 \\[0.5em]
-\hline
-1 &amp; -\frac{1}{4} &amp; 1-\frac{1}{4} &amp;0&amp;0\\[0.5em]
-2 &amp;1-\frac{1}{4} &amp;-\frac{1}{4} &amp;0 &amp;0 \\[0.5em]
-3 &amp;0&amp;0 &amp;-\frac{1}{4} &amp;1-\frac{1}{4} \\[0.5em]
-4 &amp;0 &amp;0&amp;1-\frac{1}{4} &amp;-\frac{1}{4}
-\end{array}
-\end{equation*}
+\begin{align*}
+\bh(t) &amp;= A \, \ba(t-1),\\
+\ba(t) &amp;= A^{\top} \, \bh(t).
+\end{align*}
 </div>
-<p class="continuation">and the modularity is</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-Q =  \frac{1}{4} \left( 4 - 8 \cdot \frac{1}{4} \right) = \frac{1}{2}
-\end{equation*}
-</div>
+<p>Row \(i\) of \(A\) contains the out-neighbors of vertex \(i\text{.}\)  Row \(i\) of \(A^{\top}\) contains the in-neighbors of \(i\text{.}\)</p>
 </div></body>
 </html>
