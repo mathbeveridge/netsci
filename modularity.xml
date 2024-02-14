@@ -702,7 +702,7 @@ Confirm that this expression is equivalent to
 <me>
 Q \, = \, \sum_{C} \sum_{i,j \in C} \left( P^{\top}_{ij}\pi_i  - \pi_i \pi_j  \right)
 </me>
-	where <m>P = D^{-1} A^</m> is the random walk transition matrix and <m>\pi</m> is its stationary distribution, where <m>\pi_i=k_i/2m</m>. 
+	where <m>P = D^{-1} A</m> is the random walk transition matrix and <m>\pi</m> is its stationary distribution, where <m>\pi_i=k_{i}/2m</m>. 
 </li>
 <li><p>
 	Consider a random walk whose distribution has converged to the stationary distribution <m>\pi</m>.
