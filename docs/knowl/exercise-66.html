@@ -12,26 +12,47 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">4<span class="period">.</span></span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3<span class="period">.</span></span>
 </h6>
-<p>Here is very useful fact from probability. Let \(X\) be any random variable taking on positive integer values. We can write the expected value of \(X\) as</p>
+<p>Consider a vertex \(v\) with ring distance \(d=d(v,t)\) satisfying \(2^j \leq d &lt; 2^{j+1}\text{.}\)</p>
+<ol class="lower-alpha">
+<li>
+<p>Let</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\E[X] = \sum_{k=1}^{\infty} \Pr[X \geq k].
+A = \{ w \mid d(w,t) \leq d/2 \}
 \end{equation*}
 </div>
-<p class="continuation">Indeed, when \(X\) only takes on positive integer values, we have</p>
+<p class="continuation">be the set of vertices that are "at most half the distance from \(t\) as \(v\text{.}\)" Explain why</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\sum_{k=1}^{\infty} \Pr[X \geq k] = \sum_{k=1}^{\infty} k \Pr[X = k]
+|A|=d+1
 \end{equation*}
 </div>
-<p class="continuation">and the right hand side is the definition of \(\E[X]\text{.}\)</p>
-<p>Use this new formula for \(\E[X]\) and part 3(c) to prove that</p>
+<p class="continuation">and why</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-E[X_j] \leq 3 \log n.
+\frac{d}{2} \leq d(v,w) \leq \frac{3d}{2}
 \end{equation*}
-</div></article><span class="incontext"><a href="exercises-14.html#exercise-66">in-context</a></span>
+</div>
+<p class="continuation">for all \(w \in A\text{.}\) </p>
+</li>
+<li>
+<p>Prove that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\displaystyle{\Pr[v \mbox{'s long-range contact is in } A] \geq  \frac{1}{3 \log n}}.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Use part (b) to prove that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\displaystyle{\Pr[\mbox{round } j \mbox{ lasts at least } i  \mbox{ steps}] \leq  \left( 1 - \frac{1}{ 3 \log n} \right)^{i-1}}.
+\end{equation*}
+</div>
+</li>
+</ol></article><span class="incontext"><a href="exercises-14.html#exercise-66">in-context</a></span>
 </body>
 </html>

@@ -288,7 +288,31 @@ Q = \frac{1}{2m} \sum_{i}  \sum_{j}  \left( A_{ij} - \frac{k_i k_j}{2m} \right)\
 \begin{equation*}
 Q = 	\frac{1}{2m} \sum_{C} \sum_{i \in C} \sum_{j \in C} \left( A_{ij} - \frac{k_i k_j}{2m} \right).	
 \end{equation*}
-</div></article></section></section></div></main>
+</div></article><article class="exercise exercise-like" id="exercise-43"><h6 class="heading">
+<span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">Modularity as a Random Walk Measure.</span>
+</h6>
+<p id="p-292">We can rewrite our modularity equation as</p>
+<div class="displaymath">
+\begin{equation*}
+Q \, = \, \frac{1}{2m} \sum_{C} \sum_{i,j \in C} \left( A_{ij} - \frac{k_i k_j}{2m} \right) 
+\,= \,  \sum_{C} \sum_{i,j \in C} \left( \frac{A_{ij}}{k_i} \frac{k_i}{2m}  - \frac{k_i }{2m} \frac{k_j }{2m}  \right)	
+\end{equation*}
+</div>
+<ol id="p-293" class="lower-alpha">
+<li id="li-165"><p id="p-derived-li-165">Confirm that this expression is equivalent to<div class="displaymath">
+\begin{equation*}
+Q \, = \, \sum_{C} \sum_{i,j \in C} \left( P^{\top}_{ij}\pi_i  - \pi_i \pi_j  \right)
+\end{equation*}
+</div>where \(P^{\top} = D^{-1} A^{\top}\) and \(\pi\) is the stationary distribution.</p></li>
+<li id="li-166">
+<p id="p-294">Consider a random walk whose distribution has converged to the stationary distribution \(\pi\text{.}\)</p>
+<ol class="lower-roman">
+<li id="li-167"><p id="p-derived-li-167">Explain why \(\sum_{i,j \in C} P^{\top}_{ij}\pi_i\) is the probability that we are in \(C\) at time \(t\) and \(t+1\text{.}\)</p></li>
+<li id="li-168"><p id="p-derived-li-168">Explain why \(\sum_{i,j \in C}  \pi_i \pi_j\) is the probability that we are in \(C\) at time \(t\) and \(t+T\) for very large \(T\text{.}\)</p></li>
+</ol>
+</li>
+<li id="li-169"><p id="p-derived-li-169">Modularity is the difference of the two quantities in part (b). Using this random walk interpretation, why is this difference a measure of community structure?</p></li>
+</ol></article></section></section></div></main>
 </div>
 </body>
 </html>

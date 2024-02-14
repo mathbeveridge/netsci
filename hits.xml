@@ -538,8 +538,8 @@ Here's a cool connection: a couple of standard linear algebra results will show 
 			</p>
 			</li>
 		</ul>
-Therefore, <m>B</m> and <m>B^{\top}</m> have the same eigenvalues (though they usually have different eigenvectors). By observing that
-<m></m>(A A^{\top})^{\top} = A^{\top} A,<m></m>
+Therefore, <m>B</m> and <m>B^{\top}</m> have the same eigenvalues (though they usually have different eigenvectors). 
+By observing that <m>(A A^{\top})^{\top} = A^{\top} A,</m>
 we  conclude that <m>\lambda = \mu</m>.
 
 			</p><p>

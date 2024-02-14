@@ -12,35 +12,31 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Approximating with a Continuous Power Law.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">The Normalizing Constant for Exponent \(\alpha\).</span>
 </h6>
-<p>In general, it is easier to pretend that we are dealing with a continuous distribution (rather than a discrete distribution). So we will talk about a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">probability density function (PDF)</em> \(p: [k_{\min}, n] \rightarrow [0,1]\) given by</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-p(x) = C x^{-\alpha}
-\end{equation*}
-</div>
-<p class="continuation">rather than a PMF. You can find the constant \(C = (\alpha-1)k_{\min}^{\alpha-1} \) as you did in the previous problem. But let's just keep calling it \(C\) for now.</p>
 <ol class="lower-alpha">
 <li>
-<p>Let \(X\) be a random variable governed by the continuous PDF \(p(x)\text{.}\) Find</p>
+<p>For many real-world networks, the power law behavior doesn't hold for small \(k\text{.}\) In this case, we restrict our attention to vertices of degree at least \(k_{\min}\text{.}\) We then deal with  the probability mass function for a truncated power law. Given \(\alpha\) and \(k \geq k_{\min}\) this PMF is given by</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\E[X] = \int_{x=k_{\min}}^{n} x p(x) dx.
+p(k) =  \frac{ k^{-\alpha}}{\zeta(\alpha, k_{\min})}
+\end{equation*}
+</div>
+<p class="continuation">where</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\zeta(x, k_{\min}) =  \sum_{k=k_{\min}}^{\infty} k^{-x}
+\end{equation*}
+</div>
+<p class="continuation">is the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">generalized Riemann zeta function</em>.</p>
+<p>Dealing with the Riemann zeta function is unwieldy. In practice, we approximate this leading constant by the corresponding integral.  Evaluate the following integral in order to find the approximate value for \(\zeta(\alpha, k_{\min})\text{:}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\sum_{k= k_{\min}}^{\infty} k^{-\alpha} \approx \int_{x= k_{\min}}^{\infty} x^{-\alpha}  \, dx.
 \end{equation*}
 </div>
 </li>
-<li>
-<p>The \(m\)th moment of \(X\) is</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\E[X^m] = \int_{x=k_{\min}}^{n} x^m p(x) dx.
-\end{equation*}
-</div>
-<p class="continuation">Calculate it.</p>
-</li>
-<li><p>Look at your answers for parts (a) and (b) and think about what happens as \(n \rightarrow \infty\text{.}\) For what values of \(\alpha\) does \(\E[X]\) converge? When does the \(m\)th moment \(\E[X^m]\) converge?</p></li>
-<li><p>Recall that most observed power laws have \(2 \leq \alpha \leq 3\text{.}\) In this range, does the expected value converge? Which moments converge, and which moments diverge?</p></li>
+<li><p>Find the corresponding approximate expression for the power law PMF \(p(x)\) using your  constant from (b). Simplify so that \(\alpha\) only appears once in an exponent.</p></li>
 </ol></article><span class="incontext"><a href="exercises-10.html#exercise-53">in-context</a></span>
 </body>
 </html>

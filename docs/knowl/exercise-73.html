@@ -12,53 +12,48 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Susceptible-Infected Model: The Homogeneous Case.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Excess Degree Distribution.</span>
 </h6>
-<p>We start by considering a spread of disease model that replaces the network with a simplifying assumption: everyone is equally likely to interact with everyone else. Consider a large population where a disease is active. People are either <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">susceptible</em> to the disease or are <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">infected</em>. Once you are infected, you remain infected. Let</p>
+<p>Suppose that we have  a large network for which there is no correlation between vertex degrees. That is, an edge from vertex \(v\) leads to a vertex chosen  uniformly at random. Let \(p_k\) denote the fraction of vertices of degree \(k\text{.}\) When you pick a vertex \(v\) at random, we have \(\Pr[\deg(v)=k] = p_k\text{.}\) This means that the expected degree of the network is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-I &amp;= \mbox{ fraction of population that is infected}\\
-S &amp;= (1-I)  \mbox{ fraction of population that is susceptible}\\
-\langle k \rangle &amp;= \sum_k k \, p_k  \mbox{ the average number of contacts}\\
-\beta &amp;= \mbox{ likelihood of transmission from infected person to susceptible person}
-\end{align*}
+\begin{equation*}
+\langle k \rangle = \sum_{k=0}^{k_{\max}} k  \cdot p_k.
+\end{equation*}
 </div>
+<p class="continuation">Consider the following process: Pick a random vertex \(v\) and then move to a random neighbor \(w\) of vertex \(v\text{.}\) Let</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+q_k = \Pr [\deg(w)=k+1].
+\end{equation*}
+</div>
+<p class="continuation">In other words, \(w\) has \(k\) additional edges, besides the one you just traveled. In this case, we say that \(w\) has <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">excess degree</em> \(k\text{.}\)</p>
 <ol class="lower-alpha">
 <li>
-<p>Interpret the following differential equation for the Susceptible/Infected Model (SI Model) with <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">transmission rate</em> \(\beta \langle k \rangle\text{:}\)</p>
+<p>Explain why the excess degree distribution  satisfies</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{dI}{dt} = \beta \langle k \rangle I S = \beta \langle k \rangle  I (1-I).
+q_k = \frac{(k+1) p_{k+1}}{\langle k \rangle}.
 \end{equation*}
 </div>
 </li>
 <li>
-<p>This differential equation is called the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">logistic equation</em>. Its solution is the logistic function</p>
+<p>Confirm that the expected degree of vertex \(w\) is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-I(t) = \frac{I_0}{I_0 + (1-I_0)e^{-\beta \langle k \rangle t}}
-\end{equation*}
-</div>
-<p class="continuation">where \(I_0 = I(0)\) is the fraction of infected people at time \(t=0\text{.}\) We can write this as</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-I(t) = \frac{1}{1+a e^{-c t}}
-\end{equation*}
-</div>
-<p class="continuation">where \(a = 1/I_0 - 1\) and \(c= \beta \langle k \rangle\text{.}\) Calculate \(\frac{dI}{dt}\) to confirm that \(I(t)\) satisfies the logistic equation</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\frac{dI}{dt} = c I (1-I).
+\frac{\langle k^2 \rangle}{\langle k \rangle}.
 \end{equation*}
 </div>
 </li>
 <li>
-<p>Here is a plot of the logistic function  \(I(t)\text{.}\) <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/simodel.png" class="contained"></div> Look at the formula from question  2(b) and explain why</p>
-<ol class="lower-roman">
-<li><p>\(I(t) \sim e^{\beta \langle k \rangle t}\) when \(t &gt;0\) is very small.</p></li>
-<li><p>\(I(t) \approx 1\) when \(t\) is very large.</p></li>
-</ol>
+<p>Recall that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\mbox{Var}[X] = E[X^2] - E[X]^2 &gt; 0
+\end{equation*}
+</div>
+<p class="continuation">when \(X\) is not constant. Use this to explain why that the expected degree of \(w\) is larger than the expected degree of \(v\text{.}\) </p>
 </li>
+<li><p>Colloquially, people refer to this result as: "your friends are more popular than you." Why? </p></li>
 </ol></article><span class="incontext"><a href="exercises-16.html#exercise-73">in-context</a></span>
 </body>
 </html>

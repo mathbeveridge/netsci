@@ -683,6 +683,49 @@ Q = 	\frac{1}{2m} \sum_{C} \sum_{i \in C} \sum_{j \in C} \left( A_{ij} - \frac{k
 				</p>
 			</statement>
 		</exercise>
+		<exercise>
+			<title>Modularity as a Random Walk Measure</title>
+			<idx><h>Modularity as a Random Walk Measure</h></idx>
+			<statement>
+				<p>
+We can rewrite our modularity equation as
+<me>
+	Q \, = \, \frac{1}{2m} \sum_{C} \sum_{i,j \in C} \left( A_{ij} - \frac{k_i k_j}{2m} \right) 
+	\,= \,  \sum_{C} \sum_{i,j \in C} \left( \frac{A_{ij}}{k_i} \frac{k_i}{2m}  - \frac{k_i }{2m} \frac{k_j }{2m}  \right)	
+</me>
+</p>
+<p>
+<ol>
+	<li>
+
+Confirm that this expression is equivalent to
+<me>
+Q \, = \, \sum_{C} \sum_{i,j \in C} \left( P^{\top}_{ij}\pi_i  - \pi_i \pi_j  \right)
+</me>
+	where <m>P^{\top} = D^{-1} A^{\top}</m> and <m>\pi</m> is the stationary distribution. 
+</li>
+<li><p>
+	Consider a random walk whose distribution has converged to the stationary distribution <m>\pi</m>.
+	<ol>
+	<li>Explain why <m>\sum_{i,j \in C} P^{\top}_{ij}\pi_i</m> is the probability that we are in
+	 <m>C</m> at time <m>t</m> and <m>t+1</m>. </li>
+	 <li>Explain why 
+	 <m>\sum_{i,j \in C}  \pi_i \pi_j</m> is the probability that we are in
+	 <m>C</m> at time <m>t</m> and <m>t+T</m> for very large <m>T</m>.
+	</li>
+	</ol>
+	</p>
+	</li>	
+<li>
+Modularity is the difference of the two quantities in part (b). Using this random walk interpretation,
+why is this difference a measure of community structure?
+</li>
+</ol>
+
+
+				</p>
+			</statement>
+		</exercise>
 	</exercises>
 
 </chapter>

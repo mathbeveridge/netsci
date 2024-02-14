@@ -12,13 +12,35 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Getting Started.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Approximating with a Continuous Power Law.</span>
 </h6>
-<p>Start by expanding the Model Info section at the bottom. Read the sections first sections: WHAT IS IT?,  HOW IT WORKS, HOW TO USE IT, THINGS TO TRY.</p>
+<p>In general, it is easier to pretend that we are dealing with a continuous distribution (rather than a discrete distribution). So we will talk about a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">probability density function (PDF)</em> \(p: [k_{\min}, n] \rightarrow [0,1]\) given by</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+p(x) = C x^{-\alpha}
+\end{equation*}
+</div>
+<p class="continuation">rather than a PMF. You can find the constant \(C = (\alpha-1)k_{\min}^{\alpha-1} \) as you did in the previous problem. But let's just keep calling it \(C\) for now.</p>
 <ol class="lower-alpha">
-<li><p>Run the model for \(n=80\)  (the default size). Watch the evolution of the whole graph, as well as the evolution of the largest component itself. Watch the giant appear. Reset and repeat a few times. Describe what you see. Look at the graph that tracks the average degree versus giant component size. Increase or slow the speed of the simulation using the slider bar.</p></li>
-<li><p>Do the same for smaller networks  such as \(n=20\) and \(n=40\) and for larger networks such as \(n=160\) and \(n=320\text{.}\)  Compare and contrast these evolutions. For larger networks, you should uncheck the green "layout?" checkbox. This will allow the process to run much faster. You can still keep track of the giant by using the color of the stick-figure vertices.</p></li>
-<li><p>Now let's really focus in on the emergence of the giant component. This is window in which we transition from "no giant" to "yes giant." Use the "Go"  button and the "Go Once" button to Stop/Start the simulation as the giant emerges.</p></li>
-</ol></article><span class="incontext"><a href="exercises-11.html#exercise-54">in-context</a></span>
+<li>
+<p>Let \(X\) be a random variable governed by the continuous PDF \(p(x)\text{.}\) Find</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[X] = \int_{x=k_{\min}}^{n} x p(x) dx.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>The \(m\)th moment of \(X\) is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[X^m] = \int_{x=k_{\min}}^{n} x^m p(x) dx.
+\end{equation*}
+</div>
+<p class="continuation">Calculate it.</p>
+</li>
+<li><p>Look at your answers for parts (a) and (b) and think about what happens as \(n \rightarrow \infty\text{.}\) For what values of \(\alpha\) does \(\E[X]\) converge? When does the \(m\)th moment \(\E[X^m]\) converge?</p></li>
+<li><p>Recall that most observed power laws have \(2 \leq \alpha \leq 3\text{.}\) In this range, does the expected value converge? Which moments converge, and which moments diverge?</p></li>
+</ol></article><span class="incontext"><a href="exercises-10.html#exercise-54">in-context</a></span>
 </body>
 </html>
