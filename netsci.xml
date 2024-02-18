@@ -67,6 +67,7 @@ pull the name of the problem from the first line  of  the \item
                 <xi:include href="./modularity.xml" />    
                 <xi:include href="./communities.xml" />   
                 <xi:include href="./randomvar.xml" />   
+                <xi:include href="./distributions.xml" />                  
                 <xi:include href="./powerlaw.xml" />                      
 
        </part>

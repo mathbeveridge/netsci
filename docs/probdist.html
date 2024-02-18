@@ -8,7 +8,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>NetSci Discrete Random Variables</title>
+<title>NetSci Probability Distributions</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>window.MathJax = {
@@ -105,10 +105,10 @@
 </div></div>
 <nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="randvar.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="randvar.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="randvar3.html" title="Next">Next</a></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="randvar16.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="part-structure.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="powerlaw.html" title="Next">Next</a></span></div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="randvar.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="randvar.html" title="Up">Up</a><a class="next-button button toolbar-item" href="randvar3.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="randvar16.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="part-structure.html" title="Up">Up</a><a class="next-button button toolbar-item" href="powerlaw.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -141,14 +141,14 @@
 </li>
 <li class="link">
 <a href="randvar.html" data-scroll="randvar"><span class="codenumber">9</span> <span class="title">Discrete Random Variables</span></a><ul>
-<li><a href="randvar0.html" data-scroll="randvar0" class="active">Discrete Random Variables</a></li>
+<li><a href="randvar0.html" data-scroll="randvar0">Discrete Random Variables</a></li>
 <li><a href="randvar3.html" data-scroll="randvar3">Events</a></li>
 <li><a href="randvar6.html" data-scroll="randvar6">CDF and CCDF</a></li>
 <li><a href="randvar10.html" data-scroll="randvar10">Expectation, Variance and Moments</a></li>
 <li><a href="randvar16.html" data-scroll="randvar16">Famous Discrete Distributions</a></li>
 </ul>
 </li>
-<li class="link">
+<li class="link active">
 <a href="probdist.html" data-scroll="probdist"><span class="codenumber">10</span> <span class="title">Probability Distributions</span></a><ul><li><a href="exercises-9.html" data-scroll="exercises-9">Practice Problems</a></li></ul>
 </li>
 <li class="link">
@@ -186,53 +186,188 @@
 </li>
 </ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="randvar0"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">9.1</span> <span class="title">Discrete Random Variables</span>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="probdist"><h2 class="heading">
+<span class="type">Chapter</span> <span class="codenumber">10</span> <span class="title">Probability Distributions</span>
 </h2>
-<p id="p-316">In an experiment \(X\text{,}\) we pick an element from our finite <em class="emphasis">sample space</em> \(\Omega\) and then make note of one of its numerical properties. For example, we could take \(\Omega\) to be the set of vertices in our graph, and let \(X\) be the degree of the chosen vertex.</p>
-<p id="p-317">A <em class="emphasis">discrete random variable</em> \(X: \Omega \rightarrow \R\) is a real-valued function on the outcome of an experiment that can take finite or a countably infinite number of values. In other words, the image \(T \subset \R\) is a finite or countably infinite set. Most typically, our discrete random variables will only take on nonnegative integer values, so  \(T = \Z_{\geq 0}\) or \(T = \{ 0, 1, 2, \ldots, M \}\text{.}\)</p>
-<p id="p-318">So at the end of it all, \(X\) is just a <em class="emphasis">function</em> from a set \(\Omega\) to \(\R\text{.}\) So what's with all the strange notation? Let's start with the sample space \(\Omega\text{.}\) This is just a set. Why not call it \(S\text{?}\) We use \(\Omega\) as  a mnemonic for "outcome." Since we are running an experiment (multiple times), each trial produces an <em class="emphasis">outcome</em>. We then take a measurement of that outcome (represented by the random variable \(X\)).</p>
-<p id="p-319">Now, the random variable \(X\) is actually a real-valued function \(X: \Omega \rightarrow \R\text{.}\)  So why use \(X\) instead of \(f\text{?}\) Well, we are taking a measurement of an outcome of an experiment. In this context, we are more interested in the value of the measurement. The symbol  \(X\) encourages us to pay attention to the measurement (not the function) because it reminds us of the variable \(x\) from algebra.</p>
-<section class="subsection" id="randvar1"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">9.1.1</span> <span class="title">Probability Mass Function</span>
+<section class="introduction" id="introduction-10"><p id="p-378"></p>
+<p id="p-379"></p></section><section class="exercises" id="exercises-9"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Practice Problems</span>
 </h3>
-<p id="p-320">A discrete random variable \(X\) has an associated <em class="emphasis">probability mass function (PMF)</em></p>
-<div class="displaymath">
-\begin{equation*}
-p_X(t) = \P [ X = t]
-\end{equation*}
-</div>
-<p class="continuation">which gives the probability of each numerical value that the random variable can take. When \(X\) is clear from the context, we simply write \(p(t) = \P [X=t]\text{.}\) <article class="example example-like" id="example-1"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-1"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">9.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">PMF for a Random Vertex Degree.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-1"><article class="example example-like"><p id="p-321">Consider the experiment where we take \(X\) to be the degree of a vertex from the network shown below, chosen uniformly at random (meaning that every vertex is equally likely). Find the PMF for this experiment. <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/graph7.png" class="contained"></div> </p></article></div></p></section><section class="subsection" id="randvar2"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">9.1.2</span> <span class="title">Properties of a PMF</span>
-</h3>
-<p id="p-322">The PMF of a random variable has the following properties.</p>
+<article class="exercise exercise-like" id="exercise-47"><h6 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Probability Concept Review.</span>
+</h6>
+<p id="p-380">Provide the definition and/or formula for each of the following terms. Then give an "intuitive description" of what this concept tells us, and why we might care. An illustrating concrete example (say, about vertex degrees in a network) can be a better way  convey your understanding than simply speaking in generalities.</p>
+<ol class="lower-alpha">
+<li id="li-200"><p id="p-381">A random variable \(X : \Omega \rightarrow \Z_{\geq 0}\text{.}\)</p></li>
+<li id="li-201"><p id="p-382">The probability mass function (PMF) \(p_X(t)\text{.}\)</p></li>
+<li id="li-202"><p id="p-383">The expected value \(\E[X]\text{.}\)</p></li>
+<li id="li-203"><p id="p-384">The variance \(\var[X]\text{.}\)</p></li>
+</ol>
+<p id="p-385">Now that  these concepts are at your fingertips, let's explore three distributions that will  appear frequently in our discussion of network models and dynamic network processes. In the questions that follow, take some time to reflect on the formulas (as well as the techniques that got you there). For each question:</p>
 <ul class="disc">
-<li id="li-185">
-<p id="p-323">We always have</p>
+<li id="li-204"><p id="p-386">Perform the calculation</p></li>
+<li id="li-205"><p id="p-387">Pause to think about what the formula means.</p></li>
+<li id="li-206"><p id="p-388">Interpret what the answer would mean for large \(n\text{;}\) for different values of \(p \in [0,1]\text{;}\) for big or small \(k\text{.}\)</p></li>
+</ul></article><article class="exercise exercise-like" id="exercise-48"><h6 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Binomial Random Variable.</span>
+</h6>
+<p id="p-389">Flip a weighted coin \(n\) times, where \(p\) is the probability of obtaining heads, and \(1-p\) is the probability of obtaining tails. Define \(X\) to be the number of heads in the \(n\) tosses. This is the <em class="emphasis">binomial random variable with parameters \(n\) and \(p\)</em>.</p>
+<ol class="lower-alpha">
+<li id="li-207">
+<p id="p-390">Give a combinatorial argument for why the PMF of the binomial random variable is</p>
 <div class="displaymath">
 \begin{equation*}
-\sum_{t \in T} \P[ X = t] = 1.
+p(k) = {n \choose k} p^k (1 - p)^{n-k}.
 \end{equation*}
 </div>
 </li>
-<li id="li-186">
-<p id="p-324">When \(\Omega\) is a finite set, we can find \(\P[X = t]\) by calculating</p>
+<li id="li-208">
+<p id="p-391">Use the binomial theorem</p>
 <div class="displaymath">
 \begin{equation*}
-p(t) = \P[X=t] = \frac{ | \{ \omega \in \Omega | X(\omega) = t \} |} { | \Omega |}.
+(x+y)^n = \sum_{k=0}^n {n \choose k} x^ky^{n-k}
+\end{equation*}
+</div>
+<p class="continuation">to prove that \(p(k)\) is a PMF. </p>
+</li>
+<li id="li-209">
+<p id="p-392">Linearity of expectation applies to the sum of multiple random variables. In particular, an easy proof by induction shows that for any random variables \(X_1, X_2, \ldots, X_n\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\E[X_1 + X_2 + \cdots + X_n] = \E[X_1] + \E[X_2] + \cdots + \E[X_n]
+\end{equation*}
+</div>
+<p class="continuation">Use this formula to show that</p>
+<div class="displaymath">
+\begin{equation*}
+\E[X] = np.
+\end{equation*}
+</div>
+<p class="continuation">You will have to split your random variable \(X\) into the sum of \(n\) random variables. (Note: you can also prove this directly from part (a), but it is a bit tedious.) </p>
+</li>
+<li id="li-210">
+<p id="p-393"><em class="emphasis">[Do not solve this one. It is a long calculation.]</em> It can be shown that</p>
+<div class="displaymath">
+\begin{equation*}
+\var(X) = np(1-p).
+\end{equation*}
+</div>
+<p class="continuation">But you do not need to do this here. You need to use the fact that</p>
+<div class="displaymath">
+\begin{equation*}
+\E[X^2] = \E[X(X-1) + X] = \E[X(X-1)] + \E[X],
+\end{equation*}
+</div>
+<p class="continuation">which follows from <em class="emphasis">linearity of expectation</em>. </p>
+</li>
+</ol></article><article class="exercise exercise-like" id="exercise-49"><h6 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Geometric Random Variable.</span>
+</h6>
+<p id="p-394">Instead of flipping our coin for a fixed number of times, we will flip it until we first encounter a heads. This experiment gives the geometric random variable \(Y\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-211">
+<p id="p-395">Give a combinatorial argument for  why the PMF of the geometric random variable is</p>
+<div class="displaymath">
+\begin{equation*}
+p(k) =  (1 - p)^{k-1}  p.
 \end{equation*}
 </div>
 </li>
-<li id="li-187">
-<p id="p-325">A function \(f: T \rightarrow \R\) is a PMF if and only if</p>
-<ul class="circle">
-<li id="li-188"><p id="p-326">\(f(t) \geq 0\) for all \(t \in T\text{,}\) and</p></li>
-<li id="li-189"><p id="p-327">\(\sum_{t \in T} f(t) = 1\text{.}\)</p></li>
-</ul>
+<li id="li-212">
+<p id="p-396">Use the fact that</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{k=0}^{\infty} x^k = \frac{1}{1-x}
+\end{equation*}
+</div>
+<p class="continuation">to prove that  \(p(k)\) is a PMF. </p>
 </li>
-</ul></section></section></div></main>
+<li id="li-213">
+<p id="p-397">Show that</p>
+<div class="displaymath">
+\begin{equation*}
+\E[Y] = \frac{1}{p}.
+\end{equation*}
+</div>
+<p class="continuation">Hint: take the derivative of both sides of the equality in part (b) to get a new identity. </p>
+</li>
+<li id="li-214">
+<p id="p-398"><em class="emphasis">[Do not solve this one. It is a long calculation.]</em>  It can be shown that</p>
+<div class="displaymath">
+\begin{equation*}
+\var(Y) = \frac{1-p}{p^2}.
+\end{equation*}
+</div>
+<p class="continuation">But you do not need to prove this here. (You use the same trick as in problem 1(d) of writing \(\E[Y^2] = \E[Y(Y-1)] + E[Y]\text{.}\)) </p>
+</li>
+</ol></article><article class="exercise exercise-like" id="exercise-50"><h6 class="heading">
+<span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Poisson Random Variable.</span>
+</h6>
+<p id="p-399">The Poisson random variable \(Z\) for parameter \(\lambda &gt; 0\) has PMF given by</p>
+<div class="displaymath">
+\begin{equation*}
+p(k) = e^{-\lambda} \frac{\lambda^k}{k!}.
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-215">
+<p id="p-400">Use the fact that</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{k=0}^{\infty} \frac{x^k}{k!} = e^{x}
+\end{equation*}
+</div>
+<p class="continuation">to prove that  \(p(k)\) is a PMF. </p>
+</li>
+<li id="li-216">
+<p id="p-401">Show that</p>
+<div class="displaymath">
+\begin{equation*}
+\E[Z] = \lambda.
+\end{equation*}
+</div>
+</li>
+<li id="li-217">
+<p id="p-402"><em class="emphasis">[Don't solve this one. The calculation isn't as bad as the other variance calculations above. But it is still a bit long.]</em> It can be shown that</p>
+<div class="displaymath">
+\begin{equation*}
+\var[Z] = \lambda
+\end{equation*}
+</div>
+<p class="continuation">as well! Again, we need to use the trick</p>
+<div class="displaymath">
+\begin{equation*}
+\E[Z^2] = \E[Z(Z-1)] + \E[Z].
+\end{equation*}
+</div>
+<p class="continuation">This time, we also need to be comfortable with reindexing infinite series. </p>
+</li>
+<li id="li-218">
+<p id="p-403">In this part, you will show that when \(n\) is very large and \(p\) is very small, the Poisson PMF for</p>
+<div class="displaymath">
+\begin{equation*}
+\lambda :=np
+\end{equation*}
+</div>
+<p class="continuation">is a good approximation (for small \(k\)) of  the binomial PMF with parameters \(n\) and \(p\text{.}\) We will fix \(k \in \Z_{\geq 0}\) to be  constant and let \(n \rightarrow \infty\text{.}\) You will show that</p>
+<div class="displaymath">
+\begin{equation*}
+{n \choose k} p^k (1-p)^{n-k} \approx e^{-\lambda} \frac{\lambda^k}{k!}   \mbox{if } k \ll n.
+\end{equation*}
+</div>
+<p class="continuation">Use the following facts which hold for \(n \rightarrow \infty\) and any constants \(c,d \in \Z_{\geq 0}\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{n \rightarrow \infty} \frac{n -c}{n} &amp;= 1,
+&amp;
+\lim_{n \rightarrow \infty} \left( 1 - \frac{c}{n} \right)^{-d} &amp;= 1,
+&amp;
+\lim_{n \rightarrow \infty} \left( 1 - \frac{c}{n} \right)^n &amp;= e^{-c}.
+\end{align*}
+</div>
+<p id="p-404"></p>
+</li>
+</ol></article></section></section></div></main>
 </div>
 </body>
 </html>
