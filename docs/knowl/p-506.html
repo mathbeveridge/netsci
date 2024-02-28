@@ -12,47 +12,42 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose that we have  a large network for which there is no correlation between vertex degrees. That is, an edge from vertex \(v\) leads to a vertex chosen  uniformly at random. Let \(p_k\) denote the fraction of vertices of degree \(k\text{.}\) When you pick a vertex \(v\) at random, we have \(\Pr[\deg(v)=k] = p_k\text{.}\) This means that the expected degree of the network is</p>
+<p>You will calculate the clustering coefficient</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\langle k \rangle = \sum_{k=0}^{k_{\max}} k  \cdot p_k.
+C = \frac{3 \times (\mbox{\# of triangles})}{\mbox{\# of connected triples}}
 \end{equation*}
 </div>
-<p class="continuation">Consider the following process: Pick a random vertex \(v\) and then move to a random neighbor \(w\) of vertex \(v\text{.}\) Let</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-q_k = \Pr [\deg(w)=k+1].
-\end{equation*}
-</div>
-<p class="continuation">In other words, \(w\) has \(k\) additional edges, besides the one you just traveled. In this case, we say that \(w\) has <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">excess degree</em> \(k\text{.}\)</p>
+<p class="continuation">where a "connected triple" are three vertices \(u,v,w\) such that \((u,v)\) and \((v,w)\) are edges. Intuitively, the clustering coefficient measures the  fraction of times that "pairs of my friends are also friends."</p>
 <ol class="lower-alpha">
 <li>
-<p>Explain why the excess degree distribution  satisfies</p>
+<p>Show that there are</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-q_k = \frac{(k+1) p_{k+1}}{\langle k \rangle}.
+n {c/2 \choose 2}
 \end{equation*}
 </div>
+<p class="continuation">triangles in a Ring World. A nice way to argue this is to recognize that all triangles look like one "long edge" going distance \(\leq c/2\) and two "shorter edges." Orient the long edge  clockwise the two shorter edges  counter clockwise. Then associate this directed cycle with the vertex at the start of the long clockwise arc.</p>
 </li>
 <li>
-<p>Confirm that the expected degree of vertex \(w\) is</p>
+<p>Show that there are</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{\langle k^2 \rangle}{\langle k \rangle}.
+n {c \choose 2}
 \end{equation*}
 </div>
+<p class="continuation">connected triples. These are paths of length 2 (which can be associated with their central vertex).</p>
 </li>
 <li>
-<p>Recall that</p>
+<p>Show that the clustering coefficient  is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\mbox{Var}[X] = E[X^2] - E[X]^2 &gt; 0
+C =  \frac{3(c-2)}{4(c-1)}.
 \end{equation*}
 </div>
-<p class="continuation">when \(X\) is not constant. Use this to explain why that the expected degree of \(w\) is larger than the expected degree of \(v\text{.}\) </p>
+<p class="continuation">Furthermore, for \(c \geq 3\text{,}\) we have \(\frac{3}{8} \leq C  \leq  \frac{3}{4}\text{.}\) This is independent of the network size \(n\text{,}\) so we have high clustering.</p>
 </li>
-<li><p>Colloquially, people refer to this result as: "your friends are more popular than you." Why? </p></li>
 </ol>
-<span class="incontext"><a href="exercises-16.html#p-506">in-context</a></span>
+<span class="incontext"><a href="exercises-13.html#p-506">in-context</a></span>
 </body>
 </html>

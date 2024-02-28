@@ -11,11 +11,18 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p>This follows from the inclusion-exclusion formula</p>
+<p>The expected number of such edges is really</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-|A \cup B| = |A| +  |B| - |A \cap B|.
+k_i \frac{k_j}{2m-1}
 \end{equation*}
 </div>
+<p class="continuation">but this is basically the same as</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{k_i k_j}{2m}
+\end{equation*}
+</div>
+<p class="continuation">for a very large network. Essentially, what we are doing is ignoring the probability that we pick the same endpoint twice.</p>
 </div></body>
 </html>

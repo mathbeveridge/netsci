@@ -10,22 +10,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like">
-<p>Here  is the argument. The notation is a little dense, so read it slowly. Each step has a simple explanation. For example,</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<body><div class="solution solution-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\E[\E[X]] = \E[X]
+\begin{array}{c|c|c|c|c|c|c}
+\overline{F}_X(0) &amp; \overline{F}_X(1) &amp; \overline{F}_X(2) &amp; \overline{F}_X(3) &amp; \overline{F}_X(4) &amp; \overline{F}_X(5) &amp; \overline{F}_X(6) \\
+\hline
+&amp;&amp;&amp;&amp;&amp;&amp; \\
+1&amp;1&amp;\frac{6}{7}&amp;\frac{2}{7}&amp;0&amp;0&amp;0 \\
+\end{array}
 \end{equation*}
-</div>
-<p class="continuation">because \(\E[X]\) is just a constant. (For the same reason, \(\E[13] = 13\) because the value doesn't change as we consider elements of the state space.)</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\var(X) &amp;=  \E \left[ (X - \E[X])^2 \right]
-\, = \, \E[ X^2 -2 X \, \E[X] + \E[X]^2]\\
-&amp;=   \E[ X^2] -\E[2 X \, \E[X]] + \E[\E[X]^2] \, = \, \E[ X^2] -2 \E[X] \, \E[X ] + (\E[X])^2\\
-&amp;=  \E[X^2] - (\E[X])^2
-\end{align*}
-</div>
-<p>where we have used linearity of expectation.</p>
-</div></body>
+</div></div></body>
 </html>

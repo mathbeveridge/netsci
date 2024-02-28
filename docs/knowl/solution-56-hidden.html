@@ -11,18 +11,24 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p>The probability is really</p>
+<p>Yes, you can. Using loops and communities of size 1 is the key. In fact, a graph with a loop at each vertex that is split into four singleton communities leads to the calculation</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{k_j}{2m-1}
+\begin{array}{c|c|c|c|c}
+i \backslash j&amp;  1  &amp; 2 &amp; 3 &amp; 4 \\[0.5em]
+\hline
+1 &amp;2 - \frac{1}{2}&amp;0&amp;0&amp;0\\[0.5em]
+2 &amp;0&amp;2 - \frac{1}{2} &amp;0&amp;0\\[0.5em]
+3 &amp;0&amp;0&amp;2 - \frac{1}{2}&amp;0 \\[0.5em]
+4 &amp;0&amp;0&amp;0&amp;2 - \frac{1}{2}
+\end{array}
 \end{equation*}
 </div>
-<p class="continuation">but this is basically the same as</p>
+<p class="continuation">so the modularity is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{k_j}{2m}
+Q =  \frac{1}{8} \cdot 4 \left(2 -  \frac{1}{2} \right) = \frac{3}{4}
 \end{equation*}
 </div>
-<p class="continuation">for a very large network.</p>
 </div></body>
 </html>

@@ -106,7 +106,7 @@ is the <em>generalized Riemann zeta function</em>.
 Dealing with the Riemann zeta function is unwieldy. In practice, we approximate this leading constant by the corresponding integral.  Evaluate the following integral in order to find the approximate value for <m>\zeta(\alpha, k_{\min})</m>:
 
 <me>
-\sum_{k= k_{\min}}^{\infty} k^{-\alpha} \approx \int_{x= k_{\min}}^{\infty} x^{-\alpha}  \, dx.
+A =  \int_{x= k_{\min}}^{\infty} x^{-\alpha}  \, dx \approx \sum_{k= k_{\min}}^{\infty} k^{-\alpha} .
 </me>
 
 
@@ -116,7 +116,7 @@ Dealing with the Riemann zeta function is unwieldy. In practice, we approximate 
 				</li>
 				<li>
 					<p>
- Find the corresponding approximate expression for the power law PMF <m>p(x)</m> using your  constant from (b). Simplify so that <m>\alpha</m> only appears once in an exponent.
+ Find the corresponding approximate expression for the power law PMF <me>p(k) = \frac{1}{A} k^{-\alpha}</me> using your constant <m>A</m> from (a). Simplify so that <m>\alpha</m> only appears once in an exponent.
 
 
 

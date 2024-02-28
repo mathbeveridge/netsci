@@ -189,10 +189,10 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="cascades"><h2 class="heading">
 <span class="type">Chapter</span> <span class="codenumber">16</span> <span class="title">Network Cascades</span>
 </h2>
-<section class="introduction" id="introduction-16"><p id="p-493">The linear threshold model  is a dynamic process for diffusion of innovation on a network. We are given a network and a threshold \(0 &lt; q &lt; 1\text{.}\) The network starts with all vertices using behavior \(B\text{.}\) We pick a seed set of innovators who adopt behavior \(A\text{.}\) We then watch the innovation spread according to the following rule. The vertex \(v\) will:</p>
+<section class="introduction" id="introduction-16"><p id="p-540">The linear threshold model  is a dynamic process for diffusion of innovation on a network. We are given a network and a threshold \(0 &lt; q &lt; 1\text{.}\) The network starts with all vertices using behavior \(B\text{.}\) We pick a seed set of innovators who adopt behavior \(A\text{.}\) We then watch the innovation spread according to the following rule. The vertex \(v\) will:</p>
 <ul class="disc">
-<li id="li-275"><p id="p-494">adopt behavior \(A\) if \({p \geq q}\)</p></li>
-<li id="li-276"><p id="p-495">adopt behavior \(B\) if \({p &lt; q}\)</p></li>
+<li id="li-283"><p id="p-541">adopt behavior \(A\) if \({p \geq q}\)</p></li>
+<li id="li-284"><p id="p-542">adopt behavior \(B\) if \({p &lt; q}\)</p></li>
 </ul>
 <p class="continuation">We cycle through all the vertices until the update process stabilizes. The resulting adoption process is called a <em class="emphasis">cascade</em>. We have a <em class="emphasis">complete cascade</em> when every vertex adopts the new behavior \(A\text{.}\)</p></section><section class="exercises" id="exercises-15"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Practice Problems</span>
@@ -200,21 +200,21 @@
 <article class="exercise exercise-like" id="exercise-69"><h6 class="heading">
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Network Cascades from Singleton Seed Sets.</span>
 </h6>
-<p id="p-496">Consider this  network  with linear threshold \(q=1/3\text{.}\) Start a cascade by picking any single vertex to be the initial adopter. Does it spread to the entire network? What about the other vertices? Which ones lead to complete cascades? <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/graph7.png" class="contained"></div> </p></article><article class="exercise exercise-like" id="exercise-70"><h6 class="heading">
+<p id="p-543">Consider this  network  with linear threshold \(q=1/3\text{.}\) Start a cascade by picking any single vertex to be the initial adopter. Does it spread to the entire network? What about the other vertices? Which ones lead to complete cascades? <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/graph7.png" class="contained"></div> </p></article><article class="exercise exercise-like" id="exercise-70"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Network Cascades from Doubleton Seed Sets.</span>
 </h6>
-<p id="p-497">Now set the threshold \(q=1/2\text{.}\) Using the same graph as in problem 1, determine the cascades for each of the following sets \(S_0\) of early adopters. Which initial sets induce complete cascades?</p>
+<p id="p-544">Now set the threshold \(q=1/2\text{.}\) Using the same graph as in problem 1, determine the cascades for each of the following sets \(S_0\) of early adopters. Which initial sets induce complete cascades?</p>
 <ol class="lower-alpha">
-<li id="li-277"><p id="p-498">\(\displaystyle S_0 = \{1,2\}\)</p></li>
-<li id="li-278"><p id="p-499">\(\displaystyle S_0 = \{2,3\}\)</p></li>
-<li id="li-279"><p id="p-500">\(\displaystyle S_0 = \{1, 5\}\)</p></li>
+<li id="li-285"><p id="p-545">\(\displaystyle S_0 = \{1,2\}\)</p></li>
+<li id="li-286"><p id="p-546">\(\displaystyle S_0 = \{2,3\}\)</p></li>
+<li id="li-287"><p id="p-547">\(\displaystyle S_0 = \{1, 5\}\)</p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-71"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Network Cascades that are Not Complete.</span>
 </h6>
-<p id="p-501">Continue using  threshold \(q=1/2\) for the network above. Find all of the initial adopter sets of size 2 that <em class="emphasis">do not</em> lead to complete cascades. Can you describe the network obstruction that prevented the cascade from expanding across the entire network? </p></article><article class="exercise exercise-like" id="exercise-72"><h6 class="heading">
+<p id="p-548">Continue using  threshold \(q=1/2\) for the network above. Find all of the initial adopter sets of size 2 that <em class="emphasis">do not</em> lead to complete cascades. Can you describe the network obstruction that prevented the cascade from expanding across the entire network? </p></article><article class="exercise exercise-like" id="exercise-72"><h6 class="heading">
 <span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Complete Cascades and Cohesive Sets.</span>
 </h6>
-<p id="p-502">Let \({G=(V,E)}\) be a network with threshold \(q \in [0,1]\text{.}\) Let \({S_0}\) be the initial set of innovators. Recall that a set \(S\) is <em class="emphasis">cohesive</em> when</p>
+<p id="p-549">Let \({G=(V,E)}\) be a network with threshold \(q \in [0,1]\text{.}\) Let \({S_0}\) be the initial set of innovators. Recall that a set \(S\) is <em class="emphasis">cohesive</em> when</p>
 <div class="displaymath">
 \begin{equation*}
 p(S) = \min_{i \in S} \frac{ | N(i) \cap S| }{|N(i)|}   &gt; 1-q
@@ -222,8 +222,8 @@ p(S) = \min_{i \in S} \frac{ | N(i) \cap S| }{|N(i)|}   &gt; 1-q
 </div>
 <p class="continuation">where \(N(i)\) is the set of neighbors of \(i\text{.}\)</p>
 <ol class="lower-alpha">
-<li id="li-280"><p id="p-503">Suppose that the  initial adopter set \({S_0}\) does not cause a complete cascade. Prove that there is a cohesive set  \({S \subset V \backslash S_0}\text{.}\) </p></li>
-<li id="li-281"><p id="p-504">Suppose that there is a cohesive set  \({S \subset V \backslash S_0}\text{.}\) Prove that  initial adopter set \({S_0}\) does not cause a complete cascade. </p></li>
+<li id="li-288"><p id="p-550">Suppose that the  initial adopter set \({S_0}\) does not cause a complete cascade. Prove that there is a cohesive set  \({S \subset V \backslash S_0}\text{.}\) </p></li>
+<li id="li-289"><p id="p-551">Suppose that there is a cohesive set  \({S \subset V \backslash S_0}\text{.}\) Prove that  initial adopter set \({S_0}\) does not cause a complete cascade. </p></li>
 </ol></article></section></section></div></main>
 </div>
 </body>

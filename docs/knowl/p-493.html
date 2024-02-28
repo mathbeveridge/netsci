@@ -12,12 +12,17 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>The linear threshold model  is a dynamic process for diffusion of innovation on a network. We are given a network and a threshold \(0 &lt; q &lt; 1\text{.}\) The network starts with all vertices using behavior \(B\text{.}\) We pick a seed set of innovators who adopt behavior \(A\text{.}\) We then watch the innovation spread according to the following rule. The vertex \(v\) will:</p>
+<p>One critique of Price's Model is that the new paper must know about the degrees of the entire network when we choose its citations. So this is a "global" process instead of a "local" process. Consider the following process instead:</p>
 <ul class="disc">
-<li><p>adopt behavior \(A\) if \({p \geq q}\)</p></li>
-<li><p>adopt behavior \(B\) if \({p &lt; q}\)</p></li>
+<li><p>with \(\displaystyle{\P = \frac{a}{a+c}}\text{,}\)   pick a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">paper</em> uniformly at random. Cite this paper.</p></li>
+<li><p>with \(\displaystyle{\P = \frac{c}{a+c}}\text{,}\)  pick a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">directed edge</em> uniformly at random. Then cite the paper that the edge points to.</p></li>
 </ul>
-<p class="continuation">We cycle through all the vertices until the update process stabilizes. The resulting adoption process is called a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">cascade</em>. We have a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">complete cascade</em> when every vertex adopts the new behavior \(A\text{.}\)</p>
-<span class="incontext"><a href="cascades.html#p-493">in-context</a></span>
+<p class="continuation">Show that when we add vertex \(n+1\text{,}\) this local process ALSO satisfies</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\P(\mbox{the arc points to vertex } i) = \frac{a+k_i}{n(c+a)}.
+\end{equation*}
+</div>
+<span class="incontext"><a href="exercises-12.html#p-493">in-context</a></span>
 </body>
 </html>

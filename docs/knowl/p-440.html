@@ -12,16 +12,19 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>What is the average degree of the graph at the moment it becomes connected for each of the graph sizes n listed below.  (Run the simulation multiple times for each graph size and report the average)</p>
+<p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">[Do not solve this one. It is a long calculation.]</em> It can be shown that</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\begin{array}{r|c|c|c|c|c|c}
-\mbox{network size} &amp; 10 &amp; 20 &amp; 40 &amp; 80 &amp; 160 &amp; 320 \\
-\hline
-\mbox{average degree} &amp;&amp;&amp;&amp;&amp;&amp;
-\end{array}
+\var(X) = np(1-p).
 \end{equation*}
 </div>
-<span class="incontext"><a href="exercises-11.html#p-440">in-context</a></span>
+<p class="continuation">But you do not need to do this here. You need to use the fact that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[X^2] = \E[X(X-1) + X] = \E[X(X-1)] + \E[X],
+\end{equation*}
+</div>
+<p class="continuation">which follows from <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">linearity of expectation</em>. </p>
+<span class="incontext"><a href="exercises-9.html#p-440">in-context</a></span>
 </body>
 </html>

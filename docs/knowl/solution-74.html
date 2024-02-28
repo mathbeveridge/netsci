@@ -17,14 +17,17 @@
 </h6>
 <p>We have</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\E[aX+bY] &amp;= \sum_{\omega  \in \Omega} (aX(\omega) + bY(\omega) ) p(\omega)\\
-&amp;= a \sum_{\omega  \in \Omega} X(\omega)p(\omega)  + b \sum_{\omega  \in \Omega} Y(\omega)p(\omega)\\
-&amp;=a \E[X] + b \E[Y].
-\end{align*}
+\begin{equation*}
+F_X(k) = \sum_{i=-\infty}^k p_X(i)
+\end{equation*}
 </div>
-<p></p>
+<p class="continuation">because this is the definition of the CDF. Therefore, we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+p_X(k) = F_X(k) - F_X(k-1) = \sum_{i=-\infty}^k p_X(i) - \sum_{i=-\infty}^{k-1} p_X(i) = p_X(k).
+\end{equation*}
 </div>
-<span class="incontext"><a href="randvar10.html#solution-74">in-context</a></span>
+</div>
+<span class="incontext"><a href="randvar6.html#solution-74">in-context</a></span>
 </body>
 </html>

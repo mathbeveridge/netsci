@@ -11,23 +11,18 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
+<p>The CCDF \(\overline{F}_X\) of a discrete random variable satisfies the following properties:</p>
+<ul class="disc">
+<li>
+<p>\(\overline{F}_X\) is weakly decreasing (aka monotonically nonincreasing). That is,</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\E[X] = \frac{22}{7}
+s \leq t \qquad \Longrightarrow  \qquad \overline{F}_X(s) \geq \overline{F}_X(t).
 \end{equation*}
 </div>
-<p class="continuation">and</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\E[X^2] = 2^2 \cdot \frac{1}{7} + 3^2 \cdot \frac{4}{7} + 4^2 \cdot \frac{2}{7}
-= \frac{4+36+32}{7} = \frac{72}{7}
-\end{equation*}
-</div>
-<p class="continuation">and therefore</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\var(X) = \E[X^2] - \E[X]^2 =  \frac{72}{7} - \left( \frac{22}{7} \right)^2 = \frac{20}{49}.
-\end{equation*}
-</div>
+</li>
+<li><p>\(\overline{F}_X(t)\) tends to 1 as \(t \rightarrow - \infty\) , and tends to 0 as \(t \rightarrow \infty\text{.}\)</p></li>
+<li><p>Since \(X\) is a discrete random variable, the CCDF \(\overline{F}_X(t)\) is a piecewise constant function of \(t\text{.}\)</p></li>
+</ul>
 </div></body>
 </html>

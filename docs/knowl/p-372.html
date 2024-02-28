@@ -12,25 +12,16 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Flip a weighted coin \(n\) times, where \(p\) is the probability of obtaining heads, and \(1-p\) is the probability of obtaining tails. Define \(X\) to be the number of heads in the \(n\) tosses. This is the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">binomial random variable with parameters \(n\) and \(p\)</em>. The PMF is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-p(k) = {n \choose k} p^k (1 - p)^{n-k}.
+\begin{array}{c|c|c|c|c|c|c}
+F_X(0) &amp; F_X(1) &amp; F_X(2) &amp; F_X(3) &amp; F_X(4) &amp; F_X(5) &amp; F_X(6) \\
+\hline
+\rule{0pt}{3.5ex} 0&amp;0&amp;\frac{1}{7}&amp;\frac{5}{7}&amp;1&amp;1&amp;1 \\
+\end{array}
 \end{equation*}
 </div>
-<p class="continuation">The  expectation is</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-E[X] = np.
-\end{equation*}
-</div>
-<p class="continuation">The variance is</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\var(X) = np(1-p).
-\end{equation*}
-</div>
-<p class="continuation">Here are the PMF and CDF of a binomial random variable.</p>
-<span class="incontext"><a href="randvar16.html#p-372">in-context</a></span>
+<p class="continuation">For example, among the 7 vertices, there are 5   vertices with degree at most 3,</p>
+<span class="incontext"><a href="randvar6.html#p-372">in-context</a></span>
 </body>
 </html>

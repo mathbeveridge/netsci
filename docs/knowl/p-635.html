@@ -12,13 +12,18 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Early on in the epidemic, we have</p>
+<p>Let \(A\) be the adjacency matrix of network \(G\text{.}\) Define the  \(2n \times 2n\) matrix</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{dI_k}{dt} \approx \beta \,  k \,  \Theta = \beta \, k \, C e^{t/{\tau}}.
+B = \left[
+\begin{array}{cc}
+0 &amp; A \\
+A^{\top} &amp; 0
+\end{array}
+\right].
 \end{equation*}
 </div>
-<p class="continuation">Explain why higher degree vertices are more likely to be infected. <a class="solution-knowl original" data-knowl="./knowl/solution-118-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
-<span class="incontext"><a href="exercises-16.html#p-635">in-context</a></span>
+<p class="continuation">Let \(\bv = (v_1, \ldots, v_{2n})^{\top}\) be the right eigenvector for the largest eigenvalue \(\lambda\) of \(B^2\text{,}\) that is \(B^2 \bv = \lambda \bv.\) Show that \(\bh = (v_1, \ldots, v_n)^{\top}\) and \(\ba = (v_{n+1}, \ldots, v_{2n})^{\top}\) where \(\bh\) is the vector of hub scores of \(G\) and \(\ba\) is the vector of authority scores of \(G\text{.}\)</p>
+<span class="incontext"><a href="exercises-18.html#p-635">in-context</a></span>
 </body>
 </html>
