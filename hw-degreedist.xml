@@ -107,7 +107,7 @@ intensities of earthquakes occurring in California between 1910 and 1992, measur
 				</li>
 				<li>
 					<p>
- Make a plot of the Kolmogorov-Smirnov statistics <m>D</m> for the first 50 candidates for <m>k_{\min}</m>..
+ Make a plot of the Kolmogorov-Smirnov statistics <m>D</m> for the first 50 candidates for <m>k_{\min}</m>.
 					</p>
 				</li>
 			</ol>
@@ -119,18 +119,15 @@ intensities of earthquakes occurring in California between 1910 and 1992, measur
 		<exercise>
 			<statement>
 				<p>
- Download the 2010 US census data on last names that occur at least 100 times from this site:
-
-			</p><p>
-
-<url href="https://www.census.gov/topics/population/genealogy/data/2010\_surnames.html" >https://www.census.gov/topics/population/genealogy/data/2010\_surnames.html</url>.
+ Download this <url href="https://drive.google.com/file/d/1sD_t59ACviekRWhuK-abzLBRkOcdcL1v/view?usp=sharing">2010 US census data set</url> for the surnames that occur at least 100 times. 
+ The original data is available <url href="https://www.census.gov/topics/population/genealogy/data/2010_surnames.html" >here</url>.
 
 			</p><p>
 
 			<ol>
 				<li>
 					<p>
- Set the minimum degree to 100 and find the best fitting exponent <m>\alpha</m>.
+ Set <m>k_{\min}=100</m> and find the best fitting exponent <m>\alpha</m>.
 					</p>
 				</li>
 				<li>
@@ -194,17 +191,18 @@ This is the fraction of the "wealth" owned by the top <m>r</m> fraction of the d
 		<exercise>
 			<statement>
 				<p>
- We apply your results from problem 2 to a real data set.
-It has been argued (but not proved definitively) that the distribution of wealth in the United States (and other countries) follows a power law tail. (For example, see <url href="http://phys.org/news95074548.html" >this article</url>.) Even if this wealth distribution tail is not a pure power law, then  it is still very similar to a power law. For simplicity, in this problem, we will assume that all of the US wealth adheres to a power law.
+ We apply your results from problem 5 to a real data set.
+It has been argued (but not proved definitively) that the distribution of wealth in the United States 
+(and other countries) follows a power law tail. (For example, 
+see <url href="http://phys.org/news95074548.html" >this article</url>.) 
+Even if this wealth distribution tail is not a pure power law, then  it is still very similar to a power law. 
+For simplicity, in this problem, we will assume that all of the US wealth adheres to a power law.
 
-Download the data set at
+				</p><p>
+Download 
 
-			</p><p>
 
-<url href="https://www.dropbox.com/s/b1xzul14eyg4d2a/wealth2002.csv?dl=0" >https://www.dropbox.com/s/b1xzul14eyg4d2a/wealth2002.csv?dl=0</url>
-
-			</p><p>
-
+<url href="https://drive.google.com/file/d/1Gm1-m7qlWafLImqJJ06wkkOWp5krLcBV/view?usp=sharing" >this data set</url>,
 which lists the net worth of the
 400 wealthiest Americans in 2002 in millions of dollars.
 
@@ -216,7 +214,7 @@ which lists the net worth of the
 				</li>
 				<li>
 					<p>
- Estimate the value of <m>\alpha</m> for this data set. This is a continuous PDF, so use the same formula as in 1(c).
+ Estimate the value of <m>\alpha</m> for this data set. Use the maximum likelihood estimamtor for a continuous PDF.
 					</p>
 				</li>
 				<li>
@@ -231,7 +229,9 @@ which lists the net worth of the
 				</li>
 				<li>
 					<p>
- Finally, find the value <m>r^*</m> so that <m>w(r^*)=1/2</m> and its corresponding <m>x_{r^*}</m>. The interpretation: the wealthiest <m>r^*</m> fraction of the population owns half of the total wealth. In order to be among these super-elite people, your net worth must be at least <m>x_{r^*}</m>.
+ Finally, find the value <m>r^*</m> so that <m>w(r^*)=1/2</m> and its corresponding <m>x_{r^*}</m>. 
+ The interpretation: the wealthiest <m>r^*</m> fraction of the population owns half of the total wealth. 
+ In order to be among these super-elite people, your net worth must be at least <m>x_{r^*}</m>.
 					</p>
 				</li>
 			</ol>

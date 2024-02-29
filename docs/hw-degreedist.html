@@ -223,24 +223,23 @@ p(k+1) = \frac{p}{1-p} \cdot \frac{n-k}{k+1} p(k).
 <li id="li-361"><p id="p-705">Create a plot of the data using "intensity \(k\)" versus "frequency of intensity at least \(k\)" using a log-log scale. What seems to be a good estimate for \(k_{\min}\) based on your log-log plot?</p></li>
 <li id="li-362"><p id="p-706">Find the best fitting \(k_{\min}\) and \(\alpha\text{.}\) How does the optimal \(k_{\min}\) compare to your guess in part (a)?</p></li>
 <li id="li-363"><p id="p-707">Make a plot of the PDF and the best fitting power law.</p></li>
-<li id="li-364"><p id="p-708">Make a plot of the Kolmogorov-Smirnov statistics \(D\) for the first 50 candidates for \(k_{\min}\text{..}\)</p></li>
+<li id="li-364"><p id="p-708">Make a plot of the Kolmogorov-Smirnov statistics \(D\) for the first 50 candidates for \(k_{\min}\text{.}\)</p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-96"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
-<p id="p-709">Download the 2010 US census data on last names that occur at least 100 times from this site:</p>
-<p id="p-710"><a class="external" href="https://www.census.gov/topics/population/genealogy/data/2010%5C_surnames.html" target="_blank">https://www.census.gov/topics/population/genealogy/data/2010\_surnames.html</a>.</p>
-<ol id="p-711" class="lower-alpha">
-<li id="li-365"><p id="p-712">Set the minimum degree to 100 and find the best fitting exponent \(\alpha\text{.}\)</p></li>
-<li id="li-366"><p id="p-713">Create a plot that fits a power law and a truncated power law to this data. Which distribution is a better fit to the data?</p></li>
+<p id="p-709">Download this <a class="external" href="https://drive.google.com/file/d/1sD_t59ACviekRWhuK-abzLBRkOcdcL1v/view?usp=sharing" target="_blank">2010 US census data set</a> for the surnames that occur at least 100 times. The original data is available <a class="external" href="https://www.census.gov/topics/population/genealogy/data/2010_surnames.html" target="_blank">here</a>.</p>
+<ol id="p-710" class="lower-alpha">
+<li id="li-365"><p id="p-711">Set \(k_{\min}=100\) and find the best fitting exponent \(\alpha\text{.}\)</p></li>
+<li id="li-366"><p id="p-712">Create a plot that fits a power law and a truncated power law to this data. Which distribution is a better fit to the data?</p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-97"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
-<p id="p-714">Naturally occurring power law distributions have heavy tails, meaning that a substantial portion of the data lies in the long tail, rather than being concentrated around its mean. This means that an outsized fraction of the "wealth" of the data is in the hands of the "richest" entities. We will explore this effect for general power laws. Consider the continuous power law with PDF \(p: [x_{\min}, \infty] \rightarrow [0,1]\) given by</p>
+<p id="p-713">Naturally occurring power law distributions have heavy tails, meaning that a substantial portion of the data lies in the long tail, rather than being concentrated around its mean. This means that an outsized fraction of the "wealth" of the data is in the hands of the "richest" entities. We will explore this effect for general power laws. Consider the continuous power law with PDF \(p: [x_{\min}, \infty] \rightarrow [0,1]\) given by</p>
 <div class="displaymath">
 \begin{equation*}
 p(x) = \frac{\alpha -1}{x_{\min}} \left( \frac{x}{x_{\min}} \right)^{-\alpha} \qquad \mbox{where } \alpha &gt; 2.
 \end{equation*}
 </div>
 <ol class="lower-alpha">
-<li id="li-367"><p id="p-715">Find the CCDF \(P(x) = \int_{x}^{\infty} p(t) dt.\)</p></li>
+<li id="li-367"><p id="p-714">Find the CCDF \(P(x) = \int_{x}^{\infty} p(t) dt.\)</p></li>
 <li id="li-368">
-<p id="p-716">For any \(r \in [0,1]\text{,}\) let \(x_r\) denote the point achieving</p>
+<p id="p-715">For any \(r \in [0,1]\text{,}\) let \(x_r\) denote the point achieving</p>
 <div class="displaymath">
 \begin{equation*}
 P(x_r) = r.
@@ -255,7 +254,7 @@ x_r = r^{-1/(\alpha-1)} x_{\min}.
 <p class="continuation">Intuitively, \(x_r\) is the cutoff for finding the "richest" \(r\) fraction of the data.</p>
 </li>
 <li id="li-369">
-<p id="p-717">Next, find an expression for</p>
+<p id="p-716">Next, find an expression for</p>
 <div class="displaymath">
 \begin{equation*}
 w(r) = \frac{\E[ X \mid x \geq x_r]}{\E[ X]} = \frac{\int_{x_r}^{\infty} x \, p(x) dx}{\int_{x_{\min}}^{\infty} x \, p(x) dx}.
@@ -264,15 +263,14 @@ w(r) = \frac{\E[ X \mid x \geq x_r]}{\E[ X]} = \frac{\int_{x_r}^{\infty} x \, p(
 <p class="continuation">This is the fraction of the "wealth" owned by the top \(r\) fraction of the data. Using your answer from (b), you will get an expression that only depends on \(r\) and \(\alpha\text{.}\)</p>
 </li>
 </ol></article><article class="exercise exercise-like" id="exercise-98"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
-<p id="p-718">We apply your results from problem 2 to a real data set. It has been argued (but not proved definitively) that the distribution of wealth in the United States (and other countries) follows a power law tail. (For example, see <a class="external" href="http://phys.org/news95074548.html" target="_blank">this article</a>.) Even if this wealth distribution tail is not a pure power law, then  it is still very similar to a power law. For simplicity, in this problem, we will assume that all of the US wealth adheres to a power law. Download the data set at</p>
-<p id="p-719"><a class="external" href="https://www.dropbox.com/s/b1xzul14eyg4d2a/wealth2002.csv?dl=0" target="_blank">https://www.dropbox.com/s/b1xzul14eyg4d2a/wealth2002.csv?dl=0</a></p>
-<p id="p-720">which lists the net worth of the 400 wealthiest Americans in 2002 in millions of dollars.</p>
+<p id="p-717">We apply your results from problem 5 to a real data set. It has been argued (but not proved definitively) that the distribution of wealth in the United States (and other countries) follows a power law tail. (For example, see <a class="external" href="http://phys.org/news95074548.html" target="_blank">this article</a>.) Even if this wealth distribution tail is not a pure power law, then  it is still very similar to a power law. For simplicity, in this problem, we will assume that all of the US wealth adheres to a power law.</p>
+<p id="p-718">Download <a class="external" href="https://drive.google.com/file/d/1Gm1-m7qlWafLImqJJ06wkkOWp5krLcBV/view?usp=sharing" target="_blank">this data set</a>, which lists the net worth of the 400 wealthiest Americans in 2002 in millions of dollars.</p>
 <ol class="lower-alpha">
-<li id="li-370"><p id="p-721">Create a log-log plot of the CCDF of this data set to confirm that it looks like a power law.</p></li>
-<li id="li-371"><p id="p-722">Estimate the value of \(\alpha\) for this data set. This is a continuous PDF, so use the same formula as in 1(c).</p></li>
-<li id="li-372"><p id="p-723">What is the value \(x_{1/2}\) for American wealth in 2002? In other words, if your net worth was at least \(x_{1/2}\text{,}\) then you were in the top half of the population in terms of wealth.</p></li>
-<li id="li-373"><p id="p-724">Now find \(w(1/2)\text{.}\) This is the fraction of the wealth in the hands of the wealthiest half of the population.</p></li>
-<li id="li-374"><p id="p-725">Finally, find the value \(r^*\) so that \(w(r^*)=1/2\) and its corresponding \(x_{r^*}\text{.}\) The interpretation: the wealthiest \(r^*\) fraction of the population owns half of the total wealth. In order to be among these super-elite people, your net worth must be at least \(x_{r^*}\text{.}\)</p></li>
+<li id="li-370"><p id="p-719">Create a log-log plot of the CCDF of this data set to confirm that it looks like a power law.</p></li>
+<li id="li-371"><p id="p-720">Estimate the value of \(\alpha\) for this data set. Use the maximum likelihood estimamtor for a continuous PDF.</p></li>
+<li id="li-372"><p id="p-721">What is the value \(x_{1/2}\) for American wealth in 2002? In other words, if your net worth was at least \(x_{1/2}\text{,}\) then you were in the top half of the population in terms of wealth.</p></li>
+<li id="li-373"><p id="p-722">Now find \(w(1/2)\text{.}\) This is the fraction of the wealth in the hands of the wealthiest half of the population.</p></li>
+<li id="li-374"><p id="p-723">Finally, find the value \(r^*\) so that \(w(r^*)=1/2\) and its corresponding \(x_{r^*}\text{.}\) The interpretation: the wealthiest \(r^*\) fraction of the population owns half of the total wealth. In order to be among these super-elite people, your net worth must be at least \(x_{r^*}\text{.}\)</p></li>
 </ol></article></section></section></div></main>
 </div>
 </body>
