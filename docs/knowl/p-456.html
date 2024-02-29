@@ -12,38 +12,24 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<ol class="lower-alpha">
-<li>
-<p>For many real-world networks, the power law behavior doesn't hold for small \(k\text{.}\) In this case, we restrict our attention to vertices of degree at least \(k_{\min}\text{.}\) We then deal with  the probability mass function for a truncated power law. Given \(\alpha\) and \(k \geq k_{\min}\) this PMF is given by</p>
+<p>Let \(X_i\) be an "indicator function" for whether coin \(i\) is \(H\text{.}\) That is,</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-p(k) =  \frac{ k^{-\alpha}}{\zeta(\alpha, k_{\min})}
+X_i = \left\{
+\begin{array}{cc}
+1 &amp; \mbox{if the } i\mbox{th coin is } H, \\
+0 &amp;  \mbox{if the } i\mbox{th coin is } T. \\
+\end{array}
+\right.
 \end{equation*}
 </div>
-<p class="continuation">where</p>
+<p class="continuation">Then</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\zeta(x, k_{\min}) =  \sum_{k=k_{\min}}^{\infty} k^{-x}
+\E[X] = \E\left[ \sum_{i=1}^n X_i \right] = \sum_{i=1}^n \E[X_i] =  \sum_{i=1}^n p = np.
 \end{equation*}
 </div>
-<p class="continuation">is the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">generalized Riemann zeta function</em>.</p>
-<p>Dealing with the Riemann zeta function is unwieldy. In practice, we approximate this leading constant by the corresponding integral.  Evaluate the following integral in order to find the approximate value for \(\zeta(\alpha, k_{\min})\text{:}\)</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-A =  \int_{x= k_{\min}}^{\infty} x^{-\alpha}  \, dx \approx \sum_{k= k_{\min}}^{\infty} k^{-\alpha} .
-\end{equation*}
-</div>
-</li>
-<li>
-<p>Find the corresponding approximate expression for the power law PMF</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-p(k) = \frac{1}{A} k^{-\alpha}
-\end{equation*}
-</div>
-<p class="continuation">using your constant \(A\) from (a). Simplify so that \(\alpha\) only appears once in an exponent.</p>
-</li>
-</ol>
-<span class="incontext"><a href="exercises-10.html#p-456">in-context</a></span>
+<p class="continuation">For comparison, here is a proof that does not use linearity of expectation. It isn't "hard" but it does take a bit of work. Our strategy will be to factor out an \(n\) and then reindex the sum.</p>
+<span class="incontext"><a href="exercises-9.html#p-456">in-context</a></span>
 </body>
 </html>

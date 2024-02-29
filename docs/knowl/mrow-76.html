@@ -13,16 +13,16 @@
 <body>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-\P(\mbox{the arc points to vertex } i)
-&amp;= (1- \gamma) \frac{1}{n}  + \gamma \frac{k_i}{cn}\\
+\sum_{k= k_{\min}}^{\infty} k^{-\alpha} &amp;\approx  \int_{x= k_{\min}}^{\infty} x^{-\alpha}  \, dx\\
 &amp;=
-\left( 1 - \frac{c}{c+a} \right) \frac{1}{n} + \frac{c}{c+a}  \frac{k_i}{cn}\\
-&amp;=
-\frac{a}{c+a} \frac{1}{n} + \frac{c}{c+a}  \frac{k_i}{cn}\\
-&amp;=
-\frac{a+k_i}{n(c+a)}
+\lim_{n \rightarrow \infty}
+\frac{1}{-\alpha+1} x^{- \alpha+1} \Big|_{x=k_{\min}}^n\\
+&amp; =
+\lim_{n \rightarrow \infty}
+\frac{1}{-\alpha+1} \left( \frac{1}{n^{\alpha-1}} - \frac{1}{k_{\min}^{\alpha-1}}\right)\\
+&amp;= \frac{1}{\alpha-1} \cdot  \frac{1}{k_{\min}^{\alpha-1}}
 \end{align*}
 </div>
-<span class="incontext"><a href="exercises-12.html#mjx-eqn:mrow-76">in-context</a></span>
+<span class="incontext"><a href="exercises-10.html#mjx-eqn:mrow-76">in-context</a></span>
 </body>
 </html>

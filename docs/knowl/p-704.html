@@ -12,7 +12,13 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>We can now make an observation about the shape of the PMF of \(X\text{.}\) Let \(k^*= \lfloor (n+1) \cdot p  \rfloor\) be the largest integer that is less than or equal to \((n+1) \cdot p\text{.}\) Show that the PMF \(p(k)\) is weakly increasing (also known as monotonically nondecreasing) for \(0 \leq k \leq k^*\) and is monotonically decreasing for \(k^* \leq k \leq n\text{.}\)</p>
+<p>This data set contains the intensities of earthquakes occurring in California between 1910 and 1992, measured as the maximum amplitude of motion during the quake. <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Note:</em> these data points are given on the Richter scale, which is the base-10 logarithm of the actual intensity. You must correct for this to find the correct value of \(\alpha\) for the power law.</p>
+<ol class="lower-alpha">
+<li><p>Create a plot of the data using "intensity \(k\)" versus "frequency of intensity at least \(k\)" using a log-log scale. What seems to be a good estimate for \(k_{\min}\) based on your log-log plot?</p></li>
+<li><p>Find the best fitting \(k_{\min}\) and \(\alpha\text{.}\) How does the optimal \(k_{\min}\) compare to your guess in part (a)?</p></li>
+<li><p>Make a plot of the PDF and the best fitting power law.</p></li>
+<li><p>Make a plot of the Kolmogorov-Smirnov statistics \(D\) for the first 50 candidates for \(k_{\min}\text{..}\)</p></li>
+</ol>
 <span class="incontext"><a href="exercises-19.html#p-704">in-context</a></span>
 </body>
 </html>

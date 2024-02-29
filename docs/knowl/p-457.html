@@ -12,19 +12,12 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>For many real-world networks, the power law behavior doesn't hold for small \(k\text{.}\) In this case, we restrict our attention to vertices of degree at least \(k_{\min}\text{.}\) We then deal with  the probability mass function for a truncated power law. Given \(\alpha\) and \(k \geq k_{\min}\) this PMF is given by</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-p(k) =  \frac{ k^{-\alpha}}{\zeta(\alpha, k_{\min})}
-\end{equation*}
-</div>
-<p class="continuation">where</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\zeta(x, k_{\min}) =  \sum_{k=k_{\min}}^{\infty} k^{-x}
-\end{equation*}
-</div>
-<p class="continuation">is the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">generalized Riemann zeta function</em>.</p>
-<span class="incontext"><a href="exercises-10.html#p-457">in-context</a></span>
+<p>We use a couple of tricks here</p>
+<ul class="disc">
+<li><p>At the third equality, we replace the lower limit of \(k=0\) with \(k=1\text{.}\) This is because the \(k=0\) term equals 0, so we do not need to list it. <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">This is an important step!</em> Do not underestimate the need to properly account for the lowest/highest index.</p></li>
+<li><p>At the fifth equality, we reindex, using \(j\) instead of \(k\text{.}\) <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Do this carefully!</em> In my margin, I always write down the substitution in two ways. Here we are using \(j=k-1\text{,}\) which is the same as \(k=j+1\text{.}\) Having both of these expression staring at me will ensure that I don't make mistakes during the reindexing. Wherever I see a "\(k\text{,}\)" I replace it with a "\(j+1\text{.}\)" Or if I want to be fancy, I can immediately replace a "\(k-1\)" with a "\(j\text{.}\)"</p></li>
+</ul>
+<p class="continuation">Don't cut corners on these substitutions. You will save yourself a lot of headaches!</p>
+<span class="incontext"><a href="exercises-9.html#p-457">in-context</a></span>
 </body>
 </html>

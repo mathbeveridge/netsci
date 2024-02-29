@@ -11,11 +11,12 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p>If \(v\)'s long range contact is in \(A\text{,}\) then we end the round after that step. So the probability that we take at least \(i\) steps is</p>
+<p>We need \(\displaystyle{\zeta(x) = \sum_{k=1}^{\infty} k^{-x}}\) to converge so that the constant \(C\) is finite. From calculus, we recall that the series</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\left( 1 - \frac{1}{3 \log n} \right)^{i-1}
+\sum_{n=1}^{\infty} n^{-r} =  \sum_{n=1}^{\infty} \frac{1}{n^r}
 \end{equation*}
 </div>
+<p class="continuation">converges if and only if \(r &gt; 1\text{.}\) Translating this to our power law, we set \(k=n\) and \(\alpha=r\text{.}\)  We must have \(\alpha &gt; 1\) in order for the constant \(C\) to be finite.</p>
 </div></body>
 </html>

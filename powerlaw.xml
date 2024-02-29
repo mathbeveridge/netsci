@@ -40,6 +40,18 @@ What is the degree distribution <m>(p_1, p_2, \ldots)</m> of this graph?
 
 
 				</p>
+
+			<p>
+				<solution>
+					<p>
+					<me>
+					\left(
+					0,\frac{4}{10},\frac{2}{10},\frac{3}{10},0,\frac{1}{10}
+					\right)
+					</me>
+					</p>
+					</solution>
+			</p>
 			</statement>
 		</exercise>
 		<exercise>
@@ -58,7 +70,13 @@ p(k) = C k^{-\alpha}.
 What is the value of the constant <m>C</m> in terms of <m>c</m>?
 
 
-
+<solution>
+	<p>
+	<me>
+	p(k) = e^c \, k^{-\alpha} \qquad \mbox{so } C = e^c
+	</me>
+	</p>
+	</solution>
 
 				</p>
 			</statement>
@@ -71,7 +89,7 @@ What is the value of the constant <m>C</m> in terms of <m>c</m>?
 
 			<ol>
 
-\item
+<li>
 Let <m>p: \Z^+ \rightarrow [0,1]</m> given by
 <me>
 p(k) = C k^{- \alpha}
@@ -87,8 +105,17 @@ where <m>\zeta(x)</m> is the <em>Riemann zeta function</em>
 What is the restriction on allowable values of <m>\alpha</m>?
 
 
-
-
+<solution>
+	<p>
+	
+	We need <m>\displaystyle{\zeta(x) = \sum_{k=1}^{\infty} k^{-x}}</m> to converge so that the constant <m>C</m> is finite. 
+	From calculus, we recall that the series
+	<me>\sum_{n=1}^{\infty} n^{-r} =  \sum_{n=1}^{\infty} \frac{1}{n^r}</me>
+	converges if and only if <m>r &gt; 1</m>. Translating this to our power law, we set <m>k=n</m> and <m>\alpha=r</m>.  We must have <m>\alpha &gt; 1</m> in order for the constant <m>C</m> to be finite.
+	
+	</p>
+	</solution>
+</li>
 				<li>
 					<p>
  For many real-world networks, the power law behavior doesn't hold for small <m>k</m>. In this case, we restrict our attention to vertices of degree at least <m>k_{\min}</m>. We then deal with  the probability mass function for a truncated power law. Given <m>\alpha</m> and <m>k \geq k_{\min}</m> this PMF is given by
@@ -101,24 +128,55 @@ where
 </me>
 is the <em>generalized Riemann zeta function</em>.
 
-			</p><p>
-
+			</p>
+<p>
 Dealing with the Riemann zeta function is unwieldy. In practice, we approximate this leading constant by the corresponding integral.  Evaluate the following integral in order to find the approximate value for <m>\zeta(\alpha, k_{\min})</m>:
 
 <me>
 A =  \int_{x= k_{\min}}^{\infty} x^{-\alpha}  \, dx \approx \sum_{k= k_{\min}}^{\infty} k^{-\alpha} .
 </me>
-
-
-
-
-					</p>
-				</li>
+</p>
+<p>
+	<solution>
+		<p>
+		</p>
+		<md>
+		<mrow>
+		\sum_{k= k_{\min}}^{\infty} k^{-\alpha} &amp;\approx  \int_{x= k_{\min}}^{\infty} x^{-\alpha}  \, dx
+		</mrow>
+		<mrow>
+		&amp;=
+		\lim_{n \rightarrow \infty}
+		\frac{1}{-\alpha+1} x^{- \alpha+1} \Big|_{x=k_{\min}}^n
+		</mrow>
+		<mrow>
+		&amp; =
+		\lim_{n \rightarrow \infty}
+		\frac{1}{-\alpha+1} \left( \frac{1}{n^{\alpha-1}} - \frac{1}{k_{\min}^{\alpha-1}}\right)
+		</mrow>
+		<mrow>
+		&amp;= \frac{1}{\alpha-1} \cdot  \frac{1}{k_{\min}^{\alpha-1}}
+		</mrow>
+		</md>
+		<p>
+		provided that <m>\alpha &gt; 1</m>, of course!
+		</p>
+	</solution>
+		
+</p>	
+</li>
 				<li>
 					<p>
  Find the corresponding approximate expression for the power law PMF <me>p(k) = \frac{1}{A} k^{-\alpha}</me> using your constant <m>A</m> from (a). Simplify so that <m>\alpha</m> only appears once in an exponent.
 
-
+ <solution>
+	<p>
+	<me>
+	p(k) \approx \left( \frac{1}{\alpha-1} \cdot  \frac{1}{k_{\min}^{\alpha-1}} \right)^{-1}  k^{- \alpha}
+	= \frac{\alpha -1}{k_{\min} } \left( \frac{ k_{\min}}{k} \right)^{\alpha}
+	</me>
+	</p>
+	</solution>
 
 					</p>
 				</li>
@@ -147,7 +205,25 @@ rather than a PMF. You can find the constant <m>C = (\alpha-1)k_{\min}^{\alpha-1
 \E[X] = \int_{x=k_{\min}}^{n} x p(x) dx.
 </me>
 
-
+<solution>
+	<p>
+	
+	</p>
+	<md>
+	<mrow>
+	\E[X] &amp;= C \int_{x=k_{\min}}^{n} x \cdot x^{-\alpha} dx =  C \int_{x=k_{\min}}^{n}  x^{-\alpha+1} dx
+	</mrow>
+	<mrow>
+	&amp;= \frac{C}{-\alpha +2} x^{-\alpha+2} \Big|_{k_{\min}}^n
+	</mrow>
+	<mrow>
+	&amp;= \frac{C}{-\alpha +2} \left( \frac{1}{n^{\alpha-2}} -  \frac{1}{k_{\min}^{\alpha-2}} \right)
+	</mrow>
+	</md>
+	<p>
+	
+	</p>
+	</solution>
 
 					</p>
 				</li>
@@ -160,7 +236,23 @@ rather than a PMF. You can find the constant <m>C = (\alpha-1)k_{\min}^{\alpha-1
 Calculate it.
 
 
-
+<solution>
+	<p>
+	</p>
+	<md>
+	<mrow>
+	\E[X^m] &amp;= C \int_{x=k_{\min}}^{n} x^m \cdot x^{-\alpha} dx =  C \int_{x=k_{\min}}^{n}  x^{-\alpha+m} dx
+	</mrow>
+	<mrow>
+	&amp;= \frac{C}{-\alpha +m+1} x^{-\alpha+n+1} \Big|_{k_{\min}}^n
+	</mrow>
+	<mrow>
+	&amp;= \frac{C}{-\alpha +m+1} \left( \frac{1}{n^{\alpha-m-1}} -  \frac{1}{k_{\min}^{\alpha-m-1}} \right)
+	</mrow>
+	</md>
+	<p>
+	</p>
+	</solution>
 
 					</p>
 				</li>
@@ -168,12 +260,60 @@ Calculate it.
 					<p>
  Look at your answers for parts (a) and (b) and think about what happens as <m>n \rightarrow \infty</m>. For what values of <m>\alpha</m> does <m>\E[X]</m> converge? When does the <m>m</m>th moment <m>\E[X^m]</m> converge?
 
+
+ <solution>
+	<p>
+			<ul>
+				<li>
+				<p>
+	 As <m>n \rightarrow \infty</m>, the expected value <m>\E[X]</m> is
+	<me>
+	\lim_{n \rightarrow \infty} \frac{C}{-\alpha +2} \left( \frac{1}{n^{\alpha-2}} -  \frac{1}{k_{\min}^{\alpha-2}} \right)
+	= \frac{C}{\alpha-2}  \cdot \frac{1}{k_{\min}^{\alpha-2}}
+	</me>
+	provided that <m>\alpha &gt; 2</m>. So the average value  is finite if and only if <m>\alpha &gt; 2</m>. Finally, let's substitute in our approximation of the constant <m>C = (\alpha-1)k_{\min}^{\alpha-1}</m> to find that the expected value is
+	<me>
+	\E[X] =
+	\frac{\alpha-1}{\alpha-2}  \cdot \frac{k_{\min}^{\alpha-1}}{k_{\min}^{\alpha-2}} = \frac{\alpha-1}{\alpha-2}  \cdot k_{\min}.
+	</me>
+	That's pretty cool. And you can see that if your exponent <m>\alpha \rightarrow 2</m> then the expected value goes to infinity. Nice!
+				</p>
+				</li>
+				<li>
+				<p>
+	 As <m>n \rightarrow \infty</m>, the <m>m</m>th moment  <m>\E[X^m]</m> is
+	<me>
+	\lim_{n \rightarrow \infty} \frac{C}{-\alpha +m+1} \left( \frac{1}{n^{\alpha-m-1}} -  \frac{1}{k_{\min}^{\alpha-m-1}} \right)
+	= \frac{C}{\alpha-m-1}  \cdot \frac{1}{k_{\min}^{\alpha-m-1}}
+	</me>
+	provided that <m>\alpha &gt; m</m>. So the <m>m</m>th moment  value  is finite if and only if <m>\alpha &gt; m</m>. Let's substitute <m>C= (\alpha-1)k_{\min}^{\alpha-1}</m> to get the expression
+	<me>
+	\E[X^m] = \frac{\alpha-1}{\alpha-m-1}  \cdot \frac{k_{\min}^{\alpha-1}}{k_{\min}^{\alpha-m-1}}
+	= \frac{\alpha-1}{\alpha-m-1}  \cdot k_{\min}^{m}.
+	</me>
+				</p>
+				</li>
+			</ul>
+			</p>
+	</solution>
+
 					</p>
 				</li>
 				<li>
 					<p>
   Recall that most observed power laws have <m>2 \leq \alpha \leq 3</m>. In this range, does the expected value converge? Which moments converge, and which moments diverge?
 
+  <solution>
+	<p>
+	
+	So why do most naturally occurring power laws have <m>2 &lt; \alpha &lt; 3</m>? We'll consider the degree sequence for a network. In this range of <m>\alpha</m>, the average degree is finite. This makes sense for our graph. Next, we observe that  the second moment  is infinite (and so are the higher moments). This means that the variance of the degrees goes to infinity. Therefore, we expect to find hub nodes with very, very high degree. If <m>\alpha &gt; 3</m>, then the second moment would converge, which means that the degrees would be well-concentrated around the expected value. We've already seen how important the hub nodes are in the network. So if hub nodes only occur when <m>\alpha &lt; 3</m>, it makes sense that our observed power laws should fall into the range of  <m>2 &lt; \alpha &lt; 3</m>.
+	
+				</p><p>
+	
+	What about other natural power laws, like the size of cities? Remember that a power law is the correct model for a "popularity contest" or a "rich get richer phenomenon." In these instances, there are some incredibly successful entities, and their success breeds even more success. In other words, in such popularity feedback loops, we  anticipate seeing entities that are vastly more successful than the average entity. This can only happen when the variance of the power law is infinite.
+	
+	</p>
+	</solution>
 					</p>
 				</li>
 			</ol>

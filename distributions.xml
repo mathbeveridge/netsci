@@ -52,7 +52,7 @@ Provide the definition and/or formula for each of the following terms. Then give
 				</li>
 			</ol>
 
-<!--solution>
+<solution>
 <p>
 			<ol>
 
@@ -113,7 +113,7 @@ For example, in a graph with small variance, most of the vertices have similar d
 				</li>
 			</ol>
 </p>
-</solution-->
+</solution>
 
 
 
@@ -160,7 +160,7 @@ Flip a weighted coin <m>n</m> times, where <m>p</m> is the probability of obtain
 p(k) = {n \choose k} p^k (1 - p)^{n-k}.
 </me>
 
-<!--solution>
+<solution>
 <p>
 We give a combinatorial recipe.
 		<ul>
@@ -182,7 +182,7 @@ We give a combinatorial recipe.
 		</ul>
 Multiplying all these terms together gives the expression above.
 </p>
-</solution-->
+</solution>
 
 
 					</p>
@@ -196,14 +196,14 @@ Multiplying all these terms together gives the expression above.
 to prove that <m>p(k)</m> is a PMF.
 
 
-<!--solution>
+<solution>
 <p>
 First, we note that <m>0 \leq p(k) \leq 1</m> for <m>0 \leq k \leq n</m>. Next, we must prove that the probabilities all sum to one. This follows quickly from the binomial theorem with <m>x=p</m> and <m>y=1-p</m>:
 <me>
 \sum_{k=0}^n {n \choose k} p^k (1-p)^{n-k} = (p + (1-p))^n = 1^n = 1.
 </me>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -223,7 +223,7 @@ You will have to split your random variable <m>X</m> into the sum of <m>n</m> ra
 
 
 
-<!--solution>
+<solution>
 <p>
 
 Let <m>X_i</m> be an "indicator function" for whether coin <m>i</m> is <m>H</m>. That is,
@@ -281,7 +281,7 @@ We use a couple of tricks here
 		</ul>
 Don't cut corners on these substitutions. You will save yourself a lot of headaches!
 </p>
-</solution-->
+</solution>
 
 
 					</p>
@@ -298,7 +298,7 @@ But you do not need to do this here. You need to use the fact that
 </me>
 which follows from <em>linearity of expectation</em>.
 
-<!--solution>
+<solution>
 <p>
 This plays out much like "tedious calculation" in the answer to part (c), but it is more involved. We want to calculate
 </p>
@@ -350,7 +350,7 @@ We are now ready to put it together:
 </md>
 <p>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -379,11 +379,11 @@ Instead of flipping our coin for a fixed number of times, we will flip it until 
 p(k) =  (1 - p)^{k-1}  p.
 </me>
 
-<!--solution>
+<solution>
 <p>
 In order for the <m>k</m>th flip to be the first <m>H</m> that we encounter, we must obtain <m>k-1</m> <m>T</m>'s in a row, followed by a <m>H</m>. The probability of this event is <m>(1-p)^{k-1}p</m>. Note that <m>p(0) = 0</m> since we cannot stop until we have seen a <m>H</m>.
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -395,7 +395,7 @@ In order for the <m>k</m>th flip to be the first <m>H</m> that we encounter, we 
 </me>
 to prove that  <m>p(k)</m> is a PMF.
 
-<!--solution>
+<solution>
 <p>
 It is easy to see that <m>0 \leq p(k) \leq 1</m> for all <m>k \in \Z^+</m>. Now we must show that the probabilities sum to 1. We have
 </p>
@@ -410,7 +410,7 @@ It is easy to see that <m>0 \leq p(k) \leq 1</m> for all <m>k \in \Z^+</m>. Now 
 <p>
 
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -422,7 +422,7 @@ It is easy to see that <m>0 \leq p(k) \leq 1</m> for all <m>k \in \Z^+</m>. Now 
 </me>
 Hint: take the derivative of both sides of the equality in part (b) to get a new identity.
 
-<!--solution>
+<solution>
 <p>
 We have
 <me>
@@ -441,7 +441,7 @@ Therefore
 \E[Y] = p \sum_{k=1}^{\infty}  k(1-p)^{k-1} = \frac{p}{(1-(1-p))^2} = \frac{p}{p^2} = \frac{1}{p}.
 </me>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -454,7 +454,7 @@ Therefore
 But you do not need to prove this here. (You use the same trick as in problem 1(d) of writing <m>\E[Y^2] = \E[Y(Y-1)] + E[Y]</m>.)
 
 
-<!--solution>
+<solution>
 <p>
 We will calculate <m>\E[Y^2] - (\E[Y])^2 = \E[Y(Y-1)] + \E[Y] - (\E[Y])^2</m>.
 
@@ -492,7 +492,7 @@ Therefore
 <p>
 
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -525,7 +525,7 @@ p(k) = e^{-\lambda} \frac{\lambda^k}{k!}.
 </me>
 to prove that  <m>p(k)</m> is a PMF.
 
-<!--solution>
+<solution>
 <p>
 Once again, it is clear that <m>0 \leq p(k) </m> for all <m>k</m>. These numbers sum to
 <me>
@@ -534,7 +534,7 @@ Once again, it is clear that <m>0 \leq p(k) </m> for all <m>k</m>. These numbers
 </me>
 Since all terms are nonnegative and they sum to 1, each term must be less than 1.
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -545,7 +545,7 @@ Since all terms are nonnegative and they sum to 1, each term must be less than 1
 \E[Z] = \lambda.
 </me>
 
-<!--solution>
+<solution>
 <p>
 </p>
 <md>
@@ -563,7 +563,7 @@ Since all terms are nonnegative and they sum to 1, each term must be less than 1
 </md>
 <p>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -579,7 +579,7 @@ as well! Again, we need to use the trick
 </me>
 This time, we also need to be comfortable with reindexing infinite series.
 
-<!--solution>
+<solution>
 <p>
 Here is the hard work:
 </p>
@@ -616,7 +616,7 @@ The variance is also called the "second moment." Can you guess what the third mo
 In fact, every moment of the Poisson distribution is equal to <m>\lambda</m>. (This is analogous to how all of the derivatives of <m>e^x</m> are also <m>e^x</m>.) Each of the moments tell you something about the shape of the distribution. So in a poetic sense, the Poisson distribution must be the nicest-shaped bell curve centered at <m>x=\lambda</m>.
 
 </p>
-</solution-->
+</solution>
 
 
 					</p>
@@ -647,7 +647,7 @@ Use the following facts which hold for <m>n \rightarrow \infty</m> and any const
 <p>
 
 
-<!--solution>
+<solution>
 <p>
 Keep in mind that <em><m>k</m> is a fixed number</em> while the size <m>n</m> of the network increases to infinity. This lets us use the three limits listed above.
 </p>
@@ -667,7 +667,7 @@ Keep in mind that <em><m>k</m> is a fixed number</em> while the size <m>n</m> of
 <p>
 What this is saying is that as <m>n \rightarrow \infty</m>, the binomial distribution for <m>n</m> and <m>p</m> looks more and more like the Poisson distribution for <m>\lambda=np</m>.
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>

@@ -15,20 +15,9 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
-<p>Let \(T\) be the set of vertices that adopt behavior \(A\) during the cascade. Let \(S= \overline{T}\) be the vertices that never adopt the behavior. For every \(i \in S\text{,}\) we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\frac{ | N(i) \cap S| }{|N(i)|}   &gt; 1-q.
-\end{equation*}
+<p>So why do most naturally occurring power laws have \(2 &lt; \alpha &lt; 3\text{?}\) We'll consider the degree sequence for a network. In this range of \(\alpha\text{,}\) the average degree is finite. This makes sense for our graph. Next, we observe that  the second moment  is infinite (and so are the higher moments). This means that the variance of the degrees goes to infinity. Therefore, we expect to find hub nodes with very, very high degree. If \(\alpha &gt; 3\text{,}\) then the second moment would converge, which means that the degrees would be well-concentrated around the expected value. We've already seen how important the hub nodes are in the network. So if hub nodes only occur when \(\alpha &lt; 3\text{,}\) it makes sense that our observed power laws should fall into the range of  \(2 &lt; \alpha &lt; 3\text{.}\)</p>
+<p>What about other natural power laws, like the size of cities? Remember that a power law is the correct model for a "popularity contest" or a "rich get richer phenomenon." In these instances, there are some incredibly successful entities, and their success breeds even more success. In other words, in such popularity feedback loops, we  anticipate seeing entities that are vastly more successful than the average entity. This can only happen when the variance of the power law is infinite.</p>
 </div>
-<p class="continuation">(Otherwise, \(i\) would have adopted behavior \(A\text{.}\)) But this means that</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-p(S) = \min_{i \in S} \frac{ | N(i) \cap S| }{|N(i)|}   &gt; 1-q.
-\end{equation*}
-</div>
-<p class="continuation">Therefore the set is cohesive.</p>
-</div>
-<span class="incontext"><a href="exercises-15.html#solution-106">in-context</a></span>
+<span class="incontext"><a href="exercises-10.html#solution-106">in-context</a></span>
 </body>
 </html>

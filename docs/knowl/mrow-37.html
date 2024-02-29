@@ -13,11 +13,13 @@
 <body>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-\lim_{n \rightarrow \infty} \frac{n -c}{n} &amp;= 1,
-&amp;
-\lim_{n \rightarrow \infty} \left( 1 - \frac{c}{n} \right)^{-d} &amp;= 1,
-&amp;
-\lim_{n \rightarrow \infty} \left( 1 - \frac{c}{n} \right)^n &amp;= e^{-c}.
+\E[X] &amp;= \sum_{k=0}^n k p(k)
+\, = \,  \sum_{k=0}^n k {n \choose k} p^k (1-p)^{n-k}\\
+&amp; =  \sum_{k=1}^n  \frac{n!}{(k-1)! (n-k)!} p^k (1-p)^{n-k}\\
+&amp; =  np \sum_{k=1}^n  \frac{(n-1)!}{(k-1)! (n-k)!} p^{k-1} (1-p)^{n-k}\\
+&amp; =  np \sum_{j=0}^{n-1}  \frac{(n-1)!}{j! (n-1-j)!} p^{j} (1-p)^{n-1-j}\\
+&amp;= np \sum_{j=0}^{n-1}  {n-1 \choose j}  p^{j} (1-p)^{n-1-j}\\
+&amp; =  np  (p + (1-p))^{n-1} \, = \,  np.
 \end{align*}
 </div>
 <span class="incontext"><a href="exercises-9.html#mjx-eqn:mrow-37">in-context</a></span>

@@ -15,19 +15,18 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
-<p>We assume that \(n\) is even (for simplicity). We have</p>
+<p>Keep in mind that <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">\(k\) is a fixed number</em> while the size \(n\) of the network increases to infinity. This lets us use the three limits listed above.</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-1 =  2 \, C \, \sum_{i=1}^{n/2} \frac{1}{i} \leq   2 \, C ( 1 + \log(n/2)) = 2 \, C ( 1 + \log(n) - \log(2))  =2 C  \log(n)
-\end{equation*}
+\begin{align*}
+{n \choose k} p^k (1-p)^{n-k}
+&amp;= \frac{n!}{k! (n-k)!} \left( \frac{\lambda} {n}\right)^k  \left( 1 -  \frac{\lambda}{n} \right)^{n-k}\\
+&amp;= \frac{\lambda^k} {k!} \left( \frac{n}{n} \frac{n-1}{n} \cdots \frac{n-k+1}{n} \right) \left( 1 -  \frac{\lambda}{n} \right)^{n} \left( 1 -  \frac{\lambda}{n} \right)^{-k}\\
+&amp; \rightarrow
+\frac{\lambda^k} {k!}  \cdot \big( 1 \cdot 1 \cdots 1  \big) \cdot  e^{-\lambda} \cdot 1 = e^{-\lambda} \frac{\lambda^k}{k!}
+\end{align*}
 </div>
-<p class="continuation">and so</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\frac{1}{2 \log n} \leq C
-\end{equation*}
+<p>What this is saying is that as \(n \rightarrow \infty\text{,}\) the binomial distribution for \(n\) and \(p\) looks more and more like the Poisson distribution for \(\lambda=np\text{.}\)</p>
 </div>
-</div>
-<span class="incontext"><a href="exercises-14.html#solution-97">in-context</a></span>
+<span class="incontext"><a href="exercises-9.html#solution-97">in-context</a></span>
 </body>
 </html>

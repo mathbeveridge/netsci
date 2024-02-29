@@ -11,13 +11,12 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p>Once again, it is clear that \(0 \leq p(k) \) for all \(k\text{.}\) These numbers sum to</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\sum_{k=0}^{\infty} e^{-\lambda} \frac{\lambda^k}{k!} = e^{-\lambda} \sum_{k=0}^{\infty}  \frac{\lambda^k}{k!}
-= e^{-\lambda} e^{\lambda} =1.
-\end{equation*}
-</div>
-<p class="continuation">Since all terms are nonnegative and they sum to 1, each term must be less than 1.</p>
+<p>We give a combinatorial recipe.</p>
+<ul class="disc">
+<li><p>Pick the \(k\) flips that will be \(H\text{.}\) There are \({n \choose k}\) ways to do so.</p></li>
+<li><p>The probability that the chosen \(k\) flips all turn up \(H\) is \(p^k\text{.}\)</p></li>
+<li><p>The probability that the remaining \(n-k\) flips all turn up \(T\) is \((1-p)^{n-k}\text{.}\)</p></li>
+</ul>
+<p class="continuation">Multiplying all these terms together gives the expression above.</p>
 </div></body>
 </html>

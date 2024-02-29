@@ -11,23 +11,40 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p>Here is the hard work:</p>
+<p>Let \(X_i\) be an "indicator function" for whether coin \(i\) is \(H\text{.}\) That is,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+X_i = \left\{
+\begin{array}{cc}
+1 &amp; \mbox{if the } i\mbox{th coin is } H, \\
+0 &amp;  \mbox{if the } i\mbox{th coin is } T. \\
+\end{array}
+\right.
+\end{equation*}
+</div>
+<p class="continuation">Then</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[X] = \E\left[ \sum_{i=1}^n X_i \right] = \sum_{i=1}^n \E[X_i] =  \sum_{i=1}^n p = np.
+\end{equation*}
+</div>
+<p class="continuation">For comparison, here is a proof that does not use linearity of expectation. It isn't "hard" but it does take a bit of work. Our strategy will be to factor out an \(n\) and then reindex the sum.</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-\E[Z(Z-1)] &amp;= \sum_{k=0}^{\infty} k(k-1) e^{-\lambda} \frac{\lambda^k}{k!}\\
-&amp;= \lambda^2 e^{-\lambda} \sum_{k=2}^{\infty}   \frac{\lambda^{k-2}}{(k-2)!}\\
-&amp;= \lambda^2 e^{-\lambda} \sum_{j=0}^{\infty}   \frac{\lambda^{j}}{j!}\\
-&amp;= \lambda^2 e^{-\lambda}e^{\lambda} = \lambda^2.
+\E[X] &amp;= \sum_{k=0}^n k p(k)
+\, = \,  \sum_{k=0}^n k {n \choose k} p^k (1-p)^{n-k}\\
+&amp; =  \sum_{k=1}^n  \frac{n!}{(k-1)! (n-k)!} p^k (1-p)^{n-k}\\
+&amp; =  np \sum_{k=1}^n  \frac{(n-1)!}{(k-1)! (n-k)!} p^{k-1} (1-p)^{n-k}\\
+&amp; =  np \sum_{j=0}^{n-1}  \frac{(n-1)!}{j! (n-1-j)!} p^{j} (1-p)^{n-1-j}\\
+&amp;= np \sum_{j=0}^{n-1}  {n-1 \choose j}  p^{j} (1-p)^{n-1-j}\\
+&amp; =  np  (p + (1-p))^{n-1} \, = \,  np.
 \end{align*}
 </div>
-<p>That wasn't so bad! Our variance calculation is</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\var(Z) &amp;= \E[Z^2] - (\E[Z])^2 = \E[Z(Z-1)] + \E[Z]- (\E[Z])^2\\
-&amp;= \lambda^2 + \lambda - \lambda^2 \, =\,  \lambda.
-\end{align*}
-</div>
-<p>Fun fact: the expected value is also called the "first moment." The variance is also called the "second moment." Can you guess what the third moment of the Poisson distribution is? That's right: it's also equal to \(\lambda\text{.}\) How about the fourth moment? Yep, \(\lambda\) again.</p>
-<p>In fact, every moment of the Poisson distribution is equal to \(\lambda\text{.}\) (This is analogous to how all of the derivatives of \(e^x\) are also \(e^x\text{.}\)) Each of the moments tell you something about the shape of the distribution. So in a poetic sense, the Poisson distribution must be the nicest-shaped bell curve centered at \(x=\lambda\text{.}\)</p>
+<p>We use a couple of tricks here</p>
+<ul class="disc">
+<li><p>At the third equality, we replace the lower limit of \(k=0\) with \(k=1\text{.}\) This is because the \(k=0\) term equals 0, so we do not need to list it. <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">This is an important step!</em> Do not underestimate the need to properly account for the lowest/highest index.</p></li>
+<li><p>At the fifth equality, we reindex, using \(j\) instead of \(k\text{.}\) <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Do this carefully!</em> In my margin, I always write down the substitution in two ways. Here we are using \(j=k-1\text{,}\) which is the same as \(k=j+1\text{.}\) Having both of these expression staring at me will ensure that I don't make mistakes during the reindexing. Wherever I see a "\(k\text{,}\)" I replace it with a "\(j+1\text{.}\)" Or if I want to be fancy, I can immediately replace a "\(k-1\)" with a "\(j\text{.}\)"</p></li>
+</ul>
+<p class="continuation">Don't cut corners on these substitutions. You will save yourself a lot of headaches!</p>
 </div></body>
 </html>

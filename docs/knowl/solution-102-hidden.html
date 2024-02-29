@@ -10,15 +10,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like">
-<p>We have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\sum_{k=0}^{\log (n/2)} E[X_j]
-&amp;\leq \sum_{k=0}^{\log (n/2)}\left( 3 \log n \right)\\
-&amp;= (3 \log n) (\log n - \log 2 + 1) = 3 (\log n)^2.
-\end{align*}
-</div>
-<p>So an average journey takes \(O((\log n)^2)\) steps.</p>
-</div></body>
+<body><div class="solution solution-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+p(k) \approx \left( \frac{1}{\alpha-1} \cdot  \frac{1}{k_{\min}^{\alpha-1}} \right)^{-1}  k^{- \alpha}
+= \frac{\alpha -1}{k_{\min} } \left( \frac{ k_{\min}}{k} \right)^{\alpha}
+\end{equation*}
+</div></div></body>
 </html>

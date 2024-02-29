@@ -13,11 +13,13 @@
 <body>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-\frac{a}{c} &amp;= \frac{1}{\gamma} -1\\
-\frac{c+a}{c} &amp;= \frac{1}{\gamma}\\
-\frac{c}{c+a} &amp;= {\gamma}
+{n \choose k} p^k (1-p)^{n-k}
+&amp;= \frac{n!}{k! (n-k)!} \left( \frac{\lambda} {n}\right)^k  \left( 1 -  \frac{\lambda}{n} \right)^{n-k}\\
+&amp;= \frac{\lambda^k} {k!} \left( \frac{n}{n} \frac{n-1}{n} \cdots \frac{n-k+1}{n} \right) \left( 1 -  \frac{\lambda}{n} \right)^{n} \left( 1 -  \frac{\lambda}{n} \right)^{-k}\\
+&amp; \rightarrow
+\frac{\lambda^k} {k!}  \cdot \big( 1 \cdot 1 \cdots 1  \big) \cdot  e^{-\lambda} \cdot 1 = e^{-\lambda} \frac{\lambda^k}{k!}
 \end{align*}
 </div>
-<span class="incontext"><a href="exercises-12.html#mjx-eqn:mrow-73">in-context</a></span>
+<span class="incontext"><a href="exercises-9.html#mjx-eqn:mrow-73">in-context</a></span>
 </body>
 </html>

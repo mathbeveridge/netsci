@@ -12,7 +12,17 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>In a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">lazy walk</em> on a directed graph, at each step, we can either stay at the current vertex or move to an adjacent vertex. So a lazy walk of length \(k\) is a sequence of vertices \(v_0, v_1, v_2, \ldots, v_k\) where for \(1 \leq i \leq k\text{,}\) we either have \(v_i = v_{i-1}\) or \((v_{i-1}, v_i)\) is an arc of \(G\text{.}\) Let \(A\) be the adjacency matrix of a directed graph \(G\text{,}\) so that \(a_{ij}\) is 1 if \((i,j)\) is an arc and  is 0 otherwise. Using induction on \(k \geq 0\text{,}\) prove that  the \(ij\)th entry of \((I+A)^k\) counts the number of lazy walks of length \(k\) from vertex \(i\) to vertex \(j\text{.}\)</p>
-<span class="incontext"><a href="exercises-18.html#p-606">in-context</a></span>
+<p>Let \({G=(V,E)}\) be a network with threshold \(q \in [0,1]\text{.}\) Let \({S_0}\) be the initial set of innovators. Recall that a set \(S\) is <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">cohesive</em> when</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+p(S) = \min_{i \in S} \frac{ | N(i) \cap S| }{|N(i)|}   &gt; 1-q
+\end{equation*}
+</div>
+<p class="continuation">where \(N(i)\) is the set of neighbors of \(i\text{.}\)</p>
+<ol class="lower-alpha">
+<li><p>Suppose that the  initial adopter set \({S_0}\) does not cause a complete cascade. Prove that there is a cohesive set  \({S \subset V \backslash S_0}\text{.}\) </p></li>
+<li><p>Suppose that there is a cohesive set  \({S \subset V \backslash S_0}\text{.}\) Prove that  initial adopter set \({S_0}\) does not cause a complete cascade. </p></li>
+</ol>
+<span class="incontext"><a href="exercises-15.html#p-606">in-context</a></span>
 </body>
 </html>

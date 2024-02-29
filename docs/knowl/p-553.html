@@ -12,47 +12,46 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose that we have  a large network for which there is no correlation between vertex degrees. That is, an edge from vertex \(v\) leads to a vertex chosen  uniformly at random. Let \(p_k\) denote the fraction of vertices of degree \(k\text{.}\) When you pick a vertex \(v\) at random, we have \(\Pr[\deg(v)=k] = p_k\text{.}\) This means that the expected degree of the network is</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\langle k \rangle = \sum_{k=0}^{k_{\max}} k  \cdot p_k.
-\end{equation*}
-</div>
-<p class="continuation">Consider the following process: Pick a random vertex \(v\) and then move to a random neighbor \(w\) of vertex \(v\text{.}\) Let</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-q_k = \Pr [\deg(w)=k+1].
-\end{equation*}
-</div>
-<p class="continuation">In other words, \(w\) has \(k\) additional edges, besides the one you just traveled. In this case, we say that \(w\) has <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">excess degree</em> \(k\text{.}\)</p>
+<p>Here is a different citation generation model. Start with a network of \(n_0 &gt; c\) papers, each pointing randomly to \(c\) others. Pick a constant \(0 &lt; \gamma &lt; 1\text{.}\)  When paper \(n+1\) is added, it makes \(c\) citations as follows:</p>
+<ul class="disc">
+<li><p>Pick a random paper \(v\) from the existing \(n\) vertices.</p></li>
+<li>
+<p>For each of the \(c\) citations of \(v\) (that is, the arcs starting at \(v\)),</p>
+<ul class="circle">
+<li><p>with \(\displaystyle{\P = \gamma}\text{,}\)   copy that citation</p></li>
+<li><p>with \(\displaystyle{\P = 1 - \gamma}\text{,}\)  cite a uniform random paper instead.</p></li>
+</ul>
+</li>
+</ul>
+<p class="continuation">You will now show that this model is equivalent to Price's model, so it generates a power law degree distribution.</p>
 <ol class="lower-alpha">
 <li>
-<p>Explain why the excess degree distribution  satisfies</p>
+<p>Show that for each arc starting at vertex \(n+1\text{,}\) we have</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-q_k = \frac{(k+1) p_{k+1}}{\langle k \rangle}.
+\P(\mbox{the arc points to vertex } i) = (1- \gamma) \frac{1}{n}  + \gamma \frac{k_i}{cn}.
+\end{equation*}
+</div>
+</li>
+<li><p>Define \(a = c \left( \frac{1}{\gamma} -1 \right)\text{.}\) Confirm that this equation is equivalent to \(\gamma = \frac{c}{c+a}\text{.}\) </p></li>
+<li>
+<p>Plug \(\gamma = \frac{c}{c+a}\) into equation from part (a) and simplify to show that we once again get</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\P(\mbox{the arc points to vertex } i) = \frac{a+k_i}{n(c+a)}.
 \end{equation*}
 </div>
 </li>
 <li>
-<p>Confirm that the expected degree of vertex \(w\) is</p>
+<p>Finally, rewrite the power law</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{\langle k^2 \rangle}{\langle k \rangle}.
+\P(\deg(v) = k) \sim k^{-2-a/c}
 \end{equation*}
 </div>
+<p class="continuation">in terms of \(\gamma\) instead of \(a\) and \(c\text{.}\) </p>
 </li>
-<li>
-<p>Recall that</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\mbox{Var}[X] = E[X^2] - E[X]^2 &gt; 0
-\end{equation*}
-</div>
-<p class="continuation">when \(X\) is not constant. Use this to explain why that the expected degree of \(w\) is larger than the expected degree of \(v\text{.}\) </p>
-</li>
-<li><p>Colloquially, people refer to this result as: "your friends are more popular than you." Why? </p></li>
 </ol>
-<span class="incontext"><a href="exercises-16.html#p-553">in-context</a></span>
+<span class="incontext"><a href="exercises-12.html#p-553">in-context</a></span>
 </body>
 </html>
