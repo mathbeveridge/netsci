@@ -486,7 +486,7 @@ Let <m>N = {n \choose 2}</m>. We have
 			<idx><h>The Degree Distribution of <m>G(n,p)</m></h></idx>
 			<statement>
 				<p>
-Explain why the degree distribution (the fraction of nodes with degree <m>k</m>) for <m>G(n,p)</m> is given by
+Explain why the probability that vertex <m>v</m> of <m>G(n,p)</m> has degree <m>k</m> is given by
 <me>
 p_k = {n-1 \choose k} p^k (1-p)^{n-1-k}.
 </me>
