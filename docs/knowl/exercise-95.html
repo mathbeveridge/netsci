@@ -12,16 +12,45 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3<span class="period">.</span></span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">8<span class="period">.</span></span><span class="space"> </span><span class="title">Katz centrality as \(\alpha \rightarrow 0\).</span>
 </h6>
-<p>In this problem, you will fit a power law to the earthquake data found at</p>
-<p><a class="external" href="http://tuvalu.santafe.edu/~aaronc/powerlaws/data/quakes.txt" target="_blank">http://tuvalu.santafe.edu/~aaronc/powerlaws/data/quakes.txt</a>.</p>
-<p>This data set contains the intensities of earthquakes occurring in California between 1910 and 1992, measured as the maximum amplitude of motion during the quake. <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Note:</em> these data points are given on the Richter scale, which is the base-10 logarithm of the actual intensity. You must correct for this to find the correct value of \(\alpha\) for the power law.</p>
+<p>Now let's talk about what happens to the Katz centrality as \(\alpha \rightarrow 0\text{.}\) You will show that for very small \(\alpha\text{,}\) the Katz centrality gives a vertex ranking that is equivalent to degree centrality, meaning that the order of the ranking is the same as the degree centrality ranking. This time, we will start with the following equation, which is satisfied by the limiting solution to the Katz recursion:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\bx =  \alpha A \bx + \bone.
+\end{equation*}
+</div>
 <ol class="lower-alpha">
-<li><p>Create a plot of the data using "intensity \(k\)" versus "frequency of intensity at least \(k\)" using a log-log scale. What seems to be a good estimate for \(k_{\min}\) based on your log-log plot?</p></li>
-<li><p>Find the best fitting \(k_{\min}\) and \(\alpha\text{.}\) How does the optimal \(k_{\min}\) compare to your guess in part (a)?</p></li>
-<li><p>Make a plot of the PDF and the best fitting power law.</p></li>
-<li><p>Make a plot of the Kolmogorov-Smirnov statistics \(D\) for the first 50 candidates for \(k_{\min}\text{.}\)</p></li>
+<li><p>Explain why \(A \bone &lt; n  \bone\text{.}\)</p></li>
+<li>
+<p>If \(B\) is an \(n \times n\) matrix and suppose that \((I-B)\) is invertible, then we know that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+(I-B)^{-1} = \sum_{j=0}^{\infty} B^j =  I + B + B^2 + \cdots +  B^j + \cdots.
+\end{equation*}
+</div>
+<p class="continuation">Use this fact to show that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\bx  = \bone + \alpha A \bone + \alpha^2 A^2 \bone + \cdots +  \alpha^s A^s \bone + \cdots
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Next, let \(\alpha = 1/m\) where \(m &gt; 0\) is a very large number (to be determined later). Use parts (a) and (b) to show that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\bx  = \bone + \frac{1}{m} A \bone + \bb
+\end{equation*}
+</div>
+<p class="continuation">where \(\bb\) is a vector satisfying</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+| \bb | &lt;  \frac{n}{m (m-1)} \bone.
+\end{equation*}
+</div>
+</li>
+<li><p>Finally, take \(m = n^2\) and look at \(\bx - \bone\text{.}\) Explain why  ordering of the vertices by the entries in \(\bx - \bone\) gives the same ranking as degree centrality (as long as \(n \geq 2\)).  A similar argument holds for any \(m &gt; n^2\text{,}\) so as \(\alpha \rightarrow 0\text{,}\) the ranking is the same as the degree centrality ranking.</p></li>
 </ol></article><span class="incontext"><a href="exercises-19.html#exercise-95">in-context</a></span>
 </body>
 </html>

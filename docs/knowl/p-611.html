@@ -12,12 +12,19 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Explain why the excess degree distribution  satisfies</p>
+<p>Here is very useful fact from probability. Let \(X\) be any random variable taking on positive integer values. We can write the expected value of \(X\) as</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-q_k = \frac{(k+1) p_{k+1}}{\langle k \rangle}.
+\E[X] = \sum_{k=1}^{\infty} \Pr[X \geq k].
 \end{equation*}
 </div>
-<span class="incontext"><a href="exercises-16.html#p-611">in-context</a></span>
+<p class="continuation">Indeed, when \(X\) only takes on positive integer values, we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\sum_{k=1}^{\infty} \Pr[X \geq k] = \sum_{k=1}^{\infty} k \Pr[X = k]
+\end{equation*}
+</div>
+<p class="continuation">and the right hand side is the definition of \(\E[X]\text{.}\)</p>
+<span class="incontext"><a href="exercises-15.html#p-611">in-context</a></span>
 </body>
 </html>

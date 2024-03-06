@@ -12,26 +12,43 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">4<span class="period">.</span></span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Clustering Coefficient for a Ring World.</span>
 </h6>
-<p>Here is very useful fact from probability. Let \(X\) be any random variable taking on positive integer values. We can write the expected value of \(X\) as</p>
+<p>You will calculate the clustering coefficient</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\E[X] = \sum_{k=1}^{\infty} \Pr[X \geq k].
+C = \frac{3 \times (\mbox{\# of triangles})}{\mbox{\# of connected triples}}
 \end{equation*}
 </div>
-<p class="continuation">Indeed, when \(X\) only takes on positive integer values, we have</p>
+<p class="continuation">where a "connected triple" are three vertices \(u,v,w\) such that \((u,v)\) and \((v,w)\) are edges. Intuitively, the clustering coefficient measures the  fraction of times that "pairs of my friends are also friends."</p>
+<ol class="lower-alpha">
+<li>
+<p>Show that there are</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\sum_{k=1}^{\infty} \Pr[X \geq k] = \sum_{k=1}^{\infty} k \Pr[X = k]
+n {c/2 \choose 2}
 \end{equation*}
 </div>
-<p class="continuation">and the right hand side is the definition of \(\E[X]\text{.}\)</p>
-<p>Use this new formula for \(\E[X]\) and part 3(c) to prove that</p>
+<p class="continuation">triangles in a Ring World. A nice way to argue this is to recognize that all triangles look like one "long edge" going distance \(\leq c/2\) and two "shorter edges." Orient the long edge  clockwise the two shorter edges  counter clockwise. Then associate this directed cycle with the vertex at the start of the long clockwise arc.</p>
+</li>
+<li>
+<p>Show that there are</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-E[X_j] \leq 3 \log n.
+n {c \choose 2}
 \end{equation*}
-</div></article><span class="incontext"><a href="exercises-14.html#exercise-67">in-context</a></span>
+</div>
+<p class="continuation">connected triples. These are paths of length 2 (which can be associated with their central vertex).</p>
+</li>
+<li>
+<p>Show that the clustering coefficient  is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+C =  \frac{3(c-2)}{4(c-1)}.
+\end{equation*}
+</div>
+<p class="continuation">Furthermore, for \(c \geq 3\text{,}\) we have \(\frac{3}{8} \leq C  \leq  \frac{3}{4}\text{.}\) This is independent of the network size \(n\text{,}\) so we have high clustering.</p>
+</li>
+</ol></article><span class="incontext"><a href="exercises-14.html#exercise-67">in-context</a></span>
 </body>
 </html>

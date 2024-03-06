@@ -12,8 +12,21 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Counting Lazy Walks.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Orientation of a Graph.</span>
 </h6>
-<p>In a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">lazy walk</em> on a directed graph, at each step, we can either stay at the current vertex or move to an adjacent vertex. So a lazy walk of length \(k\) is a sequence of vertices \(v_0, v_1, v_2, \ldots, v_k\) where for \(1 \leq i \leq k\text{,}\) we either have \(v_i = v_{i-1}\) or \((v_{i-1}, v_i)\) is an arc of \(G\text{.}\) Let \(A\) be the adjacency matrix of a directed graph \(G\text{,}\) so that \(a_{ij}\) is 1 if \((i,j)\) is an arc and  is 0 otherwise. Using induction on \(k \geq 0\text{,}\) prove that  the \(ij\)th entry of \((I+A)^k\) counts the number of lazy walks of length \(k\) from vertex \(i\) to vertex \(j\text{.}\)</p></article><span class="incontext"><a href="exercises-18.html#exercise-85">in-context</a></span>
+<p>Let \(G=(V,E)\) be an undirected graph. Let \(D\) be an orientation of this graph (so \(D\) is a directed graph).</p>
+<ol class="lower-alpha">
+<li><p>Prove that if \(D\) is strongly connected, then every pair of vertices in \(G\) is connected by two edge-disjoint paths.</p></li>
+<li>
+<p>The converse is also true: if every pair of vertices in \(G\) is connected by two edge-disjoint paths, then there is a strongly connected orientation \(D\) of the graph. Here is the sketch of an algorithm  that orients the edges of \(G\) to obtain a strongly connected digraph.</p>
+<ol class="lower-roman">
+<li><p>Start with any two vertices \(u,v\) and orient some edges so that they are strongly connected to one another.  Let \(S = \{ u , v\}\text{.}\)</p></li>
+<li><p>Pick a vertex \(w \notin S\text{.}\) If \(w\) and \(v\) are not strongly connected, then orient some edges to make this happen. Add \(w\) to \(S\text{.}\)</p></li>
+<li><p>Repeat the previous step until \(S = V\text{,}\) which means that every vertex is strongly connected to \(v\text{.}\)</p></li>
+<li><p>If there any any non-oriented edges, give them an orientation.</p></li>
+</ol>
+</li>
+</ol>
+<p class="continuation">Fill in the details of the algorithm by explaining how to "orient some edges" in steps i, ii and iv. Explain <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">how to choose</em> the edges to orient, and <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">how to pick</em> the orientation of each edge.   Finally, justify why your algorithm results in a strongly connected digraph. Drawing pictures while you are thinking  (and explaining) will really help!</p></article><span class="incontext"><a href="exercises-18.html#exercise-85">in-context</a></span>
 </body>
 </html>

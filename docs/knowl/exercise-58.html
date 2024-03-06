@@ -12,13 +12,20 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Link probabilities in Price's Model.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">The Degree Distribution of \(G(n,p)\).</span>
 </h6>
-<p>Suppose that we have run Price's Model and that the network has \(n\) vertices. We now add vertex \(n+1\text{,}\) as well as \(c\) arcs from vertex \(n+1\) to the existing network. Let \(k_i\) denote the degree of vertex \(i\text{.}\) Prove that for each new arc we add from vertex \(n+1\text{,}\)</p>
+<p>Explain why the degree distribution (the fraction of nodes with degree \(k\)) for \(G(n,p)\) is given by</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\P(\mbox{the arc points to vertex } i) = \frac{a+k_i}{n(c+a)}.
+p_k = {n-1 \choose k} p^k (1-p)^{n-1-k}.
 \end{equation*}
-</div></article><span class="incontext"><a href="exercises-12.html#exercise-58">in-context</a></span>
+</div>
+<p class="continuation">In other words, \(G(n,p)\) has a binomial degree distribution. You need to use the following fact: when \(k\) is fixed, \(n\) is large and \(p= c/n\text{,}\) we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+p_k \approx  e^{-c} \frac{c^k}{k!}.
+\end{equation*}
+</div>
+<p class="continuation">So we can approximate the degree distribution of \(G(n,p)\) with a Poisson distribution. </p></article><span class="incontext"><a href="exercises-11.html#exercise-58">in-context</a></span>
 </body>
 </html>

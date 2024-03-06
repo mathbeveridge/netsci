@@ -12,26 +12,13 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1<span class="period">.</span></span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Link probabilities in Price's Model.</span>
 </h6>
-<p>To check your understanding, explain why the length of the journey from \(s\) to \(t\) is</p>
+<p>Suppose that we have run Price's Model and that the network has \(n\) vertices. We now add vertex \(n+1\text{,}\) as well as \(c\) arcs from vertex \(n+1\) to the existing network. Let \(k_i\) denote the degree of vertex \(i\text{.}\) Prove that for each new arc we add from vertex \(n+1\text{,}\)</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-X = \sum_{k=0}^{\lfloor \log (n/2) \rfloor} X_k
+\P(\mbox{the arc points to vertex } i) = \frac{a+k_i}{n(c+a)}.
 \end{equation*}
-</div>
-<p class="continuation">In other words, be sure that you understand</p>
-<ul class="disc">
-<li><p>how we have partitioned the journey into phases, and</p></li>
-<li><p>why the upper limit of the sum is \(\lfloor \log (n/2) \rfloor.\)</p></li>
-</ul>
-<p class="continuation">From here forward, we will omit the floor function from our expressions, and write \(\log (n/2) \) when we actually mean \(\lfloor \log (n/2) \rfloor\text{.}\) We trust that you know that we need to use integer values.</p>
-<p>Okay, you now understand this formula for a given network. In the rest of this activity, we will calculate the expected length of a journey on a randomly generated network. We use linearity of expectation to write the  expected length of this journey as the sum of the expected lengths of the phases:</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\E[X] = \E \left[ \sum_{k=0}^{\log (n/2)} X_k \right] =
-\sum_{k=0}^{\log (n/2)} E[X_k].
-\end{equation*}
-</div></article><span class="incontext"><a href="exercises-14.html#exercise-64">in-context</a></span>
+</div></article><span class="incontext"><a href="exercises-13.html#exercise-64">in-context</a></span>
 </body>
 </html>

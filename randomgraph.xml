@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+
+
+<chapter xml:id="randomgraph" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Erdos-Renyi Random Graph</title>
+	<introduction>
+		<p>
+
+
+Recall that a <em>finite probability space</em> <m>(\Omega, \P)</m> consists of a finite set <m>\Omega</m> and a function <m>\P: \mathcal{P}(\Omega) \rightarrow [0,1]</m> such that
+		<ul>
+			<li>
+			<p>
+ <m>\P(\emptyset) = 0</m>
+			</p>
+			</li>
+			<li>
+			<p>
+ <m>\P(\Omega) = 1</m>
+			</p>
+			</li>
+			<li>
+			<p>
+ For <m>A,B \subset \Omega</m>, if <m>A \cap B = \emptyset</m> then <m>\P(A \cup B) = \P(A) + \P(B)</m>.
+<m>\P(A_1 \cup A_2 \cup \cdots \cup A_k) \leq \sum_{i=1}^k \P(A_i)</m> for any events <m>A_1, A_2, \ldots, A_k \subset \Omega</m>.
+			</p>
+			</li>
+		</ul>
+We refer to <m>\omega \in \Omega</m> as an <em>outcome</em>, and we refer to <m>A \subset \Omega</m> as an <em>event</em>.
+
+
+			</p><p>
+
+The <em>random graph</em> <m>G(n,p)</m> is a probability space where <m>\Omega</m> is the set of all possible graphs on <m>[n]</m>. Note that the vertices are labeled, so the same graph structure appears once for each possible labeling. For every <m>G \in \Omega</m>, with <m>k</m> edges, we have
+<me>
+P(G) = p^k(1-p)^{{n \choose 2} -k}.
+</me>
+
+
+
+</p>
+</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+
+		<exercise>
+			<title>The Random Graph <m>G(3,2/3)</m></title>
+			<idx><h>The Random Graph <m>G(3,2/3)</m></h></idx>
+			<statement>
+				<p>
+
+
+
+			<ol>
+
+				<li>
+					<p>
+ Here are the graphs in <m>G(3, 2/3)</m>. Write down their corresponding probabilities
+
+
+			<image width="100%" xml:id="fig-img-randomgraph0">
+				<latex-image>
+\begin{tikzpicture}
+
+
+\begin{scope}[shift={(0,0)}]
+
+\draw[fill] (90:0.5) circle (2pt);
+\draw[fill] (-30:0.5) circle (2pt);
+\draw[fill] (210:0.5) circle (2pt);
+
+\node at (90: .8) {\scriptsize 1};
+\node at (-30: .8) {\scriptsize 2};
+\node at (210: .8) {\scriptsize 3};
+
+\end{scope}
+
+\begin{scope}[shift={(2.25,0)}]
+
+\draw[fill] (90:0.5) circle (2pt);
+\draw[fill] (-30:0.5) circle (2pt);
+\draw[fill] (210:0.5) circle (2pt);
+
+\node at (90: .8) {\scriptsize 1};
+\node at (-30: .8) {\scriptsize 2};
+\node at (210: .8) {\scriptsize 3};
+
+\draw (90:0.5) -z- (-30:0.5);
+
+\end{scope}
+
+\begin{scope}[shift={(4.5,0)}]
+
+\draw[fill] (90:0.5) circle (2pt);
+\draw[fill] (-30:0.5) circle (2pt);
+\draw[fill] (210:0.5) circle (2pt);
+
+\node at (90: .8) {\scriptsize 1};
+\node at (-30: .8) {\scriptsize 2};
+\node at (210: .8) {\scriptsize 3};
+
+\draw (90:0.5) -z- (-30:0.5);
+\draw (90:0.5) -z- (210:0.5);
+
+
+\end{scope}
+
+\begin{scope}[shift={(6.75,0)}]
+
+\draw[fill] (90:0.5) circle (2pt);
+\draw[fill] (-30:0.5) circle (2pt);
+\draw[fill] (210:0.5) circle (2pt);
+
+\node at (90: .8) {\scriptsize 1};
+\node at (-30: .8) {\scriptsize 2};
+\node at (210: .8) {\scriptsize 3};
+
+
+\draw (210:0.5) -z- (-30:0.5);
+
+
+\end{scope}
+
+\begin{scope}[shift={(0,-3)}]
+
+\draw[fill] (90:0.5) circle (2pt);
+\draw[fill] (-30:0.5) circle (2pt);
+\draw[fill] (210:0.5) circle (2pt);
+
+\node at (90: .8) {\scriptsize 1};
+\node at (-30: .8) {\scriptsize 2};
+\node at (210: .8) {\scriptsize 3};
+
+
+\draw (90:0.5) -z- (210:0.5);
+\draw (210:0.5) -z- (-30:0.5);
+
+
+\end{scope}
+
+\begin{scope}[shift={(2.25,-3)}]
+
+\draw[fill] (90:0.5) circle (2pt);
+\draw[fill] (-30:0.5) circle (2pt);
+\draw[fill] (210:0.5) circle (2pt);
+
+\node at (90: .8) {\scriptsize 1};
+\node at (-30: .8) {\scriptsize 2};
+\node at (210: .8) {\scriptsize 3};
+
+\draw (90:0.5) -z- (210:0.5);
+
+
+\end{scope}
+
+\begin{scope}[shift={(4.5,-3)}]
+
+\draw[fill] (90:0.5) circle (2pt);
+\draw[fill] (-30:0.5) circle (2pt);
+\draw[fill] (210:0.5) circle (2pt);
+
+\node at (90: .8) {\scriptsize 1};
+\node at (-30: .8) {\scriptsize 2};
+\node at (210: .8) {\scriptsize 3};
+
+\draw (90:0.5) -z- (-30:0.5);
+
+\draw (210:0.5) -z- (-30:0.5);
+
+
+\end{scope}
+
+\begin{scope}[shift={(6.75,-3)}]
+
+\draw[fill] (90:0.5) circle (2pt);
+\draw[fill] (-30:0.5) circle (2pt);
+\draw[fill] (210:0.5) circle (2pt);
+
+\node at (90: .8) {\scriptsize 1};
+\node at (-30: .8) {\scriptsize 2};
+\node at (210: .8) {\scriptsize 3};
+
+\draw (90:0.5) -z- (-30:0.5);
+\draw (90:0.5) -z- (210:0.5);
+\draw (210:0.5) -z- (-30:0.5);
+
+
+
+\end{scope}
+
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+
+
+
+<!--solution>
+<p>
+			<image width="100%" xml:id="fig-img-randomgraph1">
+				<latex-image>
+\begin{tikzpicture}
+
+
+\begin{scope}[shift={(0,0)}]
+
+\draw[fill] (90:0.5) circle (2pt);
+\draw[fill] (-30:0.5) circle (2pt);
+\draw[fill] (210:0.5) circle (2pt);
+
+\node at (90: .8) {\scriptsize 1};
+\node at (-30: .8) {\scriptsize 2};
+\node at (210: .8) {\scriptsize 3};
+
+
+\node at (0, -1.5) {$ \left( \frac{1}{3} \right)^3$};
+
+\end{scope}
+
+\begin{scope}[shift={(2.25,0)}]
+
+\draw[fill] (90:0.5) circle (2pt);
+\draw[fill] (-30:0.5) circle (2pt);
+\draw[fill] (210:0.5) circle (2pt);
+
+\node at (90: .8) {\scriptsize 1};
+\node at (-30: .8) {\scriptsize 2};
+\node at (210: .8) {\scriptsize 3};
+
+\draw (90:0.5) -z- (-30:0.5);
+
+
+\node at (0, -1.5) {$ \left( \frac{1}{3} \right)^2\left( \frac{2}{3} \right)$};
+
+\end{scope}
+
+\begin{scope}[shift={(4.5,0)}]
+
+\draw[fill] (90:0.5) circle (2pt);
+\draw[fill] (-30:0.5) circle (2pt);
+\draw[fill] (210:0.5) circle (2pt);
+
+\node at (90: .8) {\scriptsize 1};
+\node at (-30: .8) {\scriptsize 2};
+\node at (210: .8) {\scriptsize 3};
+
+\draw (90:0.5) -z- (-30:0.5);
+\draw (90:0.5) -z- (210:0.5);
+
+\node at (0, -1.5) {$ \left( \frac{1}{3} \right)\left( \frac{2}{3} \right)^2$};
+
+\end{scope}
+
+\begin{scope}[shift={(6.75,0)}]
+
+\draw[fill] (90:0.5) circle (2pt);
+\draw[fill] (-30:0.5) circle (2pt);
+\draw[fill] (210:0.5) circle (2pt);
+
+\node at (90: .8) {\scriptsize 1};
+\node at (-30: .8) {\scriptsize 2};
+\node at (210: .8) {\scriptsize 3};
+
+
+\draw (210:0.5) -z- (-30:0.5);
+
+\node at (0, -1.5) {$ \left( \frac{1}{3} \right)^2\left( \frac{2}{3} \right)$};
+
+\end{scope}
+
+\begin{scope}[shift={(0,-4)}]
+
+\draw[fill] (90:0.5) circle (2pt);
+\draw[fill] (-30:0.5) circle (2pt);
+\draw[fill] (210:0.5) circle (2pt);
+
+\node at (90: .8) {\scriptsize 1};
+\node at (-30: .8) {\scriptsize 2};
+\node at (210: .8) {\scriptsize 3};
+
+
+\draw (90:0.5) -z- (210:0.5);
+\draw (210:0.5) -z- (-30:0.5);
+
+\node at (0, -1.5) {$ \left( \frac{1}{3} \right)\left( \frac{2}{3} \right)^2$};
+
+\end{scope}
+
+\begin{scope}[shift={(2.25,-4)}]
+
+\draw[fill] (90:0.5) circle (2pt);
+\draw[fill] (-30:0.5) circle (2pt);
+\draw[fill] (210:0.5) circle (2pt);
+
+\node at (90: .8) {\scriptsize 1};
+\node at (-30: .8) {\scriptsize 2};
+\node at (210: .8) {\scriptsize 3};
+
+\draw (90:0.5) -z- (210:0.5);
+
+\node at (0, -1.5) {$ \left( \frac{1}{3} \right)^2\left( \frac{2}{3} \right)$};
+
+\end{scope}
+
+\begin{scope}[shift={(4.5,-4)}]
+
+\draw[fill] (90:0.5) circle (2pt);
+\draw[fill] (-30:0.5) circle (2pt);
+\draw[fill] (210:0.5) circle (2pt);
+
+\node at (90: .8) {\scriptsize 1};
+\node at (-30: .8) {\scriptsize 2};
+\node at (210: .8) {\scriptsize 3};
+
+\draw (90:0.5) -z- (-30:0.5);
+
+\draw (210:0.5) -z- (-30:0.5);
+
+\node at (0, -1.5) {$ \left( \frac{1}{3} \right)\left( \frac{2}{3} \right)^2$};
+
+\end{scope}
+
+\begin{scope}[shift={(6.75,-4)}]
+
+\draw[fill] (90:0.5) circle (2pt);
+\draw[fill] (-30:0.5) circle (2pt);
+\draw[fill] (210:0.5) circle (2pt);
+
+\node at (90: .8) {\scriptsize 1};
+\node at (-30: .8) {\scriptsize 2};
+\node at (210: .8) {\scriptsize 3};
+
+\draw (90:0.5) -z- (-30:0.5);
+\draw (90:0.5) -z- (210:0.5);
+\draw (210:0.5) -z- (-30:0.5);
+
+
+\node at (0, -1.5) {$ \left( \frac{2}{3} \right)^3$};
+
+\end{scope}
+
+
+\end{tikzpicture}
+				</latex-image>
+			</image>
+</p>
+</solution-->
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Find the probabilities of the following events
+			<ol>
+				<li>
+					<p>
+ <m>G</m> has exactly one edge
+
+<!--solution>
+<p>
+<me>
+3 \cdot \left( \frac{1}{3} \right)^2 \left( \frac{2}{3} \right) = \frac{2}{9}
+</me>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ <m>G</m> is connected
+
+<!--solution>
+<p>
+<me>
+3 \cdot \left( \frac{1}{3} \right) \left( \frac{2}{3} \right) ^2 + \left( \frac{2}{3} \right)^3 =
+\frac{20}{27}
+</me>
+</p>
+</solution-->
+
+
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Vertex 1 has degree <m>k</m> for <m>k=0,1,2</m>.
+
+<!--solution>
+<p>
+\begin{eqnarray*}
+\Pr(\deg(1)=0) &amp;=&amp; \left( \frac{1}{3} \right)^3 + \left( \frac{1}{3} \right)^2 \left( \frac{2}{3} \right)
+= \frac{3}{27}
+\\
+\Pr(\deg(1)=1) &amp;=&amp; 2 \left( \frac{1}{3} \right)^2\left( \frac{2}{3} \right) + 2 \left( \frac{1}{3} \right) \left( \frac{2}{3} \right) ^2
+= \frac{12}{27}
+\\
+\Pr(\deg(1)=2) &amp;=&amp;  \left( \frac{1}{3} \right)\left( \frac{2}{3} \right)^2 +  \left( \frac{2}{3} \right) ^3
+= \frac{12}{27}
+\end{eqnarray*}
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Calculate <m>\E[\deg(1)]</m>.
+
+<!--solution>
+<p>
+<me>
+0 \cdot \frac{3}{27} + 1 \cdot \frac{12}{27} + 2 \cdot \frac{12}{27} = \frac{36}{27} = \frac{4}{3}
+</me>
+</p>
+</solution-->
+					</p>
+				</li>
+			</ol>
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title><m>G(n,p)</m> with Exactly <m>m</m> Edges</title>
+			<idx><h><m>G(n,p)</m> with Exactly <m>m</m> Edges</h></idx>
+			<statement>
+				<p>
+Pick a random graph <m>G \in G(n,p)</m>. Explain why the probability that <m>G</m> has exactly  <m>m</m> edges is
+<me>
+P(m) = {{n \choose 2} \choose m} p^m (1-p)^{{n \choose 2} - m}.
+</me>
+
+<!--solution>
+<p>
+We must pick the <m>m</m> edges. These must be the only edges that appear: <m>p^m</m> says that those <m>m</m> edges are present and <m>(1-p)^{{n \choose 2} - m}</m> says that the remaining edges are not present.
+</p>
+</solution-->
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>The Expected Number of Edges in <m>G(n,p)</m></title>
+			<idx><h>The Expected Number of Edges in <m>G(n,p)</m></h></idx>
+			<statement>
+				<p>
+By evaluating the sum, prove that the expected number of edges in <m>G</m> is
+<me>
+\langle m \rangle = \sum_{m = 0}^{{n \choose 2}} m P(m) = {n \choose 2} p.
+</me>
+Hint: Use <m>N={n \choose 2}</m> while you are simplifying to keep you focused on what is important.
+
+
+<!--solution>
+<p>
+Let <m>N = {n \choose 2}</m>. We have
+\begin{eqnarray*}
+\langle m \rangle &amp;=&amp; \sum_{m = 0}^{N} m {N \choose m} p^m (1-p)^{N - m}  \\
+&amp;=&amp; \sum_{m = 1}^{N} m  \frac{N!}{m! (N-m)!} p^m (1-p)^{N - m}  \\
+&amp;=&amp; p N \sum_{m = 1}^{N} m  \frac{(N-1)!}{(m-1)! (N-m)!} p^(m-1) (1-p)^{N - m}  \\
+&amp;=&amp; pN (p + (1-p))^{N-1} \, = p N = p {n \choose 2}.
+\end{eqnarray*}
+</p>
+</solution-->
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>The Degree Distribution of <m>G(n,p)</m></title>
+			<idx><h>The Degree Distribution of <m>G(n,p)</m></h></idx>
+			<statement>
+				<p>
+Explain why the degree distribution (the fraction of nodes with degree <m>k</m>) for <m>G(n,p)</m> is given by
+<me>
+p_k = {n-1 \choose k} p^k (1-p)^{n-1-k}.
+</me>
+In other words, <m>G(n,p)</m> has a binomial degree distribution. You need to use the following fact:
+when <m>k</m> is fixed, <m>n</m> is large and <m>p= c/n</m>, we have
+<me>p_k \approx  e^{-c} \frac{c^k}{k!}.</me>
+So we can approximate the degree distribution of <m>G(n,p)</m> with a Poisson distribution.
+
+
+<!--solution>
+<p>
+Look at a particular vertex <m>v</m>. We must choose the <m>k</m> neighbors. The edges between <m>v</m> and those neighbors must be present. The  edges from <m>v</m> to the remaining vertices must be absent.
+</p>
+</solution-->
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>The Expected Degree of a Vertex</title>
+			<idx><h>The Expected Degree of a Vertex</h></idx>
+			<statement>
+				<p>
+Prove that the expected degree of vertex <m>v_k</m> is
+<me>
+\E[\deg(v_k)] = \langle v_k \rangle = (n-1)p.
+</me>
+
+<!--solution>
+<p>
+\begin{eqnarray*}
+\E[\deg(v_k)] &amp;=&amp; \sum_{i=0}^{n-1}  i {n-1 \choose i } p^i (1-p)^{n-1-i} \\
+&amp;=&amp; \sum_{i=1}^{n-1}   \frac{(n-1)!}{(i-1)! (n-1-i)!} p^i (1-p)^{n-1-i} \\
+&amp;=&amp; (n-1)p  \sum_{i=1}^{n-1}   \frac{(n-2)!}{(i-1)! (n-1-i)!} p^{i-1} (1-p)^{n-1-i} \\
+&amp;=&amp; (n-1)p
+\end{eqnarray*}
+</p>
+</solution-->
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>The Expected Number of Edges in <m>G(n,p)</m>, revisited</title>
+			<idx><h>The Expected Number of Edges in <m>G(n,p)</m>, Revisited</h></idx>
+			<statement>
+				<p>
+ Use your answer to the previous question and linearity of expectation
+<me>
+\E \left[ \sum_{i=1}^k {X_i}\right] =  \sum_{i=1}^k \E \left[  {X_i}\right]
+</me>
+to give an alternate proof that
+<me>
+\langle m \rangle ={n \choose 2} p.
+</me>
+
+<!--solution>
+<p>
+<me>
+\langle m \rangle = \frac{1}{2} \E \left[ \sum_v \deg(v) \right]  = \frac{1}{2} \sum_v \E[\deg(v)] = \frac{n(n-1)}{2} = {n \choose 2}
+</me>
+</p>
+</solution-->
+
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+	</exercises>
+
+</chapter>

@@ -12,11 +12,12 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>In this problem, you will prove part of the Perron-Frobenius Theorem. Let \(\bx, \by \in \R^n\text{.}\) Recall that the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">dot product</em> is defined as \(\bx \cdot \by = \bx^{\top} \by\text{,}\) and that \(\bx\) and \(\by\) are orthogonal when \(\bx \cdot \by = 0\text{.}\)</p>
-<ol class="lower-alpha">
-<li><p>Let \(A\) be an \(n \times n\) matrix. Prove that \((A\bx) \cdot \by = \bx \cdot A^{\top} \by\text{.}\)</p></li>
-<li><p>Let \(A\) be a symmetric matrix, so that \(A = A^{\top}\text{.}\) Let \(\lambda\) and \(\mu\) be distinct nonzero eigenvalues with corresponding (right) eigenvectors \(\bu\) and \(\bv\text{,}\) so that \(A \bu = \lambda \bu\) and \(A \bv = \mu \bv\text{.}\) Prove that \((A \bu) \cdot \bv =0\text{.}\)</p></li>
-<li><p>Explain why part (b) ensures that the eigenvectors \(\bu\) and \(\bv\) are orthogonal.</p></li>
+<p>The converse is also true: if every pair of vertices in \(G\) is connected by two edge-disjoint paths, then there is a strongly connected orientation \(D\) of the graph. Here is the sketch of an algorithm  that orients the edges of \(G\) to obtain a strongly connected digraph.</p>
+<ol class="lower-roman">
+<li><p>Start with any two vertices \(u,v\) and orient some edges so that they are strongly connected to one another.  Let \(S = \{ u , v\}\text{.}\)</p></li>
+<li><p>Pick a vertex \(w \notin S\text{.}\) If \(w\) and \(v\) are not strongly connected, then orient some edges to make this happen. Add \(w\) to \(S\text{.}\)</p></li>
+<li><p>Repeat the previous step until \(S = V\text{,}\) which means that every vertex is strongly connected to \(v\text{.}\)</p></li>
+<li><p>If there any any non-oriented edges, give them an orientation.</p></li>
 </ol>
 <span class="incontext"><a href="exercises-18.html#p-664">in-context</a></span>
 </body>

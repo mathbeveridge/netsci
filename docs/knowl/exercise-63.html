@@ -12,114 +12,25 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Clustering Coefficient of a Small World.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">The Connectivity Threshold.</span>
 </h6>
-<p>We turn the Ring World into a Small World by adding  some random edges to the graph. We call these edges "shortcuts" because they traverse across the middle of the ring.</p>
-<p>For each existing edge in the Ring World, we add a random edge with constant probability \(p\text{.}\) So we add a total of</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-p\frac{cn}{2} = \frac{1}{2} cpn
-\end{equation*}
-</div>
-<p class="continuation">random edges to the graph.</p>
+<p>Let the simulation run until the network becomes connected. Do this for \(n= 20, 40, 80, 160, 320\text{.}\) For \(n &gt; 160\text{,}\) you should uncheck the green "layout?" checkbox. This will speed up the process tremendously. You can also use the "model speed" slider to control to increase or decrease the evolution rate.</p>
 <ol class="lower-alpha">
+<li><p>What does the graph look like just before becoming totally connected? Consistently, what seems to be the "bottleneck" that prevents the graph from being connected?</p></li>
+<li><p>Describe the giant component just before the whole graph becomes connected. It is a dense graph or a sparse graph? What other terms would you use?</p></li>
 <li>
-<p>Define</p>
+<p>What is the average degree of the graph at the moment it becomes connected for each of the graph sizes n listed below.  (Run the simulation multiple times for each graph size and report the average)</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-q = \frac{\frac{cpn}{2}}{{n \choose 2}} \approx \frac{cp}{n}.
-\end{equation*}
-</div>
-<p class="continuation">For any potential shortcut edge \(e\text{,}\) explain why</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\P[ \mbox{edge } e \mbox{ is added to the graph}] \leq q.
+\begin{array}{r|c|c|c|c|c|c}
+\mbox{network size} &amp; 10 &amp; 20 &amp; 40 &amp; 80 &amp; 160 &amp; 320 \\
+\hline
+\mbox{average degree} &amp;&amp;&amp;&amp;&amp;&amp;
+\end{array}
 \end{equation*}
 </div>
 </li>
-<li>
-<p>For a fixed vertex \(v_i\text{,}\) explain why</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\E[ \mbox{\# shortcut edges incident with } v_i] = cp.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>Next, we show that we have only added a constant number of new triangles. Show that</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\E[\mbox{\# triangles using one shortcut edge} ] \leq
-n{ c \choose 2} q
-\approx pc^3/2.
-\end{equation*}
-</div>
-<p class="continuation">So we are adding a constant number of triangles. For large \(n\text{,}\) these new triangles are negligible compared to the \(n { c/2 \choose 2}\) triangles already present in the ring.</p>
-</li>
-<li>
-<p>Triangles using 2 or 3 shortcut edges are also unlikely. Explain why</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\E[\mbox{\# triangles using two shortcut edges} ]=
-n \frac{c}{2} (n-2) q^2   \approx \frac{c^3p^2}{2}.
-\end{equation*}
-</div>
-<p class="continuation">and</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\E[\mbox{\# triangles using three shortcut edges} ] =
-{n \choose 3} q^3   \approx \frac{c^3p^3}{6}.
-\end{equation*}
-</div>
-<p class="continuation">So we only add a constant number of triangles of any kind.</p>
-</li>
-<li>
-<p>Turning to connected triples, show that</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\E[ \mbox{\# connected triples using one shortcut edge} ]
-= \frac{cpn}{2} (c + c) = c^2 p n.
-\end{equation*}
-</div>
-<p class="continuation">and that</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\E[ \mbox{\# connected triples using two shortcut edges} ]
-=
-n {n-1 \choose 2} q^2
-\approx \frac{c^2 p^2}{2} n.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>We are now ready to approximate the clustering coefficient. By parts (c) and (d), we can ignore the new triangles (there are only a constant number of them). But we need the new connected triples from part (e). The clustering coefficient is</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-C \approx \frac
-{
-n {c/2 \choose 2}
-}
-{
-n {c \choose 2} + c^2pn + \frac{1}{2} c^2p^2 n
-}
-=
-\frac
-{
-3{c/2 \choose 2}
-}
-{
-{c \choose 2} + c^2p + \frac{1}{2} c^2p^2.
-}
-\end{equation*}
-</div>
-<p class="continuation">This is a constant (independent of \(n\)), so we have a nonzero clustering coefficient for every small world network.</p>
-<p>Use the approximation \({a \choose 2} = a^2/2\) and set \(p=1\) to obtain the rough lower bound</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-C \gtrapprox \frac{3}{16}.
-\end{equation*}
-</div>
-</li>
-</ol></article><span class="incontext"><a href="exercises-13.html#exercise-63">in-context</a></span>
+<li><p>Using the data from the previous question, hypothesize what the relationship is between the size of the graph and the average degree at the moment that the graph becomes connected.</p></li>
+</ol></article><span class="incontext"><a href="exercises-12.html#exercise-63">in-context</a></span>
 </body>
 </html>

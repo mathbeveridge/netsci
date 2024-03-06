@@ -12,14 +12,18 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Acyclic Tournaments.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Complete Cascades and Cohesive Sets.</span>
 </h6>
-<p>An acyclic tournament is an orientation of a complete graph that contains no directed cycles.</p>
+<p>Let \({G=(V,E)}\) be a network with threshold \(q \in [0,1]\text{.}\) Let \({S_0}\) be the initial set of innovators. Recall that a set \(S\) is <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">cohesive</em> when</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+p(S) = \min_{i \in S} \frac{ | N(i) \cap S| }{|N(i)|}   &gt; 1-q
+\end{equation*}
+</div>
+<p class="continuation">where \(N(i)\) is the set of neighbors of \(i\text{.}\)</p>
 <ol class="lower-alpha">
-<li><p>Prove that every triangle is <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">transitive</em>, meaning that if \((u,v)\) and \((v,w)\) are both arcs, then \((u,w)\) is also an arc.</p></li>
-<li><p>Prove that an <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">acyclic</em> tournament has a unique source vertex \(s\) (with \(\kin_s=0\)) and a unique sink vertex \(t\) (with \(\kout_t = 0\)).</p></li>
-<li><p>Use part (b) and induction on \(N\) to prove that there is a unique acyclic tournament structure on \(N\) vertices (up to isomorphism). Or equivalently, show that we can label the vertices of a transitive tournament on \(N\) vertices using labels \([N] = \{ 1,2, \ldots, N \}\) such that if \(i &gt;j\) then \((i,j)\) is an arc in the tournament.</p></li>
-<li><p>A transitive tournament is a tournament in which every triangle is transitive. Prove that a transitive tournament is acyclic. (Hint: there is a nice poof by induction on \(k\) for the statement "\(D\) has no \(k\) cycles for \(3 \leq k \leq N\text{.}\)" But there are other proofs, too.)</p></li>
-</ol></article><span class="incontext"><a href="exercises-17.html#exercise-78">in-context</a></span>
+<li><p>Suppose that the  initial adopter set \({S_0}\) does not cause a complete cascade. Prove that there is a cohesive set  \({S \subset V \backslash S_0}\text{.}\) </p></li>
+<li><p>Suppose that there is a cohesive set  \({S \subset V \backslash S_0}\text{.}\) Prove that  initial adopter set \({S_0}\) does not cause a complete cascade. </p></li>
+</ol></article><span class="incontext"><a href="exercises-16.html#exercise-78">in-context</a></span>
 </body>
 </html>
