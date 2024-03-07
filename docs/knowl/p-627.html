@@ -12,47 +12,24 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose that we have  a large network for which there is no correlation between vertex degrees. That is, an edge from vertex \(v\) leads to a vertex chosen  uniformly at random. Let \(p_k\) denote the fraction of vertices of degree \(k\text{.}\) When you pick a vertex \(v\) at random, we have \(\Pr[\deg(v)=k] = p_k\text{.}\) This means that the expected degree of the network is</p>
+<p>In order to prove this result, we will divide our journey from \(s\) to \(t\) into phases:</p>
+<ul class="disc"><li><p>phase \(j\) = ring distance \(d\) to target vertex satisfies \(2^j \leq d &lt; 2^{j+1}\text{.}\)</p></li></ul>
+<p class="continuation">Note that these phases are indexed in reverse.  That is, when we are far from the target \(t\text{,}\) our phase index is <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">larger</em>. In other words, we "count down" the phases. For example, the in the following figure, we start in Phase 3 (at source vertex \(s\)) and end in Phase 0 (at target vertex \(t\)). <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/nav-phases.png" class="contained"></div> Let \(X\) denote the total number of steps in our journey. Let \(X_j\) denote the number of steps taken during phase \(j\text{.}\) In the example above, our journey takes \(X=5\) steps. We have</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\langle k \rangle = \sum_{k=0}^{k_{\max}} k  \cdot p_k.
+X_3 = 1,
+X_2 = 1,
+X_1 = 2,
+X_0 = 1.
 \end{equation*}
 </div>
-<p class="continuation">Consider the following process: Pick a random vertex \(v\) and then move to a random neighbor \(w\) of vertex \(v\text{.}\) Let</p>
+<p class="continuation">The goal of this activity is to show that</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-q_k = \Pr [\deg(w)=k+1].
+\E[X] = \sum_{k=0}^{\log (n/2)} \E[X_k] = O\left( (\log n)^2 \right),
 \end{equation*}
 </div>
-<p class="continuation">In other words, \(w\) has \(k\) additional edges, besides the one you just traveled. In this case, we say that \(w\) has <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">excess degree</em> \(k\text{.}\)</p>
-<ol class="lower-alpha">
-<li>
-<p>Explain why the excess degree distribution  satisfies</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-q_k = \frac{(k+1) p_{k+1}}{\langle k \rangle}.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>Confirm that the expected degree of vertex \(w\) is</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\frac{\langle k^2 \rangle}{\langle k \rangle}.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>Recall that</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\mbox{Var}[X] = E[X^2] - E[X]^2 &gt; 0
-\end{equation*}
-</div>
-<p class="continuation">when \(X\) is not constant. Use this to explain why that the expected degree of \(w\) is larger than the expected degree of \(v\text{.}\) </p>
-</li>
-<li><p>Colloquially, people refer to this result as: "your friends are more popular than you." Why? </p></li>
-</ol>
-<span class="incontext"><a href="exercises-17.html#p-627">in-context</a></span>
+<p class="continuation">meaning that the expected number of steps is at most \(K \cdot (\log n)^2\) for some constant \(K &gt; 0\text{.}\) In other words, in a typical network of this kind, our journey takes at most \(O((\log n)^2)\) steps.</p>
+<span class="incontext"><a href="navsmallworld.html#p-627">in-context</a></span>
 </body>
 </html>

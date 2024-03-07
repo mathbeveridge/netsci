@@ -12,13 +12,10 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Betweenness Centrality on a Tree.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Directed rooted trees.</span>
 </h6>
-<p>Let \(G\) be an undirected tree on \(N\) vertices. Let \(v\) be a vertex with degree \(k_v = k\text{.}\) Removing the vertex \(v\) splits the tree into \(k \geq 2\) disjoint trees \(G_1,G_2, \ldots, G_k\text{.}\) Suppose that tree \(G_i\) contains \(N_i\) vertices for \(1 \leq i \leq k\text{.}\) Show that the (un-normalized) betweenness centrality of \(v\) satisfies</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-c_v^B = (N-1)^2 - \sum_{i=1}^k N_i^2
-\end{equation*}
-</div></article><span class="incontext"><a href="exercises-19.html#exercise-90">in-context</a></span>
+<p>Let \(G=(V,E)\) be a tree and let \(v \in V\text{.}\)  To obtain a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">directed tree rooted at vertex</em> \(v\text{,}\) we orient the edges so that they point <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">away</em> from the vertex \(v\text{.}\) In other words, there is a directed path from \(v\) to every other vertex in the tree.</p>
+<p>Prove that if \(D = (V,E)\) is a strongly connected digraph, then for every \(v \in V\text{,}\) the digraph contains a directed tree \(T = (V_T, E_T)\) rooted at \(v\) such that \(V_T = V\text{.}\)</p>
+<p>(Note: A subgraph that includes every vertex of the original graph is called a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">spanning subgraph</em>. Spanning trees (of graphs) and spanning directed trees (of digraphs) have many important applications.)</p></article><span class="incontext"><a href="exercises-19.html#exercise-90">in-context</a></span>
 </body>
 </html>

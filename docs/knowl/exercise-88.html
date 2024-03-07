@@ -12,11 +12,14 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Weakly increasing centrality measures.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Acyclic Tournaments.</span>
 </h6>
+<p>An acyclic tournament is an orientation of a complete graph that contains no directed cycles.</p>
 <ol class="lower-alpha">
-<li><p>For each of our basic centrality measures (degree centrality, closeness centrality, betweenness centrality), prove that if you add the edge \((u,v)\) to \(G\) then the centrality of vertex \(u\) does not <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">decrease</em>. (Mathematically, we say that the centrality of \(u\) is <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">weakly increasing</em> for edge additions at \(u\text{.}\))</p></li>
-<li><p>Which of these centrality measures are weakly increasing at <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">every</em> vertex \(w\) when you add a particular edge \((u,v)\text{?}\) For those that are weakly increasing, give a proof. For those that are not weakly increasing, give an example where adding the edge \((u,v)\) decreases the centrality at some other vertex \(w\text{.}\)</p></li>
+<li><p>Prove that every triangle is <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">transitive</em>, meaning that if \((u,v)\) and \((v,w)\) are both arcs, then \((u,w)\) is also an arc.</p></li>
+<li><p>Prove that an <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">acyclic</em> tournament has a unique source vertex \(s\) (with \(\kin_s=0\)) and a unique sink vertex \(t\) (with \(\kout_t = 0\)).</p></li>
+<li><p>Use part (b) and induction on \(N\) to prove that there is a unique acyclic tournament structure on \(N\) vertices (up to isomorphism). Or equivalently, show that we can label the vertices of a transitive tournament on \(N\) vertices using labels \([N] = \{ 1,2, \ldots, N \}\) such that if \(i &gt;j\) then \((i,j)\) is an arc in the tournament.</p></li>
+<li><p>A transitive tournament is a tournament in which every triangle is transitive. Prove that a transitive tournament is acyclic. (Hint: there is a nice poof by induction on \(k\) for the statement "\(D\) has no \(k\) cycles for \(3 \leq k \leq N\text{.}\)" But there are other proofs, too.)</p></li>
 </ol></article><span class="incontext"><a href="exercises-19.html#exercise-88">in-context</a></span>
 </body>
 </html>

@@ -15,8 +15,14 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
-<p>We know that \(\langle k \rangle\) is finite but \(\langle k^2 \rangle\) is infinite. This means that the characteristic time scale tends to 0 as the network gets larger. In other words, the infection spreads instantaneously. So the existence of hubs expedites the spread of disease!</p>
+<p>If \(\mu &lt; 1\) then \(\mu^{n+1} \rightarrow 0\text{,}\) so</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\lim_{n \rightarrow \infty} \E[Z_n] = \lim_{n \rightarrow \infty} \frac{\mu^{n+1} -1}{\mu -1}
+= \frac{-1}{\mu-1} = \frac{1}{1- \mu}.
+\end{equation*}
 </div>
-<span class="incontext"><a href="exercises-16.html#solution-120">in-context</a></span>
+</div>
+<span class="incontext"><a href="exercises-12.html#solution-120">in-context</a></span>
 </body>
 </html>

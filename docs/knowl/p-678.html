@@ -12,12 +12,13 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Let \(G\) be an undirected tree. Removing the edge \((u,v)\)  splits the graph into two disjoint trees \(G_1\) and \(G_2\) where \(u \in V(G_1)\) and \(v \in V(G_2)\text{.}\) Suppose that   \(G_1\) has \(N_1\) vertices and \(G_2\) has \(N_2\) vertices. Prove that the (un-normalized) closeness centralities of \(u\) and \(v\) satisfy</p>
+<p>Consider a graph whose degree distribution obeys a power law</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{1}{c_u^C} + N_1 = \frac{1}{c_v^C} + N_2.
+\Pr[\deg(v)=q] \sim q^{-\alpha}.
 \end{equation*}
 </div>
-<span class="incontext"><a href="exercises-19.html#p-678">in-context</a></span>
+<p class="continuation">For a natural power law, we have  \(2 &lt; \alpha &lt; 3\text{.}\) Recall that for a natural power law,  \(\langle k \rangle\) is finite but \(\langle k^2 \rangle\) is infinite. (This is what led to the appearance of hubs.) What does this imply about the infection rate on such a network? What role must the hubs play, especially in light of part (d) above, and the fact that "your friends are more popular than you are"? </p>
+<span class="incontext"><a href="exercises-18.html#p-678">in-context</a></span>
 </body>
 </html>

@@ -12,19 +12,18 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>For any \(r \in [0,1]\text{,}\) let \(x_r\) denote the point achieving</p>
+<p>Show that the PMF of \(X\) can be calculated recursively by starting with</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-P(x_r) = r.
+p(0) = (1-p)^n
 \end{equation*}
 </div>
-<p class="continuation">So half of the data satisfies \(x \geq x_{1/2}\text{,}\) a tenth of the data satisfies \(x \geq x_{1/10}\text{,}\) and so on. Prove that</p>
+<p class="continuation">and then using the recursive formula</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-x_r = r^{-1/(\alpha-1)} x_{\min}.
+p(k+1) = \frac{p}{1-p} \cdot \frac{n-k}{k+1} p(k).
 \end{equation*}
 </div>
-<p class="continuation">Intuitively, \(x_r\) is the cutoff for finding the "richest" \(r\) fraction of the data.</p>
-<span class="incontext"><a href="exercises-20.html#p-742">in-context</a></span>
+<span class="incontext"><a href="exercises-21.html#p-742">in-context</a></span>
 </body>
 </html>

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+
+
+<chapter xml:id="branching" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>The Branching Process</title>
+	<introduction>
+		<p>
+
+In this activity, we will explore a simple model that creates a family tree. Later, we will adapt this argument to understand the threshold for the giant component of a random graph.
+
+
+We let <m>X_t</m> denote the size of the <m>t</m>-th generation in the family tree.
+
+
+		<ul>
+			<li>
+			<p>
+ At time <m>t=0</m>, there is one individual. So <m>X_0=1</m>.
+			</p>
+			</li>
+			<li>
+			<p>
+ At time <m>t=1</m>, she gives birth to <m>X_1</m> children and dies.
+			</p>
+			</li>
+			<li>
+			<p>
+ At time <m>t &gt;2</m>, each of the <m>X_{t-1}</m> individuals in generation <m>t-1</m> give birth and die. This results in a total of <m>X_t</m> children in the <m>t</m>-th generation.
+
+			</p>
+			</li>
+		</ul>
+
+
+Here is an example of the branching process.
+
+			<image width="100%" xml:id="fig-img-branching0" source="images/galton-watson.png" />
+
+			</p><p>
+
+The number of children <m>Y</m> produced by each individual is an independent random variable governed by (the same)  probability distribution. The expected number of children produced is
+<me>
+\E[Y] = \sum_{k=0}^{\infty} k \P[Y=k]  = \mu.
+</me>
+The goal of this activity will be to show that <m>\mu</m> determines the probability of whether the family tree dies out after a finite number of generations, or if it grows infinitely large.
+
+	</p>
+	</introduction>
+	<exercises>
+		<title>Practice Problems</title>
+		<exercise>
+			<title>Expected Size of Generation <m>n</m></title>
+			<idx><h>Expected Size of Generation <m>n</m></h></idx>
+			<statement>
+				<p>
+Use induction on <m>t \geq 0</m>  to prove that <m>X_n</m>, the size of the <m>n</m>-th generation satisfies
+<me>
+\E[X_n] = \mu^n
+</me>
+
+<!--solution>
+<p>
+We have <m>E[X_0] = 1 = \mu^0.</m> Assuming that <m>\E[X_n] = \mu_n</m>, we have
+</p>
+<md>
+<mrow>
+\E[X_{n+1}] &amp;= \sum_{k=0}^{\infty} \E[X_{n+1} \mid X_{n} = k] \P[X_{n} = k]
+= \sum_{k=0}^{\infty} k \mu \,  \P[X_{n} = k]
+</mrow>
+<mrow>
+&amp;= \mu \, \sum_{k=0}^{\infty} k  \,  \P[X_{n} = k]
+= \mu \, \E[X_n] = \mu \cdot \mu_n = \mu^{n+1}.
+</mrow>
+</md>
+<p>
+</p>
+</solution-->
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Expected Size of the Tree After <m>n</m> Generations</title>
+			<idx><h>Expected Size of the Tree After <m>n</m> Generations</h></idx>
+			<statement>
+				<p>
+Let
+<m>\displaystyle{Z_n= \sum_{t=0}^{n} X_t}</m>
+be the total number of individuals in the family tree at time <m>n</m>.
+
+			<ol>
+				<li>
+					<p>
+ Use linearity of expectation to prove that
+<me>
+\E[Z_n] = 1 + \mu + \mu^2 + \cdots + \mu^n.
+</me>
+
+<!--solution>
+<p>
+Using linearity of expectation, we have
+<me>
+\E[Z_n]
+= \E \left[ \sum_{t=0}^n X_t \right]
+= \sum_{t=0}^n \E \left[  X_t \right]
+=  \sum_{t=0}^n \mu^t
+</me>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Confirm that the formula in the previous problem is equivalent to
+<me>
+\E[Z_n] = \frac{\mu^{n+1} -1}{\mu -1}.
+</me>
+
+<!--solution>
+<p>
+Using the formula from part (a), this statement is equivalent to
+<me>
+(\mu -1) ( \mu^n + \mu^{n-1} + \cdots + \mu +1) = \mu^{n+1} -1.
+</me>
+When we expand, we see that all the terms cancel out except for the first term <m>\mu^{n+1}</m> and the last term <m>-1</m>.
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Asymptotic Size of the Tree</title>
+			<idx><h>Asymptotic Size of the Tree</h></idx>
+			<statement>
+				<p>
+Now let's look at the asymptotic behavior of the size of the tree. Let
+<me>
+\E [Z] = \lim_{n \rightarrow \infty} \E[Z_n] = \lim_{n \rightarrow \infty} \frac{\mu^{n+1} -1}{\mu -1}.
+</me>
+
+
+			<ol>
+				<li>
+					<p>
+ Confirm that if <m>\mu &lt; 1</m> then <m>\E[Z]</m> is finite. Then find a formula for <m>\E[Z]</m>.
+
+<!--solution>
+<p>
+If <m>\mu &lt; 1</m> then <m>\mu^{n+1} \rightarrow 0</m>, so
+<me>
+\lim_{n \rightarrow \infty} \E[Z_n] = \lim_{n \rightarrow \infty} \frac{\mu^{n+1} -1}{\mu -1}
+= \frac{-1}{\mu-1} = \frac{1}{1- \mu}.
+</me>
+</p>
+</solution-->
+
+					</p>
+				</li>
+				<li>
+					<p>
+ Confirm that if <m>\mu &gt; 1</m> then <m>\E[Z]</m> is infinite.
+
+<!--solution>
+<p>
+If <m>\mu &gt; 1</m> then <m>\mu^{n+1} \rightarrow \infty</m>, so
+<me>
+\lim_{n \rightarrow \infty} \E[Z_n] = \lim_{n \rightarrow \infty} \frac{\mu^{n+1} -1}{\mu -1}
+= \infty.
+</me>
+</p>
+</solution-->
+
+					</p>
+				</li>
+			</ol>
+
+
+				</p>
+			</statement>
+		</exercise>
+		<exercise>
+			<title>Threshold for the Branching Process</title>
+			<idx><h>Threshold for the Branching Process</h></idx>
+			<statement>
+				<p>
+We say that <m>\mu =1</m> is a threshold for whether the family tree dies out. This is because
+
+		<ul>
+			<li>
+			<p>
+ if <m>\E[Z]</m> is finite then <m>\P[ \mbox{there exists }  N \mbox{ such that } X_N = 0]=1</m>.
+			</p>
+			</li>
+		</ul>
+
+Show that this is true by proving the contrapositive statement:
+		<ul>
+			<li>
+			<p>
+ if <m>\P[ X_t \geq 1 \mbox{ for all t} ]=\alpha &gt; 0</m> then <m>\E[Z]</m> is infinite.
+			</p>
+			</li>
+		</ul>
+
+<!--solution>
+<p>
+We have
+<me>
+\P[ X_t \geq 1 \mbox{ for all } t \geq 0] = \alpha &gt;0.
+</me>
+But then
+<me>
+\E[Z_n] = \sum_{t=0}^n \E[X_t]  \geq  \sum_{t=0}^n \P[X_t \geq 1]
+= \sum_{t=0}^n  \alpha = \alpha (n+1)
+</me>
+and so
+<me>
+\E[Z] = \lim_{n \rightarrow \infty} \E[Z] = \lim_{n \rightarrow \infty}  \alpha (n+1) = \infty.
+</me>
+</p>
+</solution-->
+
+
+
+				</p>
+			</statement>
+		</exercise>
+	</exercises>
+
+
+</chapter>

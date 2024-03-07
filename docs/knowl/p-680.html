@@ -12,7 +12,7 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>In a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">lazy walk</em> on a directed graph, at each step, we can either stay at the current vertex or move to an adjacent vertex. So a lazy walk of length \(k\) is a sequence of vertices \(v_0, v_1, v_2, \ldots, v_k\) where for \(1 \leq i \leq k\text{,}\) we either have \(v_i = v_{i-1}\) or \((v_{i-1}, v_i)\) is an arc of \(G\text{.}\) Let \(A\) be the adjacency matrix of a directed graph \(G\text{,}\) so that \(a_{ij}\) is 1 if \((i,j)\) is an arc and  is 0 otherwise. Using induction on \(k \geq 0\text{,}\) prove that  the \(ij\)th entry of \((I+A)^k\) counts the number of lazy walks of length \(k\) from vertex \(i\) to vertex \(j\text{.}\)</p>
+<p>Given a directed graph  (digraph) \(D=(V,E)\) is <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">acyclic</em>, a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">directed cycle of size \(k\)</em> is a set of arcs \((v_1, v_2), (v_2, v_3), \ldots (v_{k-1}, v_k), (v_k, v_1)\) such that \(v_1\) is the only vertex that repeats. An <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">acyclic digraph</em> \(D\) has no directed cycles for any \(k \geq 1\text{.}\) Prove that if \(D\) is an acyclic digraph, then \(D\) contains at least one <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">source</em> vertex \(i\) with \(\kin_i=0\) and at least one <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">sink vertex</em> \(j\) with \(\kout_j=0\text{.}\)</p>
 <span class="incontext"><a href="exercises-19.html#p-680">in-context</a></span>
 </body>
 </html>
