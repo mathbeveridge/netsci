@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1<span class="period">.</span></span>
+</h6>
+<p>To check your understanding, explain why the length of the journey from \(s\) to \(t\) is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+X = \sum_{k=0}^{\lfloor \log (n/2) \rfloor} X_k
+\end{equation*}
+</div>
+<p class="continuation">In other words, be sure that you understand</p>
+<ul class="disc">
+<li><p>how we have partitioned the journey into phases, and</p></li>
+<li><p>why the upper limit of the sum is \(\lfloor \log (n/2) \rfloor.\)</p></li>
+</ul>
+<p class="continuation">From here forward, we will omit the floor function from our expressions, and write \(\log (n/2) \) when we actually mean \(\lfloor \log (n/2) \rfloor\text{.}\) We trust that you know that we need to use integer values.</p>
+<p>Okay, you now understand this formula for a given network. In the rest of this activity, we will calculate the expected length of a journey on a randomly generated network. We use linearity of expectation to write the  expected length of this journey as the sum of the expected lengths of the phases:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[X] = \E \left[ \sum_{k=0}^{\log (n/2)} X_k \right] =
+\sum_{k=0}^{\log (n/2)} E[X_k].
+\end{equation*}
+</div></article><span class="incontext"><a href="exercises-26.html#exercise-130">in-context</a></span>
+</body>
+</html>

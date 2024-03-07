@@ -12,22 +12,15 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Turning to connected triples, show that</p>
+<p>Next, we show that we have only added a constant number of new triangles. Show that</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\E[ \mbox{\# connected triples using one shortcut edge} ]
-= \frac{cpn}{2} (c + c) = c^2 p n.
+\E[\mbox{\# triangles using one shortcut edge} ] \leq
+n{ c \choose 2} q
+\approx pc^3/2.
 \end{equation*}
 </div>
-<p class="continuation">and that</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\E[ \mbox{\# connected triples using two shortcut edges} ]
-=
-n {n-1 \choose 2} q^2
-\approx \frac{c^2 p^2}{2} n.
-\end{equation*}
-</div>
+<p class="continuation">So we are adding a constant number of triangles. For large \(n\text{,}\) these new triangles are negligible compared to the \(n { c/2 \choose 2}\) triangles already present in the ring.</p>
 <span class="incontext"><a href="exercises-15.html#p-622">in-context</a></span>
 </body>
 </html>

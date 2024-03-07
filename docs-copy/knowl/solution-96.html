@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
+</h6>
+<p>Here is the hard work:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\E[Z(Z-1)] &amp;= \sum_{k=0}^{\infty} k(k-1) e^{-\lambda} \frac{\lambda^k}{k!}\\
+&amp;= \lambda^2 e^{-\lambda} \sum_{k=2}^{\infty}   \frac{\lambda^{k-2}}{(k-2)!}\\
+&amp;= \lambda^2 e^{-\lambda} \sum_{j=0}^{\infty}   \frac{\lambda^{j}}{j!}\\
+&amp;= \lambda^2 e^{-\lambda}e^{\lambda} = \lambda^2.
+\end{align*}
+</div>
+<p>That wasn't so bad! Our variance calculation is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\var(Z) &amp;= \E[Z^2] - (\E[Z])^2 = \E[Z(Z-1)] + \E[Z]- (\E[Z])^2\\
+&amp;= \lambda^2 + \lambda - \lambda^2 \, =\,  \lambda.
+\end{align*}
+</div>
+<p>Fun fact: the expected value is also called the "first moment." The variance is also called the "second moment." Can you guess what the third moment of the Poisson distribution is? That's right: it's also equal to \(\lambda\text{.}\) How about the fourth moment? Yep, \(\lambda\) again.</p>
+<p>In fact, every moment of the Poisson distribution is equal to \(\lambda\text{.}\) (This is analogous to how all of the derivatives of \(e^x\) are also \(e^x\text{.}\)) Each of the moments tell you something about the shape of the distribution. So in a poetic sense, the Poisson distribution must be the nicest-shaped bell curve centered at \(x=\lambda\text{.}\)</p>
+</div>
+<span class="incontext"><a href="exercises-9.html#solution-96">in-context</a></span>
+</body>
+</html>

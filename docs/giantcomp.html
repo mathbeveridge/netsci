@@ -114,7 +114,7 @@
 <div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
 <li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
-<li class="link part"><a href="part-structure.html" data-scroll="part-structure"><span class="codenumber">I</span> <span class="title">Network Structure</span></a></li>
+<li class="link part"><a href="part-centrality.html" data-scroll="part-centrality"><span class="codenumber">I</span> <span class="title">Network Centrality</span></a></li>
 <li class="link">
 <a href="graphs.html" data-scroll="graphs"><span class="codenumber">1</span> <span class="title">Graphs and Digraphs</span></a><ul><li><a href="exercises-1.html" data-scroll="exercises-1">Practice Problems</a></li></ul>
 </li>
@@ -133,6 +133,7 @@
 <li class="link">
 <a href="us-airline.html" data-scroll="us-airline"><span class="codenumber">6</span> <span class="title">Analyzing the US Airline Network</span></a><ul><li><a href="exercises-6.html" data-scroll="exercises-6">Practice Problems</a></li></ul>
 </li>
+<li class="link part"><a href="part-community.html" data-scroll="part-community"><span class="codenumber">II</span> <span class="title">Communities and Power Laws</span></a></li>
 <li class="link">
 <a href="modularity.html" data-scroll="modularity"><span class="codenumber">7</span> <span class="title">Modularity</span></a><ul><li><a href="exercises-7.html" data-scroll="exercises-7">Practice Problems</a></li></ul>
 </li>
@@ -154,7 +155,7 @@
 <li class="link">
 <a href="powerlaw.html" data-scroll="powerlaw"><span class="codenumber">11</span> <span class="title">Power Laws</span></a><ul><li><a href="exercises-10.html" data-scroll="exercises-10">Practice Problems</a></li></ul>
 </li>
-<li class="link part"><a href="part-models.html" data-scroll="part-models"><span class="codenumber">II</span> <span class="title">Network Models</span></a></li>
+<li class="link part"><a href="part-models.html" data-scroll="part-models"><span class="codenumber">III</span> <span class="title">Network Models</span></a></li>
 <li class="link">
 <a href="randomgraph.html" data-scroll="randomgraph"><span class="codenumber">12</span> <span class="title">Erdos-Renyi Random Graph</span></a><ul><li><a href="exercises-11.html" data-scroll="exercises-11">Practice Problems</a></li></ul>
 </li>
@@ -173,70 +174,60 @@
 <li class="link">
 <a href="navsmallworld.html" data-scroll="navsmallworld"><span class="codenumber">17</span> <span class="title">Navigable Small World Model</span></a><ul><li><a href="exercises-16.html" data-scroll="exercises-16">Practice Problems</a></li></ul>
 </li>
-<li class="link part"><a href="part-processes.html" data-scroll="part-processes"><span class="codenumber">III</span> <span class="title">Processes on Networks</span></a></li>
+<li class="link part"><a href="part-processes.html" data-scroll="part-processes"><span class="codenumber">IV</span> <span class="title">Processes on Networks</span></a></li>
 <li class="link">
 <a href="cascades.html" data-scroll="cascades"><span class="codenumber">18</span> <span class="title">Network Cascades</span></a><ul><li><a href="exercises-17.html" data-scroll="exercises-17">Practice Problems</a></li></ul>
 </li>
 <li class="link">
 <a href="epidemics.html" data-scroll="epidemics"><span class="codenumber">19</span> <span class="title">Epidemics on Networks</span></a><ul><li><a href="exercises-18.html" data-scroll="exercises-18">Practice Problems</a></li></ul>
 </li>
-<li class="link part"><a href="part-homework.html" data-scroll="part-homework"><span class="codenumber">IV</span> <span class="title">Homework Exercises</span></a></li>
-<li class="link">
-<a href="hw-graphs.html" data-scroll="hw-graphs"><span class="codenumber">20</span> <span class="title">Exercises: Graphs and Digraphs</span></a><ul><li><a href="exercises-19.html" data-scroll="exercises-19">Homework Exercises</a></li></ul>
-</li>
-<li class="link">
-<a href="hw-centrality.html" data-scroll="hw-centrality"><span class="codenumber">21</span> <span class="title">Exercises: Centrality Measures</span></a><ul><li><a href="exercises-20.html" data-scroll="exercises-20">Homework Exercises</a></li></ul>
-</li>
-<li class="link">
-<a href="hw-degreedist.html" data-scroll="hw-degreedist"><span class="codenumber">22</span> <span class="title">Exercises: Degree Distributions and Power Laws</span></a><ul><li><a href="exercises-21.html" data-scroll="exercises-21">Homework Exercises</a></li></ul>
-</li>
 </ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="giantcomp"><h2 class="heading">
 <span class="type">Chapter</span> <span class="codenumber">14</span> <span class="title">The Emergence of the Giant Component</span>
 </h2>
-<section class="introduction" id="introduction-14"><p id="p-567">This activity explores a simulation of  "The Emergence of the Giant Component" in the classic Random Graph Model. We will use the flexible NetLogo modeling environment.  The simulation is available online:</p>
+<section class="introduction" id="introduction-14"><p id="p-569">This activity explores a simulation of  "The Emergence of the Giant Component" in the classic Random Graph Model. We will use the flexible NetLogo modeling environment.  The simulation is available online:</p>
 <ul class="disc">
-<li id="li-263"><p id="p-568">Go to <a class="external" href="http://www.netlogoweb.org/" target="_blank">http://www.netlogoweb.org/</a></p></li>
-<li id="li-264"><p id="p-569">Click on "Net Logo Web"</p></li>
-<li id="li-265"><p id="p-570">Enter "Giant Component" in the <em class="emphasis">Search Models Library</em> input box and click on the "Sample Models/Networks/Giant Component" model.</p></li>
+<li id="li-264"><p id="p-570">Go to <a class="external" href="http://www.netlogoweb.org/" target="_blank">http://www.netlogoweb.org/</a></p></li>
+<li id="li-265"><p id="p-571">Click on "Net Logo Web"</p></li>
+<li id="li-266"><p id="p-572">Enter "Giant Component" in the <em class="emphasis">Search Models Library</em> input box and click on the "Sample Models/Networks/Giant Component" model.</p></li>
 </ul>
 <p class="continuation"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/giantcomp-netlogo.png" class="contained"></div> This model starts with \(n\) isolated vertices. It then adds random edges, one at a time. You can watch how the graph evolves as it moves from an empty  graph (no edges) to a complete graph (all edges). The plot on the left tracks the number of connections per node (the average degree) against the fraction of vertices in the giant component.</p>
-<p id="p-571">For today, we will define a <em class="emphasis">giant component</em> to be "a connected component with at least half of the vertices." Using this simulation, you will explore:</p>
+<p id="p-573">For today, we will define a <em class="emphasis">giant component</em> to be "a connected component with at least half of the vertices." Using this simulation, you will explore:</p>
 <ul class="disc">
-<li id="li-266"><p id="p-572">When does the giant component appear?</p></li>
-<li id="li-267"><p id="p-573">Why does the giant appear? Is the transition from "no giant" to "yes giant" slow or quick?</p></li>
-<li id="li-268"><p id="p-574">What is the network structure of the giant component when it appears?</p></li>
-<li id="li-269"><p id="p-575">What is the barrier to having a connected graph during the random graph evolution? How dense must the graph be to overcome this barrier?</p></li>
+<li id="li-267"><p id="p-574">When does the giant component appear?</p></li>
+<li id="li-268"><p id="p-575">Why does the giant appear? Is the transition from "no giant" to "yes giant" slow or quick?</p></li>
+<li id="li-269"><p id="p-576">What is the network structure of the giant component when it appears?</p></li>
+<li id="li-270"><p id="p-577">What is the barrier to having a connected graph during the random graph evolution? How dense must the graph be to overcome this barrier?</p></li>
 </ul></section><section class="exercises" id="exercises-13"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Practice Problems</span>
 </h3>
-<article class="exercise exercise-like" id="exercise-65"><h6 class="heading">
+<article class="exercise exercise-like" id="exercise-66"><h6 class="heading">
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Getting Started.</span>
 </h6>
-<p id="p-576">Start by expanding the Model Info section at the bottom. Read the sections first sections: WHAT IS IT?,  HOW IT WORKS, HOW TO USE IT, THINGS TO TRY.</p>
+<p id="p-578">Start by expanding the Model Info section at the bottom. Read the sections first sections: WHAT IS IT?,  HOW IT WORKS, HOW TO USE IT, THINGS TO TRY.</p>
 <ol class="lower-alpha">
-<li id="li-270"><p id="p-577">Run the model for \(n=80\)  (the default size). Watch the evolution of the whole graph, as well as the evolution of the largest component itself. Watch the giant appear. Reset and repeat a few times. Describe what you see. Look at the graph that tracks the average degree versus giant component size. Increase or slow the speed of the simulation using the slider bar.</p></li>
-<li id="li-271"><p id="p-578">Do the same for smaller networks  such as \(n=20\) and \(n=40\) and for larger networks such as \(n=160\) and \(n=320\text{.}\)  Compare and contrast these evolutions. For larger networks, you should uncheck the green "layout?" checkbox. This will allow the process to run much faster. You can still keep track of the giant by using the color of the stick-figure vertices.</p></li>
-<li id="li-272"><p id="p-579">Now let's really focus in on the emergence of the giant component. This is window in which we transition from "no giant" to "yes giant." Use the "Go"  button and the "Go Once" button to Stop/Start the simulation as the giant emerges.</p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-66"><h6 class="heading">
+<li id="li-271"><p id="p-579">Run the model for \(n=80\)  (the default size). Watch the evolution of the whole graph, as well as the evolution of the largest component itself. Watch the giant appear. Reset and repeat a few times. Describe what you see. Look at the graph that tracks the average degree versus giant component size. Increase or slow the speed of the simulation using the slider bar.</p></li>
+<li id="li-272"><p id="p-580">Do the same for smaller networks  such as \(n=20\) and \(n=40\) and for larger networks such as \(n=160\) and \(n=320\text{.}\)  Compare and contrast these evolutions. For larger networks, you should uncheck the green "layout?" checkbox. This will allow the process to run much faster. You can still keep track of the giant by using the color of the stick-figure vertices.</p></li>
+<li id="li-273"><p id="p-581">Now let's really focus in on the emergence of the giant component. This is window in which we transition from "no giant" to "yes giant." Use the "Go"  button and the "Go Once" button to Stop/Start the simulation as the giant emerges.</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-67"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">The Emergence of the Giant.</span>
 </h6>
-<ol id="p-580" class="lower-alpha">
-<li id="li-273"><p id="p-581">What does the graph look like just before the giant?</p></li>
-<li id="li-274"><p id="p-582">What is happening as the giant appears? Is there a sudden jump in the size of the largest component?  Why or why not?</p></li>
-<li id="li-275"><p id="p-583">What is the average degree when the giant appears? Is this degree fairly consistent between simulations?</p></li>
-<li id="li-276"><p id="p-584">Describe the structure of the giant component right after it emerges. Is it a "dense graph" or a "sparse graph"? What other terms would you use to describe what you see?</p></li>
-<li id="li-277"><p id="p-585">Describe the structure of the other (small) components at this point.</p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-67"><h6 class="heading">
+<ol id="p-582" class="lower-alpha">
+<li id="li-274"><p id="p-583">What does the graph look like just before the giant?</p></li>
+<li id="li-275"><p id="p-584">What is happening as the giant appears? Is there a sudden jump in the size of the largest component?  Why or why not?</p></li>
+<li id="li-276"><p id="p-585">What is the average degree when the giant appears? Is this degree fairly consistent between simulations?</p></li>
+<li id="li-277"><p id="p-586">Describe the structure of the giant component right after it emerges. Is it a "dense graph" or a "sparse graph"? What other terms would you use to describe what you see?</p></li>
+<li id="li-278"><p id="p-587">Describe the structure of the other (small) components at this point.</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-68"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">The Connectivity Threshold.</span>
 </h6>
-<p id="p-586">Let the simulation run until the network becomes connected. Do this for \(n= 20, 40, 80, 160, 320\text{.}\) For \(n &gt; 160\text{,}\) you should uncheck the green "layout?" checkbox. This will speed up the process tremendously. You can also use the "model speed" slider to control to increase or decrease the evolution rate.</p>
+<p id="p-588">Let the simulation run until the network becomes connected. Do this for \(n= 20, 40, 80, 160, 320\text{.}\) For \(n &gt; 160\text{,}\) you should uncheck the green "layout?" checkbox. This will speed up the process tremendously. You can also use the "model speed" slider to control to increase or decrease the evolution rate.</p>
 <ol class="lower-alpha">
-<li id="li-278"><p id="p-587">What does the graph look like just before becoming totally connected? Consistently, what seems to be the "bottleneck" that prevents the graph from being connected?</p></li>
-<li id="li-279"><p id="p-588">Describe the giant component just before the whole graph becomes connected. It is a dense graph or a sparse graph? What other terms would you use?</p></li>
-<li id="li-280">
-<p id="p-589">What is the average degree of the graph at the moment it becomes connected for each of the graph sizes n listed below.  (Run the simulation multiple times for each graph size and report the average)</p>
+<li id="li-279"><p id="p-589">What does the graph look like just before becoming totally connected? Consistently, what seems to be the "bottleneck" that prevents the graph from being connected?</p></li>
+<li id="li-280"><p id="p-590">Describe the giant component just before the whole graph becomes connected. It is a dense graph or a sparse graph? What other terms would you use?</p></li>
+<li id="li-281">
+<p id="p-591">What is the average degree of the graph at the moment it becomes connected for each of the graph sizes n listed below.  (Run the simulation multiple times for each graph size and report the average)</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{array}{r|c|c|c|c|c|c}
@@ -247,7 +238,7 @@
 \end{equation*}
 </div>
 </li>
-<li id="li-281"><p id="p-590">Using the data from the previous question, hypothesize what the relationship is between the size of the graph and the average degree at the moment that the graph becomes connected.</p></li>
+<li id="li-282"><p id="p-592">Using the data from the previous question, hypothesize what the relationship is between the size of the graph and the average degree at the moment that the graph becomes connected.</p></li>
 </ol></article></section></section></div></main>
 </div>
 </body>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<ol class="lower-alpha">
+<li>
+<p>A random variable \(X : \Omega \rightarrow \Z_{\geq 0}\) is a function on the set \(\Omega\) of outcomes of an experiment.  We pick a sample outcome and measure one of its property. For example, we could pick a vertex of a network and write down its degree.</p>
+<p>This is useful when I want to get a sense of the structure (or typical structure) of a network, or another system.</p>
+</li>
+<li>
+<p>For \(t \in \Z_{\geq 0}\text{,}\) the value \(p_X(t)\) is the probability that \(X=t\) when we perform our experiment. For example, the PMF of "measure the degree of a randomly chosen vertex" is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+p(t) = \frac{\mbox{number of vertices of degree }}{\mbox{total number of vertices}}
+\end{equation*}
+</div>
+<p>The PMF gives me a sense of what outcomes are possible, and how likely they are compared to one another.</p>
+</li>
+<li>
+<p>The expected value is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[X] = \sum_{t=0}^{\infty} t \cdot p_X(t)
+\end{equation*}
+</div>
+<p class="continuation">is weighted average of all possible outcomes, using the PMF \(p_X(t)\) as the weight for outcome \(X=t\text{.}\)</p>
+<p>If I repeat my experiment many, many times, then the average outcome value of my experiment will be a number close to the expected value. However, any one particular outcome might be very far away from the average value.</p>
+<p>For example, knowing the average degree could be helpful when thinking about degree centrality. I can assess whether a given vertex has large degree or small degree in the spectrum of observed values.</p>
+</li>
+<li>
+<p>The variance is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\var[X] = E[X^2] - E[X]^2.
+\end{equation*}
+</div>
+<p class="continuation">This number tells me about the "spread" of the distribution around its average value. A small variance means that the PMF is concentrated around the average value, so most of my experiments will return a value that is close to the average one. A large variance means that the values are more spread out.</p>
+<p>Taking the square root gives you the standard deviation \(\sigma = \sqrt{\var[X]}\text{.}\) We can compare this value directly to the expected value, since they have the same units. This helps to get a sense of whether the variance is "big" or "small." Comparing standard deviation to the expected value helps to give us some sense of scale.</p>
+<p>For example, in a graph with small variance, most of the vertices have similar degrees. In a graph with high variance, we will have a much more diverse collection of vertex degrees. In particular, there will be some vertices with much smaller degrees than typical, or some vertices with much larger degree than typical, or both.</p>
+</li>
+</ol>
+<span class="incontext"><a href="exercises-9.html#p-432">in-context</a></span>
+</body>
+</html>

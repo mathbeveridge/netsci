@@ -12,27 +12,21 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>We are now ready to approximate the clustering coefficient. By parts (c) and (d), we can ignore the new triangles (there are only a constant number of them). But we need the new connected triples from part (e). The clustering coefficient is</p>
+<p>Triangles using 2 or 3 shortcut edges are also unlikely. Explain why</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-C \approx \frac
-{
-n {c/2 \choose 2}
-}
-{
-n {c \choose 2} + c^2pn + \frac{1}{2} c^2p^2 n
-}
-=
-\frac
-{
-3{c/2 \choose 2}
-}
-{
-{c \choose 2} + c^2p + \frac{1}{2} c^2p^2.
-}
+\E[\mbox{\# triangles using two shortcut edges} ]=
+n \frac{c}{2} (n-2) q^2   \approx \frac{c^3p^2}{2}.
 \end{equation*}
 </div>
-<p class="continuation">This is a constant (independent of \(n\)), so we have a nonzero clustering coefficient for every small world network.</p>
+<p class="continuation">and</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[\mbox{\# triangles using three shortcut edges} ] =
+{n \choose 3} q^3   \approx \frac{c^3p^3}{6}.
+\end{equation*}
+</div>
+<p class="continuation">So we only add a constant number of triangles of any kind.</p>
 <span class="incontext"><a href="exercises-15.html#p-623">in-context</a></span>
 </body>
 </html>

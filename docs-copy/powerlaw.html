@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NetSci Power Laws</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\notdivide}{{\not{\mid}}}
+\newcommand{\notsubset}{\not\subset}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\gf}{\operatorname{GF}}
+\newcommand{\inn}{\operatorname{Inn}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}}
+\newcommand{\chr}{\operatorname{char}}
+\newcommand{\Null}{\operatorname{Null}}
+
+
+\def\Z{\mathbb Z}
+\def\R{\mathbb R}
+\def\Q{\mathbb Q}
+\def\N{{\mathbb N}}
+\def\C{\mathbb C}
+
+\def\ba{{\mathbf{a}}}
+\def\bb{\mathbf{b}}
+\def\bh{{\mathbf{h}}}
+\def\bu{{\mathbf{u}}}
+\def\bv{{\mathbf{v}}}
+\def\bw{{\mathbf{w}}}   
+\def\bx{{\mathbf{x}}}
+\def\by{\mathbf{y}}    
+\def\bone{{\mathbf{1}}}
+\def\bzero{\mathbf{0}}
+
+\def\var{{\mbox{var}}}
+\def\P{{\mathbb{P}}}
+\def\E{{\mathbb{E}}}
+
+
+\def\cA{{\overline{A}}}
+
+\def\kin{k^{\mathrm{in}}}
+\def\kout{k^{\mathrm{out}}}
+
+\newcommand{\indeg}[1]{k^{\mathrm{in}}_{#1}}
+\newcommand{\outdeg}[1]{k^{\mathrm{out}}_{#1}}
+
+\tikzset{-&gt;-/.style={decoration={
+ markings,
+ mark=at position .5 with {\arrow{latex}}},postaction={decorate}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="netsci.html"><span class="title">Network Science:</span> <span class="subtitle">Activities and Exercises</span></a></h1>
+<p class="byline">Andrew Beveridge</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="probdist.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="part-community.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="part-models.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="probdist.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="part-community.html" title="Up">Up</a><a class="next-button button toolbar-item" href="part-models.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link part"><a href="part-centrality.html" data-scroll="part-centrality"><span class="codenumber">I</span> <span class="title">Network Centrality</span></a></li>
+<li class="link">
+<a href="graphs.html" data-scroll="graphs"><span class="codenumber">1</span> <span class="title">Graphs and Digraphs</span></a><ul><li><a href="exercises-1.html" data-scroll="exercises-1">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="centrality.html" data-scroll="centrality"><span class="codenumber">2</span> <span class="title">Centrality Measures</span></a><ul><li><a href="exercises-2.html" data-scroll="exercises-2">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="algcentrality.html" data-scroll="algcentrality"><span class="codenumber">3</span> <span class="title">Algebraic Centrality</span></a><ul><li><a href="exercises-3.html" data-scroll="exercises-3">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="randomwalk.html" data-scroll="randomwalk"><span class="codenumber">4</span> <span class="title">Random Walks</span></a><ul><li><a href="exercises-4.html" data-scroll="exercises-4">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="hits.html" data-scroll="hits"><span class="codenumber">5</span> <span class="title">Hubs and Authorities</span></a><ul><li><a href="exercises-5.html" data-scroll="exercises-5">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="us-airline.html" data-scroll="us-airline"><span class="codenumber">6</span> <span class="title">Analyzing the US Airline Network</span></a><ul><li><a href="exercises-6.html" data-scroll="exercises-6">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="modularity.html" data-scroll="modularity"><span class="codenumber">7</span> <span class="title">Modularity</span></a><ul><li><a href="exercises-7.html" data-scroll="exercises-7">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="communities.html" data-scroll="communities"><span class="codenumber">8</span> <span class="title">Community Detection in Gephi</span></a><ul><li><a href="exercises-8.html" data-scroll="exercises-8">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="randvar.html" data-scroll="randvar"><span class="codenumber">9</span> <span class="title">Discrete Random Variables</span></a><ul>
+<li><a href="randvar0.html" data-scroll="randvar0">Discrete Random Variables</a></li>
+<li><a href="randvar3.html" data-scroll="randvar3">Events</a></li>
+<li><a href="randvar6.html" data-scroll="randvar6">CDF and CCDF</a></li>
+<li><a href="randvar10.html" data-scroll="randvar10">Expectation, Variance and Moments</a></li>
+<li><a href="randvar16.html" data-scroll="randvar16">Famous Discrete Distributions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="probdist.html" data-scroll="probdist"><span class="codenumber">10</span> <span class="title">Probability Distributions</span></a><ul><li><a href="exercises-9.html" data-scroll="exercises-9">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="powerlaw.html" data-scroll="powerlaw"><span class="codenumber">11</span> <span class="title">Power Laws</span></a><ul><li><a href="exercises-10.html" data-scroll="exercises-10">Practice Problems</a></li></ul>
+</li>
+<li class="link part"><a href="part-community.html" data-scroll="part-community"><span class="codenumber">II</span> <span class="title">Communities and Power Laws</span></a></li>
+<li class="link">
+<a href="graphs.html" data-scroll="graphs"><span class="codenumber">12</span> <span class="title">Graphs and Digraphs</span></a><ul><li><a href="exercises-11.html" data-scroll="exercises-11">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="centrality.html" data-scroll="centrality"><span class="codenumber">13</span> <span class="title">Centrality Measures</span></a><ul><li><a href="exercises-12.html" data-scroll="exercises-12">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="algcentrality.html" data-scroll="algcentrality"><span class="codenumber">14</span> <span class="title">Algebraic Centrality</span></a><ul><li><a href="exercises-13.html" data-scroll="exercises-13">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="randomwalk.html" data-scroll="randomwalk"><span class="codenumber">15</span> <span class="title">Random Walks</span></a><ul><li><a href="exercises-14.html" data-scroll="exercises-14">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="hits.html" data-scroll="hits"><span class="codenumber">16</span> <span class="title">Hubs and Authorities</span></a><ul><li><a href="exercises-15.html" data-scroll="exercises-15">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="us-airline.html" data-scroll="us-airline"><span class="codenumber">17</span> <span class="title">Analyzing the US Airline Network</span></a><ul><li><a href="exercises-16.html" data-scroll="exercises-16">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="modularity.html" data-scroll="modularity"><span class="codenumber">18</span> <span class="title">Modularity</span></a><ul><li><a href="exercises-17.html" data-scroll="exercises-17">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="communities.html" data-scroll="communities"><span class="codenumber">19</span> <span class="title">Community Detection in Gephi</span></a><ul><li><a href="exercises-18.html" data-scroll="exercises-18">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="randvar.html" data-scroll="randvar"><span class="codenumber">20</span> <span class="title">Discrete Random Variables</span></a><ul>
+<li><a href="randvar0.html" data-scroll="randvar0">Discrete Random Variables</a></li>
+<li><a href="randvar3.html" data-scroll="randvar3">Events</a></li>
+<li><a href="randvar6.html" data-scroll="randvar6">CDF and CCDF</a></li>
+<li><a href="randvar10.html" data-scroll="randvar10">Expectation, Variance and Moments</a></li>
+<li><a href="randvar16.html" data-scroll="randvar16">Famous Discrete Distributions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="probdist.html" data-scroll="probdist"><span class="codenumber">21</span> <span class="title">Probability Distributions</span></a><ul><li><a href="exercises-19.html" data-scroll="exercises-19">Practice Problems</a></li></ul>
+</li>
+<li class="link active">
+<a href="powerlaw.html" data-scroll="powerlaw"><span class="codenumber">22</span> <span class="title">Power Laws</span></a><ul><li><a href="exercises-20.html" data-scroll="exercises-20">Practice Problems</a></li></ul>
+</li>
+<li class="link part"><a href="part-models.html" data-scroll="part-models"><span class="codenumber">III</span> <span class="title">Network Models</span></a></li>
+<li class="link">
+<a href="randomgraph.html" data-scroll="randomgraph"><span class="codenumber">23</span> <span class="title">Erdos-Renyi Random Graph</span></a><ul><li><a href="exercises-21.html" data-scroll="exercises-21">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="branching.html" data-scroll="branching"><span class="codenumber">24</span> <span class="title">The Branching Process</span></a><ul><li><a href="exercises-22.html" data-scroll="exercises-22">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="giantcomp.html" data-scroll="giantcomp"><span class="codenumber">25</span> <span class="title">The Emergence of the Giant Component</span></a><ul><li><a href="exercises-23.html" data-scroll="exercises-23">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="pricemodel.html" data-scroll="pricemodel"><span class="codenumber">26</span> <span class="title">Price's Model for a Citation Network</span></a><ul><li><a href="exercises-24.html" data-scroll="exercises-24">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="smallworld.html" data-scroll="smallworld"><span class="codenumber">27</span> <span class="title">The Small World Model</span></a><ul><li><a href="exercises-25.html" data-scroll="exercises-25">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="navsmallworld.html" data-scroll="navsmallworld"><span class="codenumber">28</span> <span class="title">Navigable Small World Model</span></a><ul><li><a href="exercises-26.html" data-scroll="exercises-26">Practice Problems</a></li></ul>
+</li>
+<li class="link part"><a href="part-processes.html" data-scroll="part-processes"><span class="codenumber">IV</span> <span class="title">Processes on Networks</span></a></li>
+<li class="link">
+<a href="cascades.html" data-scroll="cascades"><span class="codenumber">29</span> <span class="title">Network Cascades</span></a><ul><li><a href="exercises-27.html" data-scroll="exercises-27">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="epidemics.html" data-scroll="epidemics"><span class="codenumber">30</span> <span class="title">Epidemics on Networks</span></a><ul><li><a href="exercises-28.html" data-scroll="exercises-28">Practice Problems</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="powerlaw"><h2 class="heading">
+<span class="type">Chapter</span> <span class="codenumber">22</span> <span class="title">Power Laws</span>
+</h2>
+<section class="introduction" id="introduction-22"><p id="p-1015"></p>
+<p id="p-1016"></p></section><section class="exercises" id="exercises-20"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Practice Problems</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-107"><h6 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Degree Distribution.</span>
+</h6>
+<p id="p-1017">The <em class="emphasis">degree distribution</em> of a graph is given by</p>
+<div class="displaymath">
+\begin{equation*}
+p_k =
+\mbox{ the fraction of vertices with degree } k.
+\end{equation*}
+</div>
+<p class="continuation">What is the degree distribution \((p_1, p_2, \ldots)\) of this graph? <div class="image-box" style="width: 25%; margin-left: 37.5%; margin-right: 37.5%;"><img src="images/small_network.png" class="contained"></div></p>
+<p id="p-1018"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-204" id="solution-204"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-204"><div class="solution solution-like"><div class="displaymath" id="p-1019">
+\begin{equation*}
+\left(
+0,\frac{4}{10},\frac{2}{10},\frac{3}{10},0,\frac{1}{10}
+\right)
+\end{equation*}
+</div></div></div></p></article><article class="exercise exercise-like" id="exercise-108"><h6 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">The Normalizing Constant.</span>
+</h6>
+<p id="p-1020">We are given a data set whose degree distribution looks like a straight line with negative slope when plotted using  a log-log scale. In other words,</p>
+<div class="displaymath">
+\begin{equation*}
+\ln (p(k)) = c - \alpha \ln (k),
+\end{equation*}
+</div>
+<p class="continuation">where  \(c &gt;0\)  and \(\alpha &gt; 0\) are  constants. Exponentiate both sides to show that</p>
+<div class="displaymath">
+\begin{equation*}
+p(k) = C k^{-\alpha}.
+\end{equation*}
+</div>
+<p class="continuation">What is the value of the constant \(C\) in terms of \(c\text{?}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-205" id="solution-205"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-205"><div class="solution solution-like"><div class="displaymath" id="p-1021">
+\begin{equation*}
+p(k) = e^c \, k^{-\alpha} \qquad \mbox{so } C = e^c
+\end{equation*}
+</div></div></div></p></article><article class="exercise exercise-like" id="exercise-109"><h6 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">The Normalizing Constant for Exponent \(\alpha\).</span>
+</h6>
+<ol id="p-1022" class="lower-alpha">
+<li id="li-478"><p id="p-derived-li-478">Let \(p: \Z^+ \rightarrow [0,1]\) given by<div class="displaymath">
+\begin{equation*}
+p(k) = C k^{- \alpha}
+\end{equation*}
+</div>be the PMF for a power law. (Here, we assume that \(p(0)=0\) for convenience.) Suppose that we know the value for \(\alpha\text{.}\) Prove that<div class="displaymath">
+\begin{equation*}
+C = \frac{1}{\zeta(\alpha)}
+\end{equation*}
+</div>where \(\zeta(x)\) is the <em class="emphasis">Riemann zeta function</em><div class="displaymath">
+\begin{equation*}
+\displaystyle{\zeta(x) = \sum_{k=1}^{\infty} k^{-x}}.
+\end{equation*}
+</div>What is the restriction on allowable values of \(\alpha\text{?}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-206" id="solution-206"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-206"><div class="solution solution-like">
+<p id="p-1023">We need \(\displaystyle{\zeta(x) = \sum_{k=1}^{\infty} k^{-x}}\) to converge so that the constant \(C\) is finite. From calculus, we recall that the series</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{n=1}^{\infty} n^{-r} =  \sum_{n=1}^{\infty} \frac{1}{n^r}
+\end{equation*}
+</div>
+<p class="continuation">converges if and only if \(r &gt; 1\text{.}\) Translating this to our power law, we set \(k=n\) and \(\alpha=r\text{.}\)  We must have \(\alpha &gt; 1\) in order for the constant \(C\) to be finite.</p>
+</div></div></p></li>
+<li id="li-479">
+<p id="p-1024">For many real-world networks, the power law behavior doesn't hold for small \(k\text{.}\) In this case, we restrict our attention to vertices of degree at least \(k_{\min}\text{.}\) We then deal with  the probability mass function for a truncated power law. Given \(\alpha\) and \(k \geq k_{\min}\) this PMF is given by</p>
+<div class="displaymath">
+\begin{equation*}
+p(k) =  \frac{ k^{-\alpha}}{\zeta(\alpha, k_{\min})}
+\end{equation*}
+</div>
+<p class="continuation">where</p>
+<div class="displaymath">
+\begin{equation*}
+\zeta(x, k_{\min}) =  \sum_{k=k_{\min}}^{\infty} k^{-x}
+\end{equation*}
+</div>
+<p class="continuation">is the <em class="emphasis">generalized Riemann zeta function</em>.</p>
+<p id="p-1025">Dealing with the Riemann zeta function is unwieldy. In practice, we approximate this leading constant by the corresponding integral.  Evaluate the following integral in order to find the approximate value for \(\zeta(\alpha, k_{\min})\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+A =  \int_{x= k_{\min}}^{\infty} x^{-\alpha}  \, dx \approx \sum_{k= k_{\min}}^{\infty} k^{-\alpha} .
+\end{equation*}
+</div>
+<p id="p-1026"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-207" id="solution-207"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-207"><div class="solution solution-like">
+<p id="p-1027"></p>
+<div class="displaymath">
+\begin{align*}
+\sum_{k= k_{\min}}^{\infty} k^{-\alpha} &amp;\approx  \int_{x= k_{\min}}^{\infty} x^{-\alpha}  \, dx\\
+&amp;=
+\lim_{n \rightarrow \infty}
+\frac{1}{-\alpha+1} x^{- \alpha+1} \Big|_{x=k_{\min}}^n\\
+&amp; =
+\lim_{n \rightarrow \infty}
+\frac{1}{-\alpha+1} \left( \frac{1}{n^{\alpha-1}} - \frac{1}{k_{\min}^{\alpha-1}}\right)\\
+&amp;= \frac{1}{\alpha-1} \cdot  \frac{1}{k_{\min}^{\alpha-1}}
+\end{align*}
+</div>
+<p id="p-1028">provided that \(\alpha &gt; 1\text{,}\) of course!</p>
+</div></div></p>
+</li>
+<li id="li-480">
+<p id="p-1029">Find the corresponding approximate expression for the power law PMF</p>
+<div class="displaymath">
+\begin{equation*}
+p(k) = \frac{1}{A} k^{-\alpha}
+\end{equation*}
+</div>
+<p class="continuation">using your constant \(A\) from (a). Simplify so that \(\alpha\) only appears once in an exponent. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-208" id="solution-208"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-208"><div class="solution solution-like"><div class="displaymath" id="p-1030">
+\begin{equation*}
+p(k) \approx \left( \frac{1}{\alpha-1} \cdot  \frac{1}{k_{\min}^{\alpha-1}} \right)^{-1}  k^{- \alpha}
+= \frac{\alpha -1}{k_{\min} } \left( \frac{ k_{\min}}{k} \right)^{\alpha}
+\end{equation*}
+</div></div></div></p>
+</li>
+</ol></article><article class="exercise exercise-like" id="exercise-110"><h6 class="heading">
+<span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Approximating with a Continuous Power Law.</span>
+</h6>
+<p id="p-1031">In general, it is easier to pretend that we are dealing with a continuous distribution (rather than a discrete distribution). So we will talk about a <em class="emphasis">probability density function (PDF)</em> \(p: [k_{\min}, n] \rightarrow [0,1]\) given by</p>
+<div class="displaymath">
+\begin{equation*}
+p(x) = C x^{-\alpha}
+\end{equation*}
+</div>
+<p class="continuation">rather than a PMF. You can find the constant \(C = (\alpha-1)k_{\min}^{\alpha-1} \) as you did in the previous problem. But let's just keep calling it \(C\) for now.</p>
+<ol class="lower-alpha">
+<li id="li-481">
+<p id="p-1032">Let \(X\) be a random variable governed by the continuous PDF \(p(x)\text{.}\) Find</p>
+<div class="displaymath">
+\begin{equation*}
+\E[X] = \int_{x=k_{\min}}^{n} x p(x) dx.
+\end{equation*}
+</div>
+<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-209" id="solution-209"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-209"><div class="solution solution-like">
+<p id="p-1033"></p>
+<div class="displaymath">
+\begin{align*}
+\E[X] &amp;= C \int_{x=k_{\min}}^{n} x \cdot x^{-\alpha} dx =  C \int_{x=k_{\min}}^{n}  x^{-\alpha+1} dx\\
+&amp;= \frac{C}{-\alpha +2} x^{-\alpha+2} \Big|_{k_{\min}}^n\\
+&amp;= \frac{C}{-\alpha +2} \left( \frac{1}{n^{\alpha-2}} -  \frac{1}{k_{\min}^{\alpha-2}} \right)
+\end{align*}
+</div>
+<p id="p-1034"></p>
+</div></div></p>
+</li>
+<li id="li-482">
+<p id="p-1035">The \(m\)th moment of \(X\) is</p>
+<div class="displaymath">
+\begin{equation*}
+\E[X^m] = \int_{x=k_{\min}}^{n} x^m p(x) dx.
+\end{equation*}
+</div>
+<p class="continuation">Calculate it. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-210" id="solution-210"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-210"><div class="solution solution-like">
+<p id="p-1036"></p>
+<div class="displaymath">
+\begin{align*}
+\E[X^m] &amp;= C \int_{x=k_{\min}}^{n} x^m \cdot x^{-\alpha} dx =  C \int_{x=k_{\min}}^{n}  x^{-\alpha+m} dx\\
+&amp;= \frac{C}{-\alpha +m+1} x^{-\alpha+n+1} \Big|_{k_{\min}}^n\\
+&amp;= \frac{C}{-\alpha +m+1} \left( \frac{1}{n^{\alpha-m-1}} -  \frac{1}{k_{\min}^{\alpha-m-1}} \right)
+\end{align*}
+</div>
+<p id="p-1037"></p>
+</div></div></p>
+</li>
+<li id="li-483"><p id="p-1038">Look at your answers for parts (a) and (b) and think about what happens as \(n \rightarrow \infty\text{.}\) For what values of \(\alpha\) does \(\E[X]\) converge? When does the \(m\)th moment \(\E[X^m]\) converge? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-211" id="solution-211"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-211"><div class="solution solution-like"><ul id="p-1039" class="disc">
+<li id="li-484">
+<p id="p-1040">As \(n \rightarrow \infty\text{,}\) the expected value \(\E[X]\) is</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{n \rightarrow \infty} \frac{C}{-\alpha +2} \left( \frac{1}{n^{\alpha-2}} -  \frac{1}{k_{\min}^{\alpha-2}} \right)
+= \frac{C}{\alpha-2}  \cdot \frac{1}{k_{\min}^{\alpha-2}}
+\end{equation*}
+</div>
+<p class="continuation">provided that \(\alpha &gt; 2\text{.}\) So the average value  is finite if and only if \(\alpha &gt; 2\text{.}\) Finally, let's substitute in our approximation of the constant \(C = (\alpha-1)k_{\min}^{\alpha-1}\) to find that the expected value is</p>
+<div class="displaymath">
+\begin{equation*}
+\E[X] =
+\frac{\alpha-1}{\alpha-2}  \cdot \frac{k_{\min}^{\alpha-1}}{k_{\min}^{\alpha-2}} = \frac{\alpha-1}{\alpha-2}  \cdot k_{\min}.
+\end{equation*}
+</div>
+<p class="continuation">That's pretty cool. And you can see that if your exponent \(\alpha \rightarrow 2\) then the expected value goes to infinity. Nice!</p>
+</li>
+<li id="li-485">
+<p id="p-1041">As \(n \rightarrow \infty\text{,}\) the \(m\)th moment  \(\E[X^m]\) is</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{n \rightarrow \infty} \frac{C}{-\alpha +m+1} \left( \frac{1}{n^{\alpha-m-1}} -  \frac{1}{k_{\min}^{\alpha-m-1}} \right)
+= \frac{C}{\alpha-m-1}  \cdot \frac{1}{k_{\min}^{\alpha-m-1}}
+\end{equation*}
+</div>
+<p class="continuation">provided that \(\alpha &gt; m\text{.}\) So the \(m\)th moment  value  is finite if and only if \(\alpha &gt; m\text{.}\) Let's substitute \(C= (\alpha-1)k_{\min}^{\alpha-1}\) to get the expression</p>
+<div class="displaymath">
+\begin{equation*}
+\E[X^m] = \frac{\alpha-1}{\alpha-m-1}  \cdot \frac{k_{\min}^{\alpha-1}}{k_{\min}^{\alpha-m-1}}
+= \frac{\alpha-1}{\alpha-m-1}  \cdot k_{\min}^{m}.
+\end{equation*}
+</div>
+</li>
+</ul></div></div></p></li>
+<li id="li-486"><p id="p-1042">Recall that most observed power laws have \(2 \leq \alpha \leq 3\text{.}\) In this range, does the expected value converge? Which moments converge, and which moments diverge? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-212" id="solution-212"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-212"><div class="solution solution-like">
+<p id="p-1043">So why do most naturally occurring power laws have \(2 &lt; \alpha &lt; 3\text{?}\) We'll consider the degree sequence for a network. In this range of \(\alpha\text{,}\) the average degree is finite. This makes sense for our graph. Next, we observe that  the second moment  is infinite (and so are the higher moments). This means that the variance of the degrees goes to infinity. Therefore, we expect to find hub nodes with very, very high degree. If \(\alpha &gt; 3\text{,}\) then the second moment would converge, which means that the degrees would be well-concentrated around the expected value. We've already seen how important the hub nodes are in the network. So if hub nodes only occur when \(\alpha &lt; 3\text{,}\) it makes sense that our observed power laws should fall into the range of  \(2 &lt; \alpha &lt; 3\text{.}\)</p>
+<p id="p-1044">What about other natural power laws, like the size of cities? Remember that a power law is the correct model for a "popularity contest" or a "rich get richer phenomenon." In these instances, there are some incredibly successful entities, and their success breeds even more success. In other words, in such popularity feedback loops, we  anticipate seeing entities that are vastly more successful than the average entity. This can only happen when the variance of the power law is infinite.</p>
+</div></div></p></li>
+</ol></article></section></section></div></main>
+</div>
+</body>
+</html>

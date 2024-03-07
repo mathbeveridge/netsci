@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NetSci Algebraic Centrality</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\notdivide}{{\not{\mid}}}
+\newcommand{\notsubset}{\not\subset}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\gf}{\operatorname{GF}}
+\newcommand{\inn}{\operatorname{Inn}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}}
+\newcommand{\chr}{\operatorname{char}}
+\newcommand{\Null}{\operatorname{Null}}
+
+
+\def\Z{\mathbb Z}
+\def\R{\mathbb R}
+\def\Q{\mathbb Q}
+\def\N{{\mathbb N}}
+\def\C{\mathbb C}
+
+\def\ba{{\mathbf{a}}}
+\def\bb{\mathbf{b}}
+\def\bh{{\mathbf{h}}}
+\def\bu{{\mathbf{u}}}
+\def\bv{{\mathbf{v}}}
+\def\bw{{\mathbf{w}}}   
+\def\bx{{\mathbf{x}}}
+\def\by{\mathbf{y}}    
+\def\bone{{\mathbf{1}}}
+\def\bzero{\mathbf{0}}
+
+\def\var{{\mbox{var}}}
+\def\P{{\mathbb{P}}}
+\def\E{{\mathbb{E}}}
+
+
+\def\cA{{\overline{A}}}
+
+\def\kin{k^{\mathrm{in}}}
+\def\kout{k^{\mathrm{out}}}
+
+\newcommand{\indeg}[1]{k^{\mathrm{in}}_{#1}}
+\newcommand{\outdeg}[1]{k^{\mathrm{out}}_{#1}}
+
+\tikzset{-&gt;-/.style={decoration={
+ markings,
+ mark=at position .5 with {\arrow{latex}}},postaction={decorate}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="netsci.html"><span class="title">Network Science:</span> <span class="subtitle">Activities and Exercises</span></a></h1>
+<p class="byline">Andrew Beveridge</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="centrality.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="part-community.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="randomwalk.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="centrality.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="part-community.html" title="Up">Up</a><a class="next-button button toolbar-item" href="randomwalk.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link part"><a href="part-centrality.html" data-scroll="part-centrality"><span class="codenumber">I</span> <span class="title">Network Centrality</span></a></li>
+<li class="link">
+<a href="graphs.html" data-scroll="graphs"><span class="codenumber">1</span> <span class="title">Graphs and Digraphs</span></a><ul><li><a href="exercises-1.html" data-scroll="exercises-1">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="centrality.html" data-scroll="centrality"><span class="codenumber">2</span> <span class="title">Centrality Measures</span></a><ul><li><a href="exercises-2.html" data-scroll="exercises-2">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="algcentrality.html" data-scroll="algcentrality"><span class="codenumber">3</span> <span class="title">Algebraic Centrality</span></a><ul><li><a href="exercises-3.html" data-scroll="exercises-3">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="randomwalk.html" data-scroll="randomwalk"><span class="codenumber">4</span> <span class="title">Random Walks</span></a><ul><li><a href="exercises-4.html" data-scroll="exercises-4">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="hits.html" data-scroll="hits"><span class="codenumber">5</span> <span class="title">Hubs and Authorities</span></a><ul><li><a href="exercises-5.html" data-scroll="exercises-5">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="us-airline.html" data-scroll="us-airline"><span class="codenumber">6</span> <span class="title">Analyzing the US Airline Network</span></a><ul><li><a href="exercises-6.html" data-scroll="exercises-6">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="modularity.html" data-scroll="modularity"><span class="codenumber">7</span> <span class="title">Modularity</span></a><ul><li><a href="exercises-7.html" data-scroll="exercises-7">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="communities.html" data-scroll="communities"><span class="codenumber">8</span> <span class="title">Community Detection in Gephi</span></a><ul><li><a href="exercises-8.html" data-scroll="exercises-8">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="randvar.html" data-scroll="randvar"><span class="codenumber">9</span> <span class="title">Discrete Random Variables</span></a><ul>
+<li><a href="randvar0.html" data-scroll="randvar0">Discrete Random Variables</a></li>
+<li><a href="randvar3.html" data-scroll="randvar3">Events</a></li>
+<li><a href="randvar6.html" data-scroll="randvar6">CDF and CCDF</a></li>
+<li><a href="randvar10.html" data-scroll="randvar10">Expectation, Variance and Moments</a></li>
+<li><a href="randvar16.html" data-scroll="randvar16">Famous Discrete Distributions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="probdist.html" data-scroll="probdist"><span class="codenumber">10</span> <span class="title">Probability Distributions</span></a><ul><li><a href="exercises-9.html" data-scroll="exercises-9">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="powerlaw.html" data-scroll="powerlaw"><span class="codenumber">11</span> <span class="title">Power Laws</span></a><ul><li><a href="exercises-10.html" data-scroll="exercises-10">Practice Problems</a></li></ul>
+</li>
+<li class="link part"><a href="part-community.html" data-scroll="part-community"><span class="codenumber">II</span> <span class="title">Communities and Power Laws</span></a></li>
+<li class="link">
+<a href="graphs.html" data-scroll="graphs"><span class="codenumber">12</span> <span class="title">Graphs and Digraphs</span></a><ul><li><a href="exercises-11.html" data-scroll="exercises-11">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="centrality.html" data-scroll="centrality"><span class="codenumber">13</span> <span class="title">Centrality Measures</span></a><ul><li><a href="exercises-12.html" data-scroll="exercises-12">Practice Problems</a></li></ul>
+</li>
+<li class="link active">
+<a href="algcentrality.html" data-scroll="algcentrality"><span class="codenumber">14</span> <span class="title">Algebraic Centrality</span></a><ul><li><a href="exercises-13.html" data-scroll="exercises-13">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="randomwalk.html" data-scroll="randomwalk"><span class="codenumber">15</span> <span class="title">Random Walks</span></a><ul><li><a href="exercises-14.html" data-scroll="exercises-14">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="hits.html" data-scroll="hits"><span class="codenumber">16</span> <span class="title">Hubs and Authorities</span></a><ul><li><a href="exercises-15.html" data-scroll="exercises-15">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="us-airline.html" data-scroll="us-airline"><span class="codenumber">17</span> <span class="title">Analyzing the US Airline Network</span></a><ul><li><a href="exercises-16.html" data-scroll="exercises-16">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="modularity.html" data-scroll="modularity"><span class="codenumber">18</span> <span class="title">Modularity</span></a><ul><li><a href="exercises-17.html" data-scroll="exercises-17">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="communities.html" data-scroll="communities"><span class="codenumber">19</span> <span class="title">Community Detection in Gephi</span></a><ul><li><a href="exercises-18.html" data-scroll="exercises-18">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="randvar.html" data-scroll="randvar"><span class="codenumber">20</span> <span class="title">Discrete Random Variables</span></a><ul>
+<li><a href="randvar0.html" data-scroll="randvar0">Discrete Random Variables</a></li>
+<li><a href="randvar3.html" data-scroll="randvar3">Events</a></li>
+<li><a href="randvar6.html" data-scroll="randvar6">CDF and CCDF</a></li>
+<li><a href="randvar10.html" data-scroll="randvar10">Expectation, Variance and Moments</a></li>
+<li><a href="randvar16.html" data-scroll="randvar16">Famous Discrete Distributions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="probdist.html" data-scroll="probdist"><span class="codenumber">21</span> <span class="title">Probability Distributions</span></a><ul><li><a href="exercises-19.html" data-scroll="exercises-19">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="powerlaw.html" data-scroll="powerlaw"><span class="codenumber">22</span> <span class="title">Power Laws</span></a><ul><li><a href="exercises-20.html" data-scroll="exercises-20">Practice Problems</a></li></ul>
+</li>
+<li class="link part"><a href="part-models.html" data-scroll="part-models"><span class="codenumber">III</span> <span class="title">Network Models</span></a></li>
+<li class="link">
+<a href="randomgraph.html" data-scroll="randomgraph"><span class="codenumber">23</span> <span class="title">Erdos-Renyi Random Graph</span></a><ul><li><a href="exercises-21.html" data-scroll="exercises-21">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="branching.html" data-scroll="branching"><span class="codenumber">24</span> <span class="title">The Branching Process</span></a><ul><li><a href="exercises-22.html" data-scroll="exercises-22">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="giantcomp.html" data-scroll="giantcomp"><span class="codenumber">25</span> <span class="title">The Emergence of the Giant Component</span></a><ul><li><a href="exercises-23.html" data-scroll="exercises-23">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="pricemodel.html" data-scroll="pricemodel"><span class="codenumber">26</span> <span class="title">Price's Model for a Citation Network</span></a><ul><li><a href="exercises-24.html" data-scroll="exercises-24">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="smallworld.html" data-scroll="smallworld"><span class="codenumber">27</span> <span class="title">The Small World Model</span></a><ul><li><a href="exercises-25.html" data-scroll="exercises-25">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="navsmallworld.html" data-scroll="navsmallworld"><span class="codenumber">28</span> <span class="title">Navigable Small World Model</span></a><ul><li><a href="exercises-26.html" data-scroll="exercises-26">Practice Problems</a></li></ul>
+</li>
+<li class="link part"><a href="part-processes.html" data-scroll="part-processes"><span class="codenumber">IV</span> <span class="title">Processes on Networks</span></a></li>
+<li class="link">
+<a href="cascades.html" data-scroll="cascades"><span class="codenumber">29</span> <span class="title">Network Cascades</span></a><ul><li><a href="exercises-27.html" data-scroll="exercises-27">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="epidemics.html" data-scroll="epidemics"><span class="codenumber">30</span> <span class="title">Epidemics on Networks</span></a><ul><li><a href="exercises-28.html" data-scroll="exercises-28">Practice Problems</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="algcentrality"><h2 class="heading">
+<span class="type">Chapter</span> <span class="codenumber">14</span> <span class="title">Algebraic Centrality</span>
+</h2>
+<section class="introduction" id="introduction-14"><p id="p-607"></p></section><section class="exercises" id="exercises-13"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Practice Problems</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-68"><h6 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Adjacency Matrix of a Graph.</span>
+</h6>
+<p id="p-608">Find the adjacency matrix \(A\)  of the following undirected graph, where \(A_{ij}=1\) if \((i,j) \in E\) (an undirected edge), and is 0 otherwise. <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/graph-adjacency.png" class="contained"></div> <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-119" id="solution-119"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-119"><div class="solution solution-like"><div class="displaymath" id="p-609">
+\begin{equation*}
+\begin{bmatrix}
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 1 \\
+0 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 \\
+1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 \\
+0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 1 \\
+1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0
+\end{bmatrix}
+\end{equation*}
+</div></div></div></p></article><article class="exercise exercise-like" id="exercise-69"><h6 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Adjacency Matrix of a Digraph.</span>
+</h6>
+<p id="p-610">Find the adjacency matrix \(A\) of the following directed graph, where \(A_{ij}=1\) if \((i,j)\in E\) (a directed arc), and is 0 otherwise. Note: the \(i\)th row contains all the arcs leading out of \(i\text{.}\) So construct the matrix row-by-row. <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/directed-graph.png" class="contained"></div> <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-120" id="solution-120"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-120"><div class="solution solution-like"><div class="displaymath" id="p-611">
+\begin{equation*}
+\begin{bmatrix}
+0 &amp; 1 &amp; 0&amp; 0 &amp; 1&amp; 0 \\
+0&amp; 0&amp; 0&amp; 0&amp; 0&amp; 0\\
+1 &amp; 1&amp; 0&amp; 0&amp;0 &amp;0 \\
+0 &amp;0 &amp;1 &amp;0 &amp;0 &amp;0 \\
+0&amp; 0&amp; 0&amp;0 &amp; 0&amp;1 \\
+0 &amp; 0&amp; 0&amp; 0&amp; 1&amp; 0
+\end{bmatrix}
+\end{equation*}
+</div></div></div></p></article><article class="exercise exercise-like" id="exercise-70"><h6 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Reducible Matrices.</span>
+</h6>
+<p id="p-612">A \(n \times n\) matrix is <em class="emphasis">reducible</em> if there is an \(n \times n\) permutation matrix \(P\) such that</p>
+<div class="displaymath">
+\begin{equation*}
+P^{\top} A P = \left[
+\begin{array}{cc}
+A_{11} &amp; A_{12} \\
+0 &amp; A_{22}
+\end{array}
+\right]
+\end{equation*}
+</div>
+<p class="continuation">where \(A_{11}\) and \(A_{22}\) are square matrices. Conjugation by \(P\) rearranges the rows and columns. So this is equivalent to saying that we can order the vertices of \(G\) so that the adjacency matrix has the specified form.</p>
+<ol class="lower-alpha">
+<li id="li-296"><p id="p-613">Recall that if \(G\) is an undirected graph, then \(A\) is symmetric. Explain why the adjacency matrix of an undirected graph is reducible if and only if \(G\) is not connected.</p></li>
+<li id="li-297"><p id="p-614">Prove that the adjacency matrix of a directed graph \(G\)  is reducible if and only if \(G\) is not strongly connected.</p></li>
+</ol>
+<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-121" id="solution-121"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-121"><div class="solution solution-like"><ol id="p-615" class="lower-alpha">
+<li id="li-298">
+<p id="p-616">Suppose that \(G\) is an undirected graph, so that its adjacency matrix is symmetric. The undirected graph \(G\) is reducible if and only if there is a permutation matrix \(P\) such that</p>
+<div class="displaymath">
+\begin{equation*}
+P^{\top} A P = \left[
+\begin{array}{cc}
+A_{11} &amp; 0 \\
+0 &amp; A_{22}
+\end{array}
+\right].
+\end{equation*}
+</div>
+<p class="continuation">Finally, we note that the matrix \(P^{\top} A P\) simply corresponds to reordering the vertices of \(G\text{.}\)</p>
+<p id="p-617">(\(\Rightarrow\)) Suppose that \(G\) is reducible.  There are no paths from the vertices of submatrix \(A_{11}\) to the vertices of submatrix \(A_{22}\text{.}\) So the graph is not connected.</p>
+<p id="p-618">(\(\Leftarrow\)) Suppose that \(G\) is not connected: let's suppose that \(G\) splits into two graphs \(G_1\) and \(G_2\) that have no edges between them. Create the adjacency matrix by listing the vertices in \(G_1\) and then listing the vertices in \(G_2\text{.}\)  Then this adjacency matrix is of the desired form.</p>
+</li>
+<li id="li-299">
+<p id="p-619">Let \(G\) be a  digraph. (\(\Rightarrow\)) Suppose that its adjacency matrix is reducible, so that</p>
+<div class="displaymath">
+\begin{equation*}
+P^{\top} A P = \left[
+\begin{array}{cc}
+A_{11} &amp; A_{12} \\
+0 &amp; A_{22}
+\end{array}
+\right].
+\end{equation*}
+</div>
+<p class="continuation">Then there is is no path from any vertex in the second set to any vertex in the first set. So \(G\) is not strongly connected.</p>
+<p id="p-620">(\(\Leftarrow\)) Next, suppose that \(G\) is not strongly connected, Let \(S_1, S_2, \ldots, S_k\) be its strongly connected components. We claim that  that there must be at least one SCC \(S_{i}\) that has no arcs leading to any other \(S_j\text{.}\) Otherwise, there would be a directed cycle that goes through multiple SCC's, so they would be part of a single SCC. Without loss of generality, there is no directed path from any vertex in \(S_k\) to any vertex in \(S_1, S_2, \ldots, S_k\text{.}\)  List the vertices in \(S_1 \cup  \ldots \cup S_{k-1}\) in \(A_{11}\) and list the vertices \(S_k \cup \) in \(A_{22}\text{.}\) The adjacency matrix has is irreducible.</p>
+</li>
+</ol></div></div></p></article><article class="exercise exercise-like" id="exercise-71"><h6 class="heading">
+<span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Spectral Decomposition of a \(2 \times 2\) Matrix.</span>
+</h6>
+<p id="p-621">Let</p>
+<div class="displaymath">
+\begin{equation*}
+A =
+\begin{bmatrix}
+-2 &amp;  2\\
+2 &amp; 1
+\end{bmatrix}.
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-300"><p id="p-622">Check that the vector \(\bv_1 = \begin{bmatrix} 1 \\ 2 \end{bmatrix}\) is an eigenvector of \(A\) for eigenvalue \(\lambda_1=2\text{.}\)</p></li>
+<li id="li-301"><p id="p-623">Check that the vector \(\bv_2 = \begin{bmatrix} 2 \\ -1 \end{bmatrix} \) is an eigenvector of \(A\) for eigenvalue \(\lambda_2 = -3\text{.}\)</p></li>
+<li id="li-302"><p id="p-624">Check that \(\bv_1\) and \(\bv_2\) are orthogonal vectors.</p></li>
+<li id="li-303"><p id="p-625">Confirm that \(A =  \lambda_1 \bu_1 \bu_1^{\top} + \lambda_2 \bu_2 \bu_2^{\top}\) where \(\bu_1, \bu_2\) are eigenvectors of unit length in the direction of \(\bv_1, \bv_2\) respectively.</p></li>
+</ol>
+<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-122" id="solution-122"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-122"><div class="solution solution-like"><ol id="p-626" class="lower-alpha">
+<li id="li-304">
+<p id="p-627">We have</p>
+<div class="displaymath">
+\begin{equation*}
+A \bv_1 =
+\begin{bmatrix} -2 &amp;  2\\ 2 &amp; 1 \end{bmatrix}
+\begin{bmatrix} 1 \\ 2 \end{bmatrix}
+=
+\begin{bmatrix} 2 \\ 4 \end{bmatrix}
+=
+2 \begin{bmatrix}1 \\ 2 \end{bmatrix}.
+\end{equation*}
+</div>
+</li>
+<li id="li-305">
+<p id="p-628">We have</p>
+<div class="displaymath">
+\begin{equation*}
+A \bv_2 =
+\begin{bmatrix}-2 &amp;  2\\ 2 &amp; 1 \end{bmatrix}
+\begin{bmatrix} 2 \\ -1 \end{bmatrix}
+=
+\begin{bmatrix}-6 \\ 3 \end{bmatrix}
+=
+-3 \begin{bmatrix} 2 \\ -1 \end{bmatrix}.
+\end{equation*}
+</div>
+</li>
+<li id="li-306">
+<p id="p-629">Vectors \(\bv_1\) and \(\bv_2\) are orthogonal because</p>
+<div class="displaymath">
+\begin{equation*}
+\bv_1 \cdot \bv_2 = \begin{bmatrix} 1 \\ 2 \end{bmatrix}
+\begin{bmatrix} 2 &amp; -1 \end{bmatrix} = 2-2 = 0
+\end{equation*}
+</div>
+</li>
+<li id="li-307">
+<p id="p-630">Our unit eigenvectors are \(\bu_1 = \frac{1}{\sqrt{5}} {1 \choose 2}\) and \(\bu_2 = \frac{1}{\sqrt{5}} {2 \choose -1}\text{.}\) We find that</p>
+<div class="displaymath">
+\begin{align*}
+\lambda_1 \bu_1 \bu_1^{\top} + \lambda_2 \bu_2 \bu^{\top}
+&amp;= \frac{2}{5} \begin{bmatrix} 1  2 \end{bmatrix} \begin{bmatrix} 2 &amp; 4 \end{bmatrix}\\
+- \frac{3}{5}  \begin{bmatrix} 4  -2 \end{bmatrix}   \begin{bmatrix} -2 &amp; 1 \end{bmatrix}\\
+&amp;= \frac{1}{5} \left( \begin{bmatrix} 2 &amp; 4  4 &amp; 8\end{bmatrix}  +  \begin{bmatrix} -12 &amp; 6  6 &amp; -3\end{bmatrix} \right)\\
+&amp;=   \frac{1}{5}  \begin{bmatrix} -	10 &amp; 10  10 &amp; 5\end{bmatrix}\\
+&amp;=   \begin{bmatrix} -	2 &amp; 2  2 &amp; 1\end{bmatrix}
+\end{align*}
+</div>
+<p id="p-631"></p>
+</li>
+</ol></div></div></p></article><article class="exercise exercise-like" id="exercise-72"><h6 class="heading">
+<span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Repeated Multiplications and Spectral Decomposition.</span>
+</h6>
+<p id="p-632">Suppose that we have a \(2 \times 2\) matrix with spectral decomposition</p>
+<div class="displaymath">
+\begin{equation*}
+A =  \lambda_1 \bu_1 \bu_1^{\top} + \lambda_2 \bu_2 \bu_2^{\top}
+\end{equation*}
+</div>
+<p class="continuation">where \(\bu_1, \bu_2\) are orthonormal eigenvectors for eigenvalues \(\lambda_1\) and \(\lambda_2\text{.}\)  Since these vectors are orthonormal, we have</p>
+<div class="displaymath">
+\begin{equation*}
+\bu_1^{\top} \bu_1=1,  \bu_1^{\top} \bu_2=0,  \bu_2^{\top} \bu_1=0 , \bu_2^{\top} \bu_2=1.
+\end{equation*}
+</div>
+<p class="continuation">The goal of this question is to estimate  \(A^n \bx\) for large \(n\text{,}\) where \(\bx \in \R^2\) is an arbitrary vector.</p>
+<ol class="lower-alpha">
+<li id="li-308"><p id="p-633">Find the spectral decomposition for \(A^2=AA\) by using the spectral decomposition for each \(A\text{,}\) and then multiplying out. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-123" id="solution-123"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-123"><div class="solution solution-like">
+<p id="p-634">We have \(A^2 = AA\) and so</p>
+<div class="displaymath">
+\begin{equation*}
+AA  = ( \lambda_1 \bu_1 \bu_1^{\top} + \lambda_2 \bu_2 \bu_2^{\top})( \lambda_1 \bu_1 \bu_1^{\top} + \lambda_2 \bu_2 \bu_2^{\top}).
+\end{equation*}
+</div>
+<p class="continuation">We end up with four terms. Let's look at them one at a time. Since \(\bu_1^\top \bu_1=1\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\lambda_1^2 \bu_1 \bu_1^{\top}  \bu_1 \bu_1^{\top} =
+\lambda_1^2 \bu_1 (\bu_1^{\top}  \bu_1) \bu_1^{\top} =
+\lambda_1^2 \bu_1 \bu_1^{\top}.
+\end{equation*}
+</div>
+<p class="continuation">Next, since \(\bu_1^\top \bu_2=0\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\lambda_1 \lambda_2 \bu_1 \bu_1^{\top}  \bu_2 \bu_2^{\top} =
+\lambda_1 \lambda_2 \bu_1 (\bu_1^{\top}  \bu_2) \bu_2^{\top} =
+\mathbf{0}.
+\end{equation*}
+</div>
+<p class="continuation">Similarly,</p>
+<div class="displaymath">
+\begin{equation*}
+\lambda_1 \lambda_2 \bu_2 \bu_2^{\top}  \bu_1\bu_1^{\top} =
+\lambda_1 \lambda_2 \bu_2 (\bu_2^{\top}  \bu_1) \bu_1^{\top} =
+\mathbf{0}.
+\end{equation*}
+</div>
+<p class="continuation">and</p>
+<div class="displaymath">
+\begin{equation*}
+\lambda_2^2 \bu_2 \bu_2^{\top}  \bu_2 \bu_2^{\top} =
+\lambda_2^2 \bu_2 (\bu_2^{\top}  \bu_2) \bu_2^{\top} =
+\lambda_2^2 \bu_2 \bu_2^{\top}.
+\end{equation*}
+</div>
+<p class="continuation">So our final answer is</p>
+<div class="displaymath">
+\begin{equation*}
+A^2 = AA  = \lambda_1^2 \bu_1 \bu_1^{\top}  + \lambda_2^2 \bu_2 \bu_2^{\top}.
+\end{equation*}
+</div>
+</div></div></p></li>
+<li id="li-309"><p id="p-635">What is  the spectral decomposition of \(A^3 =A^2A\text{?}\) How about the spectral decomposition of \(A^n\text{?}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-124" id="solution-124"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-124"><div class="solution solution-like">
+<p id="p-636">By a similar argument, we have</p>
+<div class="displaymath">
+\begin{equation*}
+A^3  = \lambda_1^3 \bu_1 \bu_1^{\top}  + \lambda_2^3 \bu_2 \bu_2^{\top}
+\end{equation*}
+</div>
+<p class="continuation">and by induction, we have</p>
+<div class="displaymath">
+\begin{equation*}
+A^n  = \lambda_1^n \bu_1 \bu_1^{\top}  + \lambda_2^n \bu_2 \bu_2^{\top}
+\end{equation*}
+</div>
+</div></div></p></li>
+<li id="li-310"><p id="p-637">The orthonormal vectors \(\bu_1, \bu_2\) form a basis for \(\R^2\text{.}\) So we can write any vector \(\bx \in \R^2\) as \(\bx = c_1 \bu_1 + c_2 \bu_2\text{.}\) Use your answer from part (b) to find an expression for \(A^n \bx\text{.}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-125" id="solution-125"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-125"><div class="solution solution-like">
+<p id="p-638">Using this spectral decomposition, and the orthonormal properties of \(\bu_1, \bu_2\text{,}\) we get</p>
+<div class="displaymath">
+\begin{align*}
+A^n \bx  &amp;=
+\left(\lambda_1^n \bu_1 \bu_1^{\top}  + \lambda_2^n \bu_2 \bu_2^{\top}\right) (c_1 \bu_1 + c_2 \bu_2)\\
+&amp;= c_1 \lambda_1^n \bu_1  + c_2 \lambda_2^n \bu_2.
+\end{align*}
+</div>
+<p id="p-639"></p>
+</div></div></p></li>
+<li id="li-311"><p id="p-640">Now let's suppose that \(|\lambda_1| &gt; |\lambda_2|\) and that \(\bx\) is such that  \(c_1 \neq 0\text{.}\) Explain why \(A^n \bx \approx k \bu_1\) for some constant \(k\text{.}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-126" id="solution-126"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-126"><div class="solution solution-like">
+<p id="p-641">Let's factor out \(\lambda_1^n\) from this expression to get</p>
+<div class="displaymath">
+\begin{align*}
+A^n \bx  &amp;=
+\lambda_1^n \left( c_1  \bu_1 + c_2  \left(\frac{ \lambda_2}{\lambda_1}^n \right) \bu_2. \right)
+\end{align*}
+</div>
+<p id="p-642">As \(n\) gets really large, the fraction \((\lambda_2/\lambda_1)^n\) goes to zero. Therefore for large \(n\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+A^n \bx  \approx \lambda_1^n  c_1  \bu_1.
+\end{equation*}
+</div>
+</div></div></p></li>
+</ol>
+<p class="continuation">You have now shown that \(A^n \bx\) is converges to a vector in the span of the eigenvector \(\bu_1\) corresponding to the largest eigenvalue \(\lambda_1\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-73"><h6 class="heading">
+<span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">Recursive Importance in a Graph.</span>
+</h6>
+<p id="p-643">Consider the following recursive rule for updating the importance of a vertex.</p>
+<ul class="disc">
+<li id="li-312"><p id="p-644">At first, all vertices have importance = 1</p></li>
+<li id="li-313"><p id="p-645">In each round, update the importance of a vertex to be the sum of the importances of its neighbors.</p></li>
+</ul>
+<p class="continuation">Use this recursive rule to calculate the importance for the following undirected graph <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-algcentrality2.svg" role="img" class="contained"></div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/graph-adjacency.png" class="contained"></div> <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-127" id="solution-127"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-127"><div class="solution solution-like"><div class="displaymath" id="p-646">
+\begin{equation*}
+\begin{array}{c||c|c|c|c}
+&amp;  \,\,0  \,\,&amp; \,\,1 \,\, &amp;  \,\,2 \,\, &amp;  \,\,3 \,\, \\
+\hline
+\hline
+1 &amp; 1 &amp; 2&amp;7&amp;20 \\
+2 &amp; 1 &amp; 3&amp;10&amp;30 \\
+3 &amp; 1 &amp; 3&amp;9&amp;29\\
+4 &amp; 1 &amp; 3&amp;9&amp;28  \\
+5 &amp; 1 &amp; 3&amp;10&amp;30 \\
+6 &amp; 1 &amp; 4&amp;11&amp;36 \\
+\end{array}
+\end{equation*}
+</div></div></div></p></article><article class="exercise exercise-like" id="exercise-74"><h6 class="heading">
+<span class="codenumber">7<span class="period">.</span></span><span class="space"> </span><span class="title">Recursive Importance in a Digraph.</span>
+</h6>
+<p id="p-647">Consider the following recursive rule for updating the importance of a vertex.</p>
+<ul class="disc">
+<li id="li-314"><p id="p-648">At first, all vertices have importance = 1</p></li>
+<li id="li-315"><p id="p-649">In each round, update the importance of a vertex to be the sum of the importances of its in-neighbors.</p></li>
+</ul>
+<ol class="lower-alpha">
+<li id="li-316"><p id="p-650">Use this recursive rule to calculate the importance for the following directed graph. What do you observe? <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-algcentrality4.svg" role="img" class="contained"></div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/acyclic-digraph.png" class="contained"></div> <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-128" id="solution-128"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-128"><div class="solution solution-like">
+<div class="displaymath" id="p-651">
+\begin{equation*}
+\begin{array}{c||c|c|c|c|c|c|c}
+&amp;  \,\,0  \,\,&amp; \,\,1 \,\, &amp;  \,\,2 \,\, &amp;  \,\,3 \,\, &amp; \,\, 4 \,\, &amp; \,\, 5 \,\, &amp; \,\, 6 \,\, \\
+\hline
+\hline
+1 &amp; 1 &amp; 0&amp;0&amp;0&amp;0 &amp;0&amp;0\\
+2 &amp; 1 &amp; 1&amp;0&amp;0&amp; 0&amp;0&amp;0\\
+3 &amp; 1 &amp; 2&amp;3&amp;2&amp; 2&amp;1&amp;0\\
+4 &amp; 1 &amp; 1&amp;1&amp;0&amp; 0&amp; 0&amp;0\\
+5 &amp; 1 &amp; 1&amp;1&amp;1&amp; 0&amp;0&amp;0\\
+6 &amp; 1 &amp; 2&amp;2&amp;2&amp; 1&amp;0&amp;0\\
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">All of the importance eventually leaks out of the network.</p>
+</div></div></p></li>
+<li id="li-317"><p id="p-652">Use this  recursive rule calculate the importance of each vertex in this directed graph. What do you observe? <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-algcentrality6.svg" role="img" class="contained"></div> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/digraph-feedback.png" class="contained"></div> <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-129" id="solution-129"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-129"><div class="solution solution-like">
+<div class="displaymath" id="p-653">
+\begin{equation*}
+\begin{array}{c||c|c|c|c|c}
+&amp;  \,\,0  \,\,&amp; \,\,1 \,\, &amp;  \,\,2 \,\, &amp;  \,\,3 \,\, &amp; \,\, 4 \,\,  \\
+\hline
+\hline
+1 &amp; 1 &amp; 2&amp;5&amp;9&amp;19 \\
+2 &amp; 1 &amp;2 &amp;5&amp;9&amp;19 \\
+3 &amp; 1 &amp; 3&amp;4&amp;10&amp; 18\\
+4 &amp; 1 &amp; 0&amp;0&amp;0&amp; 0 \\
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">In the limit, vertices 1,2,3 are equally important. Meanwhile, vertex 4 has no importance.</p>
+</div></div></p></li>
+<li id="li-318"><p id="p-654">Devise a recursive importance rule for directed networks that "fixes the problems" that you observed in parts (a) and (b). <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-130" id="solution-130"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-130"><div class="solution solution-like">
+<p id="p-655">We need to fix the fact that importance leaks out of vertices in a weakly connected digraph. Here are two possible solutions.</p>
+<ul class="disc">
+<li id="li-319"><p id="p-656">Every vertex has inherent importance of 1. Update the importance to be 1 plus the sum of the importances of its in-neighbors</p></li>
+<li id="li-320"><p id="p-657">Pretend that there is a self-loop at each vertex. So the current importance of a vertex is included in the updated importance. Update the importance to be the vertex's current importance plus the sum of the importances of its neighbors.</p></li>
+</ul>
+<p class="continuation">You can also try different weighting schemes of how much to count your own importance versus the importance of your neighbors.</p>
+</div></div></p></li>
+</ol></article></section></section></div></main>
+</div>
+</body>
+</html>

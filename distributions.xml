@@ -145,7 +145,7 @@ three distributions that will  appear frequently in our discussion of network mo
 				</p>
 			</statement>
 		</exercise>
-		<exercise>
+		<exercise xml:id="probdist-binomial-dist">
 			<title>Binomial Random Variable</title>
 			<idx><h>Binomial Random Variable</h></idx>
 			<statement>
@@ -621,15 +621,25 @@ In fact, every moment of the Poisson distribution is equal to <m>\lambda</m>. (T
 
 					</p>
 				</li>
-				<li>
+			</ol>
+
+		</p>
+	</statement>
+</exercise>
+<exercise xml:id="probdist-poisson-approx">
+	<title>Poisson Approximation for the Binomial Distribtuion</title>
+	<idx><h>Poisson Approximation for the Binomial Distribtuion</h></idx>
+	<statement>
 					<p>
- In this part, you will show that when <m>n</m> is very large and <m>p</m> is very small, the Poisson PMF for
+ In this problem, you will show that when <m>n</m> is very large and <m>p</m> is very small, the Poisson distribution for
 <me>
 \lambda :=np
 </me>
-is a good approximation (for small <m>k</m>) of  the binomial PMF with parameters <m>n</m> and <m>p</m>.
-We will fix <m>k \in \Z_{\geq 0}</m> to be  constant and let <m>n \rightarrow \infty</m>.
-You will show that
+is a good approximation (for small <m>k</m>) of  the binomial distribution with parameters <m>n</m> and <m>p</m>.
+
+</p>
+<p>
+Fix <m>k \in \Z_{\geq 0}</m> to be  constant and let <m>n \rightarrow \infty</m>. Show that
 <me>
 {n \choose k} p^k (1-p)^{n-k} \approx e^{-\lambda} \frac{\lambda^k}{k!}   \mbox{if } k \ll n.
 </me>
@@ -668,12 +678,7 @@ Keep in mind that <em><m>k</m> is a fixed number</em> while the size <m>n</m> of
 What this is saying is that as <m>n \rightarrow \infty</m>, the binomial distribution for <m>n</m> and <m>p</m> looks more and more like the Poisson distribution for <m>\lambda=np</m>.
 </p>
 </solution>
-
 					</p>
-				</li>
-			</ol>
-
-				</p>
 			</statement>
 		</exercise>
 	</exercises>

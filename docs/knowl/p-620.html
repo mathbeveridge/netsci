@@ -12,15 +12,18 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Next, we show that we have only added a constant number of new triangles. Show that</p>
+<p>Define</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\E[\mbox{\# triangles using one shortcut edge} ] \leq
-n{ c \choose 2} q
-\approx pc^3/2.
+q = \frac{\frac{cpn}{2}}{{n \choose 2}} \approx \frac{cp}{n}.
 \end{equation*}
 </div>
-<p class="continuation">So we are adding a constant number of triangles. For large \(n\text{,}\) these new triangles are negligible compared to the \(n { c/2 \choose 2}\) triangles already present in the ring.</p>
+<p class="continuation">For any potential shortcut edge \(e\text{,}\) explain why</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\P[ \mbox{edge } e \mbox{ is added to the graph}] \leq q.
+\end{equation*}
+</div>
 <span class="incontext"><a href="exercises-15.html#p-620">in-context</a></span>
 </body>
 </html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>\((\Rightarrow)\) Suppose that \(D\) is strongly connected. Pick any partition \(V=A \cup B\) into disjoint, nonempty sets. Choose any \(a \in A\) and \(b \in B\text{.}\) Since \(D\) is strongly connected, there is a directed path \(P\) from \(a\) to \(b\text{.}\) Follow this path until you reach the first arc \((x,y)\) whose tail \(x \in A\) and whose head \(y \in B\text{.}\) This is the desired arc. By an identical argument, there is an arc from \(B\) to \(A\) because there is a directed path from \(b\) to \(a\text{.}\)</p>
+<p>\((\Leftarrow)\) Suppose that for every partition \(V = A \cup B\) into disjoint, nonempty sets, there is an arc in \(D\) directed from \(A\) to \(B\) and an arc in \(D\) directed from \(B\) to \(A\text{.}\) We  show that for any vertices \(x,y\) there is a path from \(x\) to \(y\) and from \(y\) to \(x\text{.}\)</p>
+<p>Pick a vertex \(x\text{.}\) We will construct a directed tree \(T\) on \(V\) starting from \(x\) where every arc points away from \(x\text{.}\) This tree contains a directed path from \(x\) to any other vertex in the digraph, including our desired vertex \(y\text{.}\) We construct this directed tree as follows.</p>
+<ul class="disc">
+<li><p>To start off, our tree \(T\) just contains the root vertex \(x\text{.}\)</p></li>
+<li><p>Take \(A = \{ x \}\) and \(B = V \backslash \{ x \}\text{.}\) There is an arc from \(A\) to \(B\text{,}\) which must be of the form \((x, v_1)\) for some \(v_1 \in B\text{.}\)  Add this arc and vertex to the tree \(T\text{.}\)</p></li>
+<li><p>Next, take \(A = \{ x, v_1 \}\) and \(B = V \backslash A\text{.}\) There is an arc from \(A\) to \(B\text{,}\) so add this arc and its new head vertex \(v_2\text{.}\)</p></li>
+<li><p>Next, take \(A = \{ x, v_1, v_2 \}\) and \(B= V \backslash A\text{.}\) This adds a new vertex \(v_3\) to our directed tree.</p></li>
+<li><p>Repeat this process until you have a directed tree containing all of the vertices of \(V\text{,}\) including the desired vertex \(y\text{.}\)</p></li>
+</ul>
+<p class="continuation">You can make the same argument to create a directed tree rooted at \(y\text{,}\) which identifies a directed path from \(y\) to \(x\text{.}\)</p>
+<p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Challenge:</em> The \((\Leftarrow)\) proof can be made more rigorous by using induction on the size of \(V\text{.}\) I encourage you to write such a proof!</p>
+</div></body>
+</html>

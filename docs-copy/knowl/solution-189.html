@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
+</h6>
+<p>Here  is the argument. The notation is a little dense, so read it slowly. Each step has a simple explanation. For example,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[\E[X]] = \E[X]
+\end{equation*}
+</div>
+<p class="continuation">because \(\E[X]\) is just a constant. (For the same reason, \(\E[13] = 13\) because the value doesn't change as we consider elements of the state space.)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\var(X) &amp;=  \E \left[ (X - \E[X])^2 \right]
+\, = \, \E[ X^2 -2 X \, \E[X] + \E[X]^2]\\
+&amp;=   \E[ X^2] -\E[2 X \, \E[X]] + \E[\E[X]^2] \, = \, \E[ X^2] -2 \E[X] \, \E[X ] + (\E[X])^2\\
+&amp;=  \E[X^2] - (\E[X])^2
+\end{align*}
+</div>
+<p>where we have used linearity of expectation.</p>
+</div>
+<span class="incontext"><a href="randvar10.html#solution-189">in-context</a></span>
+</body>
+</html>

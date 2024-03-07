@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NetSci Analyzing the US Airline Network</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\notdivide}{{\not{\mid}}}
+\newcommand{\notsubset}{\not\subset}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\gf}{\operatorname{GF}}
+\newcommand{\inn}{\operatorname{Inn}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}}
+\newcommand{\chr}{\operatorname{char}}
+\newcommand{\Null}{\operatorname{Null}}
+
+
+\def\Z{\mathbb Z}
+\def\R{\mathbb R}
+\def\Q{\mathbb Q}
+\def\N{{\mathbb N}}
+\def\C{\mathbb C}
+
+\def\ba{{\mathbf{a}}}
+\def\bb{\mathbf{b}}
+\def\bh{{\mathbf{h}}}
+\def\bu{{\mathbf{u}}}
+\def\bv{{\mathbf{v}}}
+\def\bw{{\mathbf{w}}}   
+\def\bx{{\mathbf{x}}}
+\def\by{\mathbf{y}}    
+\def\bone{{\mathbf{1}}}
+\def\bzero{\mathbf{0}}
+
+\def\var{{\mbox{var}}}
+\def\P{{\mathbb{P}}}
+\def\E{{\mathbb{E}}}
+
+
+\def\cA{{\overline{A}}}
+
+\def\kin{k^{\mathrm{in}}}
+\def\kout{k^{\mathrm{out}}}
+
+\newcommand{\indeg}[1]{k^{\mathrm{in}}_{#1}}
+\newcommand{\outdeg}[1]{k^{\mathrm{out}}_{#1}}
+
+\tikzset{-&gt;-/.style={decoration={
+ markings,
+ mark=at position .5 with {\arrow{latex}}},postaction={decorate}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="netsci.html"><span class="title">Network Science:</span> <span class="subtitle">Activities and Exercises</span></a></h1>
+<p class="byline">Andrew Beveridge</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="hits.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="part-community.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="modularity.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="hits.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="part-community.html" title="Up">Up</a><a class="next-button button toolbar-item" href="modularity.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link part"><a href="part-centrality.html" data-scroll="part-centrality"><span class="codenumber">I</span> <span class="title">Network Centrality</span></a></li>
+<li class="link">
+<a href="graphs.html" data-scroll="graphs"><span class="codenumber">1</span> <span class="title">Graphs and Digraphs</span></a><ul><li><a href="exercises-1.html" data-scroll="exercises-1">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="centrality.html" data-scroll="centrality"><span class="codenumber">2</span> <span class="title">Centrality Measures</span></a><ul><li><a href="exercises-2.html" data-scroll="exercises-2">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="algcentrality.html" data-scroll="algcentrality"><span class="codenumber">3</span> <span class="title">Algebraic Centrality</span></a><ul><li><a href="exercises-3.html" data-scroll="exercises-3">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="randomwalk.html" data-scroll="randomwalk"><span class="codenumber">4</span> <span class="title">Random Walks</span></a><ul><li><a href="exercises-4.html" data-scroll="exercises-4">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="hits.html" data-scroll="hits"><span class="codenumber">5</span> <span class="title">Hubs and Authorities</span></a><ul><li><a href="exercises-5.html" data-scroll="exercises-5">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="us-airline.html" data-scroll="us-airline"><span class="codenumber">6</span> <span class="title">Analyzing the US Airline Network</span></a><ul><li><a href="exercises-6.html" data-scroll="exercises-6">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="modularity.html" data-scroll="modularity"><span class="codenumber">7</span> <span class="title">Modularity</span></a><ul><li><a href="exercises-7.html" data-scroll="exercises-7">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="communities.html" data-scroll="communities"><span class="codenumber">8</span> <span class="title">Community Detection in Gephi</span></a><ul><li><a href="exercises-8.html" data-scroll="exercises-8">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="randvar.html" data-scroll="randvar"><span class="codenumber">9</span> <span class="title">Discrete Random Variables</span></a><ul>
+<li><a href="randvar0.html" data-scroll="randvar0">Discrete Random Variables</a></li>
+<li><a href="randvar3.html" data-scroll="randvar3">Events</a></li>
+<li><a href="randvar6.html" data-scroll="randvar6">CDF and CCDF</a></li>
+<li><a href="randvar10.html" data-scroll="randvar10">Expectation, Variance and Moments</a></li>
+<li><a href="randvar16.html" data-scroll="randvar16">Famous Discrete Distributions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="probdist.html" data-scroll="probdist"><span class="codenumber">10</span> <span class="title">Probability Distributions</span></a><ul><li><a href="exercises-9.html" data-scroll="exercises-9">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="powerlaw.html" data-scroll="powerlaw"><span class="codenumber">11</span> <span class="title">Power Laws</span></a><ul><li><a href="exercises-10.html" data-scroll="exercises-10">Practice Problems</a></li></ul>
+</li>
+<li class="link part"><a href="part-community.html" data-scroll="part-community"><span class="codenumber">II</span> <span class="title">Communities and Power Laws</span></a></li>
+<li class="link">
+<a href="graphs.html" data-scroll="graphs"><span class="codenumber">12</span> <span class="title">Graphs and Digraphs</span></a><ul><li><a href="exercises-11.html" data-scroll="exercises-11">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="centrality.html" data-scroll="centrality"><span class="codenumber">13</span> <span class="title">Centrality Measures</span></a><ul><li><a href="exercises-12.html" data-scroll="exercises-12">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="algcentrality.html" data-scroll="algcentrality"><span class="codenumber">14</span> <span class="title">Algebraic Centrality</span></a><ul><li><a href="exercises-13.html" data-scroll="exercises-13">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="randomwalk.html" data-scroll="randomwalk"><span class="codenumber">15</span> <span class="title">Random Walks</span></a><ul><li><a href="exercises-14.html" data-scroll="exercises-14">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="hits.html" data-scroll="hits"><span class="codenumber">16</span> <span class="title">Hubs and Authorities</span></a><ul><li><a href="exercises-15.html" data-scroll="exercises-15">Practice Problems</a></li></ul>
+</li>
+<li class="link active">
+<a href="us-airline.html" data-scroll="us-airline"><span class="codenumber">17</span> <span class="title">Analyzing the US Airline Network</span></a><ul><li><a href="exercises-16.html" data-scroll="exercises-16">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="modularity.html" data-scroll="modularity"><span class="codenumber">18</span> <span class="title">Modularity</span></a><ul><li><a href="exercises-17.html" data-scroll="exercises-17">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="communities.html" data-scroll="communities"><span class="codenumber">19</span> <span class="title">Community Detection in Gephi</span></a><ul><li><a href="exercises-18.html" data-scroll="exercises-18">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="randvar.html" data-scroll="randvar"><span class="codenumber">20</span> <span class="title">Discrete Random Variables</span></a><ul>
+<li><a href="randvar0.html" data-scroll="randvar0">Discrete Random Variables</a></li>
+<li><a href="randvar3.html" data-scroll="randvar3">Events</a></li>
+<li><a href="randvar6.html" data-scroll="randvar6">CDF and CCDF</a></li>
+<li><a href="randvar10.html" data-scroll="randvar10">Expectation, Variance and Moments</a></li>
+<li><a href="randvar16.html" data-scroll="randvar16">Famous Discrete Distributions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="probdist.html" data-scroll="probdist"><span class="codenumber">21</span> <span class="title">Probability Distributions</span></a><ul><li><a href="exercises-19.html" data-scroll="exercises-19">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="powerlaw.html" data-scroll="powerlaw"><span class="codenumber">22</span> <span class="title">Power Laws</span></a><ul><li><a href="exercises-20.html" data-scroll="exercises-20">Practice Problems</a></li></ul>
+</li>
+<li class="link part"><a href="part-models.html" data-scroll="part-models"><span class="codenumber">III</span> <span class="title">Network Models</span></a></li>
+<li class="link">
+<a href="randomgraph.html" data-scroll="randomgraph"><span class="codenumber">23</span> <span class="title">Erdos-Renyi Random Graph</span></a><ul><li><a href="exercises-21.html" data-scroll="exercises-21">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="branching.html" data-scroll="branching"><span class="codenumber">24</span> <span class="title">The Branching Process</span></a><ul><li><a href="exercises-22.html" data-scroll="exercises-22">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="giantcomp.html" data-scroll="giantcomp"><span class="codenumber">25</span> <span class="title">The Emergence of the Giant Component</span></a><ul><li><a href="exercises-23.html" data-scroll="exercises-23">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="pricemodel.html" data-scroll="pricemodel"><span class="codenumber">26</span> <span class="title">Price's Model for a Citation Network</span></a><ul><li><a href="exercises-24.html" data-scroll="exercises-24">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="smallworld.html" data-scroll="smallworld"><span class="codenumber">27</span> <span class="title">The Small World Model</span></a><ul><li><a href="exercises-25.html" data-scroll="exercises-25">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="navsmallworld.html" data-scroll="navsmallworld"><span class="codenumber">28</span> <span class="title">Navigable Small World Model</span></a><ul><li><a href="exercises-26.html" data-scroll="exercises-26">Practice Problems</a></li></ul>
+</li>
+<li class="link part"><a href="part-processes.html" data-scroll="part-processes"><span class="codenumber">IV</span> <span class="title">Processes on Networks</span></a></li>
+<li class="link">
+<a href="cascades.html" data-scroll="cascades"><span class="codenumber">29</span> <span class="title">Network Cascades</span></a><ul><li><a href="exercises-27.html" data-scroll="exercises-27">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="epidemics.html" data-scroll="epidemics"><span class="codenumber">30</span> <span class="title">Epidemics on Networks</span></a><ul><li><a href="exercises-28.html" data-scroll="exercises-28">Practice Problems</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="us-airline"><h2 class="heading">
+<span class="type">Chapter</span> <span class="codenumber">17</span> <span class="title">Analyzing the US Airline Network</span>
+</h2>
+<section class="introduction" id="introduction-17"><p id="p-758">In this hands-on activity, you will play with a reasonably sized network: an airline route network for the United States from the early 2000s. First, you will explore this data set in Gephi. Then you will do similar calculations using NetworkX in Python.</p></section><section class="exercises" id="exercises-16"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Practice Problems</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-88"><h6 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Getting Started in Gephi.</span>
+</h6>
+<ol id="p-759" class="lower-alpha">
+<li id="li-365"><p id="p-760">Load the <code class="code-inline tex2jax_ignore">us-airline.gephi</code> file into Gephi.</p></li>
+<li id="li-366"><p id="p-761">How many nodes are there? How many edges?</p></li>
+<li id="li-367"><p id="p-762">Click on the "T" in the lower toolbar to show the node labels. The labels are the names of the airports. 	Change the displayed valye clicking on the clipboard/wrench icon at the bottom right of the Graph window. De-select "Label" and select "Code." Click OK. Adjust the label size so that you can read them.</p></li>
+<li id="li-368">
+<p id="p-763">Run the following statistics  in the Statistics window (on the right hand side).</p>
+<ul class="disc">
+<li id="li-369"><p id="p-764">Average Degree</p></li>
+<li id="li-370"><p id="p-765">Network Diameter</p></li>
+<li id="li-371"><p id="p-766">HITS</p></li>
+<li id="li-372"><p id="p-767">PageRank, and select "Use Edge Weight"</p></li>
+<li id="li-373"><p id="p-768">Eigenvector Centrality</p></li>
+<li id="li-374"><p id="p-769">Modularity</p></li>
+</ul>
+<p class="continuation">Look quickly at the plots that come up, and then dismiss them.</p>
+</li>
+</ol></article><article class="exercise exercise-like" id="exercise-89"><h6 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Network Visualization in Gephi.</span>
+</h6>
+<ol id="p-770" class="lower-alpha">
+<li id="li-375"><p id="p-771">For now, keep the default layout.</p></li>
+<li id="li-376"><p id="p-772">In the Ranking tab (upper left window), click on the pallette icon, select "Partition" and then choose "Modularity Class" from the drop down.</p></li>
+<li id="li-377"><p id="p-773">In the Ranking tab (upper left window), update the node size (nested circle icon), and label size ("tT" icon) to reflect various properties. <em class="emphasis">Do not change label color: sometimes they become hard to see.</em></p></li>
+<li id="li-378"><p id="p-774">Can you find any interesting combinations?  What do you observe? Which centrality measures seem to be correlated. (Degree, Closeness, Betweenness, Authority, Hub. PageRank, Eigenvector.) Write down some of your observations.</p></li>
+<li id="li-379"><p id="p-775">Update the Layout to use Fructerman-Reigold, ForceAtlas 2 and Yifan Hu. Be sure to click "Run" and then "Stop" once the network has stabilized.</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-90"><h6 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">The Data Laboratory in Gephi.</span>
+</h6>
+<ol id="p-776" class="lower-alpha">
+<li id="li-380"><p id="p-777">Now click on the "Data Laboratory" button at the top of the window. You can sort the table by a column by  clicking on the header. Clicking again reverses the ordering. Once again, look at which centrality measures are correlated, and which are not. Again, record your observations. Go back and pick a visualization that captures something interesting.</p></li>
+<li id="li-381"><p id="p-778">Sort the nodes by degree. Are there any natural gap(s) that separate large degree nodes from the others? Now sort them by the other centrality measures. Do you see any large gaps in these ranking values that separate the "important" nodes from the rest?</p></li>
+<li id="li-382"><p id="p-779">Find one (or more) lower degree node that ranks highly in one (or more)  of the other betweenness measures. If so, change your visualization to highlight these nodes. Can you explain why that node ranks highly?</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-91"><h6 class="heading">
+<span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Filtering in Gephi.</span>
+</h6>
+<ol id="p-780" class="lower-alpha">
+<li id="li-383"><p id="p-781">Click on the "Overview" button at the top of the window. We will now add our first filter: we only want to show nodes of high degree.</p></li>
+<li id="li-384"><p id="p-782">In the right-hand window, click on the "Filter" tab (which is next to the "Statistics" tab. Explore down to  "Attributes/Range/Degree." Then drag "Degree" to the lower half of this tab (named "Queries"). Click on "Filter."</p></li>
+<li id="li-385"><p id="p-783">Adjust the Query slider. Among the highest degree nodes, what is the maximum number that form a complete graph (also known as a "clique")? What is the smallest degree (in the overall graph) of vertices in this clique?</p></li>
+<li id="li-386"><p id="p-784">Make a new Query using other centrality measures where you saw a big gap in the ranking value. How connected are the high ranking nodes for this measure? What other interesting observations can you make about these nodes? Is there a clear internal structure? Or perhaps a lack of one?</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-92"><h6 class="heading">
+<span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Getting Started with NetworkX.</span>
+</h6>
+<ol id="p-785" class="lower-alpha">
+<li id="li-387">
+<p id="p-786">Now let's try to do some of this same work using NetworkX. You will need to start by installing NetworkX using the command</p>
+<pre class="code-display tex2jax_ignore">
+pip3 install networkx
+</pre>
+</li>
+<li id="li-388"><p id="p-787">Start off by familiarizing yourself with NetworkX by working though the <a class="external" href="https://networkx.github.io/documentation/stable/tutorial.html" target="_blank">NetworkX tutorial</a>.</p></li>
+<li id="li-389">
+<p id="p-788">Try to import the airline graph and find its centrality measures. Googling the following terms will bring up useful parts of the NetworkX documentation:</p>
+<pre class="code-display tex2jax_ignore">
+networkx tutorial
+networkx centrality
+networkx pagerank
+networkx graphml import
+</pre>
+<p class="continuation">Or visit our moodle site for direct links. If you want to plot the network via python, here is a simple code snippet that gives you an idea of how to start.</p>
+<pre class="code-display tex2jax_ignore">
+import networkx as nx
+import matplotlib.pyplot as plt
+
+G = nx.cubical_graph()
+nx.draw(G)
+plt.show()
+</pre>
+</li>
+</ol></article></section></section></div></main>
+</div>
+</body>
+</html>

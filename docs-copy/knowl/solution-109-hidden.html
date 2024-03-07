@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like"><ol class="lower-alpha">
+<li>
+<p>An edge corresponds to an unordered pair of vertices, chosen from the set \([n]\text{.}\) In other words, we must choose a subset of size 2 from the set \([n]\text{.}\) There are</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+{n \choose 2} = \frac{n(n-1)}{2}
+\end{equation*}
+</div>
+<p class="continuation">ways to do this.</p>
+</li>
+<li>
+<p>Let's give a recipe for creating a graph on the vertices \([n]\text{.}\) For each pair of vertices, we must decide whether or not the corresponding edge is in our graph. So we must make \({n \choose 2}\) yes/no decisions, and these decisions are made independently of one another. Therefore, the total number of graphs is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+2^{n \choose 2}.
+\end{equation*}
+</div>
+</li>
+</ol></div></body>
+</html>

@@ -508,10 +508,8 @@ Explain why the probability that vertex <m>v</m> of <m>G(n,p)</m> has degree <m>
 <me>
 p_k = {n-1 \choose k} p^k (1-p)^{n-1-k}.
 </me>
-In other words, <m>G(n,p)</m> has a binomial degree distribution. You need to use the following fact:
-when <m>k</m> is fixed, <m>n</m> is large and <m>p= c/n</m>, we have
-<me>p_k \approx  e^{-c} \frac{c^k}{k!}.</me>
-So we can approximate the degree distribution of <m>G(n,p)</m> with a Poisson distribution.
+In other words, the degree of a vertex is a random variable whose PMF is the binomial distribution. 
+Therefore we say that <m>G(n,p)</m> has a "binomial degree distribution."
 
 
 <solution>
@@ -521,9 +519,21 @@ Look at a particular vertex <m>v</m>. We must choose the <m>k</m> neighbors. The
 </solution>
 
 				</p>
+	<p>
+		Notes about the binomial distribution:
+		<ul>
+			<li>See <xref autoname="yes" ref="probdist-binomial-dist" /> for the basics about the 
+				binomial distribution.</li>
+			<li>See <xref autoname="yes" ref="probdist-poisson-approx" /> to see how we can approximate the binomial 
+				distribution with a Poisson distribtuion. Namely, when <m>k</m> is very small, <m>n</m> is very large 
+				and <m>p= c/n</m>, we have
+				<me>p_k \approx  e^{-c} \frac{c^k}{k!}.</me>
+			</li>
+		</ul>		
+	</p>
 			</statement>
 		</exercise>
-		<exercise>
+		<exercise xml:id="randomgraph-degree">
 			<title>The Expected Degree of a Vertex</title>
 			<idx><h>The Expected Degree of a Vertex</h></idx>
 			<statement>

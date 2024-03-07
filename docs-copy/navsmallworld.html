@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NetSci Navigable Small World Model</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\notdivide}{{\not{\mid}}}
+\newcommand{\notsubset}{\not\subset}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\gf}{\operatorname{GF}}
+\newcommand{\inn}{\operatorname{Inn}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}}
+\newcommand{\chr}{\operatorname{char}}
+\newcommand{\Null}{\operatorname{Null}}
+
+
+\def\Z{\mathbb Z}
+\def\R{\mathbb R}
+\def\Q{\mathbb Q}
+\def\N{{\mathbb N}}
+\def\C{\mathbb C}
+
+\def\ba{{\mathbf{a}}}
+\def\bb{\mathbf{b}}
+\def\bh{{\mathbf{h}}}
+\def\bu{{\mathbf{u}}}
+\def\bv{{\mathbf{v}}}
+\def\bw{{\mathbf{w}}}   
+\def\bx{{\mathbf{x}}}
+\def\by{\mathbf{y}}    
+\def\bone{{\mathbf{1}}}
+\def\bzero{\mathbf{0}}
+
+\def\var{{\mbox{var}}}
+\def\P{{\mathbb{P}}}
+\def\E{{\mathbb{E}}}
+
+
+\def\cA{{\overline{A}}}
+
+\def\kin{k^{\mathrm{in}}}
+\def\kout{k^{\mathrm{out}}}
+
+\newcommand{\indeg}[1]{k^{\mathrm{in}}_{#1}}
+\newcommand{\outdeg}[1]{k^{\mathrm{out}}_{#1}}
+
+\tikzset{-&gt;-/.style={decoration={
+ markings,
+ mark=at position .5 with {\arrow{latex}}},postaction={decorate}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="netsci.html"><span class="title">Network Science:</span> <span class="subtitle">Activities and Exercises</span></a></h1>
+<p class="byline">Andrew Beveridge</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="smallworld.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="part-models.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="part-processes.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="smallworld.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="part-models.html" title="Up">Up</a><a class="next-button button toolbar-item" href="part-processes.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link part"><a href="part-centrality.html" data-scroll="part-centrality"><span class="codenumber">I</span> <span class="title">Network Centrality</span></a></li>
+<li class="link">
+<a href="graphs.html" data-scroll="graphs"><span class="codenumber">1</span> <span class="title">Graphs and Digraphs</span></a><ul><li><a href="exercises-1.html" data-scroll="exercises-1">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="centrality.html" data-scroll="centrality"><span class="codenumber">2</span> <span class="title">Centrality Measures</span></a><ul><li><a href="exercises-2.html" data-scroll="exercises-2">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="algcentrality.html" data-scroll="algcentrality"><span class="codenumber">3</span> <span class="title">Algebraic Centrality</span></a><ul><li><a href="exercises-3.html" data-scroll="exercises-3">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="randomwalk.html" data-scroll="randomwalk"><span class="codenumber">4</span> <span class="title">Random Walks</span></a><ul><li><a href="exercises-4.html" data-scroll="exercises-4">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="hits.html" data-scroll="hits"><span class="codenumber">5</span> <span class="title">Hubs and Authorities</span></a><ul><li><a href="exercises-5.html" data-scroll="exercises-5">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="us-airline.html" data-scroll="us-airline"><span class="codenumber">6</span> <span class="title">Analyzing the US Airline Network</span></a><ul><li><a href="exercises-6.html" data-scroll="exercises-6">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="modularity.html" data-scroll="modularity"><span class="codenumber">7</span> <span class="title">Modularity</span></a><ul><li><a href="exercises-7.html" data-scroll="exercises-7">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="communities.html" data-scroll="communities"><span class="codenumber">8</span> <span class="title">Community Detection in Gephi</span></a><ul><li><a href="exercises-8.html" data-scroll="exercises-8">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="randvar.html" data-scroll="randvar"><span class="codenumber">9</span> <span class="title">Discrete Random Variables</span></a><ul>
+<li><a href="randvar0.html" data-scroll="randvar0">Discrete Random Variables</a></li>
+<li><a href="randvar3.html" data-scroll="randvar3">Events</a></li>
+<li><a href="randvar6.html" data-scroll="randvar6">CDF and CCDF</a></li>
+<li><a href="randvar10.html" data-scroll="randvar10">Expectation, Variance and Moments</a></li>
+<li><a href="randvar16.html" data-scroll="randvar16">Famous Discrete Distributions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="probdist.html" data-scroll="probdist"><span class="codenumber">10</span> <span class="title">Probability Distributions</span></a><ul><li><a href="exercises-9.html" data-scroll="exercises-9">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="powerlaw.html" data-scroll="powerlaw"><span class="codenumber">11</span> <span class="title">Power Laws</span></a><ul><li><a href="exercises-10.html" data-scroll="exercises-10">Practice Problems</a></li></ul>
+</li>
+<li class="link part"><a href="part-community.html" data-scroll="part-community"><span class="codenumber">II</span> <span class="title">Communities and Power Laws</span></a></li>
+<li class="link">
+<a href="graphs.html" data-scroll="graphs"><span class="codenumber">12</span> <span class="title">Graphs and Digraphs</span></a><ul><li><a href="exercises-11.html" data-scroll="exercises-11">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="centrality.html" data-scroll="centrality"><span class="codenumber">13</span> <span class="title">Centrality Measures</span></a><ul><li><a href="exercises-12.html" data-scroll="exercises-12">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="algcentrality.html" data-scroll="algcentrality"><span class="codenumber">14</span> <span class="title">Algebraic Centrality</span></a><ul><li><a href="exercises-13.html" data-scroll="exercises-13">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="randomwalk.html" data-scroll="randomwalk"><span class="codenumber">15</span> <span class="title">Random Walks</span></a><ul><li><a href="exercises-14.html" data-scroll="exercises-14">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="hits.html" data-scroll="hits"><span class="codenumber">16</span> <span class="title">Hubs and Authorities</span></a><ul><li><a href="exercises-15.html" data-scroll="exercises-15">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="us-airline.html" data-scroll="us-airline"><span class="codenumber">17</span> <span class="title">Analyzing the US Airline Network</span></a><ul><li><a href="exercises-16.html" data-scroll="exercises-16">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="modularity.html" data-scroll="modularity"><span class="codenumber">18</span> <span class="title">Modularity</span></a><ul><li><a href="exercises-17.html" data-scroll="exercises-17">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="communities.html" data-scroll="communities"><span class="codenumber">19</span> <span class="title">Community Detection in Gephi</span></a><ul><li><a href="exercises-18.html" data-scroll="exercises-18">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="randvar.html" data-scroll="randvar"><span class="codenumber">20</span> <span class="title">Discrete Random Variables</span></a><ul>
+<li><a href="randvar0.html" data-scroll="randvar0">Discrete Random Variables</a></li>
+<li><a href="randvar3.html" data-scroll="randvar3">Events</a></li>
+<li><a href="randvar6.html" data-scroll="randvar6">CDF and CCDF</a></li>
+<li><a href="randvar10.html" data-scroll="randvar10">Expectation, Variance and Moments</a></li>
+<li><a href="randvar16.html" data-scroll="randvar16">Famous Discrete Distributions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="probdist.html" data-scroll="probdist"><span class="codenumber">21</span> <span class="title">Probability Distributions</span></a><ul><li><a href="exercises-19.html" data-scroll="exercises-19">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="powerlaw.html" data-scroll="powerlaw"><span class="codenumber">22</span> <span class="title">Power Laws</span></a><ul><li><a href="exercises-20.html" data-scroll="exercises-20">Practice Problems</a></li></ul>
+</li>
+<li class="link part"><a href="part-models.html" data-scroll="part-models"><span class="codenumber">III</span> <span class="title">Network Models</span></a></li>
+<li class="link">
+<a href="randomgraph.html" data-scroll="randomgraph"><span class="codenumber">23</span> <span class="title">Erdos-Renyi Random Graph</span></a><ul><li><a href="exercises-21.html" data-scroll="exercises-21">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="branching.html" data-scroll="branching"><span class="codenumber">24</span> <span class="title">The Branching Process</span></a><ul><li><a href="exercises-22.html" data-scroll="exercises-22">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="giantcomp.html" data-scroll="giantcomp"><span class="codenumber">25</span> <span class="title">The Emergence of the Giant Component</span></a><ul><li><a href="exercises-23.html" data-scroll="exercises-23">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="pricemodel.html" data-scroll="pricemodel"><span class="codenumber">26</span> <span class="title">Price's Model for a Citation Network</span></a><ul><li><a href="exercises-24.html" data-scroll="exercises-24">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="smallworld.html" data-scroll="smallworld"><span class="codenumber">27</span> <span class="title">The Small World Model</span></a><ul><li><a href="exercises-25.html" data-scroll="exercises-25">Practice Problems</a></li></ul>
+</li>
+<li class="link active">
+<a href="navsmallworld.html" data-scroll="navsmallworld"><span class="codenumber">28</span> <span class="title">Navigable Small World Model</span></a><ul><li><a href="exercises-26.html" data-scroll="exercises-26">Practice Problems</a></li></ul>
+</li>
+<li class="link part"><a href="part-processes.html" data-scroll="part-processes"><span class="codenumber">IV</span> <span class="title">Processes on Networks</span></a></li>
+<li class="link">
+<a href="cascades.html" data-scroll="cascades"><span class="codenumber">29</span> <span class="title">Network Cascades</span></a><ul><li><a href="exercises-27.html" data-scroll="exercises-27">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="epidemics.html" data-scroll="epidemics"><span class="codenumber">30</span> <span class="title">Epidemics on Networks</span></a><ul><li><a href="exercises-28.html" data-scroll="exercises-28">Practice Problems</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="navsmallworld"><h2 class="heading">
+<span class="type">Chapter</span> <span class="codenumber">28</span> <span class="title">Navigable Small World Model</span>
+</h2>
+<section class="introduction" id="introduction-28"><p id="p-1149">The Small World Model of Strogatz and Watts contains short paths, but they are very hard to find! In this activity, we study a variation of Kleinberg's Navigable Small World Model. We start with a cycle on \(n+1\) vertices \(\{0,1,2,\ldots n\}\text{.}\) Then each vertex chooses a (one-way) "long-range contact" according to</p>
+<div class="displaymath">
+\begin{equation*}
+\Pr[ u \mbox{ is } v\mbox{'s long range contact}] = C \cdot \frac{1}{d(u,v)}.
+\end{equation*}
+</div>
+<p class="continuation">where \(C\) is our normalizing constant and \(d(u,v)\) is the ring distance between nodes \(u\) and \(v\text{.}\) <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/small-world.png" class="contained"></div> We consider the following greedy routing strategy from source vertex \(s\) to target vertex \(t\text{:}\)</p>
+<ul class="disc"><li id="li-550"><p id="p-1150"><em class="emphasis">move as close to the target as possible, either by walking on the ring edge, or following the long-range edge (when this takes us closer to \(t\)).</em></p></li></ul>
+<p class="continuation">Consider a journey from source vertex \(s\) to target vertex \(t\text{.}\) We will consider the "worst case" of starting at vertex \(0\) and trying to get to vertex \(n/2\text{.}\) You will show that the expected number of steps in this journey is</p>
+<div class="displaymath">
+\begin{equation*}
+O \left( (\log n)^2 \right)
+\end{equation*}
+</div>
+<p class="continuation">where \(\log n = \log_2 n\) is the base-2 logarithm of \(n\text{.}\)</p>
+<p id="p-1151">In order to prove this result, we will divide our journey from \(s\) to \(t\) into phases:</p>
+<ul class="disc"><li id="li-551"><p id="p-1152">phase \(j\) = ring distance \(d\) to target vertex satisfies \(2^j \leq d &lt; 2^{j+1}\text{.}\)</p></li></ul>
+<p class="continuation">Note that these phases are indexed in reverse.  That is, when we are far from the target \(t\text{,}\) our phase index is <em class="emphasis">larger</em>. In other words, we "count down" the phases. For example, the in the following figure, we start in Phase 3 (at source vertex \(s\)) and end in Phase 0 (at target vertex \(t\)). <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/nav-phases.png" class="contained"></div> Let \(X\) denote the total number of steps in our journey. Let \(X_j\) denote the number of steps taken during phase \(j\text{.}\) In the example above, our journey takes \(X=5\) steps. We have</p>
+<div class="displaymath">
+\begin{equation*}
+X_3 = 1,
+X_2 = 1,
+X_1 = 2,
+X_0 = 1.
+\end{equation*}
+</div>
+<p class="continuation">The goal of this activity is to show that</p>
+<div class="displaymath">
+\begin{equation*}
+\E[X] = \sum_{k=0}^{\log (n/2)} \E[X_k] = O\left( (\log n)^2 \right),
+\end{equation*}
+</div>
+<p class="continuation">meaning that the expected number of steps is at most \(K \cdot (\log n)^2\) for some constant \(K &gt; 0\text{.}\) In other words, in a typical network of this kind, our journey takes at most \(O((\log n)^2)\) steps.</p>
+<p id="p-1153">Our analysis combines tools from computer science (analysis of algorithms), statistics (probability) and mathematics (calculus, combinatorics).</p></section><section class="exercises" id="exercises-26"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Practice Problems</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-130"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-1154">To check your understanding, explain why the length of the journey from \(s\) to \(t\) is</p>
+<div class="displaymath">
+\begin{equation*}
+X = \sum_{k=0}^{\lfloor \log (n/2) \rfloor} X_k
+\end{equation*}
+</div>
+<p class="continuation">In other words, be sure that you understand</p>
+<ul class="disc">
+<li id="li-552"><p id="p-1155">how we have partitioned the journey into phases, and</p></li>
+<li id="li-553"><p id="p-1156">why the upper limit of the sum is \(\lfloor \log (n/2) \rfloor.\)</p></li>
+</ul>
+<p class="continuation">From here forward, we will omit the floor function from our expressions, and write \(\log (n/2) \) when we actually mean \(\lfloor \log (n/2) \rfloor\text{.}\) We trust that you know that we need to use integer values.</p>
+<p id="p-1157">Okay, you now understand this formula for a given network. In the rest of this activity, we will calculate the expected length of a journey on a randomly generated network. We use linearity of expectation to write the  expected length of this journey as the sum of the expected lengths of the phases:</p>
+<div class="displaymath">
+\begin{equation*}
+\E[X] = \E \left[ \sum_{k=0}^{\log (n/2)} X_k \right] =
+\sum_{k=0}^{\log (n/2)} E[X_k].
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="exercise-131"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-1158">The random long-range contact is chosen according to the PMF</p>
+<div class="displaymath">
+\begin{equation*}
+\Pr[ v \mbox{ is } u \mbox{'s long range contact}] = C \cdot \frac{1}{d(u,v)}.
+\end{equation*}
+</div>
+<p class="continuation">Show that the normalizing constant \(C\) satisfies</p>
+<div class="displaymath">
+\begin{equation*}
+C &gt; \frac{1}{2\log n}
+\end{equation*}
+</div>
+<p class="continuation">where \(\log n= \log_2 n\text{.}\) You will need to use the following inequalities, which you saw in your calculus classes (and might have forgotten):</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{i=1}^{k} \frac{1}{i} \leq 1 +  \mbox{ln}(k)  \leq  1 + \log_2(k).
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="exercise-132"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-1159">Consider a vertex \(v\) with ring distance \(d=d(v,t)\) satisfying \(2^j \leq d &lt; 2^{j+1}\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-554">
+<p id="p-1160">Let</p>
+<div class="displaymath">
+\begin{equation*}
+A = \{ w \mid d(w,t) \leq d/2 \}
+\end{equation*}
+</div>
+<p class="continuation">be the set of vertices that are "at most half the distance from \(t\) as \(v\text{.}\)" Explain why</p>
+<div class="displaymath">
+\begin{equation*}
+|A|=d+1
+\end{equation*}
+</div>
+<p class="continuation">and why</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d}{2} \leq d(v,w) \leq \frac{3d}{2}
+\end{equation*}
+</div>
+<p class="continuation">for all \(w \in A\text{.}\) </p>
+</li>
+<li id="li-555">
+<p id="p-1161">Prove that</p>
+<div class="displaymath">
+\begin{equation*}
+\displaystyle{\Pr[v \mbox{'s long-range contact is in } A] \geq  \frac{1}{3 \log n}}.
+\end{equation*}
+</div>
+</li>
+<li id="li-556">
+<p id="p-1162">Use part (b) to prove that</p>
+<div class="displaymath">
+\begin{equation*}
+\displaystyle{\Pr[\mbox{round } j \mbox{ lasts at least } i  \mbox{ steps}] \leq  \left( 1 - \frac{1}{ 3 \log n} \right)^{i-1}}.
+\end{equation*}
+</div>
+</li>
+</ol></article><article class="exercise exercise-like" id="exercise-133"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-1163">Here is very useful fact from probability. Let \(X\) be any random variable taking on positive integer values. We can write the expected value of \(X\) as</p>
+<div class="displaymath">
+\begin{equation*}
+\E[X] = \sum_{k=1}^{\infty} \Pr[X \geq k].
+\end{equation*}
+</div>
+<p class="continuation">Indeed, when \(X\) only takes on positive integer values, we have</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{k=1}^{\infty} \Pr[X \geq k] = \sum_{k=1}^{\infty} k \Pr[X = k]
+\end{equation*}
+</div>
+<p class="continuation">and the right hand side is the definition of \(\E[X]\text{.}\)</p>
+<p id="p-1164">Use this new formula for \(\E[X]\) and part 3(c) to prove that</p>
+<div class="displaymath">
+\begin{equation*}
+E[X_j] \leq 3 \log n.
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="exercise-134"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-1165">Use problems 1 and 4 to conclude that an average journey takes at most</p>
+<div class="displaymath">
+\begin{equation*}
+O((\log n)^2)
+\end{equation*}
+</div>
+<p class="continuation">steps. </p></article></section></section></div></main>
+</div>
+</body>
+</html>

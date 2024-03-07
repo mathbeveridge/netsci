@@ -56,21 +56,27 @@ pull the name of the problem from the first line  of  the \item
         <!-- Parts are optional, included here for testing            -->
         <!-- In "bookinfo.xml" set to "structural" for maximum effect -->
 
-       <part xml:id="part-structure">
-            <title>Network Structure</title>
+       <part xml:id="part-centrality">
+            <title>Network Centrality</title>
                 <xi:include href="./graphs.xml" />                 
                 <xi:include href="./centrality.xml" />                  
                 <xi:include href="./algcentrality.xml" />
                 <xi:include href="./randomwalk.xml" />        
                 <xi:include href="./hits.xml" />    
                 <xi:include href="./airlines.xml" />    
-                <xi:include href="./modularity.xml" />    
-                <xi:include href="./communities.xml" />   
-                <xi:include href="./randomvar.xml" />   
-                <xi:include href="./distributions.xml" />                  
-                <xi:include href="./powerlaw.xml" />                      
+                  
 
        </part>
+
+       <part xml:id="part-community">
+        <title>Communities and Power Laws</title>   
+            <xi:include href="./modularity.xml" />    
+            <xi:include href="./communities.xml" />   
+            <xi:include href="./randomvar.xml" />   
+            <xi:include href="./distributions.xml" />                  
+            <xi:include href="./powerlaw.xml" />                      
+
+   </part>
 
  
 
@@ -93,14 +99,14 @@ pull the name of the problem from the first line  of  the \item
        </part>
 
        
-
+<!--
         <part xml:id="part-homework">
             <title>Homework Exercises</title>
                 <xi:include href="./hw-graphs.xml" />                 
                 <xi:include href="./hw-centrality.xml" />     
                 <xi:include href="./hw-degreedist.xml" />                    
        </part>
-
+    -->
 
 
     </book>

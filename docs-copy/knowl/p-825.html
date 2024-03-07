@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<p>Note that the degree of vertex \(i\) will still be \(k_i\) when this process is done. <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/rewire-vertex.png" class="contained"></div></p>
+<ol class="lower-alpha">
+<li><p>Pick the start of one edge at vertex \(i\text{.}\) What is the probability that this rewired edge connects to vertex \(j\text{?}\) <a class="solution-knowl original" data-knowl="./knowl/solution-166-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></li>
+<li><p>So how many rewired edges from vertex \(i\) do we expect to connect to vertex \(j\text{?}\) (Assume that the network is so big that the chance that two ends at \(i\) try to connect  to the same end at \(j\) is irrelevant.) <a class="solution-knowl original" data-knowl="./knowl/solution-167-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></li>
+<li>
+<p>Now argue that the expected number of rewired edges that are internal to the specified communities is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{1}{2} \sum_{i}  \sum_{j}  \frac{k_i k_j}{2m} \, \delta (C^{(i)}, C^{(j)})
+\end{equation*}
+</div>
+<p class="continuation">which can also be written as</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{1}{2} \sum_{C} \sum_{i \in C} \sum_{j \in C}  \frac{k_i k_j}{2m}.		
+\end{equation*}
+</div>
+<p class="continuation">Here, the \(\frac{1}{2}\) takes care of the double counting since our sum looks at the pair \(i,j\) twice. <a class="solution-knowl original" data-knowl="./knowl/solution-168-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
+</li>
+</ol>
+<p class="continuation">We subtract the expression in question 4(c) from the expression in question 3(b). We then divide by the total number of edges \(m\) (a normalizing factor) to get the modularity</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+Q = \frac{1}{2m} \sum_{i}  \sum_{j}  \left( A_{ij} - \frac{k_i k_j}{2m} \right)\, \delta (C^{(i)}, C^{(j)}),
+\end{equation*}
+</div>
+<p class="continuation">which can also be written as</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+Q = 	\frac{1}{2m} \sum_{C} \sum_{i \in C} \sum_{j \in C} \left( A_{ij} - \frac{k_i k_j}{2m} \right).	
+\end{equation*}
+</div>
+<span class="incontext"><a href="exercises-17.html#p-825">in-context</a></span>
+</body>
+</html>

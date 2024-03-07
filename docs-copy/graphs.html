@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NetSci Graphs and Digraphs</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\notdivide}{{\not{\mid}}}
+\newcommand{\notsubset}{\not\subset}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\gf}{\operatorname{GF}}
+\newcommand{\inn}{\operatorname{Inn}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}}
+\newcommand{\chr}{\operatorname{char}}
+\newcommand{\Null}{\operatorname{Null}}
+
+
+\def\Z{\mathbb Z}
+\def\R{\mathbb R}
+\def\Q{\mathbb Q}
+\def\N{{\mathbb N}}
+\def\C{\mathbb C}
+
+\def\ba{{\mathbf{a}}}
+\def\bb{\mathbf{b}}
+\def\bh{{\mathbf{h}}}
+\def\bu{{\mathbf{u}}}
+\def\bv{{\mathbf{v}}}
+\def\bw{{\mathbf{w}}}   
+\def\bx{{\mathbf{x}}}
+\def\by{\mathbf{y}}    
+\def\bone{{\mathbf{1}}}
+\def\bzero{\mathbf{0}}
+
+\def\var{{\mbox{var}}}
+\def\P{{\mathbb{P}}}
+\def\E{{\mathbb{E}}}
+
+
+\def\cA{{\overline{A}}}
+
+\def\kin{k^{\mathrm{in}}}
+\def\kout{k^{\mathrm{out}}}
+
+\newcommand{\indeg}[1]{k^{\mathrm{in}}_{#1}}
+\newcommand{\outdeg}[1]{k^{\mathrm{out}}_{#1}}
+
+\tikzset{-&gt;-/.style={decoration={
+ markings,
+ mark=at position .5 with {\arrow{latex}}},postaction={decorate}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="netsci.html"><span class="title">Network Science:</span> <span class="subtitle">Activities and Exercises</span></a></h1>
+<p class="byline">Andrew Beveridge</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="part-community.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="part-community.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="centrality.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="part-community.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="part-community.html" title="Up">Up</a><a class="next-button button toolbar-item" href="centrality.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link part"><a href="part-centrality.html" data-scroll="part-centrality"><span class="codenumber">I</span> <span class="title">Network Centrality</span></a></li>
+<li class="link">
+<a href="graphs.html" data-scroll="graphs"><span class="codenumber">1</span> <span class="title">Graphs and Digraphs</span></a><ul><li><a href="exercises-1.html" data-scroll="exercises-1">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="centrality.html" data-scroll="centrality"><span class="codenumber">2</span> <span class="title">Centrality Measures</span></a><ul><li><a href="exercises-2.html" data-scroll="exercises-2">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="algcentrality.html" data-scroll="algcentrality"><span class="codenumber">3</span> <span class="title">Algebraic Centrality</span></a><ul><li><a href="exercises-3.html" data-scroll="exercises-3">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="randomwalk.html" data-scroll="randomwalk"><span class="codenumber">4</span> <span class="title">Random Walks</span></a><ul><li><a href="exercises-4.html" data-scroll="exercises-4">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="hits.html" data-scroll="hits"><span class="codenumber">5</span> <span class="title">Hubs and Authorities</span></a><ul><li><a href="exercises-5.html" data-scroll="exercises-5">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="us-airline.html" data-scroll="us-airline"><span class="codenumber">6</span> <span class="title">Analyzing the US Airline Network</span></a><ul><li><a href="exercises-6.html" data-scroll="exercises-6">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="modularity.html" data-scroll="modularity"><span class="codenumber">7</span> <span class="title">Modularity</span></a><ul><li><a href="exercises-7.html" data-scroll="exercises-7">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="communities.html" data-scroll="communities"><span class="codenumber">8</span> <span class="title">Community Detection in Gephi</span></a><ul><li><a href="exercises-8.html" data-scroll="exercises-8">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="randvar.html" data-scroll="randvar"><span class="codenumber">9</span> <span class="title">Discrete Random Variables</span></a><ul>
+<li><a href="randvar0.html" data-scroll="randvar0">Discrete Random Variables</a></li>
+<li><a href="randvar3.html" data-scroll="randvar3">Events</a></li>
+<li><a href="randvar6.html" data-scroll="randvar6">CDF and CCDF</a></li>
+<li><a href="randvar10.html" data-scroll="randvar10">Expectation, Variance and Moments</a></li>
+<li><a href="randvar16.html" data-scroll="randvar16">Famous Discrete Distributions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="probdist.html" data-scroll="probdist"><span class="codenumber">10</span> <span class="title">Probability Distributions</span></a><ul><li><a href="exercises-9.html" data-scroll="exercises-9">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="powerlaw.html" data-scroll="powerlaw"><span class="codenumber">11</span> <span class="title">Power Laws</span></a><ul><li><a href="exercises-10.html" data-scroll="exercises-10">Practice Problems</a></li></ul>
+</li>
+<li class="link part"><a href="part-community.html" data-scroll="part-community"><span class="codenumber">II</span> <span class="title">Communities and Power Laws</span></a></li>
+<li class="link active">
+<a href="graphs.html" data-scroll="graphs"><span class="codenumber">12</span> <span class="title">Graphs and Digraphs</span></a><ul><li><a href="exercises-11.html" data-scroll="exercises-11">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="centrality.html" data-scroll="centrality"><span class="codenumber">13</span> <span class="title">Centrality Measures</span></a><ul><li><a href="exercises-12.html" data-scroll="exercises-12">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="algcentrality.html" data-scroll="algcentrality"><span class="codenumber">14</span> <span class="title">Algebraic Centrality</span></a><ul><li><a href="exercises-13.html" data-scroll="exercises-13">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="randomwalk.html" data-scroll="randomwalk"><span class="codenumber">15</span> <span class="title">Random Walks</span></a><ul><li><a href="exercises-14.html" data-scroll="exercises-14">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="hits.html" data-scroll="hits"><span class="codenumber">16</span> <span class="title">Hubs and Authorities</span></a><ul><li><a href="exercises-15.html" data-scroll="exercises-15">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="us-airline.html" data-scroll="us-airline"><span class="codenumber">17</span> <span class="title">Analyzing the US Airline Network</span></a><ul><li><a href="exercises-16.html" data-scroll="exercises-16">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="modularity.html" data-scroll="modularity"><span class="codenumber">18</span> <span class="title">Modularity</span></a><ul><li><a href="exercises-17.html" data-scroll="exercises-17">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="communities.html" data-scroll="communities"><span class="codenumber">19</span> <span class="title">Community Detection in Gephi</span></a><ul><li><a href="exercises-18.html" data-scroll="exercises-18">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="randvar.html" data-scroll="randvar"><span class="codenumber">20</span> <span class="title">Discrete Random Variables</span></a><ul>
+<li><a href="randvar0.html" data-scroll="randvar0">Discrete Random Variables</a></li>
+<li><a href="randvar3.html" data-scroll="randvar3">Events</a></li>
+<li><a href="randvar6.html" data-scroll="randvar6">CDF and CCDF</a></li>
+<li><a href="randvar10.html" data-scroll="randvar10">Expectation, Variance and Moments</a></li>
+<li><a href="randvar16.html" data-scroll="randvar16">Famous Discrete Distributions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="probdist.html" data-scroll="probdist"><span class="codenumber">21</span> <span class="title">Probability Distributions</span></a><ul><li><a href="exercises-19.html" data-scroll="exercises-19">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="powerlaw.html" data-scroll="powerlaw"><span class="codenumber">22</span> <span class="title">Power Laws</span></a><ul><li><a href="exercises-20.html" data-scroll="exercises-20">Practice Problems</a></li></ul>
+</li>
+<li class="link part"><a href="part-models.html" data-scroll="part-models"><span class="codenumber">III</span> <span class="title">Network Models</span></a></li>
+<li class="link">
+<a href="randomgraph.html" data-scroll="randomgraph"><span class="codenumber">23</span> <span class="title">Erdos-Renyi Random Graph</span></a><ul><li><a href="exercises-21.html" data-scroll="exercises-21">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="branching.html" data-scroll="branching"><span class="codenumber">24</span> <span class="title">The Branching Process</span></a><ul><li><a href="exercises-22.html" data-scroll="exercises-22">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="giantcomp.html" data-scroll="giantcomp"><span class="codenumber">25</span> <span class="title">The Emergence of the Giant Component</span></a><ul><li><a href="exercises-23.html" data-scroll="exercises-23">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="pricemodel.html" data-scroll="pricemodel"><span class="codenumber">26</span> <span class="title">Price's Model for a Citation Network</span></a><ul><li><a href="exercises-24.html" data-scroll="exercises-24">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="smallworld.html" data-scroll="smallworld"><span class="codenumber">27</span> <span class="title">The Small World Model</span></a><ul><li><a href="exercises-25.html" data-scroll="exercises-25">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="navsmallworld.html" data-scroll="navsmallworld"><span class="codenumber">28</span> <span class="title">Navigable Small World Model</span></a><ul><li><a href="exercises-26.html" data-scroll="exercises-26">Practice Problems</a></li></ul>
+</li>
+<li class="link part"><a href="part-processes.html" data-scroll="part-processes"><span class="codenumber">IV</span> <span class="title">Processes on Networks</span></a></li>
+<li class="link">
+<a href="cascades.html" data-scroll="cascades"><span class="codenumber">29</span> <span class="title">Network Cascades</span></a><ul><li><a href="exercises-27.html" data-scroll="exercises-27">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="epidemics.html" data-scroll="epidemics"><span class="codenumber">30</span> <span class="title">Epidemics on Networks</span></a><ul><li><a href="exercises-28.html" data-scroll="exercises-28">Practice Problems</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="graphs"><h2 class="heading">
+<span class="type">Chapter</span> <span class="codenumber">12</span> <span class="title">Graphs and Digraphs</span>
+</h2>
+<section class="introduction" id="introduction-12"><p id="p-523"></p></section><section class="exercises" id="exercises-11"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Practice Problems</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-56"><h6 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Handshaking Lemma.</span>
+</h6>
+<p id="p-524">Let \(G=(V,E)\) be an undirected graph. Prove the "handshaking lemma," which states that</p>
+<div class="displaymath">
+\begin{equation*}
+\displaystyle{2|E| = \sum_{v \in V} \deg(v)}.
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-107" id="solution-107"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-107"><div class="solution solution-like"><p id="p-525">The right hand side (RHS) sums the degrees of all the vertices.  Every edge is incident with two vertices, so each edge is counted twice in the RHS. So when we add up all of the degrees, we get twice the number of edges.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-57"><h6 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Digraph Handshaking Lemma.</span>
+</h6>
+<p id="p-526">Let \(D=(V,E)\) be a digraph. Prove that</p>
+<div class="displaymath">
+\begin{equation*}
+|E| = \sum_{v \in V} \deg^-(v) = \sum_{v \in V} \deg^+(v).
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-108" id="solution-108"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-108"><div class="solution solution-like"><p id="p-527">This is the directed graph variant of the previous problem. Every arc has a "tail" and a "head." Adding up the out degrees counts the arc tails. Adding up the in degrees counts the arc heads. In each case, every arc is counted once.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-58"><h6 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Counting Graphs.</span>
+</h6>
+<p id="p-528">Consider the vertex set \(V=[n] = \{ 1, 2, 3, \ldots, n \}\text{.}\) We want to construct a simple, <em class="emphasis">undirected</em> graph on \(V\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-244"><p id="p-529">How many possible edges are there between these vertices?</p></li>
+<li id="li-245"><p id="p-530">How many different simple graphs can we construct using these vertices? (The graphs do not have to be connected.)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-109" id="solution-109"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-109"><div class="solution solution-like"><ol id="p-531" class="lower-alpha">
+<li id="li-246">
+<p id="p-532">An edge corresponds to an unordered pair of vertices, chosen from the set \([n]\text{.}\) In other words, we must choose a subset of size 2 from the set \([n]\text{.}\) There are</p>
+<div class="displaymath">
+\begin{equation*}
+{n \choose 2} = \frac{n(n-1)}{2}
+\end{equation*}
+</div>
+<p class="continuation">ways to do this.</p>
+</li>
+<li id="li-247">
+<p id="p-533">Let's give a recipe for creating a graph on the vertices \([n]\text{.}\) For each pair of vertices, we must decide whether or not the corresponding edge is in our graph. So we must make \({n \choose 2}\) yes/no decisions, and these decisions are made independently of one another. Therefore, the total number of graphs is</p>
+<div class="displaymath">
+\begin{equation*}
+2^{n \choose 2}.
+\end{equation*}
+</div>
+</li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-59"><h6 class="heading">
+<span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Counting Digraphs.</span>
+</h6>
+<p id="p-534">Answer the same questions as in Problem 3, but this time for a simple <em class="emphasis">directed</em> graph.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-110" id="solution-110"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-110"><div class="solution solution-like"><ol id="p-535" class="lower-alpha">
+<li id="li-248">
+<p id="p-536">A "simple digraph" is a digraph without  loops and without multiple arcs. You are allowed to have both \(uv\) and \(vu\) in a digraph. There are</p>
+<div class="displaymath">
+\begin{equation*}
+n (n-1) = (n)_2
+\end{equation*}
+</div>
+<p class="continuation">ways to create an arc. We have \(n\) choices for the starting vertex and \(n-1\) choices for the target vertex.</p>
+</li>
+<li id="li-249">
+<p id="p-537">Here are two solutions.</p>
+<ul class="disc">
+<li id="li-250">
+<p id="p-538">We must decide whether each arc is in the digraph. We must make \(n(n-1)\) yes/no independent decisions, so the number of simple digraphs is</p>
+<div class="displaymath">
+\begin{equation*}
+2^{n(n-1)}.
+\end{equation*}
+</div>
+</li>
+<li id="li-251">
+<p id="p-539">There are now four choices for every vertex pair: no arc, just \((u,v)\text{,}\) just \((v,u)\) or both \((u,v), (v,u)\text{.}\) We must make this decision for every pair of vertices. So the total number of digraphs is</p>
+<div class="displaymath">
+\begin{equation*}
+4^{n \choose 2}.
+\end{equation*}
+</div>
+</li>
+</ul>
+<p class="continuation">Of course, these two numbers are equal.</p>
+</li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-60"><h6 class="heading">
+<span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Strongly Connected Components.</span>
+</h6>
+<p id="p-540">Find the strongly connected components of the following digraphs. <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-graphs0.svg" role="img" class="contained"></div></p>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-111" id="solution-111"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-111"><div class="solution solution-like"><ol id="p-541" class="lower-alpha">
+<li id="li-252">
+<p id="p-542">There are four strongly connected components:</p>
+<div class="displaymath">
+\begin{equation*}
+\{ 1 , 2 , 3 \},  \{ 4\},  \{ 5 \},  \{ 6 \}.
+\end{equation*}
+</div>
+</li>
+<li id="li-253">
+<p id="p-543">There are two strongly connected components:</p>
+<div class="displaymath">
+\begin{equation*}
+\{1,5,7\},  \{ 2,3,4,6,8\}
+\end{equation*}
+</div>
+</li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-61"><h6 class="heading">
+<span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">Strongly Connected Digraph.</span>
+</h6>
+<p id="p-544">Prove that a digraph \(D=(V,E)\) is strongly connected if and only if for every partition \(V = A \cup B\) into disjoint, nonempty sets, there is an arc in \(D\) directed from \(A\) to \(B\) and an arc in \(D\) directed from \(B\) to \(A\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-112" id="solution-112"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-112"><div class="solution solution-like">
+<p id="p-545">\((\Rightarrow)\) Suppose that \(D\) is strongly connected. Pick any partition \(V=A \cup B\) into disjoint, nonempty sets. Choose any \(a \in A\) and \(b \in B\text{.}\) Since \(D\) is strongly connected, there is a directed path \(P\) from \(a\) to \(b\text{.}\) Follow this path until you reach the first arc \((x,y)\) whose tail \(x \in A\) and whose head \(y \in B\text{.}\) This is the desired arc. By an identical argument, there is an arc from \(B\) to \(A\) because there is a directed path from \(b\) to \(a\text{.}\)</p>
+<p id="p-546">\((\Leftarrow)\) Suppose that for every partition \(V = A \cup B\) into disjoint, nonempty sets, there is an arc in \(D\) directed from \(A\) to \(B\) and an arc in \(D\) directed from \(B\) to \(A\text{.}\) We  show that for any vertices \(x,y\) there is a path from \(x\) to \(y\) and from \(y\) to \(x\text{.}\)</p>
+<p id="p-547">Pick a vertex \(x\text{.}\) We will construct a directed tree \(T\) on \(V\) starting from \(x\) where every arc points away from \(x\text{.}\) This tree contains a directed path from \(x\) to any other vertex in the digraph, including our desired vertex \(y\text{.}\) We construct this directed tree as follows.</p>
+<ul class="disc">
+<li id="li-254"><p id="p-548">To start off, our tree \(T\) just contains the root vertex \(x\text{.}\)</p></li>
+<li id="li-255"><p id="p-549">Take \(A = \{ x \}\) and \(B = V \backslash \{ x \}\text{.}\) There is an arc from \(A\) to \(B\text{,}\) which must be of the form \((x, v_1)\) for some \(v_1 \in B\text{.}\)  Add this arc and vertex to the tree \(T\text{.}\)</p></li>
+<li id="li-256"><p id="p-550">Next, take \(A = \{ x, v_1 \}\) and \(B = V \backslash A\text{.}\) There is an arc from \(A\) to \(B\text{,}\) so add this arc and its new head vertex \(v_2\text{.}\)</p></li>
+<li id="li-257"><p id="p-551">Next, take \(A = \{ x, v_1, v_2 \}\) and \(B= V \backslash A\text{.}\) This adds a new vertex \(v_3\) to our directed tree.</p></li>
+<li id="li-258"><p id="p-552">Repeat this process until you have a directed tree containing all of the vertices of \(V\text{,}\) including the desired vertex \(y\text{.}\)</p></li>
+</ul>
+<p class="continuation">You can make the same argument to create a directed tree rooted at \(y\text{,}\) which identifies a directed path from \(y\) to \(x\text{.}\)</p>
+<p id="p-553"><em class="emphasis">Challenge:</em> The \((\Leftarrow)\) proof can be made more rigorous by using induction on the size of \(V\text{.}\) I encourage you to write such a proof!</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-62"><h6 class="heading">
+<span class="codenumber">7<span class="period">.</span></span><span class="space"> </span><span class="title">Transitive Tournaments.</span>
+</h6>
+<p id="p-554">A tournament \(T\) is <em class="emphasis">transitive</em> if whenever \((u,v)\) and \((v,w)\) are arcs in \(T\text{,}\) then \((u,w)\) is also an arc of \(T\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-259"><p id="p-555">Draw all possible unlabeled transitive tournaments on 3 vertices and 4 vertices.</p></li>
+<li id="li-260"><p id="p-556">Prove that a tournament \(T\) is transitive if and only if \(T\) has no (directed) cycles. (Hint:  prove \(\Longrightarrow\) by contradiction by picking a cycle of shortest length, then showing there is an even shorter cycle!)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-113" id="solution-113"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-113"><div class="solution solution-like"><ol id="p-557" class="lower-alpha">
+<li id="li-261"><p id="p-558">In fact, there is only one way to make a transitive tournament on \(n\) unlabelled vertices. In particular, there will always be a <em class="emphasis">source</em> vertex with all arcs pointing outwards, and a <em class="emphasis">sink</em> vertex with all arcs pointing inwards. <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-graphs1.svg" role="img" class="contained"></div></p></li>
+<li id="li-262">
+<p id="p-559">\((\Rightarrow)\) Suppose that \(T\) is a transitive tournament that contains a cycle. Pick a cycle \(C\) of shortest length on vertices \(v_1, v_2, \ldots, v_k\text{.}\) Note that \(k &gt;3\) since the definition of a transitive tournament forbids a directed 3-cycle. Look at the arc between \(v_1\) and \(v_3\text{.}\) Since \(v_1 v_2\) and \(v_2 v_3\) are arcs, this forces \(v_1 v_3\) to be an arc. But then \(v_1, v_3, \ldots v_k\) is a directed cycle whose length is shorter than \(C\text{,}\) a contradiction. Therefore \(T\) cannot contain any directed cycles.</p>
+<p id="p-560">\((\Leftarrow)\) Suppose that \(T\) has no directed cycles. Suppose that \((u,v)\) and \((v,w)\) are arcs. We cannot have a directed 3-cycle, so \(u\) and \(w\) must be connected by the arc \((u,w)\text{.}\) Therefore, \(T\) is transitive.</p>
+</li>
+</ol></div></div>
+</div></article></section></section></div></main>
+</div>
+</body>
+</html>

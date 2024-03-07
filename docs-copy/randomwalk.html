@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NetSci Random Walks</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\identity}{\mathrm{id}}
+\newcommand{\notdivide}{{\not{\mid}}}
+\newcommand{\notsubset}{\not\subset}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\gf}{\operatorname{GF}}
+\newcommand{\inn}{\operatorname{Inn}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}}
+\newcommand{\chr}{\operatorname{char}}
+\newcommand{\Null}{\operatorname{Null}}
+
+
+\def\Z{\mathbb Z}
+\def\R{\mathbb R}
+\def\Q{\mathbb Q}
+\def\N{{\mathbb N}}
+\def\C{\mathbb C}
+
+\def\ba{{\mathbf{a}}}
+\def\bb{\mathbf{b}}
+\def\bh{{\mathbf{h}}}
+\def\bu{{\mathbf{u}}}
+\def\bv{{\mathbf{v}}}
+\def\bw{{\mathbf{w}}}   
+\def\bx{{\mathbf{x}}}
+\def\by{\mathbf{y}}    
+\def\bone{{\mathbf{1}}}
+\def\bzero{\mathbf{0}}
+
+\def\var{{\mbox{var}}}
+\def\P{{\mathbb{P}}}
+\def\E{{\mathbb{E}}}
+
+
+\def\cA{{\overline{A}}}
+
+\def\kin{k^{\mathrm{in}}}
+\def\kout{k^{\mathrm{out}}}
+
+\newcommand{\indeg}[1]{k^{\mathrm{in}}_{#1}}
+\newcommand{\outdeg}[1]{k^{\mathrm{out}}_{#1}}
+
+\tikzset{-&gt;-/.style={decoration={
+ markings,
+ mark=at position .5 with {\arrow{latex}}},postaction={decorate}}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="netsci.html"><span class="title">Network Science:</span> <span class="subtitle">Activities and Exercises</span></a></h1>
+<p class="byline">Andrew Beveridge</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="algcentrality.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="part-community.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="hits.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="algcentrality.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="part-community.html" title="Up">Up</a><a class="next-button button toolbar-item" href="hits.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a></li>
+<li class="link part"><a href="part-centrality.html" data-scroll="part-centrality"><span class="codenumber">I</span> <span class="title">Network Centrality</span></a></li>
+<li class="link">
+<a href="graphs.html" data-scroll="graphs"><span class="codenumber">1</span> <span class="title">Graphs and Digraphs</span></a><ul><li><a href="exercises-1.html" data-scroll="exercises-1">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="centrality.html" data-scroll="centrality"><span class="codenumber">2</span> <span class="title">Centrality Measures</span></a><ul><li><a href="exercises-2.html" data-scroll="exercises-2">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="algcentrality.html" data-scroll="algcentrality"><span class="codenumber">3</span> <span class="title">Algebraic Centrality</span></a><ul><li><a href="exercises-3.html" data-scroll="exercises-3">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="randomwalk.html" data-scroll="randomwalk"><span class="codenumber">4</span> <span class="title">Random Walks</span></a><ul><li><a href="exercises-4.html" data-scroll="exercises-4">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="hits.html" data-scroll="hits"><span class="codenumber">5</span> <span class="title">Hubs and Authorities</span></a><ul><li><a href="exercises-5.html" data-scroll="exercises-5">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="us-airline.html" data-scroll="us-airline"><span class="codenumber">6</span> <span class="title">Analyzing the US Airline Network</span></a><ul><li><a href="exercises-6.html" data-scroll="exercises-6">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="modularity.html" data-scroll="modularity"><span class="codenumber">7</span> <span class="title">Modularity</span></a><ul><li><a href="exercises-7.html" data-scroll="exercises-7">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="communities.html" data-scroll="communities"><span class="codenumber">8</span> <span class="title">Community Detection in Gephi</span></a><ul><li><a href="exercises-8.html" data-scroll="exercises-8">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="randvar.html" data-scroll="randvar"><span class="codenumber">9</span> <span class="title">Discrete Random Variables</span></a><ul>
+<li><a href="randvar0.html" data-scroll="randvar0">Discrete Random Variables</a></li>
+<li><a href="randvar3.html" data-scroll="randvar3">Events</a></li>
+<li><a href="randvar6.html" data-scroll="randvar6">CDF and CCDF</a></li>
+<li><a href="randvar10.html" data-scroll="randvar10">Expectation, Variance and Moments</a></li>
+<li><a href="randvar16.html" data-scroll="randvar16">Famous Discrete Distributions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="probdist.html" data-scroll="probdist"><span class="codenumber">10</span> <span class="title">Probability Distributions</span></a><ul><li><a href="exercises-9.html" data-scroll="exercises-9">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="powerlaw.html" data-scroll="powerlaw"><span class="codenumber">11</span> <span class="title">Power Laws</span></a><ul><li><a href="exercises-10.html" data-scroll="exercises-10">Practice Problems</a></li></ul>
+</li>
+<li class="link part"><a href="part-community.html" data-scroll="part-community"><span class="codenumber">II</span> <span class="title">Communities and Power Laws</span></a></li>
+<li class="link">
+<a href="graphs.html" data-scroll="graphs"><span class="codenumber">12</span> <span class="title">Graphs and Digraphs</span></a><ul><li><a href="exercises-11.html" data-scroll="exercises-11">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="centrality.html" data-scroll="centrality"><span class="codenumber">13</span> <span class="title">Centrality Measures</span></a><ul><li><a href="exercises-12.html" data-scroll="exercises-12">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="algcentrality.html" data-scroll="algcentrality"><span class="codenumber">14</span> <span class="title">Algebraic Centrality</span></a><ul><li><a href="exercises-13.html" data-scroll="exercises-13">Practice Problems</a></li></ul>
+</li>
+<li class="link active">
+<a href="randomwalk.html" data-scroll="randomwalk"><span class="codenumber">15</span> <span class="title">Random Walks</span></a><ul><li><a href="exercises-14.html" data-scroll="exercises-14">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="hits.html" data-scroll="hits"><span class="codenumber">16</span> <span class="title">Hubs and Authorities</span></a><ul><li><a href="exercises-15.html" data-scroll="exercises-15">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="us-airline.html" data-scroll="us-airline"><span class="codenumber">17</span> <span class="title">Analyzing the US Airline Network</span></a><ul><li><a href="exercises-16.html" data-scroll="exercises-16">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="modularity.html" data-scroll="modularity"><span class="codenumber">18</span> <span class="title">Modularity</span></a><ul><li><a href="exercises-17.html" data-scroll="exercises-17">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="communities.html" data-scroll="communities"><span class="codenumber">19</span> <span class="title">Community Detection in Gephi</span></a><ul><li><a href="exercises-18.html" data-scroll="exercises-18">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="randvar.html" data-scroll="randvar"><span class="codenumber">20</span> <span class="title">Discrete Random Variables</span></a><ul>
+<li><a href="randvar0.html" data-scroll="randvar0">Discrete Random Variables</a></li>
+<li><a href="randvar3.html" data-scroll="randvar3">Events</a></li>
+<li><a href="randvar6.html" data-scroll="randvar6">CDF and CCDF</a></li>
+<li><a href="randvar10.html" data-scroll="randvar10">Expectation, Variance and Moments</a></li>
+<li><a href="randvar16.html" data-scroll="randvar16">Famous Discrete Distributions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="probdist.html" data-scroll="probdist"><span class="codenumber">21</span> <span class="title">Probability Distributions</span></a><ul><li><a href="exercises-19.html" data-scroll="exercises-19">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="powerlaw.html" data-scroll="powerlaw"><span class="codenumber">22</span> <span class="title">Power Laws</span></a><ul><li><a href="exercises-20.html" data-scroll="exercises-20">Practice Problems</a></li></ul>
+</li>
+<li class="link part"><a href="part-models.html" data-scroll="part-models"><span class="codenumber">III</span> <span class="title">Network Models</span></a></li>
+<li class="link">
+<a href="randomgraph.html" data-scroll="randomgraph"><span class="codenumber">23</span> <span class="title">Erdos-Renyi Random Graph</span></a><ul><li><a href="exercises-21.html" data-scroll="exercises-21">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="branching.html" data-scroll="branching"><span class="codenumber">24</span> <span class="title">The Branching Process</span></a><ul><li><a href="exercises-22.html" data-scroll="exercises-22">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="giantcomp.html" data-scroll="giantcomp"><span class="codenumber">25</span> <span class="title">The Emergence of the Giant Component</span></a><ul><li><a href="exercises-23.html" data-scroll="exercises-23">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="pricemodel.html" data-scroll="pricemodel"><span class="codenumber">26</span> <span class="title">Price's Model for a Citation Network</span></a><ul><li><a href="exercises-24.html" data-scroll="exercises-24">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="smallworld.html" data-scroll="smallworld"><span class="codenumber">27</span> <span class="title">The Small World Model</span></a><ul><li><a href="exercises-25.html" data-scroll="exercises-25">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="navsmallworld.html" data-scroll="navsmallworld"><span class="codenumber">28</span> <span class="title">Navigable Small World Model</span></a><ul><li><a href="exercises-26.html" data-scroll="exercises-26">Practice Problems</a></li></ul>
+</li>
+<li class="link part"><a href="part-processes.html" data-scroll="part-processes"><span class="codenumber">IV</span> <span class="title">Processes on Networks</span></a></li>
+<li class="link">
+<a href="cascades.html" data-scroll="cascades"><span class="codenumber">29</span> <span class="title">Network Cascades</span></a><ul><li><a href="exercises-27.html" data-scroll="exercises-27">Practice Problems</a></li></ul>
+</li>
+<li class="link">
+<a href="epidemics.html" data-scroll="epidemics"><span class="codenumber">30</span> <span class="title">Epidemics on Networks</span></a><ul><li><a href="exercises-28.html" data-scroll="exercises-28">Practice Problems</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="randomwalk"><h2 class="heading">
+<span class="type">Chapter</span> <span class="codenumber">15</span> <span class="title">Random Walks</span>
+</h2>
+<section class="introduction" id="introduction-15"><p id="p-658">A <em class="emphasis">random walk</em> starting at vertex \(v_0\) proceeds as follows: at each time \(t \geq 1\text{,}\) pick a random out-neighbor of \(v_{t-1}\) and walk to it. If vertex \(v_{t-1}\) has no out-neighbors, then we stay where we are.</p>
+<p id="p-659">A nice way to "stay where we are" is to add a loop to each vertex with no out-neighbors. So when \(k_i^{\mathrm{out}} = 0\text{,}\) we update the adjacency matrix so that \(a_{ii}=1\text{.}\) So we will assume that this is the case.</p>
+<p id="p-660">At each step, \(v_t\) is chosen uniformly from the out-neighbors of \(v_{t-1}\text{.}\) Using conditional probability notation, we have</p>
+<div class="displaymath">
+\begin{equation*}
+P_{ij} = \Pr (v_t=j \mid v_{t-1} = i ) =
+\left\{
+\begin{array}{cc}
+\displaystyle{\frac{1}{k_i^{\mathrm{out}}}} &amp; \mbox{if } ij \in E, \\
+0 &amp; \mbox{otherwise}.
+\end{array}
+\right.
+\end{equation*}
+</div>
+<p class="continuation">The <em class="emphasis">transition matrix</em> \(P = ( P_{ij})\) collects the transition probabilities. The \(i\)th row contains all the transition probabilities starting at vertex \(i\text{.}\) Finally, we can write our transition matrix as</p>
+<div class="displaymath">
+\begin{equation*}
+P = D^{-1} A
+\end{equation*}
+</div>
+<p class="continuation">where \(D\)  is the diagonal matrix with  \(D_{ii} = \max \left\{ k_i^{\mathrm{out}}, 1 \right\}\) and  \(A\) is the adjacency matrix.</p></section><section class="exercises" id="exercises-14"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Practice Problems</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-75"><h6 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Random Walk on an Undirected Graph.</span>
+</h6>
+<ol id="p-661" class="lower-alpha">
+<li id="li-321">
+<p id="p-662">Find the transition matrix \(P\)  of the following undirected graph. Hint: construct \(P\)   row by row. And remember that when \(k_i^{\mathrm{out}}=0\text{,}\) we set \(a_{ii}=1\text{,}\) corresponding to the move "stay where we are." <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="./images/undirected-graph.png" class="contained"></div></p>
+<p id="p-663"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-131" id="solution-131"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-131"><div class="solution solution-like"><div class="displaymath" id="p-664">
+\begin{equation*}
+P =
+\begin{bmatrix}
+0 &amp; 1/2 &amp; 0 &amp; 0 &amp; 1/2 &amp; 0  \\
+1/3 &amp; 0 &amp; 1/3 &amp; 0 &amp; 1/3 &amp; 0  \\
+0 &amp; 1/2 &amp; 0 &amp; 1/2 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1/3 &amp; 0 &amp; 1/3 &amp; 1/3  \\
+1/3 &amp; 1/3 &amp; 0 &amp; 1/3 &amp; 0 &amp; 0  \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0  \\
+\end{bmatrix}
+\end{equation*}
+</div></div></div></p>
+</li>
+<li id="li-322">
+<p id="p-665">Show that the all-ones vector \(\bone\) is a right eigenvector for  eigenvalue \(\lambda=1\text{.}\) In other words, confirm that</p>
+<div class="displaymath">
+\begin{equation*}
+P \bone = \bone.
+\end{equation*}
+</div>
+<p class="continuation">What is the meaning of this equation? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-132" id="solution-132"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-132"><div class="solution solution-like"><p id="p-666">Right multiplication by \(\bone\) sums all the exit probabilities from each vertex. So of course, these numbers sum to 1.</p></div></div></p>
+</li>
+</ol></article><article class="exercise exercise-like" id="exercise-76"><h6 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Long Term Behavior of a Random Walk of an Undirected Graph.</span>
+</h6>
+<p id="p-667">Consider the undirected graph from Problem 1. In your mind, repeatedly simulate a random walk starting from vertex 1. Follow this walk for about 15 steps or so. Where are you most likely to end up? Least likely? How do your observations relate to:  the distance of the vertex from vertex 1? the degree of the  vertex?</p>
+<p id="p-668"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-133" id="solution-133"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-133"><div class="solution solution-like"><p id="p-669">It is possible to end at any vertex. Vertex 6 is definitely visited the least at the end of the walk. Vertices with degree 3 seem to be the candidates for lots of visits at the end. But it is not clear how to compare these vertices with each other.</p></div></div></p></article><article class="exercise exercise-like" id="exercise-77"><h6 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Powers of the Transition Matrix.</span>
+</h6>
+<ol id="p-670" class="lower-alpha">
+<li id="li-323">
+<p id="p-671">Here is the matrix \(P^2\) for the undirected graph in Problem 1.</p>
+<div class="displaymath">
+\begin{equation*}
+P^2 =
+\begin{bmatrix}
+\frac{1}{3} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; 0 \\[6pt]
+\frac{1}{9} &amp; \frac{4}{9} &amp; 0 &amp; \frac{5}{18} &amp; \frac{1}{6} &amp; 0 \\[6pt]
+\frac{1}{6} &amp; 0 &amp; \frac{1}{3} &amp; 0 &amp; \frac{1}{3} &amp; \frac{1}{6} \\[6pt]
+\frac{1}{9} &amp; \frac{5}{18} &amp; 0 &amp; \frac{11}{18} &amp; 0 &amp; 0 \\[6pt]
+\frac{1}{9} &amp; \frac{1}{6} &amp; \frac{2}{9} &amp; 0 &amp; \frac{7}{18} &amp; \frac{1}{9} \\[6pt]
+0 &amp; 0 &amp; \frac{1}{3} &amp; 0 &amp; \frac{1}{3} &amp; \frac{1}{3}
+\end{bmatrix}
+\end{equation*}
+</div>
+<p class="continuation">What does row \(i\) tell you about the instruction "take two random steps from vertex \(i\text{?}\)" <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-134" id="solution-134"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-134"><div class="solution solution-like"><p id="p-672">The \((i,j)\) entry of \(P^2\) tells you the probability of a random walk starting at \(i\) ending at \(j\) after 2 steps.</p></div></div></p>
+</li>
+<li id="li-324"><p id="p-673">Using part (a) as a guide, give an interpretation for row \(i\) of the matrix \(P^3\text{.}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-135" id="solution-135"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-135"><div class="solution solution-like"><p id="p-674">The \((i,j)\) entry of \(P^3\) tells you the probability of a random walk starting at \(i\) ending at \(j\) after 3 steps.</p></div></div></p></li>
+<li id="li-325"><p id="p-675">What do the rows of matrix \(P^t\) describe? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-136" id="solution-136"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-136"><div class="solution solution-like"><p id="p-676">The \((i,j)\) entry of \(P^t\) tells you the probability of a random walk starting at \(i\) ending at \(j\) after \(t\) steps.</p></div></div></p></li>
+<li id="li-326">
+<p id="p-677">For \(1 \leq i \leq 6\text{,}\) let \(\mathbf{e}_i\) denote the " elementary vector" whose \(j\)-th entry is</p>
+<div class="displaymath">
+\begin{equation*}
+\mathbf{e}_i(j) = \left\{
+\begin{array}{cl}
+1 &amp; i=j \\
+0 &amp; \mbox{otherwise.}
+\end{array}
+\right.
+\end{equation*}
+</div>
+<p class="continuation">In other words,</p>
+<div class="displaymath">
+\begin{align*}
+\mathbf{e}_1&amp;= \begin{bmatrix} 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{bmatrix}\\
+\mathbf{e}_2&amp;= \begin{bmatrix} 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \end{bmatrix}\\
+\mathbf{e}_3&amp;= \begin{bmatrix} 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \end{bmatrix}\\
+\mathbf{e}_4&amp;= \begin{bmatrix} 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \end{bmatrix}\\
+\mathbf{e}_5&amp;= \begin{bmatrix} 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix}
+\end{align*}
+</div>
+<p id="p-678">What does the vector</p>
+<div class="displaymath">
+\begin{equation*}
+\mathbf{e}_i \, P^t
+\end{equation*}
+</div>
+<p class="continuation">describe? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-137" id="solution-137"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-137"><div class="solution solution-like"><p id="p-679">The  row vector \(\mathbf{e}_i \, P^t\) is row \(i\) of matrix \(P^t\text{.}\) As described in the previous part, the \(j\)th entry of this vector is the probability that you are at vertex \(j\) after taking \(t\) random steps from \(i\text{.}\)</p></div></div></p>
+</li>
+</ol></article><article class="exercise exercise-like" id="exercise-78"><h6 class="heading">
+<span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">A Left Eigenvector for an Undirected Graph.</span>
+</h6>
+<p id="p-680">Let \(P\) be the transition matrix for the graph in Problem 1. Consider the row vector</p>
+<div class="displaymath">
+\begin{equation*}
+\bv =
+\begin{bmatrix}
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6
+\end{bmatrix}
+=
+\begin{bmatrix}
+2 &amp; 3 &amp; 2 &amp; 3 &amp; 3 &amp; 1
+\end{bmatrix}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-327">
+<p id="p-681">Check that the row vector \(\bv\) satisfies</p>
+<div class="displaymath">
+\begin{equation*}
+\bv  \,P = \bv.
+\end{equation*}
+</div>
+<p class="continuation">We have a name for this equation: say that "\(\bv\) is a <em class="emphasis">left</em> eigenvector of the transition matrix \(P\) for eigenvalue \(\lambda=1\text{.}\)" (In other words, the eigenvectors that you are used to are actually <em class="emphasis">right</em> eigenvectors.) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-138" id="solution-138"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-138"><div class="solution solution-like">
+<p id="p-682">We have</p>
+<div class="displaymath">
+\begin{align*}
+&amp; \begin{bmatrix}
+2 &amp; 3 &amp; 2 &amp; 3 &amp; 3 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+0 &amp; 1/2 &amp; 0 &amp; 0 &amp; 1/2 &amp; 0\\
+1/3 &amp; 0 &amp; 1/3 &amp; 0 &amp; 1/3 &amp; 0\\
+0 &amp; 1/2 &amp; 0 &amp; 1/2 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1/3 &amp; 0 &amp; 1/3 &amp; 1/3\\
+1/3 &amp; 1/3 &amp; 0 &amp; 1/3 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0\\
+\end{bmatrix}\\
+&amp;=
+\begin{bmatrix}
+2 &amp; 3 &amp; 2 &amp; 3 &amp; 3 &amp; 1
+\end{bmatrix}
+\end{align*}
+</div>
+<p id="p-683"></p>
+</div></div></p>
+</li>
+<li id="li-328"><p id="p-684">Relate the entries of \(\bv\) to the degrees of the graph. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-139" id="solution-139"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-139"><div class="solution solution-like"><p id="p-685">The entries are the degrees of the vertices.</p></div></div></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-79"><h6 class="heading">
+<span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Stationary Distribution for an Undirected Graph.</span>
+</h6>
+<p id="p-686">A vector whose entries are nonnegative and sum to one correspond to a <em class="emphasis">probability distribution</em> on the vertices of \(G\text{.}\) A distribution \(\pi\) is  <em class="emphasis">stationary</em> for \(P\) when</p>
+<div class="displaymath">
+\begin{equation*}
+\pi P = \pi.
+\end{equation*}
+</div>
+<p class="continuation">The amazing Perron-Frobenius Theorem (a very general theorem) can be applied to the transition matrix \(P\) for a connected, non-bipartite undirected graph.</p>
+<p id="p-687">In particular, it applies to the matrix \(P\) from the previous problems. And it tells us more information about the left eigenvector  \(\bv\text{.}\) Two of the properties that it tells us are:</p>
+<ul class="disc">
+<li id="li-329"><p id="p-688">All of the other eigenvalues satisify \(| \lambda_i| &lt; 1\text{.}\) In other words, \(\bv\) is the <em class="emphasis">dominant eigenvector</em> of \(P\text{.}\)</p></li>
+<li id="li-330">
+<p id="p-689">Assuming that we have scaled the row vector \(\bv\) so that its entries sum to 1, we have</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{t \rightarrow \infty} P^t  \, = \, \bone \,  \bv
+&amp;=
+\begin{bmatrix}
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
+\end{bmatrix}
+\end{align*}
+</div>
+<p id="p-690">where</p>
+<div class="displaymath">
+\begin{equation*}
+\bv =
+\begin{bmatrix}
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{2}{14} &amp; \frac{3}{14} &amp; \frac{2}{14} &amp; \frac{3}{14} &amp; \frac{3}{14} &amp; \frac{1}{14}
+\end{bmatrix}.
+\end{equation*}
+</div>
+</li>
+</ul>
+<p class="continuation">Given this information:</p>
+<ol class="lower-alpha">
+<li id="li-331"><p id="p-691">What new properties do we now know about the vector (and probability distributrion) \(\bv\text{?}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-140" id="solution-140"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-140"><div class="solution solution-like"><p id="p-692">The row vector \(\bv\) is the dominant eigenvector and  every row of \(\lim_{t \rightarrow \infty} P^t\) converges to \(\pi\text{.}\)</p></div></div></p></li>
+<li id="li-332"><p id="p-693">After taking many random steps, what is the probability that we are at vertex \(i\text{?}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-141" id="solution-141"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-141"><div class="solution solution-like"><p id="p-694">Row \(i\) of \(P^t\) is the probability distribution for a random walk started at vertex \(i\text{.}\) So this distribution converges to \(\pi\text{.}\) In particular, as \(t \rightarrow \infty\text{,}\) the probability that we are at vertex \(j\) is \(k_j/14\text{.}\)</p></div></div></p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-80"><h6 class="heading">
+<span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">Undirected Graphs: the General Case.</span>
+</h6>
+<p id="p-695">In the previous questions, you have focused on a particular undirected graph. Take a step back: these observations also hold in general!</p>
+<p id="p-696">Let \(G\) be a connected, aperiodic, undirected graph with adjacency matrix \(A\) and transition matrix \(P = D^{-1}A\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-333"><p id="p-697">Explain why \(P \bone = \bone\text{.}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-142" id="solution-142"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-142"><div class="solution solution-like"><p id="p-698">Row \(i\) contains the probabilities of stepping from \(i\)  to a neighbor of vertex \(i\text{.}\) These probabiiities sum to 1.</p></div></div></p></li>
+<li id="li-334">
+<p id="p-699">Let \(\pi\) be the row vector</p>
+<div class="displaymath">
+\begin{equation*}
+\pi =
+\begin{bmatrix}
+\frac{k_1}{2m} &amp; \frac{k_2}{2m} &amp;  \cdots &amp; \frac{k_n}{2m}
+\end{bmatrix}
+\end{equation*}
+</div>
+<p class="continuation">where \(n=|V|\) and \(m = |E|\) and \(k_i\) is the degree of vertex \(i\text{.}\) Explain why</p>
+<div class="displaymath">
+\begin{equation*}
+\pi P = \pi.
+\end{equation*}
+</div>
+<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-143" id="solution-143"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-143"><div class="solution solution-like">
+<p id="p-700">The \(i\)th entry of \(\pi P\) is</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{j=1}^n \frac{k_j}{2m} \frac{a_{ij}}{k_j} = \frac{1}{2m}  \sum_{j=1}^n a_{ij} = \frac{k_i}{2m}.
+\end{equation*}
+</div>
+</div></div></p>
+</li>
+<li id="li-335"><p id="p-701">What is the meaning of the row vector \(\mathbf{e}_i \, P^t\text{,}\) where \(\mathbf{e}_i\) is the elementary vector from Problem 3(d)? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-144" id="solution-144"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-144"><div class="solution solution-like"><p id="p-702">The row vector \(\mathbf{e}_i \, P^t \) is row \(i\) of \(P^t\text{.}\)</p></div></div></p></li>
+<li id="li-336">
+<p id="p-703">Explain why we have</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{t \rightarrow \infty} \mathbf{e}_i \, P^t = \pi.
+\end{equation*}
+</div>
+<p class="continuation">What does this equation mean for a random walk starting at vertex \(i\text{?}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-145" id="solution-145"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-145"><div class="solution solution-like"><p id="p-704">Row \(i\) of \(P^t\) is the probability distribution for a random walk started at vertex \(i\text{.}\) This distribution converges to \(\pi\text{.}\) In particular, as \(t \rightarrow \infty\text{,}\) the probability that we are at vertex \(j\) is \(k_j/2m\text{.}\)</p></div></div></p>
+</li>
+</ol></article><article class="exercise exercise-like" id="exercise-81"><h6 class="heading">
+<span class="codenumber">7<span class="period">.</span></span><span class="space"> </span><span class="title">Random Walk on a Directed Graph.</span>
+</h6>
+<p id="p-705">Things don't work out as nicely on directed graphs. We will work through an example to see some of the strange behaviors that can arise.</p>
+<ol class="lower-alpha">
+<li id="li-337"><p id="p-706">Find the transition matrix \(P\) of the following directed graph. Hint: construct \(P\) row by row. <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="./images/directed-graph.png" class="contained"></div> <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-146" id="solution-146"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-146"><div class="solution solution-like">
+<p id="p-707">Since vertex 2 has no out-neighbors, we add a self-loop.</p>
+<div class="displaymath">
+\begin{equation*}
+P =
+\begin{bmatrix}
+0 &amp; 1/2 &amp; 0 &amp; 0 &amp; 1/2 &amp; 0  \\
+0 &amp; 1 &amp; 0&amp; 0 &amp; 0 &amp; 0  \\
+1/2 &amp; 1/2 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0  \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1  \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0  \\
+\end{bmatrix}
+\end{equation*}
+</div>
+</div></div></p></li>
+<li id="li-338">
+<p id="p-708">Confirm that</p>
+<div class="displaymath">
+\begin{equation*}
+P \bone = \bone.
+\end{equation*}
+</div>
+<p class="continuation">What is the meaning of this equation? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-147" id="solution-147"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-147"><div class="solution solution-like"><p id="p-709">Right multiplication by \(\bone\) sums all the exit probabilities from each vertex. These numbers sum to 1, just as in the directed case. Note that adding the self-loop at vertex 2 is essential.</p></div></div></p>
+</li>
+</ol></article><article class="exercise exercise-like" id="exercise-82"><h6 class="heading">
+<span class="codenumber">8<span class="period">.</span></span><span class="space"> </span><span class="title">Long Term Behavior of a Random Walk on Directed Graph.</span>
+</h6>
+<p id="p-710">Now simulate some random walks on the directed graph from Problem 7. This time, start your walk at vertex 1. You should see a couple of different kinds of behavior for this directed graph. Describe what you observe. <div class="image-box" style="width: 25%; margin-left: 37.5%; margin-right: 37.5%;"><img src="./images/directed-graph.png" class="contained"></div> <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-148" id="solution-148"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-148"><div class="solution solution-like"><p id="p-711">At the end of the walk, we must be at vertex 2, 5 or 6. If we step to vertex 2 then we remain there forever. On the other hand, if we step from vertex 1 to vertex 5 then we we can never get out of this two vertex "spider trap."</p></div></div></p></article><article class="exercise exercise-like" id="exercise-83"><h6 class="heading">
+<span class="codenumber">9<span class="period">.</span></span><span class="space"> </span><span class="title">An Eigenvector for a Directed Graph.</span>
+</h6>
+<p id="p-712">Let's continue to explore the digraph in Problem 7.</p>
+<ol class="lower-alpha">
+<li id="li-339">
+<p id="p-713">Check that the row vector</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+0 &amp; 0 &amp; 0 &amp; 0 &amp; \frac{1}{2} &amp; \frac{1}{2}
+\end{bmatrix}
+\end{equation*}
+</div>
+<p class="continuation">satisfies</p>
+<div class="displaymath">
+\begin{equation*}
+\bv \, P = \bv.
+\end{equation*}
+</div>
+<p class="continuation">How does this relate to the behavior you saw in problem 4? What behavior doesn't this capture? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-149" id="solution-149"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-149"><div class="solution solution-like">
+<p id="p-714">One of the two long-term outcomes we observed was ending up in the "spider trap" and then alternate between vertices 5 and 6. So in the long run, we spend half our time at vertex 5 and half our time at vertex 6. However, even in this case, the vector <em class="emphasis">doesn't capture the periodic behavior</em> of our long-term random walk. If we first step to vertex 5 at time \(T\text{,}\) then we will also be at vertex 5 at time \(T+2, T+4, T+6, \) etc, and we will be at vertex 6 at time \(T+1, T+3, T+5, \) etc.</p>
+<p id="p-715">Another behavior that we don't see in this vector is that we could have ended up at vertex 2, and then remained there forever. That doesn't even show up at all in this vector.</p>
+</div></div></p>
+</li>
+<li id="li-340">
+<p id="p-716">Find a different vector \(\bw \neq \bv\) such that</p>
+<div class="displaymath">
+\begin{equation*}
+\bw \, P = \bw.
+\end{equation*}
+</div>
+<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-150" id="solution-150"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-150"><div class="solution solution-like">
+<p id="p-717">The vector</p>
+<div class="displaymath">
+\begin{equation*}
+\bw =
+\begin{bmatrix}
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0
+\end{bmatrix}
+\end{equation*}
+</div>
+<p class="continuation">is a solution to  \(\bw \, P = \bw.\)</p>
+</div></div></p>
+</li>
+<li id="li-341"><p id="p-718">Pick \(a,b \in \R\)  such that \(a+b=1\text{.}\) What can you say about the vector \(a \bv + b \bw\text{?}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-151" id="solution-151"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-151"><div class="solution solution-like">
+<p id="p-719">We have</p>
+<div class="displaymath">
+\begin{equation*}
+(a \bv + b\bw) P = a (\bv P) + b (\bw) P = a \bv  + b \bw.
+\end{equation*}
+</div>
+<p class="continuation">Indeed, they are both left eigenvectors for eigenvalue \(\lambda=1\text{.}\) So any linear combination is also a left eigenvector for eigenvalue \(\lambda=1\text{.}\)</p>
+</div></div></p></li>
+</ol>
+<p class="continuation">As this problem shows, the eigenvectors for a weakly connected directed graph aren't enough to fully resolve the long-term behavior of random walks. This example has an infinite number of choices of \(a,b\) that produce distinct left eigenvectors. (In fact, the stationary distribution that we end up in depends upon the starting vertex.)</p></article></section></section></div></main>
+</div>
+</body>
+</html>
