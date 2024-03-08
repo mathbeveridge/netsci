@@ -12,13 +12,24 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>For today, we will define a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">giant component</em> to be "a connected component with at least half of the vertices." Using this simulation, you will explore:</p>
-<ul class="disc">
-<li><p>When does the giant component appear?</p></li>
-<li><p>Why does the giant appear? Is the transition from "no giant" to "yes giant" slow or quick?</p></li>
-<li><p>What is the network structure of the giant component when it appears?</p></li>
-<li><p>What is the barrier to having a connected graph during the random graph evolution? How dense must the graph be to overcome this barrier?</p></li>
-</ul>
-<span class="incontext"><a href="giantcomp.html#p-573">in-context</a></span>
+<p>Let the simulation run until the network becomes connected. Do this for \(n= 20, 40, 80, 160, 320\text{.}\) For \(n &gt; 160\text{,}\) you should uncheck the green "layout?" checkbox. This will speed up the process tremendously. You can also use the "model speed" slider to control to increase or decrease the evolution rate.</p>
+<ol class="lower-alpha">
+<li><p>What does the graph look like just before becoming totally connected? Consistently, what seems to be the "bottleneck" that prevents the graph from being connected?</p></li>
+<li><p>Describe the giant component just before the whole graph becomes connected. It is a dense graph or a sparse graph? What other terms would you use?</p></li>
+<li>
+<p>What is the average degree of the graph at the moment it becomes connected for each of the graph sizes n listed below.  (Run the simulation multiple times for each graph size and report the average)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{r|c|c|c|c|c|c}
+\mbox{network size} &amp; 10 &amp; 20 &amp; 40 &amp; 80 &amp; 160 &amp; 320 \\
+\hline
+\mbox{average degree} &amp;&amp;&amp;&amp;&amp;&amp;
+\end{array}
+\end{equation*}
+</div>
+</li>
+<li><p>Using the data from the previous question, hypothesize what the relationship is between the size of the graph and the average degree at the moment that the graph becomes connected.</p></li>
+</ol>
+<span class="incontext"><a href="exercises-12.html#p-573">in-context</a></span>
 </body>
 </html>

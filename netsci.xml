@@ -83,8 +83,8 @@ pull the name of the problem from the first line  of  the \item
         <part xml:id="part-models">
             <title>Network Models</title>
                 <xi:include href="./randomgraph.xml" />   
+                <xi:include href="./giantcomp.xml" /> 
                 <xi:include href="./branching.xml" />             
-                <xi:include href="./giantcomp.xml" />   
                 <xi:include href="./pricemodel.xml" />     
                 <xi:include href="./smallworld.xml" />                             
                 <xi:include href="./navsmallworld.xml" /> 

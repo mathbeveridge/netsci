@@ -12,14 +12,17 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">The Emergence of the Giant.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Asymptotic Size of the Tree.</span>
 </h6>
+<p>Now let's look at the asymptotic behavior of the size of the tree. Let</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E [Z] = \lim_{n \rightarrow \infty} \E[Z_n] = \lim_{n \rightarrow \infty} \frac{\mu^{n+1} -1}{\mu -1}.
+\end{equation*}
+</div>
 <ol class="lower-alpha">
-<li><p>What does the graph look like just before the giant?</p></li>
-<li><p>What is happening as the giant appears? Is there a sudden jump in the size of the largest component?  Why or why not?</p></li>
-<li><p>What is the average degree when the giant appears? Is this degree fairly consistent between simulations?</p></li>
-<li><p>Describe the structure of the giant component right after it emerges. Is it a "dense graph" or a "sparse graph"? What other terms would you use to describe what you see?</p></li>
-<li><p>Describe the structure of the other (small) components at this point.</p></li>
+<li><p>Confirm that if \(\mu &lt; 1\) then \(\E[Z]\) is finite. Then find a formula for \(\E[Z]\text{.}\) </p></li>
+<li><p>Confirm that if \(\mu &gt; 1\) then \(\E[Z]\) is infinite. </p></li>
 </ol></article><span class="incontext"><a href="exercises-13.html#exercise-67">in-context</a></span>
 </body>
 </html>

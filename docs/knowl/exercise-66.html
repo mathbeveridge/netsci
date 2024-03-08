@@ -12,13 +12,26 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Getting Started.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Expected Size of the Tree After \(n\) Generations.</span>
 </h6>
-<p>Start by expanding the Model Info section at the bottom. Read the sections first sections: WHAT IS IT?,  HOW IT WORKS, HOW TO USE IT, THINGS TO TRY.</p>
+<p>Let \(\displaystyle{Z_n= \sum_{t=0}^{n} X_t}\) be the total number of individuals in the family tree at time \(n\text{.}\)</p>
 <ol class="lower-alpha">
-<li><p>Run the model for \(n=80\)  (the default size). Watch the evolution of the whole graph, as well as the evolution of the largest component itself. Watch the giant appear. Reset and repeat a few times. Describe what you see. Look at the graph that tracks the average degree versus giant component size. Increase or slow the speed of the simulation using the slider bar.</p></li>
-<li><p>Do the same for smaller networks  such as \(n=20\) and \(n=40\) and for larger networks such as \(n=160\) and \(n=320\text{.}\)  Compare and contrast these evolutions. For larger networks, you should uncheck the green "layout?" checkbox. This will allow the process to run much faster. You can still keep track of the giant by using the color of the stick-figure vertices.</p></li>
-<li><p>Now let's really focus in on the emergence of the giant component. This is window in which we transition from "no giant" to "yes giant." Use the "Go"  button and the "Go Once" button to Stop/Start the simulation as the giant emerges.</p></li>
+<li>
+<p>Use linearity of expectation to prove that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[Z_n] = 1 + \mu + \mu^2 + \cdots + \mu^n.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Confirm that the formula in the previous problem is equivalent to</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[Z_n] = \frac{\mu^{n+1} -1}{\mu -1}.
+\end{equation*}
+</div>
+</li>
 </ol></article><span class="incontext"><a href="exercises-13.html#exercise-66">in-context</a></span>
 </body>
 </html>
