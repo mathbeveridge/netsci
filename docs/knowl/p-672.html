@@ -12,13 +12,24 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>We are interested in the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">early time behavior</em> of \(I_k\text{,}\) since we would like to intervene  (via quarantine or travel restrictions, etc) before the disease gets out of hand. If there aren't many infected vertices, then we may approximate \(1 - I_k \approx 1\) so that</p>
+<p>This differential equation is called the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">logistic equation</em>. Its solution is the logistic function</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{dI_k}{dt} \approx \beta \,  k \,  \Theta.
+I(t) = \frac{I_0}{I_0 + (1-I_0)e^{-\beta \langle k \rangle t}}
 \end{equation*}
 </div>
-<p class="continuation">Early on, the set of infected nodes is tree-like. In particular, you can assume that an infected vertex \(v\) has a link that points back to the (infected) vertex that transmitted the disease.</p>
+<p class="continuation">where \(I_0 = I(0)\) is the fraction of infected people at time \(t=0\text{.}\) We can write this as</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+I(t) = \frac{1}{1+a e^{-c t}}
+\end{equation*}
+</div>
+<p class="continuation">where \(a = 1/I_0 - 1\) and \(c= \beta \langle k \rangle\text{.}\) Calculate \(\frac{dI}{dt}\) to confirm that \(I(t)\) satisfies the logistic equation</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{dI}{dt} = c I (1-I).
+\end{equation*}
+</div>
 <span class="incontext"><a href="exercises-18.html#p-672">in-context</a></span>
 </body>
 </html>

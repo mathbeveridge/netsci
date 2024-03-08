@@ -12,24 +12,15 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>In order to prove this result, we will divide our journey from \(s\) to \(t\) into phases:</p>
-<ul class="disc"><li><p>phase \(j\) = ring distance \(d\) to target vertex satisfies \(2^j \leq d &lt; 2^{j+1}\text{.}\)</p></li></ul>
-<p class="continuation">Note that these phases are indexed in reverse.  That is, when we are far from the target \(t\text{,}\) our phase index is <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">larger</em>. In other words, we "count down" the phases. For example, the in the following figure, we start in Phase 3 (at source vertex \(s\)) and end in Phase 0 (at target vertex \(t\)). <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/nav-phases.png" class="contained"></div> Let \(X\) denote the total number of steps in our journey. Let \(X_j\) denote the number of steps taken during phase \(j\text{.}\) In the example above, our journey takes \(X=5\) steps. We have</p>
+<p>Next, we show that we have only added a constant number of new triangles. Show that</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-X_3 = 1,
-X_2 = 1,
-X_1 = 2,
-X_0 = 1.
+\E[\mbox{# triangles using one shortcut edge} ] \leq
+n{ c \choose 2} q
+\approx pc^3/2.
 \end{equation*}
 </div>
-<p class="continuation">The goal of this activity is to show that</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\E[X] = \sum_{k=0}^{\log (n/2)} \E[X_k] = O\left( (\log n)^2 \right),
-\end{equation*}
-</div>
-<p class="continuation">meaning that the expected number of steps is at most \(K \cdot (\log n)^2\) for some constant \(K &gt; 0\text{.}\) In other words, in a typical network of this kind, our journey takes at most \(O((\log n)^2)\) steps.</p>
-<span class="incontext"><a href="navsmallworld.html#p-629">in-context</a></span>
+<p class="continuation">So we are adding a constant number of triangles. For large \(n\text{,}\) these new triangles are negligible compared to the \(n { c/2 \choose 2}\) triangles already present in the ring.</p>
+<span class="incontext"><a href="exercises-15.html#p-629">in-context</a></span>
 </body>
 </html>

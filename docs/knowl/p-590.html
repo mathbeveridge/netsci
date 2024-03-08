@@ -12,10 +12,13 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>We say that \(\mu =1\) is a threshold for whether the family tree dies out. This is because</p>
-<ul class="disc"><li><p>if \(\E[Z]\) is finite then \(\P[ \mbox{there exists }  N \mbox{ such that } X_N = 0]=1\text{.}\)</p></li></ul>
-<p class="continuation">Show that this is true by proving the contrapositive statement:</p>
-<ul class="disc"><li><p>if \(\P[ X_t \geq 1 \mbox{ for all t} ]=\alpha &gt; 0\) then \(\E[Z]\) is infinite.</p></li></ul>
+<p>Using the formula from part (a), this statement is equivalent to</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+(\mu -1) ( \mu^n + \mu^{n-1} + \cdots + \mu +1) = \mu^{n+1} -1.
+\end{equation*}
+</div>
+<p class="continuation">When we expand, we see that all the terms cancel out except for the first term \(\mu^{n+1}\) and the last term \(-1\text{.}\)</p>
 <span class="incontext"><a href="exercises-13.html#p-590">in-context</a></span>
 </body>
 </html>

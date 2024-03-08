@@ -186,10 +186,10 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="pricemodel"><h2 class="heading">
 <span class="type">Chapter</span> <span class="codenumber">15</span> <span class="title">Price's Model for a Citation Network</span>
 </h2>
-<section class="introduction" id="introduction-15"><p id="p-593">Here is Price's Model for a citation network. Start with a small set of initial papers (with no citations). When a new paper is added, it cites  \(c\) existing papers (on average). Each paper is chosen as follows:</p>
+<section class="introduction" id="introduction-15"><p id="p-600">Here is Price's Model for a citation network. Start with a small set of initial papers (with no citations). When a new paper is added, it cites  \(c\) existing papers (on average). Each paper is chosen as follows:</p>
 <ul class="disc">
-<li id="li-283"><p id="p-594">with \(\displaystyle{\P = \frac{a}{a+c}}\text{,}\)   cite a uniformly random paper</p></li>
-<li id="li-284"><p id="p-595">with \(\displaystyle{\P = \frac{c}{a+c}}\text{,}\)  cite a  paper with probability proportional to its current citation count.</p></li>
+<li id="li-283"><p id="p-601">with \(\displaystyle{\P = \frac{a}{a+c}}\text{,}\)   cite a uniformly random paper</p></li>
+<li id="li-284"><p id="p-602">with \(\displaystyle{\P = \frac{c}{a+c}}\text{,}\)  cite a  paper with probability proportional to its current citation count.</p></li>
 </ul>
 <p class="continuation">The tail of the degree distribution satisfies the power law</p>
 <div class="displaymath">
@@ -202,7 +202,7 @@
 <article class="exercise exercise-like" id="exercise-69"><h6 class="heading">
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Link probabilities in Price's Model.</span>
 </h6>
-<p id="p-596">Suppose that we have run Price's Model and that the network has \(n\) vertices. We now add vertex \(n+1\text{,}\) as well as \(c\) arcs from vertex \(n+1\) to the existing network. Let \(k_i\) denote the degree of vertex \(i\text{.}\) Prove that for each new arc we add from vertex \(n+1\text{,}\)</p>
+<p id="p-603">Suppose that we have run Price's Model and that the network has \(n\) vertices. We now add vertex \(n+1\text{,}\) as well as \(c\) arcs from vertex \(n+1\) to the existing network. Let \(k_i\) denote the degree of vertex \(i\text{.}\) Prove that for each new arc we add from vertex \(n+1\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \P(\mbox{the arc points to vertex } i) = \frac{a+k_i}{n(c+a)}.
@@ -210,10 +210,10 @@
 </div></article><article class="exercise exercise-like" id="exercise-70"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Price's Model via edge copying.</span>
 </h6>
-<p id="p-597">One critique of Price's Model is that the new paper must know about the degrees of the entire network when we choose its citations. So this is a "global" process instead of a "local" process. Consider the following process instead:</p>
+<p id="p-604">One critique of Price's Model is that the new paper must know about the degrees of the entire network when we choose its citations. So this is a "global" process instead of a "local" process. Consider the following process instead:</p>
 <ul class="disc">
-<li id="li-285"><p id="p-598">with \(\displaystyle{\P = \frac{a}{a+c}}\text{,}\)   pick a <em class="emphasis">paper</em> uniformly at random. Cite this paper.</p></li>
-<li id="li-286"><p id="p-599">with \(\displaystyle{\P = \frac{c}{a+c}}\text{,}\)  pick a <em class="emphasis">directed edge</em> uniformly at random. Then cite the paper that the edge points to.</p></li>
+<li id="li-285"><p id="p-605">with \(\displaystyle{\P = \frac{a}{a+c}}\text{,}\)   pick a <em class="emphasis">paper</em> uniformly at random. Cite this paper.</p></li>
+<li id="li-286"><p id="p-606">with \(\displaystyle{\P = \frac{c}{a+c}}\text{,}\)  pick a <em class="emphasis">directed edge</em> uniformly at random. Then cite the paper that the edge points to.</p></li>
 </ul>
 <p class="continuation">Show that when we add vertex \(n+1\text{,}\) this local process ALSO satisfies</p>
 <div class="displaymath">
@@ -223,30 +223,30 @@
 </div></article><article class="exercise exercise-like" id="exercise-71"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">The Vertex Copying Model.</span>
 </h6>
-<p id="p-600">Here is a different citation generation model. Start with a network of \(n_0 &gt; c\) papers, each pointing randomly to \(c\) others. Pick a constant \(0 &lt; \gamma &lt; 1\text{.}\)  When paper \(n+1\) is added, it makes \(c\) citations as follows:</p>
+<p id="p-607">Here is a different citation generation model. Start with a network of \(n_0 &gt; c\) papers, each pointing randomly to \(c\) others. Pick a constant \(0 &lt; \gamma &lt; 1\text{.}\)  When paper \(n+1\) is added, it makes \(c\) citations as follows:</p>
 <ul class="disc">
-<li id="li-287"><p id="p-601">Pick a random paper \(v\) from the existing \(n\) vertices.</p></li>
+<li id="li-287"><p id="p-608">Pick a random paper \(v\) from the existing \(n\) vertices.</p></li>
 <li id="li-288">
-<p id="p-602">For each of the \(c\) citations of \(v\) (that is, the arcs starting at \(v\)),</p>
+<p id="p-609">For each of the \(c\) citations of \(v\) (that is, the arcs starting at \(v\)),</p>
 <ul class="circle">
-<li id="li-289"><p id="p-603">with \(\displaystyle{\P = \gamma}\text{,}\)   copy that citation</p></li>
-<li id="li-290"><p id="p-604">with \(\displaystyle{\P = 1 - \gamma}\text{,}\)  cite a uniform random paper instead.</p></li>
+<li id="li-289"><p id="p-610">with \(\displaystyle{\P = \gamma}\text{,}\)   copy that citation</p></li>
+<li id="li-290"><p id="p-611">with \(\displaystyle{\P = 1 - \gamma}\text{,}\)  cite a uniform random paper instead.</p></li>
 </ul>
 </li>
 </ul>
 <p class="continuation">You will now show that this model is equivalent to Price's model, so it generates a power law degree distribution.</p>
 <ol class="lower-alpha">
 <li id="li-291">
-<p id="p-605">Show that for each arc starting at vertex \(n+1\text{,}\) we have</p>
+<p id="p-612">Show that for each arc starting at vertex \(n+1\text{,}\) we have</p>
 <div class="displaymath">
 \begin{equation*}
 \P(\mbox{the arc points to vertex } i) = (1- \gamma) \frac{1}{n}  + \gamma \frac{k_i}{cn}.
 \end{equation*}
 </div>
 </li>
-<li id="li-292"><p id="p-606">Define \(a = c \left( \frac{1}{\gamma} -1 \right)\text{.}\) Confirm that this equation is equivalent to \(\gamma = \frac{c}{c+a}\text{.}\) </p></li>
+<li id="li-292"><p id="p-613">Define \(a = c \left( \frac{1}{\gamma} -1 \right)\text{.}\) Confirm that this equation is equivalent to \(\gamma = \frac{c}{c+a}\text{.}\) </p></li>
 <li id="li-293">
-<p id="p-607">Plug \(\gamma = \frac{c}{c+a}\) into equation from part (a) and simplify to show that we once again get</p>
+<p id="p-614">Plug \(\gamma = \frac{c}{c+a}\) into equation from part (a) and simplify to show that we once again get</p>
 <div class="displaymath">
 \begin{equation*}
 \P(\mbox{the arc points to vertex } i) = \frac{a+k_i}{n(c+a)}.
@@ -254,7 +254,7 @@
 </div>
 </li>
 <li id="li-294">
-<p id="p-608">Finally, rewrite the power law</p>
+<p id="p-615">Finally, rewrite the power law</p>
 <div class="displaymath">
 \begin{equation*}
 \P(\deg(v) = k) \sim k^{-2-a/c}

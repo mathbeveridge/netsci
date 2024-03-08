@@ -12,12 +12,47 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Interpret the following differential equation for the Susceptible/Infected Model (SI Model) with <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">transmission rate</em> \(\beta \langle k \rangle\text{:}\)</p>
+<p>Suppose that we have  a large network for which there is no correlation between vertex degrees. That is, an edge from vertex \(v\) leads to a vertex chosen  uniformly at random. Let \(p_k\) denote the fraction of vertices of degree \(k\text{.}\) When you pick a vertex \(v\) at random, we have \(\Pr[\deg(v)=k] = p_k\text{.}\) This means that the expected degree of the network is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{dI}{dt} = \beta \langle k \rangle I S = \beta \langle k \rangle  I (1-I).
+\langle k \rangle = \sum_{k=0}^{k_{\max}} k  \cdot p_k.
 \end{equation*}
 </div>
+<p class="continuation">Consider the following process: Pick a random vertex \(v\) and then move to a random neighbor \(w\) of vertex \(v\text{.}\) Let</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+q_k = \Pr [\deg(w)=k+1].
+\end{equation*}
+</div>
+<p class="continuation">In other words, \(w\) has \(k\) additional edges, besides the one you just traveled. In this case, we say that \(w\) has <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">excess degree</em> \(k\text{.}\)</p>
+<ol class="lower-alpha">
+<li>
+<p>Explain why the excess degree distribution  satisfies</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+q_k = \frac{(k+1) p_{k+1}}{\langle k \rangle}.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Confirm that the expected degree of vertex \(w\) is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{\langle k^2 \rangle}{\langle k \rangle}.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Recall that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\mbox{Var}[X] = E[X^2] - E[X]^2 &gt; 0
+\end{equation*}
+</div>
+<p class="continuation">when \(X\) is not constant. Use this to explain why that the expected degree of \(w\) is larger than the expected degree of \(v\text{.}\) </p>
+</li>
+<li><p>Colloquially, people refer to this result as: "your friends are more popular than you." Why? </p></li>
+</ol>
 <span class="incontext"><a href="exercises-18.html#p-664">in-context</a></span>
 </body>
 </html>
