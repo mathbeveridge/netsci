@@ -62,7 +62,7 @@ Use induction on <m>t \geq 0</m>  to prove that <m>X_n</m>, the size of the <m>n
 
 <solution>
 <p>
-We have <m>E[X_0] = 1 = \mu^0.</m> Assuming that <m>\E[X_n] = \mu_n</m>, we have
+We have <m>E[X_0] = 1 = \mu^0.</m> Assuming that <m>\E[X_n] = \mu^n</m>, we have
 </p>
 <md>
 <mrow>
@@ -71,7 +71,7 @@ We have <m>E[X_0] = 1 = \mu^0.</m> Assuming that <m>\E[X_n] = \mu_n</m>, we have
 </mrow>
 <mrow>
 &amp;= \mu \, \sum_{k=0}^{\infty} k  \,  \P[X_{n} = k]
-= \mu \, \E[X_n] = \mu \cdot \mu_n = \mu^{n+1}.
+= \mu \, \E[X_n] = \mu \cdot \mu^n = \mu^{n+1}.
 </mrow>
 </md>
 <p>
