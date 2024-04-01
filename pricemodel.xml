@@ -328,7 +328,7 @@ if its total degree is <m>k_i</m>, then we still have  <m>k_i^{\mathrm{out}}=c</
 <solution>
 <p>
 </p><p>
-The probability that and edge from vertex <m>n+1</m> is incident with <m>i</m> is
+The probability that an edge from vertex <m>n+1</m> is incident with vertex <m>i</m> is
 <me>\frac{k_i}{2cn} = \frac{c + k_i^{\mathrm{in}}}{2cn} = \frac{1}{2} \frac{1}{n} + \frac{1}{2} \frac{k_i^{\mathrm{in}}}{cn}</me>
 and this is Price's model with <m>a=c</m>. 
 </p>
