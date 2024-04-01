@@ -44,7 +44,7 @@ Let <m>k_i</m> denote the degree of vertex <m>i</m>. Prove that for each new arc
 \P(\mbox{the arc points to vertex } i) = \frac{a+k_i}{n(c+a)}.
 </me>
 
-<!--solution>
+<solution>
 <p>
 
 			</p><p>
@@ -62,7 +62,7 @@ The probability an the arc points to vertex <m>i</m> is
 <p>
 
 </p>
-</solution-->
+</solution>
 
 				</p>
 			</statement>
@@ -72,8 +72,7 @@ The probability an the arc points to vertex <m>i</m> is
 			<idx><h>Price's Model via edge copying</h></idx>
 			<statement>
 				<p>
-One critique of Price's Model is that the new paper must know about the degrees of the entire network when we choose its citations. So this is a "global" process instead of a "local" process. Consider the following process instead:
-
+Consider the following network growth model. 
 
 		<ul>
 			<li>
@@ -93,7 +92,7 @@ Show that when we add vertex <m>n+1</m>, this local process ALSO satisfies
 </me>
 
 
-<!--solution>
+<solution>
 <p>
 With probability <m>\frac{a}{a+c}</m>, we pick a random vertex. With probability <m>\frac{c}{a+c}</m>, we pick a random arc, and then take its target vertex.
 Among the <m>cn</m> arcs, <m>k_i</m> of them end at vertex <m>i</m>.
@@ -104,7 +103,7 @@ This gives the same equation
 as in the previous question.
 
 </p>
-</solution-->
+</solution>
 
 
 
@@ -117,7 +116,10 @@ as in the previous question.
 			<idx><h>The Vertex Copying Model</h></idx>
 			<statement>
 				<p>
-Here is a different citation generation model. Start with a network of <m>n_0 &gt; c</m> papers, each pointing randomly to <m>c</m> others. Pick a constant <m>0 &lt; \gamma &lt; 1</m>.  When paper <m>n+1</m> is added, it makes <m>c</m> citations as follows:
+					One critique of Price's Model is that the new paper must know about the degrees of the entire network when we 
+choose its citations. So this is a "global" process instead of a "local" process. Consider the following process 
+instead.
+ Start with a network of <m>n_0 &gt; c</m> papers, each pointing randomly to <m>c</m> others. Pick a constant <m>0 &lt; \gamma &lt; 1</m>.  When paper <m>n+1</m> is added, it makes <m>c</m> citations as follows:
 		<ul>
 			<li>
 			<p>
@@ -143,7 +145,7 @@ Here is a different citation generation model. Start with a network of <m>n_0 &g
 			</li>
 		</ul>
 
-You will now show that this model is equivalent to Price's model, so it generates a power law degree distribution.
+You will now show that this model also generates a power law degree distribution.
 			<ol>
 
 				<li>
@@ -153,7 +155,7 @@ You will now show that this model is equivalent to Price's model, so it generate
 \P(\mbox{the arc points to vertex } i) = (1- \gamma) \frac{1}{n}  + \gamma \frac{k_i}{cn}.
 </me>
 
-<!--solution>
+<solution>
 <p>
 		<ul>
 			<li>
@@ -173,7 +175,7 @@ You will now show that this model is equivalent to Price's model, so it generate
 
 
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -182,7 +184,7 @@ You will now show that this model is equivalent to Price's model, so it generate
  Define <m>a = c \left( \frac{1}{\gamma} -1 \right)</m>. Confirm that this equation is equivalent to
 <m>\gamma = \frac{c}{c+a}</m>.
 
-<!--solution>
+<solution>
 <p>
 </p>
 <md>
@@ -198,7 +200,7 @@ You will now show that this model is equivalent to Price's model, so it generate
 </md>
 <p>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -209,7 +211,7 @@ You will now show that this model is equivalent to Price's model, so it generate
 \P(\mbox{the arc points to vertex } i) = \frac{a+k_i}{n(c+a)}.
 </me>
 
-<!--solution>
+<solution>
 <p>
 
 </p>
@@ -234,7 +236,7 @@ You will now show that this model is equivalent to Price's model, so it generate
 <p>
 
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -246,7 +248,7 @@ You will now show that this model is equivalent to Price's model, so it generate
 </me>
 in terms of <m>\gamma</m> instead of <m>a</m> and <m>c</m>.
 
-<!--solution>
+<solution>
 <p>
 The degree distribution is governed by the power law
 <me>
@@ -256,7 +258,25 @@ where <m>0 &lt; \gamma &lt; 1</m>. Depending on the value of <m>\gamma</m>, our 
 
 
 </p>
-</solution-->
+</solution>
+
+					</p>
+				</li>
+				<li>
+					<p>
+This vertex copying model leads to the same equations for the degree distribution of the resulting network. 
+However, the actual network structure of the vertex copying model is very different from the netwok structure of 
+Price's Model. Explain why. (Hint: start by thinking about what the vertex copying model would look like when 
+<m>\gamma</m> is very very close to 1.)
+
+<solution>
+<p>
+When  <m>\gamma</m> is very very close to 1, each new vertex is practically a duplicate of the vertex that it is copying.
+So there is a strong correlation between the out-edges of the graph. This would lead to some community structure. 
+However, this doesn't happens for Price's model, since the links are all taken uniformly at random from across the entire network. 
+This out-edge correlation holds for all values of <m>\gamma</m>, but is more pronounced for larger <m>\gamma</m>.
+</p>
+</solution>
 
 					</p>
 				</li>
@@ -264,6 +284,67 @@ where <m>0 &lt; \gamma &lt; 1</m>. Depending on the value of <m>\gamma</m>, our 
 				</p>
 			</statement>
 		</exercise>
+		<exercise>
+			<title>Preferential Attachment Model</title>
+			<idx><h>Preferential Attachment Model</h></idx>
+			<statement>
+				<p>
+Here is the Barabasi-Albert Preferential Attachmnent Model for an <b>undirected</b> network. We start with a complete graph on <m>c+1</m> vertices.
+				</p>
+				<p>
+When we add the new vertex <m>n+1</m> to the network of size <m>n</m>,  
+we create <m>c</m> undirected edges incident with <m>n+1</m>. The other endpoint <m>i</m> of each edge is chosen
+with probability proportional to its current degree <m>k_i</m>. 
+<ol>
+	<li>
+		<p>
+			Explain why the probability that an edge from vertex <m>n+1</m> attaches to vertex <m>i</m> is <me>\frac{k_i}{2cn}.</me>
+<solution>
+<p>
+</p><p>
+The total number of edges in the network of order <m>n</m> is <m>2cn</m>. So the probability that we pick vertex <m>i</m>
+is <me>\frac{k_i}{2cn}.</me>
+</p>
+</solution>
+		</p>
+	</li>
+	<li>
+		<p>
+			Now change this network model to a <b>directed</b> network. Show that 
+			<me>k_i= k_i^{\mathrm{in}} + k_i^{\mathrm{out}} = k_i^{\mathrm{in}} + c. </me>
+<solution>
+<p>
+</p><p>
+When we add vertex <m>i</m>, its out-degree is <m>c</m> and its in-degree is 0. Later on, 
+if its total degree is <m>k_i</m>, then we still have  <m>k_i^{\mathrm{out}}=c</m>, and so
+<m>k_i^{\mathrm{in}} = k_i - c,</m>.
+</p>
+</solution>
+		</p>
+	</li>
+	<li>
+		<p>
+			Now show that Preferential Attachment is just the undirected version of Price's Model with <m>a=c</m>.
+<solution>
+<p>
+</p><p>
+The probability that and edge from vertex <m>n+1</m> is incident with <m>i</m> is
+<me>\frac{k_i}{2cn} = \frac{c + k_i^{\mathrm{in}}}{2cn} = \frac{1}{2} \frac{1}{n} + \frac{1}{2} \frac{k_i^{\mathrm{in}}}{cn}</me>
+and this is Price's model with <m>a=c</m>. 
+</p>
+</solution>
+		</p>
+	</li>	
+</ol>
+
+
+
+
+
+				</p>
+			</statement>
+		</exercise>
+
 	</exercises>
 
 </chapter>

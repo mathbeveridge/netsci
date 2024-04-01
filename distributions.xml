@@ -635,8 +635,8 @@ In fact, every moment of the Poisson distribution is equal to <m>\lambda</m>. (T
 <me>
 \lambda :=np
 </me>
-is a good approximation (for small <m>k</m>) of  the binomial distribution with parameters <m>n</m> and <m>p</m>.
-
+is a good approximation (for small <m>k</m>) of  the binomial distribution with parameters <m>n</m> and <m>p</m>. 
+Check out this <url href="https://www.desmos.com/calculator/mjyfy6sffz">Desmos interactive plot</url> for a visualization of this approximation.
 </p>
 <p>
 Fix <m>k \in \Z_{\geq 0}</m> to be  constant and let <m>n \rightarrow \infty</m>. Show that

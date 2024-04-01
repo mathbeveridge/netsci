@@ -12,33 +12,25 @@
 </head>
 <body>
 <article class="li"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Item</span><span class="space"> </span><span class="codenumber">19.3.c</span><span class="period">.</span>
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">19.2.b</span><span class="period">.</span>
 </h6>
-<p>Taking the derivative of the previous quantity, and using the approximation</p>
+<p>This differential equation is called the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">logistic equation</em>. Its solution is the logistic function</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{dI_k}{dt} \approx \beta \,  k \,  \Theta,
+I(t) = \frac{I_0}{I_0 + (1-I_0)e^{-\beta \langle k \rangle t}}
 \end{equation*}
 </div>
-<p class="continuation">we get a differential equation of the form</p>
+<p class="continuation">where \(I_0 = I(0)\) is the fraction of infected people at time \(t=0\text{.}\) We can write this as</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{d \Theta}{d t} = A \Theta
+I(t) = \frac{1}{1+a e^{-c t}}
 \end{equation*}
 </div>
-<p class="continuation">which has solution</p>
+<p class="continuation">where \(a = 1/I_0 - 1\) and \(c= \beta \langle k \rangle\text{.}\) Calculate \(\frac{dI}{dt}\) to confirm that \(I(t)\) satisfies the logistic equation</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\Theta(t) = C e^{At}.
+\frac{dI}{dt} = c I (1-I).
 \end{equation*}
-</div>
-<p class="continuation">Show that</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-A= \beta \frac{\langle k^2 \rangle - \langle k \rangle}{\langle k \rangle}.
-\end{equation*}
-</div>
-<p class="continuation">(The constant \(C\) is determined by the initial conditions.) </p>
-<p></p></article><span class="incontext"><a href="exercises-18.html#li-332">in-context</a></span>
+</div></article><span class="incontext"><a href="exercises-18.html#li-332">in-context</a></span>
 </body>
 </html>

@@ -12,38 +12,17 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Finally, we explore the effect of the network structure on the spread of disease in the network. We focus on</p>
+<p>Let \({G=(V,E)}\) be a network with threshold \(q \in [0,1]\text{.}\) Let \({S_0}\) be the initial set of innovators. Recall that a set \(S\) is <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">cohesive</em> when</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\tau = \frac{\langle k \rangle}{\beta ( \langle k^2 \rangle - \langle k \rangle)}.
+p(S) = \min_{i \in S} \frac{ | N(i) \cap S| }{|N(i)|}   &gt; 1-q
 \end{equation*}
 </div>
-<p class="continuation">We call \(\tau\) the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">characteristic time scale</em> for the spread of the disease since it controls the rate of infection. A bigger \(\tau\) means that the infection takes longer to spread. Intuitively, we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\tau = \mbox{characteristic time scale} = \frac{1}{\mbox{infection rate}}.
-\end{equation*}
-</div>
-<ol class="lower-roman">
-<li>
-<p>For the Erdos-Renyi graph, we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\langle k^2 \rangle \approx \langle k \rangle^2 + \langle k \rangle.
-\end{equation*}
-</div>
-<p class="continuation">What is \(\tau\) in this case? How does \(1/ \tau\) compare to the infection rate in the differential equation in problem  2(a) for the homogeneous case (where we decided to ignore the network)? </p>
-</li>
-<li>
-<p>Consider a graph whose degree distribution obeys a power law</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\Pr[\deg(v)=q] \sim q^{-\alpha}.
-\end{equation*}
-</div>
-<p class="continuation">For a natural power law, we have  \(2 &lt; \alpha &lt; 3\text{.}\) Recall that for a natural power law,  \(\langle k \rangle\) is finite but \(\langle k^2 \rangle\) is infinite. (This is what led to the appearance of hubs.) What does this imply about the infection rate on such a network? What role must the hubs play, especially in light of part (d) above, and the fact that "your friends are more popular than you are"? </p>
-</li>
+<p class="continuation">where \(N(i)\) is the set of neighbors of \(i\text{.}\)</p>
+<ol class="lower-alpha">
+<li><p>Suppose that the  initial adopter set \({S_0}\) does not cause a complete cascade. Prove that there is a cohesive set  \({S \subset V \backslash S_0}\text{.}\) </p></li>
+<li><p>Suppose that there is a cohesive set  \({S \subset V \backslash S_0}\text{.}\) Prove that  initial adopter set \({S_0}\) does not cause a complete cascade. </p></li>
 </ol>
-<span class="incontext"><a href="exercises-18.html#p-685">in-context</a></span>
+<span class="incontext"><a href="exercises-17.html#p-685">in-context</a></span>
 </body>
 </html>
