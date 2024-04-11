@@ -12,21 +12,19 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Triangles using 2 or 3 shortcut edges are also unlikely. Explain why</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\E[\mbox{# triangles using two shortcut edges} ]=
-n \frac{c}{2} (n-2) q^2   \approx \frac{c^3p^2}{2}.
-\end{equation*}
+\begin{align*}
+\frac{2}{n+1} \sum_{m=1}^{n/2} \left\lceil \frac{2m}{c} \right\rceil
+&amp;\leq  \frac{2}{n+1} \sum_{m=1}^{n/2} \left( \frac{2m}{c}  + 1\right)
+= \frac{2}{n+1}
+\left(
+\frac{2}{c} \frac{(n/2) (n/2+1)}{2} + \frac{n}{2}
+\right)\\
+&amp;=  \frac{2}{n+1}
+\left(
+\frac{n(n+2)}{4c} + \frac{n}{2} \right) \leq \frac{n}{2c} + 1
+\end{align*}
 </div>
-<p class="continuation">and</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\E[\mbox{# triangles using three shortcut edges} ] =
-{n \choose 3} q^3   \approx \frac{c^3p^3}{6}.
-\end{equation*}
-</div>
-<p class="continuation">So we only add a constant number of triangles of any kind.</p>
 <span class="incontext"><a href="exercises-15.html#p-655">in-context</a></span>
 </body>
 </html>

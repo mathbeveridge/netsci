@@ -13,12 +13,30 @@
 <body>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-I &amp;= \mbox{ fraction of population that is infected}\\
-S &amp;= (1-I)  \mbox{ fraction of population that is susceptible}\\
-\langle k \rangle &amp;= \sum_k k \, p_k  \mbox{ the average number of contacts}\\
-\beta &amp;= \mbox{ likelihood of transmission from infected person to susceptible person}
+C 
+&amp; \geq 
+\frac{3 \left(
+n { c/2 \choose 2} + c p n \cdot {c \choose 1}
+\right)}
+{n {c \choose 2} + c^2pn + n{cp \choose 2}  }
+\geq
+\frac{3 \left(
+c/2(c/2-1)/2 %+ c^2 p
+\right)}
+{c(c-1)/2 + c^2 + {c(c-1)/2}}\\
+&amp; =
+\frac{3 \left(
+c-2
+\right)}
+{8 (2c-1)}
+\geq 
+\frac{3 \left(
+c-2
+\right)}
+{16(c-1)}
+\approx \frac{3}{16}
 \end{align*}
 </div>
-<span class="incontext"><a href="exercises-18.html#mjx-eqn:mrow-109">in-context</a></span>
+<span class="incontext"><a href="exercises-15.html#mjx-eqn:mrow-109">in-context</a></span>
 </body>
 </html>

@@ -87,7 +87,9 @@ A nice way to argue this is to
 recognize that all triangles look like one "long edge" going distance <m>\leq c/2</m> and two "shorter edges." Orient the long edge  clockwise the two shorter edges  counter clockwise. Then associate this directed cycle with the vertex at the start of the long clockwise arc.
 
 
-
+<solution>
+	<p>We must pick a vertex and then pick two of its right-neighbors.</p>
+</solution>
 					</p>
 				</li>
 				<li>
@@ -99,6 +101,10 @@ n {c \choose 2}
 connected triples. These are paths of length 2 (which can be associated with their central vertex).
 
 
+<solution>
+	<p>We must pick the central vertex, then pick two of its neighbors.</p>
+</solution>
+
 					</p>
 				</li>
 				<li>
@@ -109,6 +115,15 @@ C =  \frac{3(c-2)}{4(c-1)}.
 </me>
 Furthermore, for <m>c \geq 3</m>, we have <m>\frac{3}{8} \leq C  \leq  \frac{3}{4}</m>. This is independent of the network size <m>n</m>, so we have high clustering.
 
+<solution>
+	<p>The clustering coefficient is
+<me>
+\frac{3 n {c/2 \choose 2}}{n {c \choose 2}} 
+= \frac{ 3 (c/2) (c/2-1)}{c(c-1)}
+= \frac{3(c-2)}{4(c-1)}.
+</me>
+	</p>
+</solution>
 
 					</p>
 				</li>
@@ -132,6 +147,14 @@ Furthermore, for <m>c \geq 3</m>, we have <m>\frac{3}{8} \leq C  \leq  \frac{3}{
 					<p>
  Consider vertices <m>v_0</m> and <m>v_{m}</m> where <m>0 \leq m \leq n/2</m>. What is the graph distance between these nodes?
 
+ <solution>
+	<p>
+		The graph distance is 
+<me>
+	d(v_0, v_m) = \left\lceil \frac{m}{c/2} \right\rceil = \left\lceil \frac{2m}{c} \right\rceil.
+</me>
+	</p>
+ </solution>
 					</p>
 				</li>
 				<li>
@@ -139,6 +162,14 @@ Furthermore, for <m>c \geq 3</m>, we have <m>\frac{3}{8} \leq C  \leq  \frac{3}{
  What is the length of the "longest shortest path" starting at <m>v_0</m>?
 
 
+ <solution>
+	<p>
+		The longest shortest path goes to vertex <m>v_{n/2</m>} with distance
+<me>
+	d(v_0, v_{n/2}) = \left\lceil \frac{n/2}{c/2} \right\rceil = \left\lceil \frac{n}{c} \right\rceil.
+</me>
+	</p>
+ </solution>
 					</p>
 				</li>
 				<li>
@@ -154,6 +185,25 @@ Hint: you can use the upper bound <m>\lceil x \rceil \leq x + 1</m> for any <m>x
 				</li>
 			</ol>
 
+			<solution>
+				<p>
+					<md>
+						<mrow>
+							\frac{2}{n+1} \sum_{m=1}^{n/2} \left\lceil \frac{2m}{c} \right\rceil
+						&amp;\leq  \frac{2}{n+1} \sum_{m=1}^{n/2} \left( \frac{2m}{c}  + 1\right)
+						= \frac{2}{n+1}
+						\left(
+						\frac{2}{c} \frac{(n/2) (n/2+1)}{2} + \frac{n}{2}
+						\right)
+						</mrow>
+						<mrow>
+						&amp;=  \frac{2}{n+1}
+						\left(
+						 \frac{n(n+2)}{4c} + \frac{n}{2} \right) \leq \frac{n}{2c} + 1
+						</mrow>
+					</md>					
+				</p>
+			</solution>
 
 				</p>
 			</statement>
@@ -185,6 +235,15 @@ For any potential shortcut edge <m>e</m>, explain why
 </me>
 
 					</p>
+<p>
+	<solution>
+		<p>
+			We add a total of <m>\frac{cpn}{2}</m> edges out of a possible <m>{n \choose 2}</m> edges.
+			This fraction is an upper bound because we could choose the same edge twice.
+		</p>
+
+	</solution>
+</p>
 				</li>
 				<li>
 					<p>
@@ -197,6 +256,14 @@ For any potential shortcut edge <m>e</m>, explain why
 
 
 					</p>
+					<p>
+						<solution>
+							<p>
+								We add a total of <m>\frac{cpn}{2}</m> edges. Each time we add an edge, the probability 
+								that <m>v_i</m> is one of the endpoints is <m>2/n</m>.
+							</p>
+						</solution>
+					</p>
 				</li>
 				<li>
 					<p>
@@ -207,8 +274,17 @@ n{ c \choose 2} q
 \approx pc^3/2.
 </me>
 So we are adding a constant number of triangles.
-For large <m>n</m>, these new triangles are negligible compared to the <m>n { c/2 \choose 2}</m> triangles already present in the ring.
+For large <m>n</m>, these new triangles are negligible compared to the <m>n { c/2 \choose 2}</m> 
+triangles already present in the ring.
 
+					</p>
+					<p>
+						<solution>
+							<p>
+								Such a triangle has two ring edges. We have <m>n</m> choices for the central vertex. We then have <m>{c \choose 2</m> ways to choose its two neighbors.
+									Finally, we add the shortcut edge with probabilty <m>q</m>.
+							</p>
+						</solution>
 					</p>
 				</li>
 				<li>
@@ -225,6 +301,20 @@ and
 </me>
 So we only add a constant number of triangles of any kind.
 
+					</p>
+					<p>
+						<solution>
+							<p>
+								A triangle with two shortcut edges contains one ring edge (which we orient clockwise so that we
+								only count it once) and a third vertex. We have <m>n</m> choices for the first endpoint of the ring edge.
+								We have <m>c/2</m> choices for the other endpoint. Then we have <m>n-2</m> choices for the third vertex. 
+								We multiply by <m>q^2</m> which is the probability that both shortcut edges are present.
+							</p>
+							<p>
+								As for a triangle with three shortcut edges, we cn choose the vertices in <m>{n \choose 3}</m>. 
+								We multiply by <m>q^3</m> which is the probability that all three shortcut edges are present. 
+							</p>
+						</solution>
 					</p>
 				</li>
 				<li>
@@ -246,6 +336,21 @@ n {n-1 \choose 2} q^2
 
 
 					</p>
+					<p>
+						<solution>
+							<p>
+								For each shortcut edge, there are <m>c</m> ring edges incident with each enpoint.
+								So the expected number of such triples is <m>\frac{cpn}{2} (c + c) = c^2 p n</m>
+							</p>
+							<p>
+								For each pair of shortcut edges incident with the same vertex, we must choose the other 
+								endpoints. So there are <m>n</m> ways to choose the common vertex, and <m>{n-1 \choose 2}</m> ways
+								to choose the other endpoints. We multiply by <m>q^2</m> since this is the probability that both
+								shortcut edges are present.
+					
+							</p>
+						</solution>
+					</p>
 				</li>
 				<li>
 					<p>
@@ -257,7 +362,7 @@ The clustering coefficient is
 <me>
 C \approx \frac
 {
-n {c/2 \choose 2}
+3 n {c/2 \choose 2}
 }
 {
 n {c \choose 2} + c^2pn + \frac{1}{2} c^2p^2 n
@@ -282,6 +387,40 @@ C \gtrapprox \frac{3}{16}.
 
 
 
+					</p>
+					<p>
+						<solution>
+							<p>
+								<md>
+									<mrow>
+										C 
+										&amp; \geq 
+										\frac{3 \left(
+										n { c/2 \choose 2} + c p n \cdot {c \choose 1}
+										\right)}
+										{n {c \choose 2} + c^2pn + n{cp \choose 2}  }
+										\geq
+										\frac{3 \left(
+										c/2(c/2-1)/2 %+ c^2 p
+										\right)}
+										{c(c-1)/2 + c^2 + {c(c-1)/2}}
+									</mrow>
+									<mrow>
+										&amp; =
+										\frac{3 \left(
+										c-2
+										\right)}
+										{8 (2c-1)}
+										\geq 
+										\frac{3 \left(
+										c-2
+										\right)}
+										{16(c-1)}
+										 \approx \frac{3}{16}
+									</mrow>
+								</md>
+							</p>
+						</solution>
 					</p>
 				</li>
 			</ol>
