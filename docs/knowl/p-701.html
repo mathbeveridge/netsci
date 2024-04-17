@@ -12,7 +12,19 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>\(\displaystyle S_0 = \{1,2\}\)</p>
-<span class="incontext"><a href="exercises-17.html#p-701">in-context</a></span>
+<p>Here is very useful fact from probability. Let \(X\) be any random variable taking on positive integer values. We can write the expected value of \(X\) as</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[X] = \sum_{k=1}^{\infty} \Pr[X \geq k].
+\end{equation*}
+</div>
+<p class="continuation">Indeed, when \(X\) only takes on positive integer values, we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\sum_{k=1}^{\infty} \Pr[X \geq k] = \sum_{k=1}^{\infty} k \Pr[X = k]
+\end{equation*}
+</div>
+<p class="continuation">and the right hand side is the definition of \(\E[X]\text{.}\)</p>
+<span class="incontext"><a href="exercises-16.html#p-701">in-context</a></span>
 </body>
 </html>

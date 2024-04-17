@@ -12,13 +12,19 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>We are interested in the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">early time behavior</em> of \(I_k\text{,}\) since we would like to intervene  (via quarantine or travel restrictions, etc) before the disease gets out of hand. If there aren't many infected vertices, then we may approximate \(1 - I_k \approx 1\) so that</p>
+<p>Let \(T\) be the set of vertices that adopt behavior \(A\) during the cascade. Let \(S= \overline{T}\) be the vertices that never adopt the behavior. For every \(i \in S\text{,}\) we have</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{dI_k}{dt} \approx \beta \,  k \,  \Theta.
+\frac{ | N(i) \cap S| }{|N(i)|}   &gt; 1-q.
 \end{equation*}
 </div>
-<p class="continuation">Early on, the set of infected nodes is tree-like. In particular, you can assume that an infected vertex \(v\) has a link that points back to the (infected) vertex that transmitted the disease.</p>
-<span class="incontext"><a href="exercises-18.html#p-724">in-context</a></span>
+<p class="continuation">(Otherwise, \(i\) would have adopted behavior \(A\text{.}\)) But this means that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+p(S) = \min_{i \in S} \frac{ | N(i) \cap S| }{|N(i)|}   &gt; 1-q.
+\end{equation*}
+</div>
+<p class="continuation">Therefore the set is cohesive.</p>
+<span class="incontext"><a href="exercises-17.html#p-724">in-context</a></span>
 </body>
 </html>

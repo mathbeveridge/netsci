@@ -53,11 +53,11 @@ Start a cascade by picking any single vertex to be the initial adopter. Does it 
 
 			<image width="50%" xml:id="fig-img-cascades0" source="images/graph7.png" />
 
-<!--solution>
+<solution>
 <p>
 For <m>q=1/3</m>, every singleton induces a complete cascade.
 </p>
-</solution-->
+</solution>
 
 				</p>
 			</statement>
@@ -88,7 +88,7 @@ determine the cascades for each of the following sets <m>S_0</m> of early adopte
 				</li>
 			</ol>
 
-<!--solution>
+<solution>
 <p>
 			<ol>
 				<li>
@@ -108,7 +108,7 @@ determine the cascades for each of the following sets <m>S_0</m> of early adopte
 				</li>
 			</ol>
 </p>
-</solution-->
+</solution>
 
 				</p>
 			</statement>
@@ -121,12 +121,12 @@ determine the cascades for each of the following sets <m>S_0</m> of early adopte
 Continue using  threshold <m>q=1/2</m> for the network above. Find all of the initial adopter sets of size 2 that <em>do not</em> lead to complete cascades. Can you describe the network obstruction that prevented the cascade from expanding across the entire network?
 
 
-<!--solution>
+<solution>
 <p>
 The 2-sets that do not spark complete cascades are: <m>\{1,5\}</m> and <m>\{1,7\}</m> and <m>\{5,7\}</m> and <m>\{1,3\}</m>.
 For the first three sets, the cascade cannot jump out of the triangle <m>T=\{1,5,7\}</m>. The vertices that border set <m>T</m> have more neighbors in <m>\overline{A}</m> than in <m>A</m>, so they never adopt. Starting with set <m>\{1,3\}</m>, there is no cascade.
 </p>
-</solution-->
+</solution>
 
 
 
@@ -151,7 +151,7 @@ where <m>N(i)</m> is the set of neighbors of <m>i</m>.
  Suppose that the  initial adopter set <m>{S_0}</m> does not cause a complete cascade. Prove that there is
 a cohesive set  <m>{S \subset V \backslash S_0}</m>.
 
-<!--solution>
+<solution>
 <p>
 Let <m>T</m> be the set of vertices that adopt behavior <m>A</m> during the cascade. Let <m>S= \overline{T}</m> be the vertices that never adopt the behavior. For every <m>i \in S</m>, we have
 <me>
@@ -163,7 +163,7 @@ p(S) = \min_{i \in S} \frac{ | N(i) \cap S| }{|N(i)|}   &gt; 1-q.
 </me>
 Therefore the set is cohesive.
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -172,7 +172,7 @@ Therefore the set is cohesive.
  Suppose that there is
 a cohesive set  <m>{S \subset V \backslash S_0}</m>. Prove that  initial adopter set <m>{S_0}</m> does not cause a complete cascade.
 
-<!--solution>
+<solution>
 <p>
 We claim that no vertex in <m>S</m> ever adopts behavior <m>A</m>. Assume for the sake of contradiction that <m>i \in S</m> is the first vertex in <m>S</m> to adopt the innovation <m>A</m>. But even if every vertex outside of <m>S</m> has adopted behavior <m>A</m>, we still have
 <me>
@@ -180,7 +180,7 @@ We claim that no vertex in <m>S</m> ever adopts behavior <m>A</m>. Assume for th
 </me>
 and none of the vertices in <m>S</m> have adopted the innovation. So <m>i</m> does not adopt <m>A</m>, a contradiction. Therefore no vertex in <m>S</m> adopts the innovation.
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>

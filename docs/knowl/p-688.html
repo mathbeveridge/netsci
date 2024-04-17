@@ -12,24 +12,11 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>The random long-range contact is chosen according to the PMF</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\Pr[ v \mbox{ is } u \mbox{'s long range contact}] = C \cdot \frac{1}{d(u,v)}.
-\end{equation*}
-</div>
-<p class="continuation">Show that the normalizing constant \(C\) satisfies</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-C &gt; \frac{1}{2\log n}
-\end{equation*}
-</div>
-<p class="continuation">where \(\log n= \log_2 n\text{.}\) You will need to use the following inequalities, which you saw in your calculus classes (and might have forgotten):</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\sum_{i=1}^{k} \frac{1}{i} \leq 1 +  \mbox{ln}(k)  \leq  1 + \log_2(k).
-\end{equation*}
-</div>
+<p>We have partitioned the journey into phases. Each step occurs in exactly one phase: when we are at a vertex that is distance \(d\) from the target, we are in phase \(\lfloor \log(d) \rfloor\text{.}\) So to get the total number of steps, we just add the number of steps taken in each phase. Here are a couple of notes:</p>
+<ul class="disc">
+<li><p>The indexing of the phases "counts down": the first phase is \(j= \lfloor \log(n/2) \rfloor \) and the last phase is \(j=0\text{.}\)</p></li>
+<li><p>It is possible to have \(X_k=0\text{.}\)  this occurs when  we take a long range edge that jumps over the interval \(2^k \leq d &lt; 2^{k+1}\text{.}\)</p></li>
+</ul>
 <span class="incontext"><a href="exercises-16.html#p-688">in-context</a></span>
 </body>
 </html>
