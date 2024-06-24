@@ -186,10 +186,12 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="cascades"><h2 class="heading">
 <span class="type">Chapter</span> <span class="codenumber">18</span> <span class="title">Network Cascades</span>
 </h2>
-<section class="introduction" id="introduction-18"><p id="p-707">The linear threshold model  is a dynamic process for diffusion of innovation on a network. We are given a network and a threshold \(0 &lt; q &lt; 1\text{.}\) The network starts with all vertices using behavior \(B\text{.}\) We pick a seed set of innovators who adopt behavior \(A\text{.}\) We then watch the innovation spread according to the following rule. The vertex \(v\) will:</p>
+<section class="introduction" id="introduction-18"><p id="p-707">The linear threshold model  is a dynamic process for diffusion of innovation on a network. We are given a network and a threshold \(0 &lt; q &lt; 1\text{.}\) The network starts with all vertices using behavior \(B\text{.}\) We pick a seed set of innovators who adopt behavior \(A\text{.}\) We then watch the innovation spread according to the following rule. 
+  Let \(p_v\) be the fraction of neighbors of vertex \(v\) that have adopted behavior \(A\). 
+  The vertex \(v\) will:</p>
 <ul class="disc">
-<li id="li-322"><p id="p-708">adopt behavior \(A\) if \({p \geq q}\)</p></li>
-<li id="li-323"><p id="p-709">adopt behavior \(B\) if \({p &lt; q}\)</p></li>
+<li id="li-322"><p id="p-708">adopt behavior \(A\) if \({p_v \geq q}\)</p></li>
+<li id="li-323"><p id="p-709">adopt behavior \(B\) if \({p_v &lt; q}\)</p></li>
 </ul>
 <p class="continuation">We cycle through all the vertices until the update process stabilizes. The resulting adoption process is called a <em class="emphasis">cascade</em>. We have a <em class="emphasis">complete cascade</em> when every vertex adopts the new behavior \(A\text{.}\)</p></section><section class="exercises" id="exercises-17"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Practice Problems</span>
