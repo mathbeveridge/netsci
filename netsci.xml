@@ -56,47 +56,53 @@ pull the name of the problem from the first line  of  the \item
         <!-- Parts are optional, included here for testing            -->
         <!-- In "bookinfo.xml" set to "structural" for maximum effect -->
 
-       <part xml:id="part-centrality">
-            <title>Network Centrality</title>
-                <xi:include href="./graphs.xml" />                 
+       <part xml:id="part-networks">
+            <title>Analyzing Networks</title>
+            <chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ch-community">
+                <title>Networks and Communities</title>
+                <xi:include href="./graphs.xml" />   
+                <xi:include href="./randomwalk.xml" />                  
+                <xi:include href="./modularity.xml" />    
+                <xi:include href="./communities.xml" />  
+            </chapter>
+
+            <chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ch-centrality">
+                <title>Centralities</title>                              
                 <xi:include href="./centrality.xml" />                  
                 <xi:include href="./algcentrality.xml" />
-                <xi:include href="./randomwalk.xml" />        
                 <xi:include href="./hits.xml" />    
                 <xi:include href="./airlines.xml" />    
-                  
+            </chapter>
 
-       </part>
-
-       <part xml:id="part-community">
-        <title>Communities and Power Laws</title>   
-            <xi:include href="./modularity.xml" />    
-            <xi:include href="./communities.xml" />   
+  
+        <chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ch-power-law">
+            <title>Power Laws</title>   
             <xi:include href="./randomvar.xml" />   
             <xi:include href="./distributions.xml" />                  
             <xi:include href="./powerlaw.xml" />                      
-
+        </chapter>
    </part>
 
  
 
-        <part xml:id="part-models">
-            <title>Network Models</title>
-                <xi:include href="./randomgraph.xml" />   
-                <xi:include href="./giantcomp.xml" /> 
-                <xi:include href="./branching.xml" />             
-                <xi:include href="./pricemodel.xml" />     
-                <xi:include href="./smallworld.xml" />                             
-                <xi:include href="./navsmallworld.xml" /> 
+    <part xml:id="part-models">
+        <title>Modeling Networks</title>
+        <chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ch-models">
+            <title>Random Models for Networks</title> 
+            <xi:include href="./randomgraph.xml" />   
+            <xi:include href="./giantcomp.xml" /> 
+            <xi:include href="./branching.xml" />             
+            <xi:include href="./pricemodel.xml" />     
+            <xi:include href="./smallworld.xml" />                             
+            <xi:include href="./navsmallworld.xml" /> 
+        </chapter>
 
-       </part>
-
-        <part xml:id="part-processes">
-            <title>Processes on Networks</title>
-                <xi:include href="./cascades.xml" /> 
-                <xi:include href="./epidemics.xml" />                 
-
-       </part>
+        <chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ch-processes">
+            <title>Processes on Networks</title> 
+            <xi:include href="./cascades.xml" /> 
+            <xi:include href="./epidemics.xml" />                 
+        </chapter>
+    </part>
 
        
 <!--

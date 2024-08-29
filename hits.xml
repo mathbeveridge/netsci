@@ -3,7 +3,7 @@
 
 
 
-<chapter xml:id="hits" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="hits" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Hubs and Authorities</title>
 	<introduction>
 		<p>
@@ -568,4 +568,4 @@ Every <m>n \times n</m> matrix has both left eigenvectors and right eigenvectors
 			</statement>
 		</exercise>
 	</exercises>
-</chapter>
+</section>

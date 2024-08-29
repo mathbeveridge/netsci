@@ -3,7 +3,7 @@
 
 
 
-<chapter xml:id="randomgraph" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="randomgraph" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Erdos-Renyi Random Graph</title>
 	<introduction>
 		<p>
@@ -598,4 +598,4 @@ to give an alternate proof that
 		</exercise>
 	</exercises>
 
-</chapter>
+</section>

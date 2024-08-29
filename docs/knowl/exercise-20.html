@@ -12,22 +12,34 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Random Walk on an Undirected Graph.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Understanding Modularity, Part I.</span>
 </h6>
+<p>Modularity measures the extent to which edges are internal to communities, compared with spanning different communities. We will explain why this is the case. Basically, we are comparing the actual structure of the network with the expected structure of a network where we randomize the edges (but preserve the vertex degrees).</p>
 <ol class="lower-alpha">
 <li>
-<p>Find the transition matrix \(P\)  of the following undirected graph. Hint: construct \(P\)   row by row. And remember that when \(k_i^{\mathrm{out}}=0\text{,}\) we set \(a_{ii}=1\text{,}\) corresponding to the move "stay where we are." <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="./images/undirected-graph.png" class="contained"></div></p>
-<p><a class="solution-knowl original" data-knowl="./knowl/solution-25-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
-</li>
-<li>
-<p>Show that the all-ones vector \(\bone\) is a right eigenvector for  eigenvalue \(\lambda=1\text{.}\) In other words, confirm that</p>
+<p>Explain why the following expression counts the total number of edges</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-P \bone = \bone.
+\frac{1}{2} \sum_{i}  \sum_{j}  A_{ij} 
 \end{equation*}
 </div>
-<p class="continuation">What is the meaning of this equation? <a class="solution-knowl original" data-knowl="./knowl/solution-26-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
+<p class="continuation"><a class="solution-knowl original" data-knowl="./knowl/solution-37-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
 </li>
-</ol></article><span class="incontext"><a href="exercises-4.html#exercise-20">in-context</a></span>
+<li>
+<p>Now explain why the following expression counts the total number of edges that are <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">internal</em> to one of the designated communities.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{1}{2}  \sum_{i}  \sum_{j} A_{ij}  \, \delta (C^{(i)}, C^{(j)})
+\end{equation*}
+</div>
+<p class="continuation">which can also be written as</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{1}{2} \sum_{C} \sum_{i \in C} \sum_{j \in C} A_{ij}.
+\end{equation*}
+</div>
+<p class="continuation"><a class="solution-knowl original" data-knowl="./knowl/solution-38-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
+</li>
+</ol></article><span class="incontext"><a href="modularity.html#exercise-20">in-context</a></span>
 </body>
 </html>

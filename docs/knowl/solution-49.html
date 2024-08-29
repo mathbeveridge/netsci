@@ -15,47 +15,14 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
-<p>For each of the matrix equations above, as \(t \rightarrow \infty\text{,}\) we converge to a vector in the direction of the largest eigenvector. In other words, the hub score \(\bh\) satisfies</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-A \, A^{\top} \, \bh= \lambda \bh
-\end{equation*}
-</div>
-<p class="continuation">where \(\lambda\) is the largest eigenvalue of \(A \, A^{\top}\text{.}\) Meanwhile, the authority score \(\ba\) satisfies</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-A^{\top} \, A \,   \ba= \mu \ba
-\end{equation*}
-</div>
-<p class="continuation">where \(\mu\) is the largest eigenvalue of \(A^{\top} \,A\text{.}\)</p>
-<p>Here's a cool connection: a couple of standard linear algebra results will show us that \(\lambda=\mu\text{.}\) Recall from your linear algebra class</p>
-<ul class="disc">
-<li><p>For any matrix \(M\text{,}\) we have \(\det(M) = \det(M^{\top})\text{.}\)</p></li>
+<ol class="lower-alpha">
+<li><p>High in-degree centrality means that lots of information gets to you. High out-degree means that a lot of people are listening to you.</p></li>
 <li>
-<p>The eigenvalues of a matrix \(B\) are the solutions to</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\det(B - \mu I) = 0
-\end{equation*}
-</div>
+<p>You would need two different closeness centralities. Large \(c_i^{C^{\mathrm{in}}}\) would mean that spreading information gets to you quickly. Large \(c_i^{C^{\mathrm{out}}}\) would mean that information that you share would spread quickly to the whole network.</p>
+<p>You would still only have one betweenness centrality measure on a directed graph. The definition already includes paths from \(s\) to \(t\) and from \(t\) to \(s\text{.}\) This "double counting" on an undirected graph becomes "single counting" when the paths are directed.</p>
 </li>
-</ul>
-<p class="continuation">Therefore, \(B\) and \(B^{\top}\) have the same eigenvalues (though they usually have different eigenvectors). By observing that \((A A^{\top})^{\top} = A^{\top} A,\) we  conclude that \(\lambda = \mu\text{.}\)</p>
-<p>Let's go a step further. Taking the transpose of the equation \(A^{\top} \, A \,   \ba= \mu \ba\text{,}\) we get</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\ba^{\top} A \, A^{\top}   = \lambda \ba^{\top}.
-\end{equation*}
+</ol>
 </div>
-<p class="continuation">In other words, the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">row vector</em> \(\ba^{\top}\) is a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">left eigenvector</em> of the matrix \(A \, A^{\top}\) for the largest eigenvalue \(\lambda\text{.}\) Meanwhile,</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-A \, A^{\top} \, \bh= \lambda \bh
-\end{equation*}
-</div>
-<p class="continuation">says that the column vector \(\bh\) is a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">right eigenvector</em> for the same eigenvalue \(\lambda\text{.}\)</p>
-<p>Every \(n \times n\) matrix has both left eigenvectors and right eigenvectors. You might be more comfortable with left eigenvectors because we tend to focus on <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">column vectors</em>. But matrix transposition is a simple operation that swaps the roles of rows and vectors. So any result about column vectors can be turned into an equivalent statement about row vectors.</p>
-</div>
-<span class="incontext"><a href="exercises-5.html#solution-49">in-context</a></span>
+<span class="incontext"><a href="centrality.html#solution-49">in-context</a></span>
 </body>
 </html>

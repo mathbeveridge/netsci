@@ -11,18 +11,21 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p>The probability is really</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{k_j}{2m-1}
+\begin{array}{c||c|c|c|c|c|c|c}
+&amp;  \,\,0  \,\,&amp; \,\,1 \,\, &amp;  \,\,2 \,\, &amp;  \,\,3 \,\, &amp; \,\, 4 \,\, &amp; \,\, 5 \,\, &amp; \,\, 6 \,\, \\
+\hline
+\hline
+1 &amp; 1 &amp; 0&amp;0&amp;0&amp;0 &amp;0&amp;0\\
+2 &amp; 1 &amp; 1&amp;0&amp;0&amp; 0&amp;0&amp;0\\
+3 &amp; 1 &amp; 2&amp;3&amp;2&amp; 2&amp;1&amp;0\\
+4 &amp; 1 &amp; 1&amp;1&amp;0&amp; 0&amp; 0&amp;0\\
+5 &amp; 1 &amp; 1&amp;1&amp;1&amp; 0&amp;0&amp;0\\
+6 &amp; 1 &amp; 2&amp;2&amp;2&amp; 1&amp;0&amp;0\\
+\end{array}
 \end{equation*}
 </div>
-<p class="continuation">but this is basically the same as</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\frac{k_j}{2m}
-\end{equation*}
-</div>
-<p class="continuation">for a very large network.</p>
+<p class="continuation">All of the importance eventually leaks out of the network.</p>
 </div></body>
 </html>

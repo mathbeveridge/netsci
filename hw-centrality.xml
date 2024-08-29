@@ -8,7 +8,7 @@
 
 
 
-<chapter xml:id="hw-centrality" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="hw-centrality" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Exercises: Centrality Measures</title>
 	<introduction>
 		<p>
@@ -480,4 +480,4 @@ Let <m>\bv = (v_1, \ldots, v_{2n})^{\top}</m> be the right eigenvector for the l
 
 	</exercises>
 
-</chapter>
+</section>

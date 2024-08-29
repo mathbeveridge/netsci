@@ -13,10 +13,27 @@
 <body>
 <div class="solution solution-like">
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">7.6.b.ii.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
-<p>Given vertex \(i \in C\text{,}\) we are at this vertex with probability \(\pi_i\text{.}\) If we walk a large number of steps, then the probability that we are at vertex \(j\) is \(\pi_{j}\text{.}\) We multiply these probabilities to obtain the given probability.</p>
+<p>We have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{lllll}
+\bh(t) &amp;=&amp; A  \ba(t-1)  &amp;=&amp; \,  A \, A^{\top} \, \bh(t), \\
+\ba(t) &amp;=&amp; A^{\top} \bh(t)  &amp;=&amp; A^{\top} \, A \, \ba(t-1)
+\end{array}
+\end{equation*}
 </div>
-<span class="incontext"><a href="exercises-7.html#solution-65">in-context</a></span>
+<p class="continuation">which we can write more compactly as</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{lllll}
+\bh(t) &amp;=&amp;   A \, A^{\top} \, \bh(t-1), \\
+\ba(t)  &amp;=&amp; A^{\top} \, A \, \ba(t-1).
+\end{array}
+\end{equation*}
+</div>
+</div>
+<span class="incontext"><a href="hits.html#solution-65">in-context</a></span>
 </body>
 </html>

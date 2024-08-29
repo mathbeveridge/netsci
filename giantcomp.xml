@@ -3,7 +3,7 @@
 
 
 
-<chapter xml:id="giantcomp" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="giantcomp" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>The Emergence of the Giant Component</title>
 	<introduction>
 		<p>
@@ -201,4 +201,4 @@ Do this for <m>n= 20, 40, 80, 160, 320</m>. For <m>n &gt; 160</m>, you should un
 		</exercise>
 	</exercises>
 
-</chapter>
+</section>

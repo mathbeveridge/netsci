@@ -3,7 +3,7 @@
 
 
 
-<chapter xml:id="powerlaw" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="powerlaw" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Power Laws</title>
 	<introduction>
 		<p>
@@ -326,4 +326,4 @@ Calculate it.
 		</exercise>
 	</exercises>
 
-</chapter>
+</section>

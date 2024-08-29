@@ -3,7 +3,7 @@
 
 
 
-<chapter xml:id="algcentrality" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="algcentrality" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Algebraic Centrality</title>
 	<introduction>
 		<p>
@@ -695,4 +695,4 @@ You can also try different weighting schemes of how much to count your own impor
 			</statement>
 		</exercise>
 	</exercises>
-</chapter>
+</section>

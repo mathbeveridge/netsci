@@ -12,58 +12,29 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Powers of the Transition Matrix.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">Modularity as a Random Walk Measure.</span>
 </h6>
+<p>We can rewrite our modularity equation as</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+Q \, = \, \frac{1}{2m} \sum_{C} \sum_{i,j \in C} \left( A_{ij} - \frac{k_i k_j}{2m} \right) 
+\,= \,  \sum_{C} \sum_{i,j \in C} \left( \frac{A_{ij}}{k_i} \frac{k_i}{2m}  - \frac{k_i }{2m} \frac{k_j }{2m}  \right)	
+\end{equation*}
+</div>
 <ol class="lower-alpha">
+<li><p>Confirm that this expression is equivalent to<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+Q \, = \, \sum_{C} \sum_{i,j \in C} \left( P^{\top}_{ij}\pi_i  - \pi_i \pi_j  \right)
+\end{equation*}
+</div>where \(P = D^{-1} A\) is the random walk transition matrix and \(\pi\) is its stationary distribution, where \(\pi_i=k_{i}/2m\text{.}\) <a class="solution-knowl original" data-knowl="./knowl/solution-42-hidden.html" title="Solution 1.3.6.a.1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></li>
 <li>
-<p>Here is the matrix \(P^2\) for the undirected graph in Problem 1.</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-P^2 =
-\begin{bmatrix}
-\frac{1}{3} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; 0 \\[6pt]
-\frac{1}{9} &amp; \frac{4}{9} &amp; 0 &amp; \frac{5}{18} &amp; \frac{1}{6} &amp; 0 \\[6pt]
-\frac{1}{6} &amp; 0 &amp; \frac{1}{3} &amp; 0 &amp; \frac{1}{3} &amp; \frac{1}{6} \\[6pt]
-\frac{1}{9} &amp; \frac{5}{18} &amp; 0 &amp; \frac{11}{18} &amp; 0 &amp; 0 \\[6pt]
-\frac{1}{9} &amp; \frac{1}{6} &amp; \frac{2}{9} &amp; 0 &amp; \frac{7}{18} &amp; \frac{1}{9} \\[6pt]
-0 &amp; 0 &amp; \frac{1}{3} &amp; 0 &amp; \frac{1}{3} &amp; \frac{1}{3}
-\end{bmatrix}
-\end{equation*}
-</div>
-<p class="continuation">What does row \(i\) tell you about the instruction "take two random steps from vertex \(i\text{?}\)" <a class="solution-knowl original" data-knowl="./knowl/solution-28-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
+<p>Consider a random walk whose distribution has converged to the stationary distribution \(\pi\text{.}\)</p>
+<ol class="lower-roman">
+<li><p>Explain why \(\sum_{i,j \in C} P^{\top}_{ij}\pi_i\) is the probability that we are in \(C\) at time \(t\) and \(t+1\text{.}\) <a class="solution-knowl original" data-knowl="./knowl/solution-43-hidden.html" title="Solution 1.3.6.b.i.1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></li>
+<li><p>Explain why \(\sum_{i,j \in C}  \pi_i \pi_j\) is the probability that we are in \(C\) at time \(t\) and \(t+T\) for very large \(T\text{.}\) <a class="solution-knowl original" data-knowl="./knowl/solution-44-hidden.html" title="Solution 1.3.6.b.ii.1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></li>
+</ol>
 </li>
-<li><p>Using part (a) as a guide, give an interpretation for row \(i\) of the matrix \(P^3\text{.}\) <a class="solution-knowl original" data-knowl="./knowl/solution-29-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></li>
-<li><p>What do the rows of matrix \(P^t\) describe? <a class="solution-knowl original" data-knowl="./knowl/solution-30-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></li>
-<li>
-<p>For \(1 \leq i \leq 6\text{,}\) let \(\mathbf{e}_i\) denote the " elementary vector" whose \(j\)-th entry is</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\mathbf{e}_i(j) = \left\{
-\begin{array}{cl}
-1 &amp; i=j \\
-0 &amp; \mbox{otherwise.}
-\end{array}
-\right.
-\end{equation*}
-</div>
-<p class="continuation">In other words,</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\mathbf{e}_1&amp;= \begin{bmatrix} 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{bmatrix}\\
-\mathbf{e}_2&amp;= \begin{bmatrix} 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \end{bmatrix}\\
-\mathbf{e}_3&amp;= \begin{bmatrix} 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \end{bmatrix}\\
-\mathbf{e}_4&amp;= \begin{bmatrix} 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \end{bmatrix}\\
-\mathbf{e}_5&amp;= \begin{bmatrix} 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix}
-\end{align*}
-</div>
-<p>What does the vector</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\mathbf{e}_i \, P^t
-\end{equation*}
-</div>
-<p class="continuation">describe? <a class="solution-knowl original" data-knowl="./knowl/solution-31-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
-</li>
-</ol></article><span class="incontext"><a href="exercises-4.html#exercise-22">in-context</a></span>
+<li><p>Modularity is the difference of the two quantities in part (b). Using this random walk interpretation, why is this difference a measure of community structure?</p></li>
+</ol></article><span class="incontext"><a href="modularity.html#exercise-22">in-context</a></span>
 </body>
 </html>

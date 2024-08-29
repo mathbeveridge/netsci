@@ -12,24 +12,18 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>We have</p>
+<p>Suppose that \(G\) is an undirected graph, so that its adjacency matrix is symmetric. The undirected graph \(G\) is reducible if and only if there is a permutation matrix \(P\) such that</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\begin{array}{lllll}
-\bh(t) &amp;=&amp; A  \ba(t-1)  &amp;=&amp; \,  A \, A^{\top} \, \bh(t), \\
-\ba(t) &amp;=&amp; A^{\top} \bh(t)  &amp;=&amp; A^{\top} \, A \, \ba(t-1)
+P^{\top} A P = \left[
+\begin{array}{cc}
+A_{11} &amp; 0 \\
+0 &amp; A_{22}
 \end{array}
+\right].
 \end{equation*}
 </div>
-<p class="continuation">which we can write more compactly as</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\begin{array}{lllll}
-\bh(t) &amp;=&amp;   A \, A^{\top} \, \bh(t-1), \\
-\ba(t)  &amp;=&amp; A^{\top} \, A \, \ba(t-1).
-\end{array}
-\end{equation*}
-</div>
-<span class="incontext"><a href="exercises-5.html#p-225">in-context</a></span>
+<p class="continuation">Finally, we note that the matrix \(P^{\top} A P\) simply corresponds to reordering the vertices of \(G\text{.}\)</p>
+<span class="incontext"><a href="algcentrality.html#p-225">in-context</a></span>
 </body>
 </html>

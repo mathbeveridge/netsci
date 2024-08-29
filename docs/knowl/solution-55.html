@@ -15,26 +15,51 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
-<p>The terms are</p>
+<p>We have \(A^2 = AA\) and so</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\begin{array}{c|c|c|c|c}
-i \backslash j&amp;  1  &amp; 2 &amp; 3 &amp; 4 \\[0.5em]
-\hline
-1 &amp;- \frac{1}{6}&amp; 1 - \frac{2}{6}&amp;0&amp;0\\[0.5em]
-2 &amp;1 - \frac{2}{6}&amp;2- \frac{4}{6}&amp;0&amp;0\\[0.5em]
-3 &amp;0&amp;0&amp; - \frac{4}{6}&amp; 1- \frac{2}{6}\\[0.5em]
-4 &amp;0&amp;0&amp;1 - \frac{2}{6}&amp;- \frac{1}{6}
-\end{array}
+AA  = ( \lambda_1 \bu_1 \bu_1^{\top} + \lambda_2 \bu_2 \bu_2^{\top})( \lambda_1 \bu_1 \bu_1^{\top} + \lambda_2 \bu_2 \bu_2^{\top}).
 \end{equation*}
 </div>
-<p class="continuation">and the modularity is</p>
+<p class="continuation">We end up with four terms. Let's look at them one at a time. Since \(\bu_1^\top \bu_1=1\text{,}\) we have</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-Q =  \frac{1}{6} \left( 4 - 2 \cdot \frac{1}{6} - 4 \cdot \frac{2}{6} - 2 \cdot \frac{4}{6} \right) = \frac{1}{6}
+\lambda_1^2 \bu_1 \bu_1^{\top}  \bu_1 \bu_1^{\top} =
+\lambda_1^2 \bu_1 (\bu_1^{\top}  \bu_1) \bu_1^{\top} =
+\lambda_1^2 \bu_1 \bu_1^{\top}.
+\end{equation*}
+</div>
+<p class="continuation">Next, since \(\bu_1^\top \bu_2=0\text{,}\) we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\lambda_1 \lambda_2 \bu_1 \bu_1^{\top}  \bu_2 \bu_2^{\top} =
+\lambda_1 \lambda_2 \bu_1 (\bu_1^{\top}  \bu_2) \bu_2^{\top} =
+\mathbf{0}.
+\end{equation*}
+</div>
+<p class="continuation">Similarly,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\lambda_1 \lambda_2 \bu_2 \bu_2^{\top}  \bu_1\bu_1^{\top} =
+\lambda_1 \lambda_2 \bu_2 (\bu_2^{\top}  \bu_1) \bu_1^{\top} =
+\mathbf{0}.
+\end{equation*}
+</div>
+<p class="continuation">and</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\lambda_2^2 \bu_2 \bu_2^{\top}  \bu_2 \bu_2^{\top} =
+\lambda_2^2 \bu_2 (\bu_2^{\top}  \bu_2) \bu_2^{\top} =
+\lambda_2^2 \bu_2 \bu_2^{\top}.
+\end{equation*}
+</div>
+<p class="continuation">So our final answer is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+A^2 = AA  = \lambda_1^2 \bu_1 \bu_1^{\top}  + \lambda_2^2 \bu_2 \bu_2^{\top}.
 \end{equation*}
 </div>
 </div>
-<span class="incontext"><a href="exercises-7.html#solution-55">in-context</a></span>
+<span class="incontext"><a href="algcentrality.html#solution-55">in-context</a></span>
 </body>
 </html>

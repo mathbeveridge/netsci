@@ -6,7 +6,7 @@
 
 
 
-<chapter xml:id="navsmallworld" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="navsmallworld" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Navigable Small World Model</title>
 	<introduction>
 		<p>
@@ -335,4 +335,4 @@ So an average journey takes <m>O((\log n)^2)</m> steps.
 
 
 
-</chapter>
+</section>

@@ -12,17 +12,12 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7<span class="period">.</span></span><span class="space"> </span><span class="title">Recursive Importance in a Digraph.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3<span class="period">.</span></span>
 </h6>
-<p>Consider the following recursive rule for updating the importance of a vertex.</p>
-<ul class="disc">
-<li><p>At first, all vertices have importance = 1</p></li>
-<li><p>In each round, update the importance of a vertex to be the sum of the importances of its in-neighbors.</p></li>
-</ul>
+<p>Use this <a class="external" href="https://docs.google.com/spreadsheets/d/1kEP0CkUeG9s0RrJDtZcSmkDRKR7JWryNItu4b60pYYs/edit?usp=sharing" target="_blank">link to a Google Sheet</a> to explore the ways to partition graphs on four vertices. <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">You may add self-loops</em>, but such a loop corresponds to \(A_{ii}=2\) (so that the degrees are correct).</p>
 <ol class="lower-alpha">
-<li><p>Use this recursive rule to calculate the importance for the following directed graph. What do you observe? <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-algcentrality4.svg" role="img" class="contained"></div> <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/acyclic-digraph.png" class="contained"></div> <a class="solution-knowl original" data-knowl="./knowl/solution-22-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></li>
-<li><p>Use this  recursive rule calculate the importance of each vertex in this directed graph. What do you observe? <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-algcentrality6.svg" role="img" class="contained"></div> <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/digraph-feedback.png" class="contained"></div> <a class="solution-knowl original" data-knowl="./knowl/solution-23-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></li>
-<li><p>Devise a recursive importance rule for directed networks that "fixes the problems" that you observed in parts (a) and (b). <a class="solution-knowl original" data-knowl="./knowl/solution-24-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></li>
-</ol></article><span class="incontext"><a href="exercises-3.html#exercise-19">in-context</a></span>
+<li><p>Can you find a graph and a partition with modularity greater than \(1/2\text{?}\) If not, why not? <a class="solution-knowl original" data-knowl="./knowl/solution-35-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></li>
+<li><p>Can you find a graph and a partition with modularity less than \(-1/2\text{?}\) If not, why not? <a class="solution-knowl original" data-knowl="./knowl/solution-36-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></li>
+</ol></article><span class="incontext"><a href="modularity.html#exercise-19">in-context</a></span>
 </body>
 </html>

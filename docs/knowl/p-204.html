@@ -12,7 +12,13 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>If \(v\) has a high hub score, then \(v\) has out-neighbor with high authority scores.</p>
-<span class="incontext"><a href="hits.html#p-204">in-context</a></span>
+<ol class="lower-alpha">
+<li><p>High in-degree centrality means that lots of information gets to you. High out-degree means that a lot of people are listening to you.</p></li>
+<li>
+<p>You would need two different closeness centralities. Large \(c_i^{C^{\mathrm{in}}}\) would mean that spreading information gets to you quickly. Large \(c_i^{C^{\mathrm{out}}}\) would mean that information that you share would spread quickly to the whole network.</p>
+<p>You would still only have one betweenness centrality measure on a directed graph. The definition already includes paths from \(s\) to \(t\) and from \(t\) to \(s\text{.}\) This "double counting" on an undirected graph becomes "single counting" when the paths are directed.</p>
+</li>
+</ol>
+<span class="incontext"><a href="centrality.html#p-204">in-context</a></span>
 </body>
 </html>

@@ -3,7 +3,7 @@
 
 
 
-<chapter xml:id="branching" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="branching" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>The Branching Process</title>
 	<introduction>
 		<p>
@@ -237,4 +237,4 @@ and so
 	</exercises>
 
 
-</chapter>
+</section>

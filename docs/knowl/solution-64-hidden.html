@@ -10,5 +10,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like"><p>Given vertex \(i \in C\text{,}\) we are at this vertex with probability \(\pi_i\text{.}\) We then step to a neighbor \(j\) with probability \(p_{ij}\text{,}\) and we only include this in our sum when \(j \in C\text{.}\)</p></div></body>
+<body><div class="solution solution-like">
+<p>Our recursive update rule is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\bh(t) &amp;= A \, \ba(t-1),\\
+\ba(t) &amp;= A^{\top} \, \bh(t).
+\end{align*}
+</div>
+<p>Row \(i\) of \(A\) contains the out-neighbors of vertex \(i\text{.}\)  Row \(i\) of \(A^{\top}\) contains the in-neighbors of \(i\text{.}\)</p>
+</div></body>
 </html>

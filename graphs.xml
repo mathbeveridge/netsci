@@ -3,7 +3,7 @@
 
 
 
-<chapter xml:id="graphs" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="graphs" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Graphs and Digraphs</title>
 	<introduction>
 		<p>
@@ -475,4 +475,4 @@ A tournament <m>T</m> is <em>transitive</em> if whenever <m>(u,v)</m> and <m>(v,
 	</exercises>
 
 
-</chapter>
+</section>

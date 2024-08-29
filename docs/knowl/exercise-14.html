@@ -12,8 +12,20 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Adjacency Matrix of a Digraph.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7<span class="period">.</span></span><span class="space"> </span><span class="title">Random Walk on a Directed Graph.</span>
 </h6>
-<p>Find the adjacency matrix \(A\) of the following directed graph, where \(A_{ij}=1\) if \((i,j)\in E\) (a directed arc), and is 0 otherwise. Note: the \(i\)th row contains all the arcs leading out of \(i\text{.}\) So construct the matrix row-by-row. <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/directed-graph.png" class="contained"></div> <a class="solution-knowl original" data-knowl="./knowl/solution-14-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></article><span class="incontext"><a href="exercises-3.html#exercise-14">in-context</a></span>
+<p>Things don't work out as nicely on directed graphs. We will work through an example to see some of the strange behaviors that can arise.</p>
+<ol class="lower-alpha">
+<li><p>Find the transition matrix \(P\) of the following directed graph. Hint: construct \(P\) row by row. <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="./images/directed-graph.png" class="contained"></div> <a class="solution-knowl original" data-knowl="./knowl/solution-23-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></li>
+<li>
+<p>Confirm that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+P \bone = \bone.
+\end{equation*}
+</div>
+<p class="continuation">What is the meaning of this equation? <a class="solution-knowl original" data-knowl="./knowl/solution-24-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
+</li>
+</ol></article><span class="incontext"><a href="randomwalk.html#exercise-14">in-context</a></span>
 </body>
 </html>

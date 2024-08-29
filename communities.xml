@@ -3,7 +3,7 @@
 
 
 
-<chapter xml:id="communities" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="communities" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Community Detection in Gephi</title>
 	<introduction>
 		<p>
@@ -153,4 +153,4 @@ Load the <c>us-airlines2.gml</c> file into Gephi. <em>Do not change the layout o
 
 
 
-</chapter>
+</section>

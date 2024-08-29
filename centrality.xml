@@ -3,7 +3,7 @@
 
 
 
-<chapter xml:id="centrality" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="centrality" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Centrality Measures</title>
 	<introduction>
 		<p>
@@ -1386,4 +1386,4 @@ What is the effect of adding one shortcut to  a cycle on six vertices? Calculate
 
 
 
-</chapter>
+</section>

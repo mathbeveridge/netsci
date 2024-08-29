@@ -8,7 +8,7 @@
 
 
 
-<chapter xml:id="hw-graphs" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="hw-graphs" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Exercises: Graphs and Digraphs</title>
 	<introduction>
 		<p>
@@ -195,4 +195,4 @@ Prove that <m>G</m> is an acyclic digraph. (See the "Sources and Sinks" problem 
 	</exercises>
 
 
-</chapter>
+</section>

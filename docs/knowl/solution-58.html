@@ -15,8 +15,20 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
-<p>When we sum all of the entries of the adjacency matrix, we  count every edge twice.</p>
+<p>Let's factor out \(\lambda_1^n\) from this expression to get</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+A^n \bx  &amp;=
+\lambda_1^n \left( c_1  \bu_1 + c_2  \left(\frac{ \lambda_2}{\lambda_1}^n \right) \bu_2. \right)
+\end{align*}
 </div>
-<span class="incontext"><a href="exercises-7.html#solution-58">in-context</a></span>
+<p>As \(n\) gets really large, the fraction \((\lambda_2/\lambda_1)^n\) goes to zero. Therefore for large \(n\text{,}\) we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+A^n \bx  \approx \lambda_1^n  c_1  \bu_1.
+\end{equation*}
+</div>
+</div>
+<span class="incontext"><a href="algcentrality.html#solution-58">in-context</a></span>
 </body>
 </html>

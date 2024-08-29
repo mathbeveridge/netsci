@@ -3,7 +3,7 @@
 
 
 
-<chapter xml:id="Graphs-and-Digraphs" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="Graphs-and-Digraphs" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Graphs and Digraphs</title>
 
 
@@ -235,4 +235,4 @@ Prove that a tournament <m>T</m> is transitive if and only if <m>T</m> has no (d
 	</exercises>
 
 
-</chapter>
+</section>

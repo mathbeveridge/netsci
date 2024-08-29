@@ -15,8 +15,26 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
-<p>Row \(i\) of \(P^t\) is the probability distribution for a random walk started at vertex \(i\text{.}\) So this distribution converges to \(\pi\text{.}\) In particular, as \(t \rightarrow \infty\text{,}\) the probability that we are at vertex \(j\) is \(k_j/14\text{.}\)</p>
+<p>Yes, you can. Using loops and communities of size 1 is the key. In fact, a graph with a loop at each vertex that is split into four singleton communities leads to the calculation</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{c|c|c|c|c}
+i \backslash j&amp;  1  &amp; 2 &amp; 3 &amp; 4 \\[0.5em]
+\hline
+1 &amp;2 - \frac{1}{2}&amp;0&amp;0&amp;0\\[0.5em]
+2 &amp;0&amp;2 - \frac{1}{2} &amp;0&amp;0\\[0.5em]
+3 &amp;0&amp;0&amp;2 - \frac{1}{2}&amp;0 \\[0.5em]
+4 &amp;0&amp;0&amp;0&amp;2 - \frac{1}{2}
+\end{array}
+\end{equation*}
 </div>
-<span class="incontext"><a href="exercises-4.html#solution-35">in-context</a></span>
+<p class="continuation">so the modularity is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+Q =  \frac{1}{8} \cdot 4 \left(2 -  \frac{1}{2} \right) = \frac{3}{4}
+\end{equation*}
+</div>
+</div>
+<span class="incontext"><a href="modularity.html#solution-35">in-context</a></span>
 </body>
 </html>

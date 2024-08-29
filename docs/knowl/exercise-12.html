@@ -12,14 +12,53 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Shortcuts in a Cycle.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Stationary Distribution for an Undirected Graph.</span>
 </h6>
-<p>What is the effect of adding one shortcut to  a cycle on six vertices? Calculate the centralities as specified below.</p>
+<p>A vector whose entries are nonnegative and sum to one correspond to a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">probability distribution</em> on the vertices of \(G\text{.}\) A distribution \(\pi\) is  <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">stationary</em> for \(P\) when</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\pi P = \pi.
+\end{equation*}
+</div>
+<p class="continuation">The amazing Perron-Frobenius Theorem (a very general theorem) can be applied to the transition matrix \(P\) for a connected, non-bipartite undirected graph.</p>
+<p>In particular, it applies to the matrix \(P\) from the previous problems. And it tells us more information about the left eigenvector  \(\bv\text{.}\) Two of the properties that it tells us are:</p>
+<ul class="disc">
+<li><p>All of the other eigenvalues satisify \(| \lambda_i| &lt; 1\text{.}\) In other words, \(\bv\) is the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">dominant eigenvector</em> of \(P\text{.}\)</p></li>
+<li>
+<p>Assuming that we have scaled the row vector \(\bv\) so that its entries sum to 1, we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\lim_{t \rightarrow \infty} P^t  \, = \, \bone \,  \bv
+&amp;=
+\begin{bmatrix}
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
+\end{bmatrix}
+\end{align*}
+</div>
+<p>where</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\bv =
+\begin{bmatrix}
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{2}{14} &amp; \frac{3}{14} &amp; \frac{2}{14} &amp; \frac{3}{14} &amp; \frac{3}{14} &amp; \frac{1}{14}
+\end{bmatrix}.
+\end{equation*}
+</div>
+</li>
+</ul>
+<p class="continuation">Given this information:</p>
 <ol class="lower-alpha">
-<li><p>Degree Centrality   \(c_i^D  = \deg(i) = k_i\) <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality10.svg" role="img" class="contained"></div></p></li>
-<li><p>Betweenness Centrality   \(c_i^B = \displaystyle{\sum_{s \neq i} \sum_{t \neq i, s} \frac{n_{s,t}(i)}{n_{s,t}}}\) <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality11.svg" role="img" class="contained"></div></p></li>
-<li><p>Closeness Centrality  \(c_i^C =  \displaystyle{\frac{1}{\sum_{j} d_{i,j}}}\) <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality12.svg" role="img" class="contained"></div></p></li>
-</ol>
-<p class="continuation"><a class="solution-knowl original" data-knowl="./knowl/solution-12-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></article><span class="incontext"><a href="exercises-2.html#exercise-12">in-context</a></span>
+<li><p>What new properties do we now know about the vector (and probability distributrion) \(\bv\text{?}\) <a class="solution-knowl original" data-knowl="./knowl/solution-17-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></li>
+<li><p>After taking many random steps, what is the probability that we are at vertex \(i\text{?}\) <a class="solution-knowl original" data-knowl="./knowl/solution-18-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></li>
+</ol></article><span class="incontext"><a href="randomwalk.html#exercise-12">in-context</a></span>
 </body>
 </html>

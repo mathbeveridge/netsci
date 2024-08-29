@@ -3,7 +3,7 @@
 
 
 
-<chapter xml:id="pricemodel" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="pricemodel" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Price's Model for a Citation Network</title>
 	<introduction>
 		<p>
@@ -347,4 +347,4 @@ and this is Price's model with <m>a=c</m>.
 
 	</exercises>
 
-</chapter>
+</section>

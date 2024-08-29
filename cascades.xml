@@ -5,12 +5,16 @@
 
 
 
-<chapter xml:id="cascades" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="cascades" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Network Cascades</title>
 	<introduction>
 		<p>
 
 
+
+
+
+			
 
 
 The linear threshold model  is a dynamic process for diffusion of innovation on a network. 
@@ -198,4 +202,4 @@ and none of the vertices in <m>S</m> have adopted the innovation. So <m>i</m> do
 
 
 
-</chapter>
+</section>

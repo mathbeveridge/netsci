@@ -4,7 +4,7 @@
 
 
 
-<chapter xml:id="probdist" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="probdist" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Probability Distributions</title>
 	<introduction>
 		<p>
@@ -684,4 +684,4 @@ What this is saying is that as <m>n \rightarrow \infty</m>, the binomial distrib
 	</exercises>
 
 
-</chapter>
+</section>

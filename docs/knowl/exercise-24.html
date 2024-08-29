@@ -12,53 +12,13 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Stationary Distribution for an Undirected Graph.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Dolphin Social Network.</span>
 </h6>
-<p>A vector whose entries are nonnegative and sum to one correspond to a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">probability distribution</em> on the vertices of \(G\text{.}\) A distribution \(\pi\) is  <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">stationary</em> for \(P\) when</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\pi P = \pi.
-\end{equation*}
-</div>
-<p class="continuation">The amazing Perron-Frobenius Theorem (a very general theorem) can be applied to the transition matrix \(P\) for a connected, non-bipartite undirected graph.</p>
-<p>In particular, it applies to the matrix \(P\) from the previous problems. And it tells us more information about the left eigenvector  \(\bv\text{.}\) Two of the properties that it tells us are:</p>
-<ul class="disc">
-<li><p>All of the other eigenvalues satisify \(| \lambda_i| &lt; 1\text{.}\) In other words, \(\bv\) is the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">dominant eigenvector</em> of \(P\text{.}\)</p></li>
-<li>
-<p>Assuming that we have scaled the row vector \(\bv\) so that its entries sum to 1, we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\lim_{t \rightarrow \infty} P^t  \, = \, \bone \,  \bv
-&amp;=
-\begin{bmatrix}
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
-\end{bmatrix}
-\end{align*}
-</div>
-<p>where</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\bv =
-\begin{bmatrix}
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6
-\end{bmatrix}
-=
-\begin{bmatrix}
-\frac{2}{14} &amp; \frac{3}{14} &amp; \frac{2}{14} &amp; \frac{3}{14} &amp; \frac{3}{14} &amp; \frac{1}{14}
-\end{bmatrix}.
-\end{equation*}
-</div>
-</li>
-</ul>
-<p class="continuation">Given this information:</p>
+<p>Lusseau and Newman performed a social network analysis on a dolphin population in Doubtful Sound, New Zealand. They used Betweenness Clustering (successively removing edges with highest betweenness) to find two communities of dolphins. These are the black and non-black nodes shown in the figure to the right. The non-black community is further subdivided into 3 sub-communities, according to shade of grey. Females are represented by circles, males by triangles, and unknown gender by squares. <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/dolphin-network.png" class="contained"></div></p>
 <ol class="lower-alpha">
-<li><p>What new properties do we now know about the vector (and probability distributrion) \(\bv\text{?}\) <a class="solution-knowl original" data-knowl="./knowl/solution-34-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></li>
-<li><p>After taking many random steps, what is the probability that we are at vertex \(i\text{?}\) <a class="solution-knowl original" data-knowl="./knowl/solution-35-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></li>
-</ol></article><span class="incontext"><a href="exercises-4.html#exercise-24">in-context</a></span>
+<li><p>Following the same workflow as for the Zachary Karate Club, investigate this dolphin social network, which is found in the <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">dolphin.gml</code> file linked on the moodle site.</p></li>
+<li><p>What value of modularity do you need to use to get 2 communities? 4 communities? How do your communities (found by the Louvain method) compare the the communities found by Lusseau and Newman?</p></li>
+<li><p>In the Preview view, make the most compelling graphic you can for the dolphin network. Nodes should be colored according to the four communities you found. The rest is up to you.</p></li>
+</ol></article><span class="incontext"><a href="communities.html#exercise-24">in-context</a></span>
 </body>
 </html>

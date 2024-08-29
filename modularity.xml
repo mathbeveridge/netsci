@@ -3,7 +3,7 @@
 
 
 
-<chapter xml:id="modularity" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="modularity" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Modularity</title>
 	<introduction>
 		<p>
@@ -759,4 +759,4 @@ why is this difference a measure of community structure?
 		</exercise>
 	</exercises>
 
-</chapter>
+</section>

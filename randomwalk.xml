@@ -3,7 +3,7 @@
 
 
 
-<chapter xml:id="randomwalk" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="randomwalk" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Random Walks</title>
 	<introduction>
 		<p>
@@ -744,4 +744,4 @@ As this problem shows, the eigenvectors for a weakly connected directed graph ar
 	</exercises>
 
 
-</chapter>
+</section>

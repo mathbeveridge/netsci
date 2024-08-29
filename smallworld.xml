@@ -5,7 +5,7 @@
 
 
 
-<chapter xml:id="smallworld" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="smallworld" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>The Small World Model</title>
 	<introduction>
 		<p>
@@ -430,4 +430,4 @@ C \gtrapprox \frac{3}{16}.
 		</exercise>
 	</exercises>
 
-</chapter>
+</section>

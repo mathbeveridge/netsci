@@ -3,7 +3,7 @@
 
 
 
-<chapter xml:id="us-airline" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="us-airline" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Analyzing the US Airline Network</title>
 	<introduction>
 		<p>
@@ -261,4 +261,4 @@ plt.show()
 	</exercises>
 
 
-</chapter>
+</section>

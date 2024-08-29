@@ -12,57 +12,7 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>There are many ways to make graphs that distinguish these centrality measures from one another. But it is true that in real world networks, these quantities tend to be correlated. The example networks below are variants of a simple idea. A <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">barbell graph</em> is a graph that consist of two complete graphs \(K_s\) and \(K_t\) connected by a path of length \(r\text{.}\) <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality6.svg" role="img" class="contained"></div> Sometimes we take \(s=t\) and sometimes we take \(s \ll t\text{.}\) Likewise, sometimes \(r \approx s\) and sometimes \(r \gg s\text{.}\) We will make some rough calculations below (rather than getting them exactly right) to compare the sizes of our measures.</p>
-<ul class="disc">
-<li>
-<p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">High Degree and Low Closeness.</em>   Consider a graph consisting of two large cliques (complete graphs) of the same size connected by a long path. We call this a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">barbell graph</em>. Vertices in the two cliques have high degree, but have low closeness because almost half of the vertices are far away. Here is an example <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality7.svg" role="img" class="contained"></div> High degree: \(c_a^C = 10\text{,}\) which is the maximum degree. There are many vertices with degree 2. Low closeness:</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-{1/c_a^C} = 9 + \sum_{i=1}^{100} i +   9 \times 101 = 5968.
-\end{equation*}
-</div>
-<p class="continuation">Meanwhile,</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-{1/c_b^C}  = 2 \left( \sum_{i=1}^{50} i + 9 \times 51 \right)
-= 50 \times 51 + 18 \times 51 = 3468.
-\end{equation*}
-</div>
-<p class="continuation">So \(c_a^C \approx 0.58 C_b^C\text{.}\) In the graph above, we have \(c_c^D = k_c = 9\) which is just one below the maximum degree. However \(c_c^B=0\text{.}\)</p>
-</li>
-<li><p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">High Degree and Low Betweenness.</em> Consider the same barbell graph from the previous example. The degree of the vertices in the cliques are very high, yet all but one of them have 0 betweenness. The vertices on the path connecting the two cliques have higher betweenness.</p></li>
-<li><p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">High Closeness and Low Degree.</em> Once again, the barbell graph above provides an example. The center of the graph has the largest closeness, but has degree 2.</p></li>
-<li>
-<p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">High Closeness and Low Betweenness.</em>   This one is a little trickier. How can you be close to everything, but not located on shortest paths? The answer: add a leaf to a vertex with high closeness. For example we add a leaf \(d\) to the central vertex \(b\) of the barbell graph. This vertex \(d\) has relatively large closeness. We have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\frac{1}{c_d^C} = 121 + \frac{1}{c_b^C},
-\end{equation*}
-</div>
-<p class="continuation">because this vertex is just one step further than \(c\) to the rest of the graph. So \(c_d^C \approx 0.98 c_b^C.\) Meanwhile \(c_d^B=0\text{.}\) <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality8.svg" role="img" class="contained"></div></p>
-</li>
-<li><p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">High Betweenness and Low Degree.</em> Once again, the barbell graph does the trick. The central vertex \(b\) has the largest betweenness, but it only has degree 2.</p></li>
-<li>
-<p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">High Betweenness and Low Closeness.</em> Another tricky one. How can you be between lots of vertices, yet not have a high closeness value? Let's look at a barbell graph where the cliques are of very different sizes. <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality9.svg" role="img" class="contained"></div> In this graph, most vertices have zero betweenness. We have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-c_a^B = 10 \times 1100 = 11000.
-\end{equation*}
-</div>
-<p class="continuation">and</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-{1/c_a^C} = 10 + \sum_{i=1}^{100} i + 101 \times 1000 = 106060.
-\end{equation*}
-</div>
-<p class="continuation">Meanwhile the closeness of node \(b\) is</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-{1/c_b^B} = 1000 + \sum_{i=1}^{100} i + 101 \times 10 = 7060.
-\end{equation*}
-</div>
-</li>
-</ul>
-<span class="incontext"><a href="exercises-2.html#p-63">in-context</a></span>
+<p>We have</p>
+<span class="incontext"><a href="randomwalk.html#p-63">in-context</a></span>
 </body>
 </html>
