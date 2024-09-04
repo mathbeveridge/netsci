@@ -11,21 +11,18 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
+<p>Let's use linearity of expectation (from the next exercise). Let \(Y\) be the outcome when we roll one fair die. We have</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\begin{array}{c||c|c|c|c|c|c|c}
-&amp;  \,\,0  \,\,&amp; \,\,1 \,\, &amp;  \,\,2 \,\, &amp;  \,\,3 \,\, &amp; \,\, 4 \,\, &amp; \,\, 5 \,\, &amp; \,\, 6 \,\, \\
-\hline
-\hline
-1 &amp; 1 &amp; 0&amp;0&amp;0&amp;0 &amp;0&amp;0\\
-2 &amp; 1 &amp; 1&amp;0&amp;0&amp; 0&amp;0&amp;0\\
-3 &amp; 1 &amp; 2&amp;3&amp;2&amp; 2&amp;1&amp;0\\
-4 &amp; 1 &amp; 1&amp;1&amp;0&amp; 0&amp; 0&amp;0\\
-5 &amp; 1 &amp; 1&amp;1&amp;1&amp; 0&amp;0&amp;0\\
-6 &amp; 1 &amp; 2&amp;2&amp;2&amp; 1&amp;0&amp;0\\
-\end{array}
+\E[Y] = \frac{1}{6} \left( 1 + 2 + 3 + 4 + 5 + 6 \right) = \frac{21}{6} = \frac{7}{2}.
 \end{equation*}
 </div>
-<p class="continuation">All of the importance eventually leaks out of the network.</p>
+<p class="continuation">When we roll two dice, we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[X] =  \E[Y_1] + \E[Y_2] = \frac{7}{2} + \frac{7}{2} = 7.
+\end{equation*}
+</div>
+<p class="continuation">where both \(Y_1\) and \(Y_2\) are the outcome of rolling one fair die.</p>
 </div></body>
 </html>

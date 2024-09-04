@@ -12,34 +12,17 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Getting Started with NetworkX.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7<span class="period">.</span></span><span class="space"> </span><span class="title">Recursive Importance in a Digraph.</span>
 </h6>
+<p>Consider the following recursive rule for updating the importance of a vertex.</p>
+<ul class="disc">
+<li><p>At first, all vertices have importance = 1</p></li>
+<li><p>In each round, update the importance of a vertex to be the sum of the importances of its in-neighbors.</p></li>
+</ul>
 <ol class="lower-alpha">
-<li>
-<p>Now let's try to do some of this same work using NetworkX. You will need to start by installing NetworkX using the command</p>
-<pre class="code-display tex2jax_ignore">
-pip3 install networkx
-</pre>
-</li>
-<li><p>Start off by familiarizing yourself with NetworkX by working though the <a class="external" href="https://networkx.github.io/documentation/stable/tutorial.html" target="_blank">NetworkX tutorial</a>.</p></li>
-<li>
-<p>Try to import the airline graph and find its centrality measures. Googling the following terms will bring up useful parts of the NetworkX documentation:</p>
-<pre class="code-display tex2jax_ignore">
-networkx tutorial
-networkx centrality
-networkx pagerank
-networkx graphml import
-</pre>
-<p class="continuation">Or visit our moodle site for direct links. If you want to plot the network via python, here is a simple code snippet that gives you an idea of how to start.</p>
-<pre class="code-display tex2jax_ignore">
-import networkx as nx
-import matplotlib.pyplot as plt
-
-G = nx.cubical_graph()
-nx.draw(G)
-plt.show()
-</pre>
-</li>
-</ol></article><span class="incontext"><a href="us-airline.html#exercise-46">in-context</a></span>
+<li><p>Use this recursive rule to calculate the importance for the following directed graph. What do you observe? <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-algcentrality4.svg" role="img" class="contained"></div> <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/acyclic-digraph.png" class="contained"></div> <a class="solution-knowl original" data-knowl="./knowl/solution-100-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></li>
+<li><p>Use this  recursive rule calculate the importance of each vertex in this directed graph. What do you observe? <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-algcentrality6.svg" role="img" class="contained"></div> <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/digraph-feedback.png" class="contained"></div> <a class="solution-knowl original" data-knowl="./knowl/solution-101-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></li>
+<li><p>Devise a recursive importance rule for directed networks that "fixes the problems" that you observed in parts (a) and (b). <a class="solution-knowl original" data-knowl="./knowl/solution-102-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></li>
+</ol></article><span class="incontext"><a href="algcentrality.html#exercise-46">in-context</a></span>
 </body>
 </html>

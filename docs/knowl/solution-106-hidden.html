@@ -11,7 +11,45 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p>So why do most naturally occurring power laws have \(2 &lt; \alpha &lt; 3\text{?}\) We'll consider the degree sequence for a network. In this range of \(\alpha\text{,}\) the average degree is finite. This makes sense for our graph. Next, we observe that  the second moment  is infinite (and so are the higher moments). This means that the variance of the degrees goes to infinity. Therefore, we expect to find hub nodes with very, very high degree. If \(\alpha &gt; 3\text{,}\) then the second moment would converge, which means that the degrees would be well-concentrated around the expected value. We've already seen how important the hub nodes are in the network. So if hub nodes only occur when \(\alpha &lt; 3\text{,}\) it makes sense that our observed power laws should fall into the range of  \(2 &lt; \alpha &lt; 3\text{.}\)</p>
-<p>What about other natural power laws, like the size of cities? Remember that a power law is the correct model for a "popularity contest" or a "rich get richer phenomenon." In these instances, there are some incredibly successful entities, and their success breeds even more success. In other words, in such popularity feedback loops, we  anticipate seeing entities that are vastly more successful than the average entity. This can only happen when the variance of the power law is infinite.</p>
+<p>For each of the matrix equations above, as \(t \rightarrow \infty\text{,}\) we converge to a vector in the direction of the largest eigenvector. In other words, the hub score \(\bh\) satisfies</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+A \, A^{\top} \, \bh= \lambda \bh
+\end{equation*}
+</div>
+<p class="continuation">where \(\lambda\) is the largest eigenvalue of \(A \, A^{\top}\text{.}\) Meanwhile, the authority score \(\ba\) satisfies</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+A^{\top} \, A \,   \ba= \mu \ba
+\end{equation*}
+</div>
+<p class="continuation">where \(\mu\) is the largest eigenvalue of \(A^{\top} \,A\text{.}\)</p>
+<p>Here's a cool connection: a couple of standard linear algebra results will show us that \(\lambda=\mu\text{.}\) Recall from your linear algebra class</p>
+<ul class="disc">
+<li><p>For any matrix \(M\text{,}\) we have \(\det(M) = \det(M^{\top})\text{.}\)</p></li>
+<li>
+<p>The eigenvalues of a matrix \(B\) are the solutions to</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\det(B - \mu I) = 0
+\end{equation*}
+</div>
+</li>
+</ul>
+<p class="continuation">Therefore, \(B\) and \(B^{\top}\) have the same eigenvalues (though they usually have different eigenvectors). By observing that \((A A^{\top})^{\top} = A^{\top} A,\) we  conclude that \(\lambda = \mu\text{.}\)</p>
+<p>Let's go a step further. Taking the transpose of the equation \(A^{\top} \, A \,   \ba= \mu \ba\text{,}\) we get</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\ba^{\top} A \, A^{\top}   = \lambda \ba^{\top}.
+\end{equation*}
+</div>
+<p class="continuation">In other words, the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">row vector</em> \(\ba^{\top}\) is a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">left eigenvector</em> of the matrix \(A \, A^{\top}\) for the largest eigenvalue \(\lambda\text{.}\) Meanwhile,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+A \, A^{\top} \, \bh= \lambda \bh
+\end{equation*}
+</div>
+<p class="continuation">says that the column vector \(\bh\) is a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">right eigenvector</em> for the same eigenvalue \(\lambda\text{.}\)</p>
+<p>Every \(n \times n\) matrix has both left eigenvectors and right eigenvectors. You might be more comfortable with left eigenvectors because we tend to focus on <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">column vectors</em>. But matrix transposition is a simple operation that swaps the roles of rows and vectors. So any result about column vectors can be turned into an equivalent statement about row vectors.</p>
 </div></body>
 </html>

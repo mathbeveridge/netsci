@@ -12,19 +12,45 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>For each of the matrix equations above, as \(t \rightarrow \infty\text{,}\) we converge to a vector in the direction of the largest eigenvector. In other words, the hub score \(\bh\) satisfies</p>
+<p>Instead of flipping our coin for a fixed number of times, we will flip it until we first encounter a heads. This experiment gives the geometric random variable \(Y\text{.}\)</p>
+<ol class="lower-alpha">
+<li>
+<p>Give a combinatorial argument for  why the PMF of the geometric random variable is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-A \, A^{\top} \, \bh= \lambda \bh
+p(k) =  (1 - p)^{k-1}  p.
 \end{equation*}
 </div>
-<p class="continuation">where \(\lambda\) is the largest eigenvalue of \(A \, A^{\top}\text{.}\) Meanwhile, the authority score \(\ba\) satisfies</p>
+<p class="continuation"><a class="solution-knowl original" data-knowl="./knowl/solution-69-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
+</li>
+<li>
+<p>Use the fact that</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-A^{\top} \, A \,   \ba= \mu \ba
+\sum_{k=0}^{\infty} x^k = \frac{1}{1-x}
 \end{equation*}
 </div>
-<p class="continuation">where \(\mu\) is the largest eigenvalue of \(A^{\top} \,A\text{.}\)</p>
-<span class="incontext"><a href="hits.html#p-299">in-context</a></span>
+<p class="continuation">to prove that  \(p(k)\) is a PMF. <a class="solution-knowl original" data-knowl="./knowl/solution-70-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
+</li>
+<li>
+<p>Show that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[Y] = \frac{1}{p}.
+\end{equation*}
+</div>
+<p class="continuation">Hint: take the derivative of both sides of the equality in part (b) to get a new identity. <a class="solution-knowl original" data-knowl="./knowl/solution-71-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
+</li>
+<li>
+<p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">[Do not solve this one. It is a long calculation.]</em>  It can be shown that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\var(Y) = \frac{1-p}{p^2}.
+\end{equation*}
+</div>
+<p class="continuation">But you do not need to prove this here. (You use the same trick as in problem 1(d) of writing \(\E[Y^2] = \E[Y(Y-1)] + E[Y]\text{.}\)) <a class="solution-knowl original" data-knowl="./knowl/solution-72-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
+</li>
+</ol>
+<span class="incontext"><a href="probdist.html#p-299">in-context</a></span>
 </body>
 </html>

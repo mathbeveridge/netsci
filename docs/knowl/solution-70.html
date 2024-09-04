@@ -15,12 +15,15 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
+<p>It is easy to see that \(0 \leq p(k) \leq 1\) for all \(k \in \Z^+\text{.}\) Now we must show that the probabilities sum to 1. We have</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\P[A \mid B] = \frac{2}{6} = \frac{1}{3} \qquad \mbox{and}  \qquad \P[B \mid A] = \frac{2}{3}
-\end{equation*}
+\begin{align*}
+\sum_{k=1}^{\infty} p(k) &amp;= \sum_{k=1}^{\infty} (1-p)^{k-1} p \, = \, p \sum_{k=1}^{\infty} (1-p)^{k-1}\\
+&amp;= p \sum_{j=0}^{\infty} (1-p)^{j} \, = \, \frac{p}{1 - (1-p)} \,=\, \frac{p}{p} \,=\, 1.
+\end{align*}
 </div>
+<p></p>
 </div>
-<span class="incontext"><a href="randvar.html#solution-70">in-context</a></span>
+<span class="incontext"><a href="probdist.html#solution-70">in-context</a></span>
 </body>
 </html>

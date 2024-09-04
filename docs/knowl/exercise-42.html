@@ -12,24 +12,24 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Getting Started in Gephi.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Reducible Matrices.</span>
 </h6>
+<p>A \(n \times n\) matrix is <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">reducible</em> if there is an \(n \times n\) permutation matrix \(P\) such that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+P^{\top} A P = \left[
+\begin{array}{cc}
+A_{11} &amp; A_{12} \\
+0 &amp; A_{22}
+\end{array}
+\right]
+\end{equation*}
+</div>
+<p class="continuation">where \(A_{11}\) and \(A_{22}\) are square matrices. Conjugation by \(P\) rearranges the rows and columns. So this is equivalent to saying that we can order the vertices of \(G\) so that the adjacency matrix has the specified form.</p>
 <ol class="lower-alpha">
-<li><p>Load the <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">us-airline.gephi</code> file into Gephi.</p></li>
-<li><p>How many nodes are there? How many edges?</p></li>
-<li><p>Click on the "T" in the lower toolbar to show the node labels. The labels are the names of the airports. 	Change the displayed valye clicking on the clipboard/wrench icon at the bottom right of the Graph window. De-select "Label" and select "Code." Click OK. Adjust the label size so that you can read them.</p></li>
-<li>
-<p>Run the following statistics  in the Statistics window (on the right hand side).</p>
-<ul class="disc">
-<li><p>Average Degree</p></li>
-<li><p>Network Diameter</p></li>
-<li><p>HITS</p></li>
-<li><p>PageRank, and select "Use Edge Weight"</p></li>
-<li><p>Eigenvector Centrality</p></li>
-<li><p>Modularity</p></li>
-</ul>
-<p class="continuation">Look quickly at the plots that come up, and then dismiss them.</p>
-</li>
-</ol></article><span class="incontext"><a href="us-airline.html#exercise-42">in-context</a></span>
+<li><p>Recall that if \(G\) is an undirected graph, then \(A\) is symmetric. Explain why the adjacency matrix of an undirected graph is reducible if and only if \(G\) is not connected.</p></li>
+<li><p>Prove that the adjacency matrix of a directed graph \(G\)  is reducible if and only if \(G\) is not strongly connected.</p></li>
+</ol>
+<p class="continuation"><a class="solution-knowl original" data-knowl="./knowl/solution-93-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></article><span class="incontext"><a href="algcentrality.html#exercise-42">in-context</a></span>
 </body>
 </html>

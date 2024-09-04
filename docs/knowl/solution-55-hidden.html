@@ -11,49 +11,18 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p>We have \(A^2 = AA\) and so</p>
+<p>The CCDF \(\overline{F}_X\) of a discrete random variable satisfies the following properties:</p>
+<ul class="disc">
+<li>
+<p>\(\overline{F}_X\) is weakly decreasing (aka monotonically nonincreasing). That is,</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-AA  = ( \lambda_1 \bu_1 \bu_1^{\top} + \lambda_2 \bu_2 \bu_2^{\top})( \lambda_1 \bu_1 \bu_1^{\top} + \lambda_2 \bu_2 \bu_2^{\top}).
+s \leq t \qquad \Longrightarrow  \qquad \overline{F}_X(s) \geq \overline{F}_X(t).
 \end{equation*}
 </div>
-<p class="continuation">We end up with four terms. Let's look at them one at a time. Since \(\bu_1^\top \bu_1=1\text{,}\) we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\lambda_1^2 \bu_1 \bu_1^{\top}  \bu_1 \bu_1^{\top} =
-\lambda_1^2 \bu_1 (\bu_1^{\top}  \bu_1) \bu_1^{\top} =
-\lambda_1^2 \bu_1 \bu_1^{\top}.
-\end{equation*}
-</div>
-<p class="continuation">Next, since \(\bu_1^\top \bu_2=0\text{,}\) we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\lambda_1 \lambda_2 \bu_1 \bu_1^{\top}  \bu_2 \bu_2^{\top} =
-\lambda_1 \lambda_2 \bu_1 (\bu_1^{\top}  \bu_2) \bu_2^{\top} =
-\mathbf{0}.
-\end{equation*}
-</div>
-<p class="continuation">Similarly,</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\lambda_1 \lambda_2 \bu_2 \bu_2^{\top}  \bu_1\bu_1^{\top} =
-\lambda_1 \lambda_2 \bu_2 (\bu_2^{\top}  \bu_1) \bu_1^{\top} =
-\mathbf{0}.
-\end{equation*}
-</div>
-<p class="continuation">and</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\lambda_2^2 \bu_2 \bu_2^{\top}  \bu_2 \bu_2^{\top} =
-\lambda_2^2 \bu_2 (\bu_2^{\top}  \bu_2) \bu_2^{\top} =
-\lambda_2^2 \bu_2 \bu_2^{\top}.
-\end{equation*}
-</div>
-<p class="continuation">So our final answer is</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-A^2 = AA  = \lambda_1^2 \bu_1 \bu_1^{\top}  + \lambda_2^2 \bu_2 \bu_2^{\top}.
-\end{equation*}
-</div>
+</li>
+<li><p>\(\overline{F}_X(t)\) tends to 1 as \(t \rightarrow - \infty\) , and tends to 0 as \(t \rightarrow \infty\text{.}\)</p></li>
+<li><p>Since \(X\) is a discrete random variable, the CCDF \(\overline{F}_X(t)\) is a piecewise constant function of \(t\text{.}\)</p></li>
+</ul>
 </div></body>
 </html>

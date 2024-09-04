@@ -124,18 +124,18 @@
 </ul>
 </li>
 <li class="link">
-<a href="ch-centrality.html" data-scroll="ch-centrality"><span class="codenumber">2</span> <span class="title">Centralities</span></a><ul>
+<a href="ch-power-law.html" data-scroll="ch-power-law"><span class="codenumber">2</span> <span class="title">Power Laws</span></a><ul>
+<li><a href="randvar.html" data-scroll="randvar">Discrete Random Variables</a></li>
+<li><a href="probdist.html" data-scroll="probdist">Probability Distributions</a></li>
+<li><a href="powerlaw.html" data-scroll="powerlaw">Power Laws</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-centrality.html" data-scroll="ch-centrality"><span class="codenumber">3</span> <span class="title">Centralities</span></a><ul>
 <li><a href="centrality.html" data-scroll="centrality" class="active">Centrality Measures</a></li>
 <li><a href="algcentrality.html" data-scroll="algcentrality">Algebraic Centrality</a></li>
 <li><a href="hits.html" data-scroll="hits">Hubs and Authorities</a></li>
 <li><a href="us-airline.html" data-scroll="us-airline">Analyzing the US Airline Network</a></li>
-</ul>
-</li>
-<li class="link">
-<a href="ch-power-law.html" data-scroll="ch-power-law"><span class="codenumber">3</span> <span class="title">Power Laws</span></a><ul>
-<li><a href="randvar.html" data-scroll="randvar">Discrete Random Variables</a></li>
-<li><a href="probdist.html" data-scroll="probdist">Probability Distributions</a></li>
-<li><a href="powerlaw.html" data-scroll="powerlaw">Power Laws</a></li>
 </ul>
 </li>
 <li class="link part"><a href="part-models.html" data-scroll="part-models"><span class="codenumber">II</span> <span class="title">Modeling Networks</span></a></li>
@@ -158,15 +158,15 @@
 </ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="centrality"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">2.1</span> <span class="title">Centrality Measures</span>
+<span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Centrality Measures</span>
 </h2>
-<section class="introduction" id="introduction-5"><p id="p-170">Here are the network and  centrality definitions that  we will need.</p>
+<section class="introduction" id="introduction-8"><p id="p-357">Here are the network and  centrality definitions that  we will need.</p>
 <ul class="disc">
-<li id="li-84"><p id="p-171">Let \(G=(V,E)\) be a network (graph) on \(N\) vertices.</p></li>
-<li id="li-85"><p id="p-172">Let \(k_i = \deg(i)\) be the degree of vertex \(i\)</p></li>
-<li id="li-86"><p id="p-173">Let \(d_{i,j} = d(i,j)\) be the distance between vertices \(i\) and \(j\)</p></li>
-<li id="li-87"><p id="p-174">Let \(n_{s,t}\) be the number of geodesics (shortest paths) from \(s\) to \(t\)</p></li>
-<li id="li-88"><p id="p-175">Let \(n_{s,t}(i)\) be the number of \((s,t)\)-geodesics that go through vertex \(i\)</p></li>
+<li id="li-138"><p id="p-358">Let \(G=(V,E)\) be a network (graph) on \(N\) vertices.</p></li>
+<li id="li-139"><p id="p-359">Let \(k_i = \deg(i)\) be the degree of vertex \(i\)</p></li>
+<li id="li-140"><p id="p-360">Let \(d_{i,j} = d(i,j)\) be the distance between vertices \(i\) and \(j\)</p></li>
+<li id="li-141"><p id="p-361">Let \(n_{s,t}\) be the number of geodesics (shortest paths) from \(s\) to \(t\)</p></li>
+<li id="li-142"><p id="p-362">Let \(n_{s,t}(i)\) be the number of \((s,t)\)-geodesics that go through vertex \(i\)</p></li>
 </ul>
 <div class="displaymath">
 \begin{equation*}
@@ -190,43 +190,43 @@
 \hline
 \end{array}
 \end{equation*}
-</div></section><section class="exercises" id="exercises-5"><h3 class="heading hide-type">
+</div></section><section class="exercises" id="exercises-7"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Practice Problems</span>
 </h3>
-<article class="exercise exercise-like" id="exercise-26"><h6 class="heading">
+<article class="exercise exercise-like" id="exercise-35"><h6 class="heading">
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Understanding Centrality Measures.</span>
 </h6>
-<p id="p-176">For each centrality measure, give an intuitive explanation of what is "central" about vertices with large values.</p>
+<p id="p-363">For each centrality measure, give an intuitive explanation of what is "central" about vertices with large values.</p>
 <ol class="lower-alpha">
-<li id="li-89"><p id="p-177">Degree Centrality</p></li>
-<li id="li-90"><p id="p-178">Betweenness Centrality</p></li>
-<li id="li-91"><p id="p-179">Closeness Centrality</p></li>
+<li id="li-143"><p id="p-364">Degree Centrality</p></li>
+<li id="li-144"><p id="p-365">Betweenness Centrality</p></li>
+<li id="li-145"><p id="p-366">Closeness Centrality</p></li>
 </ol>
-<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-46" id="solution-46"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-46"><div class="solution solution-like">
-<p id="p-180">Note that there are many possible answers: these are just example responses.</p>
+<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-86" id="solution-86"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-86"><div class="solution solution-like">
+<p id="p-367">Note that there are many possible answers: these are just example responses.</p>
 <ol class="lower-alpha">
-<li id="li-92"><p id="p-181">Degree Centrality:   Such a person has lots of direct connections. Therefore she have direct access to the resources/information  of their neighbors. Such a person might be influential since many others will listen to her point of view.</p></li>
-<li id="li-93"><p id="p-182">Betweenness Centrality:  Such a person lies on the shortest path between many pairs of people. Therefore, information traveling between those people will often pass through her. Therefore, she can control the flow of information. Or perhaps she is leveraging her location by acting as a broker: it is to her advantage that these pairs of people don't have direct access to one another. She can act as a "middle man," and benefit from this role.</p></li>
-<li id="li-94"><p id="p-183">Closeness Centrality:  Such a person lies close to many people in the network. Therefore she will receive information quickly. This could allow her to react in a timely manner, regardless of the source/location of the new information. Being well-informed is another type of power.</p></li>
+<li id="li-146"><p id="p-368">Degree Centrality:   Such a person has lots of direct connections. Therefore she have direct access to the resources/information  of their neighbors. Such a person might be influential since many others will listen to her point of view.</p></li>
+<li id="li-147"><p id="p-369">Betweenness Centrality:  Such a person lies on the shortest path between many pairs of people. Therefore, information traveling between those people will often pass through her. Therefore, she can control the flow of information. Or perhaps she is leveraging her location by acting as a broker: it is to her advantage that these pairs of people don't have direct access to one another. She can act as a "middle man," and benefit from this role.</p></li>
+<li id="li-148"><p id="p-370">Closeness Centrality:  Such a person lies close to many people in the network. Therefore she will receive information quickly. This could allow her to react in a timely manner, regardless of the source/location of the new information. Being well-informed is another type of power.</p></li>
 </ol>
-</div></div></p></article><article class="exercise exercise-like" id="exercise-27"><h6 class="heading">
+</div></div></p></article><article class="exercise exercise-like" id="exercise-36"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Centrality Calculation Examples.</span>
 </h6>
-<p id="p-184">For each of the following graphs, calculate the (unnormalized) degree centrality, betweenness centrality and closeness centrality</p>
+<p id="p-371">For each of the following graphs, calculate the (unnormalized) degree centrality, betweenness centrality and closeness centrality</p>
 <ol class="lower-alpha">
-<li id="li-95"><p id="p-185">Degree Centrality  \(c_i^D  = \deg(i) = k_i\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality0.svg" role="img" class="contained"></div></p></li>
-<li id="li-96"><p id="p-186">Betweenness Centrality  \(c_i^B = \displaystyle{\sum_{s \neq i} \sum_{t \neq i, s} \frac{n_{s,t}(i)}{n_{s,t}}}\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality1.svg" role="img" class="contained"></div></p></li>
-<li id="li-97"><p id="p-187">Closeness Centrality  \(c_i^C =  \displaystyle{\frac{1}{\sum_{j} d_{i,j}}}\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality2.svg" role="img" class="contained"></div></p></li>
+<li id="li-149"><p id="p-372">Degree Centrality  \(c_i^D  = \deg(i) = k_i\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality0.svg" role="img" class="contained"></div></p></li>
+<li id="li-150"><p id="p-373">Betweenness Centrality  \(c_i^B = \displaystyle{\sum_{s \neq i} \sum_{t \neq i, s} \frac{n_{s,t}(i)}{n_{s,t}}}\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality1.svg" role="img" class="contained"></div></p></li>
+<li id="li-151"><p id="p-374">Closeness Centrality  \(c_i^C =  \displaystyle{\frac{1}{\sum_{j} d_{i,j}}}\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality2.svg" role="img" class="contained"></div></p></li>
 </ol>
-<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-47" id="solution-47"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-47"><div class="solution solution-like"><ol id="p-188" class="lower-alpha">
-<li id="li-98"><p id="p-189">Degree Centrality  \(c_i^D  = \deg(i) = k_i\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality3.svg" role="img" class="contained"></div></p></li>
-<li id="li-99"><p id="p-190">Betweenness Centrality  \(c_i^B = \displaystyle{\sum_{s \neq i} \sum_{t \neq i, s} \frac{n_{s,t}(i)}{n_{s,t}}}\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality4.svg" role="img" class="contained"></div></p></li>
-<li id="li-100"><p id="p-191">Closeness Centrality  \(c_i^C =  \displaystyle{\frac{1}{\sum_{j} d_{i,j}}}\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality5.svg" role="img" class="contained"></div></p></li>
-</ol></div></div></p></article><article class="exercise exercise-like" id="exercise-28"><h6 class="heading">
+<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-87" id="solution-87"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-87"><div class="solution solution-like"><ol id="p-375" class="lower-alpha">
+<li id="li-152"><p id="p-376">Degree Centrality  \(c_i^D  = \deg(i) = k_i\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality3.svg" role="img" class="contained"></div></p></li>
+<li id="li-153"><p id="p-377">Betweenness Centrality  \(c_i^B = \displaystyle{\sum_{s \neq i} \sum_{t \neq i, s} \frac{n_{s,t}(i)}{n_{s,t}}}\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality4.svg" role="img" class="contained"></div></p></li>
+<li id="li-154"><p id="p-378">Closeness Centrality  \(c_i^C =  \displaystyle{\frac{1}{\sum_{j} d_{i,j}}}\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality5.svg" role="img" class="contained"></div></p></li>
+</ol></div></div></p></article><article class="exercise exercise-like" id="exercise-37"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Contrasting Centralities.</span>
 </h6>
-<p id="p-192">In the following table, we consider interesting vertices that score highly in one centrality, but not in another. Describe or draw a network topology and vertex positions that could satisfy each combination below.</p>
-<figure class="table table-like" id="table-1"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.1.1<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<p id="p-379">In the following table, we consider interesting vertices that score highly in one centrality, but not in another. Describe or draw a network topology and vertex positions that could satisfy each combination below.</p>
+<figure class="table table-like" id="table-4"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.1<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b1 r1 l1 t1 lines"></td>
 <td class="l m b1 r1 l0 t1 lines">Low Degree</td>
@@ -251,11 +251,11 @@
 <td class="l m b1 r1 l0 t0 lines"></td>
 <td class="l m b1 r1 l0 t0 lines">N/A</td>
 </tr>
-</table></div></figure><p id="p-193"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-48" id="solution-48"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-48"><div class="solution solution-like">
-<p id="p-194">There are many ways to make graphs that distinguish these centrality measures from one another. But it is true that in real world networks, these quantities tend to be correlated. The example networks below are variants of a simple idea. A <em class="emphasis">barbell graph</em> is a graph that consist of two complete graphs \(K_s\) and \(K_t\) connected by a path of length \(r\text{.}\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality6.svg" role="img" class="contained"></div> Sometimes we take \(s=t\) and sometimes we take \(s \ll t\text{.}\) Likewise, sometimes \(r \approx s\) and sometimes \(r \gg s\text{.}\) We will make some rough calculations below (rather than getting them exactly right) to compare the sizes of our measures.</p>
+</table></div></figure><p id="p-380"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-88" id="solution-88"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-88"><div class="solution solution-like">
+<p id="p-381">There are many ways to make graphs that distinguish these centrality measures from one another. But it is true that in real world networks, these quantities tend to be correlated. The example networks below are variants of a simple idea. A <em class="emphasis">barbell graph</em> is a graph that consist of two complete graphs \(K_s\) and \(K_t\) connected by a path of length \(r\text{.}\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality6.svg" role="img" class="contained"></div> Sometimes we take \(s=t\) and sometimes we take \(s \ll t\text{.}\) Likewise, sometimes \(r \approx s\) and sometimes \(r \gg s\text{.}\) We will make some rough calculations below (rather than getting them exactly right) to compare the sizes of our measures.</p>
 <ul class="disc">
-<li id="li-101">
-<p id="p-195"><em class="emphasis">High Degree and Low Closeness.</em>   Consider a graph consisting of two large cliques (complete graphs) of the same size connected by a long path. We call this a <em class="emphasis">barbell graph</em>. Vertices in the two cliques have high degree, but have low closeness because almost half of the vertices are far away. Here is an example <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality7.svg" role="img" class="contained"></div> High degree: \(c_a^C = 10\text{,}\) which is the maximum degree. There are many vertices with degree 2. Low closeness:</p>
+<li id="li-155">
+<p id="p-382"><em class="emphasis">High Degree and Low Closeness.</em>   Consider a graph consisting of two large cliques (complete graphs) of the same size connected by a long path. We call this a <em class="emphasis">barbell graph</em>. Vertices in the two cliques have high degree, but have low closeness because almost half of the vertices are far away. Here is an example <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality7.svg" role="img" class="contained"></div> High degree: \(c_a^C = 10\text{,}\) which is the maximum degree. There are many vertices with degree 2. Low closeness:</p>
 <div class="displaymath">
 \begin{equation*}
 {1/c_a^C} = 9 + \sum_{i=1}^{100} i +   9 \times 101 = 5968.
@@ -270,10 +270,10 @@
 </div>
 <p class="continuation">So \(c_a^C \approx 0.58 C_b^C\text{.}\) In the graph above, we have \(c_c^D = k_c = 9\) which is just one below the maximum degree. However \(c_c^B=0\text{.}\)</p>
 </li>
-<li id="li-102"><p id="p-196"><em class="emphasis">High Degree and Low Betweenness.</em> Consider the same barbell graph from the previous example. The degree of the vertices in the cliques are very high, yet all but one of them have 0 betweenness. The vertices on the path connecting the two cliques have higher betweenness.</p></li>
-<li id="li-103"><p id="p-197"><em class="emphasis">High Closeness and Low Degree.</em> Once again, the barbell graph above provides an example. The center of the graph has the largest closeness, but has degree 2.</p></li>
-<li id="li-104">
-<p id="p-198"><em class="emphasis">High Closeness and Low Betweenness.</em>   This one is a little trickier. How can you be close to everything, but not located on shortest paths? The answer: add a leaf to a vertex with high closeness. For example we add a leaf \(d\) to the central vertex \(b\) of the barbell graph. This vertex \(d\) has relatively large closeness. We have</p>
+<li id="li-156"><p id="p-383"><em class="emphasis">High Degree and Low Betweenness.</em> Consider the same barbell graph from the previous example. The degree of the vertices in the cliques are very high, yet all but one of them have 0 betweenness. The vertices on the path connecting the two cliques have higher betweenness.</p></li>
+<li id="li-157"><p id="p-384"><em class="emphasis">High Closeness and Low Degree.</em> Once again, the barbell graph above provides an example. The center of the graph has the largest closeness, but has degree 2.</p></li>
+<li id="li-158">
+<p id="p-385"><em class="emphasis">High Closeness and Low Betweenness.</em>   This one is a little trickier. How can you be close to everything, but not located on shortest paths? The answer: add a leaf to a vertex with high closeness. For example we add a leaf \(d\) to the central vertex \(b\) of the barbell graph. This vertex \(d\) has relatively large closeness. We have</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{1}{c_d^C} = 121 + \frac{1}{c_b^C},
@@ -281,9 +281,9 @@
 </div>
 <p class="continuation">because this vertex is just one step further than \(c\) to the rest of the graph. So \(c_d^C \approx 0.98 c_b^C.\) Meanwhile \(c_d^B=0\text{.}\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality8.svg" role="img" class="contained"></div></p>
 </li>
-<li id="li-105"><p id="p-199"><em class="emphasis">High Betweenness and Low Degree.</em> Once again, the barbell graph does the trick. The central vertex \(b\) has the largest betweenness, but it only has degree 2.</p></li>
-<li id="li-106">
-<p id="p-200"><em class="emphasis">High Betweenness and Low Closeness.</em> Another tricky one. How can you be between lots of vertices, yet not have a high closeness value? Let's look at a barbell graph where the cliques are of very different sizes. <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality9.svg" role="img" class="contained"></div> In this graph, most vertices have zero betweenness. We have</p>
+<li id="li-159"><p id="p-386"><em class="emphasis">High Betweenness and Low Degree.</em> Once again, the barbell graph does the trick. The central vertex \(b\) has the largest betweenness, but it only has degree 2.</p></li>
+<li id="li-160">
+<p id="p-387"><em class="emphasis">High Betweenness and Low Closeness.</em> Another tricky one. How can you be between lots of vertices, yet not have a high closeness value? Let's look at a barbell graph where the cliques are of very different sizes. <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality9.svg" role="img" class="contained"></div> In this graph, most vertices have zero betweenness. We have</p>
 <div class="displaymath">
 \begin{equation*}
 c_a^B = 10 \times 1100 = 11000.
@@ -303,32 +303,32 @@ c_a^B = 10 \times 1100 = 11000.
 </div>
 </li>
 </ul>
-</div></div></p></article><article class="exercise exercise-like" id="exercise-29"><h6 class="heading">
+</div></div></p></article><article class="exercise exercise-like" id="exercise-38"><h6 class="heading">
 <span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Digraph Centrality Measures.</span>
 </h6>
-<ol id="p-201" class="lower-alpha">
-<li id="li-107"><p id="p-202">During class, we adapted degree centrality for digraphs, which leads to in-degree centrality and out-degree centrality. Given an intuitive explanation for what it means to have (i) high in-degree centrality and (ii)  high out-degree centrality.</p></li>
-<li id="li-108"><p id="p-203">Adapt betweenness centrality and closeness centrality for digraphs. Do you need two different measures for each (one for in and one for out)? Give an intuitive explanation for what it means to when these centrality measures are large in a digraph.</p></li>
+<ol id="p-388" class="lower-alpha">
+<li id="li-161"><p id="p-389">During class, we adapted degree centrality for digraphs, which leads to in-degree centrality and out-degree centrality. Given an intuitive explanation for what it means to have (i) high in-degree centrality and (ii)  high out-degree centrality.</p></li>
+<li id="li-162"><p id="p-390">Adapt betweenness centrality and closeness centrality for digraphs. Do you need two different measures for each (one for in and one for out)? Give an intuitive explanation for what it means to when these centrality measures are large in a digraph.</p></li>
 </ol>
-<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-49" id="solution-49"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-49"><div class="solution solution-like"><ol id="p-204" class="lower-alpha">
-<li id="li-109"><p id="p-205">High in-degree centrality means that lots of information gets to you. High out-degree means that a lot of people are listening to you.</p></li>
-<li id="li-110">
-<p id="p-206">You would need two different closeness centralities. Large \(c_i^{C^{\mathrm{in}}}\) would mean that spreading information gets to you quickly. Large \(c_i^{C^{\mathrm{out}}}\) would mean that information that you share would spread quickly to the whole network.</p>
-<p id="p-207">You would still only have one betweenness centrality measure on a directed graph. The definition already includes paths from \(s\) to \(t\) and from \(t\) to \(s\text{.}\) This "double counting" on an undirected graph becomes "single counting" when the paths are directed.</p>
+<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-89" id="solution-89"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-89"><div class="solution solution-like"><ol id="p-391" class="lower-alpha">
+<li id="li-163"><p id="p-392">High in-degree centrality means that lots of information gets to you. High out-degree means that a lot of people are listening to you.</p></li>
+<li id="li-164">
+<p id="p-393">You would need two different closeness centralities. Large \(c_i^{C^{\mathrm{in}}}\) would mean that spreading information gets to you quickly. Large \(c_i^{C^{\mathrm{out}}}\) would mean that information that you share would spread quickly to the whole network.</p>
+<p id="p-394">You would still only have one betweenness centrality measure on a directed graph. The definition already includes paths from \(s\) to \(t\) and from \(t\) to \(s\text{.}\) This "double counting" on an undirected graph becomes "single counting" when the paths are directed.</p>
 </li>
-</ol></div></div></p></article><article class="exercise exercise-like" id="exercise-30"><h6 class="heading">
+</ol></div></div></p></article><article class="exercise exercise-like" id="exercise-39"><h6 class="heading">
 <span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Shortcuts in a Cycle.</span>
 </h6>
-<p id="p-208">What is the effect of adding one shortcut to  a cycle on six vertices? Calculate the centralities as specified below.</p>
+<p id="p-395">What is the effect of adding one shortcut to  a cycle on six vertices? Calculate the centralities as specified below.</p>
 <ol class="lower-alpha">
-<li id="li-111"><p id="p-209">Degree Centrality   \(c_i^D  = \deg(i) = k_i\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality10.svg" role="img" class="contained"></div></p></li>
-<li id="li-112"><p id="p-210">Betweenness Centrality   \(c_i^B = \displaystyle{\sum_{s \neq i} \sum_{t \neq i, s} \frac{n_{s,t}(i)}{n_{s,t}}}\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality11.svg" role="img" class="contained"></div></p></li>
-<li id="li-113"><p id="p-211">Closeness Centrality  \(c_i^C =  \displaystyle{\frac{1}{\sum_{j} d_{i,j}}}\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality12.svg" role="img" class="contained"></div></p></li>
+<li id="li-165"><p id="p-396">Degree Centrality   \(c_i^D  = \deg(i) = k_i\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality10.svg" role="img" class="contained"></div></p></li>
+<li id="li-166"><p id="p-397">Betweenness Centrality   \(c_i^B = \displaystyle{\sum_{s \neq i} \sum_{t \neq i, s} \frac{n_{s,t}(i)}{n_{s,t}}}\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality11.svg" role="img" class="contained"></div></p></li>
+<li id="li-167"><p id="p-398">Closeness Centrality  \(c_i^C =  \displaystyle{\frac{1}{\sum_{j} d_{i,j}}}\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality12.svg" role="img" class="contained"></div></p></li>
 </ol>
-<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-50" id="solution-50"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-50"><div class="solution solution-like"><ol id="p-212" class="lower-alpha">
-<li id="li-114"><p id="p-213">Degree Centrality   \(c_i^D  = \deg(i) = k_i\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality13.svg" role="img" class="contained"></div></p></li>
-<li id="li-115"><p id="p-214">Betweenness Centrality   \(c_i^B = \displaystyle{\sum_{s \neq i} \sum_{t \neq i, s} \frac{n_{s,t}(i)}{n_{s,t}}}\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality14.svg" role="img" class="contained"></div></p></li>
-<li id="li-116"><p id="p-215">Closeness Centrality  \(c_i^C =  \displaystyle{\frac{1}{\sum_{j} d_{i,j}}}\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality15.svg" role="img" class="contained"></div></p></li>
+<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-90" id="solution-90"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-90"><div class="solution solution-like"><ol id="p-399" class="lower-alpha">
+<li id="li-168"><p id="p-400">Degree Centrality   \(c_i^D  = \deg(i) = k_i\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality13.svg" role="img" class="contained"></div></p></li>
+<li id="li-169"><p id="p-401">Betweenness Centrality   \(c_i^B = \displaystyle{\sum_{s \neq i} \sum_{t \neq i, s} \frac{n_{s,t}(i)}{n_{s,t}}}\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality14.svg" role="img" class="contained"></div></p></li>
+<li id="li-170"><p id="p-402">Closeness Centrality  \(c_i^C =  \displaystyle{\frac{1}{\sum_{j} d_{i,j}}}\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality15.svg" role="img" class="contained"></div></p></li>
 </ol></div></div></p></article></section></section></div></main>
 </div>
 </body>

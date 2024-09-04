@@ -12,59 +12,23 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<ol class="lower-alpha">
-<li>
-<p>We have</p>
+<p>The <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">expected value</em> of a discrete random variable is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-A \bv_1 =
-\begin{bmatrix} -2 &amp;  2\\ 2 &amp; 1 \end{bmatrix}
-\begin{bmatrix} 1 \\ 2 \end{bmatrix}
-=
-\begin{bmatrix} 2 \\ 4 \end{bmatrix}
-=
-2 \begin{bmatrix}1 \\ 2 \end{bmatrix}.
+\E[X] = \sum_{\omega \in \Omega} X(\omega) p(\omega)
 \end{equation*}
 </div>
-</li>
-<li>
-<p>We have</p>
+<p class="continuation">which is equivalent to</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-A \bv_2 =
-\begin{bmatrix}-2 &amp;  2\\ 2 &amp; 1 \end{bmatrix}
-\begin{bmatrix} 2 \\ -1 \end{bmatrix}
-=
-\begin{bmatrix}-6 \\ 3 \end{bmatrix}
-=
--3 \begin{bmatrix} 2 \\ -1 \end{bmatrix}.
+\E[X] = \sum_{t \in T} t \cdot p(t) = \sum_{t \in T}  t \cdot \P[X=t].
 \end{equation*}
 </div>
-</li>
-<li>
-<p>Vectors \(\bv_1\) and \(\bv_2\) are orthogonal because</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\bv_1 \cdot \bv_2 = \begin{bmatrix} 1 \\ 2 \end{bmatrix}
-\begin{bmatrix} 2 &amp; -1 \end{bmatrix} = 2-2 = 0
-\end{equation*}
-</div>
-</li>
-<li>
-<p>Our unit eigenvectors are \(\bu_1 = \frac{1}{\sqrt{5}} {1 \choose 2}\) and \(\bu_2 = \frac{1}{\sqrt{5}} {2 \choose -1}\text{.}\) We find that</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\lambda_1 \bu_1 \bu_1^{\top} + \lambda_2 \bu_2 \bu^{\top}
-&amp;= \frac{2}{5} \begin{bmatrix} 1  2 \end{bmatrix} \begin{bmatrix} 2 &amp; 4 \end{bmatrix}\\
-- \frac{3}{5}  \begin{bmatrix} 4  -2 \end{bmatrix}   \begin{bmatrix} -2 &amp; 1 \end{bmatrix}\\
-&amp;= \frac{1}{5} \left( \begin{bmatrix} 2 &amp; 4  4 &amp; 8\end{bmatrix}  +  \begin{bmatrix} -12 &amp; 6  6 &amp; -3\end{bmatrix} \right)\\
-&amp;=   \frac{1}{5}  \begin{bmatrix} -	10 &amp; 10  10 &amp; 5\end{bmatrix}\\
-&amp;=   \begin{bmatrix} -	2 &amp; 2  2 &amp; 1\end{bmatrix}
-\end{align*}
-</div>
-<p></p>
-</li>
-</ol>
-<span class="incontext"><a href="algcentrality.html#p-235">in-context</a></span>
+<p class="continuation"><article class="example example-like"><a class="example-knowl original" data-knowl="./knowl/example-14-hidden.html" title="Example 2.1.1: Expected Value for Vertex Degree"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Expected Value for Vertex Degree.</span>
+</h6></a></article> <article class="example example-like"><a class="example-knowl original" data-knowl="./knowl/example-15-hidden.html" title="Example 2.1.2: Expected Value for Dice Roll"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Expected Value for Dice Roll.</span>
+</h6></a></article></p>
+<span class="incontext"><a href="randvar.html#p-235">in-context</a></span>
 </body>
 </html>

@@ -10,39 +10,24 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like"><ul class="disc">
-<li>
-<p>As \(n \rightarrow \infty\text{,}\) the expected value \(\E[X]\) is</p>
+<body><div class="solution solution-like">
+<p>We have</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\lim_{n \rightarrow \infty} \frac{C}{-\alpha +2} \left( \frac{1}{n^{\alpha-2}} -  \frac{1}{k_{\min}^{\alpha-2}} \right)
-= \frac{C}{\alpha-2}  \cdot \frac{1}{k_{\min}^{\alpha-2}}
+\begin{array}{lllll}
+\bh(t) &amp;=&amp; A  \ba(t-1)  &amp;=&amp; \,  A \, A^{\top} \, \bh(t), \\
+\ba(t) &amp;=&amp; A^{\top} \bh(t)  &amp;=&amp; A^{\top} \, A \, \ba(t-1)
+\end{array}
 \end{equation*}
 </div>
-<p class="continuation">provided that \(\alpha &gt; 2\text{.}\) So the average value  is finite if and only if \(\alpha &gt; 2\text{.}\) Finally, let's substitute in our approximation of the constant \(C = (\alpha-1)k_{\min}^{\alpha-1}\) to find that the expected value is</p>
+<p class="continuation">which we can write more compactly as</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\E[X] =
-\frac{\alpha-1}{\alpha-2}  \cdot \frac{k_{\min}^{\alpha-1}}{k_{\min}^{\alpha-2}} = \frac{\alpha-1}{\alpha-2}  \cdot k_{\min}.
+\begin{array}{lllll}
+\bh(t) &amp;=&amp;   A \, A^{\top} \, \bh(t-1), \\
+\ba(t)  &amp;=&amp; A^{\top} \, A \, \ba(t-1).
+\end{array}
 \end{equation*}
 </div>
-<p class="continuation">That's pretty cool. And you can see that if your exponent \(\alpha \rightarrow 2\) then the expected value goes to infinity. Nice!</p>
-</li>
-<li>
-<p>As \(n \rightarrow \infty\text{,}\) the \(m\)th moment  \(\E[X^m]\) is</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\lim_{n \rightarrow \infty} \frac{C}{-\alpha +m+1} \left( \frac{1}{n^{\alpha-m-1}} -  \frac{1}{k_{\min}^{\alpha-m-1}} \right)
-= \frac{C}{\alpha-m-1}  \cdot \frac{1}{k_{\min}^{\alpha-m-1}}
-\end{equation*}
-</div>
-<p class="continuation">provided that \(\alpha &gt; m\text{.}\) So the \(m\)th moment  value  is finite if and only if \(\alpha &gt; m\text{.}\) Let's substitute \(C= (\alpha-1)k_{\min}^{\alpha-1}\) to get the expression</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\E[X^m] = \frac{\alpha-1}{\alpha-m-1}  \cdot \frac{k_{\min}^{\alpha-1}}{k_{\min}^{\alpha-m-1}}
-= \frac{\alpha-1}{\alpha-m-1}  \cdot k_{\min}^{m}.
-\end{equation*}
-</div>
-</li>
-</ul></div></body>
+</div></body>
 </html>

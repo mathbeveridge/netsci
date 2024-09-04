@@ -11,23 +11,12 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p>We have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\begin{array}{lllll}
-\bh(t) &amp;=&amp; A  \ba(t-1)  &amp;=&amp; \,  A \, A^{\top} \, \bh(t), \\
-\ba(t) &amp;=&amp; A^{\top} \bh(t)  &amp;=&amp; A^{\top} \, A \, \ba(t-1)
-\end{array}
-\end{equation*}
-</div>
-<p class="continuation">which we can write more compactly as</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\begin{array}{lllll}
-\bh(t) &amp;=&amp;   A \, A^{\top} \, \bh(t-1), \\
-\ba(t)  &amp;=&amp; A^{\top} \, A \, \ba(t-1).
-\end{array}
-\end{equation*}
-</div>
+<p>We give a combinatorial recipe.</p>
+<ul class="disc">
+<li><p>Pick the \(k\) flips that will be \(H\text{.}\) There are \({n \choose k}\) ways to do so.</p></li>
+<li><p>The probability that the chosen \(k\) flips all turn up \(H\) is \(p^k\text{.}\)</p></li>
+<li><p>The probability that the remaining \(n-k\) flips all turn up \(T\) is \((1-p)^{n-k}\text{.}\)</p></li>
+</ul>
+<p class="continuation">Multiplying all these terms together gives the expression above.</p>
 </div></body>
 </html>

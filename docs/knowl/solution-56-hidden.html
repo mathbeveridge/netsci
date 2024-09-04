@@ -11,17 +11,19 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p>By a similar argument, we have</p>
+<p>For any \(k \in \Z\text{,}\)</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-A^3  = \lambda_1^3 \bu_1 \bu_1^{\top}  + \lambda_2^3 \bu_2 \bu_2^{\top}
+\overline{F}_X(k) = \sum_{i=k+1}^{\infty} p_X(i)
 \end{equation*}
 </div>
-<p class="continuation">and by induction, we have</p>
+<p class="continuation">by the definition of a CCDF. We then have</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-A^n  = \lambda_1^n \bu_1 \bu_1^{\top}  + \lambda_2^n \bu_2 \bu_2^{\top}
+\overline{F}_X(k-1) -  \overline{F}_X(k)= \sum_{i=k}^{\infty} p_X(i) - \sum_{i=k+1}^{\infty} p_X(i) =
+p_X(k).
 \end{equation*}
 </div>
+<p class="continuation">In other words, if you know the PMF, then you can find the CCDF, and vice versa.</p>
 </div></body>
 </html>

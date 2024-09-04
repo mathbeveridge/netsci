@@ -12,24 +12,19 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>We have</p>
+<p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">[Do not solve this one. It is a long calculation.]</em> It can be shown that</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\begin{array}{lllll}
-\bh(t) &amp;=&amp; A  \ba(t-1)  &amp;=&amp; \,  A \, A^{\top} \, \bh(t), \\
-\ba(t) &amp;=&amp; A^{\top} \bh(t)  &amp;=&amp; A^{\top} \, A \, \ba(t-1)
-\end{array}
+\var(X) = np(1-p).
 \end{equation*}
 </div>
-<p class="continuation">which we can write more compactly as</p>
+<p class="continuation">But you do not need to do this here. You need to use the fact that</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\begin{array}{lllll}
-\bh(t) &amp;=&amp;   A \, A^{\top} \, \bh(t-1), \\
-\ba(t)  &amp;=&amp; A^{\top} \, A \, \ba(t-1).
-\end{array}
+\E[X^2] = \E[X(X-1) + X] = \E[X(X-1)] + \E[X],
 \end{equation*}
 </div>
-<span class="incontext"><a href="hits.html#p-294">in-context</a></span>
+<p class="continuation">which follows from <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">linearity of expectation</em>. <a class="solution-knowl original" data-knowl="./knowl/solution-68-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
+<span class="incontext"><a href="probdist.html#p-294">in-context</a></span>
 </body>
 </html>

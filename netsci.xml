@@ -66,6 +66,13 @@ pull the name of the problem from the first line  of  the \item
                 <xi:include href="./communities.xml" />  
             </chapter>
 
+            <chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ch-power-law">
+                <title>Power Laws</title>   
+                <xi:include href="./randomvar.xml" />   
+                <xi:include href="./distributions.xml" />                  
+                <xi:include href="./powerlaw.xml" />                      
+            </chapter>
+
             <chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ch-centrality">
                 <title>Centralities</title>                              
                 <xi:include href="./centrality.xml" />                  
@@ -75,12 +82,7 @@ pull the name of the problem from the first line  of  the \item
             </chapter>
 
   
-        <chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ch-power-law">
-            <title>Power Laws</title>   
-            <xi:include href="./randomvar.xml" />   
-            <xi:include href="./distributions.xml" />                  
-            <xi:include href="./powerlaw.xml" />                      
-        </chapter>
+
    </part>
 
  

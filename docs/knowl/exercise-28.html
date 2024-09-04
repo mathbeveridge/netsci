@@ -12,34 +12,46 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Contrasting Centralities.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Geometric Random Variable.</span>
 </h6>
-<p>In the following table, we consider interesting vertices that score highly in one centrality, but not in another. Describe or draw a network topology and vertex positions that could satisfy each combination below.</p>
-<figure class="table table-like"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.1.1<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table xmlns:svg="http://www.w3.org/2000/svg" class="tabular">
-<tr>
-<td class="l m b1 r1 l1 t1 lines"></td>
-<td class="l m b1 r1 l0 t1 lines">Low Degree</td>
-<td class="l m b1 r1 l0 t1 lines">Low Closeness</td>
-<td class="l m b1 r1 l0 t1 lines">Low Betweenness</td>
-</tr>
-<tr>
-<td class="l m b1 r1 l1 t0 lines">High Degree</td>
-<td class="l m b1 r1 l0 t0 lines">N/A</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-</tr>
-<tr>
-<td class="l m b1 r1 l1 t0 lines">High Closeness</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines">N/A</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-</tr>
-<tr>
-<td class="l m b1 r1 l1 t0 lines">High Betweenness</td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines"></td>
-<td class="l m b1 r1 l0 t0 lines">N/A</td>
-</tr>
-</table></div></figure><p><a class="solution-knowl original" data-knowl="./knowl/solution-48-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></article><span class="incontext"><a href="centrality.html#exercise-28">in-context</a></span>
+<p>Instead of flipping our coin for a fixed number of times, we will flip it until we first encounter a heads. This experiment gives the geometric random variable \(Y\text{.}\)</p>
+<ol class="lower-alpha">
+<li>
+<p>Give a combinatorial argument for  why the PMF of the geometric random variable is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+p(k) =  (1 - p)^{k-1}  p.
+\end{equation*}
+</div>
+<p class="continuation"><a class="solution-knowl original" data-knowl="./knowl/solution-69-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
+</li>
+<li>
+<p>Use the fact that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\sum_{k=0}^{\infty} x^k = \frac{1}{1-x}
+\end{equation*}
+</div>
+<p class="continuation">to prove that  \(p(k)\) is a PMF. <a class="solution-knowl original" data-knowl="./knowl/solution-70-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
+</li>
+<li>
+<p>Show that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[Y] = \frac{1}{p}.
+\end{equation*}
+</div>
+<p class="continuation">Hint: take the derivative of both sides of the equality in part (b) to get a new identity. <a class="solution-knowl original" data-knowl="./knowl/solution-71-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
+</li>
+<li>
+<p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">[Do not solve this one. It is a long calculation.]</em>  It can be shown that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\var(Y) = \frac{1-p}{p^2}.
+\end{equation*}
+</div>
+<p class="continuation">But you do not need to prove this here. (You use the same trick as in problem 1(d) of writing \(\E[Y^2] = \E[Y(Y-1)] + E[Y]\text{.}\)) <a class="solution-knowl original" data-knowl="./knowl/solution-72-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
+</li>
+</ol></article><span class="incontext"><a href="probdist.html#exercise-28">in-context</a></span>
 </body>
 </html>

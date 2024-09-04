@@ -124,18 +124,18 @@
 </ul>
 </li>
 <li class="link">
-<a href="ch-centrality.html" data-scroll="ch-centrality"><span class="codenumber">2</span> <span class="title">Centralities</span></a><ul>
+<a href="ch-power-law.html" data-scroll="ch-power-law"><span class="codenumber">2</span> <span class="title">Power Laws</span></a><ul>
+<li><a href="randvar.html" data-scroll="randvar">Discrete Random Variables</a></li>
+<li><a href="probdist.html" data-scroll="probdist">Probability Distributions</a></li>
+<li><a href="powerlaw.html" data-scroll="powerlaw">Power Laws</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-centrality.html" data-scroll="ch-centrality"><span class="codenumber">3</span> <span class="title">Centralities</span></a><ul>
 <li><a href="centrality.html" data-scroll="centrality">Centrality Measures</a></li>
 <li><a href="algcentrality.html" data-scroll="algcentrality">Algebraic Centrality</a></li>
 <li><a href="hits.html" data-scroll="hits">Hubs and Authorities</a></li>
 <li><a href="us-airline.html" data-scroll="us-airline">Analyzing the US Airline Network</a></li>
-</ul>
-</li>
-<li class="link">
-<a href="ch-power-law.html" data-scroll="ch-power-law"><span class="codenumber">3</span> <span class="title">Power Laws</span></a><ul>
-<li><a href="randvar.html" data-scroll="randvar">Discrete Random Variables</a></li>
-<li><a href="probdist.html" data-scroll="probdist">Probability Distributions</a></li>
-<li><a href="powerlaw.html" data-scroll="powerlaw">Power Laws</a></li>
 </ul>
 </li>
 <li class="link part"><a href="part-models.html" data-scroll="part-models"><span class="codenumber">II</span> <span class="title">Modeling Networks</span></a></li>
@@ -256,8 +256,8 @@ p_k = {n-1 \choose k} p^k (1-p)^{n-1-k}.
 <p class="continuation">In other words, the degree of a vertex is a random variable whose PMF is the binomial distribution. Therefore we say that \(G(n,p)\) has a "binomial degree distribution." <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-114" id="solution-114"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-114"><div class="solution solution-like"><p id="p-547">Look at a particular vertex \(v\text{.}\) We must choose the \(k\) neighbors. The edges between \(v\) and those neighbors must be present. The  edges from \(v\) to the remaining vertices must be absent.</p></div></div></p>
 <p id="p-548">Notes about the binomial distribution:</p>
 <ul class="disc">
-<li id="li-253"><p id="p-derived-li-253">See <a class="xref" data-knowl="./knowl/probdist-binomial-dist.html" title="Exercise 3.2.2: Binomial Random Variable">Exercise 3.2.2</a> for the basics about the binomial distribution.</p></li>
-<li id="li-254"><p id="p-derived-li-254">See <a class="xref" data-knowl="./knowl/probdist-poisson-approx.html" title="Exercise 3.2.5: Poisson Approximation for the Binomial Distribtuion">Exercise 3.2.5</a> to see how we can approximate the binomial distribution with a Poisson distribtuion. Namely, when \(k\) is very small, \(n\) is very large and \(p= c/n\text{,}\) we have<div class="displaymath">
+<li id="li-253"><p id="p-derived-li-253">See <a class="xref" data-knowl="./knowl/probdist-binomial-dist.html" title="Exercise 2.2.2: Binomial Random Variable">Exercise 2.2.2</a> for the basics about the binomial distribution.</p></li>
+<li id="li-254"><p id="p-derived-li-254">See <a class="xref" data-knowl="./knowl/probdist-poisson-approx.html" title="Exercise 2.2.5: Poisson Approximation for the Binomial Distribtuion">Exercise 2.2.5</a> to see how we can approximate the binomial distribution with a Poisson distribtuion. Namely, when \(k\) is very small, \(n\) is very large and \(p= c/n\text{,}\) we have<div class="displaymath">
 \begin{equation*}
 p_k \approx  e^{-c} \frac{c^k}{k!}.
 \end{equation*}

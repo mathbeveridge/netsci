@@ -12,17 +12,34 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7<span class="period">.</span></span><span class="space"> </span><span class="title">Recursive Importance in a Digraph.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Contrasting Centralities.</span>
 </h6>
-<p>Consider the following recursive rule for updating the importance of a vertex.</p>
-<ul class="disc">
-<li><p>At first, all vertices have importance = 1</p></li>
-<li><p>In each round, update the importance of a vertex to be the sum of the importances of its in-neighbors.</p></li>
-</ul>
-<ol class="lower-alpha">
-<li><p>Use this recursive rule to calculate the importance for the following directed graph. What do you observe? <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-algcentrality4.svg" role="img" class="contained"></div> <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/acyclic-digraph.png" class="contained"></div> <a class="solution-knowl original" data-knowl="./knowl/solution-60-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></li>
-<li><p>Use this  recursive rule calculate the importance of each vertex in this directed graph. What do you observe? <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-algcentrality6.svg" role="img" class="contained"></div> <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/digraph-feedback.png" class="contained"></div> <a class="solution-knowl original" data-knowl="./knowl/solution-61-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></li>
-<li><p>Devise a recursive importance rule for directed networks that "fixes the problems" that you observed in parts (a) and (b). <a class="solution-knowl original" data-knowl="./knowl/solution-62-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></li>
-</ol></article><span class="incontext"><a href="algcentrality.html#exercise-37">in-context</a></span>
+<p>In the following table, we consider interesting vertices that score highly in one centrality, but not in another. Describe or draw a network topology and vertex positions that could satisfy each combination below.</p>
+<figure class="table table-like"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.1<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table xmlns:svg="http://www.w3.org/2000/svg" class="tabular">
+<tr>
+<td class="l m b1 r1 l1 t1 lines"></td>
+<td class="l m b1 r1 l0 t1 lines">Low Degree</td>
+<td class="l m b1 r1 l0 t1 lines">Low Closeness</td>
+<td class="l m b1 r1 l0 t1 lines">Low Betweenness</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">High Degree</td>
+<td class="l m b1 r1 l0 t0 lines">N/A</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">High Closeness</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">N/A</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">High Betweenness</td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines"></td>
+<td class="l m b1 r1 l0 t0 lines">N/A</td>
+</tr>
+</table></div></figure><p><a class="solution-knowl original" data-knowl="./knowl/solution-88-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></article><span class="incontext"><a href="centrality.html#exercise-37">in-context</a></span>
 </body>
 </html>

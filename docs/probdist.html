@@ -124,18 +124,18 @@
 </ul>
 </li>
 <li class="link">
-<a href="ch-centrality.html" data-scroll="ch-centrality"><span class="codenumber">2</span> <span class="title">Centralities</span></a><ul>
+<a href="ch-power-law.html" data-scroll="ch-power-law"><span class="codenumber">2</span> <span class="title">Power Laws</span></a><ul>
+<li><a href="randvar.html" data-scroll="randvar">Discrete Random Variables</a></li>
+<li><a href="probdist.html" data-scroll="probdist" class="active">Probability Distributions</a></li>
+<li><a href="powerlaw.html" data-scroll="powerlaw">Power Laws</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-centrality.html" data-scroll="ch-centrality"><span class="codenumber">3</span> <span class="title">Centralities</span></a><ul>
 <li><a href="centrality.html" data-scroll="centrality">Centrality Measures</a></li>
 <li><a href="algcentrality.html" data-scroll="algcentrality">Algebraic Centrality</a></li>
 <li><a href="hits.html" data-scroll="hits">Hubs and Authorities</a></li>
 <li><a href="us-airline.html" data-scroll="us-airline">Analyzing the US Airline Network</a></li>
-</ul>
-</li>
-<li class="link">
-<a href="ch-power-law.html" data-scroll="ch-power-law"><span class="codenumber">3</span> <span class="title">Power Laws</span></a><ul>
-<li><a href="randvar.html" data-scroll="randvar">Discrete Random Variables</a></li>
-<li><a href="probdist.html" data-scroll="probdist" class="active">Probability Distributions</a></li>
-<li><a href="powerlaw.html" data-scroll="powerlaw">Power Laws</a></li>
 </ul>
 </li>
 <li class="link part"><a href="part-models.html" data-scroll="part-models"><span class="codenumber">II</span> <span class="title">Modeling Networks</span></a></li>
@@ -158,95 +158,95 @@
 </ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="probdist"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">3.2</span> <span class="title">Probability Distributions</span>
+<span class="type">Section</span> <span class="codenumber">2.2</span> <span class="title">Probability Distributions</span>
 </h2>
-<section class="introduction" id="introduction-10"><p id="p-425"></p>
-<p id="p-426"></p></section><section class="exercises" id="exercises-9"><h3 class="heading hide-type">
+<section class="introduction" id="introduction-6"><p id="p-259"></p>
+<p id="p-260"></p></section><section class="exercises" id="exercises-5"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Practice Problems</span>
 </h3>
-<article class="exercise exercise-like" id="exercise-47"><h6 class="heading">
+<article class="exercise exercise-like" id="exercise-26"><h6 class="heading">
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Probability Concept Review.</span>
 </h6>
-<p id="p-427">Provide the definition and/or formula for each of the following terms. Then give an "intuitive description" of what this concept tells us, and why we might care. An illustrating concrete example (say, about vertex degrees in a network) can be a better way  convey your understanding than simply speaking in generalities.</p>
+<p id="p-261">Provide the definition and/or formula for each of the following terms. Then give an "intuitive description" of what this concept tells us, and why we might care. An illustrating concrete example (say, about vertex degrees in a network) can be a better way  convey your understanding than simply speaking in generalities.</p>
 <ol class="lower-alpha">
-<li id="li-208"><p id="p-428">A random variable \(X : \Omega \rightarrow \Z_{\geq 0}\text{.}\)</p></li>
-<li id="li-209"><p id="p-429">The probability mass function (PMF) \(p_X(t)\text{.}\)</p></li>
-<li id="li-210"><p id="p-430">The expected value \(\E[X]\text{.}\)</p></li>
-<li id="li-211"><p id="p-431">The variance \(\var[X]\text{.}\)</p></li>
+<li id="li-102"><p id="p-262">A random variable \(X : \Omega \rightarrow \Z_{\geq 0}\text{.}\)</p></li>
+<li id="li-103"><p id="p-263">The probability mass function (PMF) \(p_X(t)\text{.}\)</p></li>
+<li id="li-104"><p id="p-264">The expected value \(\E[X]\text{.}\)</p></li>
+<li id="li-105"><p id="p-265">The variance \(\var[X]\text{.}\)</p></li>
 </ol>
-<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-85" id="solution-85"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-85"><div class="solution solution-like"><ol id="p-432" class="lower-alpha">
-<li id="li-212">
-<p id="p-433">A random variable \(X : \Omega \rightarrow \Z_{\geq 0}\) is a function on the set \(\Omega\) of outcomes of an experiment.  We pick a sample outcome and measure one of its property. For example, we could pick a vertex of a network and write down its degree.</p>
-<p id="p-434">This is useful when I want to get a sense of the structure (or typical structure) of a network, or another system.</p>
+<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-64" id="solution-64"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-64"><div class="solution solution-like"><ol id="p-266" class="lower-alpha">
+<li id="li-106">
+<p id="p-267">A random variable \(X : \Omega \rightarrow \Z_{\geq 0}\) is a function on the set \(\Omega\) of outcomes of an experiment.  We pick a sample outcome and measure one of its property. For example, we could pick a vertex of a network and write down its degree.</p>
+<p id="p-268">This is useful when I want to get a sense of the structure (or typical structure) of a network, or another system.</p>
 </li>
-<li id="li-213">
-<p id="p-435">For \(t \in \Z_{\geq 0}\text{,}\) the value \(p_X(t)\) is the probability that \(X=t\) when we perform our experiment. For example, the PMF of "measure the degree of a randomly chosen vertex" is</p>
+<li id="li-107">
+<p id="p-269">For \(t \in \Z_{\geq 0}\text{,}\) the value \(p_X(t)\) is the probability that \(X=t\) when we perform our experiment. For example, the PMF of "measure the degree of a randomly chosen vertex" is</p>
 <div class="displaymath">
 \begin{equation*}
 p(t) = \frac{\mbox{number of vertices of degree }}{\mbox{total number of vertices}}
 \end{equation*}
 </div>
-<p id="p-436">The PMF gives me a sense of what outcomes are possible, and how likely they are compared to one another.</p>
+<p id="p-270">The PMF gives me a sense of what outcomes are possible, and how likely they are compared to one another.</p>
 </li>
-<li id="li-214">
-<p id="p-437">The expected value is</p>
+<li id="li-108">
+<p id="p-271">The expected value is</p>
 <div class="displaymath">
 \begin{equation*}
 \E[X] = \sum_{t=0}^{\infty} t \cdot p_X(t)
 \end{equation*}
 </div>
 <p class="continuation">is weighted average of all possible outcomes, using the PMF \(p_X(t)\) as the weight for outcome \(X=t\text{.}\)</p>
-<p id="p-438">If I repeat my experiment many, many times, then the average outcome value of my experiment will be a number close to the expected value. However, any one particular outcome might be very far away from the average value.</p>
-<p id="p-439">For example, knowing the average degree could be helpful when thinking about degree centrality. I can assess whether a given vertex has large degree or small degree in the spectrum of observed values.</p>
+<p id="p-272">If I repeat my experiment many, many times, then the average outcome value of my experiment will be a number close to the expected value. However, any one particular outcome might be very far away from the average value.</p>
+<p id="p-273">For example, knowing the average degree could be helpful when thinking about degree centrality. I can assess whether a given vertex has large degree or small degree in the spectrum of observed values.</p>
 </li>
-<li id="li-215">
-<p id="p-440">The variance is</p>
+<li id="li-109">
+<p id="p-274">The variance is</p>
 <div class="displaymath">
 \begin{equation*}
 \var[X] = E[X^2] - E[X]^2.
 \end{equation*}
 </div>
 <p class="continuation">This number tells me about the "spread" of the distribution around its average value. A small variance means that the PMF is concentrated around the average value, so most of my experiments will return a value that is close to the average one. A large variance means that the values are more spread out.</p>
-<p id="p-441">Taking the square root gives you the standard deviation \(\sigma = \sqrt{\var[X]}\text{.}\) We can compare this value directly to the expected value, since they have the same units. This helps to get a sense of whether the variance is "big" or "small." Comparing standard deviation to the expected value helps to give us some sense of scale.</p>
-<p id="p-442">For example, in a graph with small variance, most of the vertices have similar degrees. In a graph with high variance, we will have a much more diverse collection of vertex degrees. In particular, there will be some vertices with much smaller degrees than typical, or some vertices with much larger degree than typical, or both.</p>
+<p id="p-275">Taking the square root gives you the standard deviation \(\sigma = \sqrt{\var[X]}\text{.}\) We can compare this value directly to the expected value, since they have the same units. This helps to get a sense of whether the variance is "big" or "small." Comparing standard deviation to the expected value helps to give us some sense of scale.</p>
+<p id="p-276">For example, in a graph with small variance, most of the vertices have similar degrees. In a graph with high variance, we will have a much more diverse collection of vertex degrees. In particular, there will be some vertices with much smaller degrees than typical, or some vertices with much larger degree than typical, or both.</p>
 </li>
 </ol></div></div></p>
-<p id="p-443">Now that  these concepts are at your fingertips, let's explore three distributions that will  appear frequently in our discussion of network models and dynamic network processes. In the questions that follow, take some time to reflect on the formulas (as well as the techniques that got you there). For each question:</p>
+<p id="p-277">Now that  these concepts are at your fingertips, let's explore three distributions that will  appear frequently in our discussion of network models and dynamic network processes. In the questions that follow, take some time to reflect on the formulas (as well as the techniques that got you there). For each question:</p>
 <ul class="disc">
-<li id="li-216"><p id="p-444">Perform the calculation</p></li>
-<li id="li-217"><p id="p-445">Pause to think about what the formula means.</p></li>
-<li id="li-218"><p id="p-446">Interpret what the answer would mean for large \(n\text{;}\) for different values of \(p \in [0,1]\text{;}\) for big or small \(k\text{.}\)</p></li>
+<li id="li-110"><p id="p-278">Perform the calculation</p></li>
+<li id="li-111"><p id="p-279">Pause to think about what the formula means.</p></li>
+<li id="li-112"><p id="p-280">Interpret what the answer would mean for large \(n\text{;}\) for different values of \(p \in [0,1]\text{;}\) for big or small \(k\text{.}\)</p></li>
 </ul></article><article class="exercise exercise-like" id="probdist-binomial-dist"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Binomial Random Variable.</span>
 </h6>
-<p id="p-447">Flip a weighted coin \(n\) times, where \(p\) is the probability of obtaining heads, and \(1-p\) is the probability of obtaining tails. Define \(X\) to be the number of heads in the \(n\) tosses. This is the <em class="emphasis">binomial random variable with parameters \(n\) and \(p\)</em>.</p>
+<p id="p-281">Flip a weighted coin \(n\) times, where \(p\) is the probability of obtaining heads, and \(1-p\) is the probability of obtaining tails. Define \(X\) to be the number of heads in the \(n\) tosses. This is the <em class="emphasis">binomial random variable with parameters \(n\) and \(p\)</em>.</p>
 <ol class="lower-alpha">
-<li id="li-219">
-<p id="p-448">Give a combinatorial argument for why the PMF of the binomial random variable is</p>
+<li id="li-113">
+<p id="p-282">Give a combinatorial argument for why the PMF of the binomial random variable is</p>
 <div class="displaymath">
 \begin{equation*}
 p(k) = {n \choose k} p^k (1 - p)^{n-k}.
 \end{equation*}
 </div>
-<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-86" id="solution-86"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-86"><div class="solution solution-like">
-<p id="p-449">We give a combinatorial recipe.</p>
+<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-65" id="solution-65"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-65"><div class="solution solution-like">
+<p id="p-283">We give a combinatorial recipe.</p>
 <ul class="disc">
-<li id="li-220"><p id="p-450">Pick the \(k\) flips that will be \(H\text{.}\) There are \({n \choose k}\) ways to do so.</p></li>
-<li id="li-221"><p id="p-451">The probability that the chosen \(k\) flips all turn up \(H\) is \(p^k\text{.}\)</p></li>
-<li id="li-222"><p id="p-452">The probability that the remaining \(n-k\) flips all turn up \(T\) is \((1-p)^{n-k}\text{.}\)</p></li>
+<li id="li-114"><p id="p-284">Pick the \(k\) flips that will be \(H\text{.}\) There are \({n \choose k}\) ways to do so.</p></li>
+<li id="li-115"><p id="p-285">The probability that the chosen \(k\) flips all turn up \(H\) is \(p^k\text{.}\)</p></li>
+<li id="li-116"><p id="p-286">The probability that the remaining \(n-k\) flips all turn up \(T\) is \((1-p)^{n-k}\text{.}\)</p></li>
 </ul>
 <p class="continuation">Multiplying all these terms together gives the expression above.</p>
 </div></div></p>
 </li>
-<li id="li-223">
-<p id="p-453">Use the binomial theorem</p>
+<li id="li-117">
+<p id="p-287">Use the binomial theorem</p>
 <div class="displaymath">
 \begin{equation*}
 (x+y)^n = \sum_{k=0}^n {n \choose k} x^ky^{n-k}
 \end{equation*}
 </div>
-<p class="continuation">to prove that \(p(k)\) is a PMF. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-87" id="solution-87"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-87"><div class="solution solution-like">
-<p id="p-454">First, we note that \(0 \leq p(k) \leq 1\) for \(0 \leq k \leq n\text{.}\) Next, we must prove that the probabilities all sum to one. This follows quickly from the binomial theorem with \(x=p\) and \(y=1-p\text{:}\)</p>
+<p class="continuation">to prove that \(p(k)\) is a PMF. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-66" id="solution-66"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-66"><div class="solution solution-like">
+<p id="p-288">First, we note that \(0 \leq p(k) \leq 1\) for \(0 \leq k \leq n\text{.}\) Next, we must prove that the probabilities all sum to one. This follows quickly from the binomial theorem with \(x=p\) and \(y=1-p\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \sum_{k=0}^n {n \choose k} p^k (1-p)^{n-k} = (p + (1-p))^n = 1^n = 1.
@@ -254,8 +254,8 @@ p(k) = {n \choose k} p^k (1 - p)^{n-k}.
 </div>
 </div></div></p>
 </li>
-<li id="li-224">
-<p id="p-455">Linearity of expectation applies to the sum of multiple random variables. In particular, an easy proof by induction shows that for any random variables \(X_1, X_2, \ldots, X_n\text{,}\) we have</p>
+<li id="li-118">
+<p id="p-289">Linearity of expectation applies to the sum of multiple random variables. In particular, an easy proof by induction shows that for any random variables \(X_1, X_2, \ldots, X_n\text{,}\) we have</p>
 <div class="displaymath">
 \begin{equation*}
 \E[X_1 + X_2 + \cdots + X_n] = \E[X_1] + \E[X_2] + \cdots + \E[X_n]
@@ -267,8 +267,8 @@ p(k) = {n \choose k} p^k (1 - p)^{n-k}.
 \E[X] = np.
 \end{equation*}
 </div>
-<p class="continuation">You will have to split your random variable \(X\) into the sum of \(n\) random variables. (Note: you can also prove this directly from part (a), but it is a bit tedious.) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-88" id="solution-88"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-88"><div class="solution solution-like">
-<p id="p-456">Let \(X_i\) be an "indicator function" for whether coin \(i\) is \(H\text{.}\) That is,</p>
+<p class="continuation">You will have to split your random variable \(X\) into the sum of \(n\) random variables. (Note: you can also prove this directly from part (a), but it is a bit tedious.) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-67" id="solution-67"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-67"><div class="solution solution-like">
+<p id="p-290">Let \(X_i\) be an "indicator function" for whether coin \(i\) is \(H\text{.}\) That is,</p>
 <div class="displaymath">
 \begin{equation*}
 X_i = \left\{
@@ -297,16 +297,16 @@ X_i = \left\{
 &amp; =  np  (p + (1-p))^{n-1} \, = \,  np.
 \end{align*}
 </div>
-<p id="p-457">We use a couple of tricks here</p>
+<p id="p-291">We use a couple of tricks here</p>
 <ul class="disc">
-<li id="li-225"><p id="p-458">At the third equality, we replace the lower limit of \(k=0\) with \(k=1\text{.}\) This is because the \(k=0\) term equals 0, so we do not need to list it. <em class="emphasis">This is an important step!</em> Do not underestimate the need to properly account for the lowest/highest index.</p></li>
-<li id="li-226"><p id="p-459">At the fifth equality, we reindex, using \(j\) instead of \(k\text{.}\) <em class="emphasis">Do this carefully!</em> In my margin, I always write down the substitution in two ways. Here we are using \(j=k-1\text{,}\) which is the same as \(k=j+1\text{.}\) Having both of these expression staring at me will ensure that I don't make mistakes during the reindexing. Wherever I see a "\(k\text{,}\)" I replace it with a "\(j+1\text{.}\)" Or if I want to be fancy, I can immediately replace a "\(k-1\)" with a "\(j\text{.}\)"</p></li>
+<li id="li-119"><p id="p-292">At the third equality, we replace the lower limit of \(k=0\) with \(k=1\text{.}\) This is because the \(k=0\) term equals 0, so we do not need to list it. <em class="emphasis">This is an important step!</em> Do not underestimate the need to properly account for the lowest/highest index.</p></li>
+<li id="li-120"><p id="p-293">At the fifth equality, we reindex, using \(j\) instead of \(k\text{.}\) <em class="emphasis">Do this carefully!</em> In my margin, I always write down the substitution in two ways. Here we are using \(j=k-1\text{,}\) which is the same as \(k=j+1\text{.}\) Having both of these expression staring at me will ensure that I don't make mistakes during the reindexing. Wherever I see a "\(k\text{,}\)" I replace it with a "\(j+1\text{.}\)" Or if I want to be fancy, I can immediately replace a "\(k-1\)" with a "\(j\text{.}\)"</p></li>
 </ul>
 <p class="continuation">Don't cut corners on these substitutions. You will save yourself a lot of headaches!</p>
 </div></div></p>
 </li>
-<li id="li-227">
-<p id="p-460"><em class="emphasis">[Do not solve this one. It is a long calculation.]</em> It can be shown that</p>
+<li id="li-121">
+<p id="p-294"><em class="emphasis">[Do not solve this one. It is a long calculation.]</em> It can be shown that</p>
 <div class="displaymath">
 \begin{equation*}
 \var(X) = np(1-p).
@@ -318,15 +318,15 @@ X_i = \left\{
 \E[X^2] = \E[X(X-1) + X] = \E[X(X-1)] + \E[X],
 \end{equation*}
 </div>
-<p class="continuation">which follows from <em class="emphasis">linearity of expectation</em>. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-89" id="solution-89"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-89"><div class="solution solution-like">
-<p id="p-461">This plays out much like "tedious calculation" in the answer to part (c), but it is more involved. We want to calculate</p>
+<p class="continuation">which follows from <em class="emphasis">linearity of expectation</em>. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-68" id="solution-68"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-68"><div class="solution solution-like">
+<p id="p-295">This plays out much like "tedious calculation" in the answer to part (c), but it is more involved. We want to calculate</p>
 <div class="displaymath">
 \begin{align*}
 \E[X^2] - (\E[X])^2 &amp;= \E[X(X-1) + X] - (\E[X])^2\\
 &amp;= \E[X(X-1)] + \E[X] - (\E[X])^2
 \end{align*}
 </div>
-<p id="p-462">Of these three terms, we already know that \(\E[X]=np\) and that \((E[X])^2 =  (np)^2\text{.}\) So we only need to calculate \(\E[X(X-1)] \text{.}\) Here we go. This time, we will reindex using \(j=k-2\text{,}\) or equivalently, \(k=j+2\text{.}\)</p>
+<p id="p-296">Of these three terms, we already know that \(\E[X]=np\) and that \((E[X])^2 =  (np)^2\text{.}\) So we only need to calculate \(\E[X(X-1)] \text{.}\) Here we go. This time, we will reindex using \(j=k-2\text{,}\) or equivalently, \(k=j+2\text{.}\)</p>
 <div class="displaymath">
 \begin{align*}
 \E[X(X-1)] &amp;= \sum_{k=0}^n k(k-1) p(k) \, = \, \sum_{k=0}^n  k(k-1) {n \choose k} p^k (1-p)^{n-k}\\
@@ -337,7 +337,7 @@ X_i = \left\{
 &amp; =  n(n-1)p^2  (p + (1-p))^{n-2} \, = \,  n(n-1)p^2.
 \end{align*}
 </div>
-<p id="p-463">We are now ready to put it together:</p>
+<p id="p-297">We are now ready to put it together:</p>
 <div class="displaymath">
 \begin{align*}
 \E[X^2] - (\E[X])^2 &amp;= n(n-1)p^2 + np -(np)^2\\
@@ -345,50 +345,50 @@ X_i = \left\{
 &amp;= np(1-p).
 \end{align*}
 </div>
-<p id="p-464"></p>
+<p id="p-298"></p>
 </div></div></p>
 </li>
-</ol></article><article class="exercise exercise-like" id="exercise-49"><h6 class="heading">
+</ol></article><article class="exercise exercise-like" id="exercise-28"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Geometric Random Variable.</span>
 </h6>
-<p id="p-465">Instead of flipping our coin for a fixed number of times, we will flip it until we first encounter a heads. This experiment gives the geometric random variable \(Y\text{.}\)</p>
+<p id="p-299">Instead of flipping our coin for a fixed number of times, we will flip it until we first encounter a heads. This experiment gives the geometric random variable \(Y\text{.}\)</p>
 <ol class="lower-alpha">
-<li id="li-228">
-<p id="p-466">Give a combinatorial argument for  why the PMF of the geometric random variable is</p>
+<li id="li-122">
+<p id="p-300">Give a combinatorial argument for  why the PMF of the geometric random variable is</p>
 <div class="displaymath">
 \begin{equation*}
 p(k) =  (1 - p)^{k-1}  p.
 \end{equation*}
 </div>
-<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-90" id="solution-90"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-90"><div class="solution solution-like"><p id="p-467">In order for the \(k\)th flip to be the first \(H\) that we encounter, we must obtain \(k-1\) \(T\)'s in a row, followed by a \(H\text{.}\) The probability of this event is \((1-p)^{k-1}p\text{.}\) Note that \(p(0) = 0\) since we cannot stop until we have seen a \(H\text{.}\)</p></div></div></p>
+<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-69" id="solution-69"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-69"><div class="solution solution-like"><p id="p-301">In order for the \(k\)th flip to be the first \(H\) that we encounter, we must obtain \(k-1\) \(T\)'s in a row, followed by a \(H\text{.}\) The probability of this event is \((1-p)^{k-1}p\text{.}\) Note that \(p(0) = 0\) since we cannot stop until we have seen a \(H\text{.}\)</p></div></div></p>
 </li>
-<li id="li-229">
-<p id="p-468">Use the fact that</p>
+<li id="li-123">
+<p id="p-302">Use the fact that</p>
 <div class="displaymath">
 \begin{equation*}
 \sum_{k=0}^{\infty} x^k = \frac{1}{1-x}
 \end{equation*}
 </div>
-<p class="continuation">to prove that  \(p(k)\) is a PMF. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-91" id="solution-91"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-91"><div class="solution solution-like">
-<p id="p-469">It is easy to see that \(0 \leq p(k) \leq 1\) for all \(k \in \Z^+\text{.}\) Now we must show that the probabilities sum to 1. We have</p>
+<p class="continuation">to prove that  \(p(k)\) is a PMF. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-70" id="solution-70"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-70"><div class="solution solution-like">
+<p id="p-303">It is easy to see that \(0 \leq p(k) \leq 1\) for all \(k \in \Z^+\text{.}\) Now we must show that the probabilities sum to 1. We have</p>
 <div class="displaymath">
 \begin{align*}
 \sum_{k=1}^{\infty} p(k) &amp;= \sum_{k=1}^{\infty} (1-p)^{k-1} p \, = \, p \sum_{k=1}^{\infty} (1-p)^{k-1}\\
 &amp;= p \sum_{j=0}^{\infty} (1-p)^{j} \, = \, \frac{p}{1 - (1-p)} \,=\, \frac{p}{p} \,=\, 1.
 \end{align*}
 </div>
-<p id="p-470"></p>
+<p id="p-304"></p>
 </div></div></p>
 </li>
-<li id="li-230">
-<p id="p-471">Show that</p>
+<li id="li-124">
+<p id="p-305">Show that</p>
 <div class="displaymath">
 \begin{equation*}
 \E[Y] = \frac{1}{p}.
 \end{equation*}
 </div>
-<p class="continuation">Hint: take the derivative of both sides of the equality in part (b) to get a new identity. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-92" id="solution-92"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-92"><div class="solution solution-like">
-<p id="p-472">We have</p>
+<p class="continuation">Hint: take the derivative of both sides of the equality in part (b) to get a new identity. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-71" id="solution-71"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-71"><div class="solution solution-like">
+<p id="p-306">We have</p>
 <div class="displaymath">
 \begin{equation*}
 \E[Y] = \sum_{k=1}^{\infty}  k p(k) = \sum_{k=1}^{\infty}  k(1-p)^{k-1} p = p \sum_{k=1}^{\infty}  k(1-p)^{k-1}.
@@ -414,22 +414,22 @@ p(k) =  (1 - p)^{k-1}  p.
 </div>
 </div></div></p>
 </li>
-<li id="li-231">
-<p id="p-473"><em class="emphasis">[Do not solve this one. It is a long calculation.]</em>  It can be shown that</p>
+<li id="li-125">
+<p id="p-307"><em class="emphasis">[Do not solve this one. It is a long calculation.]</em>  It can be shown that</p>
 <div class="displaymath">
 \begin{equation*}
 \var(Y) = \frac{1-p}{p^2}.
 \end{equation*}
 </div>
-<p class="continuation">But you do not need to prove this here. (You use the same trick as in problem 1(d) of writing \(\E[Y^2] = \E[Y(Y-1)] + E[Y]\text{.}\)) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-93" id="solution-93"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-93"><div class="solution solution-like">
-<p id="p-474">We will calculate \(\E[Y^2] - (\E[Y])^2 = \E[Y(Y-1)] + \E[Y] - (\E[Y])^2\text{.}\)</p>
+<p class="continuation">But you do not need to prove this here. (You use the same trick as in problem 1(d) of writing \(\E[Y^2] = \E[Y(Y-1)] + E[Y]\text{.}\)) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-72" id="solution-72"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-72"><div class="solution solution-like">
+<p id="p-308">We will calculate \(\E[Y^2] - (\E[Y])^2 = \E[Y(Y-1)] + \E[Y] - (\E[Y])^2\text{.}\)</p>
 <div class="displaymath">
 \begin{align*}
 \E[Y(Y-1)]  &amp;=&amp; \sum_{k=1}^{\infty}  k(k-1) (1-p)^{k-1} p\\
 &amp;= p (1-p) \sum_{k=2}^{\infty}  k(k-1) (1-p)^{k-2}.
 \end{align*}
 </div>
-<p id="p-475">Taking the derivative of both sides of</p>
+<p id="p-309">Taking the derivative of both sides of</p>
 <div class="displaymath">
 \begin{equation*}
 \sum_{k=1}^{\infty} kx^{k-1} = \frac{1}{(1-x)^2},
@@ -449,28 +449,28 @@ p(k) =  (1 - p)^{k-1}  p.
 &amp; = \frac{p(1-p)}{p^2}.
 \end{align*}
 </div>
-<p id="p-476"></p>
+<p id="p-310"></p>
 </div></div></p>
 </li>
-</ol></article><article class="exercise exercise-like" id="exercise-50"><h6 class="heading">
+</ol></article><article class="exercise exercise-like" id="exercise-29"><h6 class="heading">
 <span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Poisson Random Variable.</span>
 </h6>
-<p id="p-477">The Poisson random variable \(Z\) for parameter \(\lambda &gt; 0\) has PMF given by</p>
+<p id="p-311">The Poisson random variable \(Z\) for parameter \(\lambda &gt; 0\) has PMF given by</p>
 <div class="displaymath">
 \begin{equation*}
 p(k) = e^{-\lambda} \frac{\lambda^k}{k!}.
 \end{equation*}
 </div>
 <ol class="lower-alpha">
-<li id="li-232">
-<p id="p-478">Use the fact that</p>
+<li id="li-126">
+<p id="p-312">Use the fact that</p>
 <div class="displaymath">
 \begin{equation*}
 \sum_{k=0}^{\infty} \frac{x^k}{k!} = e^{x}
 \end{equation*}
 </div>
-<p class="continuation">to prove that  \(p(k)\) is a PMF. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-94" id="solution-94"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-94"><div class="solution solution-like">
-<p id="p-479">Once again, it is clear that \(0 \leq p(k) \) for all \(k\text{.}\) These numbers sum to</p>
+<p class="continuation">to prove that  \(p(k)\) is a PMF. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-73" id="solution-73"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-73"><div class="solution solution-like">
+<p id="p-313">Once again, it is clear that \(0 \leq p(k) \) for all \(k\text{.}\) These numbers sum to</p>
 <div class="displaymath">
 \begin{equation*}
 \sum_{k=0}^{\infty} e^{-\lambda} \frac{\lambda^k}{k!} = e^{-\lambda} \sum_{k=0}^{\infty}  \frac{\lambda^k}{k!}
@@ -480,15 +480,15 @@ p(k) = e^{-\lambda} \frac{\lambda^k}{k!}.
 <p class="continuation">Since all terms are nonnegative and they sum to 1, each term must be less than 1.</p>
 </div></div></p>
 </li>
-<li id="li-233">
-<p id="p-480">Show that</p>
+<li id="li-127">
+<p id="p-314">Show that</p>
 <div class="displaymath">
 \begin{equation*}
 \E[Z] = \lambda.
 \end{equation*}
 </div>
-<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-95" id="solution-95"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-95"><div class="solution solution-like">
-<p id="p-481"></p>
+<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-74" id="solution-74"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-74"><div class="solution solution-like">
+<p id="p-315"></p>
 <div class="displaymath">
 \begin{align*}
 \E[Z] &amp;= \sum_{k=0}^{\infty} k e^{-\lambda} \frac{\lambda^k}{k!}
@@ -498,11 +498,11 @@ p(k) = e^{-\lambda} \frac{\lambda^k}{k!}.
 &amp; = \lambda.
 \end{align*}
 </div>
-<p id="p-482"></p>
+<p id="p-316"></p>
 </div></div></p>
 </li>
-<li id="li-234">
-<p id="p-483"><em class="emphasis">[Don't solve this one. The calculation isn't as bad as the other variance calculations above. But it is still a bit long.]</em> It can be shown that</p>
+<li id="li-128">
+<p id="p-317"><em class="emphasis">[Don't solve this one. The calculation isn't as bad as the other variance calculations above. But it is still a bit long.]</em> It can be shown that</p>
 <div class="displaymath">
 \begin{equation*}
 \var[Z] = \lambda
@@ -514,8 +514,8 @@ p(k) = e^{-\lambda} \frac{\lambda^k}{k!}.
 \E[Z^2] = \E[Z(Z-1)] + \E[Z].
 \end{equation*}
 </div>
-<p class="continuation">This time, we also need to be comfortable with reindexing infinite series. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-96" id="solution-96"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-96"><div class="solution solution-like">
-<p id="p-484">Here is the hard work:</p>
+<p class="continuation">This time, we also need to be comfortable with reindexing infinite series. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-75" id="solution-75"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-75"><div class="solution solution-like">
+<p id="p-318">Here is the hard work:</p>
 <div class="displaymath">
 \begin{align*}
 \E[Z(Z-1)] &amp;= \sum_{k=0}^{\infty} k(k-1) e^{-\lambda} \frac{\lambda^k}{k!}\\
@@ -524,28 +524,28 @@ p(k) = e^{-\lambda} \frac{\lambda^k}{k!}.
 &amp;= \lambda^2 e^{-\lambda}e^{\lambda} = \lambda^2.
 \end{align*}
 </div>
-<p id="p-485">That wasn't so bad! Our variance calculation is</p>
+<p id="p-319">That wasn't so bad! Our variance calculation is</p>
 <div class="displaymath">
 \begin{align*}
 \var(Z) &amp;= \E[Z^2] - (\E[Z])^2 = \E[Z(Z-1)] + \E[Z]- (\E[Z])^2\\
 &amp;= \lambda^2 + \lambda - \lambda^2 \, =\,  \lambda.
 \end{align*}
 </div>
-<p id="p-486">Fun fact: the expected value is also called the "first moment." The variance is also called the "second moment." Can you guess what the third moment of the Poisson distribution is? That's right: it's also equal to \(\lambda\text{.}\) How about the fourth moment? Yep, \(\lambda\) again.</p>
-<p id="p-487">In fact, every moment of the Poisson distribution is equal to \(\lambda\text{.}\) (This is analogous to how all of the derivatives of \(e^x\) are also \(e^x\text{.}\)) Each of the moments tell you something about the shape of the distribution. So in a poetic sense, the Poisson distribution must be the nicest-shaped bell curve centered at \(x=\lambda\text{.}\)</p>
+<p id="p-320">Fun fact: the expected value is also called the "first moment." The variance is also called the "second moment." Can you guess what the third moment of the Poisson distribution is? That's right: it's also equal to \(\lambda\text{.}\) How about the fourth moment? Yep, \(\lambda\) again.</p>
+<p id="p-321">In fact, every moment of the Poisson distribution is equal to \(\lambda\text{.}\) (This is analogous to how all of the derivatives of \(e^x\) are also \(e^x\text{.}\)) Each of the moments tell you something about the shape of the distribution. So in a poetic sense, the Poisson distribution must be the nicest-shaped bell curve centered at \(x=\lambda\text{.}\)</p>
 </div></div></p>
 </li>
 </ol></article><article class="exercise exercise-like" id="probdist-poisson-approx"><h6 class="heading">
 <span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Poisson Approximation for the Binomial Distribtuion.</span>
 </h6>
-<p id="p-488">In this problem, you will show that when \(n\) is very large and \(p\) is very small, the Poisson distribution for</p>
+<p id="p-322">In this problem, you will show that when \(n\) is very large and \(p\) is very small, the Poisson distribution for</p>
 <div class="displaymath">
 \begin{equation*}
 \lambda :=np
 \end{equation*}
 </div>
 <p class="continuation">is a good approximation (for small \(k\)) of  the binomial distribution with parameters \(n\) and \(p\text{.}\) Check out this <a class="external" href="https://www.desmos.com/calculator/mjyfy6sffz" target="_blank">Desmos interactive plot</a> for a visualization of this approximation.</p>
-<p id="p-489">Fix \(k \in \Z_{\geq 0}\) to be  constant and let \(n \rightarrow \infty\text{.}\) Show that</p>
+<p id="p-323">Fix \(k \in \Z_{\geq 0}\) to be  constant and let \(n \rightarrow \infty\text{.}\) Show that</p>
 <div class="displaymath">
 \begin{equation*}
 {n \choose k} p^k (1-p)^{n-k} \approx e^{-\lambda} \frac{\lambda^k}{k!}   \mbox{if } k \ll n.
@@ -561,8 +561,8 @@ p(k) = e^{-\lambda} \frac{\lambda^k}{k!}.
 \lim_{n \rightarrow \infty} \left( 1 - \frac{c}{n} \right)^n &amp;= e^{-c}.
 \end{align*}
 </div>
-<p id="p-490"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-97" id="solution-97"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-97"><div class="solution solution-like">
-<p id="p-491">Keep in mind that <em class="emphasis">\(k\) is a fixed number</em> while the size \(n\) of the network increases to infinity. This lets us use the three limits listed above.</p>
+<p id="p-324"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-76" id="solution-76"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-76"><div class="solution solution-like">
+<p id="p-325">Keep in mind that <em class="emphasis">\(k\) is a fixed number</em> while the size \(n\) of the network increases to infinity. This lets us use the three limits listed above.</p>
 <div class="displaymath">
 \begin{align*}
 {n \choose k} p^k (1-p)^{n-k}
@@ -572,7 +572,7 @@ p(k) = e^{-\lambda} \frac{\lambda^k}{k!}.
 \frac{\lambda^k} {k!}  \cdot \big( 1 \cdot 1 \cdots 1  \big) \cdot  e^{-\lambda} \cdot 1 = e^{-\lambda} \frac{\lambda^k}{k!}
 \end{align*}
 </div>
-<p id="p-492">What this is saying is that as \(n \rightarrow \infty\text{,}\) the binomial distribution for \(n\) and \(p\) looks more and more like the Poisson distribution for \(\lambda=np\text{.}\)</p>
+<p id="p-326">What this is saying is that as \(n \rightarrow \infty\text{,}\) the binomial distribution for \(n\) and \(p\) looks more and more like the Poisson distribution for \(\lambda=np\text{.}\)</p>
 </div></div></p></article></section></section></div></main>
 </div>
 </body>

@@ -12,53 +12,13 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">The Normalizing Constant for Exponent \(\alpha\).</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Filtering in Gephi.</span>
 </h6>
 <ol class="lower-alpha">
-<li><p>Let \(p: \Z^+ \rightarrow [0,1]\) given by<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-p(k) = C k^{- \alpha}
-\end{equation*}
-</div>be the PMF for a power law. (Here, we assume that \(p(0)=0\) for convenience.) Suppose that we know the value for \(\alpha\text{.}\) Prove that<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-C = \frac{1}{\zeta(\alpha)}
-\end{equation*}
-</div>where \(\zeta(x)\) is the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Riemann zeta function</em><div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\displaystyle{\zeta(x) = \sum_{k=1}^{\infty} k^{-x}}.
-\end{equation*}
-</div>What is the restriction on allowable values of \(\alpha\text{?}\) <a class="solution-knowl original" data-knowl="./knowl/solution-100-hidden.html" title="Solution 3.3.3.a.1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></li>
-<li>
-<p>For many real-world networks, the power law behavior doesn't hold for small \(k\text{.}\) In this case, we restrict our attention to vertices of degree at least \(k_{\min}\text{.}\) We then deal with  the probability mass function for a truncated power law. Given \(\alpha\) and \(k \geq k_{\min}\) this PMF is given by</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-p(k) =  \frac{ k^{-\alpha}}{\zeta(\alpha, k_{\min})}
-\end{equation*}
-</div>
-<p class="continuation">where</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\zeta(x, k_{\min}) =  \sum_{k=k_{\min}}^{\infty} k^{-x}
-\end{equation*}
-</div>
-<p class="continuation">is the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">generalized Riemann zeta function</em>.</p>
-<p>Dealing with the Riemann zeta function is unwieldy. In practice, we approximate this leading constant by the corresponding integral.  Evaluate the following integral in order to find the approximate value for \(\zeta(\alpha, k_{\min})\text{:}\)</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-A =  \int_{x= k_{\min}}^{\infty} x^{-\alpha}  \, dx \approx \sum_{k= k_{\min}}^{\infty} k^{-\alpha} .
-\end{equation*}
-</div>
-<p><a class="solution-knowl original" data-knowl="./knowl/solution-101-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
-</li>
-<li>
-<p>Find the corresponding approximate expression for the power law PMF</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-p(k) = \frac{1}{A} k^{-\alpha}
-\end{equation*}
-</div>
-<p class="continuation">using your constant \(A\) from (a). Simplify so that \(\alpha\) only appears once in an exponent. <a class="solution-knowl original" data-knowl="./knowl/solution-102-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
-</li>
-</ol></article><span class="incontext"><a href="powerlaw.html#exercise-54">in-context</a></span>
+<li><p>Click on the "Overview" button at the top of the window. We will now add our first filter: we only want to show nodes of high degree.</p></li>
+<li><p>In the right-hand window, click on the "Filter" tab (which is next to the "Statistics" tab. Explore down to  "Attributes/Range/Degree." Then drag "Degree" to the lower half of this tab (named "Queries"). Click on "Filter."</p></li>
+<li><p>Adjust the Query slider. Among the highest degree nodes, what is the maximum number that form a complete graph (also known as a "clique")? What is the smallest degree (in the overall graph) of vertices in this clique?</p></li>
+<li><p>Make a new Query using other centrality measures where you saw a big gap in the ranking value. How connected are the high ranking nodes for this measure? What other interesting observations can you make about these nodes? Is there a clear internal structure? Or perhaps a lack of one?</p></li>
+</ol></article><span class="incontext"><a href="us-airline.html#exercise-54">in-context</a></span>
 </body>
 </html>

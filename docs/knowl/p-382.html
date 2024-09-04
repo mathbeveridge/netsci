@@ -12,16 +12,20 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">High Degree and Low Closeness.</em>   Consider a graph consisting of two large cliques (complete graphs) of the same size connected by a long path. We call this a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">barbell graph</em>. Vertices in the two cliques have high degree, but have low closeness because almost half of the vertices are far away. Here is an example <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality7.svg" role="img" class="contained"></div> High degree: \(c_a^C = 10\text{,}\) which is the maximum degree. There are many vertices with degree 2. Low closeness:</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\begin{array}{c|c|c|c|c|c|c}
-\overline{F}_X(0) &amp; \overline{F}_X(1) &amp; \overline{F}_X(2) &amp; \overline{F}_X(3) &amp; \overline{F}_X(4) &amp; \overline{F}_X(5) &amp; \overline{F}_X(6) \\
-\hline
-&amp;&amp;&amp;&amp;&amp;&amp; \\
-1&amp;1&amp;\frac{6}{7}&amp;\frac{2}{7}&amp;0&amp;0&amp;0 \\
-\end{array}
+{1/c_a^C} = 9 + \sum_{i=1}^{100} i +   9 \times 101 = 5968.
 \end{equation*}
 </div>
-<span class="incontext"><a href="randvar.html#p-382">in-context</a></span>
+<p class="continuation">Meanwhile,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+{1/c_b^C}  = 2 \left( \sum_{i=1}^{50} i + 9 \times 51 \right)
+= 50 \times 51 + 18 \times 51 = 3468.
+\end{equation*}
+</div>
+<p class="continuation">So \(c_a^C \approx 0.58 C_b^C\text{.}\) In the graph above, we have \(c_c^D = k_c = 9\) which is just one below the maximum degree. However \(c_c^B=0\text{.}\)</p>
+<span class="incontext"><a href="centrality.html#p-382">in-context</a></span>
 </body>
 </html>

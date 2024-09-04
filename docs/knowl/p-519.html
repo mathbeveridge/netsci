@@ -12,20 +12,33 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>As \(n \rightarrow \infty\text{,}\) the \(m\)th moment  \(\E[X^m]\) is</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\lim_{n \rightarrow \infty} \frac{C}{-\alpha +m+1} \left( \frac{1}{n^{\alpha-m-1}} -  \frac{1}{k_{\min}^{\alpha-m-1}} \right)
-= \frac{C}{\alpha-m-1}  \cdot \frac{1}{k_{\min}^{\alpha-m-1}}
-\end{equation*}
-</div>
-<p class="continuation">provided that \(\alpha &gt; m\text{.}\) So the \(m\)th moment  value  is finite if and only if \(\alpha &gt; m\text{.}\) Let's substitute \(C= (\alpha-1)k_{\min}^{\alpha-1}\) to get the expression</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\E[X^m] = \frac{\alpha-1}{\alpha-m-1}  \cdot \frac{k_{\min}^{\alpha-1}}{k_{\min}^{\alpha-m-1}}
-= \frac{\alpha-1}{\alpha-m-1}  \cdot k_{\min}^{m}.
-\end{equation*}
-</div>
-<span class="incontext"><a href="powerlaw.html#p-519">in-context</a></span>
+<ol class="lower-alpha">
+<li>
+<p>Now let's try to do some of this same work using NetworkX. You will need to start by installing NetworkX using the command</p>
+<pre class="code-display tex2jax_ignore">
+pip3 install networkx
+</pre>
+</li>
+<li><p>Start off by familiarizing yourself with NetworkX by working though the <a class="external" href="https://networkx.github.io/documentation/stable/tutorial.html" target="_blank">NetworkX tutorial</a>.</p></li>
+<li>
+<p>Try to import the airline graph and find its centrality measures. Googling the following terms will bring up useful parts of the NetworkX documentation:</p>
+<pre class="code-display tex2jax_ignore">
+networkx tutorial
+networkx centrality
+networkx pagerank
+networkx graphml import
+</pre>
+<p class="continuation">Or visit our moodle site for direct links. If you want to plot the network via python, here is a simple code snippet that gives you an idea of how to start.</p>
+<pre class="code-display tex2jax_ignore">
+import networkx as nx
+import matplotlib.pyplot as plt
+
+G = nx.cubical_graph()
+nx.draw(G)
+plt.show()
+</pre>
+</li>
+</ol>
+<span class="incontext"><a href="us-airline.html#p-519">in-context</a></span>
 </body>
 </html>

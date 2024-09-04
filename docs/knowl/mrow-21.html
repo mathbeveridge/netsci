@@ -13,14 +13,11 @@
 <body>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-\lambda_1 \bu_1 \bu_1^{\top} + \lambda_2 \bu_2 \bu^{\top}
-&amp;= \frac{2}{5} \begin{bmatrix} 1  2 \end{bmatrix} \begin{bmatrix} 2 &amp; 4 \end{bmatrix}\\
-- \frac{3}{5}  \begin{bmatrix} 4  -2 \end{bmatrix}   \begin{bmatrix} -2 &amp; 1 \end{bmatrix}\\
-&amp;= \frac{1}{5} \left( \begin{bmatrix} 2 &amp; 4  4 &amp; 8\end{bmatrix}  +  \begin{bmatrix} -12 &amp; 6  6 &amp; -3\end{bmatrix} \right)\\
-&amp;=   \frac{1}{5}  \begin{bmatrix} -	10 &amp; 10  10 &amp; 5\end{bmatrix}\\
-&amp;=   \begin{bmatrix} -	2 &amp; 2  2 &amp; 1\end{bmatrix}
+\E[aX+bY] &amp;= \sum_{\omega  \in \Omega} (aX(\omega) + bY(\omega) ) p(\omega)\\
+&amp;= a \sum_{\omega  \in \Omega} X(\omega)p(\omega)  + b \sum_{\omega  \in \Omega} Y(\omega)p(\omega)\\
+&amp;=a \E[X] + b \E[Y].
 \end{align*}
 </div>
-<span class="incontext"><a href="algcentrality.html#mjx-eqn:mrow-21">in-context</a></span>
+<span class="incontext"><a href="randvar.html#mjx-eqn:mrow-21">in-context</a></span>
 </body>
 </html>

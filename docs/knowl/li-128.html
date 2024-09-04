@@ -12,19 +12,20 @@
 </head>
 <body>
 <article class="li"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Item</span><span class="space"> </span><span class="codenumber">2.2.4.d</span><span class="period">.</span>
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">2.2.4.c</span><span class="period">.</span>
 </h6>
-<p>Our unit eigenvectors are \(\bu_1 = \frac{1}{\sqrt{5}} {1 \choose 2}\) and \(\bu_2 = \frac{1}{\sqrt{5}} {2 \choose -1}\text{.}\) We find that</p>
+<p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">[Don't solve this one. The calculation isn't as bad as the other variance calculations above. But it is still a bit long.]</em> It can be shown that</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\lambda_1 \bu_1 \bu_1^{\top} + \lambda_2 \bu_2 \bu^{\top}
-&amp;= \frac{2}{5} \begin{bmatrix} 1  2 \end{bmatrix} \begin{bmatrix} 2 &amp; 4 \end{bmatrix}\\
-- \frac{3}{5}  \begin{bmatrix} 4  -2 \end{bmatrix}   \begin{bmatrix} -2 &amp; 1 \end{bmatrix}\\
-&amp;= \frac{1}{5} \left( \begin{bmatrix} 2 &amp; 4  4 &amp; 8\end{bmatrix}  +  \begin{bmatrix} -12 &amp; 6  6 &amp; -3\end{bmatrix} \right)\\
-&amp;=   \frac{1}{5}  \begin{bmatrix} -	10 &amp; 10  10 &amp; 5\end{bmatrix}\\
-&amp;=   \begin{bmatrix} -	2 &amp; 2  2 &amp; 1\end{bmatrix}
-\end{align*}
+\begin{equation*}
+\var[Z] = \lambda
+\end{equation*}
 </div>
-<p></p></article><span class="incontext"><a href="algcentrality.html#li-128">in-context</a></span>
+<p class="continuation">as well! Again, we need to use the trick</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[Z^2] = \E[Z(Z-1)] + \E[Z].
+\end{equation*}
+</div>
+<p class="continuation">This time, we also need to be comfortable with reindexing infinite series. <a class="solution-knowl original" data-knowl="./knowl/solution-75-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></article><span class="incontext"><a href="probdist.html#li-128">in-context</a></span>
 </body>
 </html>

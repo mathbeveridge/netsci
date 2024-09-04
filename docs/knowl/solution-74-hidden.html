@@ -11,17 +11,16 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p>We have</p>
+<p></p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-F_X(k) = \sum_{i=-\infty}^k p_X(i)
-\end{equation*}
+\begin{align*}
+\E[Z] &amp;= \sum_{k=0}^{\infty} k e^{-\lambda} \frac{\lambda^k}{k!}
+\, = \,  \sum_{k=1}^{\infty} e^{-\lambda} \frac{\lambda^k}{(k-1)!}\\
+&amp; =  \lambda \sum_{k=1}^{\infty} e^{-\lambda} \frac{\lambda^{k-1}}{(k-1)!}
+\,= \,  \lambda \sum_{j=0}^{\infty} e^{-\lambda} \frac{\lambda^{j}}{j!}\\
+&amp; = \lambda.
+\end{align*}
 </div>
-<p class="continuation">because this is the definition of the CDF. Therefore, we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-p_X(k) = F_X(k) - F_X(k-1) = \sum_{i=-\infty}^k p_X(i) - \sum_{i=-\infty}^{k-1} p_X(i) = p_X(k).
-\end{equation*}
-</div>
+<p></p>
 </div></body>
 </html>

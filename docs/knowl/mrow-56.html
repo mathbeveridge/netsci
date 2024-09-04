@@ -13,8 +13,10 @@
 <body>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-\E[Y(Y-1)]  &amp;=&amp; \sum_{k=1}^{\infty}  k(k-1) (1-p)^{k-1} p\\
-&amp;= p (1-p) \sum_{k=2}^{\infty}  k(k-1) (1-p)^{k-2}.
+\E[Z(Z-1)] &amp;= \sum_{k=0}^{\infty} k(k-1) e^{-\lambda} \frac{\lambda^k}{k!}\\
+&amp;= \lambda^2 e^{-\lambda} \sum_{k=2}^{\infty}   \frac{\lambda^{k-2}}{(k-2)!}\\
+&amp;= \lambda^2 e^{-\lambda} \sum_{j=0}^{\infty}   \frac{\lambda^{j}}{j!}\\
+&amp;= \lambda^2 e^{-\lambda}e^{\lambda} = \lambda^2.
 \end{align*}
 </div>
 <span class="incontext"><a href="probdist.html#mjx-eqn:mrow-56">in-context</a></span>

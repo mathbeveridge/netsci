@@ -15,20 +15,18 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
-<p>The CCDF \(\overline{F}_X\) of a discrete random variable satisfies the following properties:</p>
-<ul class="disc">
-<li>
-<p>\(\overline{F}_X\) is weakly decreasing (aka monotonically nonincreasing). That is,</p>
+<p>Keep in mind that <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">\(k\) is a fixed number</em> while the size \(n\) of the network increases to infinity. This lets us use the three limits listed above.</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-s \leq t \qquad \Longrightarrow  \qquad \overline{F}_X(s) \geq \overline{F}_X(t).
-\end{equation*}
+\begin{align*}
+{n \choose k} p^k (1-p)^{n-k}
+&amp;= \frac{n!}{k! (n-k)!} \left( \frac{\lambda} {n}\right)^k  \left( 1 -  \frac{\lambda}{n} \right)^{n-k}\\
+&amp;= \frac{\lambda^k} {k!} \left( \frac{n}{n} \frac{n-1}{n} \cdots \frac{n-k+1}{n} \right) \left( 1 -  \frac{\lambda}{n} \right)^{n} \left( 1 -  \frac{\lambda}{n} \right)^{-k}\\
+&amp; \rightarrow
+\frac{\lambda^k} {k!}  \cdot \big( 1 \cdot 1 \cdots 1  \big) \cdot  e^{-\lambda} \cdot 1 = e^{-\lambda} \frac{\lambda^k}{k!}
+\end{align*}
 </div>
-</li>
-<li><p>\(\overline{F}_X(t)\) tends to 1 as \(t \rightarrow - \infty\) , and tends to 0 as \(t \rightarrow \infty\text{.}\)</p></li>
-<li><p>Since \(X\) is a discrete random variable, the CCDF \(\overline{F}_X(t)\) is a piecewise constant function of \(t\text{.}\)</p></li>
-</ul>
+<p>What this is saying is that as \(n \rightarrow \infty\text{,}\) the binomial distribution for \(n\) and \(p\) looks more and more like the Poisson distribution for \(\lambda=np\text{.}\)</p>
 </div>
-<span class="incontext"><a href="randvar.html#solution-76">in-context</a></span>
+<span class="incontext"><a href="probdist.html#solution-76">in-context</a></span>
 </body>
 </html>

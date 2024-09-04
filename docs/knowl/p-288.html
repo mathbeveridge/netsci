@@ -12,14 +12,12 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>With the previous problem in mind, write each of the update rules as a matrix equation using the adjacency matrix \(A\) and the column vectors</p>
+<p>First, we note that \(0 \leq p(k) \leq 1\) for \(0 \leq k \leq n\text{.}\) Next, we must prove that the probabilities all sum to one. This follows quickly from the binomial theorem with \(x=p\) and \(y=1-p\text{:}\)</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\ba(t) =\begin{bmatrix}   a_1(t) \\ \vdots \\ a_n(t) \end{bmatrix}  \mbox{ and }
-\bh(t) = \begin{bmatrix} h_1(t) \\  \vdots \\  h_n(t) \end{bmatrix}.
+\sum_{k=0}^n {n \choose k} p^k (1-p)^{n-k} = (p + (1-p))^n = 1^n = 1.
 \end{equation*}
 </div>
-<p class="continuation">(Hint: you will need to use \(A^{\top}\) for one of your equations.) Check that your matrix equations are correct for the example from Problem 1. <a class="solution-knowl original" data-knowl="./knowl/solution-64-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
-<span class="incontext"><a href="hits.html#p-288">in-context</a></span>
+<span class="incontext"><a href="probdist.html#p-288">in-context</a></span>
 </body>
 </html>

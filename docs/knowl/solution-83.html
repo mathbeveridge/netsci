@@ -15,23 +15,16 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
-<p>Here  is the argument. The notation is a little dense, so read it slowly. Each step has a simple explanation. For example,</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\E[\E[X]] = \E[X]
-\end{equation*}
-</div>
-<p class="continuation">because \(\E[X]\) is just a constant. (For the same reason, \(\E[13] = 13\) because the value doesn't change as we consider elements of the state space.)</p>
+<p></p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-\var(X) &amp;=  \E \left[ (X - \E[X])^2 \right]
-\, = \, \E[ X^2 -2 X \, \E[X] + \E[X]^2]\\
-&amp;=   \E[ X^2] -\E[2 X \, \E[X]] + \E[\E[X]^2] \, = \, \E[ X^2] -2 \E[X] \, \E[X ] + (\E[X])^2\\
-&amp;=  \E[X^2] - (\E[X])^2
+\E[X^m] &amp;= C \int_{x=k_{\min}}^{n} x^m \cdot x^{-\alpha} dx =  C \int_{x=k_{\min}}^{n}  x^{-\alpha+m} dx\\
+&amp;= \frac{C}{-\alpha +m+1} x^{-\alpha+n+1} \Big|_{k_{\min}}^n\\
+&amp;= \frac{C}{-\alpha +m+1} \left( \frac{1}{n^{\alpha-m-1}} -  \frac{1}{k_{\min}^{\alpha-m-1}} \right)
 \end{align*}
 </div>
-<p>where we have used linearity of expectation.</p>
+<p></p>
 </div>
-<span class="incontext"><a href="randvar.html#solution-83">in-context</a></span>
+<span class="incontext"><a href="powerlaw.html#solution-83">in-context</a></span>
 </body>
 </html>

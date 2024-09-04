@@ -12,13 +12,20 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>We give a combinatorial recipe.</p>
-<ul class="disc">
-<li><p>Pick the \(k\) flips that will be \(H\text{.}\) There are \({n \choose k}\) ways to do so.</p></li>
-<li><p>The probability that the chosen \(k\) flips all turn up \(H\) is \(p^k\text{.}\)</p></li>
-<li><p>The probability that the remaining \(n-k\) flips all turn up \(T\) is \((1-p)^{n-k}\text{.}\)</p></li>
-</ul>
-<p class="continuation">Multiplying all these terms together gives the expression above.</p>
-<span class="incontext"><a href="probdist.html#p-449">in-context</a></span>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{c||c|c|c|c|c}
+&amp;  \,\,0  \,\,&amp; \,\,1 \,\, &amp;  \,\,2 \,\, &amp;  \,\,3 \,\, &amp; \,\, 4 \,\,  \\
+\hline
+\hline
+1 &amp; 1 &amp; 2&amp;5&amp;9&amp;19 \\
+2 &amp; 1 &amp;2 &amp;5&amp;9&amp;19 \\
+3 &amp; 1 &amp; 3&amp;4&amp;10&amp; 18\\
+4 &amp; 1 &amp; 0&amp;0&amp;0&amp; 0 \\
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">In the limit, vertices 1,2,3 are equally important. Meanwhile, vertex 4 has no importance.</p>
+<span class="incontext"><a href="algcentrality.html#p-449">in-context</a></span>
 </body>
 </html>

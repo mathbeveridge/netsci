@@ -13,11 +13,11 @@
 <body>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-\E[Z] &amp;= \sum_{k=0}^{\infty} k e^{-\lambda} \frac{\lambda^k}{k!}
-\, = \,  \sum_{k=1}^{\infty} e^{-\lambda} \frac{\lambda^k}{(k-1)!}\\
-&amp; =  \lambda \sum_{k=1}^{\infty} e^{-\lambda} \frac{\lambda^{k-1}}{(k-1)!}
-\,= \,  \lambda \sum_{j=0}^{\infty} e^{-\lambda} \frac{\lambda^{j}}{j!}\\
-&amp; = \lambda.
+{n \choose k} p^k (1-p)^{n-k}
+&amp;= \frac{n!}{k! (n-k)!} \left( \frac{\lambda} {n}\right)^k  \left( 1 -  \frac{\lambda}{n} \right)^{n-k}\\
+&amp;= \frac{\lambda^k} {k!} \left( \frac{n}{n} \frac{n-1}{n} \cdots \frac{n-k+1}{n} \right) \left( 1 -  \frac{\lambda}{n} \right)^{n} \left( 1 -  \frac{\lambda}{n} \right)^{-k}\\
+&amp; \rightarrow
+\frac{\lambda^k} {k!}  \cdot \big( 1 \cdot 1 \cdots 1  \big) \cdot  e^{-\lambda} \cdot 1 = e^{-\lambda} \frac{\lambda^k}{k!}
 \end{align*}
 </div>
 <span class="incontext"><a href="probdist.html#mjx-eqn:mrow-63">in-context</a></span>
