@@ -198,7 +198,7 @@ P(G) = p^k(1-p)^{{n \choose 2} -k}.
 
 
 
-<solution>
+<!--solution>
 <p>
 			<image width="100%" xml:id="fig-img-randomgraph1">
 				<latex-image>
@@ -347,7 +347,7 @@ P(G) = p^k(1-p)^{{n \choose 2} -k}.
 				</latex-image>
 			</image>
 </p>
-</solution>
+</solution-->
 
 
 
@@ -361,13 +361,13 @@ P(G) = p^k(1-p)^{{n \choose 2} -k}.
 					<p>
  <m>G</m> has exactly one edge
 
-<solution>
+<!--solution>
 <p>
 <me>
 3 \cdot \left( \frac{1}{3} \right)^2 \left( \frac{2}{3} \right) = \frac{2}{9}
 </me>
 </p>
-</solution>
+</solution-->
 
 					</p>
 				</li>
@@ -375,14 +375,14 @@ P(G) = p^k(1-p)^{{n \choose 2} -k}.
 					<p>
  <m>G</m> is connected
 
-<solution>
+<!--solution>
 <p>
 <me>
 3 \cdot \left( \frac{1}{3} \right) \left( \frac{2}{3} \right) ^2 + \left( \frac{2}{3} \right)^3 =
 \frac{20}{27}
 </me>
 </p>
-</solution>
+</solution-->
 
 
 
@@ -392,7 +392,7 @@ P(G) = p^k(1-p)^{{n \choose 2} -k}.
 					<p>
  Vertex 1 has degree <m>k</m> for <m>k=0,1,2</m>.
 
-<solution>
+<!--solution>
 	<p>
 	</p>
 	<md>
@@ -413,7 +413,7 @@ P(G) = p^k(1-p)^{{n \choose 2} -k}.
 	</md>
 	<p>
 	</p>
-</solution>
+</solution-->
 
 					</p>
 				</li>
@@ -425,13 +425,13 @@ P(G) = p^k(1-p)^{{n \choose 2} -k}.
 					<p>
  Calculate <m>\E[\deg(1)]</m>.
 
-<solution>
+<!--solution>
 <p>
 <me>
 0 \cdot \frac{3}{27} + 1 \cdot \frac{12}{27} + 2 \cdot \frac{12}{27} = \frac{36}{27} = \frac{4}{3}
 </me>
 </p>
-</solution>
+</solution-->
 					</p>
 				</li>
 			</ol>
@@ -452,11 +452,11 @@ Pick a random graph <m>G \in G(n,p)</m>. Explain why the probability that <m>G</
 P(m) = {{n \choose 2} \choose m} p^m (1-p)^{{n \choose 2} - m}.
 </me>
 
-<solution>
+<!--solution>
 <p>
 We must pick the <m>m</m> edges. These must be the only edges that appear: <m>p^m</m> says that those <m>m</m> edges are present and <m>(1-p)^{{n \choose 2} - m}</m> says that the remaining edges are not present.
 </p>
-</solution>
+</solution-->
 
 				</p>
 			</statement>
@@ -473,7 +473,7 @@ By evaluating the sum, prove that the expected number of edges in <m>G</m> is
 Hint: Use <m>N={n \choose 2}</m> while you are simplifying to keep you focused on what is important.
 
 
-<solution>
+<!--solution>
 	<p>
 	Let <m>N = {n \choose 2}</m>. We have
 	</p>
@@ -493,7 +493,7 @@ Hint: Use <m>N={n \choose 2}</m> while you are simplifying to keep you focused o
 	</md>
 	<p>
 	</p>
-	</solution>
+	</solution-->
 
 
 				</p>
@@ -512,11 +512,11 @@ In other words, the degree of a vertex is a random variable whose PMF is the bin
 Therefore we say that <m>G(n,p)</m> has a "binomial degree distribution."
 
 
-<solution>
+<!--solution>
 <p>
 Look at a particular vertex <m>v</m>. We must choose the <m>k</m> neighbors. The edges between <m>v</m> and those neighbors must be present. The  edges from <m>v</m> to the remaining vertices must be absent.
 </p>
-</solution>
+</solution-->
 
 				</p>
 	<p>
@@ -543,7 +543,7 @@ Prove that the expected degree of vertex <m>v_k</m> is
 \E[\deg(v_k)] = \langle v_k \rangle = (n-1)p.
 </me>
 
-<solution>
+<!--solution>
 	<p>
 	</p>
 	<md>
@@ -562,7 +562,7 @@ Prove that the expected degree of vertex <m>v_k</m> is
 	</md>
 	<p>
 	</p>
-	</solution>
+	</solution-->
 
 				</p>
 			</statement>
@@ -581,13 +581,13 @@ to give an alternate proof that
 \langle m \rangle ={n \choose 2} p.
 </me>
 
-<solution>
+<!--solution>
 <p>
 <me>
 \langle m \rangle = \frac{1}{2} \E \left[ \sum_v \deg(v) \right]  = \frac{1}{2} \sum_v \E[\deg(v)] = \frac{1}{2} n(n-1) p = {n \choose 2} p
 </me>
 </p>
-</solution>
+</solution-->
 
 
 

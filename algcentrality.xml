@@ -27,7 +27,7 @@ Find the adjacency matrix <m>A</m>  of the following undirected graph, where <m>
 			<image width="30%" xml:id="fig-img-algcentrality0" source="images/graph-adjacency.png" />
 
 
-<solution>
+<!--solution>
 <p>
 
 <me>
@@ -42,7 +42,7 @@ Find the adjacency matrix <m>A</m>  of the following undirected graph, where <m>
 </me>
 
 </p>
-</solution>
+</solution-->
 
 
 				</p>
@@ -58,7 +58,7 @@ Find the adjacency matrix <m>A</m> of the following directed graph, where <m>A_{
 			<image width="30%" xml:id="fig-img-algcentrality1" source="images/directed-graph.png" />
 
 
-<solution>
+<!--solution>
 <p>
 
 <me>
@@ -73,7 +73,7 @@ Find the adjacency matrix <m>A</m> of the following directed graph, where <m>A_{
 </me>
 
 </p>
-</solution>
+</solution-->
 
 				</p>
 			</statement>
@@ -112,7 +112,7 @@ where <m>A_{11}</m> and <m>A_{22}</m> are square matrices. Conjugation by <m>P</
 			</ol>
 
 
-<solution>
+<!--solution>
 <p>
 			<ol>
 				<li>
@@ -168,7 +168,7 @@ Without loss of generality, there is no directed path from any vertex in <m>S_k<
 				</li>
 			</ol>
 </p>
-</solution>
+</solution-->
 
 
 
@@ -228,7 +228,7 @@ A =
 				</li>
 			</ol>
 
-<solution>
+<!--solution>
 <p>
 			<ol>
 
@@ -306,7 +306,7 @@ A \bv_2 =
 				</li>
 			</ol>
 </p>
-</solution>
+</solution-->
 
 
 				</p>
@@ -331,7 +331,7 @@ The goal of this question is to estimate  <m>A^n \bx</m> for large <m>n</m>, whe
 				<li>
 					<p>
  Find the spectral decomposition for <m>A^2=AA</m> by using the spectral decomposition for each <m>A</m>, and then multiplying out.
-<solution>
+<!--solution>
 <p>
 We have <m>A^2 = AA</m> and so
 <me>
@@ -366,7 +366,7 @@ So our final answer is
 A^2 = AA  = \lambda_1^2 \bu_1 \bu_1^{\top}  + \lambda_2^2 \bu_2 \bu_2^{\top}.
 </me>
 </p>
-</solution>
+</solution-->
 
 					</p>
 				</li>
@@ -374,7 +374,7 @@ A^2 = AA  = \lambda_1^2 \bu_1 \bu_1^{\top}  + \lambda_2^2 \bu_2 \bu_2^{\top}.
 					<p>
  What is  the spectral decomposition of <m>A^3 =A^2A</m>? How about the spectral decomposition of <m>A^n</m>?
 
-<solution>
+<!--solution>
 <p>
 By a similar argument, we have
 <me>
@@ -385,7 +385,7 @@ and by induction, we have
 A^n  = \lambda_1^n \bu_1 \bu_1^{\top}  + \lambda_2^n \bu_2 \bu_2^{\top}
 </me>
 </p>
-</solution>
+</solution-->
 
 					</p>
 				</li>
@@ -393,7 +393,7 @@ A^n  = \lambda_1^n \bu_1 \bu_1^{\top}  + \lambda_2^n \bu_2 \bu_2^{\top}
 					<p>
  The orthonormal vectors <m>\bu_1, \bu_2</m> form a basis for <m>\R^2</m>. So we can write any vector <m>\bx \in \R^2</m> as <m>\bx = c_1 \bu_1 + c_2 \bu_2</m>. Use your answer from part (b) to find an expression for <m>A^n \bx</m>.
 
-<solution>
+<!--solution>
 <p>
 Using this spectral decomposition, and the orthonormal properties of <m>\bu_1, \bu_2</m>, we get
 </p>
@@ -408,7 +408,7 @@ A^n \bx  &amp;=
 </md>
 <p>
 </p>
-</solution>
+</solution-->
 
 					</p>
 				</li>
@@ -416,7 +416,7 @@ A^n \bx  &amp;=
 					<p>
  Now let's suppose that <m>|\lambda_1| &gt; |\lambda_2|</m> and that <m>\bx</m> is such that  <m>c_1 \neq 0</m>. Explain why <m>A^n \bx \approx k \bu_1</m> for some constant <m>k</m>.
 
-<solution>
+<!--solution>
 <p>
 Let's factor out <m>\lambda_1^n</m> from this expression to get
 </p>
@@ -432,7 +432,7 @@ As <m>n</m> gets really large, the fraction <m>(\lambda_2/\lambda_1)^n</m> goes 
 A^n \bx  \approx \lambda_1^n  c_1  \bu_1.
 </me>
 </p>
-</solution>
+</solution-->
 
 					</p>
 				</li>
@@ -496,7 +496,7 @@ Use this recursive rule to calculate the importance for the following undirected
 
 
 
-<solution>
+<!--solution>
 <p>
 
 <me>
@@ -514,7 +514,7 @@ Use this recursive rule to calculate the importance for the following undirected
 </me>
 
 </p>
-</solution>
+</solution-->
 
 
 				</p>
@@ -580,7 +580,7 @@ What do you observe?
 
 
 
-<solution>
+<!--solution>
 <p>
 
 <me>
@@ -599,7 +599,7 @@ What do you observe?
 All of the importance eventually leaks out of the network.
 
 </p>
-</solution>
+</solution-->
 
 					</p>
 				</li>
@@ -640,7 +640,7 @@ All of the importance eventually leaks out of the network.
 
 
 
-<solution>
+<!--solution>
 <p>
 <me>
 \begin{array}{c||c|c|c|c|c}
@@ -657,7 +657,7 @@ In the limit, vertices 1,2,3 are equally important. Meanwhile, vertex 4 has no i
 
 
 </p>
-</solution>
+</solution-->
 
 
 					</p>
@@ -666,7 +666,7 @@ In the limit, vertices 1,2,3 are equally important. Meanwhile, vertex 4 has no i
 					<p>
  Devise a recursive importance rule for directed networks that "fixes the problems" that you observed in parts (a) and (b).
 
-<solution>
+<!--solution>
 <p>
 
 We need to fix the fact that importance leaks out of vertices in a weakly connected digraph.
@@ -685,7 +685,7 @@ Here are two possible solutions.
 		</ul>
 You can also try different weighting schemes of how much to count your own importance versus the importance of your neighbors.
 </p>
-</solution>
+</solution-->
 
 					</p>
 				</li>

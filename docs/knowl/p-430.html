@@ -12,50 +12,19 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>We have \(A^2 = AA\) and so</p>
+<p>Here is very useful fact from probability. Let \(X\) be any random variable taking on positive integer values. We can write the expected value of \(X\) as</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-AA  = ( \lambda_1 \bu_1 \bu_1^{\top} + \lambda_2 \bu_2 \bu_2^{\top})( \lambda_1 \bu_1 \bu_1^{\top} + \lambda_2 \bu_2 \bu_2^{\top}).
+\E[X] = \sum_{k=1}^{\infty} \Pr[X \geq k].
 \end{equation*}
 </div>
-<p class="continuation">We end up with four terms. Let's look at them one at a time. Since \(\bu_1^\top \bu_1=1\text{,}\) we have</p>
+<p class="continuation">Indeed, when \(X\) only takes on positive integer values, we have</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\lambda_1^2 \bu_1 \bu_1^{\top}  \bu_1 \bu_1^{\top} =
-\lambda_1^2 \bu_1 (\bu_1^{\top}  \bu_1) \bu_1^{\top} =
-\lambda_1^2 \bu_1 \bu_1^{\top}.
+\sum_{k=1}^{\infty} \Pr[X \geq k] = \sum_{k=1}^{\infty} k \Pr[X = k]
 \end{equation*}
 </div>
-<p class="continuation">Next, since \(\bu_1^\top \bu_2=0\text{,}\) we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\lambda_1 \lambda_2 \bu_1 \bu_1^{\top}  \bu_2 \bu_2^{\top} =
-\lambda_1 \lambda_2 \bu_1 (\bu_1^{\top}  \bu_2) \bu_2^{\top} =
-\mathbf{0}.
-\end{equation*}
-</div>
-<p class="continuation">Similarly,</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\lambda_1 \lambda_2 \bu_2 \bu_2^{\top}  \bu_1\bu_1^{\top} =
-\lambda_1 \lambda_2 \bu_2 (\bu_2^{\top}  \bu_1) \bu_1^{\top} =
-\mathbf{0}.
-\end{equation*}
-</div>
-<p class="continuation">and</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\lambda_2^2 \bu_2 \bu_2^{\top}  \bu_2 \bu_2^{\top} =
-\lambda_2^2 \bu_2 (\bu_2^{\top}  \bu_2) \bu_2^{\top} =
-\lambda_2^2 \bu_2 \bu_2^{\top}.
-\end{equation*}
-</div>
-<p class="continuation">So our final answer is</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-A^2 = AA  = \lambda_1^2 \bu_1 \bu_1^{\top}  + \lambda_2^2 \bu_2 \bu_2^{\top}.
-\end{equation*}
-</div>
-<span class="incontext"><a href="algcentrality.html#p-430">in-context</a></span>
+<p class="continuation">and the right hand side is the definition of \(\E[X]\text{.}\)</p>
+<span class="incontext"><a href="navsmallworld.html#p-430">in-context</a></span>
 </body>
 </html>

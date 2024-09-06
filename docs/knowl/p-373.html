@@ -12,7 +12,12 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Betweenness Centrality  \(c_i^B = \displaystyle{\sum_{s \neq i} \sum_{t \neq i, s} \frac{n_{s,t}(i)}{n_{s,t}}}\) <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality1.svg" role="img" class="contained"></div></p>
-<span class="incontext"><a href="centrality.html#p-373">in-context</a></span>
+<p>Suppose that we have run Price's Model and that the network has \(n\) vertices. We now add vertex \(n+1\text{,}\) as well as \(c\) arcs from vertex \(n+1\) to the existing network. Let \(k_i\) denote the degree of vertex \(i\text{.}\) Prove that for each new arc we add from vertex \(n+1\text{,}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\P(\mbox{the arc points to vertex } i) = \frac{a+k_i}{n(c+a)}.
+\end{equation*}
+</div>
+<span class="incontext"><a href="pricemodel.html#p-373">in-context</a></span>
 </body>
 </html>

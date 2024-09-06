@@ -160,14 +160,14 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="randomgraph"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.1</span> <span class="title">Erdos-Renyi Random Graph</span>
 </h2>
-<section class="introduction" id="introduction-12"><p id="p-523">Recall that a <em class="emphasis">finite probability space</em> \((\Omega, \P)\) consists of a finite set \(\Omega\) and a function \(\P: \mathcal{P}(\Omega) \rightarrow [0,1]\) such that</p>
+<section class="introduction" id="introduction-12"><p id="p-313">Recall that a <em class="emphasis">finite probability space</em> \((\Omega, \P)\) consists of a finite set \(\Omega\) and a function \(\P: \mathcal{P}(\Omega) \rightarrow [0,1]\) such that</p>
 <ul class="disc">
-<li id="li-244"><p id="p-524">\(\displaystyle \P(\emptyset) = 0\)</p></li>
-<li id="li-245"><p id="p-525">\(\displaystyle \P(\Omega) = 1\)</p></li>
-<li id="li-246"><p id="p-526">For \(A,B \subset \Omega\text{,}\) if \(A \cap B = \emptyset\) then \(\P(A \cup B) = \P(A) + \P(B)\text{.}\) \(\P(A_1 \cup A_2 \cup \cdots \cup A_k) \leq \sum_{i=1}^k \P(A_i)\) for any events \(A_1, A_2, \ldots, A_k \subset \Omega\text{.}\)</p></li>
+<li id="li-183"><p id="p-314">\(\displaystyle \P(\emptyset) = 0\)</p></li>
+<li id="li-184"><p id="p-315">\(\displaystyle \P(\Omega) = 1\)</p></li>
+<li id="li-185"><p id="p-316">For \(A,B \subset \Omega\text{,}\) if \(A \cap B = \emptyset\) then \(\P(A \cup B) = \P(A) + \P(B)\text{.}\) \(\P(A_1 \cup A_2 \cup \cdots \cup A_k) \leq \sum_{i=1}^k \P(A_i)\) for any events \(A_1, A_2, \ldots, A_k \subset \Omega\text{.}\)</p></li>
 </ul>
 <p class="continuation">We refer to \(\omega \in \Omega\) as an <em class="emphasis">outcome</em>, and we refer to \(A \subset \Omega\) as an <em class="emphasis">event</em>.</p>
-<p id="p-527">The <em class="emphasis">random graph</em> \(G(n,p)\) is a probability space where \(\Omega\) is the set of all possible graphs on \([n]\text{.}\) Note that the vertices are labeled, so the same graph structure appears once for each possible labeling. For every \(G \in \Omega\text{,}\) with \(k\) edges, we have</p>
+<p id="p-317">The <em class="emphasis">random graph</em> \(G(n,p)\) is a probability space where \(\Omega\) is the set of all possible graphs on \([n]\text{.}\) Note that the vertices are labeled, so the same graph structure appears once for each possible labeling. For every \(G \in \Omega\text{,}\) with \(k\) edges, we have</p>
 <div class="displaymath">
 \begin{equation*}
 P(G) = p^k(1-p)^{{n \choose 2} -k}.
@@ -178,86 +178,48 @@ P(G) = p^k(1-p)^{{n \choose 2} -k}.
 <article class="exercise exercise-like" id="exercise-56"><h6 class="heading">
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">The Random Graph \(G(3,2/3)\).</span>
 </h6>
-<ol id="p-528" class="lower-alpha">
-<li id="li-247"><p id="p-529">Here are the graphs in \(G(3, 2/3)\text{.}\) Write down their corresponding probabilities <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/fig-img-randomgraph0.svg" role="img" class="contained"></div> <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-107" id="solution-107"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-107"><div class="solution solution-like"><p id="p-530"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/fig-img-randomgraph1.svg" role="img" class="contained"></div></p></div></div></p></li>
-<li id="li-248">
-<p id="p-531">Find the probabilities of the following events</p>
+<ol id="p-318" class="lower-alpha">
+<li id="li-186"><p id="p-319">Here are the graphs in \(G(3, 2/3)\text{.}\) Write down their corresponding probabilities <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/fig-img-randomgraph0.svg" role="img" class="contained"></div> </p></li>
+<li id="li-187">
+<p id="p-320">Find the probabilities of the following events</p>
 <ol class="lower-roman">
-<li id="li-249"><p id="p-532">\(G\) has exactly one edge <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-108" id="solution-108"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-108"><div class="solution solution-like"><div class="displaymath" id="p-533">
-\begin{equation*}
-3 \cdot \left( \frac{1}{3} \right)^2 \left( \frac{2}{3} \right) = \frac{2}{9}
-\end{equation*}
-</div></div></div></p></li>
-<li id="li-250"><p id="p-534">\(G\) is connected <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-109" id="solution-109"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-109"><div class="solution solution-like"><div class="displaymath" id="p-535">
-\begin{equation*}
-3 \cdot \left( \frac{1}{3} \right) \left( \frac{2}{3} \right) ^2 + \left( \frac{2}{3} \right)^3 =
-\frac{20}{27}
-\end{equation*}
-</div></div></div></p></li>
-<li id="li-251"><p id="p-536">Vertex 1 has degree \(k\) for \(k=0,1,2\text{.}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-110" id="solution-110"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-110"><div class="solution solution-like">
-<p id="p-537"></p>
-<div class="displaymath">
-\begin{align*}
-\Pr(\deg(1)=0) &amp;= \left( \frac{1}{3} \right)^3 + \left( \frac{1}{3} \right)^2 \left( \frac{2}{3} \right)
-= \frac{3}{27}\\
-\Pr(\deg(1)=1) &amp;= 2 \left( \frac{1}{3} \right)^2\left( \frac{2}{3} \right) + 2 \left( \frac{1}{3} \right) \left( \frac{2}{3} \right) ^2
-= \frac{12}{27}\\
-\Pr(\deg(1)=2) &amp;=  \left( \frac{1}{3} \right)\left( \frac{2}{3} \right)^2 +  \left( \frac{2}{3} \right) ^3
-= \frac{12}{27}
-\end{align*}
-</div>
-<p id="p-538"></p>
-</div></div></p></li>
+<li id="li-188"><p id="p-321">\(G\) has exactly one edge </p></li>
+<li id="li-189"><p id="p-322">\(G\) is connected </p></li>
+<li id="li-190"><p id="p-323">Vertex 1 has degree \(k\) for \(k=0,1,2\text{.}\) </p></li>
 </ol>
 </li>
-<li id="li-252"><p id="p-539">Calculate \(\E[\deg(1)]\text{.}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-111" id="solution-111"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-111"><div class="solution solution-like"><div class="displaymath" id="p-540">
-\begin{equation*}
-0 \cdot \frac{3}{27} + 1 \cdot \frac{12}{27} + 2 \cdot \frac{12}{27} = \frac{36}{27} = \frac{4}{3}
-\end{equation*}
-</div></div></div></p></li>
+<li id="li-191"><p id="p-324">Calculate \(\E[\deg(1)]\text{.}\) </p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-57"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">\(G(n,p)\) with Exactly \(m\) Edges.</span>
 </h6>
-<p id="p-541">Pick a random graph \(G \in G(n,p)\text{.}\) Explain why the probability that \(G\) has exactly  \(m\) edges is</p>
+<p id="p-325">Pick a random graph \(G \in G(n,p)\text{.}\) Explain why the probability that \(G\) has exactly  \(m\) edges is</p>
 <div class="displaymath">
 \begin{equation*}
 P(m) = {{n \choose 2} \choose m} p^m (1-p)^{{n \choose 2} - m}.
 \end{equation*}
-</div>
-<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-112" id="solution-112"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-112"><div class="solution solution-like"><p id="p-542">We must pick the \(m\) edges. These must be the only edges that appear: \(p^m\) says that those \(m\) edges are present and \((1-p)^{{n \choose 2} - m}\) says that the remaining edges are not present.</p></div></div></p></article><article class="exercise exercise-like" id="exercise-58"><h6 class="heading">
+</div></article><article class="exercise exercise-like" id="exercise-58"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">The Expected Number of Edges in \(G(n,p)\).</span>
 </h6>
-<p id="p-543">By evaluating the sum, prove that the expected number of edges in \(G\) is</p>
+<p id="p-326">By evaluating the sum, prove that the expected number of edges in \(G\) is</p>
 <div class="displaymath">
 \begin{equation*}
 \langle m \rangle = \sum_{m = 0}^{{n \choose 2}} m P(m) = {n \choose 2} p.
 \end{equation*}
 </div>
-<p class="continuation">Hint: Use \(N={n \choose 2}\) while you are simplifying to keep you focused on what is important. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-113" id="solution-113"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-113"><div class="solution solution-like">
-<p id="p-544">Let \(N = {n \choose 2}\text{.}\) We have</p>
-<div class="displaymath">
-\begin{align*}
-\langle m \rangle &amp;= \sum_{m = 0}^{N} m {N \choose m} p^m (1-p)^{N - m}\\
-&amp;= \sum_{m = 1}^{N} m  \frac{N!}{m! (N-m)!} p^m (1-p)^{N - m}\\
-&amp;= p N \sum_{m = 1}^{N} m  \frac{(N-1)!}{(m-1)! (N-m)!} p^(m-1) (1-p)^{N - m}\\
-&amp;= pN (p + (1-p))^{N-1} \, = p N = p {n \choose 2}.
-\end{align*}
-</div>
-<p id="p-545"></p>
-</div></div></p></article><article class="exercise exercise-like" id="exercise-59"><h6 class="heading">
+<p class="continuation">Hint: Use \(N={n \choose 2}\) while you are simplifying to keep you focused on what is important. </p></article><article class="exercise exercise-like" id="exercise-59"><h6 class="heading">
 <span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">The Degree Distribution of \(G(n,p)\).</span>
 </h6>
-<p id="p-546">Explain why the probability that vertex \(v\) of \(G(n,p)\) has degree \(k\) is given by</p>
+<p id="p-327">Explain why the probability that vertex \(v\) of \(G(n,p)\) has degree \(k\) is given by</p>
 <div class="displaymath">
 \begin{equation*}
 p_k = {n-1 \choose k} p^k (1-p)^{n-1-k}.
 \end{equation*}
 </div>
-<p class="continuation">In other words, the degree of a vertex is a random variable whose PMF is the binomial distribution. Therefore we say that \(G(n,p)\) has a "binomial degree distribution." <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-114" id="solution-114"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-114"><div class="solution solution-like"><p id="p-547">Look at a particular vertex \(v\text{.}\) We must choose the \(k\) neighbors. The edges between \(v\) and those neighbors must be present. The  edges from \(v\) to the remaining vertices must be absent.</p></div></div></p>
-<p id="p-548">Notes about the binomial distribution:</p>
+<p class="continuation">In other words, the degree of a vertex is a random variable whose PMF is the binomial distribution. Therefore we say that \(G(n,p)\) has a "binomial degree distribution." </p>
+<p id="p-328">Notes about the binomial distribution:</p>
 <ul class="disc">
-<li id="li-253"><p id="p-derived-li-253">See <a class="xref" data-knowl="./knowl/probdist-binomial-dist.html" title="Exercise 2.2.2: Binomial Random Variable">Exercise 2.2.2</a> for the basics about the binomial distribution.</p></li>
-<li id="li-254"><p id="p-derived-li-254">See <a class="xref" data-knowl="./knowl/probdist-poisson-approx.html" title="Exercise 2.2.5: Poisson Approximation for the Binomial Distribtuion">Exercise 2.2.5</a> to see how we can approximate the binomial distribution with a Poisson distribtuion. Namely, when \(k\) is very small, \(n\) is very large and \(p= c/n\text{,}\) we have<div class="displaymath">
+<li id="li-192"><p id="p-derived-li-192">See <a class="xref" data-knowl="./knowl/probdist-binomial-dist.html" title="Exercise 2.2.2: Binomial Random Variable">Exercise 2.2.2</a> for the basics about the binomial distribution.</p></li>
+<li id="li-193"><p id="p-derived-li-193">See <a class="xref" data-knowl="./knowl/probdist-poisson-approx.html" title="Exercise 2.2.5: Poisson Approximation for the Binomial Distribtuion">Exercise 2.2.5</a> to see how we can approximate the binomial distribution with a Poisson distribtuion. Namely, when \(k\) is very small, \(n\) is very large and \(p= c/n\text{,}\) we have<div class="displaymath">
 \begin{equation*}
 p_k \approx  e^{-c} \frac{c^k}{k!}.
 \end{equation*}
@@ -265,27 +227,15 @@ p_k \approx  e^{-c} \frac{c^k}{k!}.
 </ul></article><article class="exercise exercise-like" id="randomgraph-degree"><h6 class="heading">
 <span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">The Expected Degree of a Vertex.</span>
 </h6>
-<p id="p-549">Prove that the expected degree of vertex \(v_k\) is</p>
+<p id="p-329">Prove that the expected degree of vertex \(v_k\) is</p>
 <div class="displaymath">
 \begin{equation*}
 \E[\deg(v_k)] = \langle v_k \rangle = (n-1)p.
 \end{equation*}
-</div>
-<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-115" id="solution-115"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-115"><div class="solution solution-like">
-<p id="p-550"></p>
-<div class="displaymath">
-\begin{align*}
-\E[\deg(v_k)] &amp;= \sum_{i=0}^{n-1}  i {n-1 \choose i } p^i (1-p)^{n-1-i}\\
-&amp;= \sum_{i=1}^{n-1}   \frac{(n-1)!}{(i-1)! (n-1-i)!} p^i (1-p)^{n-1-i}\\
-&amp;= (n-1)p  \sum_{i=1}^{n-1}   \frac{(n-2)!}{(i-1)! (n-1-i)!} p^{i-1} (1-p)^{n-1-i}\\
-&amp;= (n-1)p
-\end{align*}
-</div>
-<p id="p-551"></p>
-</div></div></p></article><article class="exercise exercise-like" id="exercise-61"><h6 class="heading">
+</div></article><article class="exercise exercise-like" id="exercise-61"><h6 class="heading">
 <span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">The Expected Number of Edges in \(G(n,p)\text{,}\) revisited.</span>
 </h6>
-<p id="p-552">Use your answer to the previous question and linearity of expectation</p>
+<p id="p-330">Use your answer to the previous question and linearity of expectation</p>
 <div class="displaymath">
 \begin{equation*}
 \E \left[ \sum_{i=1}^k {X_i}\right] =  \sum_{i=1}^k \E \left[  {X_i}\right]
@@ -296,12 +246,7 @@ p_k \approx  e^{-c} \frac{c^k}{k!}.
 \begin{equation*}
 \langle m \rangle ={n \choose 2} p.
 \end{equation*}
-</div>
-<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-116" id="solution-116"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-116"><div class="solution solution-like"><div class="displaymath" id="p-553">
-\begin{equation*}
-\langle m \rangle = \frac{1}{2} \E \left[ \sum_v \deg(v) \right]  = \frac{1}{2} \sum_v \E[\deg(v)] = \frac{1}{2} n(n-1) p = {n \choose 2} p
-\end{equation*}
-</div></div></div></p></article></section></section></div></main>
+</div></article></section></section></div></main>
 </div>
 </body>
 </html>

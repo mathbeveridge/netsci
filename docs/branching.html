@@ -160,14 +160,14 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="branching"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.3</span> <span class="title">The Branching Process</span>
 </h2>
-<section class="introduction" id="introduction-14"><p id="p-578">In this activity, we will explore a simple model that creates a family tree. Later, we will adapt this argument to understand the threshold for the giant component of a random graph. We let \(X_t\) denote the size of the \(t\)-th generation in the family tree.</p>
+<section class="introduction" id="introduction-14"><p id="p-355">In this activity, we will explore a simple model that creates a family tree. Later, we will adapt this argument to understand the threshold for the giant component of a random graph. We let \(X_t\) denote the size of the \(t\)-th generation in the family tree.</p>
 <ul class="disc">
-<li id="li-274"><p id="p-579">At time \(t=0\text{,}\) there is one individual. So \(X_0=1\text{.}\)</p></li>
-<li id="li-275"><p id="p-580">At time \(t=1\text{,}\) she gives birth to \(X_1\) children and dies.</p></li>
-<li id="li-276"><p id="p-581">At time \(t &gt;2\text{,}\) each of the \(X_{t-1}\) individuals in generation \(t-1\) give birth and die. This results in a total of \(X_t\) children in the \(t\)-th generation.</p></li>
+<li id="li-213"><p id="p-356">At time \(t=0\text{,}\) there is one individual. So \(X_0=1\text{.}\)</p></li>
+<li id="li-214"><p id="p-357">At time \(t=1\text{,}\) she gives birth to \(X_1\) children and dies.</p></li>
+<li id="li-215"><p id="p-358">At time \(t &gt;2\text{,}\) each of the \(X_{t-1}\) individuals in generation \(t-1\) give birth and die. This results in a total of \(X_t\) children in the \(t\)-th generation.</p></li>
 </ul>
 <p class="continuation">Here is an example of the branching process. <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/galton-watson.png" class="contained"></div></p>
-<p id="p-582">The number of children \(Y\) produced by each individual is an independent random variable governed by (the same)  probability distribution. The expected number of children produced is</p>
+<p id="p-359">The number of children \(Y\) produced by each individual is an independent random variable governed by (the same)  probability distribution. The expected number of children produced is</p>
 <div class="displaymath">
 \begin{equation*}
 \E[Y] = \sum_{k=0}^{\infty} k \P[Y=k]  = \mu.
@@ -179,120 +179,51 @@
 <article class="exercise exercise-like" id="exercise-65"><h6 class="heading">
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Expected Size of Generation \(n\).</span>
 </h6>
-<p id="p-583">Use induction on \(t \geq 0\)  to prove that \(X_n\text{,}\) the size of the \(n\)-th generation satisfies</p>
+<p id="p-360">Use induction on \(t \geq 0\)  to prove that \(X_n\text{,}\) the size of the \(n\)-th generation satisfies</p>
 <div class="displaymath">
 \begin{equation*}
 \E[X_n] = \mu^n
 \end{equation*}
-</div>
-<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-117" id="solution-117"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-117"><div class="solution solution-like">
-<p id="p-584">We have \(E[X_0] = 1 = \mu^0.\) Assuming that \(\E[X_n] = \mu^n\text{,}\) we have</p>
-<div class="displaymath">
-\begin{align*}
-\E[X_{n+1}] &amp;= \sum_{k=0}^{\infty} \E[X_{n+1} \mid X_{n} = k] \P[X_{n} = k]
-= \sum_{k=0}^{\infty} k \mu \,  \P[X_{n} = k]\\
-&amp;= \mu \, \sum_{k=0}^{\infty} k  \,  \P[X_{n} = k]
-= \mu \, \E[X_n] = \mu \cdot \mu^n = \mu^{n+1}.
-\end{align*}
-</div>
-<p id="p-585"></p>
-</div></div></p></article><article class="exercise exercise-like" id="exercise-66"><h6 class="heading">
+</div></article><article class="exercise exercise-like" id="exercise-66"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Expected Size of the Tree After \(n\) Generations.</span>
 </h6>
-<p id="p-586">Let \(\displaystyle{Z_n= \sum_{t=0}^{n} X_t}\) be the total number of individuals in the family tree at time \(n\text{.}\)</p>
+<p id="p-361">Let \(\displaystyle{Z_n= \sum_{t=0}^{n} X_t}\) be the total number of individuals in the family tree at time \(n\text{.}\)</p>
 <ol class="lower-alpha">
-<li id="li-277">
-<p id="p-587">Use linearity of expectation to prove that</p>
+<li id="li-216">
+<p id="p-362">Use linearity of expectation to prove that</p>
 <div class="displaymath">
 \begin{equation*}
 \E[Z_n] = 1 + \mu + \mu^2 + \cdots + \mu^n.
 \end{equation*}
 </div>
-<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-118" id="solution-118"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-118"><div class="solution solution-like">
-<p id="p-588">Using linearity of expectation, we have</p>
-<div class="displaymath">
-\begin{equation*}
-\E[Z_n]
-= \E \left[ \sum_{t=0}^n X_t \right]
-= \sum_{t=0}^n \E \left[  X_t \right]
-=  \sum_{t=0}^n \mu^t
-\end{equation*}
-</div>
-</div></div></p>
 </li>
-<li id="li-278">
-<p id="p-589">Confirm that the formula in the previous problem is equivalent to</p>
+<li id="li-217">
+<p id="p-363">Confirm that the formula in the previous problem is equivalent to</p>
 <div class="displaymath">
 \begin{equation*}
 \E[Z_n] = \frac{\mu^{n+1} -1}{\mu -1}.
 \end{equation*}
 </div>
-<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-119" id="solution-119"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-119"><div class="solution solution-like">
-<p id="p-590">Using the formula from part (a), this statement is equivalent to</p>
-<div class="displaymath">
-\begin{equation*}
-(\mu -1) ( \mu^n + \mu^{n-1} + \cdots + \mu +1) = \mu^{n+1} -1.
-\end{equation*}
-</div>
-<p class="continuation">When we expand, we see that all the terms cancel out except for the first term \(\mu^{n+1}\) and the last term \(-1\text{.}\)</p>
-</div></div></p>
 </li>
 </ol></article><article class="exercise exercise-like" id="exercise-67"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Asymptotic Size of the Tree.</span>
 </h6>
-<p id="p-591">Now let's look at the asymptotic behavior of the size of the tree. Let</p>
+<p id="p-364">Now let's look at the asymptotic behavior of the size of the tree. Let</p>
 <div class="displaymath">
 \begin{equation*}
 \E [Z] = \lim_{n \rightarrow \infty} \E[Z_n] = \lim_{n \rightarrow \infty} \frac{\mu^{n+1} -1}{\mu -1}.
 \end{equation*}
 </div>
 <ol class="lower-alpha">
-<li id="li-279"><p id="p-592">Confirm that if \(\mu &lt; 1\) then \(\E[Z]\) is finite. Then find a formula for \(\E[Z]\text{.}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-120" id="solution-120"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-120"><div class="solution solution-like">
-<p id="p-593">If \(\mu &lt; 1\) then \(\mu^{n+1} \rightarrow 0\text{,}\) so</p>
-<div class="displaymath">
-\begin{equation*}
-\lim_{n \rightarrow \infty} \E[Z_n] = \lim_{n \rightarrow \infty} \frac{\mu^{n+1} -1}{\mu -1}
-= \frac{-1}{\mu-1} = \frac{1}{1- \mu}.
-\end{equation*}
-</div>
-</div></div></p></li>
-<li id="li-280"><p id="p-594">Confirm that if \(\mu &gt; 1\) then \(\E[Z]\) is infinite. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-121" id="solution-121"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-121"><div class="solution solution-like">
-<p id="p-595">If \(\mu &gt; 1\) then \(\mu^{n+1} \rightarrow \infty\text{,}\) so</p>
-<div class="displaymath">
-\begin{equation*}
-\lim_{n \rightarrow \infty} \E[Z_n] = \lim_{n \rightarrow \infty} \frac{\mu^{n+1} -1}{\mu -1}
-= \infty.
-\end{equation*}
-</div>
-</div></div></p></li>
+<li id="li-218"><p id="p-365">Confirm that if \(\mu &lt; 1\) then \(\E[Z]\) is finite. Then find a formula for \(\E[Z]\text{.}\) </p></li>
+<li id="li-219"><p id="p-366">Confirm that if \(\mu &gt; 1\) then \(\E[Z]\) is infinite. </p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-68"><h6 class="heading">
 <span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Threshold for the Branching Process.</span>
 </h6>
-<p id="p-596">We say that \(\mu =1\) is a threshold for whether the family tree dies out. This is because</p>
-<ul class="disc"><li id="li-281"><p id="p-597">if \(\E[Z]\) is finite then \(\P[ \mbox{there exists }  N \mbox{ such that } X_N = 0]=1\text{.}\)</p></li></ul>
+<p id="p-367">We say that \(\mu =1\) is a threshold for whether the family tree dies out. This is because</p>
+<ul class="disc"><li id="li-220"><p id="p-368">if \(\E[Z]\) is finite then \(\P[ \mbox{there exists }  N \mbox{ such that } X_N = 0]=1\text{.}\)</p></li></ul>
 <p class="continuation">Show that this is true by proving the contrapositive statement:</p>
-<ul class="disc"><li id="li-282"><p id="p-598">if \(\P[ X_t \geq 1 \mbox{ for all t} ]=\alpha &gt; 0\) then \(\E[Z]\) is infinite.</p></li></ul>
-<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-122" id="solution-122"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-122"><div class="solution solution-like">
-<p id="p-599">We have</p>
-<div class="displaymath">
-\begin{equation*}
-\P[ X_t \geq 1 \mbox{ for all } t \geq 0] = \alpha &gt;0.
-\end{equation*}
-</div>
-<p class="continuation">But then</p>
-<div class="displaymath">
-\begin{equation*}
-\E[Z_n] = \sum_{t=0}^n \E[X_t]  \geq  \sum_{t=0}^n \P[X_t \geq 1]
-= \sum_{t=0}^n  \alpha = \alpha (n+1)
-\end{equation*}
-</div>
-<p class="continuation">and so</p>
-<div class="displaymath">
-\begin{equation*}
-\E[Z] = \lim_{n \rightarrow \infty} \E[Z] = \lim_{n \rightarrow \infty}  \alpha (n+1) = \infty.
-\end{equation*}
-</div>
-</div></div></p></article></section></section></div></main>
+<ul class="disc"><li id="li-221"><p id="p-369">if \(\P[ X_t \geq 1 \mbox{ for all t} ]=\alpha &gt; 0\) then \(\E[Z]\) is infinite.</p></li></ul></article></section></section></div></main>
 </div>
 </body>
 </html>

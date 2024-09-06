@@ -160,10 +160,10 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="pricemodel"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.4</span> <span class="title">Price's Model for a Citation Network</span>
 </h2>
-<section class="introduction" id="introduction-15"><p id="p-600">Here is Price's Model for a citation network. Start with a small set of initial papers (with no citations). When a new paper is added, it cites  \(c\) existing papers (on average). Each paper is chosen as follows:</p>
+<section class="introduction" id="introduction-15"><p id="p-370">Here is Price's Model for a citation network. Start with a small set of initial papers (with no citations). When a new paper is added, it cites  \(c\) existing papers (on average). Each paper is chosen as follows:</p>
 <ul class="disc">
-<li id="li-283"><p id="p-601">with \(\displaystyle{\P = \frac{a}{a+c}}\text{,}\)   cite a uniformly random paper</p></li>
-<li id="li-284"><p id="p-602">with \(\displaystyle{\P = \frac{c}{a+c}}\text{,}\)  cite a  paper with probability proportional to its current citation count.</p></li>
+<li id="li-222"><p id="p-371">with \(\displaystyle{\P = \frac{a}{a+c}}\text{,}\)   cite a uniformly random paper</p></li>
+<li id="li-223"><p id="p-372">with \(\displaystyle{\P = \frac{c}{a+c}}\text{,}\)  cite a  paper with probability proportional to its current citation count.</p></li>
 </ul>
 <p class="continuation">The tail of the degree distribution satisfies the power law</p>
 <div class="displaymath">
@@ -176,174 +176,90 @@
 <article class="exercise exercise-like" id="exercise-69"><h6 class="heading">
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Link probabilities in Price's Model.</span>
 </h6>
-<p id="p-603">Suppose that we have run Price's Model and that the network has \(n\) vertices. We now add vertex \(n+1\text{,}\) as well as \(c\) arcs from vertex \(n+1\) to the existing network. Let \(k_i\) denote the degree of vertex \(i\text{.}\) Prove that for each new arc we add from vertex \(n+1\text{,}\)</p>
+<p id="p-373">Suppose that we have run Price's Model and that the network has \(n\) vertices. We now add vertex \(n+1\text{,}\) as well as \(c\) arcs from vertex \(n+1\) to the existing network. Let \(k_i\) denote the degree of vertex \(i\text{.}\) Prove that for each new arc we add from vertex \(n+1\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \P(\mbox{the arc points to vertex } i) = \frac{a+k_i}{n(c+a)}.
 \end{equation*}
-</div>
-<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-123" id="solution-123"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-123"><div class="solution solution-like">
-<p id="p-604"></p>
-<p id="p-605">The probability an the arc points to vertex \(i\) is</p>
-<div class="displaymath">
-\begin{align*}
-\frac{a}{a+c} \cdot \frac{1}{n} + \frac{c}{a+c} \cdot \frac{k_i}{\sum_j k_j}
-&amp;=  \frac{a}{n(a+c)}  + \frac{c}{a+c} \cdot \frac{k_i}{n c}\\
-&amp;=  \frac{a+k_i}{n(a+c)}
-\end{align*}
-</div>
-<p id="p-606"></p>
-</div></div></p></article><article class="exercise exercise-like" id="exercise-70"><h6 class="heading">
+</div></article><article class="exercise exercise-like" id="exercise-70"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Price's Model via edge copying.</span>
 </h6>
-<p id="p-607">Consider the following network growth model.</p>
+<p id="p-374">Consider the following network growth model.</p>
 <ul class="disc">
-<li id="li-285"><p id="p-608">with \(\displaystyle{\P = \frac{a}{a+c}}\text{,}\)   pick a <em class="emphasis">paper</em> uniformly at random. Cite this paper.</p></li>
-<li id="li-286"><p id="p-609">with \(\displaystyle{\P = \frac{c}{a+c}}\text{,}\)  pick a <em class="emphasis">directed edge</em> uniformly at random. Then cite the paper that the edge points to.</p></li>
+<li id="li-224"><p id="p-375">with \(\displaystyle{\P = \frac{a}{a+c}}\text{,}\)   pick a <em class="emphasis">paper</em> uniformly at random. Cite this paper.</p></li>
+<li id="li-225"><p id="p-376">with \(\displaystyle{\P = \frac{c}{a+c}}\text{,}\)  pick a <em class="emphasis">directed edge</em> uniformly at random. Then cite the paper that the edge points to.</p></li>
 </ul>
 <p class="continuation">Show that when we add vertex \(n+1\text{,}\) this local process ALSO satisfies</p>
 <div class="displaymath">
 \begin{equation*}
 \P(\mbox{the arc points to vertex } i) = \frac{a+k_i}{n(c+a)}.
 \end{equation*}
-</div>
-<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-124" id="solution-124"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-124"><div class="solution solution-like">
-<p id="p-610">With probability \(\frac{a}{a+c}\text{,}\) we pick a random vertex. With probability \(\frac{c}{a+c}\text{,}\) we pick a random arc, and then take its target vertex. Among the \(cn\) arcs, \(k_i\) of them end at vertex \(i\text{.}\) This gives the same equation</p>
-<div class="displaymath">
-\begin{equation*}
-\frac{a}{a+c} \cdot \frac{1}{n} + \frac{c}{a+c} \cdot \frac{k_i}{cn}
-\end{equation*}
-</div>
-<p class="continuation">as in the previous question.</p>
-</div></div></p></article><article class="exercise exercise-like" id="exercise-71"><h6 class="heading">
+</div></article><article class="exercise exercise-like" id="exercise-71"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">The Vertex Copying Model.</span>
 </h6>
-<p id="p-611">One critique of Price's Model is that the new paper must know about the degrees of the entire network when we choose its citations. So this is a "global" process instead of a "local" process. Consider the following process instead. Start with a network of \(n_0 &gt; c\) papers, each pointing randomly to \(c\) others. Pick a constant \(0 &lt; \gamma &lt; 1\text{.}\)  When paper \(n+1\) is added, it makes \(c\) citations as follows:</p>
+<p id="p-377">One critique of Price's Model is that the new paper must know about the degrees of the entire network when we choose its citations. So this is a "global" process instead of a "local" process. Consider the following process instead. Start with a network of \(n_0 &gt; c\) papers, each pointing randomly to \(c\) others. Pick a constant \(0 &lt; \gamma &lt; 1\text{.}\)  When paper \(n+1\) is added, it makes \(c\) citations as follows:</p>
 <ul class="disc">
-<li id="li-287"><p id="p-612">Pick a random paper \(v\) from the existing \(n\) vertices.</p></li>
-<li id="li-288">
-<p id="p-613">For each of the \(c\) citations of \(v\) (that is, the arcs starting at \(v\)),</p>
+<li id="li-226"><p id="p-378">Pick a random paper \(v\) from the existing \(n\) vertices.</p></li>
+<li id="li-227">
+<p id="p-379">For each of the \(c\) citations of \(v\) (that is, the arcs starting at \(v\)),</p>
 <ul class="circle">
-<li id="li-289"><p id="p-614">with \(\displaystyle{\P = \gamma}\text{,}\)   copy that citation</p></li>
-<li id="li-290"><p id="p-615">with \(\displaystyle{\P = 1 - \gamma}\text{,}\)  cite a uniform random paper instead.</p></li>
+<li id="li-228"><p id="p-380">with \(\displaystyle{\P = \gamma}\text{,}\)   copy that citation</p></li>
+<li id="li-229"><p id="p-381">with \(\displaystyle{\P = 1 - \gamma}\text{,}\)  cite a uniform random paper instead.</p></li>
 </ul>
 </li>
 </ul>
 <p class="continuation">You will now show that this model also generates a power law degree distribution.</p>
 <ol class="lower-alpha">
-<li id="li-291">
-<p id="p-616">Show that for each arc starting at vertex \(n+1\text{,}\) we have</p>
+<li id="li-230">
+<p id="p-382">Show that for each arc starting at vertex \(n+1\text{,}\) we have</p>
 <div class="displaymath">
 \begin{equation*}
 \P(\mbox{the arc points to vertex } i) = (1- \gamma) \frac{1}{n}  + \gamma \frac{k_i}{cn}.
 \end{equation*}
 </div>
-<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-125" id="solution-125"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-125"><div class="solution solution-like">
-<ul id="p-617" class="disc">
-<li id="li-292"><p id="p-618">The probability that we consider copying a citation to paper \(i\) is \(\frac{k_i}{cn}\text{.}\) The probability that we do copy that citation is \(\gamma\text{.}\) We try this \(c\) times.</p></li>
-<li id="li-293"><p id="p-619">The expected number of random citations we make is \(c(1-\gamma)\text{.}\) A paper has probability \(\frac{1}{n}\) of being chosen each time.</p></li>
-</ul>
-<p class="continuation"><em class="emphasis">Note:</em> Assuming that \(n\) is large compared to \(c\text{,}\) the probability that \(i\) gets multiple citations is negligible, so below, we will use the approximation \(\P\)(paper \(i\) receives a citation) \(\approx \E(\#\) citations received by paper \(i\)).</p>
-</div></div></p>
 </li>
-<li id="li-294"><p id="p-620">Define \(a = c \left( \frac{1}{\gamma} -1 \right)\text{.}\) Confirm that this equation is equivalent to \(\gamma = \frac{c}{c+a}\text{.}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-126" id="solution-126"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-126"><div class="solution solution-like">
-<p id="p-621"></p>
-<div class="displaymath">
-\begin{align*}
-\frac{a}{c} &amp;= \frac{1}{\gamma} -1\\
-\frac{c+a}{c} &amp;= \frac{1}{\gamma}\\
-\frac{c}{c+a} &amp;= {\gamma}
-\end{align*}
-</div>
-<p id="p-622"></p>
-</div></div></p></li>
-<li id="li-295">
-<p id="p-623">Plug \(\gamma = \frac{c}{c+a}\) into equation from part (a) and simplify to show that we once again get</p>
+<li id="li-231"><p id="p-383">Define \(a = c \left( \frac{1}{\gamma} -1 \right)\text{.}\) Confirm that this equation is equivalent to \(\gamma = \frac{c}{c+a}\text{.}\) </p></li>
+<li id="li-232">
+<p id="p-384">Plug \(\gamma = \frac{c}{c+a}\) into equation from part (a) and simplify to show that we once again get</p>
 <div class="displaymath">
 \begin{equation*}
 \P(\mbox{the arc points to vertex } i) = \frac{a+k_i}{n(c+a)}.
 \end{equation*}
 </div>
-<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-127" id="solution-127"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-127"><div class="solution solution-like">
-<p id="p-624"></p>
-<div class="displaymath">
-\begin{align*}
-\P(\mbox{the arc points to vertex } i)
-&amp;= (1- \gamma) \frac{1}{n}  + \gamma \frac{k_i}{cn}\\
-&amp;=
-\left( 1 - \frac{c}{c+a} \right) \frac{1}{n} + \frac{c}{c+a}  \frac{k_i}{cn}\\
-&amp;=
-\frac{a}{c+a} \frac{1}{n} + \frac{c}{c+a}  \frac{k_i}{cn}\\
-&amp;=
-\frac{a+k_i}{n(c+a)}
-\end{align*}
-</div>
-<p id="p-625"></p>
-</div></div></p>
 </li>
-<li id="li-296">
-<p id="p-626">Finally, rewrite the power law</p>
+<li id="li-233">
+<p id="p-385">Finally, rewrite the power law</p>
 <div class="displaymath">
 \begin{equation*}
 \P(\deg(v) = k) \sim k^{-2-a/c}
 \end{equation*}
 </div>
-<p class="continuation">in terms of \(\gamma\) instead of \(a\) and \(c\text{.}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-128" id="solution-128"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-128"><div class="solution solution-like">
-<p id="p-627">The degree distribution is governed by the power law</p>
-<div class="displaymath">
-\begin{equation*}
-p_k \sim k^{-2-a/c} = k^{-2- 1/\gamma +1} = k^{-1 - 1/\gamma}
-\end{equation*}
-</div>
-<p class="continuation">where \(0 &lt; \gamma &lt; 1\text{.}\) Depending on the value of \(\gamma\text{,}\) our power law exponent \(\alpha\) can take on any value \(\alpha &gt; 2\text{.}\)</p>
-</div></div></p>
+<p class="continuation">in terms of \(\gamma\) instead of \(a\) and \(c\text{.}\) </p>
 </li>
-<li id="li-297"><p id="p-628">This vertex copying model leads to the same equations for the degree distribution of the resulting network. However, the actual network structure of the vertex copying model is very different from the netwok structure of Price's Model. Explain why. (Hint: start by thinking about what the vertex copying model would look like when \(\gamma\) is very very close to 1.) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-129" id="solution-129"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-129"><div class="solution solution-like"><p id="p-629">When  \(\gamma\) is very very close to 1, each new vertex is practically a duplicate of the vertex that it is copying. So there is a strong correlation between the out-edges of the graph. This would lead to some community structure. However, this doesn't happens for Price's model, since the links are all taken uniformly at random from across the entire network. This out-edge correlation holds for all values of \(\gamma\text{,}\) but is more pronounced for larger \(\gamma\text{.}\)</p></div></div></p></li>
+<li id="li-234"><p id="p-386">This vertex copying model leads to the same equations for the degree distribution of the resulting network. However, the actual network structure of the vertex copying model is very different from the netwok structure of Price's Model. Explain why. (Hint: start by thinking about what the vertex copying model would look like when \(\gamma\) is very very close to 1.) </p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-72"><h6 class="heading">
 <span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Preferential Attachment Model.</span>
 </h6>
-<p id="p-630">Here is the Barabasi-Albert Preferential Attachmnent Model for an undirected network. We start with a complete graph on \(c+1\) vertices.</p>
-<p id="p-631">When we add the new vertex \(n+1\) to the network of size \(n\text{,}\) we create \(c\) undirected edges incident with \(n+1\text{.}\) The other endpoint \(i\) of each edge is chosen with probability proportional to its current degree \(k_i\text{.}\)</p>
+<p id="p-387">Here is the Barabasi-Albert Preferential Attachmnent Model for an undirected network. We start with a complete graph on \(c+1\) vertices.</p>
+<p id="p-388">When we add the new vertex \(n+1\) to the network of size \(n\text{,}\) we create \(c\) undirected edges incident with \(n+1\text{.}\) The other endpoint \(i\) of each edge is chosen with probability proportional to its current degree \(k_i\text{.}\)</p>
 <ol class="lower-alpha">
-<li id="li-298">
-<p id="p-632">Explain why the probability that an edge from vertex \(n+1\) attaches to vertex \(i\) is</p>
+<li id="li-235">
+<p id="p-389">Explain why the probability that an edge from vertex \(n+1\) attaches to vertex \(i\) is</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{k_i}{2cn}.
 \end{equation*}
 </div>
-<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-130" id="solution-130"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-130"><div class="solution solution-like">
-<p id="p-633"></p>
-<p id="p-634">The total number of edges in the network of order \(n\) is \(2cn\text{.}\) So the probability that we pick vertex \(i\) is</p>
-<div class="displaymath">
-\begin{equation*}
-\frac{k_i}{2cn}.
-\end{equation*}
-</div>
-</div></div></p>
 </li>
-<li id="li-299">
-<p id="p-635">Now change this network model to a directed network. Show that</p>
+<li id="li-236">
+<p id="p-390">Now change this network model to a directed network. Show that</p>
 <div class="displaymath">
 \begin{equation*}
 k_i= k_i^{\mathrm{in}} + k_i^{\mathrm{out}} = k_i^{\mathrm{in}} + c. 
 \end{equation*}
 </div>
-<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-131" id="solution-131"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-131"><div class="solution solution-like">
-<p id="p-636"></p>
-<p id="p-637">When we add vertex \(i\text{,}\) its out-degree is \(c\) and its in-degree is 0. Later on, if its total degree is \(k_i\text{,}\) then we still have  \(k_i^{\mathrm{out}}=c\text{,}\) and so \(k_i^{\mathrm{in}} = k_i - c,\text{.}\)</p>
-</div></div></p>
 </li>
-<li id="li-300"><p id="p-638">Now show that Preferential Attachment is just the undirected version of Price's Model with \(a=c\text{.}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-132" id="solution-132"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-132"><div class="solution solution-like">
-<p id="p-639"></p>
-<p id="p-640">The probability that an edge from vertex \(n+1\) is incident with vertex \(i\) is</p>
-<div class="displaymath">
-\begin{equation*}
-\frac{k_i}{2cn} = \frac{c + k_i^{\mathrm{in}}}{2cn} = \frac{1}{2} \frac{1}{n} + \frac{1}{2} \frac{k_i^{\mathrm{in}}}{cn}
-\end{equation*}
-</div>
-<p class="continuation">and this is Price's model with \(a=c\text{.}\)</p>
-</div></div></p></li>
+<li id="li-237"><p id="p-391">Now show that Preferential Attachment is just the undirected version of Price's Model with \(a=c\text{.}\) </p></li>
 </ol></article></section></section></div></main>
 </div>
 </body>

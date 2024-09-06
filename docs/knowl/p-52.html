@@ -12,21 +12,22 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Here is the matrix \(P^2\) for the undirected graph in Problem 1.</p>
+<p>Suppose that we have a network that is partitioned into (potential) communities. The <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">type</em> of a vertex is the community \(C\) that it belongs to. The <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">modularity</em> of a network \(G\) is given by</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-P^2 =
-\begin{bmatrix}
-\frac{1}{3} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; 0 \\[6pt]
-\frac{1}{9} &amp; \frac{4}{9} &amp; 0 &amp; \frac{5}{18} &amp; \frac{1}{6} &amp; 0 \\[6pt]
-\frac{1}{6} &amp; 0 &amp; \frac{1}{3} &amp; 0 &amp; \frac{1}{3} &amp; \frac{1}{6} \\[6pt]
-\frac{1}{9} &amp; \frac{5}{18} &amp; 0 &amp; \frac{11}{18} &amp; 0 &amp; 0 \\[6pt]
-\frac{1}{9} &amp; \frac{1}{6} &amp; \frac{2}{9} &amp; 0 &amp; \frac{7}{18} &amp; \frac{1}{9} \\[6pt]
-0 &amp; 0 &amp; \frac{1}{3} &amp; 0 &amp; \frac{1}{3} &amp; \frac{1}{3}
-\end{bmatrix}
+Q  =  \frac{1}{2m} \sum_{i} \sum_{j} \left( A_{ij} - \frac{k_i k_j}{2m} \right) \delta (C^{(i)}, C^{(j)})
+=  \frac{1}{2m} \sum_{C} \sum_{i \in C} \sum_{j \in C} \left( A_{ij} - \frac{k_i k_j}{2m} \right)
 \end{equation*}
 </div>
-<p class="continuation">What does row \(i\) tell you about the instruction "take two random steps from vertex \(i\text{?}\)" <a class="solution-knowl original" data-knowl="./knowl/solution-11-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
-<span class="incontext"><a href="randomwalk.html#p-52">in-context</a></span>
+<p class="continuation">where</p>
+<ul class="disc">
+<li><p>\(A\) is the adjacency matrix</p></li>
+<li><p>\(m\) is the number of edges in the network</p></li>
+<li><p>\(k_i\) is the degree of vertex \(i\)</p></li>
+<li><p>\(C^{(i)}\) is the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">type</em> of vertex \(i\)</p></li>
+<li><p>\(\displaystyle \delta(x,y) = \left\{ \begin{array}{cc} 1 &amp; \mbox{if } x=y \\ 0 &amp;  \mbox{otherwise} \end{array} \right.\)</p></li>
+</ul>
+<p class="continuation">The modularity satisfies \(-1 &lt; Q &lt; 1\text{.}\) A modularity score of \(Q &gt; 0.3\) indicates significant community structure.</p>
+<span class="incontext"><a href="modularity.html#p-52">in-context</a></span>
 </body>
 </html>

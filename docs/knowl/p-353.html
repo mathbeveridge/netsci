@@ -12,20 +12,16 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>As \(n \rightarrow \infty\text{,}\) the \(m\)th moment  \(\E[X^m]\) is</p>
+<p>What is the average degree of the graph at the moment it becomes connected for each of the graph sizes n listed below.  (Run the simulation multiple times for each graph size and report the average)</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\lim_{n \rightarrow \infty} \frac{C}{-\alpha +m+1} \left( \frac{1}{n^{\alpha-m-1}} -  \frac{1}{k_{\min}^{\alpha-m-1}} \right)
-= \frac{C}{\alpha-m-1}  \cdot \frac{1}{k_{\min}^{\alpha-m-1}}
+\begin{array}{r|c|c|c|c|c|c}
+\mbox{network size} &amp; 10 &amp; 20 &amp; 40 &amp; 80 &amp; 160 &amp; 320 \\
+\hline
+\mbox{average degree} &amp;&amp;&amp;&amp;&amp;&amp;
+\end{array}
 \end{equation*}
 </div>
-<p class="continuation">provided that \(\alpha &gt; m\text{.}\) So the \(m\)th moment  value  is finite if and only if \(\alpha &gt; m\text{.}\) Let's substitute \(C= (\alpha-1)k_{\min}^{\alpha-1}\) to get the expression</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\E[X^m] = \frac{\alpha-1}{\alpha-m-1}  \cdot \frac{k_{\min}^{\alpha-1}}{k_{\min}^{\alpha-m-1}}
-= \frac{\alpha-1}{\alpha-m-1}  \cdot k_{\min}^{m}.
-\end{equation*}
-</div>
-<span class="incontext"><a href="powerlaw.html#p-353">in-context</a></span>
+<span class="incontext"><a href="giantcomp.html#p-353">in-context</a></span>
 </body>
 </html>

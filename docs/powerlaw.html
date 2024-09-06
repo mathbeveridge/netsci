@@ -160,14 +160,14 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="powerlaw"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.3</span> <span class="title">Power Laws</span>
 </h2>
-<section class="introduction" id="introduction-7"><p id="p-327"></p>
-<p id="p-328"></p></section><section class="exercises" id="exercises-6"><h3 class="heading hide-type">
+<section class="introduction" id="introduction-7"><p id="p-191"></p>
+<p id="p-192"></p></section><section class="exercises" id="exercises-6"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Practice Problems</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-31"><h6 class="heading">
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Degree Distribution.</span>
 </h6>
-<p id="p-329">The <em class="emphasis">degree distribution</em> of a graph is given by</p>
+<p id="p-193">The <em class="emphasis">degree distribution</em> of a graph is given by</p>
 <div class="displaymath">
 \begin{equation*}
 p_k =
@@ -175,16 +175,10 @@ p_k =
 \end{equation*}
 </div>
 <p class="continuation">What is the degree distribution \((p_1, p_2, \ldots)\) of this graph? <div class="image-box" style="width: 25%; margin-left: 37.5%; margin-right: 37.5%;"><img src="images/small_network.png" class="contained"></div></p>
-<p id="p-330"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-77" id="solution-77"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-77"><div class="solution solution-like"><div class="displaymath" id="p-331">
-\begin{equation*}
-\left(
-0,\frac{4}{10},\frac{2}{10},\frac{3}{10},0,\frac{1}{10}
-\right)
-\end{equation*}
-</div></div></div></p></article><article class="exercise exercise-like" id="exercise-32"><h6 class="heading">
+<p id="p-194"></p></article><article class="exercise exercise-like" id="exercise-32"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">The Normalizing Constant.</span>
 </h6>
-<p id="p-332">We are given a data set whose degree distribution looks like a straight line with negative slope when plotted using  a log-log scale. In other words,</p>
+<p id="p-195">We are given a data set whose degree distribution looks like a straight line with negative slope when plotted using  a log-log scale. In other words,</p>
 <div class="displaymath">
 \begin{equation*}
 \ln (p(k)) = c - \alpha \ln (k),
@@ -196,15 +190,11 @@ p_k =
 p(k) = C k^{-\alpha}.
 \end{equation*}
 </div>
-<p class="continuation">What is the value of the constant \(C\) in terms of \(c\text{?}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-78" id="solution-78"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-78"><div class="solution solution-like"><div class="displaymath" id="p-333">
-\begin{equation*}
-p(k) = e^c \, k^{-\alpha} \qquad \mbox{so } C = e^c
-\end{equation*}
-</div></div></div></p></article><article class="exercise exercise-like" id="exercise-33"><h6 class="heading">
+<p class="continuation">What is the value of the constant \(C\) in terms of \(c\text{?}\) </p></article><article class="exercise exercise-like" id="exercise-33"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">The Normalizing Constant for Exponent \(\alpha\).</span>
 </h6>
-<ol id="p-334" class="lower-alpha">
-<li id="li-129"><p id="p-derived-li-129">Let \(p: \Z^+ \rightarrow [0,1]\) given by<div class="displaymath">
+<ol id="p-196" class="lower-alpha">
+<li id="li-97"><p id="p-derived-li-97">Let \(p: \Z^+ \rightarrow [0,1]\) given by<div class="displaymath">
 \begin{equation*}
 p(k) = C k^{- \alpha}
 \end{equation*}
@@ -216,17 +206,9 @@ C = \frac{1}{\zeta(\alpha)}
 \begin{equation*}
 \displaystyle{\zeta(x) = \sum_{k=1}^{\infty} k^{-x}}.
 \end{equation*}
-</div>What is the restriction on allowable values of \(\alpha\text{?}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-79" id="solution-79"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-79"><div class="solution solution-like">
-<p id="p-335">We need \(\displaystyle{\zeta(x) = \sum_{k=1}^{\infty} k^{-x}}\) to converge so that the constant \(C\) is finite. From calculus, we recall that the series</p>
-<div class="displaymath">
-\begin{equation*}
-\sum_{n=1}^{\infty} n^{-r} =  \sum_{n=1}^{\infty} \frac{1}{n^r}
-\end{equation*}
-</div>
-<p class="continuation">converges if and only if \(r &gt; 1\text{.}\) Translating this to our power law, we set \(k=n\) and \(\alpha=r\text{.}\)  We must have \(\alpha &gt; 1\) in order for the constant \(C\) to be finite.</p>
-</div></div></p></li>
-<li id="li-130">
-<p id="p-336">For many real-world networks, the power law behavior doesn't hold for small \(k\text{.}\) In this case, we restrict our attention to vertices of degree at least \(k_{\min}\text{.}\) We then deal with  the probability mass function for a truncated power law. Given \(\alpha\) and \(k \geq k_{\min}\) this PMF is given by</p>
+</div>What is the restriction on allowable values of \(\alpha\text{?}\) </p></li>
+<li id="li-98">
+<p id="p-197">For many real-world networks, the power law behavior doesn't hold for small \(k\text{.}\) In this case, we restrict our attention to vertices of degree at least \(k_{\min}\text{.}\) We then deal with  the probability mass function for a truncated power law. Given \(\alpha\) and \(k \geq k_{\min}\) this PMF is given by</p>
 <div class="displaymath">
 \begin{equation*}
 p(k) =  \frac{ k^{-\alpha}}{\zeta(\alpha, k_{\min})}
@@ -239,47 +221,27 @@ p(k) =  \frac{ k^{-\alpha}}{\zeta(\alpha, k_{\min})}
 \end{equation*}
 </div>
 <p class="continuation">is the <em class="emphasis">generalized Riemann zeta function</em>.</p>
-<p id="p-337">Dealing with the Riemann zeta function is unwieldy. In practice, we approximate this leading constant by the corresponding integral.  Evaluate the following integral in order to find the approximate value for \(\zeta(\alpha, k_{\min})\text{:}\)</p>
+<p id="p-198">Dealing with the Riemann zeta function is unwieldy. In practice, we approximate this leading constant by the corresponding integral.  Evaluate the following integral in order to find the approximate value for \(\zeta(\alpha, k_{\min})\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 A =  \int_{x= k_{\min}}^{\infty} x^{-\alpha}  \, dx \approx \sum_{k= k_{\min}}^{\infty} k^{-\alpha} .
 \end{equation*}
 </div>
-<p id="p-338"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-80" id="solution-80"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-80"><div class="solution solution-like">
-<p id="p-339"></p>
-<div class="displaymath">
-\begin{align*}
-\sum_{k= k_{\min}}^{\infty} k^{-\alpha} &amp;\approx  \int_{x= k_{\min}}^{\infty} x^{-\alpha}  \, dx\\
-&amp;=
-\lim_{n \rightarrow \infty}
-\frac{1}{-\alpha+1} x^{- \alpha+1} \Big|_{x=k_{\min}}^n\\
-&amp; =
-\lim_{n \rightarrow \infty}
-\frac{1}{-\alpha+1} \left( \frac{1}{n^{\alpha-1}} - \frac{1}{k_{\min}^{\alpha-1}}\right)\\
-&amp;= \frac{1}{\alpha-1} \cdot  \frac{1}{k_{\min}^{\alpha-1}}
-\end{align*}
-</div>
-<p id="p-340">provided that \(\alpha &gt; 1\text{,}\) of course!</p>
-</div></div></p>
+<p id="p-199"></p>
 </li>
-<li id="li-131">
-<p id="p-341">Find the corresponding approximate expression for the power law PMF</p>
+<li id="li-99">
+<p id="p-200">Find the corresponding approximate expression for the power law PMF</p>
 <div class="displaymath">
 \begin{equation*}
 p(k) = \frac{1}{A} k^{-\alpha}
 \end{equation*}
 </div>
-<p class="continuation">using your constant \(A\) from (a). Simplify so that \(\alpha\) only appears once in an exponent. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-81" id="solution-81"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-81"><div class="solution solution-like"><div class="displaymath" id="p-342">
-\begin{equation*}
-p(k) \approx \left( \frac{1}{\alpha-1} \cdot  \frac{1}{k_{\min}^{\alpha-1}} \right)^{-1}  k^{- \alpha}
-= \frac{\alpha -1}{k_{\min} } \left( \frac{ k_{\min}}{k} \right)^{\alpha}
-\end{equation*}
-</div></div></div></p>
+<p class="continuation">using your constant \(A\) from (a). Simplify so that \(\alpha\) only appears once in an exponent. </p>
 </li>
 </ol></article><article class="exercise exercise-like" id="exercise-34"><h6 class="heading">
 <span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Approximating with a Continuous Power Law.</span>
 </h6>
-<p id="p-343">In general, it is easier to pretend that we are dealing with a continuous distribution (rather than a discrete distribution). So we will talk about a <em class="emphasis">probability density function (PDF)</em> \(p: [k_{\min}, n] \rightarrow [0,1]\) given by</p>
+<p id="p-201">In general, it is easier to pretend that we are dealing with a continuous distribution (rather than a discrete distribution). So we will talk about a <em class="emphasis">probability density function (PDF)</em> \(p: [k_{\min}, n] \rightarrow [0,1]\) given by</p>
 <div class="displaymath">
 \begin{equation*}
 p(x) = C x^{-\alpha}
@@ -287,83 +249,25 @@ p(x) = C x^{-\alpha}
 </div>
 <p class="continuation">rather than a PMF. You can find the constant \(C = (\alpha-1)k_{\min}^{\alpha-1} \) as you did in the previous problem. But let's just keep calling it \(C\) for now.</p>
 <ol class="lower-alpha">
-<li id="li-132">
-<p id="p-344">Let \(X\) be a random variable governed by the continuous PDF \(p(x)\text{.}\) Find</p>
+<li id="li-100">
+<p id="p-202">Let \(X\) be a random variable governed by the continuous PDF \(p(x)\text{.}\) Find</p>
 <div class="displaymath">
 \begin{equation*}
 \E[X] = \int_{x=k_{\min}}^{n} x p(x) dx.
 \end{equation*}
 </div>
-<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-82" id="solution-82"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-82"><div class="solution solution-like">
-<p id="p-345"></p>
-<div class="displaymath">
-\begin{align*}
-\E[X] &amp;= C \int_{x=k_{\min}}^{n} x \cdot x^{-\alpha} dx =  C \int_{x=k_{\min}}^{n}  x^{-\alpha+1} dx\\
-&amp;= \frac{C}{-\alpha +2} x^{-\alpha+2} \Big|_{k_{\min}}^n\\
-&amp;= \frac{C}{-\alpha +2} \left( \frac{1}{n^{\alpha-2}} -  \frac{1}{k_{\min}^{\alpha-2}} \right)
-\end{align*}
-</div>
-<p id="p-346"></p>
-</div></div></p>
 </li>
-<li id="li-133">
-<p id="p-347">The \(m\)th moment of \(X\) is</p>
+<li id="li-101">
+<p id="p-203">The \(m\)th moment of \(X\) is</p>
 <div class="displaymath">
 \begin{equation*}
 \E[X^m] = \int_{x=k_{\min}}^{n} x^m p(x) dx.
 \end{equation*}
 </div>
-<p class="continuation">Calculate it. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-83" id="solution-83"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-83"><div class="solution solution-like">
-<p id="p-348"></p>
-<div class="displaymath">
-\begin{align*}
-\E[X^m] &amp;= C \int_{x=k_{\min}}^{n} x^m \cdot x^{-\alpha} dx =  C \int_{x=k_{\min}}^{n}  x^{-\alpha+m} dx\\
-&amp;= \frac{C}{-\alpha +m+1} x^{-\alpha+n+1} \Big|_{k_{\min}}^n\\
-&amp;= \frac{C}{-\alpha +m+1} \left( \frac{1}{n^{\alpha-m-1}} -  \frac{1}{k_{\min}^{\alpha-m-1}} \right)
-\end{align*}
-</div>
-<p id="p-349"></p>
-</div></div></p>
+<p class="continuation">Calculate it. </p>
 </li>
-<li id="li-134"><p id="p-350">Look at your answers for parts (a) and (b) and think about what happens as \(n \rightarrow \infty\text{.}\) For what values of \(\alpha\) does \(\E[X]\) converge? When does the \(m\)th moment \(\E[X^m]\) converge? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-84" id="solution-84"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-84"><div class="solution solution-like"><ul id="p-351" class="disc">
-<li id="li-135">
-<p id="p-352">As \(n \rightarrow \infty\text{,}\) the expected value \(\E[X]\) is</p>
-<div class="displaymath">
-\begin{equation*}
-\lim_{n \rightarrow \infty} \frac{C}{-\alpha +2} \left( \frac{1}{n^{\alpha-2}} -  \frac{1}{k_{\min}^{\alpha-2}} \right)
-= \frac{C}{\alpha-2}  \cdot \frac{1}{k_{\min}^{\alpha-2}}
-\end{equation*}
-</div>
-<p class="continuation">provided that \(\alpha &gt; 2\text{.}\) So the average value  is finite if and only if \(\alpha &gt; 2\text{.}\) Finally, let's substitute in our approximation of the constant \(C = (\alpha-1)k_{\min}^{\alpha-1}\) to find that the expected value is</p>
-<div class="displaymath">
-\begin{equation*}
-\E[X] =
-\frac{\alpha-1}{\alpha-2}  \cdot \frac{k_{\min}^{\alpha-1}}{k_{\min}^{\alpha-2}} = \frac{\alpha-1}{\alpha-2}  \cdot k_{\min}.
-\end{equation*}
-</div>
-<p class="continuation">That's pretty cool. And you can see that if your exponent \(\alpha \rightarrow 2\) then the expected value goes to infinity. Nice!</p>
-</li>
-<li id="li-136">
-<p id="p-353">As \(n \rightarrow \infty\text{,}\) the \(m\)th moment  \(\E[X^m]\) is</p>
-<div class="displaymath">
-\begin{equation*}
-\lim_{n \rightarrow \infty} \frac{C}{-\alpha +m+1} \left( \frac{1}{n^{\alpha-m-1}} -  \frac{1}{k_{\min}^{\alpha-m-1}} \right)
-= \frac{C}{\alpha-m-1}  \cdot \frac{1}{k_{\min}^{\alpha-m-1}}
-\end{equation*}
-</div>
-<p class="continuation">provided that \(\alpha &gt; m\text{.}\) So the \(m\)th moment  value  is finite if and only if \(\alpha &gt; m\text{.}\) Let's substitute \(C= (\alpha-1)k_{\min}^{\alpha-1}\) to get the expression</p>
-<div class="displaymath">
-\begin{equation*}
-\E[X^m] = \frac{\alpha-1}{\alpha-m-1}  \cdot \frac{k_{\min}^{\alpha-1}}{k_{\min}^{\alpha-m-1}}
-= \frac{\alpha-1}{\alpha-m-1}  \cdot k_{\min}^{m}.
-\end{equation*}
-</div>
-</li>
-</ul></div></div></p></li>
-<li id="li-137"><p id="p-354">Recall that most observed power laws have \(2 \leq \alpha \leq 3\text{.}\) In this range, does the expected value converge? Which moments converge, and which moments diverge? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-85" id="solution-85"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-85"><div class="solution solution-like">
-<p id="p-355">So why do most naturally occurring power laws have \(2 &lt; \alpha &lt; 3\text{?}\) We'll consider the degree sequence for a network. In this range of \(\alpha\text{,}\) the average degree is finite. This makes sense for our graph. Next, we observe that  the second moment  is infinite (and so are the higher moments). This means that the variance of the degrees goes to infinity. Therefore, we expect to find hub nodes with very, very high degree. If \(\alpha &gt; 3\text{,}\) then the second moment would converge, which means that the degrees would be well-concentrated around the expected value. We've already seen how important the hub nodes are in the network. So if hub nodes only occur when \(\alpha &lt; 3\text{,}\) it makes sense that our observed power laws should fall into the range of  \(2 &lt; \alpha &lt; 3\text{.}\)</p>
-<p id="p-356">What about other natural power laws, like the size of cities? Remember that a power law is the correct model for a "popularity contest" or a "rich get richer phenomenon." In these instances, there are some incredibly successful entities, and their success breeds even more success. In other words, in such popularity feedback loops, we  anticipate seeing entities that are vastly more successful than the average entity. This can only happen when the variance of the power law is infinite.</p>
-</div></div></p></li>
+<li id="li-102"><p id="p-204">Look at your answers for parts (a) and (b) and think about what happens as \(n \rightarrow \infty\text{.}\) For what values of \(\alpha\) does \(\E[X]\) converge? When does the \(m\)th moment \(\E[X^m]\) converge? </p></li>
+<li id="li-103"><p id="p-205">Recall that most observed power laws have \(2 \leq \alpha \leq 3\text{.}\) In this range, does the expected value converge? Which moments converge, and which moments diverge? </p></li>
 </ol></article></section></section></div></main>
 </div>
 </body>

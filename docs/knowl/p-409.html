@@ -12,7 +12,21 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Recall that if \(G\) is an undirected graph, then \(A\) is symmetric. Explain why the adjacency matrix of an undirected graph is reducible if and only if \(G\) is not connected.</p>
-<span class="incontext"><a href="algcentrality.html#p-409">in-context</a></span>
+<p>Triangles using 2 or 3 shortcut edges are also unlikely. Explain why</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[\mbox{# triangles using two shortcut edges} ]=
+n \frac{c}{2} (n-2) q^2   \approx \frac{c^3p^2}{2}.
+\end{equation*}
+</div>
+<p class="continuation">and</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[\mbox{# triangles using three shortcut edges} ] =
+{n \choose 3} q^3   \approx \frac{c^3p^3}{6}.
+\end{equation*}
+</div>
+<p class="continuation">So we only add a constant number of triangles of any kind.</p>
+<span class="incontext"><a href="smallworld.html#p-409">in-context</a></span>
 </body>
 </html>

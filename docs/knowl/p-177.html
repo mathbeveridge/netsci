@@ -12,7 +12,19 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Consider the experiment where we take \(X\) to be the degree of a vertex from the network shown below, chosen uniformly at random (meaning that every vertex is equally likely). Find the PMF for this experiment. <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/graph7.png" class="contained"></div> <a class="solution-knowl original" data-knowl="./knowl/solution-46-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
-<span class="incontext"><a href="randvar.html#p-177">in-context</a></span>
+<p>Linearity of expectation applies to the sum of multiple random variables. In particular, an easy proof by induction shows that for any random variables \(X_1, X_2, \ldots, X_n\text{,}\) we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[X_1 + X_2 + \cdots + X_n] = \E[X_1] + \E[X_2] + \cdots + \E[X_n]
+\end{equation*}
+</div>
+<p class="continuation">Use this formula to show that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[X] = np.
+\end{equation*}
+</div>
+<p class="continuation">You will have to split your random variable \(X\) into the sum of \(n\) random variables. (Note: you can also prove this directly from part (a), but it is a bit tedious.) </p>
+<span class="incontext"><a href="probdist.html#p-177">in-context</a></span>
 </body>
 </html>

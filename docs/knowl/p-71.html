@@ -12,19 +12,18 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>where</p>
+<p>Now explain why the following expression counts the total number of edges that are <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">internal</em> to one of the designated communities.</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\bv =
-\begin{bmatrix}
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6
-\end{bmatrix}
-=
-\begin{bmatrix}
-\frac{2}{14} &amp; \frac{3}{14} &amp; \frac{2}{14} &amp; \frac{3}{14} &amp; \frac{3}{14} &amp; \frac{1}{14}
-\end{bmatrix}.
+\frac{1}{2}  \sum_{i}  \sum_{j} A_{ij}  \, \delta (C^{(i)}, C^{(j)})
 \end{equation*}
 </div>
-<span class="incontext"><a href="randomwalk.html#p-71">in-context</a></span>
+<p class="continuation">which can also be written as</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{1}{2} \sum_{C} \sum_{i \in C} \sum_{j \in C} A_{ij}.
+\end{equation*}
+</div>
+<span class="incontext"><a href="modularity.html#p-71">in-context</a></span>
 </body>
 </html>
