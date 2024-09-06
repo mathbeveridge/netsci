@@ -12,13 +12,45 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Consider the following network with \(V = \{ 1, 2, 3, 4 \}\) and \(E = \{ (1,2), (3,4) \}\text{.}\) Confirm that the modularity scores of the following four partitions by filling in the summands for \(1 \leq i,j \leq 4\text{.}\) Use this <a class="external" href="https://docs.google.com/spreadsheets/d/1kEP0CkUeG9s0RrJDtZcSmkDRKR7JWryNItu4b60pYYs/edit?usp=sharing" target="_blank">link to a Google Sheet</a> to speed up calculations. Pay attention to the modularity contributions for various pairs of nodes. In particular, when \(i\) and \(j\) are in different communities, the corresponding summand is zero.</p>
+<p>In particular, it applies to the matrix \(P\) from the previous problems. And it tells us more information about the left eigenvector  \(\bv\text{.}\) Two of the properties that it tells us are:</p>
+<ul class="disc">
+<li><p>All of the other eigenvalues satisify \(| \lambda_i| &lt; 1\text{.}\) In other words, \(\bv\) is the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">dominant eigenvector</em> of \(P\text{.}\)</p></li>
+<li>
+<p>Assuming that we have scaled the row vector \(\bv\) so that its entries sum to 1, we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\lim_{t \rightarrow \infty} P^t  \, = \, \bone \,  \bv
+&amp;=
+\begin{bmatrix}
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
+\end{bmatrix}
+\end{align*}
+</div>
+<p>where</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\bv =
+\begin{bmatrix}
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{2}{14} &amp; \frac{3}{14} &amp; \frac{2}{14} &amp; \frac{3}{14} &amp; \frac{3}{14} &amp; \frac{1}{14}
+\end{bmatrix}.
+\end{equation*}
+</div>
+</li>
+</ul>
+<p class="continuation">Given this information:</p>
 <ol class="lower-alpha">
-<li><p>A single community. <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/fig-img-modularity0.svg" role="img" class="contained"></div> </p></li>
-<li><p>Two communities with no external edges. <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/fig-img-modularity1.svg" role="img" class="contained"></div> </p></li>
-<li><p>Two communities with no internal edges. <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/fig-img-modularity2.svg" role="img" class="contained"></div> </p></li>
-<li><p>Two communities of sizes 3 and 1. <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/fig-img-modularity3.svg" role="img" class="contained"></div> </p></li>
+<li><p>What new properties do we now know about the vector (and probability distributrion) \(\bv\text{?}\) </p></li>
+<li><p>After taking many random steps, what is the probability that we are at vertex \(i\text{?}\) </p></li>
 </ol>
-<span class="incontext"><a href="modularity.html#p-58">in-context</a></span>
+<span class="incontext"><a href="randomwalk.html#p-58">in-context</a></span>
 </body>
 </html>

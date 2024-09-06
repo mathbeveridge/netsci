@@ -12,25 +12,26 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>At each step, \(v_t\) is chosen uniformly from the out-neighbors of \(v_{t-1}\text{.}\) Using conditional probability notation, we have</p>
+<p>Here are two solutions.</p>
+<ul class="disc">
+<li>
+<p>We must decide whether each arc is in the digraph. We must make \(n(n-1)\) yes/no independent decisions, so the number of simple digraphs is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-P_{ij} = \Pr (v_t=j \mid v_{t-1} = i ) =
-\left\{
-\begin{array}{cc}
-\displaystyle{\frac{1}{k_i^{\mathrm{out}}}} &amp; \mbox{if } ij \in E, \\
-0 &amp; \mbox{otherwise}.
-\end{array}
-\right.
+2^{n(n-1)}.
 \end{equation*}
 </div>
-<p class="continuation">The <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">transition matrix</em> \(P = ( P_{ij})\) collects the transition probabilities. The \(i\)th row contains all the transition probabilities starting at vertex \(i\text{.}\) Finally, we can write our transition matrix as</p>
+</li>
+<li>
+<p>There are now four choices for every vertex pair: no arc, just \((u,v)\text{,}\) just \((v,u)\) or both \((u,v), (v,u)\text{.}\) We must make this decision for every pair of vertices. So the total number of digraphs is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-P = D^{-1} A
+4^{n \choose 2}.
 \end{equation*}
 </div>
-<p class="continuation">where \(D\)  is the diagonal matrix with  \(D_{ii} = \max \left\{ k_i^{\mathrm{out}}, 1 \right\}\) and  \(A\) is the adjacency matrix.</p>
-<span class="incontext"><a href="randomwalk.html#p-15">in-context</a></span>
+</li>
+</ul>
+<p class="continuation">Of course, these two numbers are equal.</p>
+<span class="incontext"><a href="graphs.html#p-15">in-context</a></span>
 </body>
 </html>

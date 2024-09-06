@@ -12,45 +12,11 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>In particular, it applies to the matrix \(P\) from the previous problems. And it tells us more information about the left eigenvector  \(\bv\text{.}\) Two of the properties that it tells us are:</p>
-<ul class="disc">
-<li><p>All of the other eigenvalues satisify \(| \lambda_i| &lt; 1\text{.}\) In other words, \(\bv\) is the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">dominant eigenvector</em> of \(P\text{.}\)</p></li>
-<li>
-<p>Assuming that we have scaled the row vector \(\bv\) so that its entries sum to 1, we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\lim_{t \rightarrow \infty} P^t  \, = \, \bone \,  \bv
-&amp;=
-\begin{bmatrix}
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
-\end{bmatrix}
-\end{align*}
-</div>
-<p>where</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\bv =
-\begin{bmatrix}
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6
-\end{bmatrix}
-=
-\begin{bmatrix}
-\frac{2}{14} &amp; \frac{3}{14} &amp; \frac{2}{14} &amp; \frac{3}{14} &amp; \frac{3}{14} &amp; \frac{1}{14}
-\end{bmatrix}.
-\end{equation*}
-</div>
-</li>
-</ul>
-<p class="continuation">Given this information:</p>
+<p>A tournament \(T\) is <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">transitive</em> if whenever \((u,v)\) and \((v,w)\) are arcs in \(T\text{,}\) then \((u,w)\) is also an arc of \(T\text{.}\)</p>
 <ol class="lower-alpha">
-<li><p>What new properties do we now know about the vector (and probability distributrion) \(\bv\text{?}\) </p></li>
-<li><p>After taking many random steps, what is the probability that we are at vertex \(i\text{?}\) </p></li>
+<li><p>Draw all possible unlabeled transitive tournaments on 3 vertices and 4 vertices.</p></li>
+<li><p>Prove that a tournament \(T\) is transitive if and only if \(T\) has no (directed) cycles. (Hint:  prove \(\Longrightarrow\) by contradiction by picking a cycle of shortest length, then showing there is an even shorter cycle!)</p></li>
 </ol>
-<span class="incontext"><a href="randomwalk.html#p-32">in-context</a></span>
+<span class="incontext"><a href="graphs.html#p-32">in-context</a></span>
 </body>
 </html>

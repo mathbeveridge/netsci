@@ -13,30 +13,20 @@
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
 <ol class="lower-alpha">
+<li><p>Load the <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">us-airline.gephi</code> file into Gephi.</p></li>
+<li><p>How many nodes are there? How many edges?</p></li>
+<li><p>Click on the "T" in the lower toolbar to show the node labels. The labels are the names of the airports. 	Change the displayed valye clicking on the clipboard/wrench icon at the bottom right of the Graph window. De-select "Label" and select "Code." Click OK. Adjust the label size so that you can read them.</p></li>
 <li>
-<p>Now let's try to do some of this same work using NetworkX. You will need to start by installing NetworkX using the command</p>
-<pre class="code-display tex2jax_ignore">
-pip3 install networkx
-</pre>
-</li>
-<li><p>Start off by familiarizing yourself with NetworkX by working though the <a class="external" href="https://networkx.github.io/documentation/stable/tutorial.html" target="_blank">NetworkX tutorial</a>.</p></li>
-<li>
-<p>Try to import the airline graph and find its centrality measures. Googling the following terms will bring up useful parts of the NetworkX documentation:</p>
-<pre class="code-display tex2jax_ignore">
-networkx tutorial
-networkx centrality
-networkx pagerank
-networkx graphml import
-</pre>
-<p class="continuation">Or visit our moodle site for direct links. If you want to plot the network via python, here is a simple code snippet that gives you an idea of how to start.</p>
-<pre class="code-display tex2jax_ignore">
-import networkx as nx
-import matplotlib.pyplot as plt
-
-G = nx.cubical_graph()
-nx.draw(G)
-plt.show()
-</pre>
+<p>Run the following statistics  in the Statistics window (on the right hand side).</p>
+<ul class="disc">
+<li><p>Average Degree</p></li>
+<li><p>Network Diameter</p></li>
+<li><p>HITS</p></li>
+<li><p>PageRank, and select "Use Edge Weight"</p></li>
+<li><p>Eigenvector Centrality</p></li>
+<li><p>Modularity</p></li>
+</ul>
+<p class="continuation">Look quickly at the plots that come up, and then dismiss them.</p>
 </li>
 </ol>
 <span class="incontext"><a href="us-airline.html#p-309">in-context</a></span>

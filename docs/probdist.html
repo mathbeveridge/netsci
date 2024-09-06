@@ -160,40 +160,40 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="probdist"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.2</span> <span class="title">Probability Distributions</span>
 </h2>
-<section class="introduction" id="introduction-6"><p id="p-163"></p>
-<p id="p-164"></p></section><section class="exercises" id="exercises-5"><h3 class="heading hide-type">
+<section class="introduction" id="introduction-6"><p id="p-189"></p>
+<p id="p-190"></p></section><section class="exercises" id="exercises-5"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Practice Problems</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-26"><h6 class="heading">
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Probability Concept Review.</span>
 </h6>
-<p id="p-165">Provide the definition and/or formula for each of the following terms. Then give an "intuitive description" of what this concept tells us, and why we might care. An illustrating concrete example (say, about vertex degrees in a network) can be a better way  convey your understanding than simply speaking in generalities.</p>
+<p id="p-191">Provide the definition and/or formula for each of the following terms. Then give an "intuitive description" of what this concept tells us, and why we might care. An illustrating concrete example (say, about vertex degrees in a network) can be a better way  convey your understanding than simply speaking in generalities.</p>
 <ol class="lower-alpha">
-<li id="li-79"><p id="p-166">A random variable \(X : \Omega \rightarrow \Z_{\geq 0}\text{.}\)</p></li>
-<li id="li-80"><p id="p-167">The probability mass function (PMF) \(p_X(t)\text{.}\)</p></li>
-<li id="li-81"><p id="p-168">The expected value \(\E[X]\text{.}\)</p></li>
-<li id="li-82"><p id="p-169">The variance \(\var[X]\text{.}\)</p></li>
+<li id="li-94"><p id="p-192">A random variable \(X : \Omega \rightarrow \Z_{\geq 0}\text{.}\)</p></li>
+<li id="li-95"><p id="p-193">The probability mass function (PMF) \(p_X(t)\text{.}\)</p></li>
+<li id="li-96"><p id="p-194">The expected value \(\E[X]\text{.}\)</p></li>
+<li id="li-97"><p id="p-195">The variance \(\var[X]\text{.}\)</p></li>
 </ol>
-<p id="p-170">Now that  these concepts are at your fingertips, let's explore three distributions that will  appear frequently in our discussion of network models and dynamic network processes. In the questions that follow, take some time to reflect on the formulas (as well as the techniques that got you there). For each question:</p>
+<p id="p-196">Now that  these concepts are at your fingertips, let's explore three distributions that will  appear frequently in our discussion of network models and dynamic network processes. In the questions that follow, take some time to reflect on the formulas (as well as the techniques that got you there). For each question:</p>
 <ul class="disc">
-<li id="li-83"><p id="p-171">Perform the calculation</p></li>
-<li id="li-84"><p id="p-172">Pause to think about what the formula means.</p></li>
-<li id="li-85"><p id="p-173">Interpret what the answer would mean for large \(n\text{;}\) for different values of \(p \in [0,1]\text{;}\) for big or small \(k\text{.}\)</p></li>
+<li id="li-98"><p id="p-197">Perform the calculation</p></li>
+<li id="li-99"><p id="p-198">Pause to think about what the formula means.</p></li>
+<li id="li-100"><p id="p-199">Interpret what the answer would mean for large \(n\text{;}\) for different values of \(p \in [0,1]\text{;}\) for big or small \(k\text{.}\)</p></li>
 </ul></article><article class="exercise exercise-like" id="probdist-binomial-dist"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Binomial Random Variable.</span>
 </h6>
-<p id="p-174">Flip a weighted coin \(n\) times, where \(p\) is the probability of obtaining heads, and \(1-p\) is the probability of obtaining tails. Define \(X\) to be the number of heads in the \(n\) tosses. This is the <em class="emphasis">binomial random variable with parameters \(n\) and \(p\)</em>.</p>
+<p id="p-200">Flip a weighted coin \(n\) times, where \(p\) is the probability of obtaining heads, and \(1-p\) is the probability of obtaining tails. Define \(X\) to be the number of heads in the \(n\) tosses. This is the <em class="emphasis">binomial random variable with parameters \(n\) and \(p\)</em>.</p>
 <ol class="lower-alpha">
-<li id="li-86">
-<p id="p-175">Give a combinatorial argument for why the PMF of the binomial random variable is</p>
+<li id="li-101">
+<p id="p-201">Give a combinatorial argument for why the PMF of the binomial random variable is</p>
 <div class="displaymath">
 \begin{equation*}
 p(k) = {n \choose k} p^k (1 - p)^{n-k}.
 \end{equation*}
 </div>
 </li>
-<li id="li-87">
-<p id="p-176">Use the binomial theorem</p>
+<li id="li-102">
+<p id="p-202">Use the binomial theorem</p>
 <div class="displaymath">
 \begin{equation*}
 (x+y)^n = \sum_{k=0}^n {n \choose k} x^ky^{n-k}
@@ -201,8 +201,8 @@ p(k) = {n \choose k} p^k (1 - p)^{n-k}.
 </div>
 <p class="continuation">to prove that \(p(k)\) is a PMF. </p>
 </li>
-<li id="li-88">
-<p id="p-177">Linearity of expectation applies to the sum of multiple random variables. In particular, an easy proof by induction shows that for any random variables \(X_1, X_2, \ldots, X_n\text{,}\) we have</p>
+<li id="li-103">
+<p id="p-203">Linearity of expectation applies to the sum of multiple random variables. In particular, an easy proof by induction shows that for any random variables \(X_1, X_2, \ldots, X_n\text{,}\) we have</p>
 <div class="displaymath">
 \begin{equation*}
 \E[X_1 + X_2 + \cdots + X_n] = \E[X_1] + \E[X_2] + \cdots + \E[X_n]
@@ -216,8 +216,8 @@ p(k) = {n \choose k} p^k (1 - p)^{n-k}.
 </div>
 <p class="continuation">You will have to split your random variable \(X\) into the sum of \(n\) random variables. (Note: you can also prove this directly from part (a), but it is a bit tedious.) </p>
 </li>
-<li id="li-89">
-<p id="p-178"><em class="emphasis">[Do not solve this one. It is a long calculation.]</em> It can be shown that</p>
+<li id="li-104">
+<p id="p-204"><em class="emphasis">[Do not solve this one. It is a long calculation.]</em> It can be shown that</p>
 <div class="displaymath">
 \begin{equation*}
 \var(X) = np(1-p).
@@ -234,18 +234,18 @@ p(k) = {n \choose k} p^k (1 - p)^{n-k}.
 </ol></article><article class="exercise exercise-like" id="exercise-28"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Geometric Random Variable.</span>
 </h6>
-<p id="p-179">Instead of flipping our coin for a fixed number of times, we will flip it until we first encounter a heads. This experiment gives the geometric random variable \(Y\text{.}\)</p>
+<p id="p-205">Instead of flipping our coin for a fixed number of times, we will flip it until we first encounter a heads. This experiment gives the geometric random variable \(Y\text{.}\)</p>
 <ol class="lower-alpha">
-<li id="li-90">
-<p id="p-180">Give a combinatorial argument for  why the PMF of the geometric random variable is</p>
+<li id="li-105">
+<p id="p-206">Give a combinatorial argument for  why the PMF of the geometric random variable is</p>
 <div class="displaymath">
 \begin{equation*}
 p(k) =  (1 - p)^{k-1}  p.
 \end{equation*}
 </div>
 </li>
-<li id="li-91">
-<p id="p-181">Use the fact that</p>
+<li id="li-106">
+<p id="p-207">Use the fact that</p>
 <div class="displaymath">
 \begin{equation*}
 \sum_{k=0}^{\infty} x^k = \frac{1}{1-x}
@@ -253,8 +253,8 @@ p(k) =  (1 - p)^{k-1}  p.
 </div>
 <p class="continuation">to prove that  \(p(k)\) is a PMF. </p>
 </li>
-<li id="li-92">
-<p id="p-182">Show that</p>
+<li id="li-107">
+<p id="p-208">Show that</p>
 <div class="displaymath">
 \begin{equation*}
 \E[Y] = \frac{1}{p}.
@@ -262,8 +262,8 @@ p(k) =  (1 - p)^{k-1}  p.
 </div>
 <p class="continuation">Hint: take the derivative of both sides of the equality in part (b) to get a new identity. </p>
 </li>
-<li id="li-93">
-<p id="p-183"><em class="emphasis">[Do not solve this one. It is a long calculation.]</em>  It can be shown that</p>
+<li id="li-108">
+<p id="p-209"><em class="emphasis">[Do not solve this one. It is a long calculation.]</em>  It can be shown that</p>
 <div class="displaymath">
 \begin{equation*}
 \var(Y) = \frac{1-p}{p^2}.
@@ -274,15 +274,15 @@ p(k) =  (1 - p)^{k-1}  p.
 </ol></article><article class="exercise exercise-like" id="exercise-29"><h6 class="heading">
 <span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Poisson Random Variable.</span>
 </h6>
-<p id="p-184">The Poisson random variable \(Z\) for parameter \(\lambda &gt; 0\) has PMF given by</p>
+<p id="p-210">The Poisson random variable \(Z\) for parameter \(\lambda &gt; 0\) has PMF given by</p>
 <div class="displaymath">
 \begin{equation*}
 p(k) = e^{-\lambda} \frac{\lambda^k}{k!}.
 \end{equation*}
 </div>
 <ol class="lower-alpha">
-<li id="li-94">
-<p id="p-185">Use the fact that</p>
+<li id="li-109">
+<p id="p-211">Use the fact that</p>
 <div class="displaymath">
 \begin{equation*}
 \sum_{k=0}^{\infty} \frac{x^k}{k!} = e^{x}
@@ -290,16 +290,16 @@ p(k) = e^{-\lambda} \frac{\lambda^k}{k!}.
 </div>
 <p class="continuation">to prove that  \(p(k)\) is a PMF. </p>
 </li>
-<li id="li-95">
-<p id="p-186">Show that</p>
+<li id="li-110">
+<p id="p-212">Show that</p>
 <div class="displaymath">
 \begin{equation*}
 \E[Z] = \lambda.
 \end{equation*}
 </div>
 </li>
-<li id="li-96">
-<p id="p-187"><em class="emphasis">[Don't solve this one. The calculation isn't as bad as the other variance calculations above. But it is still a bit long.]</em> It can be shown that</p>
+<li id="li-111">
+<p id="p-213"><em class="emphasis">[Don't solve this one. The calculation isn't as bad as the other variance calculations above. But it is still a bit long.]</em> It can be shown that</p>
 <div class="displaymath">
 \begin{equation*}
 \var[Z] = \lambda
@@ -316,14 +316,14 @@ p(k) = e^{-\lambda} \frac{\lambda^k}{k!}.
 </ol></article><article class="exercise exercise-like" id="probdist-poisson-approx"><h6 class="heading">
 <span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Poisson Approximation for the Binomial Distribtuion.</span>
 </h6>
-<p id="p-188">In this problem, you will show that when \(n\) is very large and \(p\) is very small, the Poisson distribution for</p>
+<p id="p-214">In this problem, you will show that when \(n\) is very large and \(p\) is very small, the Poisson distribution for</p>
 <div class="displaymath">
 \begin{equation*}
 \lambda :=np
 \end{equation*}
 </div>
 <p class="continuation">is a good approximation (for small \(k\)) of  the binomial distribution with parameters \(n\) and \(p\text{.}\) Check out this <a class="external" href="https://www.desmos.com/calculator/mjyfy6sffz" target="_blank">Desmos interactive plot</a> for a visualization of this approximation.</p>
-<p id="p-189">Fix \(k \in \Z_{\geq 0}\) to be  constant and let \(n \rightarrow \infty\text{.}\) Show that</p>
+<p id="p-215">Fix \(k \in \Z_{\geq 0}\) to be  constant and let \(n \rightarrow \infty\text{.}\) Show that</p>
 <div class="displaymath">
 \begin{equation*}
 {n \choose k} p^k (1-p)^{n-k} \approx e^{-\lambda} \frac{\lambda^k}{k!}   \mbox{if } k \ll n.
@@ -339,7 +339,7 @@ p(k) = e^{-\lambda} \frac{\lambda^k}{k!}.
 \lim_{n \rightarrow \infty} \left( 1 - \frac{c}{n} \right)^n &amp;= e^{-c}.
 \end{align*}
 </div>
-<p id="p-190"></p></article></section></section></div></main>
+<p id="p-216"></p></article></section></section></div></main>
 </div>
 </body>
 </html>

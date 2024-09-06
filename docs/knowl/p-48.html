@@ -12,36 +12,57 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Let's continue to explore the digraph in Problem 7.</p>
 <ol class="lower-alpha">
 <li>
-<p>Check that the row vector</p>
+<p>Here is the matrix \(P^2\) for the undirected graph in Problem 1.</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
+P^2 =
 \begin{bmatrix}
-0 &amp; 0 &amp; 0 &amp; 0 &amp; \frac{1}{2} &amp; \frac{1}{2}
+\frac{1}{3} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; 0 \\[6pt]
+\frac{1}{9} &amp; \frac{4}{9} &amp; 0 &amp; \frac{5}{18} &amp; \frac{1}{6} &amp; 0 \\[6pt]
+\frac{1}{6} &amp; 0 &amp; \frac{1}{3} &amp; 0 &amp; \frac{1}{3} &amp; \frac{1}{6} \\[6pt]
+\frac{1}{9} &amp; \frac{5}{18} &amp; 0 &amp; \frac{11}{18} &amp; 0 &amp; 0 \\[6pt]
+\frac{1}{9} &amp; \frac{1}{6} &amp; \frac{2}{9} &amp; 0 &amp; \frac{7}{18} &amp; \frac{1}{9} \\[6pt]
+0 &amp; 0 &amp; \frac{1}{3} &amp; 0 &amp; \frac{1}{3} &amp; \frac{1}{3}
 \end{bmatrix}
 \end{equation*}
 </div>
-<p class="continuation">satisfies</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\bv \, P = \bv.
-\end{equation*}
-</div>
-<p class="continuation">How does this relate to the behavior you saw in problem 4? What behavior doesn't this capture? </p>
+<p class="continuation">What does row \(i\) tell you about the instruction "take two random steps from vertex \(i\text{?}\)" </p>
 </li>
+<li><p>Using part (a) as a guide, give an interpretation for row \(i\) of the matrix \(P^3\text{.}\) </p></li>
+<li><p>What do the rows of matrix \(P^t\) describe? </p></li>
 <li>
-<p>Find a different vector \(\bw \neq \bv\) such that</p>
+<p>For \(1 \leq i \leq 6\text{,}\) let \(\mathbf{e}_i\) denote the " elementary vector" whose \(j\)-th entry is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\bw \, P = \bw.
+\mathbf{e}_i(j) = \left\{
+\begin{array}{cl}
+1 &amp; i=j \\
+0 &amp; \mbox{otherwise.}
+\end{array}
+\right.
 \end{equation*}
 </div>
+<p class="continuation">In other words,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\mathbf{e}_1&amp;= \begin{bmatrix} 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{bmatrix}\\
+\mathbf{e}_2&amp;= \begin{bmatrix} 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \end{bmatrix}\\
+\mathbf{e}_3&amp;= \begin{bmatrix} 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \end{bmatrix}\\
+\mathbf{e}_4&amp;= \begin{bmatrix} 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \end{bmatrix}\\
+\mathbf{e}_5&amp;= \begin{bmatrix} 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix}
+\end{align*}
+</div>
+<p>What does the vector</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\mathbf{e}_i \, P^t
+\end{equation*}
+</div>
+<p class="continuation">describe? </p>
 </li>
-<li><p>Pick \(a,b \in \R\)  such that \(a+b=1\text{.}\) What can you say about the vector \(a \bv + b \bw\text{?}\) </p></li>
 </ol>
-<p class="continuation">As this problem shows, the eigenvectors for a weakly connected directed graph aren't enough to fully resolve the long-term behavior of random walks. This example has an infinite number of choices of \(a,b\) that produce distinct left eigenvectors. (In fact, the stationary distribution that we end up in depends upon the starting vertex.)</p>
 <span class="incontext"><a href="randomwalk.html#p-48">in-context</a></span>
 </body>
 </html>

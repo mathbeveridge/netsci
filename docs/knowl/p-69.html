@@ -12,31 +12,13 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Modularity measures the extent to which edges are internal to communities, compared with spanning different communities. We will explain why this is the case. Basically, we are comparing the actual structure of the network with the expected structure of a network where we randomize the edges (but preserve the vertex degrees).</p>
-<ol class="lower-alpha">
-<li>
-<p>Explain why the following expression counts the total number of edges</p>
+<p>Explain why we have</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{1}{2} \sum_{i}  \sum_{j}  A_{ij} 
+\lim_{t \rightarrow \infty} \mathbf{e}_i \, P^t = \pi.
 \end{equation*}
 </div>
-</li>
-<li>
-<p>Now explain why the following expression counts the total number of edges that are <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">internal</em> to one of the designated communities.</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\frac{1}{2}  \sum_{i}  \sum_{j} A_{ij}  \, \delta (C^{(i)}, C^{(j)})
-\end{equation*}
-</div>
-<p class="continuation">which can also be written as</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\frac{1}{2} \sum_{C} \sum_{i \in C} \sum_{j \in C} A_{ij}.
-\end{equation*}
-</div>
-</li>
-</ol>
-<span class="incontext"><a href="modularity.html#p-69">in-context</a></span>
+<p class="continuation">What does this equation mean for a random walk starting at vertex \(i\text{?}\) </p>
+<span class="incontext"><a href="randomwalk.html#p-69">in-context</a></span>
 </body>
 </html>

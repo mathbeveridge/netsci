@@ -12,21 +12,7 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Here is the matrix \(P^2\) for the undirected graph in Problem 1.</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-P^2 =
-\begin{bmatrix}
-\frac{1}{3} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; 0 \\[6pt]
-\frac{1}{9} &amp; \frac{4}{9} &amp; 0 &amp; \frac{5}{18} &amp; \frac{1}{6} &amp; 0 \\[6pt]
-\frac{1}{6} &amp; 0 &amp; \frac{1}{3} &amp; 0 &amp; \frac{1}{3} &amp; \frac{1}{6} \\[6pt]
-\frac{1}{9} &amp; \frac{5}{18} &amp; 0 &amp; \frac{11}{18} &amp; 0 &amp; 0 \\[6pt]
-\frac{1}{9} &amp; \frac{1}{6} &amp; \frac{2}{9} &amp; 0 &amp; \frac{7}{18} &amp; \frac{1}{9} \\[6pt]
-0 &amp; 0 &amp; \frac{1}{3} &amp; 0 &amp; \frac{1}{3} &amp; \frac{1}{3}
-\end{bmatrix}
-\end{equation*}
-</div>
-<p class="continuation">What does row \(i\) tell you about the instruction "take two random steps from vertex \(i\text{?}\)" </p>
-<span class="incontext"><a href="randomwalk.html#p-23">in-context</a></span>
+<p>\((\Rightarrow)\) Suppose that \(D\) is strongly connected. Pick any partition \(V=A \cup B\) into disjoint, nonempty sets. Choose any \(a \in A\) and \(b \in B\text{.}\) Since \(D\) is strongly connected, there is a directed path \(P\) from \(a\) to \(b\text{.}\) Follow this path until you reach the first arc \((x,y)\) whose tail \(x \in A\) and whose head \(y \in B\text{.}\) This is the desired arc. By an identical argument, there is an arc from \(B\) to \(A\) because there is a directed path from \(b\) to \(a\text{.}\)</p>
+<span class="incontext"><a href="graphs.html#p-23">in-context</a></span>
 </body>
 </html>

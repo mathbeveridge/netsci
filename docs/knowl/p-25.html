@@ -12,7 +12,15 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>What do the rows of matrix \(P^t\) describe? </p>
-<span class="incontext"><a href="randomwalk.html#p-25">in-context</a></span>
+<p>Pick a vertex \(x\text{.}\) We will construct a directed tree \(T\) on \(V\) starting from \(x\) where every arc points away from \(x\text{.}\) This tree contains a directed path from \(x\) to any other vertex in the digraph, including our desired vertex \(y\text{.}\) We construct this directed tree as follows.</p>
+<ul class="disc">
+<li><p>To start off, our tree \(T\) just contains the root vertex \(x\text{.}\)</p></li>
+<li><p>Take \(A = \{ x \}\) and \(B = V \backslash \{ x \}\text{.}\) There is an arc from \(A\) to \(B\text{,}\) which must be of the form \((x, v_1)\) for some \(v_1 \in B\text{.}\)  Add this arc and vertex to the tree \(T\text{.}\)</p></li>
+<li><p>Next, take \(A = \{ x, v_1 \}\) and \(B = V \backslash A\text{.}\) There is an arc from \(A\) to \(B\text{,}\) so add this arc and its new head vertex \(v_2\text{.}\)</p></li>
+<li><p>Next, take \(A = \{ x, v_1, v_2 \}\) and \(B= V \backslash A\text{.}\) This adds a new vertex \(v_3\) to our directed tree.</p></li>
+<li><p>Repeat this process until you have a directed tree containing all of the vertices of \(V\text{,}\) including the desired vertex \(y\text{.}\)</p></li>
+</ul>
+<p class="continuation">You can make the same argument to create a directed tree rooted at \(y\text{,}\) which identifies a directed path from \(y\) to \(x\text{.}\)</p>
+<span class="incontext"><a href="graphs.html#p-25">in-context</a></span>
 </body>
 </html>

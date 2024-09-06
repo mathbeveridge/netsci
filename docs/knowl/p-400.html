@@ -12,13 +12,17 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Show that the average distance from \(v_0\) to other vertices is less than or equal to</p>
+<p>Consider the following network growth model.</p>
+<ul class="disc">
+<li><p>with \(\displaystyle{\P = \frac{a}{a+c}}\text{,}\)   pick a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">paper</em> uniformly at random. Cite this paper.</p></li>
+<li><p>with \(\displaystyle{\P = \frac{c}{a+c}}\text{,}\)  pick a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">directed edge</em> uniformly at random. Then cite the paper that the edge points to.</p></li>
+</ul>
+<p class="continuation">Show that when we add vertex \(n+1\text{,}\) this local process ALSO satisfies</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{n}{2c} + 1.
+\P(\mbox{the arc points to vertex } i) = \frac{a+k_i}{n(c+a)}.
 \end{equation*}
 </div>
-<p class="continuation">Hint: you can use the upper bound \(\lceil x \rceil \leq x + 1\) for any \(x \in \R\text{.}\)</p>
-<span class="incontext"><a href="smallworld.html#p-400">in-context</a></span>
+<span class="incontext"><a href="pricemodel.html#p-400">in-context</a></span>
 </body>
 </html>

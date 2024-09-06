@@ -12,21 +12,22 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<ol class="lower-alpha">
-<li><p>Confirm that this expression is equivalent to<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<p>Suppose that we have a network that is partitioned into (potential) communities. The <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">type</em> of a vertex is the community \(C\) that it belongs to. The <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">modularity</em> of a network \(G\) is given by</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-Q \, = \, \sum_{C} \sum_{i,j \in C} \left( P^{\top}_{ij}\pi_i  - \pi_i \pi_j  \right)
+Q  =  \frac{1}{2m} \sum_{i} \sum_{j} \left( A_{ij} - \frac{k_i k_j}{2m} \right) \delta (C^{(i)}, C^{(j)})
+=  \frac{1}{2m} \sum_{C} \sum_{i \in C} \sum_{j \in C} \left( A_{ij} - \frac{k_i k_j}{2m} \right)
 \end{equation*}
-</div>where \(P = D^{-1} A\) is the random walk transition matrix and \(\pi\) is its stationary distribution, where \(\pi_i=k_{i}/2m\text{.}\) </p></li>
-<li>
-<p>Consider a random walk whose distribution has converged to the stationary distribution \(\pi\text{.}\)</p>
-<ol class="lower-roman">
-<li><p>Explain why \(\sum_{i,j \in C} P^{\top}_{ij}\pi_i\) is the probability that we are in \(C\) at time \(t\) and \(t+1\text{.}\) </p></li>
-<li><p>Explain why \(\sum_{i,j \in C}  \pi_i \pi_j\) is the probability that we are in \(C\) at time \(t\) and \(t+T\) for very large \(T\text{.}\) </p></li>
-</ol>
-</li>
-<li><p>Modularity is the difference of the two quantities in part (b). Using this random walk interpretation, why is this difference a measure of community structure?</p></li>
-</ol>
+</div>
+<p class="continuation">where</p>
+<ul class="disc">
+<li><p>\(A\) is the adjacency matrix</p></li>
+<li><p>\(m\) is the number of edges in the network</p></li>
+<li><p>\(k_i\) is the degree of vertex \(i\)</p></li>
+<li><p>\(C^{(i)}\) is the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">type</em> of vertex \(i\)</p></li>
+<li><p>\(\displaystyle \delta(x,y) = \left\{ \begin{array}{cc} 1 &amp; \mbox{if } x=y \\ 0 &amp;  \mbox{otherwise} \end{array} \right.\)</p></li>
+</ul>
+<p class="continuation">The modularity satisfies \(-1 &lt; Q &lt; 1\text{.}\) A modularity score of \(Q &gt; 0.3\) indicates significant community structure.</p>
 <span class="incontext"><a href="modularity.html#p-78">in-context</a></span>
 </body>
 </html>

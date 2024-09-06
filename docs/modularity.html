@@ -160,7 +160,7 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="modularity"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.3</span> <span class="title">Modularity</span>
 </h2>
-<section class="introduction" id="introduction-3"><p id="p-52">Suppose that we have a network that is partitioned into (potential) communities. The <em class="emphasis">type</em> of a vertex is the community \(C\) that it belongs to. The <em class="emphasis">modularity</em> of a network \(G\) is given by</p>
+<section class="introduction" id="introduction-3"><p id="p-78">Suppose that we have a network that is partitioned into (potential) communities. The <em class="emphasis">type</em> of a vertex is the community \(C\) that it belongs to. The <em class="emphasis">modularity</em> of a network \(G\) is given by</p>
 <div class="displaymath">
 \begin{equation*}
 Q  =  \frac{1}{2m} \sum_{i} \sum_{j} \left( A_{ij} - \frac{k_i k_j}{2m} \right) \delta (C^{(i)}, C^{(j)})
@@ -169,11 +169,11 @@ Q  =  \frac{1}{2m} \sum_{i} \sum_{j} \left( A_{ij} - \frac{k_i k_j}{2m} \right) 
 </div>
 <p class="continuation">where</p>
 <ul class="disc">
-<li id="li-26"><p id="p-53">\(A\) is the adjacency matrix</p></li>
-<li id="li-27"><p id="p-54">\(m\) is the number of edges in the network</p></li>
-<li id="li-28"><p id="p-55">\(k_i\) is the degree of vertex \(i\)</p></li>
-<li id="li-29"><p id="p-56">\(C^{(i)}\) is the <em class="emphasis">type</em> of vertex \(i\)</p></li>
-<li id="li-30"><p id="p-57">\(\displaystyle \delta(x,y) = \left\{ \begin{array}{cc} 1 &amp; \mbox{if } x=y \\ 0 &amp;  \mbox{otherwise} \end{array} \right.\)</p></li>
+<li id="li-41"><p id="p-79">\(A\) is the adjacency matrix</p></li>
+<li id="li-42"><p id="p-80">\(m\) is the number of edges in the network</p></li>
+<li id="li-43"><p id="p-81">\(k_i\) is the degree of vertex \(i\)</p></li>
+<li id="li-44"><p id="p-82">\(C^{(i)}\) is the <em class="emphasis">type</em> of vertex \(i\)</p></li>
+<li id="li-45"><p id="p-83">\(\displaystyle \delta(x,y) = \left\{ \begin{array}{cc} 1 &amp; \mbox{if } x=y \\ 0 &amp;  \mbox{otherwise} \end{array} \right.\)</p></li>
 </ul>
 <p class="continuation">The modularity satisfies \(-1 &lt; Q &lt; 1\text{.}\) A modularity score of \(Q &gt; 0.3\) indicates significant community structure.</p></section><section class="exercises" id="exercises-3"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Practice Problems</span>
@@ -181,39 +181,39 @@ Q  =  \frac{1}{2m} \sum_{i} \sum_{j} \left( A_{ij} - \frac{k_i k_j}{2m} \right) 
 <article class="exercise exercise-like" id="exercise-17"><h6 class="heading">
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Modularity Calculation.</span>
 </h6>
-<p id="p-58">Consider the following network with \(V = \{ 1, 2, 3, 4 \}\) and \(E = \{ (1,2), (3,4) \}\text{.}\) Confirm that the modularity scores of the following four partitions by filling in the summands for \(1 \leq i,j \leq 4\text{.}\) Use this <a class="external" href="https://docs.google.com/spreadsheets/d/1kEP0CkUeG9s0RrJDtZcSmkDRKR7JWryNItu4b60pYYs/edit?usp=sharing" target="_blank">link to a Google Sheet</a> to speed up calculations. Pay attention to the modularity contributions for various pairs of nodes. In particular, when \(i\) and \(j\) are in different communities, the corresponding summand is zero.</p>
+<p id="p-84">Consider the following network with \(V = \{ 1, 2, 3, 4 \}\) and \(E = \{ (1,2), (3,4) \}\text{.}\) Confirm that the modularity scores of the following four partitions by filling in the summands for \(1 \leq i,j \leq 4\text{.}\) Use this <a class="external" href="https://docs.google.com/spreadsheets/d/1kEP0CkUeG9s0RrJDtZcSmkDRKR7JWryNItu4b60pYYs/edit?usp=sharing" target="_blank">link to a Google Sheet</a> to speed up calculations. Pay attention to the modularity contributions for various pairs of nodes. In particular, when \(i\) and \(j\) are in different communities, the corresponding summand is zero.</p>
 <ol class="lower-alpha">
-<li id="li-31"><p id="p-59">A single community. <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/fig-img-modularity0.svg" role="img" class="contained"></div> </p></li>
-<li id="li-32"><p id="p-60">Two communities with no external edges. <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/fig-img-modularity1.svg" role="img" class="contained"></div> </p></li>
-<li id="li-33"><p id="p-61">Two communities with no internal edges. <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/fig-img-modularity2.svg" role="img" class="contained"></div> </p></li>
-<li id="li-34"><p id="p-62">Two communities of sizes 3 and 1. <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/fig-img-modularity3.svg" role="img" class="contained"></div> </p></li>
+<li id="li-46"><p id="p-85">A single community. <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/fig-img-modularity0.svg" role="img" class="contained"></div> </p></li>
+<li id="li-47"><p id="p-86">Two communities with no external edges. <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/fig-img-modularity1.svg" role="img" class="contained"></div> </p></li>
+<li id="li-48"><p id="p-87">Two communities with no internal edges. <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/fig-img-modularity2.svg" role="img" class="contained"></div> </p></li>
+<li id="li-49"><p id="p-88">Two communities of sizes 3 and 1. <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/fig-img-modularity3.svg" role="img" class="contained"></div> </p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-18"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Modularity Calculation for a Path.</span>
 </h6>
-<p id="p-63">Confirm the modularity scored  obtained by splitting the path \(P_4\) into the given communities.</p>
+<p id="p-89">Confirm the modularity scored  obtained by splitting the path \(P_4\) into the given communities.</p>
 <ol class="lower-alpha">
-<li id="li-35"><p id="p-64">A single community. <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-modularity4.svg" role="img" class="contained"></div> </p></li>
-<li id="li-36"><p id="p-65">Two communities separated by the most central edge. <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-modularity5.svg" role="img" class="contained"></div> </p></li>
+<li id="li-50"><p id="p-90">A single community. <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-modularity4.svg" role="img" class="contained"></div> </p></li>
+<li id="li-51"><p id="p-91">Two communities separated by the most central edge. <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-modularity5.svg" role="img" class="contained"></div> </p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-19"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-66">Use this <a class="external" href="https://docs.google.com/spreadsheets/d/1kEP0CkUeG9s0RrJDtZcSmkDRKR7JWryNItu4b60pYYs/edit?usp=sharing" target="_blank">link to a Google Sheet</a> to explore the ways to partition graphs on four vertices. <em class="emphasis">You may add self-loops</em>, but such a loop corresponds to \(A_{ii}=2\) (so that the degrees are correct).</p>
+<p id="p-92">Use this <a class="external" href="https://docs.google.com/spreadsheets/d/1kEP0CkUeG9s0RrJDtZcSmkDRKR7JWryNItu4b60pYYs/edit?usp=sharing" target="_blank">link to a Google Sheet</a> to explore the ways to partition graphs on four vertices. <em class="emphasis">You may add self-loops</em>, but such a loop corresponds to \(A_{ii}=2\) (so that the degrees are correct).</p>
 <ol class="lower-alpha">
-<li id="li-37"><p id="p-67">Can you find a graph and a partition with modularity greater than \(1/2\text{?}\) If not, why not? </p></li>
-<li id="li-38"><p id="p-68">Can you find a graph and a partition with modularity less than \(-1/2\text{?}\) If not, why not? </p></li>
+<li id="li-52"><p id="p-93">Can you find a graph and a partition with modularity greater than \(1/2\text{?}\) If not, why not? </p></li>
+<li id="li-53"><p id="p-94">Can you find a graph and a partition with modularity less than \(-1/2\text{?}\) If not, why not? </p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-20"><h6 class="heading">
 <span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Understanding Modularity, Part I.</span>
 </h6>
-<p id="p-69">Modularity measures the extent to which edges are internal to communities, compared with spanning different communities. We will explain why this is the case. Basically, we are comparing the actual structure of the network with the expected structure of a network where we randomize the edges (but preserve the vertex degrees).</p>
+<p id="p-95">Modularity measures the extent to which edges are internal to communities, compared with spanning different communities. We will explain why this is the case. Basically, we are comparing the actual structure of the network with the expected structure of a network where we randomize the edges (but preserve the vertex degrees).</p>
 <ol class="lower-alpha">
-<li id="li-39">
-<p id="p-70">Explain why the following expression counts the total number of edges</p>
+<li id="li-54">
+<p id="p-96">Explain why the following expression counts the total number of edges</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{1}{2} \sum_{i}  \sum_{j}  A_{ij} 
 \end{equation*}
 </div>
 </li>
-<li id="li-40">
-<p id="p-71">Now explain why the following expression counts the total number of edges that are <em class="emphasis">internal</em> to one of the designated communities.</p>
+<li id="li-55">
+<p id="p-97">Now explain why the following expression counts the total number of edges that are <em class="emphasis">internal</em> to one of the designated communities.</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{1}{2}  \sum_{i}  \sum_{j} A_{ij}  \, \delta (C^{(i)}, C^{(j)})
@@ -229,13 +229,13 @@ Q  =  \frac{1}{2m} \sum_{i} \sum_{j} \left( A_{ij} - \frac{k_i k_j}{2m} \right) 
 </ol></article><article class="exercise exercise-like" id="exercise-21"><h6 class="heading">
 <span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Understanding Modularity, Part II.</span>
 </h6>
-<p id="p-72">Now we will randomly rewire the network. We keep the ends of the edges, so that the vertex degrees do not change (see the figure to the right). We erase the edges themselves, which gives us a configuration like the one pictured to the right. Next, we randomly add edges between pairs of vertices, until all edges have been redrawn. Loops are allowed, as are multiple edges between pairs of vertices.</p>
-<p id="p-73">Note that the degree of vertex \(i\) will still be \(k_i\) when this process is done. <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/rewire-vertex.png" class="contained"></div></p>
+<p id="p-98">Now we will randomly rewire the network. We keep the ends of the edges, so that the vertex degrees do not change (see the figure to the right). We erase the edges themselves, which gives us a configuration like the one pictured to the right. Next, we randomly add edges between pairs of vertices, until all edges have been redrawn. Loops are allowed, as are multiple edges between pairs of vertices.</p>
+<p id="p-99">Note that the degree of vertex \(i\) will still be \(k_i\) when this process is done. <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/rewire-vertex.png" class="contained"></div></p>
 <ol class="lower-alpha">
-<li id="li-41"><p id="p-74">Pick the start of one edge at vertex \(i\text{.}\) What is the probability that this rewired edge connects to vertex \(j\text{?}\) </p></li>
-<li id="li-42"><p id="p-75">So how many rewired edges from vertex \(i\) do we expect to connect to vertex \(j\text{?}\) (Assume that the network is so big that the chance that two ends at \(i\) try to connect  to the same end at \(j\) is irrelevant.) </p></li>
-<li id="li-43">
-<p id="p-76">Now argue that the expected number of rewired edges that are internal to the specified communities is</p>
+<li id="li-56"><p id="p-100">Pick the start of one edge at vertex \(i\text{.}\) What is the probability that this rewired edge connects to vertex \(j\text{?}\) </p></li>
+<li id="li-57"><p id="p-101">So how many rewired edges from vertex \(i\) do we expect to connect to vertex \(j\text{?}\) (Assume that the network is so big that the chance that two ends at \(i\) try to connect  to the same end at \(j\) is irrelevant.) </p></li>
+<li id="li-58">
+<p id="p-102">Now argue that the expected number of rewired edges that are internal to the specified communities is</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{1}{2} \sum_{i}  \sum_{j}  \frac{k_i k_j}{2m} \, \delta (C^{(i)}, C^{(j)})
@@ -264,27 +264,27 @@ Q = 	\frac{1}{2m} \sum_{C} \sum_{i \in C} \sum_{j \in C} \left( A_{ij} - \frac{k
 </div></article><article class="exercise exercise-like" id="exercise-22"><h6 class="heading">
 <span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">Modularity as a Random Walk Measure.</span>
 </h6>
-<p id="p-77">We can rewrite our modularity equation as</p>
+<p id="p-103">We can rewrite our modularity equation as</p>
 <div class="displaymath">
 \begin{equation*}
 Q \, = \, \frac{1}{2m} \sum_{C} \sum_{i,j \in C} \left( A_{ij} - \frac{k_i k_j}{2m} \right) 
 \,= \,  \sum_{C} \sum_{i,j \in C} \left( \frac{A_{ij}}{k_i} \frac{k_i}{2m}  - \frac{k_i }{2m} \frac{k_j }{2m}  \right)	
 \end{equation*}
 </div>
-<ol id="p-78" class="lower-alpha">
-<li id="li-44"><p id="p-derived-li-44">Confirm that this expression is equivalent to<div class="displaymath">
+<ol id="p-104" class="lower-alpha">
+<li id="li-59"><p id="p-derived-li-59">Confirm that this expression is equivalent to<div class="displaymath">
 \begin{equation*}
 Q \, = \, \sum_{C} \sum_{i,j \in C} \left( P^{\top}_{ij}\pi_i  - \pi_i \pi_j  \right)
 \end{equation*}
 </div>where \(P = D^{-1} A\) is the random walk transition matrix and \(\pi\) is its stationary distribution, where \(\pi_i=k_{i}/2m\text{.}\) </p></li>
-<li id="li-45">
-<p id="p-79">Consider a random walk whose distribution has converged to the stationary distribution \(\pi\text{.}\)</p>
+<li id="li-60">
+<p id="p-105">Consider a random walk whose distribution has converged to the stationary distribution \(\pi\text{.}\)</p>
 <ol class="lower-roman">
-<li id="li-46"><p id="p-derived-li-46">Explain why \(\sum_{i,j \in C} P^{\top}_{ij}\pi_i\) is the probability that we are in \(C\) at time \(t\) and \(t+1\text{.}\) </p></li>
-<li id="li-47"><p id="p-derived-li-47">Explain why \(\sum_{i,j \in C}  \pi_i \pi_j\) is the probability that we are in \(C\) at time \(t\) and \(t+T\) for very large \(T\text{.}\) </p></li>
+<li id="li-61"><p id="p-derived-li-61">Explain why \(\sum_{i,j \in C} P^{\top}_{ij}\pi_i\) is the probability that we are in \(C\) at time \(t\) and \(t+1\text{.}\) </p></li>
+<li id="li-62"><p id="p-derived-li-62">Explain why \(\sum_{i,j \in C}  \pi_i \pi_j\) is the probability that we are in \(C\) at time \(t\) and \(t+T\) for very large \(T\text{.}\) </p></li>
 </ol>
 </li>
-<li id="li-48"><p id="p-derived-li-48">Modularity is the difference of the two quantities in part (b). Using this random walk interpretation, why is this difference a measure of community structure?</p></li>
+<li id="li-63"><p id="p-derived-li-63">Modularity is the difference of the two quantities in part (b). Using this random walk interpretation, why is this difference a measure of community structure?</p></li>
 </ol></article></section></section></div></main>
 </div>
 </body>

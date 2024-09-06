@@ -160,14 +160,14 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="navsmallworld"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.6</span> <span class="title">Navigable Small World Model</span>
 </h2>
-<section class="introduction" id="introduction-17"><p id="p-416">The Small World Model of Strogatz and Watts contains short paths, but they are very hard to find! In this activity, we study a variation of Kleinberg's Navigable Small World Model. We start with a cycle on \(n+1\) vertices \(\{0,1,2,\ldots n\}\text{.}\) Then each vertex chooses a (one-way) "long-range contact" according to</p>
+<section class="introduction" id="introduction-17"><p id="p-442">The Small World Model of Strogatz and Watts contains short paths, but they are very hard to find! In this activity, we study a variation of Kleinberg's Navigable Small World Model. We start with a cycle on \(n+1\) vertices \(\{0,1,2,\ldots n\}\text{.}\) Then each vertex chooses a (one-way) "long-range contact" according to</p>
 <div class="displaymath">
 \begin{equation*}
 \Pr[ u \mbox{ is } v\mbox{'s long range contact}] = C \cdot \frac{1}{d(u,v)}.
 \end{equation*}
 </div>
 <p class="continuation">where \(C\) is our normalizing constant and \(d(u,v)\) is the ring distance between nodes \(u\) and \(v\text{.}\) <div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/small-world.png" class="contained"></div> We consider the following greedy routing strategy from source vertex \(s\) to target vertex \(t\text{:}\)</p>
-<ul class="disc"><li id="li-250"><p id="p-417"><em class="emphasis">move as close to the target as possible, either by walking on the ring edge, or following the long-range edge (when this takes us closer to \(t\)).</em></p></li></ul>
+<ul class="disc"><li id="li-265"><p id="p-443"><em class="emphasis">move as close to the target as possible, either by walking on the ring edge, or following the long-range edge (when this takes us closer to \(t\)).</em></p></li></ul>
 <p class="continuation">Consider a journey from source vertex \(s\) to target vertex \(t\text{.}\) We will consider the "worst case" of starting at vertex \(0\) and trying to get to vertex \(n/2\text{.}\) You will show that the expected number of steps in this journey is</p>
 <div class="displaymath">
 \begin{equation*}
@@ -175,8 +175,8 @@ O \left( (\log n)^2 \right)
 \end{equation*}
 </div>
 <p class="continuation">where \(\log n = \log_2 n\) is the base-2 logarithm of \(n\text{.}\)</p>
-<p id="p-418">In order to prove this result, we will divide our journey from \(s\) to \(t\) into phases:</p>
-<ul class="disc"><li id="li-251"><p id="p-419">phase \(j\) = ring distance \(d\) to target vertex satisfies \(2^j \leq d &lt; 2^{j+1}\text{.}\)</p></li></ul>
+<p id="p-444">In order to prove this result, we will divide our journey from \(s\) to \(t\) into phases:</p>
+<ul class="disc"><li id="li-266"><p id="p-445">phase \(j\) = ring distance \(d\) to target vertex satisfies \(2^j \leq d &lt; 2^{j+1}\text{.}\)</p></li></ul>
 <p class="continuation">Note that these phases are indexed in reverse.  That is, when we are far from the target \(t\text{,}\) our phase index is <em class="emphasis">larger</em>. In other words, we "count down" the phases. For example, the in the following figure, we start in Phase 3 (at source vertex \(s\)) and end in Phase 0 (at target vertex \(t\)). <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/nav-phases.png" class="contained"></div> Let \(X\) denote the total number of steps in our journey. Let \(X_j\) denote the number of steps taken during phase \(j\text{.}\) In the example above, our journey takes \(X=5\) steps. We have</p>
 <div class="displaymath">
 \begin{equation*}
@@ -193,11 +193,11 @@ X_0 = 1.
 \end{equation*}
 </div>
 <p class="continuation">meaning that the expected number of steps is at most \(K \cdot (\log n)^2\) for some constant \(K &gt; 0\text{.}\) In other words, in a typical network of this kind, our journey takes at most \(O((\log n)^2)\) steps.</p>
-<p id="p-420">Our analysis combines tools from computer science (analysis of algorithms), statistics (probability) and mathematics (calculus, combinatorics).</p></section><section class="exercises" id="exercises-16"><h3 class="heading hide-type">
+<p id="p-446">Our analysis combines tools from computer science (analysis of algorithms), statistics (probability) and mathematics (calculus, combinatorics).</p></section><section class="exercises" id="exercises-16"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Practice Problems</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-76"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<p id="p-421">To check your understanding, explain why the length of the journey from \(s\) to \(t\) is</p>
+<p id="p-447">To check your understanding, explain why the length of the journey from \(s\) to \(t\) is</p>
 <div class="displaymath">
 \begin{equation*}
 X = \sum_{k=0}^{\lfloor \log (n/2) \rfloor} X_k
@@ -205,18 +205,18 @@ X = \sum_{k=0}^{\lfloor \log (n/2) \rfloor} X_k
 </div>
 <p class="continuation">In other words, be sure that you understand</p>
 <ul class="disc">
-<li id="li-252"><p id="p-422">how we have partitioned the journey into phases, and</p></li>
-<li id="li-253"><p id="p-423">why the upper limit of the sum is \(\lfloor \log (n/2) \rfloor.\)</p></li>
+<li id="li-267"><p id="p-448">how we have partitioned the journey into phases, and</p></li>
+<li id="li-268"><p id="p-449">why the upper limit of the sum is \(\lfloor \log (n/2) \rfloor.\)</p></li>
 </ul>
 <p class="continuation">From here forward, we will omit the floor function from our expressions, and write \(\log (n/2) \) when we actually mean \(\lfloor \log (n/2) \rfloor\text{.}\) We trust that you know that we need to use integer values.</p>
-<p id="p-424">Okay, you now understand this formula for a given network. In the rest of this activity, we will calculate the expected length of a journey on a randomly generated network. We use linearity of expectation to write the  expected length of this journey as the sum of the expected lengths of the phases:</p>
+<p id="p-450">Okay, you now understand this formula for a given network. In the rest of this activity, we will calculate the expected length of a journey on a randomly generated network. We use linearity of expectation to write the  expected length of this journey as the sum of the expected lengths of the phases:</p>
 <div class="displaymath">
 \begin{equation*}
 \E[X] = \E \left[ \sum_{k=0}^{\log (n/2)} X_k \right] =
 \sum_{k=0}^{\log (n/2)} E[X_k].
 \end{equation*}
 </div></article><article class="exercise exercise-like" id="exercise-77"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<p id="p-425">The random long-range contact is chosen according to the PMF</p>
+<p id="p-451">The random long-range contact is chosen according to the PMF</p>
 <div class="displaymath">
 \begin{equation*}
 \Pr[ v \mbox{ is } u \mbox{'s long range contact}] = C \cdot \frac{1}{d(u,v)}.
@@ -234,10 +234,10 @@ C &gt; \frac{1}{2\log n}
 \sum_{i=1}^{k} \frac{1}{i} \leq 1 +  \mbox{ln}(k)  \leq  1 + \log_2(k).
 \end{equation*}
 </div></article><article class="exercise exercise-like" id="exercise-78"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-426">Consider a vertex \(v\) with ring distance \(d=d(v,t)\) satisfying \(2^j \leq d &lt; 2^{j+1}\text{.}\)</p>
+<p id="p-452">Consider a vertex \(v\) with ring distance \(d=d(v,t)\) satisfying \(2^j \leq d &lt; 2^{j+1}\text{.}\)</p>
 <ol class="lower-alpha">
-<li id="li-254">
-<p id="p-427">Let</p>
+<li id="li-269">
+<p id="p-453">Let</p>
 <div class="displaymath">
 \begin{equation*}
 A = \{ w \mid d(w,t) \leq d/2 \}
@@ -257,16 +257,16 @@ A = \{ w \mid d(w,t) \leq d/2 \}
 </div>
 <p class="continuation">for all \(w \in A\text{.}\) </p>
 </li>
-<li id="li-255">
-<p id="p-428">Prove that</p>
+<li id="li-270">
+<p id="p-454">Prove that</p>
 <div class="displaymath">
 \begin{equation*}
 \displaystyle{\Pr[v \mbox{'s long-range contact is in } A] \geq  \frac{1}{3 \log n}}.
 \end{equation*}
 </div>
 </li>
-<li id="li-256">
-<p id="p-429">Use part (b) to prove that</p>
+<li id="li-271">
+<p id="p-455">Use part (b) to prove that</p>
 <div class="displaymath">
 \begin{equation*}
 \displaystyle{\Pr[\mbox{round } j \mbox{ lasts at least } i  \mbox{ steps}] \leq  \left( 1 - \frac{1}{ 3 \log n} \right)^{i-1}}.
@@ -274,7 +274,7 @@ A = \{ w \mid d(w,t) \leq d/2 \}
 </div>
 </li>
 </ol></article><article class="exercise exercise-like" id="exercise-79"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
-<p id="p-430">Here is very useful fact from probability. Let \(X\) be any random variable taking on positive integer values. We can write the expected value of \(X\) as</p>
+<p id="p-456">Here is very useful fact from probability. Let \(X\) be any random variable taking on positive integer values. We can write the expected value of \(X\) as</p>
 <div class="displaymath">
 \begin{equation*}
 \E[X] = \sum_{k=1}^{\infty} \Pr[X \geq k].
@@ -287,13 +287,13 @@ A = \{ w \mid d(w,t) \leq d/2 \}
 \end{equation*}
 </div>
 <p class="continuation">and the right hand side is the definition of \(\E[X]\text{.}\)</p>
-<p id="p-431">Use this new formula for \(\E[X]\) and part 3(c) to prove that</p>
+<p id="p-457">Use this new formula for \(\E[X]\) and part 3(c) to prove that</p>
 <div class="displaymath">
 \begin{equation*}
 E[X_j] \leq 3 \log n.
 \end{equation*}
 </div></article><article class="exercise exercise-like" id="exercise-80"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
-<p id="p-432">Use problems 1 and 4 to conclude that an average journey takes at most</p>
+<p id="p-458">Use problems 1 and 4 to conclude that an average journey takes at most</p>
 <div class="displaymath">
 \begin{equation*}
 O((\log n)^2)
