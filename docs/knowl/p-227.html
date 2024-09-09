@@ -12,34 +12,26 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>In general, it is easier to pretend that we are dealing with a continuous distribution (rather than a discrete distribution). So we will talk about a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">probability density function (PDF)</em> \(p: [k_{\min}, n] \rightarrow [0,1]\) given by</p>
+<p>Suppose that we have a \(2 \times 2\) matrix with spectral decomposition</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-p(x) = C x^{-\alpha}
+A =  \lambda_1 \bu_1 \bu_1^{\top} + \lambda_2 \bu_2 \bu_2^{\top}
 \end{equation*}
 </div>
-<p class="continuation">rather than a PMF. You can find the constant \(C = (\alpha-1)k_{\min}^{\alpha-1} \) as you did in the previous problem. But let's just keep calling it \(C\) for now.</p>
+<p class="continuation">where \(\bu_1, \bu_2\) are orthonormal eigenvectors for eigenvalues \(\lambda_1\) and \(\lambda_2\text{.}\)  Since these vectors are orthonormal, we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\bu_1^{\top} \bu_1=1,  \bu_1^{\top} \bu_2=0,  \bu_2^{\top} \bu_1=0 , \bu_2^{\top} \bu_2=1.
+\end{equation*}
+</div>
+<p class="continuation">The goal of this question is to estimate  \(A^n \bx\) for large \(n\text{,}\) where \(\bx \in \R^2\) is an arbitrary vector.</p>
 <ol class="lower-alpha">
-<li>
-<p>Let \(X\) be a random variable governed by the continuous PDF \(p(x)\text{.}\) Find</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\E[X] = \int_{x=k_{\min}}^{n} x p(x) dx.
-\end{equation*}
-</div>
-</li>
-<li>
-<p>The \(m\)th moment of \(X\) is</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\E[X^m] = \int_{x=k_{\min}}^{n} x^m p(x) dx.
-\end{equation*}
-</div>
-<p class="continuation">Calculate it. </p>
-</li>
-<li><p>Look at your answers for parts (a) and (b) and think about what happens as \(n \rightarrow \infty\text{.}\) For what values of \(\alpha\) does \(\E[X]\) converge? When does the \(m\)th moment \(\E[X^m]\) converge? </p></li>
-<li><p>Recall that most observed power laws have \(2 \leq \alpha \leq 3\text{.}\) In this range, does the expected value converge? Which moments converge, and which moments diverge? </p></li>
+<li><p>Find the spectral decomposition for \(A^2=AA\) by using the spectral decomposition for each \(A\text{,}\) and then multiplying out. </p></li>
+<li><p>What is  the spectral decomposition of \(A^3 =A^2A\text{?}\) How about the spectral decomposition of \(A^n\text{?}\) </p></li>
+<li><p>The orthonormal vectors \(\bu_1, \bu_2\) form a basis for \(\R^2\text{.}\) So we can write any vector \(\bx \in \R^2\) as \(\bx = c_1 \bu_1 + c_2 \bu_2\text{.}\) Use your answer from part (b) to find an expression for \(A^n \bx\text{.}\) </p></li>
+<li><p>Now let's suppose that \(|\lambda_1| &gt; |\lambda_2|\) and that \(\bx\) is such that  \(c_1 \neq 0\text{.}\) Explain why \(A^n \bx \approx k \bu_1\) for some constant \(k\text{.}\) </p></li>
 </ol>
-<span class="incontext"><a href="powerlaw.html#p-227">in-context</a></span>
+<p class="continuation">You have now shown that \(A^n \bx\) is converges to a vector in the span of the eigenvector \(\bu_1\) corresponding to the largest eigenvalue \(\lambda_1\text{.}\)</p>
+<span class="incontext"><a href="algcentrality.html#p-227">in-context</a></span>
 </body>
 </html>

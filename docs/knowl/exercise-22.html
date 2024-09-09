@@ -12,29 +12,16 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">Modularity as a Random Walk Measure.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Degree Distribution.</span>
 </h6>
-<p>We can rewrite our modularity equation as</p>
+<p>The <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">degree distribution</em> of a graph is given by</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-Q \, = \, \frac{1}{2m} \sum_{C} \sum_{i,j \in C} \left( A_{ij} - \frac{k_i k_j}{2m} \right) 
-\,= \,  \sum_{C} \sum_{i,j \in C} \left( \frac{A_{ij}}{k_i} \frac{k_i}{2m}  - \frac{k_i }{2m} \frac{k_j }{2m}  \right)	
+p_k =
+\mbox{ the fraction of vertices with degree } k.
 \end{equation*}
 </div>
-<ol class="lower-alpha">
-<li><p>Confirm that this expression is equivalent to<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-Q \, = \, \sum_{C} \sum_{i,j \in C} \left( P^{\top}_{ij}\pi_i  - \pi_i \pi_j  \right)
-\end{equation*}
-</div>where \(P = D^{-1} A\) is the random walk transition matrix and \(\pi\) is its stationary distribution, where \(\pi_i=k_{i}/2m\text{.}\) </p></li>
-<li>
-<p>Consider a random walk whose distribution has converged to the stationary distribution \(\pi\text{.}\)</p>
-<ol class="lower-roman">
-<li><p>Explain why \(\sum_{i,j \in C} P^{\top}_{ij}\pi_i\) is the probability that we are in \(C\) at time \(t\) and \(t+1\text{.}\) </p></li>
-<li><p>Explain why \(\sum_{i,j \in C}  \pi_i \pi_j\) is the probability that we are in \(C\) at time \(t\) and \(t+T\) for very large \(T\text{.}\) </p></li>
-</ol>
-</li>
-<li><p>Modularity is the difference of the two quantities in part (b). Using this random walk interpretation, why is this difference a measure of community structure?</p></li>
-</ol></article><span class="incontext"><a href="modularity.html#exercise-22">in-context</a></span>
+<p class="continuation">What is the degree distribution \((p_1, p_2, \ldots)\) of this graph? <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 25%; margin-left: 37.5%; margin-right: 37.5%;"><img src="images/small_network.png" class="contained"></div></p>
+<p></p></article><span class="incontext"><a href="powerlaw.html#exercise-22">in-context</a></span>
 </body>
 </html>

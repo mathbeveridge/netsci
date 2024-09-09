@@ -60,8 +60,7 @@ pull the name of the problem from the first line  of  the \item
             <title>Analyzing Networks</title>
             <chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ch-community">
                 <title>Networks and Communities</title>
-                <xi:include href="./graphs.xml" />   
-                <xi:include href="./randomwalk.xml" />                  
+                <xi:include href="./graphs.xml" />                 
                 <xi:include href="./modularity.xml" />    
                 <xi:include href="./communities.xml" />  
             </chapter>
@@ -77,6 +76,7 @@ pull the name of the problem from the first line  of  the \item
                 <title>Centralities</title>                              
                 <xi:include href="./centrality.xml" />                  
                 <xi:include href="./algcentrality.xml" />
+                <xi:include href="./randomwalk.xml" />    
                 <xi:include href="./hits.xml" />    
                 <xi:include href="./airlines.xml" />    
             </chapter>

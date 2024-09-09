@@ -12,27 +12,20 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Repeated Multiplications and Spectral Decomposition.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7<span class="period">.</span></span><span class="space"> </span><span class="title">Random Walk on a Directed Graph.</span>
 </h6>
-<p>Suppose that we have a \(2 \times 2\) matrix with spectral decomposition</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-A =  \lambda_1 \bu_1 \bu_1^{\top} + \lambda_2 \bu_2 \bu_2^{\top}
-\end{equation*}
-</div>
-<p class="continuation">where \(\bu_1, \bu_2\) are orthonormal eigenvectors for eigenvalues \(\lambda_1\) and \(\lambda_2\text{.}\)  Since these vectors are orthonormal, we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\bu_1^{\top} \bu_1=1,  \bu_1^{\top} \bu_2=0,  \bu_2^{\top} \bu_1=0 , \bu_2^{\top} \bu_2=1.
-\end{equation*}
-</div>
-<p class="continuation">The goal of this question is to estimate  \(A^n \bx\) for large \(n\text{,}\) where \(\bx \in \R^2\) is an arbitrary vector.</p>
+<p>Things don't work out as nicely on directed graphs. We will work through an example to see some of the strange behaviors that can arise.</p>
 <ol class="lower-alpha">
-<li><p>Find the spectral decomposition for \(A^2=AA\) by using the spectral decomposition for each \(A\text{,}\) and then multiplying out. </p></li>
-<li><p>What is  the spectral decomposition of \(A^3 =A^2A\text{?}\) How about the spectral decomposition of \(A^n\text{?}\) </p></li>
-<li><p>The orthonormal vectors \(\bu_1, \bu_2\) form a basis for \(\R^2\text{.}\) So we can write any vector \(\bx \in \R^2\) as \(\bx = c_1 \bu_1 + c_2 \bu_2\text{.}\) Use your answer from part (b) to find an expression for \(A^n \bx\text{.}\) </p></li>
-<li><p>Now let's suppose that \(|\lambda_1| &gt; |\lambda_2|\) and that \(\bx\) is such that  \(c_1 \neq 0\text{.}\) Explain why \(A^n \bx \approx k \bu_1\) for some constant \(k\text{.}\) </p></li>
-</ol>
-<p class="continuation">You have now shown that \(A^n \bx\) is converges to a vector in the span of the eigenvector \(\bu_1\) corresponding to the largest eigenvalue \(\lambda_1\text{.}\)</p></article><span class="incontext"><a href="algcentrality.html#exercise-44">in-context</a></span>
+<li><p>Find the transition matrix \(P\) of the following directed graph. Hint: construct \(P\) row by row. <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="./images/directed-graph.png" class="contained"></div> </p></li>
+<li>
+<p>Confirm that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+P \bone = \bone.
+\end{equation*}
+</div>
+<p class="continuation">What is the meaning of this equation? </p>
+</li>
+</ol></article><span class="incontext"><a href="randomwalk.html#exercise-44">in-context</a></span>
 </body>
 </html>

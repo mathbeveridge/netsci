@@ -12,32 +12,47 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Understanding Modularity, Part I.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Poisson Random Variable.</span>
 </h6>
-<p>Modularity measures the extent to which edges are internal to communities, compared with spanning different communities. We will explain why this is the case. Basically, we are comparing the actual structure of the network with the expected structure of a network where we randomize the edges (but preserve the vertex degrees).</p>
+<p>The Poisson random variable \(Z\) for parameter \(\lambda &gt; 0\) has PMF given by</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+p(k) = e^{-\lambda} \frac{\lambda^k}{k!}.
+\end{equation*}
+</div>
 <ol class="lower-alpha">
 <li>
-<p>Explain why the following expression counts the total number of edges</p>
+<p>Use the fact that</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{1}{2} \sum_{i}  \sum_{j}  A_{ij} 
+\sum_{k=0}^{\infty} \frac{x^k}{k!} = e^{x}
+\end{equation*}
+</div>
+<p class="continuation">to prove that  \(p(k)\) is a PMF. </p>
+</li>
+<li>
+<p>Show that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[Z] = \lambda.
 \end{equation*}
 </div>
 </li>
 <li>
-<p>Now explain why the following expression counts the total number of edges that are <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">internal</em> to one of the designated communities.</p>
+<p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">[Don't solve this one. The calculation isn't as bad as the other variance calculations above. But it is still a bit long.]</em> It can be shown that</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{1}{2}  \sum_{i}  \sum_{j} A_{ij}  \, \delta (C^{(i)}, C^{(j)})
+\var[Z] = \lambda
 \end{equation*}
 </div>
-<p class="continuation">which can also be written as</p>
+<p class="continuation">as well! Again, we need to use the trick</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{1}{2} \sum_{C} \sum_{i \in C} \sum_{j \in C} A_{ij}.
+\E[Z^2] = \E[Z(Z-1)] + \E[Z].
 \end{equation*}
 </div>
+<p class="continuation">This time, we also need to be comfortable with reindexing infinite series. </p>
 </li>
-</ol></article><span class="incontext"><a href="modularity.html#exercise-20">in-context</a></span>
+</ol></article><span class="incontext"><a href="probdist.html#exercise-20">in-context</a></span>
 </body>
 </html>

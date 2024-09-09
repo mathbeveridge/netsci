@@ -105,10 +105,10 @@
 </div></div>
 <nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="graphs.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch-community.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="modularity.html" title="Next">Next</a></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="algcentrality.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch-centrality.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="hits.html" title="Next">Next</a></span></div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="graphs.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch-community.html" title="Up">Up</a><a class="next-button button toolbar-item" href="modularity.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="algcentrality.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch-centrality.html" title="Up">Up</a><a class="next-button button toolbar-item" href="hits.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -118,7 +118,6 @@
 <li class="link">
 <a href="ch-community.html" data-scroll="ch-community"><span class="codenumber">1</span> <span class="title">Networks and Communities</span></a><ul>
 <li><a href="graphs.html" data-scroll="graphs">Graphs and Digraphs</a></li>
-<li><a href="randomwalk.html" data-scroll="randomwalk" class="active">Random Walks</a></li>
 <li><a href="modularity.html" data-scroll="modularity">Modularity</a></li>
 <li><a href="communities.html" data-scroll="communities">Community Detection in Gephi</a></li>
 </ul>
@@ -134,6 +133,7 @@
 <a href="ch-centrality.html" data-scroll="ch-centrality"><span class="codenumber">3</span> <span class="title">Centralities</span></a><ul>
 <li><a href="centrality.html" data-scroll="centrality">Centrality Measures</a></li>
 <li><a href="algcentrality.html" data-scroll="algcentrality">Algebraic Centrality</a></li>
+<li><a href="randomwalk.html" data-scroll="randomwalk" class="active">Random Walks</a></li>
 <li><a href="hits.html" data-scroll="hits">Hubs and Authorities</a></li>
 <li><a href="us-airline.html" data-scroll="us-airline">Analyzing the US Airline Network</a></li>
 </ul>
@@ -158,11 +158,11 @@
 </ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="randomwalk"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">1.2</span> <span class="title">Random Walks</span>
+<span class="type">Section</span> <span class="codenumber">3.3</span> <span class="title">Random Walks</span>
 </h2>
-<section class="introduction" id="introduction-2"><p id="p-39">A <em class="emphasis">random walk</em> starting at vertex \(v_0\) proceeds as follows: at each time \(t \geq 1\text{,}\) pick a random out-neighbor of \(v_{t-1}\) and walk to it. If vertex \(v_{t-1}\) has no out-neighbors, then we stay where we are.</p>
-<p id="p-40">A nice way to "stay where we are" is to add a loop to each vertex with no out-neighbors. So when \(k_i^{\mathrm{out}} = 0\text{,}\) we update the adjacency matrix so that \(a_{ii}=1\text{.}\) So we will assume that this is the case.</p>
-<p id="p-41">At each step, \(v_t\) is chosen uniformly from the out-neighbors of \(v_{t-1}\text{.}\) Using conditional probability notation, we have</p>
+<section class="introduction" id="introduction-9"><p id="p-241">A <em class="emphasis">random walk</em> starting at vertex \(v_0\) proceeds as follows: at each time \(t \geq 1\text{,}\) pick a random out-neighbor of \(v_{t-1}\) and walk to it. If vertex \(v_{t-1}\) has no out-neighbors, then we stay where we are.</p>
+<p id="p-242">A nice way to "stay where we are" is to add a loop to each vertex with no out-neighbors. So when \(k_i^{\mathrm{out}} = 0\text{,}\) we update the adjacency matrix so that \(a_{ii}=1\text{.}\) So we will assume that this is the case.</p>
+<p id="p-243">At each step, \(v_t\) is chosen uniformly from the out-neighbors of \(v_{t-1}\text{.}\) Using conditional probability notation, we have</p>
 <div class="displaymath">
 \begin{equation*}
 P_{ij} = \Pr (v_t=j \mid v_{t-1} = i ) =
@@ -180,19 +180,19 @@ P_{ij} = \Pr (v_t=j \mid v_{t-1} = i ) =
 P = D^{-1} A
 \end{equation*}
 </div>
-<p class="continuation">where \(D\)  is the diagonal matrix with  \(D_{ii} = \max \left\{ k_i^{\mathrm{out}}, 1 \right\}\) and  \(A\) is the adjacency matrix.</p></section><section class="exercises" id="exercises-2"><h3 class="heading hide-type">
+<p class="continuation">where \(D\)  is the diagonal matrix with  \(D_{ii} = \max \left\{ k_i^{\mathrm{out}}, 1 \right\}\) and  \(A\) is the adjacency matrix.</p></section><section class="exercises" id="exercises-8"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Practice Problems</span>
 </h3>
-<article class="exercise exercise-like" id="exercise-8"><h6 class="heading">
+<article class="exercise exercise-like" id="exercise-38"><h6 class="heading">
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Random Walk on an Undirected Graph.</span>
 </h6>
-<ol id="p-42" class="lower-alpha">
-<li id="li-20">
-<p id="p-43">Find the transition matrix \(P\)  of the following undirected graph. Hint: construct \(P\)   row by row. And remember that when \(k_i^{\mathrm{out}}=0\text{,}\) we set \(a_{ii}=1\text{,}\) corresponding to the move "stay where we are." <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="./images/undirected-graph.png" class="contained"></div></p>
-<p id="p-44"></p>
+<ol id="p-244" class="lower-alpha">
+<li id="li-131">
+<p id="p-245">Find the transition matrix \(P\)  of the following undirected graph. Hint: construct \(P\)   row by row. And remember that when \(k_i^{\mathrm{out}}=0\text{,}\) we set \(a_{ii}=1\text{,}\) corresponding to the move "stay where we are." <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="./images/undirected-graph.png" class="contained"></div></p>
+<p id="p-246"></p>
 </li>
-<li id="li-21">
-<p id="p-45">Show that the all-ones vector \(\bone\) is a right eigenvector for  eigenvalue \(\lambda=1\text{.}\) In other words, confirm that</p>
+<li id="li-132">
+<p id="p-247">Show that the all-ones vector \(\bone\) is a right eigenvector for  eigenvalue \(\lambda=1\text{.}\) In other words, confirm that</p>
 <div class="displaymath">
 \begin{equation*}
 P \bone = \bone.
@@ -200,16 +200,16 @@ P \bone = \bone.
 </div>
 <p class="continuation">What is the meaning of this equation? </p>
 </li>
-</ol></article><article class="exercise exercise-like" id="exercise-9"><h6 class="heading">
+</ol></article><article class="exercise exercise-like" id="exercise-39"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Long Term Behavior of a Random Walk of an Undirected Graph.</span>
 </h6>
-<p id="p-46">Consider the undirected graph from Problem 1. In your mind, repeatedly simulate a random walk starting from vertex 1. Follow this walk for about 15 steps or so. Where are you most likely to end up? Least likely? How do your observations relate to:  the distance of the vertex from vertex 1? the degree of the  vertex?</p>
-<p id="p-47"></p></article><article class="exercise exercise-like" id="exercise-10"><h6 class="heading">
+<p id="p-248">Consider the undirected graph from Problem 1. In your mind, repeatedly simulate a random walk starting from vertex 1. Follow this walk for about 15 steps or so. Where are you most likely to end up? Least likely? How do your observations relate to:  the distance of the vertex from vertex 1? the degree of the  vertex?</p>
+<p id="p-249"></p></article><article class="exercise exercise-like" id="exercise-40"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Powers of the Transition Matrix.</span>
 </h6>
-<ol id="p-48" class="lower-alpha">
-<li id="li-22">
-<p id="p-49">Here is the matrix \(P^2\) for the undirected graph in Problem 1.</p>
+<ol id="p-250" class="lower-alpha">
+<li id="li-133">
+<p id="p-251">Here is the matrix \(P^2\) for the undirected graph in Problem 1.</p>
 <div class="displaymath">
 \begin{equation*}
 P^2 =
@@ -225,10 +225,10 @@ P^2 =
 </div>
 <p class="continuation">What does row \(i\) tell you about the instruction "take two random steps from vertex \(i\text{?}\)" </p>
 </li>
-<li id="li-23"><p id="p-50">Using part (a) as a guide, give an interpretation for row \(i\) of the matrix \(P^3\text{.}\) </p></li>
-<li id="li-24"><p id="p-51">What do the rows of matrix \(P^t\) describe? </p></li>
-<li id="li-25">
-<p id="p-52">For \(1 \leq i \leq 6\text{,}\) let \(\mathbf{e}_i\) denote the " elementary vector" whose \(j\)-th entry is</p>
+<li id="li-134"><p id="p-252">Using part (a) as a guide, give an interpretation for row \(i\) of the matrix \(P^3\text{.}\) </p></li>
+<li id="li-135"><p id="p-253">What do the rows of matrix \(P^t\) describe? </p></li>
+<li id="li-136">
+<p id="p-254">For \(1 \leq i \leq 6\text{,}\) let \(\mathbf{e}_i\) denote the " elementary vector" whose \(j\)-th entry is</p>
 <div class="displaymath">
 \begin{equation*}
 \mathbf{e}_i(j) = \left\{
@@ -249,7 +249,7 @@ P^2 =
 \mathbf{e}_5&amp;= \begin{bmatrix} 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix}
 \end{align*}
 </div>
-<p id="p-53">What does the vector</p>
+<p id="p-255">What does the vector</p>
 <div class="displaymath">
 \begin{equation*}
 \mathbf{e}_i \, P^t
@@ -257,10 +257,10 @@ P^2 =
 </div>
 <p class="continuation">describe? </p>
 </li>
-</ol></article><article class="exercise exercise-like" id="exercise-11"><h6 class="heading">
+</ol></article><article class="exercise exercise-like" id="exercise-41"><h6 class="heading">
 <span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">A Left Eigenvector for an Undirected Graph.</span>
 </h6>
-<p id="p-54">Let \(P\) be the transition matrix for the graph in Problem 1. Consider the row vector</p>
+<p id="p-256">Let \(P\) be the transition matrix for the graph in Problem 1. Consider the row vector</p>
 <div class="displaymath">
 \begin{equation*}
 \bv =
@@ -274,8 +274,8 @@ v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6
 \end{equation*}
 </div>
 <ol class="lower-alpha">
-<li id="li-26">
-<p id="p-55">Check that the row vector \(\bv\) satisfies</p>
+<li id="li-137">
+<p id="p-257">Check that the row vector \(\bv\) satisfies</p>
 <div class="displaymath">
 \begin{equation*}
 \bv  \,P = \bv.
@@ -283,22 +283,22 @@ v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6
 </div>
 <p class="continuation">We have a name for this equation: say that "\(\bv\) is a <em class="emphasis">left</em> eigenvector of the transition matrix \(P\) for eigenvalue \(\lambda=1\text{.}\)" (In other words, the eigenvectors that you are used to are actually <em class="emphasis">right</em> eigenvectors.) </p>
 </li>
-<li id="li-27"><p id="p-56">Relate the entries of \(\bv\) to the degrees of the graph. </p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-12"><h6 class="heading">
+<li id="li-138"><p id="p-258">Relate the entries of \(\bv\) to the degrees of the graph. </p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-42"><h6 class="heading">
 <span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Stationary Distribution for an Undirected Graph.</span>
 </h6>
-<p id="p-57">A vector whose entries are nonnegative and sum to one correspond to a <em class="emphasis">probability distribution</em> on the vertices of \(G\text{.}\) A distribution \(\pi\) is  <em class="emphasis">stationary</em> for \(P\) when</p>
+<p id="p-259">A vector whose entries are nonnegative and sum to one correspond to a <em class="emphasis">probability distribution</em> on the vertices of \(G\text{.}\) A distribution \(\pi\) is  <em class="emphasis">stationary</em> for \(P\) when</p>
 <div class="displaymath">
 \begin{equation*}
 \pi P = \pi.
 \end{equation*}
 </div>
 <p class="continuation">The amazing Perron-Frobenius Theorem (a very general theorem) can be applied to the transition matrix \(P\) for a connected, non-bipartite undirected graph.</p>
-<p id="p-58">In particular, it applies to the matrix \(P\) from the previous problems. And it tells us more information about the left eigenvector  \(\bv\text{.}\) Two of the properties that it tells us are:</p>
+<p id="p-260">In particular, it applies to the matrix \(P\) from the previous problems. And it tells us more information about the left eigenvector  \(\bv\text{.}\) Two of the properties that it tells us are:</p>
 <ul class="disc">
-<li id="li-28"><p id="p-59">All of the other eigenvalues satisify \(| \lambda_i| &lt; 1\text{.}\) In other words, \(\bv\) is the <em class="emphasis">dominant eigenvector</em> of \(P\text{.}\)</p></li>
-<li id="li-29">
-<p id="p-60">Assuming that we have scaled the row vector \(\bv\) so that its entries sum to 1, we have</p>
+<li id="li-139"><p id="p-261">All of the other eigenvalues satisify \(| \lambda_i| &lt; 1\text{.}\) In other words, \(\bv\) is the <em class="emphasis">dominant eigenvector</em> of \(P\text{.}\)</p></li>
+<li id="li-140">
+<p id="p-262">Assuming that we have scaled the row vector \(\bv\) so that its entries sum to 1, we have</p>
 <div class="displaymath">
 \begin{align*}
 \lim_{t \rightarrow \infty} P^t  \, = \, \bone \,  \bv
@@ -313,7 +313,7 @@ v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
 \end{bmatrix}
 \end{align*}
 </div>
-<p id="p-61">where</p>
+<p id="p-263">where</p>
 <div class="displaymath">
 \begin{equation*}
 \bv =
@@ -330,17 +330,17 @@ v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6
 </ul>
 <p class="continuation">Given this information:</p>
 <ol class="lower-alpha">
-<li id="li-30"><p id="p-62">What new properties do we now know about the vector (and probability distributrion) \(\bv\text{?}\) </p></li>
-<li id="li-31"><p id="p-63">After taking many random steps, what is the probability that we are at vertex \(i\text{?}\) </p></li>
-</ol></article><article class="exercise exercise-like" id="exercise-13"><h6 class="heading">
+<li id="li-141"><p id="p-264">What new properties do we now know about the vector (and probability distributrion) \(\bv\text{?}\) </p></li>
+<li id="li-142"><p id="p-265">After taking many random steps, what is the probability that we are at vertex \(i\text{?}\) </p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-43"><h6 class="heading">
 <span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">Undirected Graphs: the General Case.</span>
 </h6>
-<p id="p-64">In the previous questions, you have focused on a particular undirected graph. Take a step back: these observations also hold in general!</p>
-<p id="p-65">Let \(G\) be a connected, aperiodic, undirected graph with adjacency matrix \(A\) and transition matrix \(P = D^{-1}A\text{.}\)</p>
+<p id="p-266">In the previous questions, you have focused on a particular undirected graph. Take a step back: these observations also hold in general!</p>
+<p id="p-267">Let \(G\) be a connected, aperiodic, undirected graph with adjacency matrix \(A\) and transition matrix \(P = D^{-1}A\text{.}\)</p>
 <ol class="lower-alpha">
-<li id="li-32"><p id="p-66">Explain why \(P \bone = \bone\text{.}\) </p></li>
-<li id="li-33">
-<p id="p-67">Let \(\pi\) be the row vector</p>
+<li id="li-143"><p id="p-268">Explain why \(P \bone = \bone\text{.}\) </p></li>
+<li id="li-144">
+<p id="p-269">Let \(\pi\) be the row vector</p>
 <div class="displaymath">
 \begin{equation*}
 \pi =
@@ -356,9 +356,9 @@ v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6
 \end{equation*}
 </div>
 </li>
-<li id="li-34"><p id="p-68">What is the meaning of the row vector \(\mathbf{e}_i \, P^t\text{,}\) where \(\mathbf{e}_i\) is the elementary vector from Problem 3(d)? </p></li>
-<li id="li-35">
-<p id="p-69">Explain why we have</p>
+<li id="li-145"><p id="p-270">What is the meaning of the row vector \(\mathbf{e}_i \, P^t\text{,}\) where \(\mathbf{e}_i\) is the elementary vector from Problem 3(d)? </p></li>
+<li id="li-146">
+<p id="p-271">Explain why we have</p>
 <div class="displaymath">
 \begin{equation*}
 \lim_{t \rightarrow \infty} \mathbf{e}_i \, P^t = \pi.
@@ -366,14 +366,14 @@ v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6
 </div>
 <p class="continuation">What does this equation mean for a random walk starting at vertex \(i\text{?}\) </p>
 </li>
-</ol></article><article class="exercise exercise-like" id="exercise-14"><h6 class="heading">
+</ol></article><article class="exercise exercise-like" id="exercise-44"><h6 class="heading">
 <span class="codenumber">7<span class="period">.</span></span><span class="space"> </span><span class="title">Random Walk on a Directed Graph.</span>
 </h6>
-<p id="p-70">Things don't work out as nicely on directed graphs. We will work through an example to see some of the strange behaviors that can arise.</p>
+<p id="p-272">Things don't work out as nicely on directed graphs. We will work through an example to see some of the strange behaviors that can arise.</p>
 <ol class="lower-alpha">
-<li id="li-36"><p id="p-71">Find the transition matrix \(P\) of the following directed graph. Hint: construct \(P\) row by row. <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="./images/directed-graph.png" class="contained"></div> </p></li>
-<li id="li-37">
-<p id="p-72">Confirm that</p>
+<li id="li-147"><p id="p-273">Find the transition matrix \(P\) of the following directed graph. Hint: construct \(P\) row by row. <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="./images/directed-graph.png" class="contained"></div> </p></li>
+<li id="li-148">
+<p id="p-274">Confirm that</p>
 <div class="displaymath">
 \begin{equation*}
 P \bone = \bone.
@@ -381,16 +381,16 @@ P \bone = \bone.
 </div>
 <p class="continuation">What is the meaning of this equation? </p>
 </li>
-</ol></article><article class="exercise exercise-like" id="exercise-15"><h6 class="heading">
+</ol></article><article class="exercise exercise-like" id="exercise-45"><h6 class="heading">
 <span class="codenumber">8<span class="period">.</span></span><span class="space"> </span><span class="title">Long Term Behavior of a Random Walk on Directed Graph.</span>
 </h6>
-<p id="p-73">Now simulate some random walks on the directed graph from Problem 7. This time, start your walk at vertex 1. You should see a couple of different kinds of behavior for this directed graph. Describe what you observe. <div class="image-box" style="width: 25%; margin-left: 37.5%; margin-right: 37.5%;"><img src="./images/directed-graph.png" class="contained"></div> </p></article><article class="exercise exercise-like" id="exercise-16"><h6 class="heading">
+<p id="p-275">Now simulate some random walks on the directed graph from Problem 7. This time, start your walk at vertex 1. You should see a couple of different kinds of behavior for this directed graph. Describe what you observe. <div class="image-box" style="width: 25%; margin-left: 37.5%; margin-right: 37.5%;"><img src="./images/directed-graph.png" class="contained"></div> </p></article><article class="exercise exercise-like" id="exercise-46"><h6 class="heading">
 <span class="codenumber">9<span class="period">.</span></span><span class="space"> </span><span class="title">An Eigenvector for a Directed Graph.</span>
 </h6>
-<p id="p-74">Let's continue to explore the digraph in Problem 7.</p>
+<p id="p-276">Let's continue to explore the digraph in Problem 7.</p>
 <ol class="lower-alpha">
-<li id="li-38">
-<p id="p-75">Check that the row vector</p>
+<li id="li-149">
+<p id="p-277">Check that the row vector</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
@@ -406,15 +406,15 @@ P \bone = \bone.
 </div>
 <p class="continuation">How does this relate to the behavior you saw in problem 4? What behavior doesn't this capture? </p>
 </li>
-<li id="li-39">
-<p id="p-76">Find a different vector \(\bw \neq \bv\) such that</p>
+<li id="li-150">
+<p id="p-278">Find a different vector \(\bw \neq \bv\) such that</p>
 <div class="displaymath">
 \begin{equation*}
 \bw \, P = \bw.
 \end{equation*}
 </div>
 </li>
-<li id="li-40"><p id="p-77">Pick \(a,b \in \R\)  such that \(a+b=1\text{.}\) What can you say about the vector \(a \bv + b \bw\text{?}\) </p></li>
+<li id="li-151"><p id="p-279">Pick \(a,b \in \R\)  such that \(a+b=1\text{.}\) What can you say about the vector \(a \bv + b \bw\text{?}\) </p></li>
 </ol>
 <p class="continuation">As this problem shows, the eigenvectors for a weakly connected directed graph aren't enough to fully resolve the long-term behavior of random walks. This example has an infinite number of choices of \(a,b\) that produce distinct left eigenvectors. (In fact, the stationary distribution that we end up in depends upon the starting vertex.)</p></article></section></section></div></main>
 </div>

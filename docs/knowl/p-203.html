@@ -12,19 +12,12 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Linearity of expectation applies to the sum of multiple random variables. In particular, an easy proof by induction shows that for any random variables \(X_1, X_2, \ldots, X_n\text{,}\) we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\E[X_1 + X_2 + \cdots + X_n] = \E[X_1] + \E[X_2] + \cdots + \E[X_n]
-\end{equation*}
-</div>
-<p class="continuation">Use this formula to show that</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\E[X] = np.
-\end{equation*}
-</div>
-<p class="continuation">You will have to split your random variable \(X\) into the sum of \(n\) random variables. (Note: you can also prove this directly from part (a), but it is a bit tedious.) </p>
-<span class="incontext"><a href="probdist.html#p-203">in-context</a></span>
+<p>For each of the following graphs, calculate the (unnormalized) degree centrality, betweenness centrality and closeness centrality</p>
+<ol class="lower-alpha">
+<li><p>Degree Centrality  \(c_i^D  = \deg(i) = k_i\) <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality0.svg" role="img" class="contained"></div></p></li>
+<li><p>Betweenness Centrality  \(c_i^B = \displaystyle{\sum_{s \neq i} \sum_{t \neq i, s} \frac{n_{s,t}(i)}{n_{s,t}}}\) <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality1.svg" role="img" class="contained"></div></p></li>
+<li><p>Closeness Centrality  \(c_i^C =  \displaystyle{\frac{1}{\sum_{j} d_{i,j}}}\) <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality2.svg" role="img" class="contained"></div></p></li>
+</ol>
+<span class="incontext"><a href="centrality.html#p-203">in-context</a></span>
 </body>
 </html>

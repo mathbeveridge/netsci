@@ -12,53 +12,40 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Stationary Distribution for an Undirected Graph.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Understanding Modularity, Part II.</span>
 </h6>
-<p>A vector whose entries are nonnegative and sum to one correspond to a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">probability distribution</em> on the vertices of \(G\text{.}\) A distribution \(\pi\) is  <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">stationary</em> for \(P\) when</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\pi P = \pi.
-\end{equation*}
-</div>
-<p class="continuation">The amazing Perron-Frobenius Theorem (a very general theorem) can be applied to the transition matrix \(P\) for a connected, non-bipartite undirected graph.</p>
-<p>In particular, it applies to the matrix \(P\) from the previous problems. And it tells us more information about the left eigenvector  \(\bv\text{.}\) Two of the properties that it tells us are:</p>
-<ul class="disc">
-<li><p>All of the other eigenvalues satisify \(| \lambda_i| &lt; 1\text{.}\) In other words, \(\bv\) is the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">dominant eigenvector</em> of \(P\text{.}\)</p></li>
-<li>
-<p>Assuming that we have scaled the row vector \(\bv\) so that its entries sum to 1, we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\lim_{t \rightarrow \infty} P^t  \, = \, \bone \,  \bv
-&amp;=
-\begin{bmatrix}
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
-\end{bmatrix}
-\end{align*}
-</div>
-<p>where</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\bv =
-\begin{bmatrix}
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6
-\end{bmatrix}
-=
-\begin{bmatrix}
-\frac{2}{14} &amp; \frac{3}{14} &amp; \frac{2}{14} &amp; \frac{3}{14} &amp; \frac{3}{14} &amp; \frac{1}{14}
-\end{bmatrix}.
-\end{equation*}
-</div>
-</li>
-</ul>
-<p class="continuation">Given this information:</p>
+<p>Now we will randomly rewire the network. We keep the ends of the edges, so that the vertex degrees do not change (see the figure to the right). We erase the edges themselves, which gives us a configuration like the one pictured to the right. Next, we randomly add edges between pairs of vertices, until all edges have been redrawn. Loops are allowed, as are multiple edges between pairs of vertices.</p>
+<p>Note that the degree of vertex \(i\) will still be \(k_i\) when this process is done. <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/rewire-vertex.png" class="contained"></div></p>
 <ol class="lower-alpha">
-<li><p>What new properties do we now know about the vector (and probability distributrion) \(\bv\text{?}\) </p></li>
-<li><p>After taking many random steps, what is the probability that we are at vertex \(i\text{?}\) </p></li>
-</ol></article><span class="incontext"><a href="randomwalk.html#exercise-12">in-context</a></span>
+<li><p>Pick the start of one edge at vertex \(i\text{.}\) What is the probability that this rewired edge connects to vertex \(j\text{?}\) </p></li>
+<li><p>So how many rewired edges from vertex \(i\) do we expect to connect to vertex \(j\text{?}\) (Assume that the network is so big that the chance that two ends at \(i\) try to connect  to the same end at \(j\) is irrelevant.) </p></li>
+<li>
+<p>Now argue that the expected number of rewired edges that are internal to the specified communities is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{1}{2} \sum_{i}  \sum_{j}  \frac{k_i k_j}{2m} \, \delta (C^{(i)}, C^{(j)})
+\end{equation*}
+</div>
+<p class="continuation">which can also be written as</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{1}{2} \sum_{C} \sum_{i \in C} \sum_{j \in C}  \frac{k_i k_j}{2m}.		
+\end{equation*}
+</div>
+<p class="continuation">Here, the \(\frac{1}{2}\) takes care of the double counting since our sum looks at the pair \(i,j\) twice. </p>
+</li>
+</ol>
+<p class="continuation">We subtract the expression in question 4(c) from the expression in question 3(b). We then divide by the total number of edges \(m\) (a normalizing factor) to get the modularity</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+Q = \frac{1}{2m} \sum_{i}  \sum_{j}  \left( A_{ij} - \frac{k_i k_j}{2m} \right)\, \delta (C^{(i)}, C^{(j)}),
+\end{equation*}
+</div>
+<p class="continuation">which can also be written as</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+Q = 	\frac{1}{2m} \sum_{C} \sum_{i \in C} \sum_{j \in C} \left( A_{ij} - \frac{k_i k_j}{2m} \right).	
+\end{equation*}
+</div></article><span class="incontext"><a href="modularity.html#exercise-12">in-context</a></span>
 </body>
 </html>

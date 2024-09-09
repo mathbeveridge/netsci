@@ -12,39 +12,29 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">Undirected Graphs: the General Case.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">Modularity as a Random Walk Measure.</span>
 </h6>
-<p>In the previous questions, you have focused on a particular undirected graph. Take a step back: these observations also hold in general!</p>
-<p>Let \(G\) be a connected, aperiodic, undirected graph with adjacency matrix \(A\) and transition matrix \(P = D^{-1}A\text{.}\)</p>
+<p>We can rewrite our modularity equation as</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+Q \, = \, \frac{1}{2m} \sum_{C} \sum_{i,j \in C} \left( A_{ij} - \frac{k_i k_j}{2m} \right) 
+\,= \,  \sum_{C} \sum_{i,j \in C} \left( \frac{A_{ij}}{k_i} \frac{k_i}{2m}  - \frac{k_i }{2m} \frac{k_j }{2m}  \right)	
+\end{equation*}
+</div>
 <ol class="lower-alpha">
-<li><p>Explain why \(P \bone = \bone\text{.}\) </p></li>
+<li><p>Confirm that this expression is equivalent to<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+Q \, = \, \sum_{C} \sum_{i,j \in C} \left( P^{\top}_{ij}\pi_i  - \pi_i \pi_j  \right)
+\end{equation*}
+</div>where \(P = D^{-1} A\) is the random walk transition matrix and \(\pi\) is its stationary distribution, where \(\pi_i=k_{i}/2m\text{.}\) </p></li>
 <li>
-<p>Let \(\pi\) be the row vector</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\pi =
-\begin{bmatrix}
-\frac{k_1}{2m} &amp; \frac{k_2}{2m} &amp;  \cdots &amp; \frac{k_n}{2m}
-\end{bmatrix}
-\end{equation*}
-</div>
-<p class="continuation">where \(n=|V|\) and \(m = |E|\) and \(k_i\) is the degree of vertex \(i\text{.}\) Explain why</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\pi P = \pi.
-\end{equation*}
-</div>
+<p>Consider a random walk whose distribution has converged to the stationary distribution \(\pi\text{.}\)</p>
+<ol class="lower-roman">
+<li><p>Explain why \(\sum_{i,j \in C} P^{\top}_{ij}\pi_i\) is the probability that we are in \(C\) at time \(t\) and \(t+1\text{.}\) </p></li>
+<li><p>Explain why \(\sum_{i,j \in C}  \pi_i \pi_j\) is the probability that we are in \(C\) at time \(t\) and \(t+T\) for very large \(T\text{.}\) </p></li>
+</ol>
 </li>
-<li><p>What is the meaning of the row vector \(\mathbf{e}_i \, P^t\text{,}\) where \(\mathbf{e}_i\) is the elementary vector from Problem 3(d)? </p></li>
-<li>
-<p>Explain why we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\lim_{t \rightarrow \infty} \mathbf{e}_i \, P^t = \pi.
-\end{equation*}
-</div>
-<p class="continuation">What does this equation mean for a random walk starting at vertex \(i\text{?}\) </p>
-</li>
-</ol></article><span class="incontext"><a href="randomwalk.html#exercise-13">in-context</a></span>
+<li><p>Modularity is the difference of the two quantities in part (b). Using this random walk interpretation, why is this difference a measure of community structure?</p></li>
+</ol></article><span class="incontext"><a href="modularity.html#exercise-13">in-context</a></span>
 </body>
 </html>

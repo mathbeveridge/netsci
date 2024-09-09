@@ -12,17 +12,37 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">7<span class="period">.</span></span><span class="space"> </span><span class="title">Recursive Importance in a Digraph.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">9<span class="period">.</span></span><span class="space"> </span><span class="title">An Eigenvector for a Directed Graph.</span>
 </h6>
-<p>Consider the following recursive rule for updating the importance of a vertex.</p>
-<ul class="disc">
-<li><p>At first, all vertices have importance = 1</p></li>
-<li><p>In each round, update the importance of a vertex to be the sum of the importances of its in-neighbors.</p></li>
-</ul>
+<p>Let's continue to explore the digraph in Problem 7.</p>
 <ol class="lower-alpha">
-<li><p>Use this recursive rule to calculate the importance for the following directed graph. What do you observe? <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-algcentrality4.svg" role="img" class="contained"></div> <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/acyclic-digraph.png" class="contained"></div> </p></li>
-<li><p>Use this  recursive rule calculate the importance of each vertex in this directed graph. What do you observe? <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-algcentrality6.svg" role="img" class="contained"></div> <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/digraph-feedback.png" class="contained"></div> </p></li>
-<li><p>Devise a recursive importance rule for directed networks that "fixes the problems" that you observed in parts (a) and (b). </p></li>
-</ol></article><span class="incontext"><a href="algcentrality.html#exercise-46">in-context</a></span>
+<li>
+<p>Check that the row vector</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{bmatrix}
+0 &amp; 0 &amp; 0 &amp; 0 &amp; \frac{1}{2} &amp; \frac{1}{2}
+\end{bmatrix}
+\end{equation*}
+</div>
+<p class="continuation">satisfies</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\bv \, P = \bv.
+\end{equation*}
+</div>
+<p class="continuation">How does this relate to the behavior you saw in problem 4? What behavior doesn't this capture? </p>
+</li>
+<li>
+<p>Find a different vector \(\bw \neq \bv\) such that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\bw \, P = \bw.
+\end{equation*}
+</div>
+</li>
+<li><p>Pick \(a,b \in \R\)  such that \(a+b=1\text{.}\) What can you say about the vector \(a \bv + b \bw\text{?}\) </p></li>
+</ol>
+<p class="continuation">As this problem shows, the eigenvectors for a weakly connected directed graph aren't enough to fully resolve the long-term behavior of random walks. This example has an infinite number of choices of \(a,b\) that produce distinct left eigenvectors. (In fact, the stationary distribution that we end up in depends upon the starting vertex.)</p></article><span class="incontext"><a href="randomwalk.html#exercise-46">in-context</a></span>
 </body>
 </html>

@@ -12,22 +12,14 @@
 </head>
 <body>
 <article class="exercise exercise-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Random Walk on an Undirected Graph.</span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Modularity Calculation.</span>
 </h6>
+<p>Consider the following network with \(V = \{ 1, 2, 3, 4 \}\) and \(E = \{ (1,2), (3,4) \}\text{.}\) Confirm that the modularity scores of the following four partitions by filling in the summands for \(1 \leq i,j \leq 4\text{.}\) Use this <a class="external" href="https://docs.google.com/spreadsheets/d/1kEP0CkUeG9s0RrJDtZcSmkDRKR7JWryNItu4b60pYYs/edit?usp=sharing" target="_blank">link to a Google Sheet</a> to speed up calculations. Pay attention to the modularity contributions for various pairs of nodes. In particular, when \(i\) and \(j\) are in different communities, the corresponding summand is zero.</p>
 <ol class="lower-alpha">
-<li>
-<p>Find the transition matrix \(P\)  of the following undirected graph. Hint: construct \(P\)   row by row. And remember that when \(k_i^{\mathrm{out}}=0\text{,}\) we set \(a_{ii}=1\text{,}\) corresponding to the move "stay where we are." <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="./images/undirected-graph.png" class="contained"></div></p>
-<p></p>
-</li>
-<li>
-<p>Show that the all-ones vector \(\bone\) is a right eigenvector for  eigenvalue \(\lambda=1\text{.}\) In other words, confirm that</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-P \bone = \bone.
-\end{equation*}
-</div>
-<p class="continuation">What is the meaning of this equation? </p>
-</li>
-</ol></article><span class="incontext"><a href="randomwalk.html#exercise-8">in-context</a></span>
+<li><p>A single community. <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/fig-img-modularity0.svg" role="img" class="contained"></div> </p></li>
+<li><p>Two communities with no external edges. <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/fig-img-modularity1.svg" role="img" class="contained"></div> </p></li>
+<li><p>Two communities with no internal edges. <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/fig-img-modularity2.svg" role="img" class="contained"></div> </p></li>
+<li><p>Two communities of sizes 3 and 1. <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/fig-img-modularity3.svg" role="img" class="contained"></div> </p></li>
+</ol></article><span class="incontext"><a href="modularity.html#exercise-8">in-context</a></span>
 </body>
 </html>
