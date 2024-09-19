@@ -12,53 +12,57 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Consider the following digraph <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/hub-auth-digraph.png" class="contained"></div> with adjacency matrix</p>
+<ol class="lower-alpha">
+<li>
+<p>Here is the matrix \(P^2\) for the undirected graph in Problem 1.</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-A = \begin{bmatrix}
-0 &amp; 1 &amp; 0 &amp; 0 &amp; 0  \\
-0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 \\
-0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
-0  &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; 1 &amp; 0
-\end{bmatrix}.
+P^2 =
+\begin{bmatrix}
+\frac{1}{3} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; 0 \\[6pt]
+\frac{1}{9} &amp; \frac{4}{9} &amp; 0 &amp; \frac{5}{18} &amp; \frac{1}{6} &amp; 0 \\[6pt]
+\frac{1}{6} &amp; 0 &amp; \frac{1}{3} &amp; 0 &amp; \frac{1}{3} &amp; \frac{1}{6} \\[6pt]
+\frac{1}{9} &amp; \frac{5}{18} &amp; 0 &amp; \frac{11}{18} &amp; 0 &amp; 0 \\[6pt]
+\frac{1}{9} &amp; \frac{1}{6} &amp; \frac{2}{9} &amp; 0 &amp; \frac{7}{18} &amp; \frac{1}{9} \\[6pt]
+0 &amp; 0 &amp; \frac{1}{3} &amp; 0 &amp; \frac{1}{3} &amp; \frac{1}{3}
+\end{bmatrix}
 \end{equation*}
 </div>
-<p class="continuation">Perform some iterations of the HITS algorithm, <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">but don't worry about scaling</em>. (It's the relative size of scores that matters.) We start with the the hub vector \(\bh_0 = \begin{bmatrix}  1 &amp;1 &amp; 1 &amp; 1 &amp; 1 \end{bmatrix}^{\top}\text{.}\) Fill in the table below, as follows, starting at \(t=1\)</p>
-<ul class="disc">
-<li><p>Update the \(i\)th entry of \(\ba_t\) to be the sum of all of the \(\bh_{t-1}\) values of the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">in-neighbors</em> of vertex \(i\text{.}\)</p></li>
-<li><p>Update the \(i\)th entry of \(\bh_t\) to be the sum of all of the \(\ba_t\) values of the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">out-neighbors</em> of vertex \(i\)</p></li>
-</ul>
+<p class="continuation">What does row \(i\) tell you about the instruction "take two random steps from vertex \(i\text{?}\)" </p>
+</li>
+<li><p>Using part (a) as a guide, give an interpretation for row \(i\) of the matrix \(P^3\text{.}\) </p></li>
+<li><p>What do the rows of matrix \(P^t\) describe? </p></li>
+<li>
+<p>For \(1 \leq i \leq 6\text{,}\) let \(\mathbf{e}_i\) denote the " elementary vector" whose \(j\)-th entry is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\begin{array}{ccc}
-\begin{array}{c||c|c|c|c|c}
-&amp; \,\,A\,\, &amp; \,\, B\,\,&amp; \,\,C\,\, &amp; \,\,D\,\, &amp; \,\,E\,\, \\
-\hline
-\ba_0  &amp; - &amp; - &amp; -&amp; - &amp; - \\
-\hline
-\ba_1  &amp;&amp;&amp;&amp;&amp; \\
-\hline
-\ba_2  &amp;&amp;&amp;&amp;&amp; \\
-\hline
-\ba_3  &amp;&amp;&amp;&amp;&amp; \\
+\mathbf{e}_i(j) = \left\{
+\begin{array}{cl}
+1 &amp; i=j \\
+0 &amp; \mbox{otherwise.}
 \end{array}
-&amp; \phantom{asdasd}
-&amp;
-\begin{array}{c||c|c|c|c|c}
-&amp; \,\,A\,\, &amp; \,\, B\,\,&amp; \,\,C\,\, &amp; \,\,D\,\, &amp; \,\,E\,\, \\
-\hline
-\bh_0  &amp; 1&amp;1&amp;1&amp;1&amp;1 \\
-\hline
-\bh_1  &amp;&amp;&amp;&amp;&amp; \\
-\hline
-\bh_2  &amp;&amp;&amp;&amp;&amp; \\
-\hline
-\bh_3  &amp;&amp;&amp;&amp;&amp; \\
-\end{array}
-\end{array}
+\right.
 \end{equation*}
 </div>
-<span class="incontext"><a href="hits.html#p-297">in-context</a></span>
+<p class="continuation">In other words,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\mathbf{e}_1&amp;= \begin{bmatrix} 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{bmatrix}\\
+\mathbf{e}_2&amp;= \begin{bmatrix} 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \end{bmatrix}\\
+\mathbf{e}_3&amp;= \begin{bmatrix} 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \end{bmatrix}\\
+\mathbf{e}_4&amp;= \begin{bmatrix} 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \end{bmatrix}\\
+\mathbf{e}_5&amp;= \begin{bmatrix} 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix}
+\end{align*}
+</div>
+<p>What does the vector</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\mathbf{e}_i \, P^t
+\end{equation*}
+</div>
+<p class="continuation">describe? </p>
+</li>
+</ol>
+<span class="incontext"><a href="randomwalk.html#p-297">in-context</a></span>
 </body>
 </html>

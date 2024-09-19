@@ -65,7 +65,7 @@ Consider the experiment where we take <m>X</m> to be the degree of a vertex from
 
 
 
-<!--solution>
+<solution>
 <p>
 Here are the probabilities of picking a vertex of degree <m>0 \leq t \leq 6</m>:
 <me>
@@ -77,7 +77,7 @@ Here are the probabilities of picking a vertex of degree <m>0 \leq t \leq 6</m>:
 </me>
 For example, there are two vertices with degree four: vertex 6 and vertex 7.
 </p>
-</solution-->
+</solution>
 
 				</p>
 			</statement>
@@ -166,7 +166,7 @@ Let <m>A</m> be the event that the degree of the vertex is even. Let <m>B</m> be
 			</li>
 		</ul>
 
-<!--solution>
+<solution>
 <p>
 <me>
 A = \{ 1, 6, 7\} \qquad B = \{ 2, 3, 4, 5, 6, 7 \}
@@ -180,7 +180,7 @@ A\cap B = \{ 6, 7\} \qquad A \cup B = \{ 1,2,3,4,5,6,7\}
 \P[A] = \frac{3}{7} \qquad \P[B] = \frac{6}{7} \qquad \P[A \cap B] = \frac{2}{7} \qquad \P[A \cup B] = 1
 </me>
 </p>
-</solution-->
+</solution>
 
 				</p>
 			</statement>
@@ -197,14 +197,14 @@ For any sample space <m>\Omega</m> and  any events <m>A</m> and <m>B</m>, explai
 </me>
 
 
-<!--solution>
+<solution>
 <p>
 This follows from the inclusion-exclusion formula
 <me>
 |A \cup B| = |A| +  |B| - |A \cap B|.
 </me>
 </p>
-</solution-->
+</solution>
 
 				</p>
 			</statement>
@@ -245,13 +245,13 @@ Calculate <m>\P[A \mid B]</m> and <m>\P[B \mid A]</m>.
 
 			<image width="60%" xml:id="fig-img-randvar2" source="images/graph7.png" />
 
-<!--solution>
+<solution>
 <p>
 <me>
 \P[A \mid B] = \frac{2}{6} = \frac{1}{3} \qquad \mbox{and}  \qquad \P[B \mid A] = \frac{2}{3}
 </me>
 </p>
-</solution-->
+</solution>
 
 
 				</p>
@@ -282,13 +282,13 @@ Show that when <m>A</m> and <m>B</m> are independent, we have
 In other words, assuming that event <m>B</m> holds has no effect on the probability that event <m>A</m> holds.
 
 
-<!--solution>
+<solution>
 <p>
 <me>
 \P[A \mid B] = \frac{\P[A \cap B]}{\P[B]} = \frac{\P[A] \, \P[B]}{\P[B]} = \P[A].
 </me>
 </p>
-</solution-->
+</solution>
 
 				</p>
 			</statement>
@@ -301,7 +301,7 @@ In other words, assuming that event <m>B</m> holds has no effect on the probabil
 				<p>
 Show that the events <m>A</m> and <m>B</m> from the network example problems above are dependent.
 
-<!--solution>
+<solution>
 <p>
 We have
 <me>
@@ -309,7 +309,7 @@ We have
 </me>
 Since <m>\P[A \mid B] \neq \P[A]</m>, these are dependent events.
 </p>
-</solution-->
+</solution>
 
 				</p>
 			</statement>
@@ -348,7 +348,7 @@ Find the CDF for the random variable <m>X</m>, the degree of a randomly chosen v
 			<image width="60%" xml:id="fig-img-randvar3" source="images/graph7.png" />
 
 
-<!--solution>
+<solution>
 <p>
 <me>
 \begin{array}{c|c|c|c|c|c|c}
@@ -359,7 +359,7 @@ F_X(0) &amp; F_X(1) &amp; F_X(2) &amp; F_X(3) &amp; F_X(4) &amp; F_X(5) &amp; F_
 </me>
 For example, among the 7 vertices, there are 5   vertices with degree at most 3,
 </p>
-</solution-->
+</solution>
 
 				</p>
 			</statement>
@@ -408,7 +408,7 @@ p_X(k) = F_X(k) - F_X(k-1).
 </me>
 In other words, if you know the PMF, then you can find the CDF, and vice versa.
 
-<!--solution>
+<solution>
 <p>
 We have
 <me>
@@ -420,7 +420,7 @@ Therefore, we have
 p_X(k) = F_X(k) - F_X(k-1) = \sum_{i=-\infty}^k p_X(i) - \sum_{i=-\infty}^{k-1} p_X(i) = p_X(k).
 </me>
 </p>
-</solution-->
+</solution>
 
 				</p>
 			</statement>
@@ -456,7 +456,7 @@ Find the CCDF for the random variable <m>X</m> where, as above, the value of <m>
 			<image width="60%" xml:id="fig-img-randvar4" source="images/graph7.png" />
 
 
-<!--solution>
+<solution>
 <p>
 <me>
 \begin{array}{c|c|c|c|c|c|c}
@@ -467,7 +467,7 @@ Find the CCDF for the random variable <m>X</m> where, as above, the value of <m>
 \end{array}
 </me>
 </p>
-</solution-->
+</solution>
 
 				</p>
 			</statement>
@@ -481,7 +481,7 @@ Find the CCDF for the random variable <m>X</m> where, as above, the value of <m>
 				<p>
 Using the fact that <m>\overline{F}_X(t) = 1 - F_X(t)</m>, write down the properties of a CCDF that are analogous to the CDF properties  listed above.
 
-<!--solution>
+<solution>
 <p>
 The CCDF <m>\overline{F}_X</m> of a discrete random variable satisfies the following properties:
 		<ul>
@@ -506,7 +506,7 @@ s \leq t \qquad \Longrightarrow  \qquad \overline{F}_X(s) \geq \overline{F}_X(t)
 		</ul>
 
 </p>
-</solution-->
+</solution>
 
 				</p>
 			</statement>
@@ -522,7 +522,7 @@ s \leq t \qquad \Longrightarrow  \qquad \overline{F}_X(s) \geq \overline{F}_X(t)
 Suppose that <m>X</m> takes on discrete integer values. Develop formulas for going back and forth between the PMF and the CCDF (analogous to how you connected the PMF and CDF above).
 
 
-<!--solution>
+<solution>
 <p>
 
 
@@ -538,7 +538,7 @@ p_X(k).
 In other words, if you know the PMF, then you can find the CCDF, and vice versa.
 
 </p>
-</solution-->
+</solution>
 
 				</p>
 			</statement>
@@ -561,7 +561,7 @@ Let's run an experiment where <m>X</m> is the outcome when we roll two fair 6-si
 				<p>
 Find the values of PMF <m>p(t) = p_X(t)</m>, CDF <m>F(t) = F_X(t)</m> and CCDF <m>\overline{F}(t) = \overline{F}_X(t)</m>. Use the domain <m>0 \leq t \leq 12</m> for each.
 
-<!--solution>
+<solution>
 <p>
 
 
@@ -611,7 +611,7 @@ F(7) &amp; F(8) &amp; F(9) &amp; F(10) &amp; F(11) &amp; F(12)
 
 
 </p>
-</solution-->
+</solution>
 
 
 
@@ -750,7 +750,7 @@ node [left] {<m>\y</m>};
 
 
 
-<!--solution>
+<solution>
 <p>
 
 The following graphs are drawn to the same scale. The <m>x</m>-axis  spans <m>[0,12]</m> and the <m>y</m>-axis spans <m>[0,1]</m>.
@@ -850,7 +850,7 @@ node [left] {<m>\y</m>};
 
 
 </p>
-</solution-->
+</solution>
 
 
 
@@ -890,13 +890,13 @@ Find <m>\E[X]</m> when <m>X</m> is the degree  a randomly chosen vertex of our e
 			<image width="60%" xml:id="fig-img-randvar9" source="images/graph7.png" />
 
 
-<!--solution>
+<solution>
 <p>
 <me>
 \E[X] = 2 \cdot \frac{1}{7} + 3 \cdot \frac{4}{7} + 4 \cdot \frac{2}{7} = \frac{22}{7}
 </me>
 </p>
-</solution-->
+</solution>
 
 
 				</p>
@@ -910,7 +910,7 @@ Find <m>\E[X]</m> when <m>X</m> is the degree  a randomly chosen vertex of our e
 Find <m>\E[X]</m> when <m>X</m> is the outcome when you roll two fair dice.
 
 
-<!--solution>
+<solution>
 <p>
 Let's use linearity of expectation (from the next exercise). Let <m>Y</m> be the outcome when we roll one fair die. We have
 <me>
@@ -922,7 +922,7 @@ When we roll two dice, we have
 </me>
 where both <m>Y_1</m> and <m>Y_2</m> are the outcome of rolling one fair die.
 </p>
-</solution-->
+</solution>
 
 				</p>
 			</statement>
@@ -944,7 +944,7 @@ Prove that if <m>X</m> and <m>Y</m> are two random variables and <m>a, b \in \R<
 \E[a X + b Y] = a \E[X] + b \E[Y].
 </me>
 
-<!--solution>
+<solution>
 <p>
 We have
 </p>
@@ -961,7 +961,7 @@ We have
 </md>
 <p>
 </p>
-</solution-->
+</solution>
 
 				</p>
 			</statement>
@@ -992,7 +992,7 @@ Show that
 </me>
 
 
-<!--solution>
+<solution>
 <p>
 
 Here  is the argument. The notation is a little dense, so read it slowly. Each step has a simple explanation. For example,
@@ -1017,7 +1017,7 @@ because <m>\E[X]</m> is just a constant. (For the same reason, <m>\E[13] = 13</m
 where we have used linearity of expectation.
 
 </p>
-</solution-->
+</solution>
 
 				</p>
 			</statement>
@@ -1035,7 +1035,7 @@ Calculate the variance of our running example where <m>X</m> is the degree of a 
 
 
 
-<!--solution>
+<solution>
 <p>
 
 
@@ -1053,7 +1053,7 @@ and therefore
 </me>
 
 </p>
-</solution-->
+</solution>
 
 				</p>
 			</statement>

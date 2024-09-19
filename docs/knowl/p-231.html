@@ -12,7 +12,19 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Now let's suppose that \(|\lambda_1| &gt; |\lambda_2|\) and that \(\bx\) is such that  \(c_1 \neq 0\text{.}\) Explain why \(A^n \bx \approx k \bu_1\) for some constant \(k\text{.}\) </p>
-<span class="incontext"><a href="algcentrality.html#p-231">in-context</a></span>
+<p>For many real-world networks, the power law behavior doesn't hold for small \(k\text{.}\) In this case, we restrict our attention to vertices of degree at least \(k_{\min}\text{.}\) We then deal with  the probability mass function for a truncated power law. Given \(\alpha\) and \(k \geq k_{\min}\) this PMF is given by</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+p(k) =  \frac{ k^{-\alpha}}{\zeta(\alpha, k_{\min})}
+\end{equation*}
+</div>
+<p class="continuation">where</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\zeta(x, k_{\min}) =  \sum_{k=k_{\min}}^{\infty} k^{-x}
+\end{equation*}
+</div>
+<p class="continuation">is the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">generalized Riemann zeta function</em>.</p>
+<span class="incontext"><a href="powerlaw.html#p-231">in-context</a></span>
 </body>
 </html>

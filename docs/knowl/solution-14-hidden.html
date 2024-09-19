@@ -10,5 +10,25 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like"><p>The  row vector \(\mathbf{e}_i \, P^t\) is row \(i\) of matrix \(P^t\text{.}\) As described in the previous part, the \(j\)th entry of this vector is the probability that you are at vertex \(j\) after taking \(t\) random steps from \(i\text{.}\)</p></div></body>
+<body><div class="solution solution-like">
+<p>Yes, you can. Using loops and communities of size 1 is the key. In fact, a graph with a loop at each vertex that is split into four singleton communities leads to the calculation</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{c|c|c|c|c}
+i \backslash j&amp;  1  &amp; 2 &amp; 3 &amp; 4 \\[0.5em]
+\hline
+1 &amp;2 - \frac{1}{2}&amp;0&amp;0&amp;0\\[0.5em]
+2 &amp;0&amp;2 - \frac{1}{2} &amp;0&amp;0\\[0.5em]
+3 &amp;0&amp;0&amp;2 - \frac{1}{2}&amp;0 \\[0.5em]
+4 &amp;0&amp;0&amp;0&amp;2 - \frac{1}{2}
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">so the modularity is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+Q =  \frac{1}{8} \cdot 4 \left(2 -  \frac{1}{2} \right) = \frac{3}{4}
+\end{equation*}
+</div>
+</div></body>
 </html>

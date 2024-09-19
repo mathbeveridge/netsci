@@ -12,33 +12,47 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<p>Suppose that we have  a large network for which there is no correlation between vertex degrees. That is, an edge from vertex \(v\) leads to a vertex chosen  uniformly at random. Let \(p_k\) denote the fraction of vertices of degree \(k\text{.}\) When you pick a vertex \(v\) at random, we have \(\Pr[\deg(v)=k] = p_k\text{.}\) This means that the expected degree of the network is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\langle k \rangle = \sum_{k=0}^{k_{\max}} k  \cdot p_k.
+\end{equation*}
+</div>
+<p class="continuation">Consider the following process: Pick a random vertex \(v\) and then move to a random neighbor \(w\) of vertex \(v\text{.}\) Let</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+q_k = \Pr [\deg(w)=k+1].
+\end{equation*}
+</div>
+<p class="continuation">In other words, \(w\) has \(k\) additional edges, besides the one you just traveled. In this case, we say that \(w\) has <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">excess degree</em> \(k\text{.}\)</p>
 <ol class="lower-alpha">
 <li>
-<p>Now let's try to do some of this same work using NetworkX. You will need to start by installing NetworkX using the command</p>
-<pre class="code-display tex2jax_ignore">
-pip3 install networkx
-</pre>
+<p>Explain why the excess degree distribution  satisfies</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+q_k = \frac{(k+1) p_{k+1}}{\langle k \rangle}.
+\end{equation*}
+</div>
 </li>
-<li><p>Start off by familiarizing yourself with NetworkX by working though the <a class="external" href="https://networkx.github.io/documentation/stable/tutorial.html" target="_blank">NetworkX tutorial</a>.</p></li>
 <li>
-<p>Try to import the airline graph and find its centrality measures. Googling the following terms will bring up useful parts of the NetworkX documentation:</p>
-<pre class="code-display tex2jax_ignore">
-networkx tutorial
-networkx centrality
-networkx pagerank
-networkx graphml import
-</pre>
-<p class="continuation">Or visit our moodle site for direct links. If you want to plot the network via python, here is a simple code snippet that gives you an idea of how to start.</p>
-<pre class="code-display tex2jax_ignore">
-import networkx as nx
-import matplotlib.pyplot as plt
-
-G = nx.cubical_graph()
-nx.draw(G)
-plt.show()
-</pre>
+<p>Confirm that the expected degree of vertex \(w\) is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{\langle k^2 \rangle}{\langle k \rangle}.
+\end{equation*}
+</div>
 </li>
+<li>
+<p>Recall that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\mbox{Var}[X] = E[X^2] - E[X]^2 &gt; 0
+\end{equation*}
+</div>
+<p class="continuation">when \(X\) is not constant. Use this to explain why that the expected degree of \(w\) is larger than the expected degree of \(v\text{.}\) </p>
+</li>
+<li><p>Colloquially, people refer to this result as: "your friends are more popular than you." Why? </p></li>
 </ol>
-<span class="incontext"><a href="us-airline.html#p-519">in-context</a></span>
+<span class="incontext"><a href="epidemics.html#p-519">in-context</a></span>
 </body>
 </html>

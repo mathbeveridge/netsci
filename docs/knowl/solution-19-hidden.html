@@ -10,5 +10,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like"><p>Row \(i\) contains the probabilities of stepping from \(i\)  to a neighbor of vertex \(i\text{.}\) These probabiiities sum to 1.</p></div></body>
+<body><div class="solution solution-like">
+<p>The expected number of such edges is really</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+k_i \frac{k_j}{2m-1}
+\end{equation*}
+</div>
+<p class="continuation">but this is basically the same as</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{k_i k_j}{2m}
+\end{equation*}
+</div>
+<p class="continuation">for a very large network. Essentially, what we are doing is ignoring the probability that we pick the same endpoint twice.</p>
+</div></body>
 </html>

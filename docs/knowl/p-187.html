@@ -12,13 +12,24 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Find the corresponding approximate expression for the power law PMF</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-p(k) = \frac{1}{A} k^{-\alpha}
+\E[X] = \frac{22}{7}
 \end{equation*}
 </div>
-<p class="continuation">using your constant \(A\) from (a). Simplify so that \(\alpha\) only appears once in an exponent. </p>
-<span class="incontext"><a href="powerlaw.html#p-187">in-context</a></span>
+<p class="continuation">and</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[X^2] = 2^2 \cdot \frac{1}{7} + 3^2 \cdot \frac{4}{7} + 4^2 \cdot \frac{2}{7}
+= \frac{4+36+32}{7} = \frac{72}{7}
+\end{equation*}
+</div>
+<p class="continuation">and therefore</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\var(X) = \E[X^2] - \E[X]^2 =  \frac{72}{7} - \left( \frac{22}{7} \right)^2 = \frac{20}{49}.
+\end{equation*}
+</div>
+<span class="incontext"><a href="randvar.html#p-187">in-context</a></span>
 </body>
 </html>

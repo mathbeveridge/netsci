@@ -108,7 +108,7 @@ Use this <url href="https://docs.google.com/spreadsheets/d/1kEP0CkUeG9s0RrJDtZcS
 
 
 
-<!--solution>
+<solution>
 <p>
 The terms are
 <me>
@@ -127,7 +127,7 @@ Q =  \frac{1}{4} \left( 4 - 16 \cdot \frac{1}{4} \right) =0
 </me>
 
 </p>
-</solution-->
+</solution>
 
 
 
@@ -169,7 +169,7 @@ Q =  \frac{1}{4} \left( 4 - 16 \cdot \frac{1}{4} \right) =0
 			</image>
 
 
-<!--solution>
+<solution>
 <p>
 The terms are
 <me>
@@ -188,7 +188,7 @@ Q =  \frac{1}{4} \left( 4 - 8 \cdot \frac{1}{4} \right) = \frac{1}{2}
 </me>
 
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -226,7 +226,7 @@ Q =  \frac{1}{4} \left( 4 - 8 \cdot \frac{1}{4} \right) = \frac{1}{2}
 				</latex-image>
 			</image>
 
-<!--solution>
+<solution>
 <p>
 The terms are
 <me>
@@ -245,7 +245,7 @@ Q =  \frac{1}{4} \left( 0 - 8 \cdot \frac{1}{4} \right) = -\frac{1}{2}
 </me>
 
 </p>
-</solution-->
+</solution>
 
 
 					</p>
@@ -283,7 +283,7 @@ Q =  \frac{1}{4} \left( 0 - 8 \cdot \frac{1}{4} \right) = -\frac{1}{2}
 				</latex-image>
 			</image>
 
-<!--solution>
+<solution>
 <p>
 The terms are
 <me>
@@ -302,7 +302,7 @@ Q =  \frac{1}{4} \left( 2 - 10 \cdot \frac{1}{4} \right) = -\frac{1}{8}
 </me>
 
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -360,7 +360,7 @@ Confirm the modularity scored  obtained by splitting the path <m>P_4</m> into th
 				</latex-image>
 			</image>
 
-<!--solution>
+<solution>
 <p>
 The terms are
 <me>
@@ -380,7 +380,7 @@ Q =  \frac{1}{6} \left( 6 - 4 \cdot \frac{1}{6} - 8 \cdot \frac{2}{6} - 4 \cdot 
 </me>
 
 </p>
-</solution-->
+</solution>
 
 
 
@@ -423,7 +423,7 @@ Q =  \frac{1}{6} \left( 6 - 4 \cdot \frac{1}{6} - 8 \cdot \frac{2}{6} - 4 \cdot 
 			</image>
 
 
-<!--solution>
+<solution>
 <p>
 The terms are
 <me>
@@ -442,7 +442,7 @@ Q =  \frac{1}{6} \left( 4 - 2 \cdot \frac{1}{6} - 4 \cdot \frac{2}{6} - 2 \cdot 
 </me>
 
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -466,7 +466,7 @@ to explore the ways to partition graphs on four vertices. <em>You may add self-l
  Can you find a graph and a partition with modularity greater than <m>1/2</m>? If not, why not?
 
 
-<!--solution>
+<solution>
 <p>
 Yes, you can. Using loops and communities of size 1 is the key. In fact, a graph with a loop at each vertex that is split into four singleton communities leads to the calculation
 <me>
@@ -485,7 +485,7 @@ Q =  \frac{1}{8} \cdot 4 \left(2 -  \frac{1}{2} \right) = \frac{3}{4}
 </me>
 
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -493,7 +493,7 @@ Q =  \frac{1}{8} \cdot 4 \left(2 -  \frac{1}{2} \right) = \frac{3}{4}
 					<p>
  Can you find a graph and a partition with modularity less than <m>-1/2</m>? If not, why not?
 
-<!--solution>
+<solution>
 <p>
 No, you cannot. In order to maximize modularity, you want all the edges to be external to your communities. So the only question is: how many communities should we have?
 
@@ -527,7 +527,7 @@ Here are the results from the possibilities for community sizes. All edges betwe
 		</ul>
 
 </p>
-</solution-->
+</solution>
 
 
 					</p>
@@ -554,11 +554,11 @@ Modularity measures the extent to which edges are internal to communities, compa
 \frac{1}{2} \sum_{i}  \sum_{j}  A_{ij} 
 </me>
 
-<!--solution>
+<solution>
 <p>
 When we sum all of the entries of the adjacency matrix, we  count every edge twice.
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -573,11 +573,11 @@ which can also be written as
 	\frac{1}{2} \sum_{C} \sum_{i \in C} \sum_{j \in C} A_{ij}.
 </me>
 
-<!--solution>
+<solution>
 <p>
 The Kronecker delta function is 1 when <m>i,j</m> are in the same community and it is 0 otherwise. So we only count internal edges of communities. The sum counts each of these edges twice.
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -607,7 +607,7 @@ Note that the degree of vertex <m>i</m> will still be <m>k_i</m> when this proce
 					<p>
  Pick the start of one edge at vertex <m>i</m>. What is the probability that this rewired edge connects to vertex <m>j</m>?
 
-<!--solution>
+<solution>
 <p>
 The probability is really
 <me>
@@ -620,7 +620,7 @@ but this is basically the same as
 for a very large network.
 
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -628,7 +628,7 @@ for a very large network.
 					<p>
  So how many rewired edges from vertex <m>i</m> do we expect to connect to vertex <m>j</m>? (Assume that the network is so big that the chance that two ends at <m>i</m> try to connect  to the same end at <m>j</m> is irrelevant.)
 
-<!--solution>
+<solution>
 <p>
 The expected number of such edges is really
 <me>
@@ -641,7 +641,7 @@ but this is basically the same as
 for a very large network. Essentially, what we are doing is ignoring the probability that we pick the same endpoint twice.
 
 </p>
-</solution-->
+</solution>
 
 
 					</p>
@@ -659,12 +659,12 @@ which can also be written as
 Here, the <m>\frac{1}{2}</m> takes care of the double counting since our sum looks at the pair <m>i,j</m> twice.
 
 
-<!--solution>
+<solution>
 <p>
 In this case, the Kronecker delta function makes it so that we only count edges within communities.
 
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -704,11 +704,11 @@ Q \, = \, \sum_{C} \sum_{i,j \in C} \left( P^{\top}_{ij}\pi_i  - \pi_i \pi_j  \r
 </me>
 	where <m>P = D^{-1} A</m> is the random walk transition matrix and <m>\pi</m> is its stationary distribution, where <m>\pi_i=k_{i}/2m</m>. 
 
-	<!--solution>
+	<solution>
 		<p>
 		This random walk formula for <m>Q</m> is equivalent to the right hand side of the previous equation for <m>Q</m>
 		</p>
-	</solution-->
+	</solution>
 
 
 </li>
@@ -717,25 +717,25 @@ Q \, = \, \sum_{C} \sum_{i,j \in C} \left( P^{\top}_{ij}\pi_i  - \pi_i \pi_j  \r
 	<ol>
 	<li>Explain why <m>\sum_{i,j \in C} P^{\top}_{ij}\pi_i</m> is the probability that we are in
 	 <m>C</m> at time <m>t</m> and <m>t+1</m>. 
-	 <!--solution>
+	 <solution>
 		<p>
 		Given vertex <m>i \in C</m>, we are at this vertex with probability <m>\pi_i</m>. 
 		We then step to a neighbor <m>j</m> with probability <m>p_{ij}</m>, and we only include this in our sum when <m>j \in C</m>.
 		</p>
-	</solution-->
+	</solution>
 	
 	</li>
 	 <li>Explain why 
 	 <m>\sum_{i,j \in C}  \pi_i \pi_j</m> is the probability that we are in
 	 <m>C</m> at time <m>t</m> and <m>t+T</m> for very large <m>T</m>.
 
-	 <!--solution>
+	 <solution>
 		<p>
 		Given vertex <m>i \in C</m>, we are at this vertex with probability <m>\pi_i</m>. 
 		If we walk a large number of steps, then the probability that we are at vertex <m>j</m> is <m>\pi_{j}</m>. 
 		We multiply these probabilities to obtain the given probability.
 		</p>
-	</solution-->
+	</solution>
 	</li>
 	</ol>
 	</p>
@@ -744,13 +744,13 @@ Q \, = \, \sum_{C} \sum_{i,j \in C} \left( P^{\top}_{ij}\pi_i  - \pi_i \pi_j  \r
 Modularity is the difference of the two quantities in part (b). Using this random walk interpretation,
 why is this difference a measure of community structure?
 </li>
-<!--solution>
+<solution>
 	<p>
 	If <m>C</m> is a community, then we would expect that a single random step from a vertex in <m>C</m> would be far more likely
 	to also be in <m>C</m>, when compared with the probability that two randomly chosen vertices are in <m>C</m>.  
 	We multiply these probabilities to obtain the given probability.
 	</p>
-</solution-->
+</solution>
 </ol>
 
 

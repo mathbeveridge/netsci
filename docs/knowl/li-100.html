@@ -12,8 +12,27 @@
 </head>
 <body>
 <article class="li"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Item</span><span class="period">.</span>
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">2.3.3.b</span><span class="period">.</span>
 </h6>
-<p>Let \(d_{i,j} = d(i,j)\) be the distance between vertices \(i\) and \(j\)</p></article><span class="incontext"><a href="centrality.html#li-100">in-context</a></span>
+<p>For many real-world networks, the power law behavior doesn't hold for small \(k\text{.}\) In this case, we restrict our attention to vertices of degree at least \(k_{\min}\text{.}\) We then deal with  the probability mass function for a truncated power law. Given \(\alpha\) and \(k \geq k_{\min}\) this PMF is given by</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+p(k) =  \frac{ k^{-\alpha}}{\zeta(\alpha, k_{\min})}
+\end{equation*}
+</div>
+<p class="continuation">where</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\zeta(x, k_{\min}) =  \sum_{k=k_{\min}}^{\infty} k^{-x}
+\end{equation*}
+</div>
+<p class="continuation">is the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">generalized Riemann zeta function</em>.</p>
+<p>Dealing with the Riemann zeta function is unwieldy. In practice, we approximate this leading constant by the corresponding integral.  Evaluate the following integral in order to find the approximate value for \(\zeta(\alpha, k_{\min})\text{:}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+A =  \int_{x= k_{\min}}^{\infty} x^{-\alpha}  \, dx \approx \sum_{k= k_{\min}}^{\infty} k^{-\alpha} .
+\end{equation*}
+</div>
+<p></p></article><span class="incontext"><a href="powerlaw.html#li-100">in-context</a></span>
 </body>
 </html>

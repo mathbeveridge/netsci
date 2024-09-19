@@ -11,18 +11,14 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p>The expected number of such edges is really</p>
+<p>We have</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-k_i \frac{k_j}{2m-1}
-\end{equation*}
+\begin{align*}
+\E[aX+bY] &amp;= \sum_{\omega  \in \Omega} (aX(\omega) + bY(\omega) ) p(\omega)\\
+&amp;= a \sum_{\omega  \in \Omega} X(\omega)p(\omega)  + b \sum_{\omega  \in \Omega} Y(\omega)p(\omega)\\
+&amp;=a \E[X] + b \E[Y].
+\end{align*}
 </div>
-<p class="continuation">but this is basically the same as</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\frac{k_i k_j}{2m}
-\end{equation*}
-</div>
-<p class="continuation">for a very large network. Essentially, what we are doing is ignoring the probability that we pick the same endpoint twice.</p>
+<p></p>
 </div></body>
 </html>

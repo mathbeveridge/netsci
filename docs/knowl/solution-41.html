@@ -15,8 +15,23 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
-<p>In this case, the Kronecker delta function makes it so that we only count edges within communities.</p>
+<p>Here  is the argument. The notation is a little dense, so read it slowly. Each step has a simple explanation. For example,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[\E[X]] = \E[X]
+\end{equation*}
 </div>
-<span class="incontext"><a href="modularity.html#solution-41">in-context</a></span>
+<p class="continuation">because \(\E[X]\) is just a constant. (For the same reason, \(\E[13] = 13\) because the value doesn't change as we consider elements of the state space.)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\var(X) &amp;=  \E \left[ (X - \E[X])^2 \right]
+\, = \, \E[ X^2 -2 X \, \E[X] + \E[X]^2]\\
+&amp;=   \E[ X^2] -\E[2 X \, \E[X]] + \E[\E[X]^2] \, = \, \E[ X^2] -2 \E[X] \, \E[X ] + (\E[X])^2\\
+&amp;=  \E[X^2] - (\E[X])^2
+\end{align*}
+</div>
+<p>where we have used linearity of expectation.</p>
+</div>
+<span class="incontext"><a href="randvar.html#solution-41">in-context</a></span>
 </body>
 </html>

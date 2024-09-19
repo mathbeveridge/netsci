@@ -12,14 +12,20 @@
 </head>
 <body>
 <article class="li"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Item</span><span class="space"> </span><span class="codenumber">4.4.4.b</span><span class="period">.</span>
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">5.2.3.d</span><span class="period">.</span>
 </h6>
-<p>Now change this network model to a directed network. Show that</p>
+<p>In the previous part, you showed that the fraction of links from available for future transmission from infected vertices to susceptible vertices is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-k_i= k_i^{\mathrm{in}} + k_i^{\mathrm{out}} = k_i^{\mathrm{in}} + c. 
+\Theta(t) = C e^{t/{\tau}}   \mbox{ where }   \tau = \frac{1}{A} = \frac{\langle k \rangle}{\beta ( \langle k^2 \rangle - \langle k \rangle)}.
 \end{equation*}
 </div>
-<p class="continuation"><a class="solution-knowl original" data-knowl="./knowl/solution-131-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></article><span class="incontext"><a href="pricemodel.html#li-299">in-context</a></span>
+<p>Early on in the epidemic, we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{dI_k}{dt} \approx \beta \,  k \,  \Theta = \beta \, k \, C e^{t/{\tau}}.
+\end{equation*}
+</div>
+<p class="continuation">Explain why higher degree vertices are more likely to be infected. </p></article><span class="incontext"><a href="epidemics.html#li-299">in-context</a></span>
 </body>
 </html>

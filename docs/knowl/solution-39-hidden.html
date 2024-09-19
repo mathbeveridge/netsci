@@ -11,18 +11,18 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p>The probability is really</p>
+<p>Let's use linearity of expectation (from the next exercise). Let \(Y\) be the outcome when we roll one fair die. We have</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{k_j}{2m-1}
+\E[Y] = \frac{1}{6} \left( 1 + 2 + 3 + 4 + 5 + 6 \right) = \frac{21}{6} = \frac{7}{2}.
 \end{equation*}
 </div>
-<p class="continuation">but this is basically the same as</p>
+<p class="continuation">When we roll two dice, we have</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{k_j}{2m}
+\E[X] =  \E[Y_1] + \E[Y_2] = \frac{7}{2} + \frac{7}{2} = 7.
 \end{equation*}
 </div>
-<p class="continuation">for a very large network.</p>
+<p class="continuation">where both \(Y_1\) and \(Y_2\) are the outcome of rolling one fair die.</p>
 </div></body>
 </html>

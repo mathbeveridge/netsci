@@ -160,13 +160,13 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="centrality"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Centrality Measures</span>
 </h2>
-<section class="introduction" id="introduction-7"><p id="p-193">Here are the network and  centrality definitions that  we will need.</p>
+<section class="introduction" id="introduction-7"><p id="p-240">Here are the network and  centrality definitions that  we will need.</p>
 <ul class="disc">
-<li id="li-98"><p id="p-194">Let \(G=(V,E)\) be a network (graph) on \(N\) vertices.</p></li>
-<li id="li-99"><p id="p-195">Let \(k_i = \deg(i)\) be the degree of vertex \(i\)</p></li>
-<li id="li-100"><p id="p-196">Let \(d_{i,j} = d(i,j)\) be the distance between vertices \(i\) and \(j\)</p></li>
-<li id="li-101"><p id="p-197">Let \(n_{s,t}\) be the number of geodesics (shortest paths) from \(s\) to \(t\)</p></li>
-<li id="li-102"><p id="p-198">Let \(n_{s,t}(i)\) be the number of \((s,t)\)-geodesics that go through vertex \(i\)</p></li>
+<li id="li-106"><p id="p-241">Let \(G=(V,E)\) be a network (graph) on \(N\) vertices.</p></li>
+<li id="li-107"><p id="p-242">Let \(k_i = \deg(i)\) be the degree of vertex \(i\)</p></li>
+<li id="li-108"><p id="p-243">Let \(d_{i,j} = d(i,j)\) be the distance between vertices \(i\) and \(j\)</p></li>
+<li id="li-109"><p id="p-244">Let \(n_{s,t}\) be the number of geodesics (shortest paths) from \(s\) to \(t\)</p></li>
+<li id="li-110"><p id="p-245">Let \(n_{s,t}(i)\) be the number of \((s,t)\)-geodesics that go through vertex \(i\)</p></li>
 </ul>
 <div class="displaymath">
 \begin{equation*}
@@ -196,23 +196,23 @@
 <article class="exercise exercise-like" id="exercise-26"><h6 class="heading">
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Understanding Centrality Measures.</span>
 </h6>
-<p id="p-199">For each centrality measure, give an intuitive explanation of what is "central" about vertices with large values.</p>
+<p id="p-246">For each centrality measure, give an intuitive explanation of what is "central" about vertices with large values.</p>
 <ol class="lower-alpha">
-<li id="li-103"><p id="p-200">Degree Centrality</p></li>
-<li id="li-104"><p id="p-201">Betweenness Centrality</p></li>
-<li id="li-105"><p id="p-202">Closeness Centrality</p></li>
+<li id="li-111"><p id="p-247">Degree Centrality</p></li>
+<li id="li-112"><p id="p-248">Betweenness Centrality</p></li>
+<li id="li-113"><p id="p-249">Closeness Centrality</p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-27"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Centrality Calculation Examples.</span>
 </h6>
-<p id="p-203">For each of the following graphs, calculate the (unnormalized) degree centrality, betweenness centrality and closeness centrality</p>
+<p id="p-250">For each of the following graphs, calculate the (unnormalized) degree centrality, betweenness centrality and closeness centrality</p>
 <ol class="lower-alpha">
-<li id="li-106"><p id="p-204">Degree Centrality  \(c_i^D  = \deg(i) = k_i\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality0.svg" role="img" class="contained"></div></p></li>
-<li id="li-107"><p id="p-205">Betweenness Centrality  \(c_i^B = \displaystyle{\sum_{s \neq i} \sum_{t \neq i, s} \frac{n_{s,t}(i)}{n_{s,t}}}\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality1.svg" role="img" class="contained"></div></p></li>
-<li id="li-108"><p id="p-206">Closeness Centrality  \(c_i^C =  \displaystyle{\frac{1}{\sum_{j} d_{i,j}}}\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality2.svg" role="img" class="contained"></div></p></li>
+<li id="li-114"><p id="p-251">Degree Centrality  \(c_i^D  = \deg(i) = k_i\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality0.svg" role="img" class="contained"></div></p></li>
+<li id="li-115"><p id="p-252">Betweenness Centrality  \(c_i^B = \displaystyle{\sum_{s \neq i} \sum_{t \neq i, s} \frac{n_{s,t}(i)}{n_{s,t}}}\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality1.svg" role="img" class="contained"></div></p></li>
+<li id="li-116"><p id="p-253">Closeness Centrality  \(c_i^C =  \displaystyle{\frac{1}{\sum_{j} d_{i,j}}}\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality2.svg" role="img" class="contained"></div></p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-28"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Contrasting Centralities.</span>
 </h6>
-<p id="p-207">In the following table, we consider interesting vertices that score highly in one centrality, but not in another. Describe or draw a network topology and vertex positions that could satisfy each combination below.</p>
+<p id="p-254">In the following table, we consider interesting vertices that score highly in one centrality, but not in another. Describe or draw a network topology and vertex positions that could satisfy each combination below.</p>
 <figure class="table table-like" id="table-4"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.1<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b1 r1 l1 t1 lines"></td>
@@ -238,20 +238,20 @@
 <td class="l m b1 r1 l0 t0 lines"></td>
 <td class="l m b1 r1 l0 t0 lines">N/A</td>
 </tr>
-</table></div></figure><p id="p-208"></p></article><article class="exercise exercise-like" id="exercise-29"><h6 class="heading">
+</table></div></figure><p id="p-255"></p></article><article class="exercise exercise-like" id="exercise-29"><h6 class="heading">
 <span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Digraph Centrality Measures.</span>
 </h6>
-<ol id="p-209" class="lower-alpha">
-<li id="li-109"><p id="p-210">During class, we adapted degree centrality for digraphs, which leads to in-degree centrality and out-degree centrality. Given an intuitive explanation for what it means to have (i) high in-degree centrality and (ii)  high out-degree centrality.</p></li>
-<li id="li-110"><p id="p-211">Adapt betweenness centrality and closeness centrality for digraphs. Do you need two different measures for each (one for in and one for out)? Give an intuitive explanation for what it means to when these centrality measures are large in a digraph.</p></li>
+<ol id="p-256" class="lower-alpha">
+<li id="li-117"><p id="p-257">During class, we adapted degree centrality for digraphs, which leads to in-degree centrality and out-degree centrality. Given an intuitive explanation for what it means to have (i) high in-degree centrality and (ii)  high out-degree centrality.</p></li>
+<li id="li-118"><p id="p-258">Adapt betweenness centrality and closeness centrality for digraphs. Do you need two different measures for each (one for in and one for out)? Give an intuitive explanation for what it means to when these centrality measures are large in a digraph.</p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-30"><h6 class="heading">
 <span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Shortcuts in a Cycle.</span>
 </h6>
-<p id="p-212">What is the effect of adding one shortcut to  a cycle on six vertices? Calculate the centralities as specified below.</p>
+<p id="p-259">What is the effect of adding one shortcut to  a cycle on six vertices? Calculate the centralities as specified below.</p>
 <ol class="lower-alpha">
-<li id="li-111"><p id="p-213">Degree Centrality   \(c_i^D  = \deg(i) = k_i\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality10.svg" role="img" class="contained"></div></p></li>
-<li id="li-112"><p id="p-214">Betweenness Centrality   \(c_i^B = \displaystyle{\sum_{s \neq i} \sum_{t \neq i, s} \frac{n_{s,t}(i)}{n_{s,t}}}\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality11.svg" role="img" class="contained"></div></p></li>
-<li id="li-113"><p id="p-215">Closeness Centrality  \(c_i^C =  \displaystyle{\frac{1}{\sum_{j} d_{i,j}}}\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality12.svg" role="img" class="contained"></div></p></li>
+<li id="li-119"><p id="p-260">Degree Centrality   \(c_i^D  = \deg(i) = k_i\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality10.svg" role="img" class="contained"></div></p></li>
+<li id="li-120"><p id="p-261">Betweenness Centrality   \(c_i^B = \displaystyle{\sum_{s \neq i} \sum_{t \neq i, s} \frac{n_{s,t}(i)}{n_{s,t}}}\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality11.svg" role="img" class="contained"></div></p></li>
+<li id="li-121"><p id="p-262">Closeness Centrality  \(c_i^C =  \displaystyle{\frac{1}{\sum_{j} d_{i,j}}}\) <div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality12.svg" role="img" class="contained"></div></p></li>
 </ol></article></section></section></div></main>
 </div>
 </body>

@@ -183,37 +183,188 @@ Q  =  \frac{1}{2m} \sum_{i} \sum_{j} \left( A_{ij} - \frac{k_i k_j}{2m} \right) 
 </h6>
 <p id="p-45">Consider the following network with \(V = \{ 1, 2, 3, 4 \}\) and \(E = \{ (1,2), (3,4) \}\text{.}\) Confirm that the modularity scores of the following four partitions by filling in the summands for \(1 \leq i,j \leq 4\text{.}\) Use this <a class="external" href="https://docs.google.com/spreadsheets/d/1kEP0CkUeG9s0RrJDtZcSmkDRKR7JWryNItu4b60pYYs/edit?usp=sharing" target="_blank">link to a Google Sheet</a> to speed up calculations. Pay attention to the modularity contributions for various pairs of nodes. In particular, when \(i\) and \(j\) are in different communities, the corresponding summand is zero.</p>
 <ol class="lower-alpha">
-<li id="li-25"><p id="p-46">A single community. <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/fig-img-modularity0.svg" role="img" class="contained"></div> </p></li>
-<li id="li-26"><p id="p-47">Two communities with no external edges. <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/fig-img-modularity1.svg" role="img" class="contained"></div> </p></li>
-<li id="li-27"><p id="p-48">Two communities with no internal edges. <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/fig-img-modularity2.svg" role="img" class="contained"></div> </p></li>
-<li id="li-28"><p id="p-49">Two communities of sizes 3 and 1. <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/fig-img-modularity3.svg" role="img" class="contained"></div> </p></li>
+<li id="li-25"><p id="p-46">A single community. <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/fig-img-modularity0.svg" role="img" class="contained"></div> <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-8" id="solution-8"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-8"><div class="solution solution-like">
+<p id="p-47">The terms are</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{c|c|c|c|c}
+i \backslash j&amp;  1  &amp; 2 &amp; 3 &amp; 4 \\[.5em]
+\hline
+1 &amp; -\frac{1}{4} &amp; 1-\frac{1}{4} &amp;-\frac{1}{4}&amp;-\frac{1}{4}\\[.5em]
+2 &amp;1-\frac{1}{4} &amp;-\frac{1}{4} &amp;-\frac{1}{4} &amp;-\frac{1}{4} \\[.5em]
+3 &amp;-\frac{1}{4} &amp;-\frac{1}{4} &amp;-\frac{1}{4} &amp;1-\frac{1}{4} \\[.5em]
+4 &amp;-\frac{1}{4} &amp;-\frac{1}{4} &amp;1-\frac{1}{4} &amp;-\frac{1}{4}
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">and the modularity is</p>
+<div class="displaymath">
+\begin{equation*}
+Q =  \frac{1}{4} \left( 4 - 16 \cdot \frac{1}{4} \right) =0
+\end{equation*}
+</div>
+</div></div></p></li>
+<li id="li-26"><p id="p-48">Two communities with no external edges. <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/fig-img-modularity1.svg" role="img" class="contained"></div> <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-9" id="solution-9"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-9"><div class="solution solution-like">
+<p id="p-49">The terms are</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{c|c|c|c|c}
+i \backslash j&amp;  1  &amp; 2 &amp; 3 &amp; 4 \\[0.5em]
+\hline
+1 &amp; -\frac{1}{4} &amp; 1-\frac{1}{4} &amp;0&amp;0\\[0.5em]
+2 &amp;1-\frac{1}{4} &amp;-\frac{1}{4} &amp;0 &amp;0 \\[0.5em]
+3 &amp;0&amp;0 &amp;-\frac{1}{4} &amp;1-\frac{1}{4} \\[0.5em]
+4 &amp;0 &amp;0&amp;1-\frac{1}{4} &amp;-\frac{1}{4}
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">and the modularity is</p>
+<div class="displaymath">
+\begin{equation*}
+Q =  \frac{1}{4} \left( 4 - 8 \cdot \frac{1}{4} \right) = \frac{1}{2}
+\end{equation*}
+</div>
+</div></div></p></li>
+<li id="li-27"><p id="p-50">Two communities with no internal edges. <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/fig-img-modularity2.svg" role="img" class="contained"></div> <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-10" id="solution-10"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-10"><div class="solution solution-like">
+<p id="p-51">The terms are</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{c|c|c|c|c}
+i \backslash j&amp;  1  &amp; 2 &amp; 3 &amp; 4 \\[0.5em]
+\hline
+1 &amp; -\frac{1}{4} &amp; 0 &amp;-\frac{1}{4} &amp;0\\[0.5em]
+2 &amp;0&amp;-\frac{1}{4} &amp;0 &amp;-\frac{1}{4}  \\[0.5em]
+3 &amp;-\frac{1}{4} &amp;0 &amp;-\frac{1}{4} &amp;0 \\[0.5em]
+4 &amp;0 &amp;-\frac{1}{4} &amp;0 &amp;-\frac{1}{4}
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">and the modularity is</p>
+<div class="displaymath">
+\begin{equation*}
+Q =  \frac{1}{4} \left( 0 - 8 \cdot \frac{1}{4} \right) = -\frac{1}{2}
+\end{equation*}
+</div>
+</div></div></p></li>
+<li id="li-28"><p id="p-52">Two communities of sizes 3 and 1. <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/fig-img-modularity3.svg" role="img" class="contained"></div> <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-11" id="solution-11"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-11"><div class="solution solution-like">
+<p id="p-53">The terms are</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{c|c|c|c|c}
+i \backslash j&amp;  1  &amp; 2 &amp; 3 &amp; 4 \\[0.5em]
+\hline
+1 &amp; -\frac{1}{4} &amp; 1-\frac{1}{4} &amp;-\frac{1}{4}&amp;0\\[0.5em]
+2 &amp;1-\frac{1}{4} &amp;-\frac{1}{4} &amp;-\frac{1}{4} &amp;0\\[0.5em]
+3 &amp;-\frac{1}{4} &amp;-\frac{1}{4} &amp;-\frac{1}{4} &amp;0 \\[0.5em]
+4 &amp;0&amp;0&amp;0 &amp;-\frac{1}{4}
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">and the modularity is</p>
+<div class="displaymath">
+\begin{equation*}
+Q =  \frac{1}{4} \left( 2 - 10 \cdot \frac{1}{4} \right) = -\frac{1}{8}
+\end{equation*}
+</div>
+</div></div></p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-9"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Modularity Calculation for a Path.</span>
 </h6>
-<p id="p-50">Confirm the modularity scored  obtained by splitting the path \(P_4\) into the given communities.</p>
+<p id="p-54">Confirm the modularity scored  obtained by splitting the path \(P_4\) into the given communities.</p>
 <ol class="lower-alpha">
-<li id="li-29"><p id="p-51">A single community. <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-modularity4.svg" role="img" class="contained"></div> </p></li>
-<li id="li-30"><p id="p-52">Two communities separated by the most central edge. <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-modularity5.svg" role="img" class="contained"></div> </p></li>
+<li id="li-29"><p id="p-55">A single community. <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-modularity4.svg" role="img" class="contained"></div> <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-12" id="solution-12"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-12"><div class="solution solution-like">
+<p id="p-56">The terms are</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{c|c|c|c|c}
+i \backslash j&amp;  1  &amp; 2 &amp; 3 &amp; 4 \\
+\hline
+1 &amp; - \frac{1}{6}&amp; 1- \frac{2}{6}&amp;- \frac{2}{6}&amp;- \frac{1}{6}\\[0.5em]
+2 &amp;1- \frac{2}{6}&amp;- \frac{4}{6}&amp;1- \frac{4}{6}&amp;- \frac{2}{6}\\[0.5em]
+3 &amp;- \frac{2}{6}&amp;1- \frac{4}{6}&amp; - \frac{4}{6}&amp;1- \frac{2}{6}\\[0.5em]
+4 &amp;- \frac{1}{6}&amp;- \frac{2}{6}&amp;1- \frac{2}{6}&amp;- \frac{1}{6}
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">and the modularity is</p>
+<div class="displaymath">
+\begin{equation*}
+Q =  \frac{1}{6} \left( 6 - 4 \cdot \frac{1}{6} - 8 \cdot \frac{2}{6} - 4 \cdot \frac{4}{6} \right) =
+\frac{1}{6} \left( 6 - \frac{18}{3} \right) = 0
+\end{equation*}
+</div>
+</div></div></p></li>
+<li id="li-30"><p id="p-57">Two communities separated by the most central edge. <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-modularity5.svg" role="img" class="contained"></div> <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-13" id="solution-13"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-13"><div class="solution solution-like">
+<p id="p-58">The terms are</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{c|c|c|c|c}
+i \backslash j&amp;  1  &amp; 2 &amp; 3 &amp; 4 \\[0.5em]
+\hline
+1 &amp;- \frac{1}{6}&amp; 1 - \frac{2}{6}&amp;0&amp;0\\[0.5em]
+2 &amp;1 - \frac{2}{6}&amp;2- \frac{4}{6}&amp;0&amp;0\\[0.5em]
+3 &amp;0&amp;0&amp; - \frac{4}{6}&amp; 1- \frac{2}{6}\\[0.5em]
+4 &amp;0&amp;0&amp;1 - \frac{2}{6}&amp;- \frac{1}{6}
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">and the modularity is</p>
+<div class="displaymath">
+\begin{equation*}
+Q =  \frac{1}{6} \left( 4 - 2 \cdot \frac{1}{6} - 4 \cdot \frac{2}{6} - 2 \cdot \frac{4}{6} \right) = \frac{1}{6}
+\end{equation*}
+</div>
+</div></div></p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-10"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-53">Use this <a class="external" href="https://docs.google.com/spreadsheets/d/1kEP0CkUeG9s0RrJDtZcSmkDRKR7JWryNItu4b60pYYs/edit?usp=sharing" target="_blank">link to a Google Sheet</a> to explore the ways to partition graphs on four vertices. <em class="emphasis">You may add self-loops</em>, but such a loop corresponds to \(A_{ii}=2\) (so that the degrees are correct).</p>
+<p id="p-59">Use this <a class="external" href="https://docs.google.com/spreadsheets/d/1kEP0CkUeG9s0RrJDtZcSmkDRKR7JWryNItu4b60pYYs/edit?usp=sharing" target="_blank">link to a Google Sheet</a> to explore the ways to partition graphs on four vertices. <em class="emphasis">You may add self-loops</em>, but such a loop corresponds to \(A_{ii}=2\) (so that the degrees are correct).</p>
 <ol class="lower-alpha">
-<li id="li-31"><p id="p-54">Can you find a graph and a partition with modularity greater than \(1/2\text{?}\) If not, why not? </p></li>
-<li id="li-32"><p id="p-55">Can you find a graph and a partition with modularity less than \(-1/2\text{?}\) If not, why not? </p></li>
+<li id="li-31"><p id="p-60">Can you find a graph and a partition with modularity greater than \(1/2\text{?}\) If not, why not? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-14" id="solution-14"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-14"><div class="solution solution-like">
+<p id="p-61">Yes, you can. Using loops and communities of size 1 is the key. In fact, a graph with a loop at each vertex that is split into four singleton communities leads to the calculation</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{c|c|c|c|c}
+i \backslash j&amp;  1  &amp; 2 &amp; 3 &amp; 4 \\[0.5em]
+\hline
+1 &amp;2 - \frac{1}{2}&amp;0&amp;0&amp;0\\[0.5em]
+2 &amp;0&amp;2 - \frac{1}{2} &amp;0&amp;0\\[0.5em]
+3 &amp;0&amp;0&amp;2 - \frac{1}{2}&amp;0 \\[0.5em]
+4 &amp;0&amp;0&amp;0&amp;2 - \frac{1}{2}
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">so the modularity is</p>
+<div class="displaymath">
+\begin{equation*}
+Q =  \frac{1}{8} \cdot 4 \left(2 -  \frac{1}{2} \right) = \frac{3}{4}
+\end{equation*}
+</div>
+</div></div></p></li>
+<li id="li-32"><p id="p-62">Can you find a graph and a partition with modularity less than \(-1/2\text{?}\) If not, why not? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-15" id="solution-15"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-15"><div class="solution solution-like">
+<p id="p-63">No, you cannot. In order to maximize modularity, you want all the edges to be external to your communities. So the only question is: how many communities should we have? Here are the results from the possibilities for community sizes. All edges between communities are present.</p>
+<ul class="disc">
+<li id="li-33"><p id="p-64">One community with 4 vertices has \(Q=0\) (or maybe \(Q\) is undefined for the empty graph?)</p></li>
+<li id="li-34"><p id="p-65">Two communities: \((3, 1)\) has \(Q = -1/2\)</p></li>
+<li id="li-35"><p id="p-66">Two communities: \((2,2)\) has  \(Q=-1/2\)</p></li>
+<li id="li-36"><p id="p-67">Three communities: \((2,1,1)\) has \(Q= -17/50\)</p></li>
+<li id="li-37"><p id="p-68">Four communities: \((1,1,1,1)\) has \(Q=0\)</p></li>
+</ul>
+</div></div></p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-11"><h6 class="heading">
 <span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Understanding Modularity, Part I.</span>
 </h6>
-<p id="p-56">Modularity measures the extent to which edges are internal to communities, compared with spanning different communities. We will explain why this is the case. Basically, we are comparing the actual structure of the network with the expected structure of a network where we randomize the edges (but preserve the vertex degrees).</p>
+<p id="p-69">Modularity measures the extent to which edges are internal to communities, compared with spanning different communities. We will explain why this is the case. Basically, we are comparing the actual structure of the network with the expected structure of a network where we randomize the edges (but preserve the vertex degrees).</p>
 <ol class="lower-alpha">
-<li id="li-33">
-<p id="p-57">Explain why the following expression counts the total number of edges</p>
+<li id="li-38">
+<p id="p-70">Explain why the following expression counts the total number of edges</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{1}{2} \sum_{i}  \sum_{j}  A_{ij} 
 \end{equation*}
 </div>
+<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-16" id="solution-16"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-16"><div class="solution solution-like"><p id="p-71">When we sum all of the entries of the adjacency matrix, we  count every edge twice.</p></div></div></p>
 </li>
-<li id="li-34">
-<p id="p-58">Now explain why the following expression counts the total number of edges that are <em class="emphasis">internal</em> to one of the designated communities.</p>
+<li id="li-39">
+<p id="p-72">Now explain why the following expression counts the total number of edges that are <em class="emphasis">internal</em> to one of the designated communities.</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{1}{2}  \sum_{i}  \sum_{j} A_{ij}  \, \delta (C^{(i)}, C^{(j)})
@@ -225,17 +376,46 @@ Q  =  \frac{1}{2m} \sum_{i} \sum_{j} \left( A_{ij} - \frac{k_i k_j}{2m} \right) 
 \frac{1}{2} \sum_{C} \sum_{i \in C} \sum_{j \in C} A_{ij}.
 \end{equation*}
 </div>
+<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-17" id="solution-17"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-17"><div class="solution solution-like"><p id="p-73">The Kronecker delta function is 1 when \(i,j\) are in the same community and it is 0 otherwise. So we only count internal edges of communities. The sum counts each of these edges twice.</p></div></div></p>
 </li>
 </ol></article><article class="exercise exercise-like" id="exercise-12"><h6 class="heading">
 <span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Understanding Modularity, Part II.</span>
 </h6>
-<p id="p-59">Now we will randomly rewire the network. We keep the ends of the edges, so that the vertex degrees do not change (see the figure to the right). We erase the edges themselves, which gives us a configuration like the one pictured to the right. Next, we randomly add edges between pairs of vertices, until all edges have been redrawn. Loops are allowed, as are multiple edges between pairs of vertices.</p>
-<p id="p-60">Note that the degree of vertex \(i\) will still be \(k_i\) when this process is done. <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/rewire-vertex.png" class="contained"></div></p>
+<p id="p-74">Now we will randomly rewire the network. We keep the ends of the edges, so that the vertex degrees do not change (see the figure to the right). We erase the edges themselves, which gives us a configuration like the one pictured to the right. Next, we randomly add edges between pairs of vertices, until all edges have been redrawn. Loops are allowed, as are multiple edges between pairs of vertices.</p>
+<p id="p-75">Note that the degree of vertex \(i\) will still be \(k_i\) when this process is done. <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/rewire-vertex.png" class="contained"></div></p>
 <ol class="lower-alpha">
-<li id="li-35"><p id="p-61">Pick the start of one edge at vertex \(i\text{.}\) What is the probability that this rewired edge connects to vertex \(j\text{?}\) </p></li>
-<li id="li-36"><p id="p-62">So how many rewired edges from vertex \(i\) do we expect to connect to vertex \(j\text{?}\) (Assume that the network is so big that the chance that two ends at \(i\) try to connect  to the same end at \(j\) is irrelevant.) </p></li>
-<li id="li-37">
-<p id="p-63">Now argue that the expected number of rewired edges that are internal to the specified communities is</p>
+<li id="li-40"><p id="p-76">Pick the start of one edge at vertex \(i\text{.}\) What is the probability that this rewired edge connects to vertex \(j\text{?}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-18" id="solution-18"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-18"><div class="solution solution-like">
+<p id="p-77">The probability is really</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{k_j}{2m-1}
+\end{equation*}
+</div>
+<p class="continuation">but this is basically the same as</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{k_j}{2m}
+\end{equation*}
+</div>
+<p class="continuation">for a very large network.</p>
+</div></div></p></li>
+<li id="li-41"><p id="p-78">So how many rewired edges from vertex \(i\) do we expect to connect to vertex \(j\text{?}\) (Assume that the network is so big that the chance that two ends at \(i\) try to connect  to the same end at \(j\) is irrelevant.) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-19" id="solution-19"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-19"><div class="solution solution-like">
+<p id="p-79">The expected number of such edges is really</p>
+<div class="displaymath">
+\begin{equation*}
+k_i \frac{k_j}{2m-1}
+\end{equation*}
+</div>
+<p class="continuation">but this is basically the same as</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{k_i k_j}{2m}
+\end{equation*}
+</div>
+<p class="continuation">for a very large network. Essentially, what we are doing is ignoring the probability that we pick the same endpoint twice.</p>
+</div></div></p></li>
+<li id="li-42">
+<p id="p-80">Now argue that the expected number of rewired edges that are internal to the specified communities is</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{1}{2} \sum_{i}  \sum_{j}  \frac{k_i k_j}{2m} \, \delta (C^{(i)}, C^{(j)})
@@ -247,7 +427,7 @@ Q  =  \frac{1}{2m} \sum_{i} \sum_{j} \left( A_{ij} - \frac{k_i k_j}{2m} \right) 
 \frac{1}{2} \sum_{C} \sum_{i \in C} \sum_{j \in C}  \frac{k_i k_j}{2m}.		
 \end{equation*}
 </div>
-<p class="continuation">Here, the \(\frac{1}{2}\) takes care of the double counting since our sum looks at the pair \(i,j\) twice. </p>
+<p class="continuation">Here, the \(\frac{1}{2}\) takes care of the double counting since our sum looks at the pair \(i,j\) twice. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-20" id="solution-20"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-20"><div class="solution solution-like"><p id="p-81">In this case, the Kronecker delta function makes it so that we only count edges within communities.</p></div></div></p>
 </li>
 </ol>
 <p class="continuation">We subtract the expression in question 4(c) from the expression in question 3(b). We then divide by the total number of edges \(m\) (a normalizing factor) to get the modularity</p>
@@ -264,27 +444,27 @@ Q = 	\frac{1}{2m} \sum_{C} \sum_{i \in C} \sum_{j \in C} \left( A_{ij} - \frac{k
 </div></article><article class="exercise exercise-like" id="exercise-13"><h6 class="heading">
 <span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">Modularity as a Random Walk Measure.</span>
 </h6>
-<p id="p-64">We can rewrite our modularity equation as</p>
+<p id="p-82">We can rewrite our modularity equation as</p>
 <div class="displaymath">
 \begin{equation*}
 Q \, = \, \frac{1}{2m} \sum_{C} \sum_{i,j \in C} \left( A_{ij} - \frac{k_i k_j}{2m} \right) 
 \,= \,  \sum_{C} \sum_{i,j \in C} \left( \frac{A_{ij}}{k_i} \frac{k_i}{2m}  - \frac{k_i }{2m} \frac{k_j }{2m}  \right)	
 \end{equation*}
 </div>
-<ol id="p-65" class="lower-alpha">
-<li id="li-38"><p id="p-derived-li-38">Confirm that this expression is equivalent to<div class="displaymath">
+<ol id="p-83" class="lower-alpha">
+<li id="li-43"><p id="p-derived-li-43">Confirm that this expression is equivalent to<div class="displaymath">
 \begin{equation*}
 Q \, = \, \sum_{C} \sum_{i,j \in C} \left( P^{\top}_{ij}\pi_i  - \pi_i \pi_j  \right)
 \end{equation*}
-</div>where \(P = D^{-1} A\) is the random walk transition matrix and \(\pi\) is its stationary distribution, where \(\pi_i=k_{i}/2m\text{.}\) </p></li>
-<li id="li-39">
-<p id="p-66">Consider a random walk whose distribution has converged to the stationary distribution \(\pi\text{.}\)</p>
+</div>where \(P = D^{-1} A\) is the random walk transition matrix and \(\pi\) is its stationary distribution, where \(\pi_i=k_{i}/2m\text{.}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-21" id="solution-21"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-21"><div class="solution solution-like"><p id="p-84">This random walk formula for \(Q\) is equivalent to the right hand side of the previous equation for \(Q\)</p></div></div></p></li>
+<li id="li-44">
+<p id="p-85">Consider a random walk whose distribution has converged to the stationary distribution \(\pi\text{.}\)</p>
 <ol class="lower-roman">
-<li id="li-40"><p id="p-derived-li-40">Explain why \(\sum_{i,j \in C} P^{\top}_{ij}\pi_i\) is the probability that we are in \(C\) at time \(t\) and \(t+1\text{.}\) </p></li>
-<li id="li-41"><p id="p-derived-li-41">Explain why \(\sum_{i,j \in C}  \pi_i \pi_j\) is the probability that we are in \(C\) at time \(t\) and \(t+T\) for very large \(T\text{.}\) </p></li>
+<li id="li-45"><p id="p-derived-li-45">Explain why \(\sum_{i,j \in C} P^{\top}_{ij}\pi_i\) is the probability that we are in \(C\) at time \(t\) and \(t+1\text{.}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-22" id="solution-22"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-22"><div class="solution solution-like"><p id="p-86">Given vertex \(i \in C\text{,}\) we are at this vertex with probability \(\pi_i\text{.}\) We then step to a neighbor \(j\) with probability \(p_{ij}\text{,}\) and we only include this in our sum when \(j \in C\text{.}\)</p></div></div></p></li>
+<li id="li-46"><p id="p-derived-li-46">Explain why \(\sum_{i,j \in C}  \pi_i \pi_j\) is the probability that we are in \(C\) at time \(t\) and \(t+T\) for very large \(T\text{.}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-23" id="solution-23"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-23"><div class="solution solution-like"><p id="p-87">Given vertex \(i \in C\text{,}\) we are at this vertex with probability \(\pi_i\text{.}\) If we walk a large number of steps, then the probability that we are at vertex \(j\) is \(\pi_{j}\text{.}\) We multiply these probabilities to obtain the given probability.</p></div></div></p></li>
 </ol>
 </li>
-<li id="li-42"><p id="p-derived-li-42">Modularity is the difference of the two quantities in part (b). Using this random walk interpretation, why is this difference a measure of community structure?</p></li>
+<li id="li-47"><p id="p-derived-li-47">Modularity is the difference of the two quantities in part (b). Using this random walk interpretation, why is this difference a measure of community structure?</p></li>
 </ol></article></section></section></div></main>
 </div>
 </body>

@@ -12,31 +12,26 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Modularity measures the extent to which edges are internal to communities, compared with spanning different communities. We will explain why this is the case. Basically, we are comparing the actual structure of the network with the expected structure of a network where we randomize the edges (but preserve the vertex degrees).</p>
-<ol class="lower-alpha">
-<li>
-<p>Explain why the following expression counts the total number of edges</p>
+<p>The terms are</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{1}{2} \sum_{i}  \sum_{j}  A_{ij} 
+\begin{array}{c|c|c|c|c}
+i \backslash j&amp;  1  &amp; 2 &amp; 3 &amp; 4 \\
+\hline
+1 &amp; - \frac{1}{6}&amp; 1- \frac{2}{6}&amp;- \frac{2}{6}&amp;- \frac{1}{6}\\[0.5em]
+2 &amp;1- \frac{2}{6}&amp;- \frac{4}{6}&amp;1- \frac{4}{6}&amp;- \frac{2}{6}\\[0.5em]
+3 &amp;- \frac{2}{6}&amp;1- \frac{4}{6}&amp; - \frac{4}{6}&amp;1- \frac{2}{6}\\[0.5em]
+4 &amp;- \frac{1}{6}&amp;- \frac{2}{6}&amp;1- \frac{2}{6}&amp;- \frac{1}{6}
+\end{array}
 \end{equation*}
 </div>
-</li>
-<li>
-<p>Now explain why the following expression counts the total number of edges that are <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">internal</em> to one of the designated communities.</p>
+<p class="continuation">and the modularity is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{1}{2}  \sum_{i}  \sum_{j} A_{ij}  \, \delta (C^{(i)}, C^{(j)})
+Q =  \frac{1}{6} \left( 6 - 4 \cdot \frac{1}{6} - 8 \cdot \frac{2}{6} - 4 \cdot \frac{4}{6} \right) =
+\frac{1}{6} \left( 6 - \frac{18}{3} \right) = 0
 \end{equation*}
 </div>
-<p class="continuation">which can also be written as</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\frac{1}{2} \sum_{C} \sum_{i \in C} \sum_{j \in C} A_{ij}.
-\end{equation*}
-</div>
-</li>
-</ol>
 <span class="incontext"><a href="modularity.html#p-56">in-context</a></span>
 </body>
 </html>

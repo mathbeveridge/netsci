@@ -12,7 +12,33 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Open the <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">karate.gml</code> file into Gephi using File/Open. Select the graph type as "Undirected."</p>
-<span class="incontext"><a href="communities.html#p-69">in-context</a></span>
+<p>Modularity measures the extent to which edges are internal to communities, compared with spanning different communities. We will explain why this is the case. Basically, we are comparing the actual structure of the network with the expected structure of a network where we randomize the edges (but preserve the vertex degrees).</p>
+<ol class="lower-alpha">
+<li>
+<p>Explain why the following expression counts the total number of edges</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{1}{2} \sum_{i}  \sum_{j}  A_{ij} 
+\end{equation*}
+</div>
+<p class="continuation"><a class="solution-knowl original" data-knowl="./knowl/solution-16-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
+</li>
+<li>
+<p>Now explain why the following expression counts the total number of edges that are <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">internal</em> to one of the designated communities.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{1}{2}  \sum_{i}  \sum_{j} A_{ij}  \, \delta (C^{(i)}, C^{(j)})
+\end{equation*}
+</div>
+<p class="continuation">which can also be written as</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{1}{2} \sum_{C} \sum_{i \in C} \sum_{j \in C} A_{ij}.
+\end{equation*}
+</div>
+<p class="continuation"><a class="solution-knowl original" data-knowl="./knowl/solution-17-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
+</li>
+</ol>
+<span class="incontext"><a href="modularity.html#p-69">in-context</a></span>
 </body>
 </html>
