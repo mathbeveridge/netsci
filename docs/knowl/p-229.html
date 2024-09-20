@@ -12,19 +12,12 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>We are given a data set whose degree distribution looks like a straight line with negative slope when plotted using  a log-log scale. In other words,</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\ln (p(k)) = c - \alpha \ln (k),
-\end{equation*}
-</div>
-<p class="continuation">where  \(c &gt;0\)  and \(\alpha &gt; 0\) are  constants. Exponentiate both sides to show that</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-p(k) = C k^{-\alpha}.
-\end{equation*}
-</div>
-<p class="continuation">What is the value of the constant \(C\) in terms of \(c\text{?}\) </p>
-<span class="incontext"><a href="powerlaw.html#p-229">in-context</a></span>
+<p>We use a couple of tricks here</p>
+<ul class="disc">
+<li><p>At the third equality, we replace the lower limit of \(k=0\) with \(k=1\text{.}\) This is because the \(k=0\) term equals 0, so we do not need to list it. <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">This is an important step!</em> Do not underestimate the need to properly account for the lowest/highest index.</p></li>
+<li><p>At the fifth equality, we reindex, using \(j\) instead of \(k\text{.}\) <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Do this carefully!</em> In my margin, I always write down the substitution in two ways. Here we are using \(j=k-1\text{,}\) which is the same as \(k=j+1\text{.}\) Having both of these expression staring at me will ensure that I don't make mistakes during the reindexing. Wherever I see a "\(k\text{,}\)" I replace it with a "\(j+1\text{.}\)" Or if I want to be fancy, I can immediately replace a "\(k-1\)" with a "\(j\text{.}\)"</p></li>
+</ul>
+<p class="continuation">Don't cut corners on these substitutions. You will save yourself a lot of headaches!</p>
+<span class="incontext"><a href="probdist.html#p-229">in-context</a></span>
 </body>
 </html>

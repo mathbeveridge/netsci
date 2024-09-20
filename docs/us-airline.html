@@ -160,65 +160,65 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="us-airline"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.5</span> <span class="title">Analyzing the US Airline Network</span>
 </h2>
-<section class="introduction" id="introduction-11"><p id="p-355">In this hands-on activity, you will play with a reasonably sized network: an airline route network for the United States from the early 2000s. First, you will explore this data set in Gephi. Then you will do similar calculations using NetworkX in Python.</p></section><section class="exercises" id="exercises-10"><h3 class="heading hide-type">
+<section class="introduction" id="introduction-11"><p id="p-395">In this hands-on activity, you will play with a reasonably sized network: an airline route network for the United States from the early 2000s. First, you will explore this data set in Gephi. Then you will do similar calculations using NetworkX in Python.</p></section><section class="exercises" id="exercises-10"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Practice Problems</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-51"><h6 class="heading">
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Getting Started in Gephi.</span>
 </h6>
-<ol id="p-356" class="lower-alpha">
-<li id="li-181"><p id="p-357">Load the <code class="code-inline tex2jax_ignore">us-airline.gephi</code> file into Gephi.</p></li>
-<li id="li-182"><p id="p-358">How many nodes are there? How many edges?</p></li>
-<li id="li-183"><p id="p-359">Click on the "T" in the lower toolbar to show the node labels. The labels are the names of the airports. 	Change the displayed valye clicking on the clipboard/wrench icon at the bottom right of the Graph window. De-select "Label" and select "Code." Click OK. Adjust the label size so that you can read them.</p></li>
-<li id="li-184">
-<p id="p-360">Run the following statistics  in the Statistics window (on the right hand side).</p>
+<ol id="p-396" class="lower-alpha">
+<li id="li-190"><p id="p-397">Load the <code class="code-inline tex2jax_ignore">us-airline.gephi</code> file into Gephi.</p></li>
+<li id="li-191"><p id="p-398">How many nodes are there? How many edges?</p></li>
+<li id="li-192"><p id="p-399">Click on the "T" in the lower toolbar to show the node labels. The labels are the names of the airports. 	Change the displayed valye clicking on the clipboard/wrench icon at the bottom right of the Graph window. De-select "Label" and select "Code." Click OK. Adjust the label size so that you can read them.</p></li>
+<li id="li-193">
+<p id="p-400">Run the following statistics  in the Statistics window (on the right hand side).</p>
 <ul class="disc">
-<li id="li-185"><p id="p-361">Average Degree</p></li>
-<li id="li-186"><p id="p-362">Network Diameter</p></li>
-<li id="li-187"><p id="p-363">HITS</p></li>
-<li id="li-188"><p id="p-364">PageRank, and select "Use Edge Weight"</p></li>
-<li id="li-189"><p id="p-365">Eigenvector Centrality</p></li>
-<li id="li-190"><p id="p-366">Modularity</p></li>
+<li id="li-194"><p id="p-401">Average Degree</p></li>
+<li id="li-195"><p id="p-402">Network Diameter</p></li>
+<li id="li-196"><p id="p-403">HITS</p></li>
+<li id="li-197"><p id="p-404">PageRank, and select "Use Edge Weight"</p></li>
+<li id="li-198"><p id="p-405">Eigenvector Centrality</p></li>
+<li id="li-199"><p id="p-406">Modularity</p></li>
 </ul>
 <p class="continuation">Look quickly at the plots that come up, and then dismiss them.</p>
 </li>
 </ol></article><article class="exercise exercise-like" id="exercise-52"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Network Visualization in Gephi.</span>
 </h6>
-<ol id="p-367" class="lower-alpha">
-<li id="li-191"><p id="p-368">For now, keep the default layout.</p></li>
-<li id="li-192"><p id="p-369">In the Ranking tab (upper left window), click on the pallette icon, select "Partition" and then choose "Modularity Class" from the drop down.</p></li>
-<li id="li-193"><p id="p-370">In the Ranking tab (upper left window), update the node size (nested circle icon), and label size ("tT" icon) to reflect various properties. <em class="emphasis">Do not change label color: sometimes they become hard to see.</em></p></li>
-<li id="li-194"><p id="p-371">Can you find any interesting combinations?  What do you observe? Which centrality measures seem to be correlated. (Degree, Closeness, Betweenness, Authority, Hub. PageRank, Eigenvector.) Write down some of your observations.</p></li>
-<li id="li-195"><p id="p-372">Update the Layout to use Fructerman-Reigold, ForceAtlas 2 and Yifan Hu. Be sure to click "Run" and then "Stop" once the network has stabilized.</p></li>
+<ol id="p-407" class="lower-alpha">
+<li id="li-200"><p id="p-408">For now, keep the default layout.</p></li>
+<li id="li-201"><p id="p-409">In the Ranking tab (upper left window), click on the pallette icon, select "Partition" and then choose "Modularity Class" from the drop down.</p></li>
+<li id="li-202"><p id="p-410">In the Ranking tab (upper left window), update the node size (nested circle icon), and label size ("tT" icon) to reflect various properties. <em class="emphasis">Do not change label color: sometimes they become hard to see.</em></p></li>
+<li id="li-203"><p id="p-411">Can you find any interesting combinations?  What do you observe? Which centrality measures seem to be correlated. (Degree, Closeness, Betweenness, Authority, Hub. PageRank, Eigenvector.) Write down some of your observations.</p></li>
+<li id="li-204"><p id="p-412">Update the Layout to use Fructerman-Reigold, ForceAtlas 2 and Yifan Hu. Be sure to click "Run" and then "Stop" once the network has stabilized.</p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-53"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">The Data Laboratory in Gephi.</span>
 </h6>
-<ol id="p-373" class="lower-alpha">
-<li id="li-196"><p id="p-374">Now click on the "Data Laboratory" button at the top of the window. You can sort the table by a column by  clicking on the header. Clicking again reverses the ordering. Once again, look at which centrality measures are correlated, and which are not. Again, record your observations. Go back and pick a visualization that captures something interesting.</p></li>
-<li id="li-197"><p id="p-375">Sort the nodes by degree. Are there any natural gap(s) that separate large degree nodes from the others? Now sort them by the other centrality measures. Do you see any large gaps in these ranking values that separate the "important" nodes from the rest?</p></li>
-<li id="li-198"><p id="p-376">Find one (or more) lower degree node that ranks highly in one (or more)  of the other betweenness measures. If so, change your visualization to highlight these nodes. Can you explain why that node ranks highly?</p></li>
+<ol id="p-413" class="lower-alpha">
+<li id="li-205"><p id="p-414">Now click on the "Data Laboratory" button at the top of the window. You can sort the table by a column by  clicking on the header. Clicking again reverses the ordering. Once again, look at which centrality measures are correlated, and which are not. Again, record your observations. Go back and pick a visualization that captures something interesting.</p></li>
+<li id="li-206"><p id="p-415">Sort the nodes by degree. Are there any natural gap(s) that separate large degree nodes from the others? Now sort them by the other centrality measures. Do you see any large gaps in these ranking values that separate the "important" nodes from the rest?</p></li>
+<li id="li-207"><p id="p-416">Find one (or more) lower degree node that ranks highly in one (or more)  of the other betweenness measures. If so, change your visualization to highlight these nodes. Can you explain why that node ranks highly?</p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-54"><h6 class="heading">
 <span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Filtering in Gephi.</span>
 </h6>
-<ol id="p-377" class="lower-alpha">
-<li id="li-199"><p id="p-378">Click on the "Overview" button at the top of the window. We will now add our first filter: we only want to show nodes of high degree.</p></li>
-<li id="li-200"><p id="p-379">In the right-hand window, click on the "Filter" tab (which is next to the "Statistics" tab. Explore down to  "Attributes/Range/Degree." Then drag "Degree" to the lower half of this tab (named "Queries"). Click on "Filter."</p></li>
-<li id="li-201"><p id="p-380">Adjust the Query slider. Among the highest degree nodes, what is the maximum number that form a complete graph (also known as a "clique")? What is the smallest degree (in the overall graph) of vertices in this clique?</p></li>
-<li id="li-202"><p id="p-381">Make a new Query using other centrality measures where you saw a big gap in the ranking value. How connected are the high ranking nodes for this measure? What other interesting observations can you make about these nodes? Is there a clear internal structure? Or perhaps a lack of one?</p></li>
+<ol id="p-417" class="lower-alpha">
+<li id="li-208"><p id="p-418">Click on the "Overview" button at the top of the window. We will now add our first filter: we only want to show nodes of high degree.</p></li>
+<li id="li-209"><p id="p-419">In the right-hand window, click on the "Filter" tab (which is next to the "Statistics" tab. Explore down to  "Attributes/Range/Degree." Then drag "Degree" to the lower half of this tab (named "Queries"). Click on "Filter."</p></li>
+<li id="li-210"><p id="p-420">Adjust the Query slider. Among the highest degree nodes, what is the maximum number that form a complete graph (also known as a "clique")? What is the smallest degree (in the overall graph) of vertices in this clique?</p></li>
+<li id="li-211"><p id="p-421">Make a new Query using other centrality measures where you saw a big gap in the ranking value. How connected are the high ranking nodes for this measure? What other interesting observations can you make about these nodes? Is there a clear internal structure? Or perhaps a lack of one?</p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-55"><h6 class="heading">
 <span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Getting Started with NetworkX.</span>
 </h6>
-<ol id="p-382" class="lower-alpha">
-<li id="li-203">
-<p id="p-383">Now let's try to do some of this same work using NetworkX. You will need to start by installing NetworkX using the command</p>
+<ol id="p-422" class="lower-alpha">
+<li id="li-212">
+<p id="p-423">Now let's try to do some of this same work using NetworkX. You will need to start by installing NetworkX using the command</p>
 <pre class="code-display tex2jax_ignore">
 pip3 install networkx
 </pre>
 </li>
-<li id="li-204"><p id="p-384">Start off by familiarizing yourself with NetworkX by working though the <a class="external" href="https://networkx.github.io/documentation/stable/tutorial.html" target="_blank">NetworkX tutorial</a>.</p></li>
-<li id="li-205">
-<p id="p-385">Try to import the airline graph and find its centrality measures. Googling the following terms will bring up useful parts of the NetworkX documentation:</p>
+<li id="li-213"><p id="p-424">Start off by familiarizing yourself with NetworkX by working though the <a class="external" href="https://networkx.github.io/documentation/stable/tutorial.html" target="_blank">NetworkX tutorial</a>.</p></li>
+<li id="li-214">
+<p id="p-425">Try to import the airline graph and find its centrality measures. Googling the following terms will bring up useful parts of the NetworkX documentation:</p>
 <pre class="code-display tex2jax_ignore">
 networkx tutorial
 networkx centrality

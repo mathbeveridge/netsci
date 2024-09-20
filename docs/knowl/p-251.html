@@ -12,7 +12,14 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Degree Centrality  \(c_i^D  = \deg(i) = k_i\) <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality0.svg" role="img" class="contained"></div></p>
-<span class="incontext"><a href="centrality.html#p-251">in-context</a></span>
+<p>Once again, it is clear that \(0 \leq p(k) \) for all \(k\text{.}\) These numbers sum to</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\sum_{k=0}^{\infty} e^{-\lambda} \frac{\lambda^k}{k!} = e^{-\lambda} \sum_{k=0}^{\infty}  \frac{\lambda^k}{k!}
+= e^{-\lambda} e^{\lambda} =1.
+\end{equation*}
+</div>
+<p class="continuation">Since all terms are nonnegative and they sum to 1, each term must be less than 1.</p>
+<span class="incontext"><a href="probdist.html#p-251">in-context</a></span>
 </body>
 </html>

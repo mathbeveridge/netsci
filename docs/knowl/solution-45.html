@@ -15,8 +15,13 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
-<p>If \(C\) is a community, then we would expect that a single random step from a vertex in \(C\) would be far more likely to also be in \(C\text{,}\) when compared with the probability that two randomly chosen vertices are in \(C\text{.}\) We multiply these probabilities to obtain the given probability.</p>
+<p>First, we note that \(0 \leq p(k) \leq 1\) for \(0 \leq k \leq n\text{.}\) Next, we must prove that the probabilities all sum to one. This follows quickly from the binomial theorem with \(x=p\) and \(y=1-p\text{:}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\sum_{k=0}^n {n \choose k} p^k (1-p)^{n-k} = (p + (1-p))^n = 1^n = 1.
+\end{equation*}
 </div>
-<span class="incontext"><a href="modularity.html#solution-45">in-context</a></span>
+</div>
+<span class="incontext"><a href="probdist.html#solution-45">in-context</a></span>
 </body>
 </html>

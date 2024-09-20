@@ -12,27 +12,12 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>We are now ready to approximate the clustering coefficient. By parts (c) and (d), we can ignore the new triangles (there are only a constant number of them). But we need the new connected triples from part (e). The clustering coefficient is</p>
+<p>Suppose that we have run Price's Model and that the network has \(n\) vertices. We now add vertex \(n+1\text{,}\) as well as \(c\) arcs from vertex \(n+1\) to the existing network. Let \(k_i\) denote the degree of vertex \(i\text{.}\) Prove that for each new arc we add from vertex \(n+1\text{,}\)</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-C \approx \frac
-{
-3 n {c/2 \choose 2}
-}
-{
-n {c \choose 2} + c^2pn + \frac{1}{2} c^2p^2 n
-}
-=
-\frac
-{
-3{c/2 \choose 2}
-}
-{
-{c \choose 2} + c^2p + \frac{1}{2} c^2p^2.
-}
+\P(\mbox{the arc points to vertex } i) = \frac{a+k_i}{n(c+a)}.
 \end{equation*}
 </div>
-<p class="continuation">This is a constant (independent of \(n\)), so we have a nonzero clustering coefficient for every small world network.</p>
-<span class="incontext"><a href="smallworld.html#p-486">in-context</a></span>
+<span class="incontext"><a href="pricemodel.html#p-486">in-context</a></span>
 </body>
 </html>

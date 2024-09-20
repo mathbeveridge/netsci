@@ -12,17 +12,18 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Here is Price's Model for a citation network. Start with a small set of initial papers (with no citations). When a new paper is added, it cites  \(c\) existing papers (on average). Each paper is chosen as follows:</p>
-<ul class="disc">
-<li><p>with \(\displaystyle{\P = \frac{a}{a+c}}\text{,}\)   cite a uniformly random paper</p></li>
-<li><p>with \(\displaystyle{\P = \frac{c}{a+c}}\text{,}\)  cite a  paper with probability proportional to its current citation count.</p></li>
-</ul>
-<p class="continuation">The tail of the degree distribution satisfies the power law</p>
+<p>Use your answer to the previous question and linearity of expectation</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\P(\deg(v) = k) \sim k^{-2-a/c}.
+\E \left[ \sum_{i=1}^k {X_i}\right] =  \sum_{i=1}^k \E \left[  {X_i}\right]
 \end{equation*}
 </div>
-<span class="incontext"><a href="pricemodel.html#p-443">in-context</a></span>
+<p class="continuation">to give an alternate proof that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\langle m \rangle ={n \choose 2} p.
+\end{equation*}
+</div>
+<span class="incontext"><a href="randomgraph.html#p-443">in-context</a></span>
 </body>
 </html>

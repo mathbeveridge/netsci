@@ -12,19 +12,13 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">[Don't solve this one. The calculation isn't as bad as the other variance calculations above. But it is still a bit long.]</em> It can be shown that</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\var[Z] = \lambda
-\end{equation*}
-</div>
-<p class="continuation">as well! Again, we need to use the trick</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\E[Z^2] = \E[Z(Z-1)] + \E[Z].
-\end{equation*}
-</div>
-<p class="continuation">This time, we also need to be comfortable with reindexing infinite series. </p>
+<p>We give a combinatorial recipe.</p>
+<ul class="disc">
+<li><p>Pick the \(k\) flips that will be \(H\text{.}\) There are \({n \choose k}\) ways to do so.</p></li>
+<li><p>The probability that the chosen \(k\) flips all turn up \(H\) is \(p^k\text{.}\)</p></li>
+<li><p>The probability that the remaining \(n-k\) flips all turn up \(T\) is \((1-p)^{n-k}\text{.}\)</p></li>
+</ul>
+<p class="continuation">Multiplying all these terms together gives the expression above.</p>
 <span class="incontext"><a href="probdist.html#p-221">in-context</a></span>
 </body>
 </html>

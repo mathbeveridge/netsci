@@ -13,13 +13,12 @@
 <body>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-{n \choose k} p^k (1-p)^{n-k}
-&amp;= \frac{n!}{k! (n-k)!} \left( \frac{\lambda} {n}\right)^k  \left( 1 -  \frac{\lambda}{n} \right)^{n-k}\\
-&amp;= \frac{\lambda^k} {k!} \left( \frac{n}{n} \frac{n-1}{n} \cdots \frac{n-k+1}{n} \right) \left( 1 -  \frac{\lambda}{n} \right)^{n} \left( 1 -  \frac{\lambda}{n} \right)^{-k}\\
-&amp; \rightarrow
-\frac{\lambda^k} {k!}  \cdot \big( 1 \cdot 1 \cdots 1  \big) \cdot  e^{-\lambda} \cdot 1 = e^{-\lambda} \frac{\lambda^k}{k!}
+I_k &amp;= \mbox{ fraction of vertices of degree   that are infected}\\
+I &amp;= \sum_{k} p_k \,  I_k  \mbox{ total fraction of infected vertices}\\
+\Theta &amp;= \mbox{ fraction of neighbors of a susceptible vertex that are infected}\\
+\beta &amp;= \mbox{ likelihood of transmission from infected vertex to susceptible vertex}
 \end{align*}
 </div>
-<span class="incontext"><a href="probdist.html#mjx-eqn:mrow-62">in-context</a></span>
+<span class="incontext"><a href="epidemics.html#mjx-eqn:mrow-62">in-context</a></span>
 </body>
 </html>

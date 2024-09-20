@@ -12,7 +12,16 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Now simulate some random walks on the directed graph from Problem 7. This time, start your walk at vertex 1. You should see a couple of different kinds of behavior for this directed graph. Describe what you observe. <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 25%; margin-left: 37.5%; margin-right: 37.5%;"><img src="./images/directed-graph.png" class="contained"></div> </p>
-<span class="incontext"><a href="randomwalk.html#p-322">in-context</a></span>
+<p>Consider the following recursive rule for updating the importance of a vertex.</p>
+<ul class="disc">
+<li><p>At first, all vertices have importance = 1</p></li>
+<li><p>In each round, update the importance of a vertex to be the sum of the importances of its in-neighbors.</p></li>
+</ul>
+<ol class="lower-alpha">
+<li><p>Use this recursive rule to calculate the importance for the following directed graph. What do you observe? <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-algcentrality4.svg" role="img" class="contained"></div> <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/acyclic-digraph.png" class="contained"></div> </p></li>
+<li><p>Use this  recursive rule calculate the importance of each vertex in this directed graph. What do you observe? <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-algcentrality6.svg" role="img" class="contained"></div> <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="images/digraph-feedback.png" class="contained"></div> </p></li>
+<li><p>Devise a recursive importance rule for directed networks that "fixes the problems" that you observed in parts (a) and (b). </p></li>
+</ol>
+<span class="incontext"><a href="algcentrality.html#p-322">in-context</a></span>
 </body>
 </html>

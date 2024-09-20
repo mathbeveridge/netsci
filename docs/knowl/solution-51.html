@@ -15,14 +15,35 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
-<p>We have</p>
+<p>We will calculate \(\E[Y^2] - (\E[Y])^2 = \E[Y(Y-1)] + \E[Y] - (\E[Y])^2\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\E[Y(Y-1)]  &amp;=&amp; \sum_{k=1}^{\infty}  k(k-1) (1-p)^{k-1} p\\
+&amp;= p (1-p) \sum_{k=2}^{\infty}  k(k-1) (1-p)^{k-2}.
+\end{align*}
+</div>
+<p>Taking the derivative of both sides of</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\P[A \cap B] = \frac{2}{7}  \qquad \mbox{ but } \qquad  \P[A] \P[B] = \frac{3}{7} \cdot \frac{6}{7} = \frac{18}{49}.
+\sum_{k=1}^{\infty} kx^{k-1} = \frac{1}{(1-x)^2},
 \end{equation*}
 </div>
-<p class="continuation">Since \(\P[A \mid B] \neq \P[A]\text{,}\) these are dependent events.</p>
+<p class="continuation">we find that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\sum_{k=2}^{\infty} k(k-1) x^{k-2} = \frac{2}{(1-x)^3}.
+\end{equation*}
 </div>
-<span class="incontext"><a href="randvar.html#solution-51">in-context</a></span>
+<p class="continuation">Therefore</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\E[Y(Y-1)]  &amp;=  p (1-p) \sum_{k=2}^{\infty}  k(k-1) (1-p)^{k-2}\\
+&amp;= p (1-p) \frac{2}{(1- (1-p))^3} = \frac{p(1-p)}{p^3}\\
+&amp; = \frac{p(1-p)}{p^2}.
+\end{align*}
+</div>
+<p></p>
+</div>
+<span class="incontext"><a href="probdist.html#solution-51">in-context</a></span>
 </body>
 </html>

@@ -13,12 +13,10 @@
 <body>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-I_k &amp;= \mbox{ fraction of vertices of degree   that are infected}\\
-I &amp;= \sum_{k} p_k \,  I_k  \mbox{ total fraction of infected vertices}\\
-\Theta &amp;= \mbox{ fraction of neighbors of a susceptible vertex that are infected}\\
-\beta &amp;= \mbox{ likelihood of transmission from infected vertex to susceptible vertex}
+\sum_{k=1}^{\infty} p(k) &amp;= \sum_{k=1}^{\infty} (1-p)^{k-1} p \, = \, p \sum_{k=1}^{\infty} (1-p)^{k-1}\\
+&amp;= p \sum_{j=0}^{\infty} (1-p)^{j} \, = \, \frac{p}{1 - (1-p)} \,=\, \frac{p}{p} \,=\, 1.
 \end{align*}
 </div>
-<span class="incontext"><a href="epidemics.html#mjx-eqn:mrow-25">in-context</a></span>
+<span class="incontext"><a href="probdist.html#mjx-eqn:mrow-25">in-context</a></span>
 </body>
 </html>

@@ -12,12 +12,24 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>In the previous part, you showed that the fraction of links from available for future transmission from infected vertices to susceptible vertices is</p>
+<p>The random long-range contact is chosen according to the PMF</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\Theta(t) = C e^{t/{\tau}}   \mbox{ where }   \tau = \frac{1}{A} = \frac{\langle k \rangle}{\beta ( \langle k^2 \rangle - \langle k \rangle)}.
+\Pr[ v \mbox{ is } u \mbox{'s long range contact}] = C \cdot \frac{1}{d(u,v)}.
 \end{equation*}
 </div>
-<span class="incontext"><a href="epidemics.html#p-538">in-context</a></span>
+<p class="continuation">Show that the normalizing constant \(C\) satisfies</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+C &gt; \frac{1}{2\log n}
+\end{equation*}
+</div>
+<p class="continuation">where \(\log n= \log_2 n\text{.}\) You will need to use the following inequalities, which you saw in your calculus classes (and might have forgotten):</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\sum_{i=1}^{k} \frac{1}{i} \leq 1 +  \mbox{ln}(k)  \leq  1 + \log_2(k).
+\end{equation*}
+</div>
+<span class="incontext"><a href="navsmallworld.html#p-538">in-context</a></span>
 </body>
 </html>

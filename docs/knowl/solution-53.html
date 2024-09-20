@@ -15,19 +15,18 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
-<p>We have</p>
+<p></p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-F_X(k) = \sum_{i=-\infty}^k p_X(i)
-\end{equation*}
+\begin{align*}
+\E[Z] &amp;= \sum_{k=0}^{\infty} k e^{-\lambda} \frac{\lambda^k}{k!}
+\, = \,  \sum_{k=1}^{\infty} e^{-\lambda} \frac{\lambda^k}{(k-1)!}\\
+&amp; =  \lambda \sum_{k=1}^{\infty} e^{-\lambda} \frac{\lambda^{k-1}}{(k-1)!}
+\,= \,  \lambda \sum_{j=0}^{\infty} e^{-\lambda} \frac{\lambda^{j}}{j!}\\
+&amp; = \lambda.
+\end{align*}
 </div>
-<p class="continuation">because this is the definition of the CDF. Therefore, we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-p_X(k) = F_X(k) - F_X(k-1) = \sum_{i=-\infty}^k p_X(i) - \sum_{i=-\infty}^{k-1} p_X(i) = p_X(k).
-\end{equation*}
+<p></p>
 </div>
-</div>
-<span class="incontext"><a href="randvar.html#solution-53">in-context</a></span>
+<span class="incontext"><a href="probdist.html#solution-53">in-context</a></span>
 </body>
 </html>

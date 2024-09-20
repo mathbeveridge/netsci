@@ -12,25 +12,12 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>At each step, \(v_t\) is chosen uniformly from the out-neighbors of \(v_{t-1}\text{.}\) Using conditional probability notation, we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-P_{ij} = \Pr (v_t=j \mid v_{t-1} = i ) =
-\left\{
-\begin{array}{cc}
-\displaystyle{\frac{1}{k_i^{\mathrm{out}}}} &amp; \mbox{if } ij \in E, \\
-0 &amp; \mbox{otherwise}.
-\end{array}
-\right.
-\end{equation*}
-</div>
-<p class="continuation">The <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">transition matrix</em> \(P = ( P_{ij})\) collects the transition probabilities. The \(i\)th row contains all the transition probabilities starting at vertex \(i\text{.}\) Finally, we can write our transition matrix as</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-P = D^{-1} A
-\end{equation*}
-</div>
-<p class="continuation">where \(D\)  is the diagonal matrix with  \(D_{ii} = \max \left\{ k_i^{\mathrm{out}}, 1 \right\}\) and  \(A\) is the adjacency matrix.</p>
-<span class="incontext"><a href="randomwalk.html#p-290">in-context</a></span>
+<p>For each of the following graphs, calculate the (unnormalized) degree centrality, betweenness centrality and closeness centrality</p>
+<ol class="lower-alpha">
+<li><p>Degree Centrality  \(c_i^D  = \deg(i) = k_i\) <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality0.svg" role="img" class="contained"></div></p></li>
+<li><p>Betweenness Centrality  \(c_i^B = \displaystyle{\sum_{s \neq i} \sum_{t \neq i, s} \frac{n_{s,t}(i)}{n_{s,t}}}\) <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality1.svg" role="img" class="contained"></div></p></li>
+<li><p>Closeness Centrality  \(c_i^C =  \displaystyle{\frac{1}{\sum_{j} d_{i,j}}}\) <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality2.svg" role="img" class="contained"></div></p></li>
+</ol>
+<span class="incontext"><a href="centrality.html#p-290">in-context</a></span>
 </body>
 </html>

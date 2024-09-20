@@ -12,13 +12,24 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<ol class="lower-alpha">
-<li><p>What does the graph look like just before the giant?</p></li>
-<li><p>What is happening as the giant appears? Is there a sudden jump in the size of the largest component?  Why or why not?</p></li>
-<li><p>What is the average degree when the giant appears? Is this degree fairly consistent between simulations?</p></li>
-<li><p>Describe the structure of the giant component right after it emerges. Is it a "dense graph" or a "sparse graph"? What other terms would you use to describe what you see?</p></li>
-<li><p>Describe the structure of the other (small) components at this point.</p></li>
-</ol>
-<span class="incontext"><a href="giantcomp.html#p-567">in-context</a></span>
+<p>This differential equation is called the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">logistic equation</em>. Its solution is the logistic function</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+I(t) = \frac{I_0}{I_0 + (1-I_0)e^{-\beta \langle k \rangle t}}
+\end{equation*}
+</div>
+<p class="continuation">where \(I_0 = I(0)\) is the fraction of infected people at time \(t=0\text{.}\) We can write this as</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+I(t) = \frac{1}{1+a e^{-c t}}
+\end{equation*}
+</div>
+<p class="continuation">where \(a = 1/I_0 - 1\) and \(c= \beta \langle k \rangle\text{.}\) Calculate \(\frac{dI}{dt}\) to confirm that \(I(t)\) satisfies the logistic equation</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{dI}{dt} = c I (1-I).
+\end{equation*}
+</div>
+<span class="incontext"><a href="epidemics.html#p-567">in-context</a></span>
 </body>
 </html>

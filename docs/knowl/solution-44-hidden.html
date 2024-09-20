@@ -10,5 +10,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like"><p>Given vertex \(i \in C\text{,}\) we are at this vertex with probability \(\pi_i\text{.}\) If we walk a large number of steps, then the probability that we are at vertex \(j\) is \(\pi_{j}\text{.}\) We multiply these probabilities to obtain the given probability.</p></div></body>
+<body><div class="solution solution-like">
+<p>We give a combinatorial recipe.</p>
+<ul class="disc">
+<li><p>Pick the \(k\) flips that will be \(H\text{.}\) There are \({n \choose k}\) ways to do so.</p></li>
+<li><p>The probability that the chosen \(k\) flips all turn up \(H\) is \(p^k\text{.}\)</p></li>
+<li><p>The probability that the remaining \(n-k\) flips all turn up \(T\) is \((1-p)^{n-k}\text{.}\)</p></li>
+</ul>
+<p class="continuation">Multiplying all these terms together gives the expression above.</p>
+</div></body>
 </html>

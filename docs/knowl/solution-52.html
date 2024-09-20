@@ -15,17 +15,15 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
+<p>Once again, it is clear that \(0 \leq p(k) \) for all \(k\text{.}\) These numbers sum to</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\begin{array}{c|c|c|c|c|c|c}
-F_X(0) &amp; F_X(1) &amp; F_X(2) &amp; F_X(3) &amp; F_X(4) &amp; F_X(5) &amp; F_X(6) \\
-\hline
-\rule{0pt}{3.5ex} 0&amp;0&amp;\frac{1}{7}&amp;\frac{5}{7}&amp;1&amp;1&amp;1 \\
-\end{array}
+\sum_{k=0}^{\infty} e^{-\lambda} \frac{\lambda^k}{k!} = e^{-\lambda} \sum_{k=0}^{\infty}  \frac{\lambda^k}{k!}
+= e^{-\lambda} e^{\lambda} =1.
 \end{equation*}
 </div>
-<p class="continuation">For example, among the 7 vertices, there are 5   vertices with degree at most 3,</p>
+<p class="continuation">Since all terms are nonnegative and they sum to 1, each term must be less than 1.</p>
 </div>
-<span class="incontext"><a href="randvar.html#solution-52">in-context</a></span>
+<span class="incontext"><a href="probdist.html#solution-52">in-context</a></span>
 </body>
 </html>
