@@ -167,7 +167,7 @@ A =  \int_{x= k_{\min}}^{\infty} x^{-\alpha}  \, dx \approx \sum_{k= k_{\min}}^{
 </li>
 				<li>
 					<p>
- Find the corresponding approximate expression for the power law PMF <me>p(k) = \frac{1}{A} k^{-\alpha}</me> using your constant <m>A</m> from (a). Simplify so that <m>\alpha</m> only appears once in an exponent.
+ Find the corresponding approximate expression for the power law PMF <me>p(k) = \frac{1}{A} k^{-\alpha}</me> using your constant <m>A</m> from (b). Simplify so that <m>\alpha</m> only appears once in an exponent.
 
  <!--solution>
 	<p>
