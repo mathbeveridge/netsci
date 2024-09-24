@@ -12,18 +12,26 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Define</p>
+<p>When we add the new vertex \(n+1\) to the network of size \(n\text{,}\) we create \(c\) undirected edges incident with \(n+1\text{.}\) The other endpoint \(i\) of each edge is chosen with probability proportional to its current degree \(k_i\text{.}\)</p>
+<ol class="lower-alpha">
+<li>
+<p>Explain why the probability that an edge from vertex \(n+1\) attaches to vertex \(i\) is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-q = \frac{\frac{cpn}{2}}{{n \choose 2}} \approx \frac{cp}{n}.
+\frac{k_i}{2cn}.
 \end{equation*}
 </div>
-<p class="continuation">For any potential shortcut edge \(e\text{,}\) explain why</p>
+</li>
+<li>
+<p>Now change this network model to a directed network. Show that</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\P[ \mbox{edge } e \mbox{ is added to the graph}] \leq q.
+k_i= k_i^{\mathrm{in}} + k_i^{\mathrm{out}} = k_i^{\mathrm{in}} + c. 
 \end{equation*}
 </div>
-<span class="incontext"><a href="smallworld.html#p-516">in-context</a></span>
+</li>
+<li><p>Now show that Preferential Attachment is just the undirected version of Price's Model with \(a=c\text{.}\) </p></li>
+</ol>
+<span class="incontext"><a href="pricemodel.html#p-516">in-context</a></span>
 </body>
 </html>

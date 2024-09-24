@@ -12,17 +12,13 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Consider the following network growth model.</p>
-<ul class="disc">
-<li><p>with \(\displaystyle{\P = \frac{a}{a+c}}\text{,}\)   pick a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">paper</em> uniformly at random. Cite this paper.</p></li>
-<li><p>with \(\displaystyle{\P = \frac{c}{a+c}}\text{,}\)  pick a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">directed edge</em> uniformly at random. Then cite the paper that the edge points to.</p></li>
-</ul>
-<p class="continuation">Show that when we add vertex \(n+1\text{,}\) this local process ALSO satisfies</p>
+<p>The number of children \(Y\) produced by each individual is an independent random variable governed by (the same)  probability distribution. The expected number of children produced is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\P(\mbox{the arc points to vertex } i) = \frac{a+k_i}{n(c+a)}.
+\E[Y] = \sum_{k=0}^{\infty} k \P[Y=k]  = \mu.
 \end{equation*}
 </div>
-<span class="incontext"><a href="pricemodel.html#p-487">in-context</a></span>
+<p class="continuation">The goal of this activity will be to show that \(\mu\) determines the probability of whether the family tree dies out after a finite number of generations, or if it grows infinitely large.</p>
+<span class="incontext"><a href="branching.html#p-487">in-context</a></span>
 </body>
 </html>

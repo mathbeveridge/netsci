@@ -13,18 +13,11 @@
 <body>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-\lim_{t \rightarrow \infty} P^t  \, = \, \bone \,  \bv
-&amp;=
-\begin{bmatrix}
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
-\end{bmatrix}
+\E[X^m] &amp;= C \int_{x=k_{\min}}^{n} x^m \cdot x^{-\alpha} dx =  C \int_{x=k_{\min}}^{n}  x^{-\alpha+m} dx\\
+&amp;= \frac{C}{-\alpha +m+1} x^{-\alpha+n+1} \Big|_{k_{\min}}^n\\
+&amp;= \frac{C}{-\alpha +m+1} \left( \frac{1}{n^{\alpha-m-1}} -  \frac{1}{k_{\min}^{\alpha-m-1}} \right)
 \end{align*}
 </div>
-<span class="incontext"><a href="randomwalk.html#mjx-eqn:mrow-51">in-context</a></span>
+<span class="incontext"><a href="powerlaw.html#mjx-eqn:mrow-51">in-context</a></span>
 </body>
 </html>

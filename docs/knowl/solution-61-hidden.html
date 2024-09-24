@@ -11,12 +11,12 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p>We have</p>
+<p></p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-\E[aX+bY] &amp;= \sum_{\omega  \in \Omega} (aX(\omega) + bY(\omega) ) p(\omega)\\
-&amp;= a \sum_{\omega  \in \Omega} X(\omega)p(\omega)  + b \sum_{\omega  \in \Omega} Y(\omega)p(\omega)\\
-&amp;=a \E[X] + b \E[Y].
+\E[X] &amp;= C \int_{x=k_{\min}}^{n} x \cdot x^{-\alpha} dx =  C \int_{x=k_{\min}}^{n}  x^{-\alpha+1} dx\\
+&amp;= \frac{C}{-\alpha +2} x^{-\alpha+2} \Big|_{k_{\min}}^n\\
+&amp;= \frac{C}{-\alpha +2} \left( \frac{1}{n^{\alpha-2}} -  \frac{1}{k_{\min}^{\alpha-2}} \right)
 \end{align*}
 </div>
 <p></p>

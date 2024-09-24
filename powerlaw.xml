@@ -42,7 +42,7 @@ What is the degree distribution <m>(p_1, p_2, \ldots)</m> of this graph?
 				</p>
 
 			<p>
-				<!--solution>
+				<solution>
 					<p>
 					<me>
 					\left(
@@ -50,7 +50,7 @@ What is the degree distribution <m>(p_1, p_2, \ldots)</m> of this graph?
 					\right)
 					</me>
 					</p>
-					</solution-->
+					</solution>
 			</p>
 			</statement>
 		</exercise>
@@ -70,13 +70,13 @@ p(k) = C k^{-\alpha}.
 What is the value of the constant <m>C</m> in terms of <m>c</m>?
 
 
-<!--solution>
+<solution>
 	<p>
 	<me>
 	p(k) = e^c \, k^{-\alpha} \qquad \mbox{so } C = e^c
 	</me>
 	</p>
-	</solution-->
+	</solution>
 
 				</p>
 			</statement>
@@ -105,7 +105,7 @@ where <m>\zeta(x)</m> is the <em>Riemann zeta function</em>
 What is the restriction on allowable values of <m>\alpha</m>?
 
 
-<!--solution>
+<solution>
 	<p>
 	
 	We need <m>\displaystyle{\zeta(x) = \sum_{k=1}^{\infty} k^{-x}}</m> to converge so that the constant <m>C</m> is finite. 
@@ -114,7 +114,7 @@ What is the restriction on allowable values of <m>\alpha</m>?
 	converges if and only if <m>r &gt; 1</m>. Translating this to our power law, we set <m>k=n</m> and <m>\alpha=r</m>.  We must have <m>\alpha &gt; 1</m> in order for the constant <m>C</m> to be finite.
 	
 	</p>
-	</solution-->
+	</solution>
 </li>
 				<li>
 					<p>
@@ -137,7 +137,7 @@ A =  \int_{x= k_{\min}}^{\infty} x^{-\alpha}  \, dx \approx \sum_{k= k_{\min}}^{
 </me>
 </p>
 <p>
-	<!--solution>
+	<solution>
 		<p>
 		</p>
 		<md>
@@ -161,7 +161,7 @@ A =  \int_{x= k_{\min}}^{\infty} x^{-\alpha}  \, dx \approx \sum_{k= k_{\min}}^{
 		<p>
 		provided that <m>\alpha &gt; 1</m>, of course!
 		</p>
-	</solution-->
+	</solution>
 		
 </p>	
 </li>
@@ -169,14 +169,14 @@ A =  \int_{x= k_{\min}}^{\infty} x^{-\alpha}  \, dx \approx \sum_{k= k_{\min}}^{
 					<p>
  Find the corresponding approximate expression for the power law PMF <me>p(k) = \frac{1}{A} k^{-\alpha}</me> using your constant <m>A</m> from (b). Simplify so that <m>\alpha</m> only appears once in an exponent.
 
- <!--solution>
+ <solution>
 	<p>
 	<me>
 	p(k) \approx \left( \frac{1}{\alpha-1} \cdot  \frac{1}{k_{\min}^{\alpha-1}} \right)^{-1}  k^{- \alpha}
 	= \frac{\alpha -1}{k_{\min} } \left( \frac{ k_{\min}}{k} \right)^{\alpha}
 	</me>
 	</p>
-	</solution-->
+	</solution>
 
 					</p>
 				</li>
@@ -205,7 +205,7 @@ rather than a PMF. You can find the constant <m>C = (\alpha-1)k_{\min}^{\alpha-1
 \E[X] = \int_{x=k_{\min}}^{n} x p(x) dx.
 </me>
 
-<!--solution>
+<solution>
 	<p>
 	
 	</p>
@@ -223,7 +223,7 @@ rather than a PMF. You can find the constant <m>C = (\alpha-1)k_{\min}^{\alpha-1
 	<p>
 	
 	</p>
-	</solution-->
+	</solution>
 
 					</p>
 				</li>
@@ -236,7 +236,7 @@ rather than a PMF. You can find the constant <m>C = (\alpha-1)k_{\min}^{\alpha-1
 Calculate it.
 
 
-<!--solution>
+<solution>
 	<p>
 	</p>
 	<md>
@@ -252,7 +252,7 @@ Calculate it.
 	</md>
 	<p>
 	</p>
-	</solution-->
+	</solution>
 
 					</p>
 				</li>
@@ -261,7 +261,7 @@ Calculate it.
  Look at your answers for parts (a) and (b) and think about what happens as <m>n \rightarrow \infty</m>. For what values of <m>\alpha</m> does <m>\E[X]</m> converge? When does the <m>m</m>th moment <m>\E[X^m]</m> converge?
 
 
- <!--solution>
+ <solution>
 	<p>
 			<ul>
 				<li>
@@ -295,7 +295,7 @@ Calculate it.
 				</li>
 			</ul>
 			</p>
-	</solution-->
+	</solution>
 
 					</p>
 				</li>
@@ -303,7 +303,7 @@ Calculate it.
 					<p>
   Recall that most observed power laws have <m>2 \leq \alpha \leq 3</m>. In this range, does the expected value converge? Which moments converge, and which moments diverge?
 
-  <!--solution>
+  <solution>
 	<p>
 	
 	So why do most naturally occurring power laws have <m>2 &lt; \alpha &lt; 3</m>? We'll consider the degree sequence for a network. In this range of <m>\alpha</m>, the average degree is finite. This makes sense for our graph. Next, we observe that  the second moment  is infinite (and so are the higher moments). This means that the variance of the degrees goes to infinity. Therefore, we expect to find hub nodes with very, very high degree. If <m>\alpha &gt; 3</m>, then the second moment would converge, which means that the degrees would be well-concentrated around the expected value. We've already seen how important the hub nodes are in the network. So if hub nodes only occur when <m>\alpha &lt; 3</m>, it makes sense that our observed power laws should fall into the range of  <m>2 &lt; \alpha &lt; 3</m>.
@@ -313,7 +313,7 @@ Calculate it.
 	What about other natural power laws, like the size of cities? Remember that a power law is the correct model for a "popularity contest" or a "rich get richer phenomenon." In these instances, there are some incredibly successful entities, and their success breeds even more success. In other words, in such popularity feedback loops, we  anticipate seeing entities that are vastly more successful than the average entity. This can only happen when the variance of the power law is infinite.
 	
 	</p>
-	</solution-->
+	</solution>
 					</p>
 				</li>
 			</ol>

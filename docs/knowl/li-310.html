@@ -12,14 +12,20 @@
 </head>
 <body>
 <article class="li"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Item</span><span class="space"> </span><span class="codenumber">5.2.3.e.i</span><span class="period">.</span>
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">5.2.3.d</span><span class="period">.</span>
 </h6>
-<p>For the Erdos-Renyi graph, we have</p>
+<p>In the previous part, you showed that the fraction of links from available for future transmission from infected vertices to susceptible vertices is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\langle k^2 \rangle \approx \langle k \rangle^2 + \langle k \rangle.
+\Theta(t) = C e^{t/{\tau}}   \mbox{ where }   \tau = \frac{1}{A} = \frac{\langle k \rangle}{\beta ( \langle k^2 \rangle - \langle k \rangle)}.
 \end{equation*}
 </div>
-<p class="continuation">What is \(\tau\) in this case? How does \(1/ \tau\) compare to the infection rate in the differential equation in problem  2(a) for the homogeneous case (where we decided to ignore the network)? </p></article><span class="incontext"><a href="epidemics.html#li-310">in-context</a></span>
+<p>Early on in the epidemic, we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{dI_k}{dt} \approx \beta \,  k \,  \Theta = \beta \, k \, C e^{t/{\tau}}.
+\end{equation*}
+</div>
+<p class="continuation">Explain why higher degree vertices are more likely to be infected. </p></article><span class="incontext"><a href="epidemics.html#li-310">in-context</a></span>
 </body>
 </html>

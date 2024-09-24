@@ -12,35 +12,14 @@
 </head>
 <body>
 <article class="li"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Item</span><span class="space"> </span><span class="codenumber">4.5.3.f</span><span class="period">.</span>
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">5.2.3.e.i</span><span class="period">.</span>
 </h6>
-<p>We are now ready to approximate the clustering coefficient. By parts (c) and (d), we can ignore the new triangles (there are only a constant number of them). But we need the new connected triples from part (e). The clustering coefficient is</p>
+<p>For the Erdos-Renyi graph, we have</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-C \approx \frac
-{
-3 n {c/2 \choose 2}
-}
-{
-n {c \choose 2} + c^2pn + \frac{1}{2} c^2p^2 n
-}
-=
-\frac
-{
-3{c/2 \choose 2}
-}
-{
-{c \choose 2} + c^2p + \frac{1}{2} c^2p^2.
-}
+\langle k^2 \rangle \approx \langle k \rangle^2 + \langle k \rangle.
 \end{equation*}
 </div>
-<p class="continuation">This is a constant (independent of \(n\)), so we have a nonzero clustering coefficient for every small world network.</p>
-<p>Use the approximation \({a \choose 2} = a^2/2\) and set \(p=1\) to obtain the rough lower bound</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-C \gtrapprox \frac{3}{16}.
-\end{equation*}
-</div>
-<p><a class="solution-knowl original" data-knowl="./knowl/solution-144-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></article><span class="incontext"><a href="smallworld.html#li-312">in-context</a></span>
+<p class="continuation">What is \(\tau\) in this case? How does \(1/ \tau\) compare to the infection rate in the differential equation in problem  2(a) for the homogeneous case (where we decided to ignore the network)? </p></article><span class="incontext"><a href="epidemics.html#li-312">in-context</a></span>
 </body>
 </html>

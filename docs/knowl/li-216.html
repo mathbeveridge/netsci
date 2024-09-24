@@ -12,8 +12,23 @@
 </head>
 <body>
 <article class="li"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Item</span><span class="period">.</span>
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">3.5.5.c</span><span class="period">.</span>
 </h6>
-<p>\(\displaystyle \P(\Omega) = 1\)</p></article><span class="incontext"><a href="randomgraph.html#li-216">in-context</a></span>
+<p>Try to import the airline graph and find its centrality measures. Googling the following terms will bring up useful parts of the NetworkX documentation:</p>
+<pre class="code-display tex2jax_ignore">
+networkx tutorial
+networkx centrality
+networkx pagerank
+networkx graphml import
+</pre>
+<p class="continuation">Or visit our moodle site for direct links. If you want to plot the network via python, here is a simple code snippet that gives you an idea of how to start.</p>
+<pre class="code-display tex2jax_ignore">
+import networkx as nx
+import matplotlib.pyplot as plt
+
+G = nx.cubical_graph()
+nx.draw(G)
+plt.show()
+</pre></article><span class="incontext"><a href="us-airline.html#li-216">in-context</a></span>
 </body>
 </html>

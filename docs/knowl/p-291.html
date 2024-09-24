@@ -12,7 +12,20 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Degree Centrality  \(c_i^D  = \deg(i) = k_i\) <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality0.svg" role="img" class="contained"></div></p>
-<span class="incontext"><a href="centrality.html#p-291">in-context</a></span>
+<p>As \(n \rightarrow \infty\text{,}\) the \(m\)th moment  \(\E[X^m]\) is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\lim_{n \rightarrow \infty} \frac{C}{-\alpha +m+1} \left( \frac{1}{n^{\alpha-m-1}} -  \frac{1}{k_{\min}^{\alpha-m-1}} \right)
+= \frac{C}{\alpha-m-1}  \cdot \frac{1}{k_{\min}^{\alpha-m-1}}
+\end{equation*}
+</div>
+<p class="continuation">provided that \(\alpha &gt; m\text{.}\) So the \(m\)th moment  value  is finite if and only if \(\alpha &gt; m\text{.}\) Let's substitute \(C= (\alpha-1)k_{\min}^{\alpha-1}\) to get the expression</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[X^m] = \frac{\alpha-1}{\alpha-m-1}  \cdot \frac{k_{\min}^{\alpha-1}}{k_{\min}^{\alpha-m-1}}
+= \frac{\alpha-1}{\alpha-m-1}  \cdot k_{\min}^{m}.
+\end{equation*}
+</div>
+<span class="incontext"><a href="powerlaw.html#p-291">in-context</a></span>
 </body>
 </html>

@@ -15,25 +15,42 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
+<ul class="disc">
+<li>
+<p>As \(n \rightarrow \infty\text{,}\) the expected value \(\E[X]\) is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\E[X] = \frac{22}{7}
+\lim_{n \rightarrow \infty} \frac{C}{-\alpha +2} \left( \frac{1}{n^{\alpha-2}} -  \frac{1}{k_{\min}^{\alpha-2}} \right)
+= \frac{C}{\alpha-2}  \cdot \frac{1}{k_{\min}^{\alpha-2}}
 \end{equation*}
 </div>
-<p class="continuation">and</p>
+<p class="continuation">provided that \(\alpha &gt; 2\text{.}\) So the average value  is finite if and only if \(\alpha &gt; 2\text{.}\) Finally, let's substitute in our approximation of the constant \(C = (\alpha-1)k_{\min}^{\alpha-1}\) to find that the expected value is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\E[X^2] = 2^2 \cdot \frac{1}{7} + 3^2 \cdot \frac{4}{7} + 4^2 \cdot \frac{2}{7}
-= \frac{4+36+32}{7} = \frac{72}{7}
+\E[X] =
+\frac{\alpha-1}{\alpha-2}  \cdot \frac{k_{\min}^{\alpha-1}}{k_{\min}^{\alpha-2}} = \frac{\alpha-1}{\alpha-2}  \cdot k_{\min}.
 \end{equation*}
 </div>
-<p class="continuation">and therefore</p>
+<p class="continuation">That's pretty cool. And you can see that if your exponent \(\alpha \rightarrow 2\) then the expected value goes to infinity. Nice!</p>
+</li>
+<li>
+<p>As \(n \rightarrow \infty\text{,}\) the \(m\)th moment  \(\E[X^m]\) is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\var(X) = \E[X^2] - \E[X]^2 =  \frac{72}{7} - \left( \frac{22}{7} \right)^2 = \frac{20}{49}.
+\lim_{n \rightarrow \infty} \frac{C}{-\alpha +m+1} \left( \frac{1}{n^{\alpha-m-1}} -  \frac{1}{k_{\min}^{\alpha-m-1}} \right)
+= \frac{C}{\alpha-m-1}  \cdot \frac{1}{k_{\min}^{\alpha-m-1}}
 \end{equation*}
 </div>
+<p class="continuation">provided that \(\alpha &gt; m\text{.}\) So the \(m\)th moment  value  is finite if and only if \(\alpha &gt; m\text{.}\) Let's substitute \(C= (\alpha-1)k_{\min}^{\alpha-1}\) to get the expression</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[X^m] = \frac{\alpha-1}{\alpha-m-1}  \cdot \frac{k_{\min}^{\alpha-1}}{k_{\min}^{\alpha-m-1}}
+= \frac{\alpha-1}{\alpha-m-1}  \cdot k_{\min}^{m}.
+\end{equation*}
 </div>
-<span class="incontext"><a href="randvar.html#solution-63">in-context</a></span>
+</li>
+</ul>
+</div>
+<span class="incontext"><a href="powerlaw.html#solution-63">in-context</a></span>
 </body>
 </html>
