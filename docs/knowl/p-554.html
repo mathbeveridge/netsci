@@ -12,46 +12,47 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Consider a vertex \(v\) with ring distance \(d=d(v,t)\) satisfying \(2^j \leq d &lt; 2^{j+1}\text{.}\)</p>
+<p>One critique of Price's Model is that the new paper must know about the degrees of the entire network when we choose its citations. So this is a "global" process instead of a "local" process. Consider the following process instead. Start with a network of \(n_0 &gt; c\) papers, each pointing randomly to \(c\) others. Pick a constant \(0 &lt; \gamma &lt; 1\text{.}\)  When paper \(n+1\) is added, it makes \(c\) citations as follows:</p>
+<ul class="disc">
+<li><p>Pick a random paper \(v\) from the existing \(n\) vertices.</p></li>
+<li>
+<p>For each of the \(c\) citations of \(v\) (that is, the arcs starting at \(v\)),</p>
+<ul class="circle">
+<li><p>with \(\displaystyle{\P = \gamma}\text{,}\)   copy that citation</p></li>
+<li><p>with \(\displaystyle{\P = 1 - \gamma}\text{,}\)  cite a uniform random paper instead.</p></li>
+</ul>
+</li>
+</ul>
+<p class="continuation">You will now show that this model also generates a power law degree distribution.</p>
 <ol class="lower-alpha">
 <li>
-<p>Let</p>
+<p>Show that for each arc starting at vertex \(n+1\text{,}\) we have</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-A = \{ w \mid d(w,t) \leq d/2 \}
+\P(\mbox{the arc points to vertex } i) = (1- \gamma) \frac{1}{n}  + \gamma \frac{k_i}{cn}.
 \end{equation*}
 </div>
-<p class="continuation">be the set of vertices that are "at most half the distance from \(t\) as \(v\text{.}\)" Explain why</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-|A|=d+1
-\end{equation*}
-</div>
-<p class="continuation">and why</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\frac{d}{2} \leq d(v,w) \leq \frac{3d}{2}
-\end{equation*}
-</div>
-<p class="continuation">for all \(w \in A\text{.}\) </p>
 </li>
+<li><p>Define \(a = c \left( \frac{1}{\gamma} -1 \right)\text{.}\) Confirm that this equation is equivalent to \(\gamma = \frac{c}{c+a}\text{.}\) </p></li>
 <li>
-<p>Prove that</p>
+<p>Plug \(\gamma = \frac{c}{c+a}\) into equation from part (a) and simplify to show that we once again get</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\displaystyle{\Pr[v \mbox{'s long-range contact is in } A] \geq  \frac{1}{3 \log n}}.
+\P(\mbox{the arc points to vertex } i) = \frac{a+k_i}{n(c+a)}.
 \end{equation*}
 </div>
 </li>
 <li>
-<p>Use part (b) to prove that</p>
+<p>Finally, rewrite the power law</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\displaystyle{\Pr[\mbox{round } j \mbox{ lasts at least } i  \mbox{ steps}] \leq  \left( 1 - \frac{1}{ 3 \log n} \right)^{i-1}}.
+\P(\deg(v) = k) \sim k^{-2-a/c}
 \end{equation*}
 </div>
+<p class="continuation">in terms of \(\gamma\) instead of \(a\) and \(c\text{.}\) </p>
 </li>
+<li><p>This vertex copying model leads to the same equations for the degree distribution of the resulting network. However, the actual network structure of the vertex copying model is very different from the netwok structure of Price's Model. Explain why. (Hint: start by thinking about what the vertex copying model would look like when \(\gamma\) is very very close to 1.) </p></li>
 </ol>
-<span class="incontext"><a href="navsmallworld.html#p-554">in-context</a></span>
+<span class="incontext"><a href="pricemodel.html#p-554">in-context</a></span>
 </body>
 </html>

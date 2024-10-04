@@ -12,7 +12,12 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>For \(A,B \subset \Omega\text{,}\) if \(A \cap B = \emptyset\) then \(\P(A \cup B) = \P(A) + \P(B)\text{.}\) \(\P(A_1 \cup A_2 \cup \cdots \cup A_k) \leq \sum_{i=1}^k \P(A_i)\) for any events \(A_1, A_2, \ldots, A_k \subset \Omega\text{.}\)</p>
-<span class="incontext"><a href="randomgraph.html#p-444">in-context</a></span>
+<p>Repeat until convergence for \(t \geq 1\text{:}\)</p>
+<ul class="circle">
+<li><p>For every vertex \({i}\text{,}\) update   \(\displaystyle{a_i(t) = \sum_{j \rightarrow i} h_j(t-1)}\)</p></li>
+<li><p>For every vertex \(j\text{,}\) update   \(\displaystyle{h_j(t) = \sum_{j \rightarrow i} a_i(t)}\)</p></li>
+<li><p>Normalize both values.</p></li>
+</ul>
+<span class="incontext"><a href="hits.html#p-444">in-context</a></span>
 </body>
 </html>

@@ -11,23 +11,17 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p>Here is the hard work:</p>
+<p>By a similar argument, we have</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\E[Z(Z-1)] &amp;= \sum_{k=0}^{\infty} k(k-1) e^{-\lambda} \frac{\lambda^k}{k!}\\
-&amp;= \lambda^2 e^{-\lambda} \sum_{k=2}^{\infty}   \frac{\lambda^{k-2}}{(k-2)!}\\
-&amp;= \lambda^2 e^{-\lambda} \sum_{j=0}^{\infty}   \frac{\lambda^{j}}{j!}\\
-&amp;= \lambda^2 e^{-\lambda}e^{\lambda} = \lambda^2.
-\end{align*}
+\begin{equation*}
+A^3  = \lambda_1^3 \bu_1 \bu_1^{\top}  + \lambda_2^3 \bu_2 \bu_2^{\top}
+\end{equation*}
 </div>
-<p>That wasn't so bad! Our variance calculation is</p>
+<p class="continuation">and by induction, we have</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\var(Z) &amp;= \E[Z^2] - (\E[Z])^2 = \E[Z(Z-1)] + \E[Z]- (\E[Z])^2\\
-&amp;= \lambda^2 + \lambda - \lambda^2 \, =\,  \lambda.
-\end{align*}
+\begin{equation*}
+A^n  = \lambda_1^n \bu_1 \bu_1^{\top}  + \lambda_2^n \bu_2 \bu_2^{\top}
+\end{equation*}
 </div>
-<p>Fun fact: the expected value is also called the "first moment." The variance is also called the "second moment." Can you guess what the third moment of the Poisson distribution is? That's right: it's also equal to \(\lambda\text{.}\) How about the fourth moment? Yep, \(\lambda\) again.</p>
-<p>In fact, every moment of the Poisson distribution is equal to \(\lambda\text{.}\) (This is analogous to how all of the derivatives of \(e^x\) are also \(e^x\text{.}\)) Each of the moments tell you something about the shape of the distribution. So in a poetic sense, the Poisson distribution must be the nicest-shaped bell curve centered at \(x=\lambda\text{.}\)</p>
 </div></body>
 </html>

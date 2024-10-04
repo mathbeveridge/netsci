@@ -15,34 +15,14 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
-<p>This plays out much like "tedious calculation" in the answer to part (c), but it is more involved. We want to calculate</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\E[X^2] - (\E[X])^2 &amp;= \E[X(X-1) + X] - (\E[X])^2\\
-&amp;= \E[X(X-1)] + \E[X] - (\E[X])^2
-\end{align*}
+<ol class="lower-alpha">
+<li><p>High in-degree centrality means that lots of information gets to you. High out-degree means that a lot of people are listening to you.</p></li>
+<li>
+<p>You would need two different closeness centralities. Large \(c_i^{C^{\mathrm{in}}}\) would mean that spreading information gets to you quickly. Large \(c_i^{C^{\mathrm{out}}}\) would mean that information that you share would spread quickly to the whole network.</p>
+<p>You would still only have one betweenness centrality measure on a directed graph. The definition already includes paths from \(s\) to \(t\) and from \(t\) to \(s\text{.}\) This "double counting" on an undirected graph becomes "single counting" when the paths are directed.</p>
+</li>
+</ol>
 </div>
-<p>Of these three terms, we already know that \(\E[X]=np\) and that \((E[X])^2 =  (np)^2\text{.}\) So we only need to calculate \(\E[X(X-1)] \text{.}\) Here we go. This time, we will reindex using \(j=k-2\text{,}\) or equivalently, \(k=j+2\text{.}\)</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\E[X(X-1)] &amp;= \sum_{k=0}^n k(k-1) p(k) \, = \, \sum_{k=0}^n  k(k-1) {n \choose k} p^k (1-p)^{n-k}\\
-&amp; =  \sum_{k=2}^n  \frac{n!}{(k-2)! (n-k)!} p^k (1-p)^{n-k}\\
-&amp;=  n(n-1)p^2 \sum_{k=2}^n  \frac{(n-2)!}{(k-1)! (n-k)!} p^{k-2} (1-p)^{n-k}\\
-&amp; =  n(n-1)p^2  \sum_{j=0}^{n-2}  \frac{(n-2)!}{j! (n-2-j)!} p^{j} (1-p)^{n-2-j}\\
-&amp;= n(n-1)p^2 \sum_{j=0}^{n-2}  {n-2 \choose j}  p^{j} (1-p)^{n-2-j}\\
-&amp; =  n(n-1)p^2  (p + (1-p))^{n-2} \, = \,  n(n-1)p^2.
-\end{align*}
-</div>
-<p>We are now ready to put it together:</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\E[X^2] - (\E[X])^2 &amp;= n(n-1)p^2 + np -(np)^2\\
-&amp;= (np)^2 - np^2 + np - (np)^2\\
-&amp;= np(1-p).
-\end{align*}
-</div>
-<p></p>
-</div>
-<span class="incontext"><a href="probdist.html#solution-68">in-context</a></span>
+<span class="incontext"><a href="centrality.html#solution-68">in-context</a></span>
 </body>
 </html>

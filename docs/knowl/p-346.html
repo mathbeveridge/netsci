@@ -12,21 +12,23 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<ol class="lower-alpha">
-<li>
-<p>Find the transition matrix \(P\)  of the following undirected graph. Hint: construct \(P\)   row by row. And remember that when \(k_i^{\mathrm{out}}=0\text{,}\) we set \(a_{ii}=1\text{,}\) corresponding to the move "stay where we are." <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="./images/undirected-graph.png" class="contained"></div></p>
-<p></p>
-</li>
-<li>
-<p>Show that the all-ones vector \(\bone\) is a right eigenvector for  eigenvalue \(\lambda=1\text{.}\) In other words, confirm that</p>
+<p>A \(n \times n\) matrix is <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">reducible</em> if there is an \(n \times n\) permutation matrix \(P\) such that</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-P \bone = \bone.
+P^{\top} A P = \left[
+\begin{array}{cc}
+A_{11} &amp; A_{12} \\
+0 &amp; A_{22}
+\end{array}
+\right]
 \end{equation*}
 </div>
-<p class="continuation">What is the meaning of this equation? </p>
-</li>
+<p class="continuation">where \(A_{11}\) and \(A_{22}\) are square matrices. Conjugation by \(P\) rearranges the rows and columns. So this is equivalent to saying that we can order the vertices of \(G\) so that the adjacency matrix has the specified form.</p>
+<ol class="lower-alpha">
+<li><p>Recall that if \(G\) is an undirected graph, then \(A\) is symmetric. Explain why the adjacency matrix of an undirected graph is reducible if and only if \(G\) is not connected.</p></li>
+<li><p>Prove that the adjacency matrix of a directed graph \(G\)  is reducible if and only if \(G\) is not strongly connected.</p></li>
 </ol>
-<span class="incontext"><a href="randomwalk.html#p-346">in-context</a></span>
+<p class="continuation"><a class="solution-knowl original" data-knowl="./knowl/solution-72-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
+<span class="incontext"><a href="algcentrality.html#p-346">in-context</a></span>
 </body>
 </html>

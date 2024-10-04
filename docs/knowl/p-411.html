@@ -12,23 +12,45 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<ol class="lower-alpha">
-<li><p>Load the <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">us-airline.gephi</code> file into Gephi.</p></li>
-<li><p>How many nodes are there? How many edges?</p></li>
-<li><p>Click on the "T" in the lower toolbar to show the node labels. The labels are the names of the airports. 	Change the displayed valye clicking on the clipboard/wrench icon at the bottom right of the Graph window. De-select "Label" and select "Code." Click OK. Adjust the label size so that you can read them.</p></li>
-<li>
-<p>Run the following statistics  in the Statistics window (on the right hand side).</p>
+<p>In particular, it applies to the matrix \(P\) from the previous problems. And it tells us more information about the left eigenvector  \(\bv\text{.}\) Two of the properties that it tells us are:</p>
 <ul class="disc">
-<li><p>Average Degree</p></li>
-<li><p>Network Diameter</p></li>
-<li><p>HITS</p></li>
-<li><p>PageRank, and select "Use Edge Weight"</p></li>
-<li><p>Eigenvector Centrality</p></li>
-<li><p>Modularity</p></li>
-</ul>
-<p class="continuation">Look quickly at the plots that come up, and then dismiss them.</p>
+<li><p>All of the other eigenvalues satisify \(| \lambda_i| &lt; 1\text{.}\) In other words, \(\bv\) is the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">dominant eigenvector</em> of \(P\text{.}\)</p></li>
+<li>
+<p>Assuming that we have scaled the row vector \(\bv\) so that its entries sum to 1, we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\lim_{t \rightarrow \infty} P^t  \, = \, \bone \,  \bv
+&amp;=
+\begin{bmatrix}
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
+\end{bmatrix}
+\end{align*}
+</div>
+<p>where</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\bv =
+\begin{bmatrix}
+v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{2}{14} &amp; \frac{3}{14} &amp; \frac{2}{14} &amp; \frac{3}{14} &amp; \frac{3}{14} &amp; \frac{1}{14}
+\end{bmatrix}.
+\end{equation*}
+</div>
 </li>
+</ul>
+<p class="continuation">Given this information:</p>
+<ol class="lower-alpha">
+<li><p>What new properties do we now know about the vector (and probability distributrion) \(\bv\text{?}\) </p></li>
+<li><p>After taking many random steps, what is the probability that we are at vertex \(i\text{?}\) </p></li>
 </ol>
-<span class="incontext"><a href="us-airline.html#p-411">in-context</a></span>
+<span class="incontext"><a href="randomwalk.html#p-411">in-context</a></span>
 </body>
 </html>

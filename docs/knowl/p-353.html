@@ -12,21 +12,18 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Here is the matrix \(P^2\) for the undirected graph in Problem 1.</p>
+<p>Let \(G\) be a  digraph. (\(\Rightarrow\)) Suppose that its adjacency matrix is reducible, so that</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-P^2 =
-\begin{bmatrix}
-\frac{1}{3} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; \frac{1}{6} &amp; 0 \\[6pt]
-\frac{1}{9} &amp; \frac{4}{9} &amp; 0 &amp; \frac{5}{18} &amp; \frac{1}{6} &amp; 0 \\[6pt]
-\frac{1}{6} &amp; 0 &amp; \frac{1}{3} &amp; 0 &amp; \frac{1}{3} &amp; \frac{1}{6} \\[6pt]
-\frac{1}{9} &amp; \frac{5}{18} &amp; 0 &amp; \frac{11}{18} &amp; 0 &amp; 0 \\[6pt]
-\frac{1}{9} &amp; \frac{1}{6} &amp; \frac{2}{9} &amp; 0 &amp; \frac{7}{18} &amp; \frac{1}{9} \\[6pt]
-0 &amp; 0 &amp; \frac{1}{3} &amp; 0 &amp; \frac{1}{3} &amp; \frac{1}{3}
-\end{bmatrix}
+P^{\top} A P = \left[
+\begin{array}{cc}
+A_{11} &amp; A_{12} \\
+0 &amp; A_{22}
+\end{array}
+\right].
 \end{equation*}
 </div>
-<p class="continuation">What does row \(i\) tell you about the instruction "take two random steps from vertex \(i\text{?}\)" </p>
-<span class="incontext"><a href="randomwalk.html#p-353">in-context</a></span>
+<p class="continuation">Then there is is no path from any vertex in the second set to any vertex in the first set. So \(G\) is not strongly connected.</p>
+<span class="incontext"><a href="algcentrality.html#p-353">in-context</a></span>
 </body>
 </html>
