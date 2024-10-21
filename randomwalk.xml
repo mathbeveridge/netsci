@@ -67,7 +67,7 @@ And remember that when <m>k_i^{\mathrm{out}}=0</m>, we set <m>a_{ii}=1</m>, corr
 
 			</p><p>
 
-<!--solution>
+<solution>
 <p>
 
 
@@ -84,7 +84,7 @@ P =
 </me>
 
 </p>
-</solution-->
+</solution>
 
 
 					</p>
@@ -97,11 +97,11 @@ P \bone = \bone.
 </me>
 What is the meaning of this equation?
 
-<!--solution>
+<solution>
 <p>
 Right multiplication by <m>\bone</m> sums all the exit probabilities from each vertex. So of course, these numbers sum to 1.
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -123,13 +123,13 @@ Consider the undirected graph from Problem 1. In your mind, repeatedly simulate 
 
 			</p><p>
 
-<!--solution>
+<solution>
 <p>
 
 It is possible to end at any vertex. Vertex 6 is definitely visited the least at the end of the walk. Vertices with degree 3 seem to be the candidates for lots of visits at the end. But it is not clear how to compare these vertices with each other.
 
 </p>
-</solution-->
+</solution>
 
 
 				</p>
@@ -159,13 +159,13 @@ P^2 =
 What does row <m>i</m> tell you about the instruction "take two random steps from vertex <m>i</m>?"
 
 
-<!--solution>
+<solution>
 <p>
 
 The <m>(i,j)</m> entry of <m>P^2</m> tells you the probability of a random walk starting at <m>i</m> ending at <m>j</m> after 2 steps.
 
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -173,13 +173,13 @@ The <m>(i,j)</m> entry of <m>P^2</m> tells you the probability of a random walk 
 					<p>
  Using part (a) as a guide, give an interpretation for row <m>i</m> of the matrix <m>P^3</m>.
 
-<!--solution>
+<solution>
 <p>
 
 The <m>(i,j)</m> entry of <m>P^3</m> tells you the probability of a random walk starting at <m>i</m> ending at <m>j</m> after 3 steps.
 
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -187,7 +187,7 @@ The <m>(i,j)</m> entry of <m>P^3</m> tells you the probability of a random walk 
 					<p>
  What do the rows of matrix <m>P^t</m> describe?
 
-<!--solution>
+<solution>
 <p>
 
 The <m>(i,j)</m> entry of <m>P^t</m> tells you the probability of a random walk starting at <m>i</m> ending at <m>j</m> after <m>t</m> steps.
@@ -195,7 +195,7 @@ The <m>(i,j)</m> entry of <m>P^t</m> tells you the probability of a random walk 
 
 
 </p>
-</solution-->
+</solution>
 
 
 					</p>
@@ -237,7 +237,7 @@ What does the vector
 </me>
 describe?
 
-<!--solution>
+<solution>
 <p>
 
 The  row vector <m>\mathbf{e}_i \, P^t</m> is row <m>i</m> of matrix <m>P^t</m>. As described in the previous part, the <m>j</m>th entry of this vector is the probability that you are at vertex <m>j</m> after taking <m>t</m> random steps from <m>i</m>.
@@ -246,7 +246,7 @@ The  row vector <m>\mathbf{e}_i \, P^t</m> is row <m>i</m> of matrix <m>P^t</m>.
 
 
 </p>
-</solution-->
+</solution>
 
 
 					</p>
@@ -292,7 +292,7 @@ We have a name for this equation: say that "<m>\bv</m> is
 a <em>left</em> eigenvector of the transition matrix <m>P</m> for eigenvalue <m>\lambda=1</m>." (In other words, the eigenvectors that you are used to are actually <em>right</em> eigenvectors.)
 
 
-<!--solution>
+<solution>
 <p>
 We have
 </p>
@@ -333,7 +333,7 @@ We have
 
 
 </p>
-</solution-->
+</solution>
 
 
 					</p>
@@ -342,12 +342,12 @@ We have
 					<p>
  Relate the entries of <m>\bv</m> to the degrees of the graph.
 
-<!--solution>
+<solution>
 <p>
 
 The entries are the degrees of the vertices.
 </p>
-</solution-->
+</solution>
 
 
 
@@ -441,11 +441,11 @@ Given this information:
  What new properties do we now know about the vector (and probability distributrion) <m>\bv</m>?
 
 
-<!--solution>
+<solution>
 <p>
 The row vector <m>\bv</m> is the dominant eigenvector and  every row of <m>\lim_{t \rightarrow \infty} P^t</m> converges to <m>\pi</m>.
 </p>
-</solution-->
+</solution>
 
 
 
@@ -455,11 +455,11 @@ The row vector <m>\bv</m> is the dominant eigenvector and  every row of <m>\lim_
 					<p>
  After taking many random steps, what is the probability that we are at vertex <m>i</m>?
 
-<!--solution>
+<solution>
 <p>
 Row <m>i</m> of <m>P^t</m> is the probability distribution for a random walk started at vertex <m>i</m>. So this distribution converges to <m>\pi</m>. In particular, as <m>t \rightarrow \infty</m>, the probability that we are at vertex <m>j</m> is <m>k_j/14</m>.
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -489,7 +489,7 @@ Let <m>G</m> be a connected, aperiodic, undirected graph with adjacency matrix <
  Explain why <m>P \bone = \bone</m>.
 
 
-<!--solution>
+<solution>
 <p>
 
 Row <m>i</m> contains the probabilities of stepping from <m>i</m>  to a neighbor of vertex <m>i</m>. These probabiiities sum to 1.
@@ -497,7 +497,7 @@ Row <m>i</m> contains the probabilities of stepping from <m>i</m>  to a neighbor
 
 
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -516,7 +516,7 @@ where <m>n=|V|</m> and <m>m = |E|</m> and <m>k_i</m> is the degree of vertex <m>
 </me>
 
 
-<!--solution>
+<solution>
 <p>
 
 The <m>i</m>th entry of <m>\pi P</m> is
@@ -527,7 +527,7 @@ The <m>i</m>th entry of <m>\pi P</m> is
 
 
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -536,11 +536,11 @@ The <m>i</m>th entry of <m>\pi P</m> is
  What is the meaning of the row vector <m>\mathbf{e}_i \, P^t</m>, where <m>\mathbf{e}_i</m> is the elementary vector from Problem 3(d)?
 
 
-<!--solution>
+<solution>
 <p>
 The row vector <m> \mathbf{e}_i \, P^t </m> is row <m>i</m> of <m>P^t</m>.
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -554,12 +554,12 @@ What does this equation mean for a random walk starting at vertex <m>i</m>?
 
 
 
-<!--solution>
+<solution>
 <p>
 Row <m>i</m> of <m>P^t</m> is the probability distribution for a random walk started at vertex <m>i</m>.
 This distribution converges to <m>\pi</m>. In particular, as <m>t \rightarrow \infty</m>, the probability that we are at vertex <m>j</m> is <m>k_j/2m</m>.
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -588,7 +588,7 @@ Things don't work out as nicely on directed graphs. We will work through an exam
 			<image width="30%" xml:id="fig-img-randomwalk1" source="./images/directed-graph.png" />
 
 
-<!--solution>
+<solution>
 <p>
 
 Since vertex 2 has no out-neighbors, we add a self-loop.
@@ -605,7 +605,7 @@ P =
 </me>
 
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -617,11 +617,11 @@ P \bone = \bone.
 </me>
 What is the meaning of this equation?
 
-<!--solution>
+<solution>
 <p>
 Right multiplication by <m>\bone</m> sums all the exit probabilities from each vertex. These numbers sum to 1, just as in the directed case. Note that adding the self-loop at vertex 2 is essential.
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -642,13 +642,13 @@ Now simulate some random walks on the directed graph from Problem 7. This time, 
 			<image width="25%" xml:id="fig-img-randomwalk2" source="./images/directed-graph.png" />
 
 
-<!--solution>
+<solution>
 <p>
 
 At the end of the walk, we must be at vertex 2, 5 or 6. If we step to vertex 2 then we remain there forever. On the other hand, if we step from vertex 1 to vertex 5 then we we can never get out of this two vertex "spider trap."
 
 </p>
-</solution-->
+</solution>
 
 
 				</p>
@@ -678,7 +678,7 @@ satisfies
 
 How does this relate to the behavior you saw in problem 4? What behavior doesn't this capture?
 
-<!--solution>
+<solution>
 <p>
 One of the two long-term outcomes we observed was ending up in the "spider trap" and then alternate between vertices 5 and 6. So in the long run, we spend half our time at vertex 5 and half our time at vertex 6. However, even in this case, the vector <em>doesn't capture the periodic behavior</em> of our long-term random walk. If we first step to vertex 5 at time <m>T</m>, then we will also be at vertex 5 at time <m>T+2, T+4, T+6, </m> etc, and we will be at vertex 6 at time <m>T+1, T+3, T+5, </m> etc.
 
@@ -686,7 +686,7 @@ One of the two long-term outcomes we observed was ending up in the "spider trap"
 Another behavior that we don't see in this vector is that we could have ended up at vertex 2, and then remained there forever. That doesn't even show up at all in this vector.
 
 </p>
-</solution-->
+</solution>
 
 
 
@@ -699,7 +699,7 @@ Another behavior that we don't see in this vector is that we could have ended up
 \bw \, P = \bw.
 </me>
 
-<!--solution>
+<solution>
 <p>
 The vector
 <me>
@@ -710,7 +710,7 @@ The vector
 </me>
 is a solution to  <m>\bw \, P = \bw.</m>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -718,7 +718,7 @@ is a solution to  <m>\bw \, P = \bw.</m>
 					<p>
  Pick <m>a,b \in \R</m>  such that <m>a+b=1</m>. What can you say about the vector <m>a \bv + b \bw</m>?
 
-<!--solution>
+<solution>
 <p>
 We have
 <me>
@@ -727,7 +727,7 @@ We have
 Indeed, they are both left eigenvectors for eigenvalue <m>\lambda=1</m>. So any linear combination is also a left eigenvector for eigenvalue <m>\lambda=1</m>.
 
 </p>
-</solution-->
+</solution>
 
 
 					</p>

@@ -12,19 +12,19 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Here is very useful fact from probability. Let \(X\) be any random variable taking on positive integer values. We can write the expected value of \(X\) as</p>
+<ol class="lower-alpha">
+<li><p>Consider vertices \(v_0\) and \(v_{m}\) where \(0 \leq m \leq n/2\text{.}\) What is the graph distance between these nodes? </p></li>
+<li><p>What is the length of the "longest shortest path" starting at \(v_0\text{?}\) </p></li>
+<li>
+<p>Show that the average distance from \(v_0\) to other vertices is less than or equal to</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\E[X] = \sum_{k=1}^{\infty} \Pr[X \geq k].
+\frac{n}{2c} + 1.
 \end{equation*}
 </div>
-<p class="continuation">Indeed, when \(X\) only takes on positive integer values, we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\sum_{k=1}^{\infty} \Pr[X \geq k] = \sum_{k=1}^{\infty} k \Pr[X = k]
-\end{equation*}
-</div>
-<p class="continuation">and the right hand side is the definition of \(\E[X]\text{.}\)</p>
-<span class="incontext"><a href="navsmallworld.html#p-607">in-context</a></span>
+<p class="continuation">Hint: you can use the upper bound \(\lceil x \rceil \leq x + 1\) for any \(x \in \R\text{.}\)</p>
+</li>
+</ol>
+<span class="incontext"><a href="smallworld.html#p-607">in-context</a></span>
 </body>
 </html>

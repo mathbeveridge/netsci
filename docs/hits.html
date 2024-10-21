@@ -160,39 +160,39 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="hits"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.4</span> <span class="title">Hubs and Authorities</span>
 </h2>
-<section class="introduction" id="introduction-10"><p id="p-431">At this point, we have seen three different "feedback centralities" that identify important vertices:  eigenvector centrality, Katz centrality and PageRank centrality. Each of them can be phrased as <em class="emphasis">dominant eigenvalue</em> problem.</p>
-<p id="p-432">Today, we will talk about the HITS (Hyperlink-Induced Topic Search) algorithm, which takes a slightly different approach. Eigenvectors will still be the key to understanding this feedback centrality algorithm. The core idea of HITS is that vertices can play two different roles in the network:</p>
+<section class="introduction" id="introduction-10"><p id="p-454">At this point, we have seen three different "feedback centralities" that identify important vertices:  eigenvector centrality, Katz centrality and PageRank centrality. Each of them can be phrased as <em class="emphasis">dominant eigenvalue</em> problem.</p>
+<p id="p-455">Today, we will talk about the HITS (Hyperlink-Induced Topic Search) algorithm, which takes a slightly different approach. Eigenvectors will still be the key to understanding this feedback centrality algorithm. The core idea of HITS is that vertices can play two different roles in the network:</p>
 <ul class="disc">
-<li id="li-196"><p id="p-433"><em class="emphasis">Authorities</em>: contain useful information (eg restaurant, college, newspaper)</p></li>
-<li id="li-197"><p id="p-434"><em class="emphasis">Hubs</em>: pages that link to authorities (eg Yelp, college admission consultant, news aggregator)</p></li>
+<li id="li-196"><p id="p-456"><em class="emphasis">Authorities</em>: contain useful information (eg restaurant, college, newspaper)</p></li>
+<li id="li-197"><p id="p-457"><em class="emphasis">Hubs</em>: pages that link to authorities (eg Yelp, college admission consultant, news aggregator)</p></li>
 </ul>
 <p class="continuation">The point here is that <em class="emphasis">authorities are in competition with one another</em>, so they have no incentive to link to one another. Instead, <em class="emphasis">hubs act as the aggregators</em>, being expert consumers of the information that the authorities provide. Finally, these are <em class="emphasis">roles</em>, so it is possible for a vertex to be both an authority and a hub at the same time.</p>
-<p id="p-435">Therefore, each vertex will get <em class="emphasis">two scores</em> instead of one: an authority score and a hub score. Therefore, we will replace the one-step recursive mantra "important vertices have important neighbors" with the following two-step recursive mantra:</p>
+<p id="p-458">Therefore, each vertex will get <em class="emphasis">two scores</em> instead of one: an authority score and a hub score. Therefore, we will replace the one-step recursive mantra "important vertices have important neighbors" with the following two-step recursive mantra:</p>
 <ul class="disc">
-<li id="li-198"><p id="p-436">If \(v\) has a high authority score, then \(v\) has in-neighbors with  high hub scores.</p></li>
-<li id="li-199"><p id="p-437">If \(v\) has a high hub score, then \(v\) has out-neighbor with high authority scores.</p></li>
+<li id="li-198"><p id="p-459">If \(v\) has a high authority score, then \(v\) has in-neighbors with  high hub scores.</p></li>
+<li id="li-199"><p id="p-460">If \(v\) has a high hub score, then \(v\) has out-neighbor with high authority scores.</p></li>
 </ul>
 <p class="continuation">The HITS algorithm works as follows</p>
 <ul class="disc">
-<li id="li-200"><p id="p-438">Initialize hub score \(\leftarrow\) 1.</p></li>
+<li id="li-200"><p id="p-461">Initialize hub score \(\leftarrow\) 1.</p></li>
 <li id="li-201">
-<p id="p-439">Repeat:</p>
+<p id="p-462">Repeat:</p>
 <ul class="circle">
-<li id="li-202"><p id="p-440">Update the authority score \(\leftarrow\) sum on in-neighbors' (new) hub scores.</p></li>
-<li id="li-203"><p id="p-441">Update the hub score \(\leftarrow \) sum of out-neighbors' authority scores.</p></li>
-<li id="li-204"><p id="p-442">Normalize the scores so that each maximum is 1.</p></li>
+<li id="li-202"><p id="p-463">Update the authority score \(\leftarrow\) sum on in-neighbors' (new) hub scores.</p></li>
+<li id="li-203"><p id="p-464">Update the hub score \(\leftarrow \) sum of out-neighbors' authority scores.</p></li>
+<li id="li-204"><p id="p-465">Normalize the scores so that each maximum is 1.</p></li>
 </ul>
 </li>
 </ul>
 <p class="continuation">Here is what it looks like on a bipartite directed graph where all the edges point from set \(X\) to set \(Y\text{.}\) In this case, the authority scores in \(X\) will always be 0, and the hub scores in \(Y\) will always be 0. So we only show the hub scores for \(X\) and the authority scores for \(Y\text{.}\) We also skip the normalization. <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/fig-img-hits0.svg" role="img" class="contained"></div> Let's give a mathematical description of this rule. The HITS algorithm's double recursion updates the hub score \(h_i\) and the authority score \(a_i\) for each vertex. The recursion is:</p>
 <ul class="disc">
-<li id="li-205"><p id="p-443">Initially, \(h_i(0) = 1\) for every vertex \(i\)</p></li>
+<li id="li-205"><p id="p-466">Initially, \(h_i(0) = 1\) for every vertex \(i\)</p></li>
 <li id="li-206">
-<p id="p-444">Repeat until convergence for \(t \geq 1\text{:}\)</p>
+<p id="p-467">Repeat until convergence for \(t \geq 1\text{:}\)</p>
 <ul class="circle">
-<li id="li-207"><p id="p-445">For every vertex \({i}\text{,}\) update   \(\displaystyle{a_i(t) = \sum_{j \rightarrow i} h_j(t-1)}\)</p></li>
-<li id="li-208"><p id="p-446">For every vertex \(j\text{,}\) update   \(\displaystyle{h_j(t) = \sum_{j \rightarrow i} a_i(t)}\)</p></li>
-<li id="li-209"><p id="p-447">Normalize both values.</p></li>
+<li id="li-207"><p id="p-468">For every vertex \({i}\text{,}\) update   \(\displaystyle{a_i(t) = \sum_{j \rightarrow i} h_j(t-1)}\)</p></li>
+<li id="li-208"><p id="p-469">For every vertex \(j\text{,}\) update   \(\displaystyle{h_j(t) = \sum_{j \rightarrow i} a_i(t)}\)</p></li>
+<li id="li-209"><p id="p-470">Normalize both values.</p></li>
 </ul>
 </li>
 </ul></section><section class="exercises" id="exercises-9"><h3 class="heading hide-type">
@@ -201,7 +201,7 @@
 <article class="exercise exercise-like" id="exercise-47"><h6 class="heading">
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Example of HITS Iterations.</span>
 </h6>
-<p id="p-448">Consider the following digraph <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/hub-auth-digraph.png" class="contained"></div> with adjacency matrix</p>
+<p id="p-471">Consider the following digraph <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/hub-auth-digraph.png" class="contained"></div> with adjacency matrix</p>
 <div class="displaymath">
 \begin{equation*}
 A = \begin{bmatrix}
@@ -215,8 +215,8 @@ A = \begin{bmatrix}
 </div>
 <p class="continuation">Perform some iterations of the HITS algorithm, <em class="emphasis">but don't worry about scaling</em>. (It's the relative size of scores that matters.) We start with the the hub vector \(\bh_0 = \begin{bmatrix}  1 &amp;1 &amp; 1 &amp; 1 &amp; 1 \end{bmatrix}^{\top}\text{.}\) Fill in the table below, as follows, starting at \(t=1\)</p>
 <ul class="disc">
-<li id="li-210"><p id="p-449">Update the \(i\)th entry of \(\ba_t\) to be the sum of all of the \(\bh_{t-1}\) values of the <em class="emphasis">in-neighbors</em> of vertex \(i\text{.}\)</p></li>
-<li id="li-211"><p id="p-450">Update the \(i\)th entry of \(\bh_t\) to be the sum of all of the \(\ba_t\) values of the <em class="emphasis">out-neighbors</em> of vertex \(i\)</p></li>
+<li id="li-210"><p id="p-472">Update the \(i\)th entry of \(\ba_t\) to be the sum of all of the \(\bh_{t-1}\) values of the <em class="emphasis">in-neighbors</em> of vertex \(i\text{.}\)</p></li>
+<li id="li-211"><p id="p-473">Update the \(i\)th entry of \(\bh_t\) to be the sum of all of the \(\ba_t\) values of the <em class="emphasis">out-neighbors</em> of vertex \(i\)</p></li>
 </ul>
 <div class="displaymath">
 \begin{equation*}
@@ -247,33 +247,133 @@ A = \begin{bmatrix}
 \end{array}
 \end{array}
 \end{equation*}
-</div></article><article class="exercise exercise-like" id="exercise-48"><h6 class="heading">
+</div>
+<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-103" id="solution-103"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-103"><div class="solution solution-like"><div class="displaymath" id="p-474">
+\begin{equation*}
+\begin{array}{ccc}
+\begin{array}{c||c|c|c|c|c}
+&amp; \,\,A\,\, &amp; \,\, B\,\,&amp; \,\,C\,\, &amp; \,\,D\,\, &amp; \,\,E\,\, \\
+\hline
+\ba_0  &amp; - &amp; - &amp; -&amp; - &amp; - \\
+\hline
+\ba_1  &amp; 0 &amp; 1 &amp; 2 &amp; 2 &amp; 1 \\
+\hline
+\ba_2  &amp;0 &amp; 1 &amp;8&amp;6&amp; 5 \\
+\hline
+\ba_3  &amp; 0 &amp; 1 &amp; 27&amp; 25 &amp; 19  \\
+\end{array}
+&amp; \phantom{asdasd}
+&amp;
+\begin{array}{c||c|c|c|c|c}
+&amp; \,\,A\,\, &amp; \,\, B\,\,&amp; \,\,C\,\, &amp; \,\,D\,\, &amp; \,\,E\,\, \\
+\hline
+\bh_0  &amp; 1&amp;1&amp;1&amp;1&amp;1 \\
+\hline
+\bh_1  &amp;1 &amp; 5 &amp; 0 &amp; 3 &amp; 1 \\
+\hline
+\bh_2  &amp; 1 &amp; 19 &amp; 0&amp; 8 &amp;  6 \\
+\hline
+\bh_3  &amp; 1 &amp;71&amp; 0 &amp;27 &amp;25 \\
+\end{array}
+\end{array}
+\end{equation*}
+</div></div></div></p></article><article class="exercise exercise-like" id="exercise-48"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">HITS Update Rules.</span>
 </h6>
-<p id="p-451">With the previous problem in mind, write each of the update rules as a matrix equation using the adjacency matrix \(A\) and the column vectors</p>
+<p id="p-475">With the previous problem in mind, write each of the update rules as a matrix equation using the adjacency matrix \(A\) and the column vectors</p>
 <div class="displaymath">
 \begin{equation*}
 \ba(t) =\begin{bmatrix}   a_1(t) \\ \vdots \\ a_n(t) \end{bmatrix}  \mbox{ and }
 \bh(t) = \begin{bmatrix} h_1(t) \\  \vdots \\  h_n(t) \end{bmatrix}.
 \end{equation*}
 </div>
-<p class="continuation">(Hint: you will need to use \(A^{\top}\) for one of your equations.) Check that your matrix equations are correct for the example from Problem 1. </p></article><article class="exercise exercise-like" id="exercise-49"><h6 class="heading">
+<p class="continuation">(Hint: you will need to use \(A^{\top}\) for one of your equations.) Check that your matrix equations are correct for the example from Problem 1. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-104" id="solution-104"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-104"><div class="solution solution-like">
+<p id="p-476">Our recursive update rule is</p>
+<div class="displaymath">
+\begin{align*}
+\bh(t) &amp;= A \, \ba(t-1),\\
+\ba(t) &amp;= A^{\top} \, \bh(t).
+\end{align*}
+</div>
+<p id="p-477">Row \(i\) of \(A\) contains the out-neighbors of vertex \(i\text{.}\)  Row \(i\) of \(A^{\top}\) contains the in-neighbors of \(i\text{.}\)</p>
+</div></div></p></article><article class="exercise exercise-like" id="exercise-49"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">HITS Matrix Equations.</span>
 </h6>
-<p id="p-452">Using your answer in question 2, you can now write down two matrix recurrences for \(t \geq 2\text{:}\)</p>
+<p id="p-478">Using your answer in question 2, you can now write down two matrix recurrences for \(t \geq 2\text{:}\)</p>
 <ul class="disc">
-<li id="li-212"><p id="p-453">A matrix equation for finding \(\ba(t)\) directly from \(\ba(t-1)\text{.}\)</p></li>
-<li id="li-213"><p id="p-454">A matrix equation for finding \(\bh(t)\) directly from \(\bh(t-1)\text{.}\)</p></li>
-</ul></article><article class="exercise exercise-like" id="exercise-50"><h6 class="heading">
+<li id="li-212"><p id="p-479">A matrix equation for finding \(\ba(t)\) directly from \(\ba(t-1)\text{.}\)</p></li>
+<li id="li-213"><p id="p-480">A matrix equation for finding \(\bh(t)\) directly from \(\bh(t-1)\text{.}\)</p></li>
+</ul>
+<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-105" id="solution-105"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-105"><div class="solution solution-like">
+<p id="p-481">We have</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{lllll}
+\bh(t) &amp;=&amp; A  \ba(t-1)  &amp;=&amp; \,  A \, A^{\top} \, \bh(t), \\
+\ba(t) &amp;=&amp; A^{\top} \bh(t)  &amp;=&amp; A^{\top} \, A \, \ba(t-1)
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">which we can write more compactly as</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{lllll}
+\bh(t) &amp;=&amp;   A \, A^{\top} \, \bh(t-1), \\
+\ba(t)  &amp;=&amp; A^{\top} \, A \, \ba(t-1).
+\end{array}
+\end{equation*}
+</div>
+</div></div></p></article><article class="exercise exercise-like" id="exercise-50"><h6 class="heading">
 <span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">HITS Eigensystems.</span>
 </h6>
-<p id="p-455">After convergence, our update rule becomes \(\ba \rightarrow c_1 \ba\) and \(\bh \rightarrow c_2 \bh\text{.}\) (Recall that HITS performs a renormalization at each step to deal with \(c_1, c_2\text{.}\)) So after convergence, your matrix equations   become statements about eigenvectors and eigenvalues. With that in mind:</p>
+<p id="p-482">After convergence, our update rule becomes \(\ba \rightarrow c_1 \ba\) and \(\bh \rightarrow c_2 \bh\text{.}\) (Recall that HITS performs a renormalization at each step to deal with \(c_1, c_2\text{.}\)) So after convergence, your matrix equations   become statements about eigenvectors and eigenvalues. With that in mind:</p>
 <ol class="lower-alpha">
-<li id="li-214"><p id="p-456">How are \(c_1\) and \(c_2\) related to the eigenvalues of your matrices in question 2?</p></li>
-<li id="li-215"><p id="p-457">How do \(c_1\) and \(c_2\) relate to each other?</p></li>
-<li id="li-216"><p id="p-458">What is the  (linear algebraic) relationship between the authority vector \(\ba\) and the hub vector \(\bh\text{?}\)</p></li>
+<li id="li-214"><p id="p-483">How are \(c_1\) and \(c_2\) related to the eigenvalues of your matrices in question 2?</p></li>
+<li id="li-215"><p id="p-484">How do \(c_1\) and \(c_2\) relate to each other?</p></li>
+<li id="li-216"><p id="p-485">What is the  (linear algebraic) relationship between the authority vector \(\ba\) and the hub vector \(\bh\text{?}\)</p></li>
 </ol>
-<p class="continuation">For inspiration you  should look back at our discussion of other algebraic centralities. </p></article></section></section></div></main>
+<p class="continuation">For inspiration you  should look back at our discussion of other algebraic centralities. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-106" id="solution-106"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-106"><div class="solution solution-like">
+<p id="p-486">For each of the matrix equations above, as \(t \rightarrow \infty\text{,}\) we converge to a vector in the direction of the largest eigenvector. In other words, the hub score \(\bh\) satisfies</p>
+<div class="displaymath">
+\begin{equation*}
+A \, A^{\top} \, \bh= \lambda \bh
+\end{equation*}
+</div>
+<p class="continuation">where \(\lambda\) is the largest eigenvalue of \(A \, A^{\top}\text{.}\) Meanwhile, the authority score \(\ba\) satisfies</p>
+<div class="displaymath">
+\begin{equation*}
+A^{\top} \, A \,   \ba= \mu \ba
+\end{equation*}
+</div>
+<p class="continuation">where \(\mu\) is the largest eigenvalue of \(A^{\top} \,A\text{.}\)</p>
+<p id="p-487">Here's a cool connection: a couple of standard linear algebra results will show us that \(\lambda=\mu\text{.}\) Recall from your linear algebra class</p>
+<ul class="disc">
+<li id="li-217"><p id="p-488">For any matrix \(M\text{,}\) we have \(\det(M) = \det(M^{\top})\text{.}\)</p></li>
+<li id="li-218">
+<p id="p-489">The eigenvalues of a matrix \(B\) are the solutions to</p>
+<div class="displaymath">
+\begin{equation*}
+\det(B - \mu I) = 0
+\end{equation*}
+</div>
+</li>
+</ul>
+<p class="continuation">Therefore, \(B\) and \(B^{\top}\) have the same eigenvalues (though they usually have different eigenvectors). By observing that \((A A^{\top})^{\top} = A^{\top} A,\) we  conclude that \(\lambda = \mu\text{.}\)</p>
+<p id="p-490">Let's go a step further. Taking the transpose of the equation \(A^{\top} \, A \,   \ba= \mu \ba\text{,}\) we get</p>
+<div class="displaymath">
+\begin{equation*}
+\ba^{\top} A \, A^{\top}   = \lambda \ba^{\top}.
+\end{equation*}
+</div>
+<p class="continuation">In other words, the <em class="emphasis">row vector</em> \(\ba^{\top}\) is a <em class="emphasis">left eigenvector</em> of the matrix \(A \, A^{\top}\) for the largest eigenvalue \(\lambda\text{.}\) Meanwhile,</p>
+<div class="displaymath">
+\begin{equation*}
+A \, A^{\top} \, \bh= \lambda \bh
+\end{equation*}
+</div>
+<p class="continuation">says that the column vector \(\bh\) is a <em class="emphasis">right eigenvector</em> for the same eigenvalue \(\lambda\text{.}\)</p>
+<p id="p-491">Every \(n \times n\) matrix has both left eigenvectors and right eigenvectors. You might be more comfortable with left eigenvectors because we tend to focus on <em class="emphasis">column vectors</em>. But matrix transposition is a simple operation that swaps the roles of rows and vectors. So any result about column vectors can be turned into an equivalent statement about row vectors.</p>
+</div></div></p></article></section></section></div></main>
 </div>
 </body>
 </html>

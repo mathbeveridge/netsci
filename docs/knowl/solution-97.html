@@ -15,16 +15,21 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
-<p>Using this spectral decomposition, and the orthonormal properties of \(\bu_1, \bu_2\text{,}\) we get</p>
+<p>Since vertex 2 has no out-neighbors, we add a self-loop.</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-A^n \bx  &amp;=
-\left(\lambda_1^n \bu_1 \bu_1^{\top}  + \lambda_2^n \bu_2 \bu_2^{\top}\right) (c_1 \bu_1 + c_2 \bu_2)\\
-&amp;= c_1 \lambda_1^n \bu_1  + c_2 \lambda_2^n \bu_2.
-\end{align*}
+\begin{equation*}
+P =
+\begin{bmatrix}
+0 &amp; 1/2 &amp; 0 &amp; 0 &amp; 1/2 &amp; 0  \\
+0 &amp; 1 &amp; 0&amp; 0 &amp; 0 &amp; 0  \\
+1/2 &amp; 1/2 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0  \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1  \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0  \\
+\end{bmatrix}
+\end{equation*}
 </div>
-<p></p>
 </div>
-<span class="incontext"><a href="algcentrality.html#solution-97">in-context</a></span>
+<span class="incontext"><a href="randomwalk.html#solution-97">in-context</a></span>
 </body>
 </html>

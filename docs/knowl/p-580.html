@@ -12,18 +12,17 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Define</p>
+<p>Here is Price's Model for a citation network. Start with a small set of initial papers (with no citations). When a new paper is added, it cites  \(c\) existing papers (on average). Each paper is chosen as follows:</p>
+<ul class="disc">
+<li><p>with \(\displaystyle{\P = \frac{a}{a+c}}\text{,}\)   cite a uniformly random paper</p></li>
+<li><p>with \(\displaystyle{\P = \frac{c}{a+c}}\text{,}\)  cite a  paper with probability proportional to its current citation count.</p></li>
+</ul>
+<p class="continuation">The tail of the degree distribution satisfies the power law</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-q = \frac{\frac{cpn}{2}}{{n \choose 2}} \approx \frac{cp}{n}.
+\P(\deg(v) = k) \sim k^{-2-a/c}.
 \end{equation*}
 </div>
-<p class="continuation">For any potential shortcut edge \(e\text{,}\) explain why</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\P[ \mbox{edge } e \mbox{ is added to the graph}] \leq q.
-\end{equation*}
-</div>
-<span class="incontext"><a href="smallworld.html#p-580">in-context</a></span>
+<span class="incontext"><a href="pricemodel.html#p-580">in-context</a></span>
 </body>
 </html>

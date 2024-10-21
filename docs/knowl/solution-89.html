@@ -15,14 +15,28 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
-<ol class="lower-alpha">
-<li><p>High in-degree centrality means that lots of information gets to you. High out-degree means that a lot of people are listening to you.</p></li>
-<li>
-<p>You would need two different closeness centralities. Large \(c_i^{C^{\mathrm{in}}}\) would mean that spreading information gets to you quickly. Large \(c_i^{C^{\mathrm{out}}}\) would mean that information that you share would spread quickly to the whole network.</p>
-<p>You would still only have one betweenness centrality measure on a directed graph. The definition already includes paths from \(s\) to \(t\) and from \(t\) to \(s\text{.}\) This "double counting" on an undirected graph becomes "single counting" when the paths are directed.</p>
-</li>
-</ol>
+<p>We have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+&amp; \begin{bmatrix}
+2 &amp; 3 &amp; 2 &amp; 3 &amp; 3 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+0 &amp; 1/2 &amp; 0 &amp; 0 &amp; 1/2 &amp; 0\\
+1/3 &amp; 0 &amp; 1/3 &amp; 0 &amp; 1/3 &amp; 0\\
+0 &amp; 1/2 &amp; 0 &amp; 1/2 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1/3 &amp; 0 &amp; 1/3 &amp; 1/3\\
+1/3 &amp; 1/3 &amp; 0 &amp; 1/3 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0\\
+\end{bmatrix}\\
+&amp;=
+\begin{bmatrix}
+2 &amp; 3 &amp; 2 &amp; 3 &amp; 3 &amp; 1
+\end{bmatrix}
+\end{align*}
 </div>
-<span class="incontext"><a href="centrality.html#solution-89">in-context</a></span>
+<p></p>
+</div>
+<span class="incontext"><a href="randomwalk.html#solution-89">in-context</a></span>
 </body>
 </html>

@@ -12,18 +12,26 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>To check your understanding, explain why the length of the journey from \(s\) to \(t\) is</p>
+<p>When we add the new vertex \(n+1\) to the network of size \(n\text{,}\) we create \(c\) undirected edges incident with \(n+1\text{.}\) The other endpoint \(i\) of each edge is chosen with probability proportional to its current degree \(k_i\text{.}\)</p>
+<ol class="lower-alpha">
+<li>
+<p>Explain why the probability that an edge from vertex \(n+1\) attaches to vertex \(i\) is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-X = \sum_{k=0}^{\lfloor \log (n/2) \rfloor} X_k
+\frac{k_i}{2cn}.
 \end{equation*}
 </div>
-<p class="continuation">In other words, be sure that you understand</p>
-<ul class="disc">
-<li><p>how we have partitioned the journey into phases, and</p></li>
-<li><p>why the upper limit of the sum is \(\lfloor \log (n/2) \rfloor.\)</p></li>
-</ul>
-<p class="continuation">From here forward, we will omit the floor function from our expressions, and write \(\log (n/2) \) when we actually mean \(\lfloor \log (n/2) \rfloor\text{.}\) We trust that you know that we need to use integer values.</p>
-<span class="incontext"><a href="navsmallworld.html#p-598">in-context</a></span>
+</li>
+<li>
+<p>Now change this network model to a directed network. Show that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+k_i= k_i^{\mathrm{in}} + k_i^{\mathrm{out}} = k_i^{\mathrm{in}} + c. 
+\end{equation*}
+</div>
+</li>
+<li><p>Now show that Preferential Attachment is just the undirected version of Price's Model with \(a=c\text{.}\) </p></li>
+</ol>
+<span class="incontext"><a href="pricemodel.html#p-598">in-context</a></span>
 </body>
 </html>

@@ -189,27 +189,39 @@ P = D^{-1} A
 <ol id="p-395" class="lower-alpha">
 <li id="li-175">
 <p id="p-396">Find the transition matrix \(P\)  of the following undirected graph. Hint: construct \(P\)   row by row. And remember that when \(k_i^{\mathrm{out}}=0\text{,}\) we set \(a_{ii}=1\text{,}\) corresponding to the move "stay where we are." <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="./images/undirected-graph.png" class="contained"></div></p>
-<p id="p-397"></p>
+<p id="p-397"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-82" id="solution-82"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-82"><div class="solution solution-like"><div class="displaymath" id="p-398">
+\begin{equation*}
+P =
+\begin{bmatrix}
+0 &amp; 1/2 &amp; 0 &amp; 0 &amp; 1/2 &amp; 0  \\
+1/3 &amp; 0 &amp; 1/3 &amp; 0 &amp; 1/3 &amp; 0  \\
+0 &amp; 1/2 &amp; 0 &amp; 1/2 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1/3 &amp; 0 &amp; 1/3 &amp; 1/3  \\
+1/3 &amp; 1/3 &amp; 0 &amp; 1/3 &amp; 0 &amp; 0  \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0  \\
+\end{bmatrix}
+\end{equation*}
+</div></div></div></p>
 </li>
 <li id="li-176">
-<p id="p-398">Show that the all-ones vector \(\bone\) is a right eigenvector for  eigenvalue \(\lambda=1\text{.}\) In other words, confirm that</p>
+<p id="p-399">Show that the all-ones vector \(\bone\) is a right eigenvector for  eigenvalue \(\lambda=1\text{.}\) In other words, confirm that</p>
 <div class="displaymath">
 \begin{equation*}
 P \bone = \bone.
 \end{equation*}
 </div>
-<p class="continuation">What is the meaning of this equation? </p>
+<p class="continuation">What is the meaning of this equation? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-83" id="solution-83"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-83"><div class="solution solution-like"><p id="p-400">Right multiplication by \(\bone\) sums all the exit probabilities from each vertex. So of course, these numbers sum to 1.</p></div></div></p>
 </li>
 </ol></article><article class="exercise exercise-like" id="exercise-39"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Long Term Behavior of a Random Walk of an Undirected Graph.</span>
 </h6>
-<p id="p-399">Consider the undirected graph from Problem 1. In your mind, repeatedly simulate a random walk starting from vertex 1. Follow this walk for about 15 steps or so. Where are you most likely to end up? Least likely? How do your observations relate to:  the distance of the vertex from vertex 1? the degree of the  vertex?</p>
-<p id="p-400"></p></article><article class="exercise exercise-like" id="exercise-40"><h6 class="heading">
+<p id="p-401">Consider the undirected graph from Problem 1. In your mind, repeatedly simulate a random walk starting from vertex 1. Follow this walk for about 15 steps or so. Where are you most likely to end up? Least likely? How do your observations relate to:  the distance of the vertex from vertex 1? the degree of the  vertex?</p>
+<p id="p-402"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-84" id="solution-84"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-84"><div class="solution solution-like"><p id="p-403">It is possible to end at any vertex. Vertex 6 is definitely visited the least at the end of the walk. Vertices with degree 3 seem to be the candidates for lots of visits at the end. But it is not clear how to compare these vertices with each other.</p></div></div></p></article><article class="exercise exercise-like" id="exercise-40"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Powers of the Transition Matrix.</span>
 </h6>
-<ol id="p-401" class="lower-alpha">
+<ol id="p-404" class="lower-alpha">
 <li id="li-177">
-<p id="p-402">Here is the matrix \(P^2\) for the undirected graph in Problem 1.</p>
+<p id="p-405">Here is the matrix \(P^2\) for the undirected graph in Problem 1.</p>
 <div class="displaymath">
 \begin{equation*}
 P^2 =
@@ -223,12 +235,12 @@ P^2 =
 \end{bmatrix}
 \end{equation*}
 </div>
-<p class="continuation">What does row \(i\) tell you about the instruction "take two random steps from vertex \(i\text{?}\)" </p>
+<p class="continuation">What does row \(i\) tell you about the instruction "take two random steps from vertex \(i\text{?}\)" <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-85" id="solution-85"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-85"><div class="solution solution-like"><p id="p-406">The \((i,j)\) entry of \(P^2\) tells you the probability of a random walk starting at \(i\) ending at \(j\) after 2 steps.</p></div></div></p>
 </li>
-<li id="li-178"><p id="p-403">Using part (a) as a guide, give an interpretation for row \(i\) of the matrix \(P^3\text{.}\) </p></li>
-<li id="li-179"><p id="p-404">What do the rows of matrix \(P^t\) describe? </p></li>
+<li id="li-178"><p id="p-407">Using part (a) as a guide, give an interpretation for row \(i\) of the matrix \(P^3\text{.}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-86" id="solution-86"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-86"><div class="solution solution-like"><p id="p-408">The \((i,j)\) entry of \(P^3\) tells you the probability of a random walk starting at \(i\) ending at \(j\) after 3 steps.</p></div></div></p></li>
+<li id="li-179"><p id="p-409">What do the rows of matrix \(P^t\) describe? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-87" id="solution-87"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-87"><div class="solution solution-like"><p id="p-410">The \((i,j)\) entry of \(P^t\) tells you the probability of a random walk starting at \(i\) ending at \(j\) after \(t\) steps.</p></div></div></p></li>
 <li id="li-180">
-<p id="p-405">For \(1 \leq i \leq 6\text{,}\) let \(\mathbf{e}_i\) denote the " elementary vector" whose \(j\)-th entry is</p>
+<p id="p-411">For \(1 \leq i \leq 6\text{,}\) let \(\mathbf{e}_i\) denote the " elementary vector" whose \(j\)-th entry is</p>
 <div class="displaymath">
 \begin{equation*}
 \mathbf{e}_i(j) = \left\{
@@ -249,18 +261,18 @@ P^2 =
 \mathbf{e}_5&amp;= \begin{bmatrix} 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \end{bmatrix}
 \end{align*}
 </div>
-<p id="p-406">What does the vector</p>
+<p id="p-412">What does the vector</p>
 <div class="displaymath">
 \begin{equation*}
 \mathbf{e}_i \, P^t
 \end{equation*}
 </div>
-<p class="continuation">describe? </p>
+<p class="continuation">describe? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-88" id="solution-88"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-88"><div class="solution solution-like"><p id="p-413">The  row vector \(\mathbf{e}_i \, P^t\) is row \(i\) of matrix \(P^t\text{.}\) As described in the previous part, the \(j\)th entry of this vector is the probability that you are at vertex \(j\) after taking \(t\) random steps from \(i\text{.}\)</p></div></div></p>
 </li>
 </ol></article><article class="exercise exercise-like" id="exercise-41"><h6 class="heading">
 <span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">A Left Eigenvector for an Undirected Graph.</span>
 </h6>
-<p id="p-407">Let \(P\) be the transition matrix for the graph in Problem 1. Consider the row vector</p>
+<p id="p-414">Let \(P\) be the transition matrix for the graph in Problem 1. Consider the row vector</p>
 <div class="displaymath">
 \begin{equation*}
 \bv =
@@ -275,30 +287,52 @@ v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6
 </div>
 <ol class="lower-alpha">
 <li id="li-181">
-<p id="p-408">Check that the row vector \(\bv\) satisfies</p>
+<p id="p-415">Check that the row vector \(\bv\) satisfies</p>
 <div class="displaymath">
 \begin{equation*}
 \bv  \,P = \bv.
 \end{equation*}
 </div>
-<p class="continuation">We have a name for this equation: say that "\(\bv\) is a <em class="emphasis">left</em> eigenvector of the transition matrix \(P\) for eigenvalue \(\lambda=1\text{.}\)" (In other words, the eigenvectors that you are used to are actually <em class="emphasis">right</em> eigenvectors.) </p>
+<p class="continuation">We have a name for this equation: say that "\(\bv\) is a <em class="emphasis">left</em> eigenvector of the transition matrix \(P\) for eigenvalue \(\lambda=1\text{.}\)" (In other words, the eigenvectors that you are used to are actually <em class="emphasis">right</em> eigenvectors.) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-89" id="solution-89"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-89"><div class="solution solution-like">
+<p id="p-416">We have</p>
+<div class="displaymath">
+\begin{align*}
+&amp; \begin{bmatrix}
+2 &amp; 3 &amp; 2 &amp; 3 &amp; 3 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+0 &amp; 1/2 &amp; 0 &amp; 0 &amp; 1/2 &amp; 0\\
+1/3 &amp; 0 &amp; 1/3 &amp; 0 &amp; 1/3 &amp; 0\\
+0 &amp; 1/2 &amp; 0 &amp; 1/2 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1/3 &amp; 0 &amp; 1/3 &amp; 1/3\\
+1/3 &amp; 1/3 &amp; 0 &amp; 1/3 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0\\
+\end{bmatrix}\\
+&amp;=
+\begin{bmatrix}
+2 &amp; 3 &amp; 2 &amp; 3 &amp; 3 &amp; 1
+\end{bmatrix}
+\end{align*}
+</div>
+<p id="p-417"></p>
+</div></div></p>
 </li>
-<li id="li-182"><p id="p-409">Relate the entries of \(\bv\) to the degrees of the graph. </p></li>
+<li id="li-182"><p id="p-418">Relate the entries of \(\bv\) to the degrees of the graph. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-90" id="solution-90"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-90"><div class="solution solution-like"><p id="p-419">The entries are the degrees of the vertices.</p></div></div></p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-42"><h6 class="heading">
 <span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Stationary Distribution for an Undirected Graph.</span>
 </h6>
-<p id="p-410">A vector whose entries are nonnegative and sum to one correspond to a <em class="emphasis">probability distribution</em> on the vertices of \(G\text{.}\) A distribution \(\pi\) is  <em class="emphasis">stationary</em> for \(P\) when</p>
+<p id="p-420">A vector whose entries are nonnegative and sum to one correspond to a <em class="emphasis">probability distribution</em> on the vertices of \(G\text{.}\) A distribution \(\pi\) is  <em class="emphasis">stationary</em> for \(P\) when</p>
 <div class="displaymath">
 \begin{equation*}
 \pi P = \pi.
 \end{equation*}
 </div>
 <p class="continuation">The amazing Perron-Frobenius Theorem (a very general theorem) can be applied to the transition matrix \(P\) for a connected, non-bipartite undirected graph.</p>
-<p id="p-411">In particular, it applies to the matrix \(P\) from the previous problems. And it tells us more information about the left eigenvector  \(\bv\text{.}\) Two of the properties that it tells us are:</p>
+<p id="p-421">In particular, it applies to the matrix \(P\) from the previous problems. And it tells us more information about the left eigenvector  \(\bv\text{.}\) Two of the properties that it tells us are:</p>
 <ul class="disc">
-<li id="li-183"><p id="p-412">All of the other eigenvalues satisify \(| \lambda_i| &lt; 1\text{.}\) In other words, \(\bv\) is the <em class="emphasis">dominant eigenvector</em> of \(P\text{.}\)</p></li>
+<li id="li-183"><p id="p-422">All of the other eigenvalues satisify \(| \lambda_i| &lt; 1\text{.}\) In other words, \(\bv\) is the <em class="emphasis">dominant eigenvector</em> of \(P\text{.}\)</p></li>
 <li id="li-184">
-<p id="p-413">Assuming that we have scaled the row vector \(\bv\) so that its entries sum to 1, we have</p>
+<p id="p-423">Assuming that we have scaled the row vector \(\bv\) so that its entries sum to 1, we have</p>
 <div class="displaymath">
 \begin{align*}
 \lim_{t \rightarrow \infty} P^t  \, = \, \bone \,  \bv
@@ -313,7 +347,7 @@ v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
 \end{bmatrix}
 \end{align*}
 </div>
-<p id="p-414">where</p>
+<p id="p-424">where</p>
 <div class="displaymath">
 \begin{equation*}
 \bv =
@@ -330,17 +364,17 @@ v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6
 </ul>
 <p class="continuation">Given this information:</p>
 <ol class="lower-alpha">
-<li id="li-185"><p id="p-415">What new properties do we now know about the vector (and probability distributrion) \(\bv\text{?}\) </p></li>
-<li id="li-186"><p id="p-416">After taking many random steps, what is the probability that we are at vertex \(i\text{?}\) </p></li>
+<li id="li-185"><p id="p-425">What new properties do we now know about the vector (and probability distributrion) \(\bv\text{?}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-91" id="solution-91"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-91"><div class="solution solution-like"><p id="p-426">The row vector \(\bv\) is the dominant eigenvector and  every row of \(\lim_{t \rightarrow \infty} P^t\) converges to \(\pi\text{.}\)</p></div></div></p></li>
+<li id="li-186"><p id="p-427">After taking many random steps, what is the probability that we are at vertex \(i\text{?}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-92" id="solution-92"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-92"><div class="solution solution-like"><p id="p-428">Row \(i\) of \(P^t\) is the probability distribution for a random walk started at vertex \(i\text{.}\) So this distribution converges to \(\pi\text{.}\) In particular, as \(t \rightarrow \infty\text{,}\) the probability that we are at vertex \(j\) is \(k_j/14\text{.}\)</p></div></div></p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-43"><h6 class="heading">
 <span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">Undirected Graphs: the General Case.</span>
 </h6>
-<p id="p-417">In the previous questions, you have focused on a particular undirected graph. Take a step back: these observations also hold in general!</p>
-<p id="p-418">Let \(G\) be a connected, aperiodic, undirected graph with adjacency matrix \(A\) and transition matrix \(P = D^{-1}A\text{.}\)</p>
+<p id="p-429">In the previous questions, you have focused on a particular undirected graph. Take a step back: these observations also hold in general!</p>
+<p id="p-430">Let \(G\) be a connected, aperiodic, undirected graph with adjacency matrix \(A\) and transition matrix \(P = D^{-1}A\text{.}\)</p>
 <ol class="lower-alpha">
-<li id="li-187"><p id="p-419">Explain why \(P \bone = \bone\text{.}\) </p></li>
+<li id="li-187"><p id="p-431">Explain why \(P \bone = \bone\text{.}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-93" id="solution-93"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-93"><div class="solution solution-like"><p id="p-432">Row \(i\) contains the probabilities of stepping from \(i\)  to a neighbor of vertex \(i\text{.}\) These probabiiities sum to 1.</p></div></div></p></li>
 <li id="li-188">
-<p id="p-420">Let \(\pi\) be the row vector</p>
+<p id="p-433">Let \(\pi\) be the row vector</p>
 <div class="displaymath">
 \begin{equation*}
 \pi =
@@ -355,42 +389,65 @@ v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6
 \pi P = \pi.
 \end{equation*}
 </div>
+<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-94" id="solution-94"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-94"><div class="solution solution-like">
+<p id="p-434">The \(i\)th entry of \(\pi P\) is</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{j=1}^n \frac{k_j}{2m} \frac{a_{ij}}{k_j} = \frac{1}{2m}  \sum_{j=1}^n a_{ij} = \frac{k_i}{2m}.
+\end{equation*}
+</div>
+</div></div></p>
 </li>
-<li id="li-189"><p id="p-421">What is the meaning of the row vector \(\mathbf{e}_i \, P^t\text{,}\) where \(\mathbf{e}_i\) is the elementary vector from Problem 3(d)? </p></li>
+<li id="li-189"><p id="p-435">What is the meaning of the row vector \(\mathbf{e}_i \, P^t\text{,}\) where \(\mathbf{e}_i\) is the elementary vector from Problem 3(d)? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-95" id="solution-95"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-95"><div class="solution solution-like"><p id="p-436">The row vector \(\mathbf{e}_i \, P^t \) is row \(i\) of \(P^t\text{.}\)</p></div></div></p></li>
 <li id="li-190">
-<p id="p-422">Explain why we have</p>
+<p id="p-437">Explain why we have</p>
 <div class="displaymath">
 \begin{equation*}
 \lim_{t \rightarrow \infty} \mathbf{e}_i \, P^t = \pi.
 \end{equation*}
 </div>
-<p class="continuation">What does this equation mean for a random walk starting at vertex \(i\text{?}\) </p>
+<p class="continuation">What does this equation mean for a random walk starting at vertex \(i\text{?}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-96" id="solution-96"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-96"><div class="solution solution-like"><p id="p-438">Row \(i\) of \(P^t\) is the probability distribution for a random walk started at vertex \(i\text{.}\) This distribution converges to \(\pi\text{.}\) In particular, as \(t \rightarrow \infty\text{,}\) the probability that we are at vertex \(j\) is \(k_j/2m\text{.}\)</p></div></div></p>
 </li>
 </ol></article><article class="exercise exercise-like" id="exercise-44"><h6 class="heading">
 <span class="codenumber">7<span class="period">.</span></span><span class="space"> </span><span class="title">Random Walk on a Directed Graph.</span>
 </h6>
-<p id="p-423">Things don't work out as nicely on directed graphs. We will work through an example to see some of the strange behaviors that can arise.</p>
+<p id="p-439">Things don't work out as nicely on directed graphs. We will work through an example to see some of the strange behaviors that can arise.</p>
 <ol class="lower-alpha">
-<li id="li-191"><p id="p-424">Find the transition matrix \(P\) of the following directed graph. Hint: construct \(P\) row by row. <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="./images/directed-graph.png" class="contained"></div> </p></li>
+<li id="li-191"><p id="p-440">Find the transition matrix \(P\) of the following directed graph. Hint: construct \(P\) row by row. <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="./images/directed-graph.png" class="contained"></div> <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-97" id="solution-97"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-97"><div class="solution solution-like">
+<p id="p-441">Since vertex 2 has no out-neighbors, we add a self-loop.</p>
+<div class="displaymath">
+\begin{equation*}
+P =
+\begin{bmatrix}
+0 &amp; 1/2 &amp; 0 &amp; 0 &amp; 1/2 &amp; 0  \\
+0 &amp; 1 &amp; 0&amp; 0 &amp; 0 &amp; 0  \\
+1/2 &amp; 1/2 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0  \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1  \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0  \\
+\end{bmatrix}
+\end{equation*}
+</div>
+</div></div></p></li>
 <li id="li-192">
-<p id="p-425">Confirm that</p>
+<p id="p-442">Confirm that</p>
 <div class="displaymath">
 \begin{equation*}
 P \bone = \bone.
 \end{equation*}
 </div>
-<p class="continuation">What is the meaning of this equation? </p>
+<p class="continuation">What is the meaning of this equation? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-98" id="solution-98"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-98"><div class="solution solution-like"><p id="p-443">Right multiplication by \(\bone\) sums all the exit probabilities from each vertex. These numbers sum to 1, just as in the directed case. Note that adding the self-loop at vertex 2 is essential.</p></div></div></p>
 </li>
 </ol></article><article class="exercise exercise-like" id="exercise-45"><h6 class="heading">
 <span class="codenumber">8<span class="period">.</span></span><span class="space"> </span><span class="title">Long Term Behavior of a Random Walk on Directed Graph.</span>
 </h6>
-<p id="p-426">Now simulate some random walks on the directed graph from Problem 7. This time, start your walk at vertex 1. You should see a couple of different kinds of behavior for this directed graph. Describe what you observe. <div class="image-box" style="width: 25%; margin-left: 37.5%; margin-right: 37.5%;"><img src="./images/directed-graph.png" class="contained"></div> </p></article><article class="exercise exercise-like" id="exercise-46"><h6 class="heading">
+<p id="p-444">Now simulate some random walks on the directed graph from Problem 7. This time, start your walk at vertex 1. You should see a couple of different kinds of behavior for this directed graph. Describe what you observe. <div class="image-box" style="width: 25%; margin-left: 37.5%; margin-right: 37.5%;"><img src="./images/directed-graph.png" class="contained"></div> <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-99" id="solution-99"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-99"><div class="solution solution-like"><p id="p-445">At the end of the walk, we must be at vertex 2, 5 or 6. If we step to vertex 2 then we remain there forever. On the other hand, if we step from vertex 1 to vertex 5 then we we can never get out of this two vertex "spider trap."</p></div></div></p></article><article class="exercise exercise-like" id="exercise-46"><h6 class="heading">
 <span class="codenumber">9<span class="period">.</span></span><span class="space"> </span><span class="title">An Eigenvector for a Directed Graph.</span>
 </h6>
-<p id="p-427">Let's continue to explore the digraph in Problem 7.</p>
+<p id="p-446">Let's continue to explore the digraph in Problem 7.</p>
 <ol class="lower-alpha">
 <li id="li-193">
-<p id="p-428">Check that the row vector</p>
+<p id="p-447">Check that the row vector</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{bmatrix}
@@ -404,17 +461,40 @@ P \bone = \bone.
 \bv \, P = \bv.
 \end{equation*}
 </div>
-<p class="continuation">How does this relate to the behavior you saw in problem 4? What behavior doesn't this capture? </p>
+<p class="continuation">How does this relate to the behavior you saw in problem 4? What behavior doesn't this capture? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-100" id="solution-100"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-100"><div class="solution solution-like">
+<p id="p-448">One of the two long-term outcomes we observed was ending up in the "spider trap" and then alternate between vertices 5 and 6. So in the long run, we spend half our time at vertex 5 and half our time at vertex 6. However, even in this case, the vector <em class="emphasis">doesn't capture the periodic behavior</em> of our long-term random walk. If we first step to vertex 5 at time \(T\text{,}\) then we will also be at vertex 5 at time \(T+2, T+4, T+6, \) etc, and we will be at vertex 6 at time \(T+1, T+3, T+5, \) etc.</p>
+<p id="p-449">Another behavior that we don't see in this vector is that we could have ended up at vertex 2, and then remained there forever. That doesn't even show up at all in this vector.</p>
+</div></div></p>
 </li>
 <li id="li-194">
-<p id="p-429">Find a different vector \(\bw \neq \bv\) such that</p>
+<p id="p-450">Find a different vector \(\bw \neq \bv\) such that</p>
 <div class="displaymath">
 \begin{equation*}
 \bw \, P = \bw.
 \end{equation*}
 </div>
+<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-101" id="solution-101"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-101"><div class="solution solution-like">
+<p id="p-451">The vector</p>
+<div class="displaymath">
+\begin{equation*}
+\bw =
+\begin{bmatrix}
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0
+\end{bmatrix}
+\end{equation*}
+</div>
+<p class="continuation">is a solution to  \(\bw \, P = \bw.\)</p>
+</div></div></p>
 </li>
-<li id="li-195"><p id="p-430">Pick \(a,b \in \R\)  such that \(a+b=1\text{.}\) What can you say about the vector \(a \bv + b \bw\text{?}\) </p></li>
+<li id="li-195"><p id="p-452">Pick \(a,b \in \R\)  such that \(a+b=1\text{.}\) What can you say about the vector \(a \bv + b \bw\text{?}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-102" id="solution-102"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-102"><div class="solution solution-like">
+<p id="p-453">We have</p>
+<div class="displaymath">
+\begin{equation*}
+(a \bv + b\bw) P = a (\bv P) + b (\bw) P = a \bv  + b \bw.
+\end{equation*}
+</div>
+<p class="continuation">Indeed, they are both left eigenvectors for eigenvalue \(\lambda=1\text{.}\) So any linear combination is also a left eigenvector for eigenvalue \(\lambda=1\text{.}\)</p>
+</div></div></p></li>
 </ol>
 <p class="continuation">As this problem shows, the eigenvectors for a weakly connected directed graph aren't enough to fully resolve the long-term behavior of random walks. This example has an infinite number of choices of \(a,b\) that produce distinct left eigenvectors. (In fact, the stationary distribution that we end up in depends upon the starting vertex.)</p></article></section></section></div></main>
 </div>
