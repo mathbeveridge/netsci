@@ -12,17 +12,25 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Consider the following network growth model.</p>
-<ul class="disc">
-<li><p>with \(\displaystyle{\P = \frac{a}{a+c}}\text{,}\)   pick a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">paper</em> uniformly at random. Cite this paper.</p></li>
-<li><p>with \(\displaystyle{\P = \frac{c}{a+c}}\text{,}\)  pick a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">directed edge</em> uniformly at random. Then cite the paper that the edge points to.</p></li>
-</ul>
-<p class="continuation">Show that when we add vertex \(n+1\text{,}\) this local process ALSO satisfies</p>
+<p>Let \(\displaystyle{Z_n= \sum_{t=0}^{n} X_t}\) be the total number of individuals in the family tree at time \(n\text{.}\)</p>
+<ol class="lower-alpha">
+<li>
+<p>Use linearity of expectation to prove that</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\P(\mbox{the arc points to vertex } i) = \frac{a+k_i}{n(c+a)}.
+\E[Z_n] = 1 + \mu + \mu^2 + \cdots + \mu^n.
 \end{equation*}
 </div>
-<span class="incontext"><a href="pricemodel.html#p-584">in-context</a></span>
+</li>
+<li>
+<p>Confirm that the formula in the previous problem is equivalent to</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[Z_n] = \frac{\mu^{n+1} -1}{\mu -1}.
+\end{equation*}
+</div>
+</li>
+</ol>
+<span class="incontext"><a href="branching.html#p-584">in-context</a></span>
 </body>
 </html>

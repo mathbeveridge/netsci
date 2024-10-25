@@ -12,21 +12,18 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>The Small World Model of Strogatz and Watts contains short paths, but they are very hard to find! In this activity, we study a variation of Kleinberg's Navigable Small World Model. We start with a cycle on \(n+1\) vertices \(\{0,1,2,\ldots n\}\text{.}\) Then each vertex chooses a (one-way) "long-range contact" according to</p>
+<p>Define</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\Pr[ u \mbox{ is } v\mbox{'s long range contact}] = C \cdot \frac{1}{d(u,v)}.
+q = \frac{\frac{cpn}{2}}{{n \choose 2}} \approx \frac{cp}{n}.
 \end{equation*}
 </div>
-<p class="continuation">where \(C\) is our normalizing constant and \(d(u,v)\) is the ring distance between nodes \(u\) and \(v\text{.}\) <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/small-world.png" class="contained"></div> We consider the following greedy routing strategy from source vertex \(s\) to target vertex \(t\text{:}\)</p>
-<ul class="disc"><li><p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">move as close to the target as possible, either by walking on the ring edge, or following the long-range edge (when this takes us closer to \(t\)).</em></p></li></ul>
-<p class="continuation">Consider a journey from source vertex \(s\) to target vertex \(t\text{.}\) We will consider the "worst case" of starting at vertex \(0\) and trying to get to vertex \(n/2\text{.}\) You will show that the expected number of steps in this journey is</p>
+<p class="continuation">For any potential shortcut edge \(e\text{,}\) explain why</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-O \left( (\log n)^2 \right)
+\P[ \mbox{edge } e \mbox{ is added to the graph}] \leq q.
 \end{equation*}
 </div>
-<p class="continuation">where \(\log n = \log_2 n\) is the base-2 logarithm of \(n\text{.}\)</p>
-<span class="incontext"><a href="navsmallworld.html#p-626">in-context</a></span>
+<span class="incontext"><a href="smallworld.html#p-626">in-context</a></span>
 </body>
 </html>

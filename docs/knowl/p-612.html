@@ -12,118 +12,12 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>For each existing edge in the Ring World, we add a random edge with constant probability \(p\text{.}\) So we add a total of</p>
+<p>Explain why the probability that an edge from vertex \(n+1\) attaches to vertex \(i\) is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-p\frac{cn}{2} = \frac{1}{2} cpn
+\frac{k_i}{2cn}.
 \end{equation*}
 </div>
-<p class="continuation">random edges to the graph.</p>
-<ol class="lower-alpha">
-<li>
-<p>Define</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-q = \frac{\frac{cpn}{2}}{{n \choose 2}} \approx \frac{cp}{n}.
-\end{equation*}
-</div>
-<p class="continuation">For any potential shortcut edge \(e\text{,}\) explain why</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\P[ \mbox{edge } e \mbox{ is added to the graph}] \leq q.
-\end{equation*}
-</div>
-<p></p>
-</li>
-<li>
-<p>For a fixed vertex \(v_i\text{,}\) explain why</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\E[ \mbox{# shortcut edges incident with } v_i] = cp.
-\end{equation*}
-</div>
-<p></p>
-</li>
-<li>
-<p>Next, we show that we have only added a constant number of new triangles. Show that</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\E[\mbox{# triangles using one shortcut edge} ] \leq
-n{ c \choose 2} q
-\approx pc^3/2.
-\end{equation*}
-</div>
-<p class="continuation">So we are adding a constant number of triangles. For large \(n\text{,}\) these new triangles are negligible compared to the \(n { c/2 \choose 2}\) triangles already present in the ring.</p>
-<p></p>
-</li>
-<li>
-<p>Triangles using 2 or 3 shortcut edges are also unlikely. Explain why</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\E[\mbox{# triangles using two shortcut edges} ]=
-n \frac{c}{2} (n-2) q^2   \approx \frac{c^3p^2}{2}.
-\end{equation*}
-</div>
-<p class="continuation">and</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\E[\mbox{# triangles using three shortcut edges} ] =
-{n \choose 3} q^3   \approx \frac{c^3p^3}{6}.
-\end{equation*}
-</div>
-<p class="continuation">So we only add a constant number of triangles of any kind.</p>
-<p></p>
-</li>
-<li>
-<p>Turning to connected triples, show that</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\E[ \mbox{# connected triples using one shortcut edge} ]
-= \frac{cpn}{2} (c + c) = c^2 p n.
-\end{equation*}
-</div>
-<p class="continuation">and that</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\E[ \mbox{# connected triples using two shortcut edges} ]
-=
-n {n-1 \choose 2} q^2
-\approx \frac{c^2 p^2}{2} n.
-\end{equation*}
-</div>
-<p></p>
-</li>
-<li>
-<p>We are now ready to approximate the clustering coefficient. By parts (c) and (d), we can ignore the new triangles (there are only a constant number of them). But we need the new connected triples from part (e). The clustering coefficient is</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-C \approx \frac
-{
-3 n {c/2 \choose 2}
-}
-{
-n {c \choose 2} + c^2pn + \frac{1}{2} c^2p^2 n
-}
-=
-\frac
-{
-3{c/2 \choose 2}
-}
-{
-{c \choose 2} + c^2p + \frac{1}{2} c^2p^2.
-}
-\end{equation*}
-</div>
-<p class="continuation">This is a constant (independent of \(n\)), so we have a nonzero clustering coefficient for every small world network.</p>
-<p>Use the approximation \({a \choose 2} = a^2/2\) and set \(p=1\) to obtain the rough lower bound</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-C \gtrapprox \frac{3}{16}.
-\end{equation*}
-</div>
-<p></p>
-</li>
-</ol>
-<span class="incontext"><a href="smallworld.html#p-612">in-context</a></span>
+<span class="incontext"><a href="pricemodel.html#p-612">in-context</a></span>
 </body>
 </html>
