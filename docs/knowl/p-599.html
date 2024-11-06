@@ -12,7 +12,25 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>with \(\displaystyle{\P = \frac{c}{a+c}}\text{,}\)  pick a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">directed edge</em> uniformly at random. Then cite the paper that the edge points to.</p>
-<span class="incontext"><a href="pricemodel.html#p-599">in-context</a></span>
+<p>We have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\P[ X_t \geq 1 \mbox{ for all } t \geq 0] = \alpha &gt;0.
+\end{equation*}
+</div>
+<p class="continuation">But then</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[Z_n] = \sum_{t=0}^n \E[X_t]  \geq  \sum_{t=0}^n \P[X_t \geq 1]
+= \sum_{t=0}^n  \alpha = \alpha (n+1)
+\end{equation*}
+</div>
+<p class="continuation">and so</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[Z] = \lim_{n \rightarrow \infty} \E[Z] = \lim_{n \rightarrow \infty}  \alpha (n+1) = \infty.
+\end{equation*}
+</div>
+<span class="incontext"><a href="branching.html#p-599">in-context</a></span>
 </body>
 </html>
