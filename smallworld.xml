@@ -87,9 +87,9 @@ A nice way to argue this is to
 recognize that all triangles look like one "long edge" going distance <m>\leq c/2</m> and two "shorter edges." Orient the long edge  clockwise the two shorter edges  counter clockwise. Then associate this directed cycle with the vertex at the start of the long clockwise arc.
 
 
-<!--solution>
+<solution>
 	<p>We must pick a vertex and then pick two of its right-neighbors.</p>
-</solution-->
+</solution>
 					</p>
 				</li>
 				<li>
@@ -101,9 +101,9 @@ n {c \choose 2}
 connected triples. These are paths of length 2 (which can be associated with their central vertex).
 
 
-<!--solution>
+<solution>
 	<p>We must pick the central vertex, then pick two of its neighbors.</p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -115,7 +115,7 @@ C =  \frac{3(c-2)}{4(c-1)}.
 </me>
 Furthermore, for <m>c \geq 3</m>, we have <m>\frac{3}{8} \leq C  \leq  \frac{3}{4}</m>. This is independent of the network size <m>n</m>, so we have high clustering.
 
-<!--solution>
+<solution>
 	<p>The clustering coefficient is
 <me>
 \frac{3 n {c/2 \choose 2}}{n {c \choose 2}} 
@@ -123,7 +123,7 @@ Furthermore, for <m>c \geq 3</m>, we have <m>\frac{3}{8} \leq C  \leq  \frac{3}{
 = \frac{3(c-2)}{4(c-1)}.
 </me>
 	</p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -147,14 +147,14 @@ Furthermore, for <m>c \geq 3</m>, we have <m>\frac{3}{8} \leq C  \leq  \frac{3}{
 					<p>
  Consider vertices <m>v_0</m> and <m>v_{m}</m> where <m>0 \leq m \leq n/2</m>. What is the graph distance between these nodes?
 
- <!--solution>
+ <solution>
 	<p>
 		The graph distance is 
 <me>
 	d(v_0, v_m) = \left\lceil \frac{m}{c/2} \right\rceil = \left\lceil \frac{2m}{c} \right\rceil.
 </me>
 	</p>
- </solution-->
+ </solution>
 					</p>
 				</li>
 				<li>
@@ -162,14 +162,14 @@ Furthermore, for <m>c \geq 3</m>, we have <m>\frac{3}{8} \leq C  \leq  \frac{3}{
  What is the length of the "longest shortest path" starting at <m>v_0</m>?
 
 
- <!--solution>
+ <solution>
 	<p>
 		The longest shortest path goes to vertex <m>v_{n/2</m>} with distance
 <me>
 	d(v_0, v_{n/2}) = \left\lceil \frac{n/2}{c/2} \right\rceil = \left\lceil \frac{n}{c} \right\rceil.
 </me>
 	</p>
- </solution-->
+ </solution>
 					</p>
 				</li>
 				<li>
@@ -185,7 +185,7 @@ Hint: you can use the upper bound <m>\lceil x \rceil \leq x + 1</m> for any <m>x
 				</li>
 			</ol>
 
-			<!--solution>
+			<solution>
 				<p>
 					<md>
 						<mrow>
@@ -203,7 +203,7 @@ Hint: you can use the upper bound <m>\lceil x \rceil \leq x + 1</m> for any <m>x
 						</mrow>
 					</md>					
 				</p>
-			</solution-->
+			</solution>
 
 				</p>
 			</statement>
@@ -236,13 +236,13 @@ For any potential shortcut edge <m>e</m>, explain why
 
 					</p>
 <p>
-	<!--solution>
+	<solution>
 		<p>
 			We add a total of <m>\frac{cpn}{2}</m> edges out of a possible <m>{n \choose 2}</m> edges.
 			This fraction is an upper bound because we could choose the same edge twice.
 		</p>
 
-	</solution-->
+	</solution>
 </p>
 				</li>
 				<li>
@@ -257,12 +257,12 @@ For any potential shortcut edge <m>e</m>, explain why
 
 					</p>
 					<p>
-						<!--solution>
+						<solution>
 							<p>
 								We add a total of <m>\frac{cpn}{2}</m> edges. Each time we add an edge, the probability 
 								that <m>v_i</m> is one of the endpoints is <m>2/n</m>.
 							</p>
-						</solution-->
+						</solution>
 					</p>
 				</li>
 				<li>
@@ -279,12 +279,12 @@ triangles already present in the ring.
 
 					</p>
 					<p>
-						<!--solution>
+						<solution>
 							<p>
 								Such a triangle has two ring edges. We have <m>n</m> choices for the central vertex. We then have <m>{c \choose 2</m> ways to choose its two neighbors.
 									Finally, we add the shortcut edge with probabilty <m>q</m>.
 							</p>
-						</solution-->
+						</solution>
 					</p>
 				</li>
 				<li>
@@ -303,7 +303,7 @@ So we only add a constant number of triangles of any kind.
 
 					</p>
 					<p>
-						<!--solution>
+						<solution>
 							<p>
 								A triangle with two shortcut edges contains one ring edge (which we orient clockwise so that we
 								only count it once) and a third vertex. We have <m>n</m> choices for the first endpoint of the ring edge.
@@ -314,7 +314,7 @@ So we only add a constant number of triangles of any kind.
 								As for a triangle with three shortcut edges, we cn choose the vertices in <m>{n \choose 3}</m>. 
 								We multiply by <m>q^3</m> which is the probability that all three shortcut edges are present. 
 							</p>
-						</solution-->
+						</solution>
 					</p>
 				</li>
 				<li>
@@ -337,7 +337,7 @@ n {n-1 \choose 2} q^2
 
 					</p>
 					<p>
-						<!--solution>
+						<solution>
 							<p>
 								For each shortcut edge, there are <m>c</m> ring edges incident with each enpoint.
 								So the expected number of such triples is <m>\frac{cpn}{2} (c + c) = c^2 p n</m>
@@ -349,7 +349,7 @@ n {n-1 \choose 2} q^2
 								shortcut edges are present.
 					
 							</p>
-						</solution-->
+						</solution>
 					</p>
 				</li>
 				<li>
@@ -389,7 +389,7 @@ C \gtrapprox \frac{3}{16}.
 
 					</p>
 					<p>
-						<!--solution>
+						<solution>
 							<p>
 								<md>
 									<mrow>
@@ -420,7 +420,7 @@ C \gtrapprox \frac{3}{16}.
 									</mrow>
 								</md>
 							</p>
-						</solution-->
+						</solution>
 					</p>
 				</li>
 			</ol>
