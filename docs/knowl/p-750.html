@@ -12,110 +12,13 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<ol class="lower-alpha">
-<li>
-<p>Explain why</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\frac{dI_k}{dt} = \beta \,  k \,  \Theta \, (1- I_k).
-\end{equation*}
-</div>
-<p class="continuation"><a class="solution-knowl original" data-knowl="./knowl/solution-164-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
-</li>
-<li>
-<p>We are interested in the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">early time behavior</em> of \(I_k\text{,}\) since we would like to intervene  (via quarantine or travel restrictions, etc) before the disease gets out of hand. If there aren't many infected vertices, then we may approximate \(1 - I_k \approx 1\) so that</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\frac{dI_k}{dt} \approx \beta \,  k \,  \Theta.
-\end{equation*}
-</div>
-<p class="continuation">Early on, the set of infected nodes is tree-like. In particular, you can assume that an infected vertex \(v\) has a link that points back to the (infected) vertex that transmitted the disease.</p>
-<p>Use the excess degree equation from problem 1(a)  to explain why the fraction of links available for future transmission to a susceptible vertex is</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\Theta \approx  \frac{\sum_{k} (k-1) p_k I_k}{\langle k \rangle}.
-\end{equation*}
-</div>
-<p class="continuation"><a class="solution-knowl original" data-knowl="./knowl/solution-165-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
-</li>
-<li>
-<p>Taking the derivative of the previous quantity, and using the approximation</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\frac{dI_k}{dt} \approx \beta \,  k \,  \Theta,
-\end{equation*}
-</div>
-<p class="continuation">we get a differential equation of the form</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\frac{d \Theta}{d t} = A \Theta
-\end{equation*}
-</div>
-<p class="continuation">which has solution</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\Theta(t) = C e^{At}.
-\end{equation*}
-</div>
-<p class="continuation">Show that</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-A= \beta \frac{\langle k^2 \rangle - \langle k \rangle}{\langle k \rangle}.
-\end{equation*}
-</div>
-<p class="continuation">(The constant \(C\) is determined by the initial conditions.) <a class="solution-knowl original" data-knowl="./knowl/solution-166-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
-<p></p>
-</li>
-<li>
-<p>In the previous part, you showed that the fraction of links from available for future transmission from infected vertices to susceptible vertices is</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\Theta(t) = C e^{t/{\tau}}   \mbox{ where }   \tau = \frac{1}{A} = \frac{\langle k \rangle}{\beta ( \langle k^2 \rangle - \langle k \rangle)}.
-\end{equation*}
-</div>
-<p>Early on in the epidemic, we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\frac{dI_k}{dt} \approx \beta \,  k \,  \Theta = \beta \, k \, C e^{t/{\tau}}.
-\end{equation*}
-</div>
-<p class="continuation">Explain why higher degree vertices are more likely to be infected. <a class="solution-knowl original" data-knowl="./knowl/solution-167-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
-</li>
-<li>
-<p>Finally, we explore the effect of the network structure on the spread of disease in the network. We focus on</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\tau = \frac{\langle k \rangle}{\beta ( \langle k^2 \rangle - \langle k \rangle)}.
-\end{equation*}
-</div>
-<p class="continuation">We call \(\tau\) the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">characteristic time scale</em> for the spread of the disease since it controls the rate of infection. A bigger \(\tau\) means that the infection takes longer to spread. Intuitively, we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\tau = \mbox{characteristic time scale} = \frac{1}{\mbox{infection rate}}.
-\end{equation*}
-</div>
-<ol class="lower-roman">
-<li>
 <p>For the Erdos-Renyi graph, we have</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 \langle k^2 \rangle \approx \langle k \rangle^2 + \langle k \rangle.
 \end{equation*}
 </div>
-<p class="continuation">What is \(\tau\) in this case? How does \(1/ \tau\) compare to the infection rate in the differential equation in problem  2(a) for the homogeneous case (where we decided to ignore the network)? <a class="solution-knowl original" data-knowl="./knowl/solution-168-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
-</li>
-<li>
-<p>Consider a graph whose degree distribution obeys a power law</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\Pr[\deg(v)=q] \sim q^{-\alpha}.
-\end{equation*}
-</div>
-<p class="continuation">For a natural power law, we have  \(2 &lt; \alpha &lt; 3\text{.}\) Recall that for a natural power law,  \(\langle k \rangle\) is finite but \(\langle k^2 \rangle\) is infinite. (This is what led to the appearance of hubs.) What does this imply about the infection rate on such a network? What role must the hubs play, especially in light of part (d) above, and the fact that "your friends are more popular than you are"? <a class="solution-knowl original" data-knowl="./knowl/solution-169-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
-</li>
-</ol>
-</li>
-</ol>
+<p class="continuation">What is \(\tau\) in this case? How does \(1/ \tau\) compare to the infection rate in the differential equation in problem  2(a) for the homogeneous case (where we decided to ignore the network)? </p>
 <span class="incontext"><a href="epidemics.html#p-750">in-context</a></span>
 </body>
 </html>

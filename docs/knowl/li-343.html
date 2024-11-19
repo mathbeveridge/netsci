@@ -12,14 +12,33 @@
 </head>
 <body>
 <article class="li"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Item</span><span class="space"> </span><span class="codenumber">5.2.3.e.i</span><span class="period">.</span>
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">5.2.3.c</span><span class="period">.</span>
 </h6>
-<p>For the Erdos-Renyi graph, we have</p>
+<p>Taking the derivative of the previous quantity, and using the approximation</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\langle k^2 \rangle \approx \langle k \rangle^2 + \langle k \rangle.
+\frac{dI_k}{dt} \approx \beta \,  k \,  \Theta,
 \end{equation*}
 </div>
-<p class="continuation">What is \(\tau\) in this case? How does \(1/ \tau\) compare to the infection rate in the differential equation in problem  2(a) for the homogeneous case (where we decided to ignore the network)? </p></article><span class="incontext"><a href="epidemics.html#li-343">in-context</a></span>
+<p class="continuation">we get a differential equation of the form</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{d \Theta}{d t} = A \Theta
+\end{equation*}
+</div>
+<p class="continuation">which has solution</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\Theta(t) = C e^{At}.
+\end{equation*}
+</div>
+<p class="continuation">Show that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+A= \beta \frac{\langle k^2 \rangle - \langle k \rangle}{\langle k \rangle}.
+\end{equation*}
+</div>
+<p class="continuation">(The constant \(C\) is determined by the initial conditions.) </p>
+<p></p></article><span class="incontext"><a href="epidemics.html#li-343">in-context</a></span>
 </body>
 </html>
