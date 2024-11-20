@@ -206,7 +206,7 @@ Look at the formula from question  2(b) and explain why
 			<ol>
 				<li>
 					<p>
- <m>I(t) \sim I_0 e^{\beta \langle k \rangle t}</m> when <m>t &gt;0</m> is very small.
+ <m>I(t) \sim a e^{\beta \langle k \rangle t}</m> when <m>t &gt;0</m> is very small.
 					</p>
 				</li>
 				<li>
