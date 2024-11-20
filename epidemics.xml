@@ -371,7 +371,7 @@ A= \beta \frac{\langle k^2 \rangle - \langle k \rangle}{\langle k \rangle}.
 				<li>
 					<p>
  In the previous part, you showed that
-the fraction of links from available for future transmission from infected vertices to susceptible vertices is
+the fraction of links available for future transmission from infected vertices to susceptible vertices is
 <me>
 \Theta(t) = C e^{t/{\tau}}   \mbox{ where }   \tau = \frac{1}{A} = \frac{\langle k \rangle}{\beta ( \langle k^2 \rangle - \langle k \rangle)}.
 </me>
