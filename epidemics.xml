@@ -47,11 +47,11 @@ q_k = \frac{(k+1) p_{k+1}}{\langle k \rangle}.
 <!--solution>
 <p>
 Suppose that we have <m>n</m> vertices and <m>m</m> edges.
-Let's think of our graph as "unwired" meaning that a vertex of degree <m>k</m> is a vertices with <m>k</m> edge stubs (which connect randomly to one another). We start at a vertex <m>v</m> and then pick a random stub connected to vertex <m>v</m>. This stub is equally likely to connect to any of the other stub. So the probability that we connect to a particular vertex of degree <m>k+1</m> is
+Let's think of our graph as "unwired" meaning that a vertex of degree <m>k</m> is a vertex with <m>k</m> edge stubs (which connect randomly to one another). We start at a vertex <m>v</m> and then pick a random stub connected to vertex <m>v</m>. This stub is equally likely to connect to any of the other stub. So the probability that we connect to a particular vertex of degree <m>k+1</m> is
 <me>
 \frac{k+1}{2m-1} \approx \frac{k+1}{2m}.
 </me>
-The number of vertices of degree <m>k+1</m> is <m>p_{k+1} n</m>. So the chance that we randomly connect to a vertex of degree <m>k</m> is
+The number of vertices of degree <m>k+1</m> is <m>p_{k+1} n</m>. So the chance that we randomly connect to a vertex with excess degree <m>k</m> is
 <me>
 q_k = \frac{k+1}{2m} \cdot p_{k+1}  n =  \frac{n}{2m} \cdot  (k+1) p_{k+1}  = \frac{(k+1) p_{k+1} }{\langle k \rangle}.
 </me>
@@ -206,7 +206,7 @@ Look at the formula from question  2(b) and explain why
 			<ol>
 				<li>
 					<p>
- <m>I(t) \sim e^{\beta \langle k \rangle t}</m> when <m>t &gt;0</m> is very small.
+ <m>I(t) \sim I_0 e^{\beta \langle k \rangle t}</m> when <m>t &gt;0</m> is very small.
 					</p>
 				</li>
 				<li>
