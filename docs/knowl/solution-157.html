@@ -15,13 +15,13 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
-<p>Suppose that we have \(n\) vertices and \(m\) edges. Let's think of our graph as "unwired" meaning that a vertex of degree \(k\) is a vertices with \(k\) edge stubs (which connect randomly to one another). We start at a vertex \(v\) and then pick a random stub connected to vertex \(v\text{.}\) This stub is equally likely to connect to any of the other stub. So the probability that we connect to a particular vertex of degree \(k+1\) is</p>
+<p>Suppose that we have \(n\) vertices and \(m\) edges. Let's think of our graph as "unwired" meaning that a vertex of degree \(k\) is a vertex with \(k\) edge stubs (which connect randomly to one another). We start at a vertex \(v\) and then pick a random stub connected to vertex \(v\text{.}\) This stub is equally likely to connect to any of the other stub. So the probability that we connect to a particular vertex of degree \(k+1\) is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 \frac{k+1}{2m-1} \approx \frac{k+1}{2m}.
 \end{equation*}
 </div>
-<p class="continuation">The number of vertices of degree \(k+1\) is \(p_{k+1} n\text{.}\) So the chance that we randomly connect to a vertex of degree \(k\) is</p>
+<p class="continuation">The number of vertices of degree \(k+1\) is \(p_{k+1} n\text{.}\) So the chance that we randomly connect to a vertex with excess degree \(k\) is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 q_k = \frac{k+1}{2m} \cdot p_{k+1}  n =  \frac{n}{2m} \cdot  (k+1) p_{k+1}  = \frac{(k+1) p_{k+1} }{\langle k \rangle}.
