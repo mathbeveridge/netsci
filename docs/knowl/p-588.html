@@ -12,13 +12,11 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Using linearity of expectation, we have</p>
+<p>If \(\mu &lt; 1\) then \(\mu^{n+1} \rightarrow 0\text{,}\) so</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\E[Z_n]
-= \E \left[ \sum_{t=0}^n X_t \right]
-= \sum_{t=0}^n \E \left[  X_t \right]
-=  \sum_{t=0}^n \mu^t
+\lim_{n \rightarrow \infty} \E[Z_n] = \lim_{n \rightarrow \infty} \frac{\mu^{n+1} -1}{\mu -1}
+= \frac{-1}{\mu-1} = \frac{1}{1- \mu}.
 \end{equation*}
 </div>
 <span class="incontext"><a href="branching.html#p-588">in-context</a></span>

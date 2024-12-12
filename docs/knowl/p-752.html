@@ -12,7 +12,17 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>\(\Delta\) infected of degree \(k\) = (transmission rate) \(\times\) (\# interactions with infected) \(\times\) (\# susceptible of degree \(k\))</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{d \Theta}{d t} \approx   \frac{\sum_{k} (k-1) p_k }{\langle k \rangle} \frac{d I_k}{dt}
+\approx
+\frac{\sum_{k} (k-1) p_k }{\langle k \rangle} \beta k \Theta
+=
+\frac{\sum_{k} (k^2-k) p_k }{\langle k \rangle} \beta \Theta
+=
+\beta \frac{\langle k^2 \rangle - \langle k \rangle}{\langle k \rangle}    \Theta
+\end{equation*}
+</div>
 <span class="incontext"><a href="epidemics.html#p-752">in-context</a></span>
 </body>
 </html>

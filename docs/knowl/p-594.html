@@ -12,7 +12,25 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Confirm that if \(\mu &gt; 1\) then \(\E[Z]\) is infinite. <a class="solution-knowl original" data-knowl="./knowl/solution-121-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
+<p>We have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\P[ X_t \geq 1 \mbox{ for all } t \geq 0] = \alpha &gt;0.
+\end{equation*}
+</div>
+<p class="continuation">But then</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[Z_n] = \sum_{t=0}^n \E[X_t]  \geq  \sum_{t=0}^n \P[X_t \geq 1]
+= \sum_{t=0}^n  \alpha = \alpha (n+1)
+\end{equation*}
+</div>
+<p class="continuation">and so</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[Z] = \lim_{n \rightarrow \infty} \E[Z] = \lim_{n \rightarrow \infty}  \alpha (n+1) = \infty.
+\end{equation*}
+</div>
 <span class="incontext"><a href="branching.html#p-594">in-context</a></span>
 </body>
 </html>

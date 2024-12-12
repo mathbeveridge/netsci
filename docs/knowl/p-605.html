@@ -12,7 +12,13 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>The probability an the arc points to vertex \(i\) is</p>
+<p>With probability \(\frac{a}{a+c}\text{,}\) we pick a random vertex. With probability \(\frac{c}{a+c}\text{,}\) we pick a random arc, and then take its target vertex. Among the \(cn\) arcs, \(k_i\) of them end at vertex \(i\text{.}\) This gives the same equation</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{a}{a+c} \cdot \frac{1}{n} + \frac{c}{a+c} \cdot \frac{k_i}{cn}
+\end{equation*}
+</div>
+<p class="continuation">as in the previous question.</p>
 <span class="incontext"><a href="pricemodel.html#p-605">in-context</a></span>
 </body>
 </html>

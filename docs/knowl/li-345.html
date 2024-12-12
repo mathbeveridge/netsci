@@ -12,33 +12,20 @@
 </head>
 <body>
 <article class="li"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Item</span><span class="space"> </span><span class="codenumber">5.2.3.c</span><span class="period">.</span>
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">5.2.3.d</span><span class="period">.</span>
 </h6>
-<p>Taking the derivative of the previous quantity, and using the approximation</p>
+<p>In the previous part, you showed that the fraction of links available for future transmission from infected vertices to susceptible vertices is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{dI_k}{dt} \approx \beta \,  k \,  \Theta,
+\Theta(t) = C e^{t/{\tau}}   \mbox{ where }   \tau = \frac{1}{A} = \frac{\langle k \rangle}{\beta ( \langle k^2 \rangle - \langle k \rangle)}.
 \end{equation*}
 </div>
-<p class="continuation">we get a differential equation of the form</p>
+<p>Early on in the epidemic, we have</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{d \Theta}{d t} = A \Theta
+\frac{dI_k}{dt} \approx \beta \,  k \,  \Theta = \beta \, k \, C e^{t/{\tau}}.
 \end{equation*}
 </div>
-<p class="continuation">which has solution</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\Theta(t) = C e^{At}.
-\end{equation*}
-</div>
-<p class="continuation">Show that</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-A= \beta \frac{\langle k^2 \rangle - \langle k \rangle}{\langle k \rangle}.
-\end{equation*}
-</div>
-<p class="continuation">(The constant \(C\) is determined by the initial conditions.) <a class="solution-knowl original" data-knowl="./knowl/solution-166-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
-<p></p></article><span class="incontext"><a href="epidemics.html#li-345">in-context</a></span>
+<p class="continuation">Explain why higher degree vertices are more likely to be infected. <a class="solution-knowl original" data-knowl="./knowl/solution-167-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p></article><span class="incontext"><a href="epidemics.html#li-345">in-context</a></span>
 </body>
 </html>

@@ -12,7 +12,22 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Such a triangle has two ring edges. We have \(n\) choices for the central vertex. We then have \({c \choose 2\) ways to choose its two neighbors. Finally, we add the shortcut edge with probabilty \(q\text{.}\)</p>
+<p>Turning to connected triples, show that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[ \mbox{# connected triples using one shortcut edge} ]
+= \frac{cpn}{2} (c + c) = c^2 p n.
+\end{equation*}
+</div>
+<p class="continuation">and that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[ \mbox{# connected triples using two shortcut edges} ]
+=
+n {n-1 \choose 2} q^2
+\approx \frac{c^2 p^2}{2} n.
+\end{equation*}
+</div>
 <span class="incontext"><a href="smallworld.html#p-666">in-context</a></span>
 </body>
 </html>

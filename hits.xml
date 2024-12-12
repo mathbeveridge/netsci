@@ -459,7 +459,7 @@ Using your answer in question 2, you can now write down two matrix recurrences f
 We have
 <me>
 \begin{array}{lllll}
-\bh(t) &amp;=&amp; A  \ba(t-1)  &amp;=&amp; \,  A \, A^{\top} \, \bh(t), \\
+\bh(t) &amp;=&amp; A  \ba(t-1)  &amp;=&amp; \,  A \, A^{\top} \, \bh(t-1), \\
 \ba(t) &amp;=&amp; A^{\top} \bh(t)  &amp;=&amp; A^{\top} \, A \, \ba(t-1)
 \end{array}
 </me>
@@ -483,21 +483,16 @@ which we can write more compactly as
 			<idx><h>HITS Eigensystems</h></idx>
 			<statement>
 				<p>
-After convergence, our update rule becomes <m>\ba \rightarrow c_1 \ba</m> and <m>\bh \rightarrow c_2 \bh</m>. (Recall that HITS performs a renormalization at each step to deal with <m>c_1, c_2</m>.) So after convergence, your matrix equations   become statements about eigenvectors and eigenvalues. With that in mind:
+After convergence, our update rule becomes  <m>\bh \rightarrow lambda \bh</m> and <m>\ba \rightarrow \mu \ba</m>. (Recall that HITS performs a renormalization at each step to deal with <m>\lambda, \mu</m>.) So after convergence, your matrix equations   become statements about eigenvectors and eigenvalues. With that in mind:
 			<ol>
 				<li>
 					<p>
-   How are <m>c_1</m> and <m>c_2</m> related to the eigenvalues of your matrices in question 2?
+   How are <m>\lambda</m> and <m>\mu</m> related to the eigenvalues of your matrices in question 3?
 					</p>
 				</li>
 				<li>
 					<p>
- How do <m>c_1</m> and <m>c_2</m> relate to each other?
-					</p>
-				</li>
-				<li>
-					<p>
- What is the  (linear algebraic) relationship between the authority vector <m>\ba</m> and the hub vector <m>\bh</m>?
+ How do <m>\lambda</m> and <m>\mu</m> relate to each other?
 					</p>
 				</li>
 			</ol>
@@ -505,9 +500,10 @@ For inspiration you  should look back at our discussion of other algebraic centr
 
 
 <solution>
+
 <p>
-
-
+	<ol>
+		<li>
 For each of the matrix equations above, as <m>t \rightarrow \infty</m>, we converge to a vector in the direction of the largest eigenvector. In other words, the hub score <m>\bh</m> satisfies
 <me>
 A \, A^{\top} \, \bh= \lambda \bh
@@ -519,49 +515,24 @@ A^{\top} \, A \,   \ba= \mu \ba
 </me>
 where <m>\mu</m> is the largest eigenvalue of <m>A^{\top} \,A</m>.
 
-
-			</p><p>
-
-Here's a cool connection: a couple of standard linear algebra results will show us that <m>\lambda=\mu</m>. Recall from your linear algebra class
-		<ul>
-			<li>
-			<p>
- For any matrix <m>M</m>, we have <m>\det(M) = \det(M^{\top})</m>.
-			</p>
 			</li>
 			<li>
-			<p>
- The eigenvalues of a matrix <m>B</m> are the solutions to
+
+			
+		<p>
+
+We have  <m>\lambda=\mu</m> because
 <me>
-\det(B - \mu I) = 0
+\lambda \bh = AA^{\top} h = AA^{\top} (A \ba) = A (A^{\top} A \ba) = \mu A \ba = \mu \bh. 
 </me>
-			</p>
-			</li>
-		</ul>
-Therefore, <m>B</m> and <m>B^{\top}</m> have the same eigenvalues (though they usually have different eigenvectors). 
-By observing that <m>(A A^{\top})^{\top} = A^{\top} A,</m>
-we  conclude that <m>\lambda = \mu</m>.
+		</p>
 
-			</p><p>
-
-Let's go a step further. Taking the transpose of the equation <m>A^{\top} \, A \,   \ba= \mu \ba</m>, we get
-<me>
-\ba^{\top} A \, A^{\top}   = \lambda \ba^{\top}.
-</me>
-In other words, the <em>row vector</em> <m>\ba^{\top}</m> is a <em>left eigenvector</em> of the matrix <m>A \, A^{\top}</m> for the largest eigenvalue <m>\lambda</m>. Meanwhile,
-<me>
-A \, A^{\top} \, \bh= \lambda \bh
-</me>
-says that the column vector <m>\bh</m> is a <em>right eigenvector</em> for the same eigenvalue <m>\lambda</m>.
-
-
-			</p><p>
-
-Every <m>n \times n</m> matrix has both left eigenvectors and right eigenvectors. You might be more comfortable with left eigenvectors because we tend to focus on <em>column vectors</em>. But matrix transposition is a simple operation that swaps the roles of rows and vectors. So any result about column vectors can be turned into an equivalent statement about row vectors.
-
-
+				</li>
+			</ol>
 </p>
+
 </solution>
+
 
 
 				</p>

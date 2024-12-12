@@ -12,7 +12,19 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>\(S_0 = \{1, 5\}\text{:}\)  only vertex 7 adopts the innovation</p>
+<p>Let \(T\) be the set of vertices that adopt behavior \(A\) during the cascade. Let \(S= \overline{T}\) be the vertices that never adopt the behavior. For every \(i \in S\text{,}\) we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{ | N(i) \cap S| }{|N(i)|}   &gt; 1-q.
+\end{equation*}
+</div>
+<p class="continuation">(Otherwise, \(i\) would have adopted behavior \(A\text{.}\)) But this means that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+p(S) = \min_{i \in S} \frac{ | N(i) \cap S| }{|N(i)|}   &gt; 1-q.
+\end{equation*}
+</div>
+<p class="continuation">Therefore the set is cohesive.</p>
 <span class="incontext"><a href="cascades.html#p-719">in-context</a></span>
 </body>
 </html>

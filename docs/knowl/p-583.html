@@ -12,13 +12,15 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Use induction on \(t \geq 0\)  to prove that \(X_n\text{,}\) the size of the \(n\)-th generation satisfies</p>
+<p>Using linearity of expectation, we have</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\E[X_n] = \mu^n
+\E[Z_n]
+= \E \left[ \sum_{t=0}^n X_t \right]
+= \sum_{t=0}^n \E \left[  X_t \right]
+=  \sum_{t=0}^n \mu^t
 \end{equation*}
 </div>
-<p class="continuation"><a class="solution-knowl original" data-knowl="./knowl/solution-117-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
 <span class="incontext"><a href="branching.html#p-583">in-context</a></span>
 </body>
 </html>

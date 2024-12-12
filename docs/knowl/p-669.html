@@ -12,7 +12,7 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>A triangle with two shortcut edges contains one ring edge (which we orient clockwise so that we only count it once) and a third vertex. We have \(n\) choices for the first endpoint of the ring edge. We have \(c/2\) choices for the other endpoint. Then we have \(n-2\) choices for the third vertex. We multiply by \(q^2\) which is the probability that both shortcut edges are present.</p>
+<p>For each pair of shortcut edges incident with the same vertex, we must choose the other endpoints. So there are \(n\) ways to choose the common vertex, and \({n-1 \choose 2}\) ways to choose the other endpoints. We multiply by \(q^2\) since this is the probability that both shortcut edges are present.</p>
 <span class="incontext"><a href="smallworld.html#p-669">in-context</a></span>
 </body>
 </html>

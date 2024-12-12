@@ -160,10 +160,10 @@
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="cascades"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">5.1</span> <span class="title">Network Cascades</span>
 </h2>
-<section class="introduction" id="introduction-18"><p id="p-707">The linear threshold model  is a dynamic process for diffusion of innovation on a network. We are given a network and a threshold \(0 &lt; q &lt; 1\text{.}\) The network starts with all vertices using behavior \(B\text{.}\) We pick a seed set of innovators who adopt behavior \(A\text{.}\) We then watch the innovation spread according to the following rule. Let \(p_v\) be the fraction of neighbors of vertex \(v\) that have adopted behavior \(A\text{.}\) The vertex \(v\) will:</p>
+<section class="introduction" id="introduction-18"><p id="p-702">The linear threshold model  is a dynamic process for diffusion of innovation on a network. We are given a network and a threshold \(0 &lt; q &lt; 1\text{.}\) The network starts with all vertices using behavior \(B\text{.}\) We pick a seed set of innovators who adopt behavior \(A\text{.}\) We then watch the innovation spread according to the following rule. Let \(p_v\) be the fraction of neighbors of vertex \(v\) that have adopted behavior \(A\text{.}\) The vertex \(v\) will:</p>
 <ul class="disc">
-<li id="li-322"><p id="p-708">adopt behavior \(A\) if \({p \geq q}\)</p></li>
-<li id="li-323"><p id="p-709">adopt behavior \(B\) if \({p &lt; q}\)</p></li>
+<li id="li-321"><p id="p-703">adopt behavior \(A\) if \({p \geq q}\)</p></li>
+<li id="li-322"><p id="p-704">adopt behavior \(B\) if \({p &lt; q}\)</p></li>
 </ul>
 <p class="continuation">We cycle through all the vertices until the update process stabilizes. The resulting adoption process is called a <em class="emphasis">cascade</em>. We have a <em class="emphasis">complete cascade</em> when every vertex adopts the new behavior \(A\text{.}\)</p></section><section class="exercises" id="exercises-17"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Practice Problems</span>
@@ -171,26 +171,26 @@
 <article class="exercise exercise-like" id="exercise-81"><h6 class="heading">
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Network Cascades from Singleton Seed Sets.</span>
 </h6>
-<p id="p-710">Consider this  network  with linear threshold \(q=1/3\text{.}\) Start a cascade by picking any single vertex to be the initial adopter. Does it spread to the entire network? What about the other vertices? Which ones lead to complete cascades? <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/graph7.png" class="contained"></div> <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-152" id="solution-152"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-152"><div class="solution solution-like"><p id="p-711">For \(q=1/3\text{,}\) every singleton induces a complete cascade.</p></div></div></p></article><article class="exercise exercise-like" id="exercise-82"><h6 class="heading">
+<p id="p-705">Consider this  network  with linear threshold \(q=1/3\text{.}\) Start a cascade by picking any single vertex to be the initial adopter. Does it spread to the entire network? What about the other vertices? Which ones lead to complete cascades? <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/graph7.png" class="contained"></div> <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-152" id="solution-152"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-152"><div class="solution solution-like"><p id="p-706">For \(q=1/3\text{,}\) every singleton induces a complete cascade.</p></div></div></p></article><article class="exercise exercise-like" id="exercise-82"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Network Cascades from Doubleton Seed Sets.</span>
 </h6>
-<p id="p-712">Now set the threshold \(q=1/2\text{.}\) Using the same graph as in problem 1, determine the cascades for each of the following sets \(S_0\) of early adopters. Which initial sets induce complete cascades?</p>
+<p id="p-707">Now set the threshold \(q=1/2\text{.}\) Using the same graph as in problem 1, determine the cascades for each of the following sets \(S_0\) of early adopters. Which initial sets induce complete cascades?</p>
 <ol class="lower-alpha">
-<li id="li-324"><p id="p-713">\(\displaystyle S_0 = \{1,2\}\)</p></li>
-<li id="li-325"><p id="p-714">\(\displaystyle S_0 = \{2,3\}\)</p></li>
-<li id="li-326"><p id="p-715">\(\displaystyle S_0 = \{1, 5\}\)</p></li>
+<li id="li-323"><p id="p-708">\(\displaystyle S_0 = \{1,2\}\)</p></li>
+<li id="li-324"><p id="p-709">\(\displaystyle S_0 = \{2,3\}\)</p></li>
+<li id="li-325"><p id="p-710">\(\displaystyle S_0 = \{1, 5\}\)</p></li>
 </ol>
-<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-153" id="solution-153"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-153"><div class="solution solution-like"><ol id="p-716" class="lower-alpha">
-<li id="li-327"><p id="p-717">\(S_0 = \{1,2\}\text{:}\)  complete cascade</p></li>
-<li id="li-328"><p id="p-718">\(S_0 = \{2,3\}\text{:}\)  complete cascade</p></li>
-<li id="li-329"><p id="p-719">\(S_0 = \{1, 5\}\text{:}\)  only vertex 7 adopts the innovation</p></li>
+<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-153" id="solution-153"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-153"><div class="solution solution-like"><ol id="p-711" class="lower-alpha">
+<li id="li-326"><p id="p-712">\(S_0 = \{1,2\}\text{:}\)  complete cascade</p></li>
+<li id="li-327"><p id="p-713">\(S_0 = \{2,3\}\text{:}\)  complete cascade</p></li>
+<li id="li-328"><p id="p-714">\(S_0 = \{1, 5\}\text{:}\)  only vertex 7 adopts the innovation</p></li>
 </ol></div></div></p></article><article class="exercise exercise-like" id="exercise-83"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Network Cascades that are Not Complete.</span>
 </h6>
-<p id="p-720">Continue using  threshold \(q=1/2\) for the network above. Find all of the initial adopter sets of size 2 that <em class="emphasis">do not</em> lead to complete cascades. Can you describe the network obstruction that prevented the cascade from expanding across the entire network? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-154" id="solution-154"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-154"><div class="solution solution-like"><p id="p-721">The 2-sets that do not spark complete cascades are: \(\{1,5\}\) and \(\{1,7\}\) and \(\{5,7\}\) and \(\{1,3\}\text{.}\) For the first three sets, the cascade cannot jump out of the triangle \(T=\{1,5,7\}\text{.}\) The vertices that border set \(T\) have more neighbors in \(\overline{A}\) than in \(A\text{,}\) so they never adopt. Starting with set \(\{1,3\}\text{,}\) there is no cascade.</p></div></div></p></article><article class="exercise exercise-like" id="exercise-84"><h6 class="heading">
+<p id="p-715">Continue using  threshold \(q=1/2\) for the network above. Find all of the initial adopter sets of size 2 that <em class="emphasis">do not</em> lead to complete cascades. Can you describe the network obstruction that prevented the cascade from expanding across the entire network? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-154" id="solution-154"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-154"><div class="solution solution-like"><p id="p-716">The 2-sets that do not spark complete cascades are: \(\{1,5\}\) and \(\{1,7\}\) and \(\{5,7\}\) and \(\{1,3\}\text{.}\) For the first three sets, the cascade cannot jump out of the triangle \(T=\{1,5,7\}\text{.}\) The vertices that border set \(T\) have more neighbors in \(\overline{A}\) than in \(A\text{,}\) so they never adopt. Starting with set \(\{1,3\}\text{,}\) there is no cascade.</p></div></div></p></article><article class="exercise exercise-like" id="exercise-84"><h6 class="heading">
 <span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Complete Cascades and Cohesive Sets.</span>
 </h6>
-<p id="p-722">Let \({G=(V,E)}\) be a network with threshold \(q \in [0,1]\text{.}\) Let \({S_0}\) be the initial set of innovators. Recall that a set \(S\) is <em class="emphasis">cohesive</em> when</p>
+<p id="p-717">Let \({G=(V,E)}\) be a network with threshold \(q \in [0,1]\text{.}\) Let \({S_0}\) be the initial set of innovators. Recall that a set \(S\) is <em class="emphasis">cohesive</em> when</p>
 <div class="displaymath">
 \begin{equation*}
 p(S) = \min_{i \in S} \frac{ | N(i) \cap S| }{|N(i)|}   &gt; 1-q
@@ -198,8 +198,8 @@ p(S) = \min_{i \in S} \frac{ | N(i) \cap S| }{|N(i)|}   &gt; 1-q
 </div>
 <p class="continuation">where \(N(i)\) is the set of neighbors of \(i\text{.}\)</p>
 <ol class="lower-alpha">
-<li id="li-330"><p id="p-723">Suppose that the  initial adopter set \({S_0}\) does not cause a complete cascade. Prove that there is a cohesive set  \({S \subset V \backslash S_0}\text{.}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-155" id="solution-155"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-155"><div class="solution solution-like">
-<p id="p-724">Let \(T\) be the set of vertices that adopt behavior \(A\) during the cascade. Let \(S= \overline{T}\) be the vertices that never adopt the behavior. For every \(i \in S\text{,}\) we have</p>
+<li id="li-329"><p id="p-718">Suppose that the  initial adopter set \({S_0}\) does not cause a complete cascade. Prove that there is a cohesive set  \({S \subset V \backslash S_0}\text{.}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-155" id="solution-155"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-155"><div class="solution solution-like">
+<p id="p-719">Let \(T\) be the set of vertices that adopt behavior \(A\) during the cascade. Let \(S= \overline{T}\) be the vertices that never adopt the behavior. For every \(i \in S\text{,}\) we have</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{ | N(i) \cap S| }{|N(i)|}   &gt; 1-q.
@@ -213,8 +213,8 @@ p(S) = \min_{i \in S} \frac{ | N(i) \cap S| }{|N(i)|}   &gt; 1-q.
 </div>
 <p class="continuation">Therefore the set is cohesive.</p>
 </div></div></p></li>
-<li id="li-331"><p id="p-725">Suppose that there is a cohesive set  \({S \subset V \backslash S_0}\text{.}\) Prove that  initial adopter set \({S_0}\) does not cause a complete cascade. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-156" id="solution-156"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-156"><div class="solution solution-like">
-<p id="p-726">We claim that no vertex in \(S\) ever adopts behavior \(A\text{.}\) Assume for the sake of contradiction that \(i \in S\) is the first vertex in \(S\) to adopt the innovation \(A\text{.}\) But even if every vertex outside of \(S\) has adopted behavior \(A\text{,}\) we still have</p>
+<li id="li-330"><p id="p-720">Suppose that there is a cohesive set  \({S \subset V \backslash S_0}\text{.}\) Prove that  initial adopter set \({S_0}\) does not cause a complete cascade. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-156" id="solution-156"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-156"><div class="solution solution-like">
+<p id="p-721">We claim that no vertex in \(S\) ever adopts behavior \(A\text{.}\) Assume for the sake of contradiction that \(i \in S\) is the first vertex in \(S\) to adopt the innovation \(A\text{.}\) But even if every vertex outside of \(S\) has adopted behavior \(A\text{,}\) we still have</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{ | N(i) \cap S| }{|N(i)|} &gt; 1-q,

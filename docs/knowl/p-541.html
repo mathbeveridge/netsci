@@ -12,13 +12,13 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Pick a random graph \(G \in G(n,p)\text{.}\) Explain why the probability that \(G\) has exactly  \(m\) edges is</p>
+<p>Explain why the probability that vertex \(v\) of \(G(n,p)\) has degree \(k\) is given by</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-P(m) = {{n \choose 2} \choose m} p^m (1-p)^{{n \choose 2} - m}.
+p_k = {n-1 \choose k} p^k (1-p)^{n-1-k}.
 \end{equation*}
 </div>
-<p class="continuation"><a class="solution-knowl original" data-knowl="./knowl/solution-112-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
+<p class="continuation">In other words, the degree of a vertex is a random variable whose PMF is the binomial distribution. Therefore we say that \(G(n,p)\) has a "binomial degree distribution." <a class="solution-knowl original" data-knowl="./knowl/solution-114-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
 <span class="incontext"><a href="randomgraph.html#p-541">in-context</a></span>
 </body>
 </html>
