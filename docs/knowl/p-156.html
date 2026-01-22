@@ -12,19 +12,19 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>The CCDF \(\overline{F}_X\) of a discrete random variable satisfies the following properties:</p>
-<ul class="disc">
-<li>
-<p>\(\overline{F}_X\) is weakly decreasing (aka monotonically nonincreasing). That is,</p>
+<p>We are given a data set whose degree distribution looks like a straight line with negative slope when plotted using  a log-log scale. In other words,</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-s \leq t \qquad \Longrightarrow  \qquad \overline{F}_X(s) \geq \overline{F}_X(t).
+\ln (p(k)) = c - \alpha \ln (k),
 \end{equation*}
 </div>
-</li>
-<li><p>\(\overline{F}_X(t)\) tends to 1 as \(t \rightarrow - \infty\) , and tends to 0 as \(t \rightarrow \infty\text{.}\)</p></li>
-<li><p>Since \(X\) is a discrete random variable, the CCDF \(\overline{F}_X(t)\) is a piecewise constant function of \(t\text{.}\)</p></li>
-</ul>
-<span class="incontext"><a href="randvar.html#p-156">in-context</a></span>
+<p class="continuation">where  \(c &gt;0\)  and \(\alpha &gt; 0\) are  constants. Exponentiate both sides to show that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+p(k) = C k^{-\alpha}.
+\end{equation*}
+</div>
+<p class="continuation">What is the value of the constant \(C\) in terms of \(c\text{?}\) </p>
+<span class="incontext"><a href="powerlaw.html#p-156">in-context</a></span>
 </body>
 </html>

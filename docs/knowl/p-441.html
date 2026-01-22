@@ -12,20 +12,17 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Since vertex 2 has no out-neighbors, we add a self-loop.</p>
+<p>Let \({G=(V,E)}\) be a network with threshold \(q \in [0,1]\text{.}\) Let \({S_0}\) be the initial set of innovators. Recall that a set \(S\) is <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">cohesive</em> when</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-P =
-\begin{bmatrix}
-0 &amp; 1/2 &amp; 0 &amp; 0 &amp; 1/2 &amp; 0  \\
-0 &amp; 1 &amp; 0&amp; 0 &amp; 0 &amp; 0  \\
-1/2 &amp; 1/2 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
-0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0  \\
-0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1  \\
-0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0  \\
-\end{bmatrix}
+p(S) = \min_{i \in S} \frac{ | N(i) \cap S| }{|N(i)|}   &gt; 1-q
 \end{equation*}
 </div>
-<span class="incontext"><a href="randomwalk.html#p-441">in-context</a></span>
+<p class="continuation">where \(N(i)\) is the set of neighbors of \(i\text{.}\)</p>
+<ol class="lower-alpha">
+<li><p>Suppose that the  initial adopter set \({S_0}\) does not cause a complete cascade. Prove that there is a cohesive set  \({S \subset V \backslash S_0}\text{.}\) </p></li>
+<li><p>Suppose that there is a cohesive set  \({S \subset V \backslash S_0}\text{.}\) Prove that  initial adopter set \({S_0}\) does not cause a complete cascade. </p></li>
+</ol>
+<span class="incontext"><a href="cascades.html#p-441">in-context</a></span>
 </body>
 </html>

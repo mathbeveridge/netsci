@@ -119,7 +119,7 @@ Okay, you now understand this formula for a given network. In the rest of this a
 </me>
 
 
-<solution>
+<!--solution>
 <p>
 We have partitioned the journey into phases. Each step occurs in exactly one phase: when we are at a vertex that is distance <m>d</m> from the target, we are in phase <m> \lfloor \log(d) \rfloor</m>. So to get the total number of steps, we just add the number of steps taken in each phase.
 
@@ -139,7 +139,7 @@ Here are a couple of notes:
 
 
 </p>
-</solution>
+</solution-->
 
 				</p>
 			</statement>
@@ -161,7 +161,7 @@ where <m>\log n= \log_2 n</m>. You will need to use the following inequalities, 
 </me>
 
 
-<solution>
+<!--solution>
 <p>
 
 We assume that <m>n</m> is even (for simplicity).
@@ -175,7 +175,7 @@ and so
 </me>
 
 </p>
-</solution>
+</solution-->
 
 
 				</p>
@@ -202,12 +202,12 @@ and why
 </me>
 for all <m>w \in A</m>.
 
-<solution>
+<!--solution>
 <p>
 There are <m>d+1</m> vertices in <m>A= \{ t - d/2, \ldots , t + d/2 \}</m>. Meanwhile, vertex <m>v</m> satisties <m>d(v,t)=d</m>, so the closest <m>w \in A</m> can be is <m>d(v,w)=d/2</m> and the farthest that it can be is <m>d(v,w) = 3d/2</m>.
 
 </p>
-</solution>
+</solution-->
 
 					</p>
 				</li>
@@ -218,7 +218,7 @@ There are <m>d+1</m> vertices in <m>A= \{ t - d/2, \ldots , t + d/2 \}</m>. Mean
 \displaystyle{\Pr[v \mbox{'s long-range contact is in } A] \geq  \frac{1}{3 \log n}}.
 </me>
 
-<solution>
+<!--solution>
 <p>
 </p>
 <md>
@@ -235,7 +235,7 @@ There are <m>d+1</m> vertices in <m>A= \{ t - d/2, \ldots , t + d/2 \}</m>. Mean
 </md>
 <p>
 </p>
-</solution>
+</solution-->
 
 					</p>
 				</li>
@@ -247,14 +247,14 @@ There are <m>d+1</m> vertices in <m>A= \{ t - d/2, \ldots , t + d/2 \}</m>. Mean
 </me>
 
 
-<solution>
+<!--solution>
 <p>
 If <m>v</m>'s long range contact is in <m>A</m>, then we end the round after that step. So the probability that we take at least <m>i</m> steps is
 <me>
 \left( 1 - \frac{1}{3 \log n} \right)^{i-1}
 </me>
 </p>
-</solution>
+</solution-->
 
 
 					</p>
@@ -285,7 +285,7 @@ E[X_j] \leq 3 \log n.
 
 
 
-<solution>
+<!--solution>
 <p>
 The expected length of a round is at most
 <me>
@@ -293,7 +293,7 @@ The expected length of a round is at most
 = \frac{1}{1 - \left( 1 - \frac{1}{ 3 \log n}\right)} = 3 \log n
 </me>
 </p>
-</solution>
+</solution-->
 
 
 				</p>
@@ -309,7 +309,7 @@ O((\log n)^2)
 steps.
 
 
-<solution>
+<!--solution>
 <p>
 We have
 </p>
@@ -325,7 +325,7 @@ We have
 <p>
 So an average journey takes <m>O((\log n)^2)</m> steps.
 </p>
-</solution>
+</solution-->
 
 
 				</p>

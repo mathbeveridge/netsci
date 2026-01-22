@@ -12,17 +12,13 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Here are the probabilities of picking a vertex of degree \(0 \leq t \leq 6\text{:}\)</p>
+<p>The <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">\(k\)th moment</em> of the random variable \(X\) is \(\)\E[X^k],\(\) the expected value of \(X^k\text{.}\) The <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">\(k\)th central moment</em> is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\begin{array}{c|c|c|c|c|c|c}
-\P(0) &amp; \P(1) &amp; \P(2) &amp; \P(3) &amp; \P(4) &amp; \P(5) &amp; \P(6) \\
-\hline
-\rule{0pt}{3.5ex} 0 &amp; 0 &amp;\frac{1}{7} &amp;\frac{4}{7}&amp;\frac{2}{7}&amp;0&amp; 0\\
-\end{array}
+\E \left[ ( X - \E[X])^k \right].
 \end{equation*}
 </div>
-<p class="continuation">For example, there are two vertices with degree four: vertex 6 and vertex 7.</p>
+<p class="continuation">So the second central moment is the variance, \(\var(X)\text{.}\) The third central moment is the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">skewness</em>, which measures the asymmetry of the PMF. The fourth central moment its the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">kurtosis</em>, which measures the "peakness" of the PMF (tall and skinny versus short and squat). We will mostly be interested in variance and the second moment.</p>
 <span class="incontext"><a href="randvar.html#p-116">in-context</a></span>
 </body>
 </html>

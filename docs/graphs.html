@@ -171,145 +171,38 @@
 \begin{equation*}
 \displaystyle{2|E| = \sum_{v \in V} \deg(v)}.
 \end{equation*}
-</div>
-<div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1" id="solution-1"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-1"><div class="solution solution-like"><p id="p-3">The right hand side (RHS) sums the degrees of all the vertices.  Every edge is incident with two vertices, so each edge is counted twice in the RHS. So when we add up all of the degrees, we get twice the number of edges.</p></div></div>
 </div></article><article class="exercise exercise-like" id="exercise-2"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Digraph Handshaking Lemma.</span>
 </h6>
-<p id="p-4">Let \(D=(V,E)\) be a digraph. Prove that</p>
+<p id="p-3">Let \(D=(V,E)\) be a digraph. Prove that</p>
 <div class="displaymath">
 \begin{equation*}
 |E| = \sum_{v \in V} \deg^-(v) = \sum_{v \in V} \deg^+(v).
 \end{equation*}
-</div>
-<div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2" id="solution-2"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-2"><div class="solution solution-like"><p id="p-5">This is the directed graph variant of the previous problem. Every arc has a "tail" and a "head." Adding up the out degrees counts the arc tails. Adding up the in degrees counts the arc heads. In each case, every arc is counted once.</p></div></div>
 </div></article><article class="exercise exercise-like" id="exercise-3"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Counting Graphs.</span>
 </h6>
-<p id="p-6">Consider the vertex set \(V=[n] = \{ 1, 2, 3, \ldots, n \}\text{.}\) We want to construct a simple, <em class="emphasis">undirected</em> graph on \(V\text{.}\)</p>
+<p id="p-4">Consider the vertex set \(V=[n] = \{ 1, 2, 3, \ldots, n \}\text{.}\) We want to construct a simple, <em class="emphasis">undirected</em> graph on \(V\text{.}\)</p>
 <ol class="lower-alpha">
-<li id="li-1"><p id="p-7">How many possible edges are there between these vertices?</p></li>
-<li id="li-2"><p id="p-8">How many different simple graphs can we construct using these vertices? (The graphs do not have to be connected.)</p></li>
-</ol>
-<div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-3" id="solution-3"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-3"><div class="solution solution-like"><ol id="p-9" class="lower-alpha">
-<li id="li-3">
-<p id="p-10">An edge corresponds to an unordered pair of vertices, chosen from the set \([n]\text{.}\) In other words, we must choose a subset of size 2 from the set \([n]\text{.}\) There are</p>
-<div class="displaymath">
-\begin{equation*}
-{n \choose 2} = \frac{n(n-1)}{2}
-\end{equation*}
-</div>
-<p class="continuation">ways to do this.</p>
-</li>
-<li id="li-4">
-<p id="p-11">Let's give a recipe for creating a graph on the vertices \([n]\text{.}\) For each pair of vertices, we must decide whether or not the corresponding edge is in our graph. So we must make \({n \choose 2}\) yes/no decisions, and these decisions are made independently of one another. Therefore, the total number of graphs is</p>
-<div class="displaymath">
-\begin{equation*}
-2^{n \choose 2}.
-\end{equation*}
-</div>
-</li>
-</ol></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-4"><h6 class="heading">
+<li id="li-1"><p id="p-5">How many possible edges are there between these vertices?</p></li>
+<li id="li-2"><p id="p-6">How many different simple graphs can we construct using these vertices? (The graphs do not have to be connected.)</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-4"><h6 class="heading">
 <span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Counting Digraphs.</span>
 </h6>
-<p id="p-12">Answer the same questions as in Problem 3, but this time for a simple <em class="emphasis">directed</em> graph.</p>
-<div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-4" id="solution-4"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-4"><div class="solution solution-like"><ol id="p-13" class="lower-alpha">
-<li id="li-5">
-<p id="p-14">A "simple digraph" is a digraph without  loops and without multiple arcs. You are allowed to have both \(uv\) and \(vu\) in a digraph. There are</p>
-<div class="displaymath">
-\begin{equation*}
-n (n-1) = (n)_2
-\end{equation*}
-</div>
-<p class="continuation">ways to create an arc. We have \(n\) choices for the starting vertex and \(n-1\) choices for the target vertex.</p>
-</li>
-<li id="li-6">
-<p id="p-15">Here are two solutions.</p>
-<ul class="disc">
-<li id="li-7">
-<p id="p-16">We must decide whether each arc is in the digraph. We must make \(n(n-1)\) yes/no independent decisions, so the number of simple digraphs is</p>
-<div class="displaymath">
-\begin{equation*}
-2^{n(n-1)}.
-\end{equation*}
-</div>
-</li>
-<li id="li-8">
-<p id="p-17">There are now four choices for every vertex pair: no arc, just \((u,v)\text{,}\) just \((v,u)\) or both \((u,v), (v,u)\text{.}\) We must make this decision for every pair of vertices. So the total number of digraphs is</p>
-<div class="displaymath">
-\begin{equation*}
-4^{n \choose 2}.
-\end{equation*}
-</div>
-</li>
-</ul>
-<p class="continuation">Of course, these two numbers are equal.</p>
-</li>
-</ol></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-5"><h6 class="heading">
+<p id="p-7">Answer the same questions as in Problem 3, but this time for a simple <em class="emphasis">directed</em> graph.</p></article><article class="exercise exercise-like" id="exercise-5"><h6 class="heading">
 <span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Strongly Connected Components.</span>
 </h6>
-<p id="p-18">Find the strongly connected components of the following digraphs. <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-graphs0.svg" role="img" class="contained"></div></p>
-<div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-5" id="solution-5"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-5"><div class="solution solution-like"><ol id="p-19" class="lower-alpha">
-<li id="li-9">
-<p id="p-20">There are four strongly connected components:</p>
-<div class="displaymath">
-\begin{equation*}
-\{ 1 , 2 , 3 \},  \{ 4\},  \{ 5 \},  \{ 6 \}.
-\end{equation*}
-</div>
-</li>
-<li id="li-10">
-<p id="p-21">There are two strongly connected components:</p>
-<div class="displaymath">
-\begin{equation*}
-\{1,5,7\},  \{ 2,3,4,6,8\}
-\end{equation*}
-</div>
-</li>
-</ol></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-6"><h6 class="heading">
+<p id="p-8">Find the strongly connected components of the following digraphs. <div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/fig-img-graphs0.svg" role="img" class="contained"></div></p></article><article class="exercise exercise-like" id="exercise-6"><h6 class="heading">
 <span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">Strongly Connected Digraph.</span>
 </h6>
-<p id="p-22">Prove that a digraph \(D=(V,E)\) is strongly connected if and only if for every partition \(V = A \cup B\) into disjoint, nonempty sets, there is an arc in \(D\) directed from \(A\) to \(B\) and an arc in \(D\) directed from \(B\) to \(A\text{.}\)</p>
-<div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-6" id="solution-6"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-6"><div class="solution solution-like">
-<p id="p-23">\((\Rightarrow)\) Suppose that \(D\) is strongly connected. Pick any partition \(V=A \cup B\) into disjoint, nonempty sets. Choose any \(a \in A\) and \(b \in B\text{.}\) Since \(D\) is strongly connected, there is a directed path \(P\) from \(a\) to \(b\text{.}\) Follow this path until you reach the first arc \((x,y)\) whose tail \(x \in A\) and whose head \(y \in B\text{.}\) This is the desired arc. By an identical argument, there is an arc from \(B\) to \(A\) because there is a directed path from \(b\) to \(a\text{.}\)</p>
-<p id="p-24">\((\Leftarrow)\) Suppose that for every partition \(V = A \cup B\) into disjoint, nonempty sets, there is an arc in \(D\) directed from \(A\) to \(B\) and an arc in \(D\) directed from \(B\) to \(A\text{.}\) We  show that for any vertices \(x,y\) there is a path from \(x\) to \(y\) and from \(y\) to \(x\text{.}\)</p>
-<p id="p-25">Pick a vertex \(x\text{.}\) We will construct a directed tree \(T\) on \(V\) starting from \(x\) where every arc points away from \(x\text{.}\) This tree contains a directed path from \(x\) to any other vertex in the digraph, including our desired vertex \(y\text{.}\) We construct this directed tree as follows.</p>
-<ul class="disc">
-<li id="li-11"><p id="p-26">To start off, our tree \(T\) just contains the root vertex \(x\text{.}\)</p></li>
-<li id="li-12"><p id="p-27">Take \(A = \{ x \}\) and \(B = V \backslash \{ x \}\text{.}\) There is an arc from \(A\) to \(B\text{,}\) which must be of the form \((x, v_1)\) for some \(v_1 \in B\text{.}\)  Add this arc and vertex to the tree \(T\text{.}\)</p></li>
-<li id="li-13"><p id="p-28">Next, take \(A = \{ x, v_1 \}\) and \(B = V \backslash A\text{.}\) There is an arc from \(A\) to \(B\text{,}\) so add this arc and its new head vertex \(v_2\text{.}\)</p></li>
-<li id="li-14"><p id="p-29">Next, take \(A = \{ x, v_1, v_2 \}\) and \(B= V \backslash A\text{.}\) This adds a new vertex \(v_3\) to our directed tree.</p></li>
-<li id="li-15"><p id="p-30">Repeat this process until you have a directed tree containing all of the vertices of \(V\text{,}\) including the desired vertex \(y\text{.}\)</p></li>
-</ul>
-<p class="continuation">You can make the same argument to create a directed tree rooted at \(y\text{,}\) which identifies a directed path from \(y\) to \(x\text{.}\)</p>
-<p id="p-31"><em class="emphasis">Challenge:</em> The \((\Leftarrow)\) proof can be made more rigorous by using induction on the size of \(V\text{.}\) I encourage you to write such a proof!</p>
-</div></div>
-</div></article><article class="exercise exercise-like" id="exercise-7"><h6 class="heading">
+<p id="p-9">Prove that a digraph \(D=(V,E)\) is strongly connected if and only if for every partition \(V = A \cup B\) into disjoint, nonempty sets, there is an arc in \(D\) directed from \(A\) to \(B\) and an arc in \(D\) directed from \(B\) to \(A\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-7"><h6 class="heading">
 <span class="codenumber">7<span class="period">.</span></span><span class="space"> </span><span class="title">Transitive Tournaments.</span>
 </h6>
-<p id="p-32">A tournament \(T\) is <em class="emphasis">transitive</em> if whenever \((u,v)\) and \((v,w)\) are arcs in \(T\text{,}\) then \((u,w)\) is also an arc of \(T\text{.}\)</p>
+<p id="p-10">A tournament \(T\) is <em class="emphasis">transitive</em> if whenever \((u,v)\) and \((v,w)\) are arcs in \(T\text{,}\) then \((u,w)\) is also an arc of \(T\text{.}\)</p>
 <ol class="lower-alpha">
-<li id="li-16"><p id="p-33">Draw all possible unlabeled transitive tournaments on 3 vertices and 4 vertices.</p></li>
-<li id="li-17"><p id="p-34">Prove that a tournament \(T\) is transitive if and only if \(T\) has no (directed) cycles. (Hint:  prove \(\Longrightarrow\) by contradiction by picking a cycle of shortest length, then showing there is an even shorter cycle!)</p></li>
-</ol>
-<div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-7" id="solution-7"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-7"><div class="solution solution-like"><ol id="p-35" class="lower-alpha">
-<li id="li-18"><p id="p-36">In fact, there is only one way to make a transitive tournament on \(n\) unlabelled vertices. In particular, there will always be a <em class="emphasis">source</em> vertex with all arcs pointing outwards, and a <em class="emphasis">sink</em> vertex with all arcs pointing inwards. <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/fig-img-graphs1.svg" role="img" class="contained"></div></p></li>
-<li id="li-19">
-<p id="p-37">\((\Rightarrow)\) Suppose that \(T\) is a transitive tournament that contains a cycle. Pick a cycle \(C\) of shortest length on vertices \(v_1, v_2, \ldots, v_k\text{.}\) Note that \(k &gt;3\) since the definition of a transitive tournament forbids a directed 3-cycle. Look at the arc between \(v_1\) and \(v_3\text{.}\) Since \(v_1 v_2\) and \(v_2 v_3\) are arcs, this forces \(v_1 v_3\) to be an arc. But then \(v_1, v_3, \ldots v_k\) is a directed cycle whose length is shorter than \(C\text{,}\) a contradiction. Therefore \(T\) cannot contain any directed cycles.</p>
-<p id="p-38">\((\Leftarrow)\) Suppose that \(T\) has no directed cycles. Suppose that \((u,v)\) and \((v,w)\) are arcs. We cannot have a directed 3-cycle, so \(u\) and \(w\) must be connected by the arc \((u,w)\text{.}\) Therefore, \(T\) is transitive.</p>
-</li>
-</ol></div></div>
-</div></article></section></section></div></main>
+<li id="li-3"><p id="p-11">Draw all possible unlabeled transitive tournaments on 3 vertices and 4 vertices.</p></li>
+<li id="li-4"><p id="p-12">Prove that a tournament \(T\) is transitive if and only if \(T\) has no (directed) cycles. (Hint:  prove \(\Longrightarrow\) by contradiction by picking a cycle of shortest length, then showing there is an even shorter cycle!)</p></li>
+</ol></article></section></section></div></main>
 </div>
 </body>
 </html>
