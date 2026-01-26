@@ -12,54 +12,47 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Consider the following digraph <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/hub-auth-digraph.png" class="contained"></div> with adjacency matrix</p>
+<p>Suppose that we have  a large network for which there is no correlation between vertex degrees. That is, an edge from vertex \(v\) leads to a vertex chosen  uniformly at random. Let \(p_k\) denote the fraction of vertices of degree \(k\text{.}\) When you pick a vertex \(v\) at random, we have \(\Pr[\deg(v)=k] = p_k\text{.}\) This means that the expected degree of the network is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-A = \begin{bmatrix}
-0 &amp; 1 &amp; 0 &amp; 0 &amp; 0  \\
-0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 \\
-0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
-0  &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; 1 &amp; 0
-\end{bmatrix}.
+\langle k \rangle = \sum_{k=0}^{k_{\max}} k  \cdot p_k.
 \end{equation*}
 </div>
-<p class="continuation">Perform some iterations of the HITS algorithm, <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">but don't worry about scaling</em>. (It's the relative size of scores that matters.) We start with the the hub vector \(\bh_0 = \begin{bmatrix}  1 &amp;1 &amp; 1 &amp; 1 &amp; 1 \end{bmatrix}^{\top}\text{.}\) Fill in the table below, as follows, starting at \(t=1\)</p>
-<ul class="disc">
-<li><p>Update the \(i\)th entry of \(\ba_t\) to be the sum of all of the \(\bh_{t-1}\) values of the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">in-neighbors</em> of vertex \(i\text{.}\)</p></li>
-<li><p>Update the \(i\)th entry of \(\bh_t\) to be the sum of all of the \(\ba_t\) values of the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">out-neighbors</em> of vertex \(i\)</p></li>
-</ul>
+<p class="continuation">Consider the following process: Pick a random vertex \(v\) and then move to a random neighbor \(w\) of vertex \(v\text{.}\) Let</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\begin{array}{ccc}
-\begin{array}{c||c|c|c|c|c}
-&amp; \,\,A\,\, &amp; \,\, B\,\,&amp; \,\,C\,\, &amp; \,\,D\,\, &amp; \,\,E\,\, \\
-\hline
-\ba_0  &amp; - &amp; - &amp; -&amp; - &amp; - \\
-\hline
-\ba_1  &amp;&amp;&amp;&amp;&amp; \\
-\hline
-\ba_2  &amp;&amp;&amp;&amp;&amp; \\
-\hline
-\ba_3  &amp;&amp;&amp;&amp;&amp; \\
-\end{array}
-&amp; \phantom{asdasd}
-&amp;
-\begin{array}{c||c|c|c|c|c}
-&amp; \,\,A\,\, &amp; \,\, B\,\,&amp; \,\,C\,\, &amp; \,\,D\,\, &amp; \,\,E\,\, \\
-\hline
-\bh_0  &amp; 1&amp;1&amp;1&amp;1&amp;1 \\
-\hline
-\bh_1  &amp;&amp;&amp;&amp;&amp; \\
-\hline
-\bh_2  &amp;&amp;&amp;&amp;&amp; \\
-\hline
-\bh_3  &amp;&amp;&amp;&amp;&amp; \\
-\end{array}
-\end{array}
+q_k = \Pr [\deg(w)=k+1].
 \end{equation*}
 </div>
-<p class="continuation"><a class="solution-knowl original" data-knowl="./knowl/solution-103-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
-<span class="incontext"><a href="hits.html#p-471">in-context</a></span>
+<p class="continuation">In other words, \(w\) has \(k\) additional edges, besides the one you just traveled. In this case, we say that \(w\) has <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">excess degree</em> \(k\text{.}\)</p>
+<ol class="lower-alpha">
+<li>
+<p>Explain why the excess degree distribution  satisfies</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+q_k = \frac{(k+1) p_{k+1}}{\langle k \rangle}.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Confirm that the expected degree of vertex \(w\) is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{\langle k^2 \rangle}{\langle k \rangle}.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Recall that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\mbox{Var}[X] = E[X^2] - E[X]^2 &gt; 0
+\end{equation*}
+</div>
+<p class="continuation">when \(X\) is not constant. Use this to explain why that the expected degree of \(w\) is larger than the expected degree of \(v\text{.}\) </p>
+</li>
+<li><p>Colloquially, people refer to this result as: "your friends are more popular than you." Why? </p></li>
+</ol>
+<span class="incontext"><a href="epidemics.html#p-471">in-context</a></span>
 </body>
 </html>

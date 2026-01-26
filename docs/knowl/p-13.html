@@ -12,22 +12,39 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Suppose that we have a network that is partitioned into (potential) communities. The <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">type</em> of a vertex is the community \(C\) that it belongs to. The <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">modularity</em> of a network \(G\) is given by</p>
+<ol class="lower-alpha">
+<li>
+<p>A "simple digraph" is a digraph without  loops and without multiple arcs. You are allowed to have both \(uv\) and \(vu\) in a digraph. There are</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-Q  =  \frac{1}{2m} \sum_{i} \sum_{j} \left( A_{ij} - \frac{k_i k_j}{2m} \right) \delta (C^{(i)}, C^{(j)})
-=  \frac{1}{2m} \sum_{C} \sum_{i \in C} \sum_{j \in C} \left( A_{ij} - \frac{k_i k_j}{2m} \right)
+n (n-1) = (n)_2
 \end{equation*}
 </div>
-<p class="continuation">where</p>
+<p class="continuation">ways to create an arc. We have \(n\) choices for the starting vertex and \(n-1\) choices for the target vertex.</p>
+</li>
+<li>
+<p>Here are two solutions.</p>
 <ul class="disc">
-<li><p>\(A\) is the adjacency matrix</p></li>
-<li><p>\(m\) is the number of edges in the network</p></li>
-<li><p>\(k_i\) is the degree of vertex \(i\)</p></li>
-<li><p>\(C^{(i)}\) is the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">type</em> of vertex \(i\)</p></li>
-<li><p>\(\displaystyle \delta(x,y) = \left\{ \begin{array}{cc} 1 &amp; \mbox{if } x=y \\ 0 &amp;  \mbox{otherwise} \end{array} \right.\)</p></li>
+<li>
+<p>We must decide whether each arc is in the digraph. We must make \(n(n-1)\) yes/no independent decisions, so the number of simple digraphs is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+2^{n(n-1)}.
+\end{equation*}
+</div>
+</li>
+<li>
+<p>There are now four choices for every vertex pair: no arc, just \((u,v)\text{,}\) just \((v,u)\) or both \((u,v), (v,u)\text{.}\) We must make this decision for every pair of vertices. So the total number of digraphs is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+4^{n \choose 2}.
+\end{equation*}
+</div>
+</li>
 </ul>
-<p class="continuation">The modularity satisfies \(-1 &lt; Q &lt; 1\text{.}\) A modularity score of \(Q &gt; 0.3\) indicates significant community structure.</p>
-<span class="incontext"><a href="modularity.html#p-13">in-context</a></span>
+<p class="continuation">Of course, these two numbers are equal.</p>
+</li>
+</ol>
+<span class="incontext"><a href="graphs.html#p-13">in-context</a></span>
 </body>
 </html>

@@ -12,7 +12,25 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Prove that a digraph \(D=(V,E)\) is strongly connected if and only if for every partition \(V = A \cup B\) into disjoint, nonempty sets, there is an arc in \(D\) directed from \(A\) to \(B\) and an arc in \(D\) directed from \(B\) to \(A\text{.}\)</p>
+<ol class="lower-alpha">
+<li>
+<p>An edge corresponds to an unordered pair of vertices, chosen from the set \([n]\text{.}\) In other words, we must choose a subset of size 2 from the set \([n]\text{.}\) There are</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+{n \choose 2} = \frac{n(n-1)}{2}
+\end{equation*}
+</div>
+<p class="continuation">ways to do this.</p>
+</li>
+<li>
+<p>Let's give a recipe for creating a graph on the vertices \([n]\text{.}\) For each pair of vertices, we must decide whether or not the corresponding edge is in our graph. So we must make \({n \choose 2}\) yes/no decisions, and these decisions are made independently of one another. Therefore, the total number of graphs is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+2^{n \choose 2}.
+\end{equation*}
+</div>
+</li>
+</ol>
 <span class="incontext"><a href="graphs.html#p-9">in-context</a></span>
 </body>
 </html>
