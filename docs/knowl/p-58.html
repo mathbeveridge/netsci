@@ -12,16 +12,23 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Now explain why the following expression counts the total number of edges that are <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">internal</em> to one of the designated communities.</p>
+<p>The terms are</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{1}{2}  \sum_{i}  \sum_{j} A_{ij}  \, \delta (C^{(i)}, C^{(j)})
+\begin{array}{c|c|c|c|c}
+i \backslash j&amp;  1  &amp; 2 &amp; 3 &amp; 4 \\[0.5em]
+\hline
+1 &amp;- \frac{1}{6}&amp; 1 - \frac{2}{6}&amp;0&amp;0\\[0.5em]
+2 &amp;1 - \frac{2}{6}&amp;2- \frac{4}{6}&amp;0&amp;0\\[0.5em]
+3 &amp;0&amp;0&amp; - \frac{4}{6}&amp; 1- \frac{2}{6}\\[0.5em]
+4 &amp;0&amp;0&amp;1 - \frac{2}{6}&amp;- \frac{1}{6}
+\end{array}
 \end{equation*}
 </div>
-<p class="continuation">which can also be written as</p>
+<p class="continuation">and the modularity is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{1}{2} \sum_{C} \sum_{i \in C} \sum_{j \in C} A_{ij}.
+Q =  \frac{1}{6} \left( 4 - 2 \cdot \frac{1}{6} - 4 \cdot \frac{2}{6} - 2 \cdot \frac{4}{6} \right) = \frac{1}{6}
 \end{equation*}
 </div>
 <span class="incontext"><a href="modularity.html#p-58">in-context</a></span>

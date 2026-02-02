@@ -116,15 +116,13 @@ Lusseau and Newman performed a social network analysis on a dolphin population i
 			</statement>
 		</exercise>
 		<exercise>
-			<title>US Airline Network Revisited</title>
-			<idx><h>US Airline Network Revisited</h></idx>
+			<title>US Airline Network</title>
+			<idx><h>US Airline Network</h></idx>
 			<statement>
 				<p>
 
 
-Let's return to the US Airline network that we explored in a previous lab. I've created a new version of this gml file so that the default layout uses the longitude and latitude to place the nodes. (The previous file displayed the US upside-down!)
-
-Load the <c>us-airlines2.gml</c> file into Gephi. <em>Do not change the layout of the nodes</em> so that we can continue to see the geographic location of the airports. Here is what it will look like when you load it in.
+Let's explore the US Airline Network from about 20 years ago. Load the <c>us-airlines2.gml</c> file into Gephi. <em>Do not change the layout of the nodes</em> so that we can continue to see the geographic location of the airports. Here is what it will look like when you load it in.
 
 			<image width="60%" xml:id="fig-img-communities2" source="images/usair.png" />
 

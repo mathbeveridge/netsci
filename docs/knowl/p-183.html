@@ -12,52 +12,56 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<p>Flip a weighted coin \(n\) times, where \(p\) is the probability of obtaining heads, and \(1-p\) is the probability of obtaining tails. Define \(X\) to be the number of heads in the \(n\) tosses. This is the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">binomial random variable with parameters \(n\) and \(p\)</em>.</p>
 <ol class="lower-alpha">
-<li><p>Let \(p: \Z^+ \rightarrow [0,1]\) given by<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-p(k) = C k^{- \alpha}
-\end{equation*}
-</div>be the PMF for a power law. (Here, we assume that \(p(0)=0\) for convenience.) Suppose that we know the value for \(\alpha\text{.}\) Prove that<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-C = \frac{1}{\zeta(\alpha)}
-\end{equation*}
-</div>where \(\zeta(x)\) is the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Riemann zeta function</em><div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\displaystyle{\zeta(x) = \sum_{k=1}^{\infty} k^{-x}}.
-\end{equation*}
-</div>What is the restriction on allowable values of \(\alpha\text{?}\) </p></li>
 <li>
-<p>For many real-world networks, the power law behavior doesn't hold for small \(k\text{.}\) In this case, we restrict our attention to vertices of degree at least \(k_{\min}\text{.}\) We then deal with  the probability mass function for a truncated power law. Given \(\alpha\) and \(k \geq k_{\min}\) this PMF is given by</p>
+<p>Give a combinatorial argument for why the PMF of the binomial random variable is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-p(k) =  \frac{ k^{-\alpha}}{\zeta(\alpha, k_{\min})}
+p(k) = {n \choose k} p^k (1 - p)^{n-k}.
 \end{equation*}
 </div>
-<p class="continuation">where</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\zeta(x, k_{\min}) =  \sum_{k=k_{\min}}^{\infty} k^{-x}
-\end{equation*}
-</div>
-<p class="continuation">is the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">generalized Riemann zeta function</em>.</p>
-<p>Dealing with the Riemann zeta function is unwieldy. In practice, we approximate this leading constant by the corresponding integral.  Evaluate the following integral in order to find the approximate value for \(\zeta(\alpha, k_{\min})\text{:}\)</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-A =  \int_{x= k_{\min}}^{\infty} x^{-\alpha}  \, dx \approx \sum_{k= k_{\min}}^{\infty} k^{-\alpha} .
-\end{equation*}
-</div>
-<p></p>
 </li>
 <li>
-<p>Find the corresponding approximate expression for the power law PMF</p>
+<p>Use the binomial theorem</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-p(k) = \frac{1}{A} k^{-\alpha}
+(x+y)^n = \sum_{k=0}^n {n \choose k} x^ky^{n-k}
 \end{equation*}
 </div>
-<p class="continuation">using your constant \(A\) from (b). Simplify so that \(\alpha\) only appears once in an exponent. </p>
+<p class="continuation">to prove that \(p(k)\) is a PMF. </p>
+</li>
+<li>
+<p>Linearity of expectation applies to the sum of multiple random variables. In particular, an easy proof by induction shows that for any random variables \(X_1, X_2, \ldots, X_n\text{,}\) we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[X_1 + X_2 + \cdots + X_n] = \E[X_1] + \E[X_2] + \cdots + \E[X_n]
+\end{equation*}
+</div>
+<p class="continuation">Use this formula to show that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[X] = np.
+\end{equation*}
+</div>
+<p class="continuation">You will have to split your random variable \(X\) into the sum of \(n\) random variables. (Note: you can also prove this directly from part (a), but it is a bit tedious.) </p>
+</li>
+<li>
+<p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">[Do not solve this one. It is a long calculation.]</em> It can be shown that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\var(X) = np(1-p).
+\end{equation*}
+</div>
+<p class="continuation">But you do not need to do this here. You need to use the fact that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[X^2] = \E[X(X-1) + X] = \E[X(X-1)] + \E[X],
+\end{equation*}
+</div>
+<p class="continuation">which follows from <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">linearity of expectation</em>. </p>
 </li>
 </ol>
-<span class="incontext"><a href="powerlaw.html#p-183">in-context</a></span>
+<span class="incontext"><a href="probdist.html#p-183">in-context</a></span>
 </body>
 </html>
