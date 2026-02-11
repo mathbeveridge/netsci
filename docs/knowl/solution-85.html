@@ -15,8 +15,26 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
-<p>The \((i,j)\) entry of \(P^2\) tells you the probability of a random walk starting at \(i\) ending at \(j\) after 2 steps.</p>
+<ol class="lower-alpha">
+<li><p>For each of the matrix equations above, as \(t \rightarrow \infty\text{,}\) we converge to a vector in the direction of the largest eigenvector. In other words, the hub score \(\bh\) satisfies<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+A \, A^{\top} \, \bh= \lambda \bh
+\end{equation*}
+</div>where \(\lambda\) is the largest eigenvalue of \(A \, A^{\top}\text{.}\) Meanwhile, the authority score \(\ba\) satisfies<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+A^{\top} \, A \,   \ba= \mu \ba
+\end{equation*}
+</div>where \(\mu\) is the largest eigenvalue of \(A^{\top} \,A\text{.}\)</p></li>
+<li>
+<p>We have  \(\lambda=\mu\) because</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\lambda \bh = AA^{\top} h = AA^{\top} (A \ba) = A (A^{\top} A \ba) = \mu A \ba = \mu \bh. 
+\end{equation*}
 </div>
-<span class="incontext"><a href="randomwalk.html#solution-85">in-context</a></span>
+</li>
+</ol>
+</div>
+<span class="incontext"><a href="hits.html#solution-85">in-context</a></span>
 </body>
 </html>

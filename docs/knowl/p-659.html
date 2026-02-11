@@ -12,15 +12,14 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Next, we show that we have only added a constant number of new triangles. Show that</p>
+<p>Okay, you now understand this formula for a given network. In the rest of this activity, we will calculate the expected length of a journey on a randomly generated network. We use linearity of expectation to write the  expected length of this journey as the sum of the expected lengths of the phases:</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\E[\mbox{# triangles using one shortcut edge} ] \leq
-n{ c \choose 2} q
-\approx pc^3/2.
+\E[X] = \E \left[ \sum_{k=0}^{\log (n/2)} X_k \right] =
+\sum_{k=0}^{\log (n/2)} E[X_k].
 \end{equation*}
 </div>
-<p class="continuation">So we are adding a constant number of triangles. For large \(n\text{,}\) these new triangles are negligible compared to the \(n { c/2 \choose 2}\) triangles already present in the ring.</p>
-<span class="incontext"><a href="smallworld.html#p-659">in-context</a></span>
+<p class="continuation"><a class="solution-knowl original" data-knowl="./knowl/solution-124-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
+<span class="incontext"><a href="navsmallworld.html#p-659">in-context</a></span>
 </body>
 </html>

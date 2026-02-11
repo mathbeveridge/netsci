@@ -10,5 +10,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like"><p>Row \(i\) of \(P^t\) is the probability distribution for a random walk started at vertex \(i\text{.}\) This distribution converges to \(\pi\text{.}\) In particular, as \(t \rightarrow \infty\text{,}\) the probability that we are at vertex \(j\) is \(k_j/2m\text{.}\)</p></div></body>
+<body><div class="solution solution-like">
+<p>We have \(E[X_0] = 1 = \mu^0.\) Assuming that \(\E[X_n] = \mu^n\text{,}\) we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\E[X_{n+1}] &amp;= \sum_{k=0}^{\infty} \E[X_{n+1} \mid X_{n} = k] \P[X_{n} = k]
+= \sum_{k=0}^{\infty} k \mu \,  \P[X_{n} = k]\\
+&amp;= \mu \, \sum_{k=0}^{\infty} k  \,  \P[X_{n} = k]
+= \mu \, \E[X_n] = \mu \cdot \mu^n = \mu^{n+1}.
+\end{align*}
+</div>
+<p></p>
+</div></body>
 </html>

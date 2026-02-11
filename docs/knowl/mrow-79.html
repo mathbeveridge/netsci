@@ -13,18 +13,12 @@
 <body>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-\lim_{t \rightarrow \infty} P^t  \, = \, \bone \,  \bv
-&amp;=
-\begin{bmatrix}
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
-v_1 &amp; v_2 &amp; v_3 &amp; v_4 &amp; v_5 &amp; v_6\\
-\end{bmatrix}
+\langle m \rangle &amp;= \sum_{m = 0}^{N} m {N \choose m} p^m (1-p)^{N - m}\\
+&amp;= \sum_{m = 1}^{N} m  \frac{N!}{m! (N-m)!} p^m (1-p)^{N - m}\\
+&amp;= p N \sum_{m = 1}^{N} m  \frac{(N-1)!}{(m-1)! (N-m)!} p^(m-1) (1-p)^{N - m}\\
+&amp;= pN (p + (1-p))^{N-1} \, = p N = p {n \choose 2}.
 \end{align*}
 </div>
-<span class="incontext"><a href="randomwalk.html#mjx-eqn:mrow-79">in-context</a></span>
+<span class="incontext"><a href="randomgraph.html#mjx-eqn:mrow-79">in-context</a></span>
 </body>
 </html>

@@ -11,18 +11,13 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p>Since vertex 2 has no out-neighbors, we add a self-loop.</p>
+<p>Using linearity of expectation, we have</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-P =
-\begin{bmatrix}
-0 &amp; 1/2 &amp; 0 &amp; 0 &amp; 1/2 &amp; 0  \\
-0 &amp; 1 &amp; 0&amp; 0 &amp; 0 &amp; 0  \\
-1/2 &amp; 1/2 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
-0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0  \\
-0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1  \\
-0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0  \\
-\end{bmatrix}
+\E[Z_n]
+= \E \left[ \sum_{t=0}^n X_t \right]
+= \sum_{t=0}^n \E \left[  X_t \right]
+=  \sum_{t=0}^n \mu^t
 \end{equation*}
 </div>
 </div></body>

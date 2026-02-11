@@ -10,16 +10,30 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like">
-<p></p>
-<p>The probability an the arc points to vertex \(i\) is</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<body><div class="solution solution-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-\frac{a}{a+c} \cdot \frac{1}{n} + \frac{c}{a+c} \cdot \frac{k_i}{\sum_j k_j}
-&amp;=  \frac{a}{n(a+c)}  + \frac{c}{a+c} \cdot \frac{k_i}{n c}\\
-&amp;=  \frac{a+k_i}{n(a+c)}
+C 
+&amp; \geq 
+\frac{3 \left(
+n { c/2 \choose 2} + c p n \cdot {c \choose 1}
+\right)}
+{n {c \choose 2} + c^2pn + n{cp \choose 2}  }
+\geq
+\frac{3 \left(
+c/2(c/2-1)/2 %+ c^2 p
+\right)}
+{c(c-1)/2 + c^2 + {c(c-1)/2}}\\
+&amp; =
+\frac{3 \left(
+c-2
+\right)}
+{8 (2c-1)}
+\geq 
+\frac{3 \left(
+c-2
+\right)}
+{16(c-1)}
+\approx \frac{3}{16}
 \end{align*}
-</div>
-<p></p>
-</div></body>
+</div></div></body>
 </html>

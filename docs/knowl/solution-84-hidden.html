@@ -10,5 +10,24 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like"><p>It is possible to end at any vertex. Vertex 6 is definitely visited the least at the end of the walk. Vertices with degree 3 seem to be the candidates for lots of visits at the end. But it is not clear how to compare these vertices with each other.</p></div></body>
+<body><div class="solution solution-like">
+<p>We have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{lllll}
+\bh(t) &amp;=&amp; A  \ba(t-1)  &amp;=&amp; \,  A \, A^{\top} \, \bh(t-1), \\
+\ba(t) &amp;=&amp; A^{\top} \bh(t)  &amp;=&amp; A^{\top} \, A \, \ba(t-1)
+\end{array}
+\end{equation*}
+</div>
+<p class="continuation">which we can write more compactly as</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{lllll}
+\bh(t) &amp;=&amp;   A \, A^{\top} \, \bh(t-1), \\
+\ba(t)  &amp;=&amp; A^{\top} \, A \, \ba(t-1).
+\end{array}
+\end{equation*}
+</div>
+</div></body>
 </html>

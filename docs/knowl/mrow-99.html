@@ -13,11 +13,17 @@
 <body>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-\frac{a}{c} &amp;= \frac{1}{\gamma} -1\\
-\frac{c+a}{c} &amp;= \frac{1}{\gamma}\\
-\frac{c}{c+a} &amp;= {\gamma}
+\frac{2}{n+1} \sum_{m=1}^{n/2} \left\lceil \frac{2m}{c} \right\rceil
+&amp;\leq  \frac{2}{n+1} \sum_{m=1}^{n/2} \left( \frac{2m}{c}  + 1\right)
+= \frac{2}{n+1}
+\left(
+\frac{2}{c} \frac{(n/2) (n/2+1)}{2} + \frac{n}{2}
+\right)\\
+&amp;=  \frac{2}{n+1}
+\left(
+\frac{n(n+2)}{4c} + \frac{n}{2} \right) \leq \frac{n}{2c} + 1
 \end{align*}
 </div>
-<span class="incontext"><a href="pricemodel.html#mjx-eqn:mrow-99">in-context</a></span>
+<span class="incontext"><a href="smallworld.html#mjx-eqn:mrow-99">in-context</a></span>
 </body>
 </html>

@@ -12,12 +12,7 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>The graph distance is</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-d(v_0, v_m) = \left\lceil \frac{m}{c/2} \right\rceil = \left\lceil \frac{2m}{c} \right\rceil.
-\end{equation*}
-</div>
+<p>For each pair of shortcut edges incident with the same vertex, we must choose the other endpoints. So there are \(n\) ways to choose the common vertex, and \({n-1 \choose 2}\) ways to choose the other endpoints. We multiply by \(q^2\) since this is the probability that both shortcut edges are present.</p>
 <span class="incontext"><a href="smallworld.html#p-646">in-context</a></span>
 </body>
 </html>

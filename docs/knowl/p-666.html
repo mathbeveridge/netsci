@@ -12,22 +12,25 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Turning to connected triples, show that</p>
+<p>Let</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\E[ \mbox{# connected triples using one shortcut edge} ]
-= \frac{cpn}{2} (c + c) = c^2 p n.
+A = \{ w \mid d(w,t) \leq d/2 \}
 \end{equation*}
 </div>
-<p class="continuation">and that</p>
+<p class="continuation">be the set of vertices that are "at most half the distance from \(t\) as \(v\text{.}\)" Explain why</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\E[ \mbox{# connected triples using two shortcut edges} ]
-=
-n {n-1 \choose 2} q^2
-\approx \frac{c^2 p^2}{2} n.
+|A|=d+1
 \end{equation*}
 </div>
-<span class="incontext"><a href="smallworld.html#p-666">in-context</a></span>
+<p class="continuation">and why</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{d}{2} \leq d(v,w) \leq \frac{3d}{2}
+\end{equation*}
+</div>
+<p class="continuation">for all \(w \in A\text{.}\) <a class="solution-knowl original" data-knowl="./knowl/solution-126-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
+<span class="incontext"><a href="navsmallworld.html#p-666">in-context</a></span>
 </body>
 </html>

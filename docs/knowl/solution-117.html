@@ -15,17 +15,20 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
-<p>We have \(E[X_0] = 1 = \mu^0.\) Assuming that \(\E[X_n] = \mu^n\text{,}\) we have</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-\E[X_{n+1}] &amp;= \sum_{k=0}^{\infty} \E[X_{n+1} \mid X_{n} = k] \P[X_{n} = k]
-= \sum_{k=0}^{\infty} k \mu \,  \P[X_{n} = k]\\
-&amp;= \mu \, \sum_{k=0}^{\infty} k  \,  \P[X_{n} = k]
-= \mu \, \E[X_n] = \mu \cdot \mu^n = \mu^{n+1}.
+\frac{2}{n+1} \sum_{m=1}^{n/2} \left\lceil \frac{2m}{c} \right\rceil
+&amp;\leq  \frac{2}{n+1} \sum_{m=1}^{n/2} \left( \frac{2m}{c}  + 1\right)
+= \frac{2}{n+1}
+\left(
+\frac{2}{c} \frac{(n/2) (n/2+1)}{2} + \frac{n}{2}
+\right)\\
+&amp;=  \frac{2}{n+1}
+\left(
+\frac{n(n+2)}{4c} + \frac{n}{2} \right) \leq \frac{n}{2c} + 1
 \end{align*}
 </div>
-<p></p>
 </div>
-<span class="incontext"><a href="branching.html#solution-117">in-context</a></span>
+<span class="incontext"><a href="smallworld.html#solution-117">in-context</a></span>
 </body>
 </html>

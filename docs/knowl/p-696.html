@@ -12,19 +12,19 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Here is very useful fact from probability. Let \(X\) be any random variable taking on positive integer values. We can write the expected value of \(X\) as</p>
+<p>Let \(T\) be the set of vertices that adopt behavior \(A\) during the cascade. Let \(S= \overline{T}\) be the vertices that never adopt the behavior. For every \(i \in S\text{,}\) we have</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\E[X] = \sum_{k=1}^{\infty} \Pr[X \geq k].
+\frac{ | N(i) \cap S| }{|N(i)|}   &gt; 1-q.
 \end{equation*}
 </div>
-<p class="continuation">Indeed, when \(X\) only takes on positive integer values, we have</p>
+<p class="continuation">(Otherwise, \(i\) would have adopted behavior \(A\text{.}\)) But this means that</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\sum_{k=1}^{\infty} \Pr[X \geq k] = \sum_{k=1}^{\infty} k \Pr[X = k]
+p(S) = \min_{i \in S} \frac{ | N(i) \cap S| }{|N(i)|}   &gt; 1-q.
 \end{equation*}
 </div>
-<p class="continuation">and the right hand side is the definition of \(\E[X]\text{.}\)</p>
-<span class="incontext"><a href="navsmallworld.html#p-696">in-context</a></span>
+<p class="continuation">Therefore the set is cohesive.</p>
+<span class="incontext"><a href="cascades.html#p-696">in-context</a></span>
 </body>
 </html>

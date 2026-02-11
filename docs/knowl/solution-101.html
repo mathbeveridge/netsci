@@ -15,17 +15,26 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
-<p>The vector</p>
+<p>We have</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\bw =
-\begin{bmatrix}
-0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0
-\end{bmatrix}
+\P[ X_t \geq 1 \mbox{ for all } t \geq 0] = \alpha &gt;0.
 \end{equation*}
 </div>
-<p class="continuation">is a solution to  \(\bw \, P = \bw.\)</p>
+<p class="continuation">But then</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[Z_n] = \sum_{t=0}^n \E[X_t]  \geq  \sum_{t=0}^n \P[X_t \geq 1]
+= \sum_{t=0}^n  \alpha = \alpha (n+1)
+\end{equation*}
 </div>
-<span class="incontext"><a href="randomwalk.html#solution-101">in-context</a></span>
+<p class="continuation">and so</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[Z] = \lim_{n \rightarrow \infty} \E[Z] = \lim_{n \rightarrow \infty}  \alpha (n+1) = \infty.
+\end{equation*}
+</div>
+</div>
+<span class="incontext"><a href="branching.html#solution-101">in-context</a></span>
 </body>
 </html>
