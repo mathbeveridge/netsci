@@ -102,7 +102,7 @@ For each centrality measure, give an intuitive explanation of what is "central" 
 
 
 
-<!--solution>
+<solution>
 <p>
 Note that there are many possible answers: these are just example responses.
 
@@ -136,7 +136,7 @@ Note that there are many possible answers: these are just example responses.
 
 
 </p>
-</solution-->
+</solution>
 
 
 
@@ -163,7 +163,7 @@ For each of the following graphs, calculate the (unnormalized) degree centrality
 \begin{tikzpicture} %mathbook width=90%
 
 
-\draw[thick] (0,0) -!- (4,0);
+\draw[thick] (0,0) -- (4,0);
 
 \foreach \i in {0,1,2,3,4}
 {
@@ -174,7 +174,7 @@ For each of the following graphs, calculate the (unnormalized) degree centrality
 \begin{scope}[shift={(7,0)}]
 
 \foreach \i in {0, 72, 144, 216, 288} {
-\draw[thick] (0,0) -!- (\i:1);
+\draw[thick] (0,0) -- (\i:1);
 \draw[thick, fill=gray!50] (\i: 1) circle (3pt);
 }
 \draw[thick, fill=gray!50] (0,0) circle (3pt);
@@ -184,7 +184,7 @@ For each of the following graphs, calculate the (unnormalized) degree centrality
 
 \begin{scope}[shift={(12,0)}]
 
-\draw[thick] (1,0) -!- (1.5, -.87) -!- (1.5, .87) -!- (1,0) -!- (-1,0) -!- (-1.5, .87) -!- (-1.5, -.87) -!- (-1,0);
+\draw[thick] (1,0) -- (1.5, -.87) -- (1.5, .87) -- (1,0) -- (-1,0) -- (-1.5, .87) -- (-1.5, -.87) -- (-1,0);
 
 \draw[thick, fill=gray!50] (0,0) circle (3pt);
 \draw[thick, fill=gray!50] (-1,0) circle (3pt);
@@ -214,7 +214,7 @@ For each of the following graphs, calculate the (unnormalized) degree centrality
 \begin{tikzpicture}%mathbook width=90%
 
 
-\draw[thick] (0,0) -!- (4,0);
+\draw[thick] (0,0) -- (4,0);
 
 \foreach \i in {0,1,2,3,4}
 {
@@ -225,7 +225,7 @@ For each of the following graphs, calculate the (unnormalized) degree centrality
 \begin{scope}[shift={(7,0)}]
 
 \foreach \i in {0, 72, 144, 216, 288} {
-\draw[thick] (0,0) -!- (\i:1);
+\draw[thick] (0,0) -- (\i:1);
 \draw[thick, fill=gray!50] (\i: 1) circle (3pt);
 }
 \draw[thick, fill=gray!50] (0,0) circle (3pt);
@@ -235,7 +235,7 @@ For each of the following graphs, calculate the (unnormalized) degree centrality
 
 \begin{scope}[shift={(12,0)}]
 
-\draw[thick] (1,0) -!- (1.5, -.87) -!- (1.5, .87) -!- (1,0) -!- (-1,0) -!- (-1.5, .87) -!- (-1.5, -.87) -!- (-1,0);
+\draw[thick] (1,0) -- (1.5, -.87) -- (1.5, .87) -- (1,0) -- (-1,0) -- (-1.5, .87) -- (-1.5, -.87) -- (-1,0);
 
 \draw[thick, fill=gray!50] (0,0) circle (3pt);
 \draw[thick, fill=gray!50] (-1,0) circle (3pt);
@@ -266,7 +266,7 @@ For each of the following graphs, calculate the (unnormalized) degree centrality
 \begin{tikzpicture}%mathbook width=90%
 
 
-\draw[thick] (0,0) -!- (4,0);
+\draw[thick] (0,0) -- (4,0);
 
 \foreach \i in {0,1,2,3,4}
 {
@@ -277,7 +277,7 @@ For each of the following graphs, calculate the (unnormalized) degree centrality
 \begin{scope}[shift={(7,0)}]
 
 \foreach \i in {0, 72, 144, 216, 288} {
-\draw[thick] (0,0) -!- (\i:1);
+\draw[thick] (0,0) -- (\i:1);
 \draw[thick, fill=gray!50] (\i: 1) circle (3pt);
 }
 \draw[thick, fill=gray!50] (0,0) circle (3pt);
@@ -287,7 +287,7 @@ For each of the following graphs, calculate the (unnormalized) degree centrality
 
 \begin{scope}[shift={(12,0)}]
 
-\draw[thick] (1,0) -!- (1.5, -.87) -!- (1.5, .87) -!- (1,0) -!- (-1,0) -!- (-1.5, .87) -!- (-1.5, -.87) -!- (-1,0);
+\draw[thick] (1,0) -- (1.5, -.87) -- (1.5, .87) -- (1,0) -- (-1,0) -- (-1.5, .87) -- (-1.5, -.87) -- (-1,0);
 
 \draw[thick, fill=gray!50] (0,0) circle (3pt);
 \draw[thick, fill=gray!50] (-1,0) circle (3pt);
@@ -315,7 +315,7 @@ For each of the following graphs, calculate the (unnormalized) degree centrality
 
 
 
-<!--solution>
+<solution>
 <p>
 
 
@@ -330,7 +330,7 @@ For each of the following graphs, calculate the (unnormalized) degree centrality
 \begin{tikzpicture} %mathbook width=90%
 
 
-\draw[thick] (0,0) -!- (4,0);
+\draw[thick] (0,0) -- (4,0);
 
 \foreach \i in {0,1,2,3,4}
 {
@@ -348,7 +348,7 @@ For each of the following graphs, calculate the (unnormalized) degree centrality
 \begin{scope}[shift={(7,0)}]
 
 \foreach \i in {0, 72, 144, 216, 288} {
-\draw[thick] (0,0) -!- (\i:1);
+\draw[thick] (0,0) -- (\i:1);
 \draw[thick, fill=gray!50] (\i: 1) circle (3pt);
 }
 \draw[thick, fill=gray!50] (0,0) circle (3pt);
@@ -367,7 +367,7 @@ For each of the following graphs, calculate the (unnormalized) degree centrality
 
 \begin{scope}[shift={(12,0)}]
 
-\draw[thick] (1,0) -!- (1.5, -.87) -!- (1.5, .87) -!- (1,0) -!- (-1,0) -!- (-1.5, .87) -!- (-1.5, -.87) -!- (-1,0);
+\draw[thick] (1,0) -- (1.5, -.87) -- (1.5, .87) -- (1,0) -- (-1,0) -- (-1.5, .87) -- (-1.5, -.87) -- (-1,0);
 
 \draw[thick, fill=gray!50] (0,0) circle (3pt);
 \draw[thick, fill=gray!50] (-1,0) circle (3pt);
@@ -407,7 +407,7 @@ For each of the following graphs, calculate the (unnormalized) degree centrality
 \begin{tikzpicture} %mathbook width=90%
 
 
-\draw[thick] (0,0) -!- (4,0);
+\draw[thick] (0,0) -- (4,0);
 
 \foreach \i in {0,1,2,3,4}
 {
@@ -424,7 +424,7 @@ For each of the following graphs, calculate the (unnormalized) degree centrality
 \begin{scope}[shift={(7,0)}]
 
 \foreach \i in {0, 72, 144, 216, 288} {
-\draw[thick] (0,0) -!- (\i:1);
+\draw[thick] (0,0) -- (\i:1);
 \draw[thick, fill=gray!50] (\i: 1) circle (3pt);
 }
 \draw[thick, fill=gray!50] (0,0) circle (3pt);
@@ -442,7 +442,7 @@ For each of the following graphs, calculate the (unnormalized) degree centrality
 
 \begin{scope}[shift={(12,0)}]
 
-\draw[thick] (1,0) -!- (1.5, -.87) -!- (1.5, .87) -!- (1,0) -!- (-1,0) -!- (-1.5, .87) -!- (-1.5, -.87) -!- (-1,0);
+\draw[thick] (1,0) -- (1.5, -.87) -- (1.5, .87) -- (1,0) -- (-1,0) -- (-1.5, .87) -- (-1.5, -.87) -- (-1,0);
 
 \draw[thick, fill=gray!50] (0,0) circle (3pt);
 \draw[thick, fill=gray!50] (-1,0) circle (3pt);
@@ -483,7 +483,7 @@ For each of the following graphs, calculate the (unnormalized) degree centrality
 \begin{tikzpicture} %mathbook width=90%
 
 
-\draw[thick] (0,0) -!- (4,0);
+\draw[thick] (0,0) -- (4,0);
 
 \foreach \i in {0,1,2,3,4}
 {
@@ -499,7 +499,7 @@ For each of the following graphs, calculate the (unnormalized) degree centrality
 \begin{scope}[shift={(7,0)}]
 
 \foreach \i in {0, 72, 144, 216, 288} {
-\draw[thick] (0,0) -!- (\i:1);
+\draw[thick] (0,0) -- (\i:1);
 \draw[thick, fill=gray!50] (\i: 1) circle (3pt);
 }
 \draw[thick, fill=gray!50] (0,0) circle (3pt);
@@ -517,7 +517,7 @@ For each of the following graphs, calculate the (unnormalized) degree centrality
 
 \begin{scope}[shift={(12,0)}]
 
-\draw[thick] (1,0) -!- (1.5, -.87) -!- (1.5, .87) -!- (1,0) -!- (-1,0) -!- (-1.5, .87) -!- (-1.5, -.87) -!- (-1,0);
+\draw[thick] (1,0) -- (1.5, -.87) -- (1.5, .87) -- (1,0) -- (-1,0) -- (-1.5, .87) -- (-1.5, -.87) -- (-1,0);
 
 \draw[thick, fill=gray!50] (0,0) circle (3pt);
 \draw[thick, fill=gray!50] (-1,0) circle (3pt);
@@ -555,7 +555,7 @@ For each of the following graphs, calculate the (unnormalized) degree centrality
 
 
 </p>
-</solution-->
+</solution>
 
 
 
@@ -639,7 +639,7 @@ N/A
 
 
 
-<!--solution>
+<solution>
 <p>
 
 There are many ways to make graphs that distinguish these centrality measures from one another. But it is true that in real world networks, these quantities tend to be correlated. The example networks below are variants of a simple idea. A <em>barbell graph</em> is a graph that consist of two complete graphs <m>K_s</m> and <m>K_t</m> connected by a path of length <m>r</m>.
@@ -653,9 +653,9 @@ There are many ways to make graphs that distinguish these centrality measures fr
 
 \draw[thick] (8,0) circle (1.5);
 
-\draw[thick]   (.75,0) -!- (6.5,0);
+\draw[thick]   (.75,0) -- (6.5,0);
 
-\draw [decoration={brace,raise=3mm,amplitude=16pt, mirror},decorate]   (.75,0) -!- (6.5,0);
+\draw [decoration={brace,raise=3mm,amplitude=16pt, mirror},decorate]   (.75,0) -- (6.5,0);
 
 
 \node at (0,0) {<m>K</m>};
@@ -690,9 +690,9 @@ Sometimes we take <m>s=t</m> and sometimes we take <m>s \ll t</m>. Likewise, som
 
 \draw[thick] (8,0) circle (.75);
 
-\draw[thick]   (.75,0) -!- (7.25,0);
+\draw[thick]   (.75,0) -- (7.25,0);
 
-\draw [decoration={brace,raise=3mm,amplitude=16pt, mirror},decorate]   (.75,0) -!- (7.25,0);
+\draw [decoration={brace,raise=3mm,amplitude=16pt, mirror},decorate]   (.75,0) -- (7.25,0);
 
 
 \node at (0,0) {<m>K</m>};
@@ -772,11 +772,11 @@ because this vertex is just one step further than <m>c</m> to the rest of the gr
 
 \draw[thick] (8,0) circle (.75);
 
-\draw[thick]   (.75,0) -!- (7.25,0);
+\draw[thick]   (.75,0) -- (7.25,0);
 
-\draw[thick]   (4,0) -!- (4,.5);
+\draw[thick]   (4,0) -- (4,.5);
 
-\draw [decoration={brace,raise=3mm,amplitude=16pt, mirror},decorate]   (.75,0) -!- (7.25,0);
+\draw [decoration={brace,raise=3mm,amplitude=16pt, mirror},decorate]   (.75,0) -- (7.25,0);
 
 
 \node at (0,0) {<m>K</m>};
@@ -826,9 +826,9 @@ Let's look at a barbell graph where the cliques are of very different sizes.
 
 \draw[thick] (8.75,0) circle (1.5);
 
-\draw[thick]   (.75,0) -!- (7.25,0);
+\draw[thick]   (.75,0) -- (7.25,0);
 
-\draw [decoration={brace,raise=3mm,amplitude=16pt, mirror},decorate]   (.75,0) -!- (7.25,0);
+\draw [decoration={brace,raise=3mm,amplitude=16pt, mirror},decorate]   (.75,0) -- (7.25,0);
 
 
 \node at (0,0) {<m>K</m>};
@@ -872,7 +872,7 @@ the closeness of node <m>b</m> is
 
 
 </p>
-</solution-->
+</solution>
 
 
 				</p>
@@ -904,7 +904,7 @@ the closeness of node <m>b</m> is
 			</ol>
 
 
-<!--solution>
+<solution>
 <p>
 
 			<ol>
@@ -928,7 +928,7 @@ You would still only have one betweenness centrality measure on a directed graph
 			</ol>
 
 </p>
-</solution-->
+</solution>
 
 
 
@@ -960,7 +960,7 @@ What is the effect of adding one shortcut to  a cycle on six vertices? Calculate
 
 \foreach \i in {0, 60, 120, 180, 240, 300}
 {
-\draw (\i:1) -!- (\i+60:1);
+\draw (\i:1) -- (\i+60:1);
 \draw[thick, fill=gray!50] (\i:1) circle (3pt);
 }
 
@@ -969,11 +969,11 @@ What is the effect of adding one shortcut to  a cycle on six vertices? Calculate
 \begin{scope}[shift={(5,0)}]
 
 
-\draw (0:1) -!- (120:1);
+\draw (0:1) -- (120:1);
 
 \foreach \i in {0, 60, 120, 180, 240, 300}
 {
-\draw (\i:1) -!- (\i+60:1);
+\draw (\i:1) -- (\i+60:1);
 \draw[thick, fill=gray!50] (\i:1) circle (3pt);
 }
 
@@ -985,11 +985,11 @@ What is the effect of adding one shortcut to  a cycle on six vertices? Calculate
 \begin{scope}[shift={(10,0)}]
 
 
-\draw (0:1) -!- (180:1);
+\draw (0:1) -- (180:1);
 
 \foreach \i in {0, 60, 120, 180, 240, 300}
 {
-\draw (\i:1) -!- (\i+60:1);
+\draw (\i:1) -- (\i+60:1);
 \draw[thick, fill=gray!50] (\i:1) circle (3pt);
 }
 
@@ -1018,7 +1018,7 @@ What is the effect of adding one shortcut to  a cycle on six vertices? Calculate
 
 \foreach \i in {0, 60, 120, 180, 240, 300}
 {
-\draw (\i:1) -!- (\i+60:1);
+\draw (\i:1) -- (\i+60:1);
 \draw[thick, fill=gray!50] (\i:1) circle (3pt);
 }
 
@@ -1027,11 +1027,11 @@ What is the effect of adding one shortcut to  a cycle on six vertices? Calculate
 \begin{scope}[shift={(5,0)}]
 
 
-\draw (0:1) -!- (120:1);
+\draw (0:1) -- (120:1);
 
 \foreach \i in {0, 60, 120, 180, 240, 300}
 {
-\draw (\i:1) -!- (\i+60:1);
+\draw (\i:1) -- (\i+60:1);
 \draw[thick, fill=gray!50] (\i:1) circle (3pt);
 }
 
@@ -1043,11 +1043,11 @@ What is the effect of adding one shortcut to  a cycle on six vertices? Calculate
 \begin{scope}[shift={(10,0)}]
 
 
-\draw (0:1) -!- (180:1);
+\draw (0:1) -- (180:1);
 
 \foreach \i in {0, 60, 120, 180, 240, 300}
 {
-\draw (\i:1) -!- (\i+60:1);
+\draw (\i:1) -- (\i+60:1);
 \draw[thick, fill=gray!50] (\i:1) circle (3pt);
 }
 
@@ -1076,7 +1076,7 @@ What is the effect of adding one shortcut to  a cycle on six vertices? Calculate
 
 \foreach \i in {0, 60, 120, 180, 240, 300}
 {
-\draw (\i:1) -!- (\i+60:1);
+\draw (\i:1) -- (\i+60:1);
 \draw[thick, fill=gray!50] (\i:1) circle (3pt);
 }
 
@@ -1085,11 +1085,11 @@ What is the effect of adding one shortcut to  a cycle on six vertices? Calculate
 \begin{scope}[shift={(5,0)}]
 
 
-\draw (0:1) -!- (120:1);
+\draw (0:1) -- (120:1);
 
 \foreach \i in {0, 60, 120, 180, 240, 300}
 {
-\draw (\i:1) -!- (\i+60:1);
+\draw (\i:1) -- (\i+60:1);
 \draw[thick, fill=gray!50] (\i:1) circle (3pt);
 }
 
@@ -1101,11 +1101,11 @@ What is the effect of adding one shortcut to  a cycle on six vertices? Calculate
 \begin{scope}[shift={(10,0)}]
 
 
-\draw (0:1) -!- (180:1);
+\draw (0:1) -- (180:1);
 
 \foreach \i in {0, 60, 120, 180, 240, 300}
 {
-\draw (\i:1) -!- (\i+60:1);
+\draw (\i:1) -- (\i+60:1);
 \draw[thick, fill=gray!50] (\i:1) circle (3pt);
 }
 
@@ -1128,7 +1128,7 @@ What is the effect of adding one shortcut to  a cycle on six vertices? Calculate
 
 
 
-<!--solution>
+<solution>
 <p>
 
 
@@ -1145,7 +1145,7 @@ What is the effect of adding one shortcut to  a cycle on six vertices? Calculate
 
 \foreach \i in {0, 60, 120, 180, 240, 300}
 {
-\draw (\i:1) -!- (\i+60:1);
+\draw (\i:1) -- (\i+60:1);
 \draw[thick, fill=gray!50] (\i:1) circle (3pt);
 }
 
@@ -1162,11 +1162,11 @@ What is the effect of adding one shortcut to  a cycle on six vertices? Calculate
 \begin{scope}[shift={(5,0)}]
 
 
-\draw (0:1) -!- (120:1);
+\draw (0:1) -- (120:1);
 
 \foreach \i in {0, 60, 120, 180, 240, 300}
 {
-\draw (\i:1) -!- (\i+60:1);
+\draw (\i:1) -- (\i+60:1);
 \draw[thick, fill=gray!50] (\i:1) circle (3pt);
 }
 
@@ -1185,11 +1185,11 @@ What is the effect of adding one shortcut to  a cycle on six vertices? Calculate
 \begin{scope}[shift={(10,0)}]
 
 
-\draw (0:1) -!- (180:1);
+\draw (0:1) -- (180:1);
 
 \foreach \i in {0, 60, 120, 180, 240, 300}
 {
-\draw (\i:1) -!- (\i+60:1);
+\draw (\i:1) -- (\i+60:1);
 \draw[thick, fill=gray!50] (\i:1) circle (3pt);
 }
 
@@ -1225,7 +1225,7 @@ What is the effect of adding one shortcut to  a cycle on six vertices? Calculate
 
 \foreach \i in {0, 60, 120, 180, 240, 300}
 {
-\draw (\i:1) -!- (\i+60:1);
+\draw (\i:1) -- (\i+60:1);
 \draw[thick, fill=gray!50] (\i:1) circle (3pt);
 }
 
@@ -1243,11 +1243,11 @@ What is the effect of adding one shortcut to  a cycle on six vertices? Calculate
 \begin{scope}[shift={(5,0)}]
 
 
-\draw (0:1) -!- (120:1);
+\draw (0:1) -- (120:1);
 
 \foreach \i in {0, 60, 120, 180, 240, 300}
 {
-\draw (\i:1) -!- (\i+60:1);
+\draw (\i:1) -- (\i+60:1);
 \draw[thick, fill=gray!50] (\i:1) circle (3pt);
 }
 
@@ -1267,11 +1267,11 @@ What is the effect of adding one shortcut to  a cycle on six vertices? Calculate
 \begin{scope}[shift={(10,0)}]
 
 
-\draw (0:1) -!- (180:1);
+\draw (0:1) -- (180:1);
 
 \foreach \i in {0, 60, 120, 180, 240, 300}
 {
-\draw (\i:1) -!- (\i+60:1);
+\draw (\i:1) -- (\i+60:1);
 \draw[thick, fill=gray!50] (\i:1) circle (3pt);
 }
 
@@ -1305,7 +1305,7 @@ What is the effect of adding one shortcut to  a cycle on six vertices? Calculate
 
 \foreach \i in {0, 60, 120, 180, 240, 300}
 {
-\draw (\i:1) -!- (\i+60:1);
+\draw (\i:1) -- (\i+60:1);
 \draw[thick, fill=gray!50] (\i:1) circle (3pt);
 }
 
@@ -1322,11 +1322,11 @@ What is the effect of adding one shortcut to  a cycle on six vertices? Calculate
 \begin{scope}[shift={(5,0)}]
 
 
-\draw (0:1) -!- (120:1);
+\draw (0:1) -- (120:1);
 
 \foreach \i in {0, 60, 120, 180, 240, 300}
 {
-\draw (\i:1) -!- (\i+60:1);
+\draw (\i:1) -- (\i+60:1);
 \draw[thick, fill=gray!50] (\i:1) circle (3pt);
 }
 
@@ -1346,11 +1346,11 @@ What is the effect of adding one shortcut to  a cycle on six vertices? Calculate
 \begin{scope}[shift={(10,0)}]
 
 
-\draw (0:1) -!- (180:1);
+\draw (0:1) -- (180:1);
 
 \foreach \i in {0, 60, 120, 180, 240, 300}
 {
-\draw (\i:1) -!- (\i+60:1);
+\draw (\i:1) -- (\i+60:1);
 \draw[thick, fill=gray!50] (\i:1) circle (3pt);
 }
 
@@ -1377,7 +1377,7 @@ What is the effect of adding one shortcut to  a cycle on six vertices? Calculate
 			</ol>
 
 </p>
-</solution-->
+</solution>
 
 				</p>
 			</statement>

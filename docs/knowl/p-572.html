@@ -12,17 +12,13 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Here is Price's Model for a citation network. Start with a small set of initial papers (with no citations). When a new paper is added, it cites  \(c\) existing papers (on average). Each paper is chosen as follows:</p>
-<ul class="disc">
-<li><p>with \(\displaystyle{\P = \frac{a}{a+c}}\text{,}\)   cite a uniformly random paper</p></li>
-<li><p>with \(\displaystyle{\P = \frac{c}{a+c}}\text{,}\)  cite a  paper with probability proportional to its current citation count.</p></li>
-</ul>
-<p class="continuation">The tail of the degree distribution satisfies the power law</p>
+<p>We are interested in the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">early time behavior</em> of \(I_k\text{,}\) since we would like to intervene  (via quarantine or travel restrictions, etc) before the disease gets out of hand. If there aren't many infected vertices, then we may approximate \(1 - I_k \approx 1\) so that</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\P(\deg(v) = k) \sim k^{-2-a/c}.
+\frac{dI_k}{dt} \approx \beta \,  k \,  \Theta.
 \end{equation*}
 </div>
-<span class="incontext"><a href="pricemodel.html#p-572">in-context</a></span>
+<p class="continuation">Early on, the set of infected nodes is tree-like. In particular, you can assume that an infected vertex \(v\) has a link that points back to the (infected) vertex that transmitted the disease.</p>
+<span class="incontext"><a href="epidemics.html#p-572">in-context</a></span>
 </body>
 </html>

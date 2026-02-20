@@ -11,13 +11,19 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p>It is easy to see that \(0 \leq p(k) \leq 1\) for all \(k \in \Z^+\text{.}\) Now we must show that the probabilities sum to 1. We have</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\sum_{k=1}^{\infty} p(k) &amp;= \sum_{k=1}^{\infty} (1-p)^{k-1} p \, = \, p \sum_{k=1}^{\infty} (1-p)^{k-1}\\
-&amp;= p \sum_{j=0}^{\infty} (1-p)^{j} \, = \, \frac{p}{1 - (1-p)} \,=\, \frac{p}{p} \,=\, 1.
-\end{align*}
+\begin{equation*}
+\begin{array}{c||c|c|c|c|c}
+&amp;  \,\,0  \,\,&amp; \,\,1 \,\, &amp;  \,\,2 \,\, &amp;  \,\,3 \,\, &amp; \,\, 4 \,\,  \\
+\hline
+\hline
+1 &amp; 1 &amp; 2&amp;5&amp;9&amp;19 \\
+2 &amp; 1 &amp;2 &amp;5&amp;9&amp;19 \\
+3 &amp; 1 &amp; 3&amp;4&amp;10&amp; 18\\
+4 &amp; 1 &amp; 0&amp;0&amp;0&amp; 0 \\
+\end{array}
+\end{equation*}
 </div>
-<p></p>
+<p class="continuation">In the limit, vertices 1,2,3 are equally important. Meanwhile, vertex 4 has no importance.</p>
 </div></body>
 </html>

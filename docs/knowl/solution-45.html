@@ -15,13 +15,16 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
-<p>First, we note that \(0 \leq p(k) \leq 1\) for \(0 \leq k \leq n\text{.}\) Next, we must prove that the probabilities all sum to one. This follows quickly from the binomial theorem with \(x=p\) and \(y=1-p\text{:}\)</p>
+<p>Using this spectral decomposition, and the orthonormal properties of \(\bu_1, \bu_2\text{,}\) we get</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\sum_{k=0}^n {n \choose k} p^k (1-p)^{n-k} = (p + (1-p))^n = 1^n = 1.
-\end{equation*}
+\begin{align*}
+A^n \bx  &amp;=
+\left(\lambda_1^n \bu_1 \bu_1^{\top}  + \lambda_2^n \bu_2 \bu_2^{\top}\right) (c_1 \bu_1 + c_2 \bu_2)\\
+&amp;= c_1 \lambda_1^n \bu_1  + c_2 \lambda_2^n \bu_2.
+\end{align*}
 </div>
+<p></p>
 </div>
-<span class="incontext"><a href="probdist.html#solution-45">in-context</a></span>
+<span class="incontext"><a href="algcentrality.html#solution-45">in-context</a></span>
 </body>
 </html>
