@@ -57,7 +57,6 @@ where <m>D</m>  is the diagonal matrix with  <m> D_{ii} = \max \left\{ k_i^{\mat
 				<li>
 					<p>
  Find the transition matrix <m>P</m>  of the following undirected graph. Hint: construct <m>P</m>   row by row.
-And remember that when <m>k_i^{\mathrm{out}}=0</m>, we set <m>a_{ii}=1</m>, corresponding to the move "stay where we are."
 
 
 
@@ -583,6 +582,7 @@ Things don't work out as nicely on directed graphs. We will work through an exam
 				<li>
 					<p>
  Find the transition matrix <m>P</m> of the following directed graph. Hint: construct <m>P</m> row by row.
+ And remember that when <m>k_i^{\mathrm{out}}=0</m>, we set <m>a_{ii}=1</m>, corresponding to the move "stay where we are."
 
 
 			<image width="30%" xml:id="fig-img-randomwalk1" source="./images/directed-graph.png" />
