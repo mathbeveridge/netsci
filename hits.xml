@@ -346,7 +346,7 @@ Fill in the table below, as follows, starting at <m>t=1</m>
 
 
 
-<!--solution>
+<solution>
 <p>
 
 <me>
@@ -385,7 +385,7 @@ Fill in the table below, as follows, starting at <m>t=1</m>
 </me>
 
 </p>
-</solution-->
+</solution>
 
 
 
@@ -407,7 +407,7 @@ With the previous problem in mind, write each of the update rules as a matrix eq
 Check that your matrix equations are correct for the example from Problem 1.
 
 
-<!--solution>
+<solution>
 <p>
 
 
@@ -428,7 +428,7 @@ Row <m>i</m> of <m>A</m> contains the out-neighbors of vertex <m>i</m>.  Row <m>
 
 
 </p>
-</solution-->
+</solution>
 
 
 
@@ -454,7 +454,7 @@ Using your answer in question 2, you can now write down two matrix recurrences f
 			</li>
 		</ul>
 
-<!--solution>
+<solution>
 <p>
 We have
 <me>
@@ -472,7 +472,7 @@ which we can write more compactly as
 </me>
 
 </p>
-</solution-->
+</solution>
 
 
 				</p>
@@ -483,7 +483,7 @@ which we can write more compactly as
 			<idx><h>HITS Eigensystems</h></idx>
 			<statement>
 				<p>
-After convergence, our update rule becomes  <m>\bh \rightarrow lambda \bh</m> and <m>\ba \rightarrow \mu \ba</m>. (Recall that HITS performs a renormalization at each step to deal with <m>\lambda, \mu</m>.) So after convergence, your matrix equations   become statements about eigenvectors and eigenvalues. With that in mind:
+After convergence, our update rule becomes  <m>\bh \rightarrow \lambda \bh</m> and <m>\ba \rightarrow \mu \ba</m>. (Recall that HITS performs a renormalization at each step to deal with <m>\lambda, \mu</m>.) So after convergence, your matrix equations   become statements about eigenvectors and eigenvalues. With that in mind:
 			<ol>
 				<li>
 					<p>
@@ -499,7 +499,7 @@ After convergence, our update rule becomes  <m>\bh \rightarrow lambda \bh</m> an
 For inspiration you  should look back at our discussion of other algebraic centralities.
 
 
-<!--solution>
+<solution>
 
 <p>
 	<ol>
@@ -531,7 +531,7 @@ We have  <m>\lambda=\mu</m> because
 			</ol>
 </p>
 
-</solution-->
+</solution>
 
 
 

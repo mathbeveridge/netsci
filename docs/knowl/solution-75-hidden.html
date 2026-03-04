@@ -10,18 +10,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like">
-<p>By a similar argument, we have</p>
+<body><div class="solution solution-like"><ol class="lower-alpha">
+<li><p>For each of the matrix equations above, as \(t \rightarrow \infty\text{,}\) we converge to a vector in the direction of the largest eigenvector. In other words, the hub score \(\bh\) satisfies<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+A \, A^{\top} \, \bh= \lambda \bh
+\end{equation*}
+</div>where \(\lambda\) is the largest eigenvalue of \(A \, A^{\top}\text{.}\) Meanwhile, the authority score \(\ba\) satisfies<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+A^{\top} \, A \,   \ba= \mu \ba
+\end{equation*}
+</div>where \(\mu\) is the largest eigenvalue of \(A^{\top} \,A\text{.}\)</p></li>
+<li>
+<p>We have  \(\lambda=\mu\) because</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-A^3  = \lambda_1^3 \bu_1 \bu_1^{\top}  + \lambda_2^3 \bu_2 \bu_2^{\top}
+\lambda \bh = AA^{\top} h = AA^{\top} (A \ba) = A (A^{\top} A \ba) = \mu A \ba = \mu \bh. 
 \end{equation*}
 </div>
-<p class="continuation">and by induction, we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-A^n  = \lambda_1^n \bu_1 \bu_1^{\top}  + \lambda_2^n \bu_2 \bu_2^{\top}
-\end{equation*}
-</div>
-</div></body>
+</li>
+</ol></div></body>
 </html>

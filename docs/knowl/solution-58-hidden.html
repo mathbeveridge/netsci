@@ -11,12 +11,26 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p>We need \(\displaystyle{\zeta(x) = \sum_{k=1}^{\infty} k^{-x}}\) to converge so that the constant \(C\) is finite. From calculus, we recall that the series</p>
+<p>We have</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\sum_{n=1}^{\infty} n^{-r} =  \sum_{n=1}^{\infty} \frac{1}{n^r}
-\end{equation*}
+\begin{align*}
+&amp; \begin{bmatrix}
+2 &amp; 3 &amp; 2 &amp; 3 &amp; 3 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+0 &amp; 1/2 &amp; 0 &amp; 0 &amp; 1/2 &amp; 0\\
+1/3 &amp; 0 &amp; 1/3 &amp; 0 &amp; 1/3 &amp; 0\\
+0 &amp; 1/2 &amp; 0 &amp; 1/2 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1/3 &amp; 0 &amp; 1/3 &amp; 1/3\\
+1/3 &amp; 1/3 &amp; 0 &amp; 1/3 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0\\
+\end{bmatrix}\\
+&amp;=
+\begin{bmatrix}
+2 &amp; 3 &amp; 2 &amp; 3 &amp; 3 &amp; 1
+\end{bmatrix}
+\end{align*}
 </div>
-<p class="continuation">converges if and only if \(r &gt; 1\text{.}\) Translating this to our power law, we set \(k=n\) and \(\alpha=r\text{.}\)  We must have \(\alpha &gt; 1\) in order for the constant \(C\) to be finite.</p>
+<p></p>
 </div></body>
 </html>

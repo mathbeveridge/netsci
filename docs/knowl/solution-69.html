@@ -15,12 +15,9 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
-<ol class="lower-alpha">
-<li><p>Degree Centrality   \(c_i^D  = \deg(i) = k_i\) <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality13.svg" role="img" class="contained"></div></p></li>
-<li><p>Betweenness Centrality   \(c_i^B = \displaystyle{\sum_{s \neq i} \sum_{t \neq i, s} \frac{n_{s,t}(i)}{n_{s,t}}}\) <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality14.svg" role="img" class="contained"></div></p></li>
-<li><p>Closeness Centrality  \(c_i^C =  \displaystyle{\frac{1}{\sum_{j} d_{i,j}}}\) <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/fig-img-centrality15.svg" role="img" class="contained"></div></p></li>
-</ol>
+<p>One of the two long-term outcomes we observed was ending up in the "spider trap" and then alternate between vertices 5 and 6. So in the long run, we spend half our time at vertex 5 and half our time at vertex 6. However, even in this case, the vector <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">doesn't capture the periodic behavior</em> of our long-term random walk. If we first step to vertex 5 at time \(T\text{,}\) then we will also be at vertex 5 at time \(T+2, T+4, T+6, \) etc, and we will be at vertex 6 at time \(T+1, T+3, T+5, \) etc.</p>
+<p>Another behavior that we don't see in this vector is that we could have ended up at vertex 2, and then remained there forever. That doesn't even show up at all in this vector.</p>
 </div>
-<span class="incontext"><a href="centrality.html#solution-69">in-context</a></span>
+<span class="incontext"><a href="randomwalk.html#solution-69">in-context</a></span>
 </body>
 </html>
