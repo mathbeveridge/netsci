@@ -18,8 +18,8 @@
 <p>Our recursive update rule is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-\bh(t) &amp;= A \, \ba(t-1),\\
-\ba(t) &amp;= A^{\top} \, \bh(t).
+\ba(t) &amp;= A^{\top} \, \bh(t-1).\\
+\bh(t) &amp;= A \, \ba(t),
 \end{align*}
 </div>
 <p>Row \(i\) of \(A\) contains the out-neighbors of vertex \(i\text{.}\)  Row \(i\) of \(A^{\top}\) contains the in-neighbors of \(i\text{.}\)</p>

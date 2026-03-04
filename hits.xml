@@ -359,9 +359,9 @@ Fill in the table below, as follows, starting at <m>t=1</m>
 \hline
 \ba_1  &amp; 0 &amp; 1 &amp; 2 &amp; 2 &amp; 1 \\
 \hline
-\ba_2  &amp;0 &amp; 1 &amp;8&amp;6&amp; 5 \\
+\ba_2  &amp;0 &amp; 1 &amp;7&amp;7&amp; 5 \\
 \hline
-\ba_3  &amp; 0 &amp; 1 &amp; 27&amp; 25 &amp; 19  \\
+\ba_3  &amp; 0 &amp; 1 &amp; 26&amp; 26 &amp; 19  \\
 
 \end{array}
 
@@ -373,11 +373,11 @@ Fill in the table below, as follows, starting at <m>t=1</m>
 \hline
 \bh_0  &amp; 1&amp;1&amp;1&amp;1&amp;1 \\
 \hline
-\bh_1  &amp;1 &amp; 5 &amp; 0 &amp; 3 &amp; 1 \\
+\bh_1  &amp;1 &amp; 5 &amp; 0 &amp; 2 &amp; 2 \\
 \hline
-\bh_2  &amp; 1 &amp; 19 &amp; 0&amp; 8 &amp;  6 \\
+\bh_2  &amp; 1 &amp; 19 &amp; 0&amp; 7 &amp;  7 \\
 \hline
-\bh_3  &amp; 1 &amp;71&amp; 0 &amp;27 &amp;25 \\
+\bh_3  &amp; 1 &amp;71&amp; 0 &amp;26 &amp;26 \\
 
 \end{array}
 
@@ -414,12 +414,13 @@ Check that your matrix equations are correct for the example from Problem 1.
 Our recursive update rule is
 </p>
 <md>
+	<mrow>
+		\ba(t) &amp;= A^{\top} \, \bh(t-1).
+		</mrow>	
 <mrow>
-\bh(t) &amp;= A \, \ba(t-1),
+\bh(t) &amp;= A \, \ba(t),
 </mrow>
-<mrow>
-\ba(t) &amp;= A^{\top} \, \bh(t).
-</mrow>
+
 </md>
 <p>
 
