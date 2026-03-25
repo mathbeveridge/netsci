@@ -12,42 +12,13 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>You will calculate the clustering coefficient</p>
+<p>We are interested in the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">early time behavior</em> of \(I_k\text{,}\) since we would like to intervene  (via quarantine or travel restrictions, etc) before the disease gets out of hand. If there aren't many infected vertices, then we may approximate \(1 - I_k \approx 1\) so that</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-C = \frac{3 \times (\mbox{# of triangles})}{\mbox{# of connected triples}}
+\frac{dI_k}{dt} \approx \beta \,  k \,  \Theta.
 \end{equation*}
 </div>
-<p class="continuation">where a "connected triple" are three vertices \(u,v,w\) such that \((u,v)\) and \((v,w)\) are edges. Intuitively, the clustering coefficient measures the  fraction of times that "pairs of my friends are also friends."</p>
-<ol class="lower-alpha">
-<li>
-<p>Show that there are</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-n {c/2 \choose 2}
-\end{equation*}
-</div>
-<p class="continuation">triangles in a Ring World. A nice way to argue this is to recognize that all triangles look like one "long edge" going distance \(\leq c/2\) and two "shorter edges." Orient the long edge  clockwise the two shorter edges  counter clockwise. Then associate this directed cycle with the vertex at the start of the long clockwise arc. <a class="solution-knowl original" data-knowl="./knowl/solution-112-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
-</li>
-<li>
-<p>Show that there are</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-n {c \choose 2}
-\end{equation*}
-</div>
-<p class="continuation">connected triples. These are paths of length 2 (which can be associated with their central vertex). <a class="solution-knowl original" data-knowl="./knowl/solution-113-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
-</li>
-<li>
-<p>Show that the clustering coefficient  is</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-C =  \frac{3(c-2)}{4(c-1)}.
-\end{equation*}
-</div>
-<p class="continuation">Furthermore, for \(c \geq 3\text{,}\) we have \(\frac{3}{8} \leq C  \leq  \frac{3}{4}\text{.}\) This is independent of the network size \(n\text{,}\) so we have high clustering. <a class="solution-knowl original" data-knowl="./knowl/solution-114-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
-</li>
-</ol>
-<span class="incontext"><a href="smallworld.html#p-614">in-context</a></span>
+<p class="continuation">Early on, the set of infected nodes is tree-like. In particular, you can assume that an infected vertex \(v\) has a link that points back to the (infected) vertex that transmitted the disease.</p>
+<span class="incontext"><a href="epidemics.html#p-614">in-context</a></span>
 </body>
 </html>

@@ -15,25 +15,17 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
-<p>We have</p>
+<p></p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\begin{array}{lllll}
-\bh(t) &amp;=&amp; A  \ba(t-1)  &amp;=&amp; \,  A \, A^{\top} \, \bh(t-1), \\
-\ba(t) &amp;=&amp; A^{\top} \bh(t)  &amp;=&amp; A^{\top} \, A \, \ba(t-1)
-\end{array}
-\end{equation*}
+\begin{align*}
+\E[\deg(v_k)] &amp;= \sum_{i=0}^{n-1}  i {n-1 \choose i } p^i (1-p)^{n-1-i}\\
+&amp;= \sum_{i=1}^{n-1}   \frac{(n-1)!}{(i-1)! (n-1-i)!} p^i (1-p)^{n-1-i}\\
+&amp;= (n-1)p  \sum_{i=1}^{n-1}   \frac{(n-2)!}{(i-1)! (n-1-i)!} p^{i-1} (1-p)^{n-1-i}\\
+&amp;= (n-1)p
+\end{align*}
 </div>
-<p class="continuation">which we can write more compactly as</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\begin{array}{lllll}
-\bh(t) &amp;=&amp;   A \, A^{\top} \, \bh(t-1), \\
-\ba(t)  &amp;=&amp; A^{\top} \, A \, \ba(t-1).
-\end{array}
-\end{equation*}
+<p></p>
 </div>
-</div>
-<span class="incontext"><a href="hits.html#solution-84">in-context</a></span>
+<span class="incontext"><a href="randomgraph.html#solution-84">in-context</a></span>
 </body>
 </html>

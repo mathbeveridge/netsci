@@ -15,13 +15,8 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
-<p>We need to fix the fact that importance leaks out of vertices in a weakly connected digraph. Here are two possible solutions.</p>
-<ul class="disc">
-<li><p>Every vertex has inherent importance of 1. Update the importance to be 1 plus the sum of the importances of its in-neighbors</p></li>
-<li><p>Pretend that there is a self-loop at each vertex. So the current importance of a vertex is included in the updated importance. Update the importance to be the vertex's current importance plus the sum of the importances of its neighbors.</p></li>
-</ul>
-<p class="continuation">You can also try different weighting schemes of how much to count your own importance versus the importance of your neighbors.</p>
+<p>We must pick the \(m\) edges. These must be the only edges that appear: \(p^m\) says that those \(m\) edges are present and \((1-p)^{{n \choose 2} - m}\) says that the remaining edges are not present.</p>
 </div>
-<span class="incontext"><a href="algcentrality.html#solution-81">in-context</a></span>
+<span class="incontext"><a href="randomgraph.html#solution-81">in-context</a></span>
 </body>
 </html>
