@@ -39,9 +39,9 @@ The tail of the degree distribution satisfies the power law
 			<statement>
 				<p>
 Suppose that we have run Price's Model and that the network has <m>n</m> vertices. We now add vertex <m>n+1</m>, as well as <m>c</m> arcs from vertex <m>n+1</m> to the existing network.
-Let <m>k_i</m> denote the degree of vertex <m>i</m>. Prove that for each new arc we add from vertex <m>n+1</m>,
+Let <m>k_i^{\mathrm{in}}</m> denote the in-degree of vertex <m>i</m>. Prove that for each new arc we add from vertex <m>n+1</m>,
 <me>
-\P(\mbox{the arc points to vertex } i) = \frac{a+k_i}{n(c+a)}.
+\P(\mbox{the arc points to vertex } i) = \frac{a+k_i^{\mathrm{in}}}{n(c+a)}.
 </me>
 
 <!--solution>
@@ -52,11 +52,11 @@ The probability an the arc points to vertex <m>i</m> is
 </p>
 <md>
 <mrow>
-\frac{a}{a+c} \cdot \frac{1}{n} + \frac{c}{a+c} \cdot \frac{k_i}{\sum_j k_j}
-&amp;=  \frac{a}{n(a+c)}  + \frac{c}{a+c} \cdot \frac{k_i}{n c}
+\frac{a}{a+c} \cdot \frac{1}{n} + \frac{c}{a+c} \cdot \frac{k_i^{\mathrm{in}}}{\sum_j k_j}
+&amp;=  \frac{a}{n(a+c)}  + \frac{c}{a+c} \cdot \frac{k_i^{\mathrm{in}}}{n c}
 </mrow>
 <mrow>
-&amp;=  \frac{a+k_i}{n(a+c)}
+&amp;=  \frac{a+k_i^{\mathrm{in}}}{n(a+c)}
 </mrow>
 </md>
 <p>
@@ -88,17 +88,18 @@ Consider the following network growth model.
 		</ul>
 Show that when we add vertex <m>n+1</m>, this local process ALSO satisfies
 <me>
-\P(\mbox{the arc points to vertex } i) = \frac{a+k_i}{n(c+a)}.
+\P(\mbox{the arc points to vertex } i) = \frac{a+k_i^{\mathrm{in}}}{n(c+a)}.
 </me>
 
 
 <!--solution>
 <p>
-With probability <m>\frac{a}{a+c}</m>, we pick a random vertex. With probability <m>\frac{c}{a+c}</m>, we pick a random arc, and then take its target vertex.
-Among the <m>cn</m> arcs, <m>k_i</m> of them end at vertex <m>i</m>.
+With probability <m>\frac{a}{a+c}</m>, we pick a random vertex. With probability <m>\frac{c}{a+c}</m>,
+ we pick a random arc, and then take its target vertex.
+Among the <m>cn</m> arcs, <m>k_i^{\mathrm{in}}</m> of them end at vertex <m>i</m>.
 This gives the same equation
 <me>
-\frac{a}{a+c} \cdot \frac{1}{n} + \frac{c}{a+c} \cdot \frac{k_i}{cn}
+\frac{a}{a+c} \cdot \frac{1}{n} + \frac{c}{a+c} \cdot \frac{k_i^{\mathrm{in}}}{cn}
 </me>
 as in the previous question.
 
@@ -152,7 +153,7 @@ You will now show that this model also generates a power law degree distribution
 					<p>
  Show that for each arc starting at vertex <m>n+1</m>, we have
 <me>
-\P(\mbox{the arc points to vertex } i) = (1- \gamma) \frac{1}{n}  + \gamma \frac{k_i}{cn}.
+\P(\mbox{the arc points to vertex } i) = (1- \gamma) \frac{1}{n}  + \gamma \frac{k_i^{\mathrm{in}}}{cn}.
 </me>
 
 <!--solution>
@@ -160,17 +161,20 @@ You will now show that this model also generates a power law degree distribution
 		<ul>
 			<li>
 			<p>
- The probability that we consider copying a citation to paper <m>i</m> is <m>\frac{k_i}{cn}</m>. The probability that we do copy that citation is <m>\gamma</m>. We try this <m>c</m> times.
+ The probability that we consider copying a citation to paper <m>i</m> is <m>\frac{k_i^{\mathrm{in}}}{cn}</m>. 
+ The probability that we do copy that citation is <m>\gamma</m>. We try this <m>c</m> times.
 			</p>
 			</li>
 			<li>
 			<p>
- The expected number of random citations we make is <m>c(1-\gamma)</m>. A paper has probability <m>\frac{1}{n}</m> of being chosen each time.
+ The expected number of random citations we make is <m>c(1-\gamma)</m>. 
+ A paper has probability <m>\frac{1}{n}</m> of being chosen each time.
 			</p>
 			</li>
 		</ul>
 
-<em>Note: </em> Assuming that <m>n</m> is large compared to <m>c</m>, the probability that <m>i</m> gets multiple citations is negligible, so below, we will use the approximation
+<em>Note: </em> Assuming that <m>n</m> is large compared to <m>c</m>, the probability that <m>i</m> gets multiple citations 
+is negligible, so below, we will use the approximation
 <m>\P</m>(paper <m>i</m> receives a citation) <m>\approx \E(\#</m> citations received by paper <m>i</m>).
 
 
@@ -208,7 +212,7 @@ You will now show that this model also generates a power law degree distribution
 					<p>
   Plug <m>\gamma = \frac{c}{c+a}</m> into equation from part (a) and simplify to show that we once again get
 <me>
-\P(\mbox{the arc points to vertex } i) = \frac{a+k_i}{n(c+a)}.
+\P(\mbox{the arc points to vertex } i) = \frac{a+k_i^{\mathrm{in}}}{n(c+a)}.
 </me>
 
 <!--solution>
@@ -218,19 +222,19 @@ You will now show that this model also generates a power law degree distribution
 <md>
 <mrow>
 \P(\mbox{the arc points to vertex } i)
-&amp;= (1- \gamma) \frac{1}{n}  + \gamma \frac{k_i}{cn}
+&amp;= (1- \gamma) \frac{1}{n}  + \gamma \frac{k_i^{\mathrm{in}}}{cn}
 </mrow>
 <mrow>
 &amp;=
-\left( 1 - \frac{c}{c+a} \right) \frac{1}{n} + \frac{c}{c+a}  \frac{k_i}{cn}
+\left( 1 - \frac{c}{c+a} \right) \frac{1}{n} + \frac{c}{c+a}  \frac{k_i^{\mathrm{in}}}{cn}
 </mrow>
 <mrow>
 &amp;=
-\frac{a}{c+a} \frac{1}{n} + \frac{c}{c+a}  \frac{k_i}{cn}
+\frac{a}{c+a} \frac{1}{n} + \frac{c}{c+a}  \frac{k_i^{\mathrm{in}}}{cn}
 </mrow>
 <mrow>
 &amp;=
-\frac{a+k_i}{n(c+a)}
+\frac{a+k_i^{\mathrm{in}}}{n(c+a)}
 </mrow>
 </md>
 <p>
@@ -265,7 +269,7 @@ where <m>0 &lt; \gamma &lt; 1</m>. Depending on the value of <m>\gamma</m>, our 
 				<li>
 					<p>
 This vertex copying model leads to the same equations for the degree distribution of the resulting network. 
-However, the actual network structure of the vertex copying model is very different from the netwok structure of 
+However, the actual network structure of the vertex copying model is very different from the network structure of 
 Price's Model. Explain why. (Hint: start by thinking about what the vertex copying model would look like when 
 <m>\gamma</m> is very very close to 1.)
 

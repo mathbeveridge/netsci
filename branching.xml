@@ -60,7 +60,7 @@ Use induction on <m>t \geq 0</m>  to prove that <m>X_n</m>, the size of the <m>n
 \E[X_n] = \mu^n
 </me>
 
-<!--solution>
+<solution>
 <p>
 We have <m>E[X_0] = 1 = \mu^0.</m> Assuming that <m>\E[X_n] = \mu^n</m>, we have
 </p>
@@ -76,7 +76,7 @@ We have <m>E[X_0] = 1 = \mu^0.</m> Assuming that <m>\E[X_n] = \mu^n</m>, we have
 </md>
 <p>
 </p>
-</solution-->
+</solution>
 
 
 				</p>
@@ -99,7 +99,7 @@ be the total number of individuals in the family tree at time <m>n</m>.
 \E[Z_n] = 1 + \mu + \mu^2 + \cdots + \mu^n.
 </me>
 
-<!--solution>
+<solution>
 <p>
 Using linearity of expectation, we have
 <me>
@@ -109,7 +109,7 @@ Using linearity of expectation, we have
 =  \sum_{t=0}^n \mu^t
 </me>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -120,7 +120,7 @@ Using linearity of expectation, we have
 \E[Z_n] = \frac{\mu^{n+1} -1}{\mu -1}.
 </me>
 
-<!--solution>
+<solution>
 <p>
 Using the formula from part (a), this statement is equivalent to
 <me>
@@ -128,7 +128,7 @@ Using the formula from part (a), this statement is equivalent to
 </me>
 When we expand, we see that all the terms cancel out except for the first term <m>\mu^{n+1}</m> and the last term <m>-1</m>.
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -153,7 +153,7 @@ Now let's look at the asymptotic behavior of the size of the tree. Let
 					<p>
  Confirm that if <m>\mu &lt; 1</m> then <m>\E[Z]</m> is finite. Then find a formula for <m>\E[Z]</m>.
 
-<!--solution>
+<solution>
 <p>
 If <m>\mu &lt; 1</m> then <m>\mu^{n+1} \rightarrow 0</m>, so
 <me>
@@ -161,7 +161,7 @@ If <m>\mu &lt; 1</m> then <m>\mu^{n+1} \rightarrow 0</m>, so
 = \frac{-1}{\mu-1} = \frac{1}{1- \mu}.
 </me>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -169,7 +169,7 @@ If <m>\mu &lt; 1</m> then <m>\mu^{n+1} \rightarrow 0</m>, so
 					<p>
  Confirm that if <m>\mu &gt; 1</m> then <m>\E[Z]</m> is infinite.
 
-<!--solution>
+<solution>
 <p>
 If <m>\mu &gt; 1</m> then <m>\mu^{n+1} \rightarrow \infty</m>, so
 <me>
@@ -177,7 +177,7 @@ If <m>\mu &gt; 1</m> then <m>\mu^{n+1} \rightarrow \infty</m>, so
 = \infty.
 </me>
 </p>
-</solution-->
+</solution>
 
 					</p>
 				</li>
@@ -211,7 +211,7 @@ Show that this is true by proving the contrapositive statement:
 			</li>
 		</ul>
 
-<!--solution>
+<solution>
 <p>
 We have
 <me>
@@ -227,7 +227,7 @@ and so
 \E[Z] = \lim_{n \rightarrow \infty} \E[Z] = \lim_{n \rightarrow \infty}  \alpha (n+1) = \infty.
 </me>
 </p>
-</solution-->
+</solution>
 
 
 

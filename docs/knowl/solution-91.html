@@ -15,8 +15,26 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
-<p>We must pick the \(m\) edges. These must be the only edges that appear: \(p^m\) says that those \(m\) edges are present and \((1-p)^{{n \choose 2} - m}\) says that the remaining edges are not present.</p>
+<p>We have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\P[ X_t \geq 1 \mbox{ for all } t \geq 0] = \alpha &gt;0.
+\end{equation*}
 </div>
-<span class="incontext"><a href="randomgraph.html#solution-91">in-context</a></span>
+<p class="continuation">But then</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[Z_n] = \sum_{t=0}^n \E[X_t]  \geq  \sum_{t=0}^n \P[X_t \geq 1]
+= \sum_{t=0}^n  \alpha = \alpha (n+1)
+\end{equation*}
+</div>
+<p class="continuation">and so</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\E[Z] = \lim_{n \rightarrow \infty} \E[Z] = \lim_{n \rightarrow \infty}  \alpha (n+1) = \infty.
+\end{equation*}
+</div>
+</div>
+<span class="incontext"><a href="branching.html#solution-91">in-context</a></span>
 </body>
 </html>

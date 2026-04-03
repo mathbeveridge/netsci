@@ -15,17 +15,12 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
-<p></p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\E[\deg(v_k)] &amp;= \sum_{i=0}^{n-1}  i {n-1 \choose i } p^i (1-p)^{n-1-i}\\
-&amp;= \sum_{i=1}^{n-1}   \frac{(n-1)!}{(i-1)! (n-1-i)!} p^i (1-p)^{n-1-i}\\
-&amp;= (n-1)p  \sum_{i=1}^{n-1}   \frac{(n-2)!}{(i-1)! (n-1-i)!} p^{i-1} (1-p)^{n-1-i}\\
-&amp;= (n-1)p
-\end{align*}
+<ul class="disc">
+<li><p>The probability that we consider copying a citation to paper \(i\) is \(\frac{k_i}{cn}\text{.}\) The probability that we do copy that citation is \(\gamma\text{.}\) We try this \(c\) times.</p></li>
+<li><p>The expected number of random citations we make is \(c(1-\gamma)\text{.}\) A paper has probability \(\frac{1}{n}\) of being chosen each time.</p></li>
+</ul>
+<p class="continuation"><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Note:</em> Assuming that \(n\) is large compared to \(c\text{,}\) the probability that \(i\) gets multiple citations is negligible, so below, we will use the approximation \(\P\)(paper \(i\) receives a citation) \(\approx \E(\#\) citations received by paper \(i\)).</p>
 </div>
-<p></p>
-</div>
-<span class="incontext"><a href="randomgraph.html#solution-94">in-context</a></span>
+<span class="incontext"><a href="pricemodel.html#solution-94">in-context</a></span>
 </body>
 </html>

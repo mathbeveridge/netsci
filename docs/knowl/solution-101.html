@@ -15,26 +15,15 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
-<p>We have</p>
+<p></p>
+<p>The probability that an edge from vertex \(n+1\) is incident with vertex \(i\) is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\P[ X_t \geq 1 \mbox{ for all } t \geq 0] = \alpha &gt;0.
+\frac{k_i}{2cn} = \frac{c + k_i^{\mathrm{in}}}{2cn} = \frac{1}{2} \frac{1}{n} + \frac{1}{2} \frac{k_i^{\mathrm{in}}}{cn}
 \end{equation*}
 </div>
-<p class="continuation">But then</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\E[Z_n] = \sum_{t=0}^n \E[X_t]  \geq  \sum_{t=0}^n \P[X_t \geq 1]
-= \sum_{t=0}^n  \alpha = \alpha (n+1)
-\end{equation*}
+<p class="continuation">and this is Price's model with \(a=c\text{.}\)</p>
 </div>
-<p class="continuation">and so</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\E[Z] = \lim_{n \rightarrow \infty} \E[Z] = \lim_{n \rightarrow \infty}  \alpha (n+1) = \infty.
-\end{equation*}
-</div>
-</div>
-<span class="incontext"><a href="branching.html#solution-101">in-context</a></span>
+<span class="incontext"><a href="pricemodel.html#solution-101">in-context</a></span>
 </body>
 </html>

@@ -12,22 +12,31 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Turning to connected triples, show that</p>
+<p>Taking the derivative of the previous quantity, and using the approximation</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\E[ \mbox{# connected triples using one shortcut edge} ]
-= \frac{cpn}{2} (c + c) = c^2 p n.
+\frac{dI_k}{dt} \approx \beta \,  k \,  \Theta,
 \end{equation*}
 </div>
-<p class="continuation">and that</p>
+<p class="continuation">we get a differential equation of the form</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\E[ \mbox{# connected triples using two shortcut edges} ]
-=
-n {n-1 \choose 2} q^2
-\approx \frac{c^2 p^2}{2} n.
+\frac{d \Theta}{d t} = A \Theta
 \end{equation*}
 </div>
-<span class="incontext"><a href="smallworld.html#p-643">in-context</a></span>
+<p class="continuation">which has solution</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\Theta(t) = C e^{At}.
+\end{equation*}
+</div>
+<p class="continuation">Show that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+A= \beta \frac{\langle k^2 \rangle - \langle k \rangle}{\langle k \rangle}.
+\end{equation*}
+</div>
+<p class="continuation">(The constant \(C\) is determined by the initial conditions.) </p>
+<span class="incontext"><a href="epidemics.html#p-643">in-context</a></span>
 </body>
 </html>
