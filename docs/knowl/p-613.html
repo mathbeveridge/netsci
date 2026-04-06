@@ -12,43 +12,12 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<ol class="lower-alpha">
-<li>
-<p>Interpret the following differential equation for the Susceptible/Infected Model (SI Model) with <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">transmission rate</em> \(\beta \langle k \rangle\text{:}\)</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\frac{dI}{dt} = \beta \langle k \rangle I S = \beta \langle k \rangle  I (1-I).
-\end{equation*}
-</div>
-</li>
-<li>
-<p>This differential equation is called the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">logistic equation</em>. Its solution is the logistic function</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-I(t) = \frac{I_0}{I_0 + (1-I_0)e^{-\beta \langle k \rangle t}}
-\end{equation*}
-</div>
-<p class="continuation">where \(I_0 = I(0)\) is the fraction of infected people at time \(t=0\text{.}\) We can write this as</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-I(t) = \frac{1}{1+a e^{-c t}}
-\end{equation*}
-</div>
-<p class="continuation">where \(a = 1/I_0 - 1\) and \(c= \beta \langle k \rangle\text{.}\) Calculate \(\frac{dI}{dt}\) to confirm that \(I(t)\) satisfies the logistic equation</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\frac{dI}{dt} = c I (1-I).
-\end{equation*}
-</div>
-</li>
-<li>
-<p>Here is a plot of the logistic function  \(I(t)\text{.}\) <div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/simodel.png" class="contained"></div> Look at the formula from question  2(b) and explain why</p>
-<ol class="lower-roman">
-<li><p>\(I(t) \sim a e^{\beta \langle k \rangle t}\) when \(t &gt;0\) is very small.</p></li>
-<li><p>\(I(t) \approx 1\) when \(t\) is very large.</p></li>
-</ol>
-</li>
-</ol>
-<span class="incontext"><a href="epidemics.html#p-613">in-context</a></span>
+<p>The linear threshold model  is a dynamic process for diffusion of innovation on a network. We are given a network and a threshold \(0 &lt; q &lt; 1\text{.}\) The network starts with all vertices using behavior \(B\text{.}\) We pick a seed set of innovators who adopt behavior \(A\text{.}\) We then watch the innovation spread according to the following rule. Let \(p_v\) be the fraction of neighbors of vertex \(v\) that have adopted behavior \(A\text{.}\) The vertex \(v\) will:</p>
+<ul class="disc">
+<li><p>adopt behavior \(A\) if \({p \geq q}\)</p></li>
+<li><p>adopt behavior \(B\) if \({p &lt; q}\)</p></li>
+</ul>
+<p class="continuation">We cycle through all the vertices until the update process stabilizes. The resulting adoption process is called a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">cascade</em>. We have a <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">complete cascade</em> when every vertex adopts the new behavior \(A\text{.}\)</p>
+<span class="incontext"><a href="cascades.html#p-613">in-context</a></span>
 </body>
 </html>

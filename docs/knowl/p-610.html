@@ -12,13 +12,19 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Recall that</p>
+<p>Here is very useful fact from probability. Let \(X\) be any random variable taking on positive integer values. We can write the expected value of \(X\) as</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\mbox{Var}[X] = E[X^2] - E[X]^2 &gt; 0
+\E[X] = \sum_{k=1}^{\infty} \Pr[X \geq k].
 \end{equation*}
 </div>
-<p class="continuation">when \(X\) is not constant. Use this to explain why that the expected degree of \(w\) is larger than the expected degree of \(v\text{.}\) </p>
-<span class="incontext"><a href="epidemics.html#p-610">in-context</a></span>
+<p class="continuation">Indeed, when \(X\) only takes on positive integer values, we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\sum_{k=1}^{\infty} \Pr[X \geq k] = \sum_{k=1}^{\infty} k \Pr[X = k]
+\end{equation*}
+</div>
+<p class="continuation">and the right hand side is the definition of \(\E[X]\text{.}\)</p>
+<span class="incontext"><a href="navsmallworld.html#p-610">in-context</a></span>
 </body>
 </html>
