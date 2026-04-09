@@ -11,13 +11,7 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body><div class="solution solution-like">
-<p></p>
-<p>The probability that an edge from vertex \(n+1\) is incident with vertex \(i\) is</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\frac{k_i}{2cn} = \frac{c + k_i^{\mathrm{in}}}{2cn} = \frac{1}{2} \frac{1}{n} + \frac{1}{2} \frac{k_i^{\mathrm{in}}}{cn}
-\end{equation*}
-</div>
-<p class="continuation">and this is Price's model with \(a=c\text{.}\)</p>
+<p>A triangle with two shortcut edges contains one ring edge (which we orient clockwise so that we only count it once) and a third vertex. We have \(n\) choices for the first endpoint of the ring edge. We have \(c/2\) choices for the other endpoint. Then we have \(n-2\) choices for the third vertex. We multiply by \(q^2\) which is the probability that both shortcut edges are present.</p>
+<p>As for a triangle with three shortcut edges, we cn choose the vertices in \({n \choose 3}\text{.}\) We multiply by \(q^3\) which is the probability that all three shortcut edges are present.</p>
 </div></body>
 </html>

@@ -181,34 +181,57 @@ C = \frac{3 \times (\mbox{# of triangles})}{\mbox{# of connected triples}}
 n {c/2 \choose 2}
 \end{equation*}
 </div>
-<p class="continuation">triangles in a Ring World. A nice way to argue this is to recognize that all triangles look like one "long edge" going distance \(\leq c/2\) and two "shorter edges." Orient the long edge  clockwise the two shorter edges  counter clockwise. Then associate this directed cycle with the vertex at the start of the long clockwise arc. </p>
+<p class="continuation">triangles in a Ring World. A nice way to argue this is to recognize that all triangles look like one "long edge" going distance \(\leq c/2\) and two "shorter edges." Orient the long edge  clockwise the two shorter edges  counter clockwise. Then associate this directed cycle with the vertex at the start of the long clockwise arc. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-102" id="solution-102"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-102"><div class="solution solution-like"><p id="p-575">We must pick a vertex and then pick two of its right-neighbors.</p></div></div></p>
 </li>
 <li id="li-289">
-<p id="p-575">Show that there are</p>
+<p id="p-576">Show that there are</p>
 <div class="displaymath">
 \begin{equation*}
 n {c \choose 2}
 \end{equation*}
 </div>
-<p class="continuation">connected triples. These are paths of length 2 (which can be associated with their central vertex). </p>
+<p class="continuation">connected triples. These are paths of length 2 (which can be associated with their central vertex). <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-103" id="solution-103"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-103"><div class="solution solution-like"><p id="p-577">We must pick the central vertex, then pick two of its neighbors.</p></div></div></p>
 </li>
 <li id="li-290">
-<p id="p-576">Show that the clustering coefficient  is</p>
+<p id="p-578">Show that the clustering coefficient  is</p>
 <div class="displaymath">
 \begin{equation*}
 C =  \frac{3(c-2)}{4(c-1)}.
 \end{equation*}
 </div>
-<p class="continuation">Furthermore, for \(c \geq 3\text{,}\) we have \(\frac{3}{8} \leq C  \leq  \frac{3}{4}\text{.}\) This is independent of the network size \(n\text{,}\) so we have high clustering. </p>
+<p class="continuation">Furthermore, for \(c \geq 3\text{,}\) we have \(\frac{3}{8} \leq C  \leq  \frac{3}{4}\text{.}\) This is independent of the network size \(n\text{,}\) so we have high clustering. <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-104" id="solution-104"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-104"><div class="solution solution-like">
+<p id="p-579">The clustering coefficient is</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{3 n {c/2 \choose 2}}{n {c \choose 2}} 
+= \frac{ 3 (c/2) (c/2-1)}{c(c-1)}
+= \frac{3(c-2)}{4(c-1)}.
+\end{equation*}
+</div>
+</div></div></p>
 </li>
 </ol></article><article class="exercise exercise-like" id="exercise-74"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Distances in a Ring World.</span>
 </h6>
-<ol id="p-577" class="lower-alpha">
-<li id="li-291"><p id="p-578">Consider vertices \(v_0\) and \(v_{m}\) where \(0 \leq m \leq n/2\text{.}\) What is the graph distance between these nodes? </p></li>
-<li id="li-292"><p id="p-579">What is the length of the "longest shortest path" starting at \(v_0\text{?}\) </p></li>
+<ol id="p-580" class="lower-alpha">
+<li id="li-291"><p id="p-581">Consider vertices \(v_0\) and \(v_{m}\) where \(0 \leq m \leq n/2\text{.}\) What is the graph distance between these nodes? <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-105" id="solution-105"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-105"><div class="solution solution-like">
+<p id="p-582">The graph distance is</p>
+<div class="displaymath">
+\begin{equation*}
+d(v_0, v_m) = \left\lceil \frac{m}{c/2} \right\rceil = \left\lceil \frac{2m}{c} \right\rceil.
+\end{equation*}
+</div>
+</div></div></p></li>
+<li id="li-292"><p id="p-583">What is the length of the "longest shortest path" starting at \(v_0\text{?}\) <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-106" id="solution-106"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-106"><div class="solution solution-like">
+<p id="p-584">The longest shortest path goes to vertex \(v_{n/2}\) with distance</p>
+<div class="displaymath">
+\begin{equation*}
+d(v_0, v_{n/2}) = \left\lceil \frac{n/2}{c/2} \right\rceil = \left\lceil \frac{n}{c} \right\rceil.
+\end{equation*}
+</div>
+</div></div></p></li>
 <li id="li-293">
-<p id="p-580">Show that the average distance from \(v_0\) to other vertices is less than or equal to</p>
+<p id="p-585">Show that the average distance from \(v_0\) to other vertices is less than or equal to</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{n}{2c} + 1.
@@ -216,11 +239,24 @@ C =  \frac{3(c-2)}{4(c-1)}.
 </div>
 <p class="continuation">Hint: you can use the upper bound \(\lceil x \rceil \leq x + 1\) for any \(x \in \R\text{.}\)</p>
 </li>
-</ol></article><article class="exercise exercise-like" id="exercise-75"><h6 class="heading">
+</ol>
+<p class="continuation"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-107" id="solution-107"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-107"><div class="solution solution-like"><div class="displaymath" id="p-586">
+\begin{align*}
+\frac{2}{n+1} \sum_{m=1}^{n/2} \left\lceil \frac{2m}{c} \right\rceil
+&amp;\leq  \frac{2}{n+1} \sum_{m=1}^{n/2} \left( \frac{2m}{c}  + 1\right)
+= \frac{2}{n+1}
+\left(
+\frac{2}{c} \frac{(n/2) (n/2+1)}{2} + \frac{n}{2}
+\right)\\
+&amp;=  \frac{2}{n+1}
+\left(
+\frac{n(n+2)}{4c} + \frac{n}{2} \right) \leq \frac{n}{2c} + 1
+\end{align*}
+</div></div></div></p></article><article class="exercise exercise-like" id="exercise-75"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Clustering Coefficient of a Small World.</span>
 </h6>
-<p id="p-581">We turn the Ring World into a Small World by adding  some random edges to the graph. We call these edges "shortcuts" because they traverse across the middle of the ring.</p>
-<p id="p-582">For each existing edge in the Ring World, we add a random edge with constant probability \(p\text{.}\) So we add a total of</p>
+<p id="p-587">We turn the Ring World into a Small World by adding  some random edges to the graph. We call these edges "shortcuts" because they traverse across the middle of the ring.</p>
+<p id="p-588">For each existing edge in the Ring World, we add a random edge with constant probability \(p\text{.}\) So we add a total of</p>
 <div class="displaymath">
 \begin{equation*}
 p\frac{cn}{2} = \frac{1}{2} cpn
@@ -229,7 +265,7 @@ p\frac{cn}{2} = \frac{1}{2} cpn
 <p class="continuation">random edges to the graph.</p>
 <ol class="lower-alpha">
 <li id="li-294">
-<p id="p-583">Define</p>
+<p id="p-589">Define</p>
 <div class="displaymath">
 \begin{equation*}
 q = \frac{\frac{cpn}{2}}{{n \choose 2}} \approx \frac{cp}{n}.
@@ -241,19 +277,19 @@ q = \frac{\frac{cpn}{2}}{{n \choose 2}} \approx \frac{cp}{n}.
 \P[ \mbox{edge } e \mbox{ is added to the graph}] \leq q.
 \end{equation*}
 </div>
-<p id="p-584"></p>
+<p id="p-590"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-108" id="solution-108"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-108"><div class="solution solution-like"><p id="p-591">We add a total of \(\frac{cpn}{2}\) edges out of a possible \({n \choose 2}\) edges. This fraction is an upper bound because we could choose the same edge twice.</p></div></div></p>
 </li>
 <li id="li-295">
-<p id="p-585">For a fixed vertex \(v_i\text{,}\) explain why</p>
+<p id="p-592">For a fixed vertex \(v_i\text{,}\) explain why</p>
 <div class="displaymath">
 \begin{equation*}
 \E[ \mbox{# shortcut edges incident with } v_i] = cp.
 \end{equation*}
 </div>
-<p id="p-586"></p>
+<p id="p-593"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-109" id="solution-109"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-109"><div class="solution solution-like"><p id="p-594">We add a total of \(\frac{cpn}{2}\) edges. Each time we add an edge, the probability that \(v_i\) is one of the endpoints is \(2/n\text{.}\)</p></div></div></p>
 </li>
 <li id="li-296">
-<p id="p-587">Next, we show that we have only added a constant number of new triangles. Show that</p>
+<p id="p-595">Next, we show that we have only added a constant number of new triangles. Show that</p>
 <div class="displaymath">
 \begin{equation*}
 \E[\mbox{# triangles using one shortcut edge} ] \leq
@@ -262,10 +298,10 @@ n{ c \choose 2} q
 \end{equation*}
 </div>
 <p class="continuation">So we are adding a constant number of triangles. For large \(n\text{,}\) these new triangles are negligible compared to the \(n { c/2 \choose 2}\) triangles already present in the ring.</p>
-<p id="p-588"></p>
+<p id="p-596"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-110" id="solution-110"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-110"><div class="solution solution-like"><p id="p-597">Such a triangle has two ring edges. We have \(n\) choices for the central vertex. We then have \({c \choose 2\) ways to choose its two neighbors. Finally, we add the shortcut edge with probabilty \(q\text{.}\)</p></div></div></p>
 </li>
 <li id="li-297">
-<p id="p-589">Triangles using 2 or 3 shortcut edges are also unlikely. Explain why</p>
+<p id="p-598">Triangles using 2 or 3 shortcut edges are also unlikely. Explain why</p>
 <div class="displaymath">
 \begin{equation*}
 \E[\mbox{# triangles using two shortcut edges} ]=
@@ -280,10 +316,13 @@ n \frac{c}{2} (n-2) q^2   \approx \frac{c^3p^2}{2}.
 \end{equation*}
 </div>
 <p class="continuation">So we only add a constant number of triangles of any kind.</p>
-<p id="p-590"></p>
+<p id="p-599"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-111" id="solution-111"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-111"><div class="solution solution-like">
+<p id="p-600">A triangle with two shortcut edges contains one ring edge (which we orient clockwise so that we only count it once) and a third vertex. We have \(n\) choices for the first endpoint of the ring edge. We have \(c/2\) choices for the other endpoint. Then we have \(n-2\) choices for the third vertex. We multiply by \(q^2\) which is the probability that both shortcut edges are present.</p>
+<p id="p-601">As for a triangle with three shortcut edges, we cn choose the vertices in \({n \choose 3}\text{.}\) We multiply by \(q^3\) which is the probability that all three shortcut edges are present.</p>
+</div></div></p>
 </li>
 <li id="li-298">
-<p id="p-591">Turning to connected triples, show that</p>
+<p id="p-602">Turning to connected triples, show that</p>
 <div class="displaymath">
 \begin{equation*}
 \E[ \mbox{# connected triples using one shortcut edge} ]
@@ -299,10 +338,13 @@ n {n-1 \choose 2} q^2
 \approx \frac{c^2 p^2}{2} n.
 \end{equation*}
 </div>
-<p id="p-592"></p>
+<p id="p-603"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-112" id="solution-112"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-112"><div class="solution solution-like">
+<p id="p-604">For each shortcut edge, there are \(c\) ring edges incident with each enpoint. So the expected number of such triples is \(\frac{cpn}{2} (c + c) = c^2 p n\)</p>
+<p id="p-605">For each pair of shortcut edges incident with the same vertex, we must choose the other endpoints. So there are \(n\) ways to choose the common vertex, and \({n-1 \choose 2}\) ways to choose the other endpoints. We multiply by \(q^2\) since this is the probability that both shortcut edges are present.</p>
+</div></div></p>
 </li>
 <li id="li-299">
-<p id="p-593">We are now ready to approximate the clustering coefficient. By parts (c) and (d), we can ignore the new triangles (there are only a constant number of them). But we need the new connected triples from part (e). The clustering coefficient is</p>
+<p id="p-606">We are now ready to approximate the clustering coefficient. By parts (c) and (d), we can ignore the new triangles (there are only a constant number of them). But we need the new connected triples from part (e). The clustering coefficient is</p>
 <div class="displaymath">
 \begin{equation*}
 C \approx \frac
@@ -323,13 +365,38 @@ n {c \choose 2} + c^2pn + \frac{1}{2} c^2p^2 n
 \end{equation*}
 </div>
 <p class="continuation">This is a constant (independent of \(n\)), so we have a nonzero clustering coefficient for every small world network.</p>
-<p id="p-594">Use the approximation \({a \choose 2} = a^2/2\) and set \(p=1\) to obtain the rough lower bound</p>
+<p id="p-607">Use the approximation \({a \choose 2} = a^2/2\) and set \(p=1\) to obtain the rough lower bound</p>
 <div class="displaymath">
 \begin{equation*}
 C \gtrapprox \frac{3}{16}.
 \end{equation*}
 </div>
-<p id="p-595"></p>
+<p id="p-608"><a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-113" id="solution-113"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-113"><div class="solution solution-like"><div class="displaymath" id="p-609">
+\begin{align*}
+C 
+&amp; \geq 
+\frac{3 \left(
+n { c/2 \choose 2} + c p n \cdot {c \choose 1}
+\right)}
+{n {c \choose 2} + c^2pn + n{cp \choose 2}  }
+\geq
+\frac{3 \left(
+c/2(c/2-1)/2 %+ c^2 p
+\right)}
+{c(c-1)/2 + c^2 + {c(c-1)/2}}\\
+&amp; =
+\frac{3 \left(
+c-2
+\right)}
+{8 (2c-1)}
+\geq 
+\frac{3 \left(
+c-2
+\right)}
+{16(c-1)}
+\approx \frac{3}{16}
+\end{align*}
+</div></div></div></p>
 </li>
 </ol></article></section></section></div></main>
 </div>
