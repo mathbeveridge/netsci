@@ -15,8 +15,14 @@
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
 </h6>
-<p>We add a total of \(\frac{cpn}{2}\) edges. Each time we add an edge, the probability that \(v_i\) is one of the endpoints is \(2/n\text{.}\)</p>
+<p>The expected length of a round is at most</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\sum_{k=1}^{\infty} \Pr[X \geq k]  = \sum_{k=1}^{\infty} \left( 1 - \frac{1}{3 \log n} \right)^{i-1}
+= \frac{1}{1 - \left( 1 - \frac{1}{ 3 \log n}\right)} = 3 \log n
+\end{equation*}
 </div>
-<span class="incontext"><a href="smallworld.html#solution-119">in-context</a></span>
+</div>
+<span class="incontext"><a href="navsmallworld.html#solution-119">in-context</a></span>
 </body>
 </html>
