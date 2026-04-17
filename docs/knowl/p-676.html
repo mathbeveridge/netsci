@@ -12,13 +12,31 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>Use problems 1 and 4 to conclude that an average journey takes at most</p>
+<p>Taking the derivative of the previous quantity, and using the approximation</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-O((\log n)^2)
+\frac{dI_k}{dt} \approx \beta \,  k \,  \Theta,
 \end{equation*}
 </div>
-<p class="continuation">steps. <a class="solution-knowl original" data-knowl="./knowl/solution-130-hidden.html" title="Solution 1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Solution.</span> </a></p>
-<span class="incontext"><a href="navsmallworld.html#p-676">in-context</a></span>
+<p class="continuation">we get a differential equation of the form</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{d \Theta}{d t} = A \Theta
+\end{equation*}
+</div>
+<p class="continuation">which has solution</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\Theta(t) = C e^{At}.
+\end{equation*}
+</div>
+<p class="continuation">Show that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+A= \beta \frac{\langle k^2 \rangle - \langle k \rangle}{\langle k \rangle}.
+\end{equation*}
+</div>
+<p class="continuation">(The constant \(C\) is determined by the initial conditions.) </p>
+<span class="incontext"><a href="epidemics.html#p-676">in-context</a></span>
 </body>
 </html>
